@@ -3,7 +3,7 @@
 Turns a single decoded word or emoji from current-generation implants (Neuralink, Synchron, Paradromics, Blackrock) into a full expanding cognitive graph using LLM semantic amplification.
 
 ### 45-second demo  
-https://youtu.be/LPerjd3DGQ8
+https://youtu.be/GOEDU86t964
 
 ### Live versions
 - iNaiHR (AI-powered): https://hawkar-usls.github.io/iNaiHR/  
