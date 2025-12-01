@@ -8,8 +8,8 @@
     <meta name="theme-color" content="#05000a">
     <title>iNaiHR: AI Nexus</title>
     
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Orbitron:wght@600;700;900&display=swap" rel="stylesheet">
+    <script src="[https://d3js.org/d3.v7.min.js](https://d3js.org/d3.v7.min.js)"></script>
+    <link href="[https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Orbitron:wght@600;700;900&display=swap](https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Orbitron:wght@600;700;900&display=swap)" rel="stylesheet">
     
     <style>
         :root {
@@ -204,7 +204,6 @@
 
 <script>
     // === CONFIG ===
-    // KEY FIX: Used a stable model name "gemini-1.5-flash" instead of non-existent preview
     const apiKey = "AIzaSyBfU0msYPPv_ItXGx1Ewyf78TKiWUJ790Y"; 
     const isMobile = window.innerWidth < 768;
     const PHYS = { linkDist: isMobile ? 90 : 140, charge: -400, collide: 25 };
@@ -257,7 +256,7 @@
         .force("y", d3.forceY(height/2).strength(0.01))
         .alphaDecay(0.03);
 
-    // === AI LOGIC ===
+    // === AI LOGIC (FIXED FOR GEMINI PRO) ===
     async function synthAI() {
         if (!selectedNode) { showMsg("SELECT NODE FIRST"); return; }
         if (!apiKey) { showMsg("API KEY MISSING"); return; }
@@ -269,20 +268,24 @@
         const prompt = `Generate 4 related concepts for: "${selectedNode.label}". 
         1. Suggest a fitting emoji for the parent "${selectedNode.label}" (key: "selfEmoji").
         2. Provide 4 children with emoji and text (key: "related").
-        Return JSON: { "selfEmoji": "🧠", "related": [{"text": "Thought", "emoji": "💭"}] }`;
+        Return JSON ONLY: { "selfEmoji": "🧠", "related": [{"text": "Thought", "emoji": "💭"}] }`;
 
         try {
-            // FIXED: Using stable gemini-1.5-flash model
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+            // FIXED: Using standard 'gemini-pro' model
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`, {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
             });
             
             const data = await response.json();
             
-            if(data.error) throw new Error(data.error.message); // Catch API errors
+            if(data.error) throw new Error(data.error.message);
 
-            let text = data.candidates[0].content.parts[0].text.replace(/```json/g, '').replace(/```/g, '').trim();
+            // Parse response
+            let text = data.candidates[0].content.parts[0].text;
+            // Clean markdown if present
+            text = text.replace(/```json/g, '').replace(/```/g, '').trim();
+            
             const result = JSON.parse(text);
 
             // Update Parent
@@ -496,5 +499,4 @@
     updateButtonState(); updateTopology();
 </script>
 </body>
-
 </html>
