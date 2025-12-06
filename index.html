@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>iNaiHR: AI Nexus [STABLE]</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#05000a">
+    <title>iNaiHR: AI Nexus</title>
     
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Orbitron:wght@600;700;900&display=swap" rel="stylesheet">
@@ -12,10 +15,13 @@
         :root {
             --bg-dark: #05000a;
             --bg-pulse: #120024;
+            
+            /* CYBER PALETTE */
             --c-primary: #d300ff;
             --c-accent: #00e5ff;
             --c-white: #e0ccff;
             --c-red: #ff2a6d;
+            
             --neuron-core: var(--c-primary);
             --neuron-aura: #9d00ff;
             --synapse-off: rgba(211, 0, 255, 0.2);
@@ -62,6 +68,7 @@
         #logo span.ai { color: var(--c-primary); text-shadow: 0 0 15px var(--c-primary); }
         #logo span.hr { color: rgba(255,255,255,0.5); font-weight: 400; font-size: 1.2rem; }
 
+        /* BUTTONS */
         .ui-group {
             position: absolute; top: 40px; right: 30px; z-index: 10;
             display: flex; gap: 10px; padding-top: env(safe-area-inset-top);
@@ -82,6 +89,7 @@
         #btn-synth.loading { animation: pulse-synth 1s infinite; }
         @keyframes pulse-synth { 0% { box-shadow: 0 0 10px var(--c-accent); } 50% { box-shadow: 0 0 30px var(--c-accent); } 100% { box-shadow: 0 0 10px var(--c-accent); } }
 
+        /* MAIN ADD BUTTON */
         #main-btn {
             position: absolute; bottom: calc(40px + env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%);
             width: 72px; height: 72px; z-index: 100; border-radius: 50%; border: none;
@@ -92,8 +100,10 @@
         }
         #main-btn::after { content: '+'; font-size: 32px; font-weight: 300; color: var(--c-primary); text-shadow: 0 0 10px var(--c-primary); transition: 0.3s; }
         #main-btn:active { transform: translateX(-50%) scale(0.9); }
+        
         #main-btn.mode-edit { box-shadow: 0 0 0 2px var(--c-primary), 0 0 50px var(--c-primary); transform: translateX(-50%) rotate(360deg); }
         #main-btn.mode-edit::after { content: '✎'; color: white; }
+        
         #main-btn.holding-delete { background: rgba(60, 0, 20, 0.9); box-shadow: 0 0 0 2px var(--c-red), 0 0 60px var(--c-red); transform: translateX(-50%) scale(1.1); }
         #main-btn.holding-delete::after { content: '×'; color: var(--c-red); text-shadow: 0 0 15px var(--c-red); }
 
@@ -180,6 +190,7 @@
         </div>
     </div>
 
+    <!-- Added Custom Confirm Modal to replace native confirm() -->
     <div id="confirm-modal" class="modal-backdrop">
         <div class="modal-content">
             <div style="margin-bottom: 20px; font-family: 'Orbitron'; color: var(--c-red); letter-spacing: 1px;">WIPE SYSTEM DATA?</div>
@@ -193,20 +204,12 @@
     <div id="chart"></div>
 
 <script>
-    // === ERROR CATCHER ===
-    window.onerror = function(message, source, lineno, colno, error) {
-        alert("SYSTEM ERROR:\n" + message + "\nLine: " + lineno);
-    };
-
-    // === CONFIG ===
-    // ТВОЙ НОВЫЙ КЛЮЧ (из последнего скрина)
-    const apiKey = "AIzaSyCwS8chuQviq2mKlkrMK3QBe0El2DvQeHY"; 
+    const apiKey = "AIzaSyCwS8chuQviq2mKlkrMK3QBe0El2DvQeHY"; // INSERT KEY HERE IF NOT PROVIDED BY ENVIRONMENT
     const isMobile = window.innerWidth < 768;
     const PHYS = { linkDist: isMobile ? 90 : 140, charge: -400, collide: 25 };
 
     function initParticles() {
         const container = document.getElementById('particles');
-        if(!container) return;
         for(let i=0; i<25; i++) {
             const p = document.createElement('div');
             p.className = 'particle';
@@ -220,13 +223,10 @@
     initParticles();
 
     function loadData() {
-        try {
-            const saved = localStorage.getItem('inaihr_v1');
-            if (saved) { return JSON.parse(saved); }
-        } catch (e) { console.log("Save corrupted"); }
+        const saved = localStorage.getItem('inaihr_v1');
+        if (saved) { try { return JSON.parse(saved); } catch (e) { return null; } }
         return null;
     }
-    
     const initialData = loadData() || {
         nodes: [ { id: 1, label: "Origin", x: window.innerWidth/2, y: window.innerHeight/2 } ],
         links: []
@@ -256,7 +256,7 @@
         .force("y", d3.forceY(height/2).strength(0.01))
         .alphaDecay(0.03);
 
-    // === AI LOGIC (MODEL FIX) ===
+    // === AI LOGIC ===
     async function synthAI() {
         if (!selectedNode) { showMsg("SELECT NODE FIRST"); return; }
         if (!apiKey) { showMsg("API KEY MISSING"); return; }
@@ -264,27 +264,20 @@
         const btn = document.getElementById('btn-synth');
         btn.disabled = true; btn.classList.add('loading'); btn.innerText = "PROCESSING...";
         
-        // Smart Prompt
+        // Smart Prompt: Ask for emoji + related concepts
         const prompt = `Generate 4 related concepts for: "${selectedNode.label}". 
         1. Suggest a fitting emoji for the parent "${selectedNode.label}" (key: "selfEmoji").
         2. Provide 4 children with emoji and text (key: "related").
-        Return JSON ONLY: { "selfEmoji": "🧠", "related": [{"text": "Thought", "emoji": "💭"}] }`;
+        Return JSON: { "selfEmoji": "🧠", "related": [{"text": "Thought", "emoji": "💭"}] }`;
 
         try {
-            // FIXED: Using 'gemini-1.5-flash' (Latest Standard)
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
             });
             
             const data = await response.json();
-            
-            if(data.error) throw new Error(data.error.message);
-
-            let text = data.candidates[0].content.parts[0].text;
-            // Очистка
-            text = text.replace(/```json/g, '').replace(/```/g, '').trim();
-            
+            let text = data.candidates[0].content.parts[0].text.replace(/```json/g, '').replace(/```/g, '').trim();
             const result = JSON.parse(text);
 
             // Update Parent
@@ -311,10 +304,7 @@
             updateTopology(); simulation.alpha(1).restart(); saveData();
             showMsg(`SYNTHESIZED ${result.related.length} NODES`);
 
-        } catch (e) { 
-            console.error(e); 
-            showMsg("AI ERROR: " + e.message); 
-        } 
+        } catch (e) { console.error(e); showMsg("AI ERROR"); } 
         finally { btn.disabled = false; btn.classList.remove('loading'); btn.innerText = "SYNTH"; }
     }
 
@@ -463,6 +453,7 @@
         } else {
             input.value = selectedNode.label;
         }
+        // SMART SELECT
         setTimeout(() => { input.focus(); if(input.value.length > 0) input.select(); }, 50);
     }
     
