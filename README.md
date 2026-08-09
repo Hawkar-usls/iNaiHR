@@ -1,65 +1,39 @@
-# iNaiHR — LLM-Assisted Cognitive Graph Interface
+<div align="center">
 
-iNaiHR is an experimental interface for expanding a small user-provided input — a word, symbol, emoji, or short decoded message — into an editable semantic graph with optional LLM assistance.
+# iNaiHR
+### LLM-assisted semantic graph interface
 
-The project explores a simple human-computer interaction question:
+`short input` · `editable graph` · `optional model suggestions`
 
-> Can a low-bandwidth input channel become easier to use when the system proposes a structured semantic neighborhood that the user can inspect, reject, edit, and extend?
+</div>
 
-## Demo
+iNaiHR is an experimental interface for expanding a short user-provided input — a word, symbol, emoji or decoded message — into an editable semantic graph.
 
-45-second demo: https://youtu.be/GOEDU86t964
+It is an **interaction prototype**, not a medical device or validated BCI communication system.
 
-Live versions:
+- **Live demo:** https://hawkar-usls.github.io/iNaiHR/
+- **Machine-readable status:** [`PROJECT_STATUS.json`](PROJECT_STATUS.json)
+- **Local-first companion:** [HRain](https://github.com/Hawkar-usls/Hrain)
 
-- iNaiHR — AI-assisted graph expansion: https://hawkar-usls.github.io/iNaiHR/
-- HRain — manual/offline graph interface: https://hawkar-usls.github.io/Hrain/
+## Implemented scope
 
-## Current scope
-
-The repository is a **research and interaction prototype**, not a medical device and not a validated BCI communication system.
-
-Current capabilities include:
-
-- semantic expansion from short user input;
-- visual graph navigation and editing;
+- semantic graph expansion from short input;
+- browser-based navigation/editing;
 - optional LLM-assisted suggestions;
-- browser-based interaction;
-- compatibility experiments with low-bandwidth input scenarios.
+- user inspection and rejection of generated content.
 
-Potential BCI use is a research direction only. The repository does **not** currently establish:
-
-- clinical efficacy;
-- a measured communication-throughput multiplier;
-- compatibility with any specific implanted BCI;
-- regulatory compliance or medical-device readiness;
-- patient-pilot readiness.
-
-Any future BCI claim should be supported by a separately defined interface contract, measured benchmark, appropriate ethics/review process, and independent evaluation.
-
-## Privacy boundary
-
-HRain can operate locally in the browser. iNaiHR may use an external model provider when AI features are enabled. Privacy therefore depends on the selected deployment and provider configuration; no blanket compliance claim is made by this repository.
-
-## Run
-
-Open `index.html` in a modern browser.
-
-For AI-assisted operation, configure a supported model endpoint or API key according to the local project settings. Keep credentials out of committed source files.
-
-## Project status
+## Boundary
 
 ```text
-INTERACTION_PROTOTYPE = IMPLEMENTED
-LOW_BANDWIDTH_INPUT_EXPERIMENT = AVAILABLE
 BCI_DEVICE_INTEGRATION = NOT_ESTABLISHED
 CLINICAL_VALIDATION = NOT_PERFORMED
 PATIENT_PILOT_READINESS = NOT_CLAIMED
 MEASURED_THROUGHPUT_GAIN = NOT_ESTABLISHED
+REGULATORY_OR_MEDICAL_DEVICE_STATUS = NOT_CLAIMED
 ```
 
-## Author
+Potential BCI use remains a research direction. Any future performance or clinical claim requires a defined interface contract, measured benchmark, appropriate ethics/review process and independent evaluation.
 
-Oleksandr Ahapov (Hawkar) — Ukraine
+## Privacy
 
-This repository is part of a broader set of experimental human-computer interaction and local-first AI projects.
+If external model assistance is enabled, data handling depends on the selected provider/deployment. No blanket privacy or regulatory-compliance guarantee is made by this repository.
