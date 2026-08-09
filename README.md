@@ -3,17 +3,18 @@
 # iNaiHR
 ### LLM-assisted semantic graph interface
 
-`short input` · `editable graph` · `optional model suggestions`
+![Status](https://img.shields.io/badge/status-active%20prototype-2f81f7)
+![Class](https://img.shields.io/badge/class-interaction%20prototype-6e7681)
 
 </div>
 
-iNaiHR is an experimental interface for expanding a short user-provided input — a word, symbol, emoji or decoded message — into an editable semantic graph.
+## Status
 
-It is an **interaction prototype**, not a medical device or validated BCI communication system.
+**Active Prototype.** iNaiHR is implemented as an experimental semantic-interface prototype. Model behavior, interface contracts, and validation remain subject to change.
 
-- **Live demo:** https://hawkar-usls.github.io/iNaiHR/
-- **Machine-readable status:** [`PROJECT_STATUS.json`](PROJECT_STATUS.json)
-- **Local-first companion:** [HRain](https://github.com/Hawkar-usls/Hrain)
+## Abstract
+
+iNaiHR expands a short user-provided input — a word, symbol, emoji, or decoded message — into an editable semantic graph with optional LLM-assisted suggestions.
 
 ## Implemented scope
 
@@ -25,6 +26,7 @@ It is an **interaction prototype**, not a medical device or validated BCI commun
 ## Boundary
 
 ```text
+MATURITY = ACTIVE_PROTOTYPE
 BCI_DEVICE_INTEGRATION = NOT_ESTABLISHED
 CLINICAL_VALIDATION = NOT_PERFORMED
 PATIENT_PILOT_READINESS = NOT_CLAIMED
@@ -32,8 +34,17 @@ MEASURED_THROUGHPUT_GAIN = NOT_ESTABLISHED
 REGULATORY_OR_MEDICAL_DEVICE_STATUS = NOT_CLAIMED
 ```
 
-Potential BCI use remains a research direction. Any future performance or clinical claim requires a defined interface contract, measured benchmark, appropriate ethics/review process and independent evaluation.
+Potential BCI use is a research direction, not an established capability. Any future clinical or performance claim requires a defined interface contract, measured benchmark, appropriate review, and independent evaluation.
+
+## Review
+
+- Live demo: https://hawkar-usls.github.io/iNaiHR/
+- Machine-readable project status: [`PROJECT_STATUS.json`](PROJECT_STATUS.json)
+- Local-first companion: [HRain](https://github.com/Hawkar-usls/Hrain)
+- Portfolio maturity/visibility: [`portfolio-visibility.json`](https://github.com/Hawkar-usls/Janus/blob/main/portfolio-visibility.json)
 
 ## Privacy
 
-If external model assistance is enabled, data handling depends on the selected provider/deployment. No blanket privacy or regulatory-compliance guarantee is made by this repository.
+If external model assistance is enabled, data handling depends on the selected provider/deployment. This repository makes no blanket privacy or regulatory-compliance guarantee.
+
+Presentation follows the account's [public repository standard](https://github.com/Hawkar-usls/Janus/blob/main/docs/PUBLIC_REPOSITORY_PRESENTATION_STANDARD.md). No affiliation with MIT is implied by the presentation style.
