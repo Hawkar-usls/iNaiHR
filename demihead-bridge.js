@@ -7,17 +7,27 @@
 
   const PACKET_SCHEMA = 'janus.demihead.hemisphere_packet.v1';
   const BRIDGE_CONTRACT = 'JANUS_DEMIHEAD_BICAMERAL_BRIDGE_V1';
+  const REQUEST_TYPE = 'JANUS_DEMIHEAD_REQUEST_PACKET_V1';
+  const RESPONSE_TYPE = 'JANUS_DEMIHEAD_HEMISPHERE_PACKET_V1';
   const HEMISPHERE = 'RIGHT_INAIHR';
   const ROLE = 'ASSOCIATIVE_CONTEXT';
   const REPOSITORY = 'Hawkar-usls/iNaiHR';
   const WORKSPACE_MODE = 'SEMANTIC_GRAPH';
   const ORIGINS = new Set(['USER', 'REMOTE_AI', 'LOCAL_FALLBACK', 'LEGACY_UNKNOWN', 'SYSTEM']);
+  const REQUEST_ID_RE = /^[A-Za-z0-9._:-]{8,128}$/;
 
   function endpointId(value) {
     if (typeof value === 'boolean' || (typeof value !== 'string' && typeof value !== 'number')) {
       throw new Error('Node/link identifiers must be string or number');
     }
     return String(value);
+  }
+
+  function validateRequestId(value) {
+    if (typeof value !== 'string' || !REQUEST_ID_RE.test(value)) {
+      throw new Error('request_id must be 8-128 safe ASCII characters');
+    }
+    return value;
   }
 
   function normalizeOrigin(node) {
@@ -92,15 +102,27 @@
     };
   }
 
+  function buildResponse(requestId, workspace, options) {
+    return {
+      type: RESPONSE_TYPE,
+      request_id: validateRequestId(requestId),
+      packet: buildPacket(workspace, options)
+    };
+  }
+
   return {
     PACKET_SCHEMA,
     BRIDGE_CONTRACT,
+    REQUEST_TYPE,
+    RESPONSE_TYPE,
     HEMISPHERE,
     ROLE,
     REPOSITORY,
     WORKSPACE_MODE,
+    validateRequestId,
     normalizeOrigin,
     normalizeWorkspace,
-    buildPacket
+    buildPacket,
+    buildResponse
   };
 });

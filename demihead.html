@@ -13,12 +13,13 @@
 <div class="wrap">
   <div class="kicker">JANUS DEMIHEAD · RIGHT_INAIHR</div>
   <h1>Associative Context Hemisphere</h1>
-  <p>This sidecar reads the existing iNaiHR browser-local workspace and emits a <strong>read-only</strong> DemiHead hemisphere packet. It never promotes semantic association into evidence and has no cross-hemisphere write channel.</p>
+  <p>This sidecar reads the existing iNaiHR browser-local workspace and emits a <strong>read-only</strong>, request-bound DemiHead hemisphere packet. It never promotes semantic association into evidence and has no cross-hemisphere write channel.</p>
   <div class="panel laws">HEMISPHERE_METAPHOR != NEUROSCIENCE_CLAIM
 ASSOCIATION != EVIDENCE
 REMOTE_AI_OUTPUT != INDEPENDENT_WITNESS
 BOTH_HEMISPHERES_AGREE != TRUTH
 PACKET_TRANSFER = READ_ONLY
+REQUEST_ID_ECHO != AUTHENTICATION
 AUTHORITY_DELTA = 0
 MASS_EFFECT_BUDGET_DELTA = 0</div>
   <div class="panel">
@@ -90,10 +91,13 @@ MASS_EFFECT_BUDGET_DELTA = 0</div>
 
   window.addEventListener('message', (event) => {
     if (!allowedParentOrigin(event.origin)) return;
-    if (!event.data || event.data.type !== 'JANUS_DEMIHEAD_REQUEST_PACKET_V1') return;
+    if (!event.data || event.data.type !== bridge.REQUEST_TYPE) return;
+    let requestId;
+    try { requestId = bridge.validateRequestId(event.data.request_id); }
+    catch (_) { return; }
     const current = refresh();
     if (!current || !event.source) return;
-    event.source.postMessage({type: 'JANUS_DEMIHEAD_HEMISPHERE_PACKET_V1', packet: current}, event.origin);
+    event.source.postMessage({type: bridge.RESPONSE_TYPE, request_id: requestId, packet: current}, event.origin);
   });
 
   document.getElementById('refresh').onclick = refresh;
