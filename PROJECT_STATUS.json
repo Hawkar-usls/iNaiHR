@@ -6,7 +6,7 @@
   "last_reviewed": "2026-08-16",
   "maturity": "ACTIVE_PROTOTYPE",
   "completion_status": "PROTOTYPE",
-  "summary": "Experimental semantic graph interface with backend-first optional LLM assistance, deterministic local semantic fallback, and browser-local workspace isolation from JANUS Meta Registry.",
+  "summary": "Experimental semantic graph interface with backend-first optional LLM assistance, deterministic local semantic fallback, browser-local workspace isolation from JANUS Meta Registry, and a read-only DemiHead RIGHT_INAIHR associative-context bridge.",
   "implemented": [
     "semantic graph expansion",
     "browser interaction",
@@ -15,13 +15,37 @@
     "manual inspection/editing of generated graph content",
     "legacy local-workspace migration",
     "local-only workspace clearing",
-    "public frontend contains no provider API credential"
+    "public frontend contains no provider API credential",
+    "read-only DemiHead RIGHT_INAIHR hemisphere sidecar",
+    "deterministic janus.demihead.hemisphere_packet.v1 builder",
+    "legacy isAI=true preservation as REMOTE_AI",
+    "unknown old non-AI provenance preserved as LEGACY_UNKNOWN",
+    "origin-restricted postMessage packet response",
+    "zero authority and mass-effect delta in hemisphere packets"
   ],
   "data_boundary": {
     "local_workspace_is_registry": false,
     "clear_local_desk_mutates_registry": false,
     "local_node_delete_mutates_registry": false,
-    "provider_secret_may_be_embedded_in_frontend": false
+    "provider_secret_may_be_embedded_in_frontend": false,
+    "hemisphere_sidecar_mutates_local_workspace": false,
+    "hemisphere_sidecar_mutates_other_hemisphere": false
+  },
+  "hemisphere_bridge": {
+    "contract": "JANUS_DEMIHEAD_BICAMERAL_BRIDGE_V1",
+    "hemisphere": "RIGHT_INAIHR",
+    "role": "ASSOCIATIVE_CONTEXT",
+    "packet_schema": "janus.demihead.hemisphere_packet.v1",
+    "read_only_transfer": true,
+    "direct_cross_hemisphere_mutation": false,
+    "automatic_graph_merge": false,
+    "authority_delta": 0,
+    "mass_effect_budget_delta": 0,
+    "remote_ai_output_is_independent_witness": false,
+    "local_fallback_is_model_output": false,
+    "legacy_unknown_is_user_authored": false,
+    "hemisphere_agreement_is_truth": false,
+    "neuroscience_claim": false
   },
   "not_established": [
     "clinical efficacy",
@@ -29,9 +53,14 @@
     "measured communication-throughput multiplier",
     "medical-device or regulatory readiness",
     "patient-pilot readiness",
-    "remote AI availability guarantee"
+    "remote AI availability guarantee",
+    "measured cognitive-performance gain from the DemiHead bicameral bridge",
+    "biological equivalence to a human right hemisphere",
+    "truth or independent corroboration from bicameral agreement"
   ],
   "live_demo": "https://hawkar-usls.github.io/iNaiHR/",
+  "demihead_sidecar": "https://hawkar-usls.github.io/iNaiHR/demihead.html",
   "manual_companion": "https://github.com/Hawkar-usls/Hrain",
+  "demihead": "https://github.com/Hawkar-usls/Demi_Head",
   "visibility_policy": "https://github.com/Hawkar-usls/Janus/blob/main/portfolio-visibility.json"
 }
