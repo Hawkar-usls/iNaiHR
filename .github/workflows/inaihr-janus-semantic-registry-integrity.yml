@@ -1,0 +1,77 @@
+name: iNaiHR JANUS semantic registry integrity
+
+on:
+  pull_request:
+    paths:
+      - 'janus.html'
+      - '.github/workflows/inaihr-janus-semantic-registry-integrity.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'janus.html'
+      - '.github/workflows/inaihr-janus-semantic-registry-integrity.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate semantic registry mode
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('janus.html')
+          assert p.exists(), 'janus.html missing'
+          s=p.read_text(encoding='utf-8')
+          required=[
+            "janus-site-language-v1",
+            "assets/hrain-registry-index.json",
+            "mutationPolicy?.interfaceWriteAuthority!==false",
+            "mutationPolicy?.interfaceDeleteAuthority!==false",
+            "sourcePaths",
+            "async function synthSelected",
+            "async function remoteConcepts",
+            "function localConcepts",
+            "JANUS GUIDE",
+            "sessionStorage.getItem('janus-guide:'",
+            "sessionStorage.setItem('janus-guide:'",
+            "MAX_DEPTH=4",
+            "method:'POST'",
+            "/api/hrain/sync",
+            "REGISTRY+obj.path",
+            "data-lang=\"en\"",
+            "data-lang=\"ua\"",
+            "data-lang=\"ru\"",
+          ]
+          for token in required:
+            assert token in s, f'missing invariant: {token}'
+          forbidden=[
+            '/api/hrain/save', '/api/hrain/event', '/api/device/',
+            'method:\'DELETE\'', 'method:"DELETE"',
+            'method:\'PUT\'', 'method:"PUT"',
+            'method:\'PATCH\'', 'method:"PATCH"',
+            'sourceMutationEndpoint',
+          ]
+          for token in forbidden:
+            assert token not in s, f'forbidden mutation path present: {token}'
+          assert s.count("method:'POST'")==1, 'only stateless AI sync may POST'
+          assert "localStorage.setItem(LANG_KEY" in s, 'language must propagate across JANUS network'
+          assert "localStorage.setItem(GUIDE_KEY" in s, 'guide preference may be local only'
+          assert "sourceCache.set" in s and "recordCache.set" in s, 'source-derived semantic cache missing'
+          assert "semantic branches" in s.lower(), 'semantic/source authority boundary missing'
+          scripts=re.findall(r'<script>(.*?)</script>',s,re.S)
+          assert scripts, 'inline JS missing'
+          Path('/tmp/janus-semantic.js').write_text('\n'.join(scripts),encoding='utf-8')
+          print('SEMANTIC_MODE=PASS')
+          print('REGISTRY_MUTATION=FORBIDDEN')
+          print('GUIDE_AUTOSYNTH=ONE_PER_NODE_PER_SESSION')
+          print('LANGUAGE_KEY=janus-site-language-v1')
+          PY
+          node --check /tmp/janus-semantic.js
