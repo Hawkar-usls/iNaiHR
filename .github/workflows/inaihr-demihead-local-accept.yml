@@ -1,0 +1,43 @@
+name: iNaiHR DemiHead local proposal acceptance gate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Re-run request-bound hemisphere bridge contract
+        run: node tools/test-demihead-bridge.js
+      - name: Run explicit local proposal acceptance gate
+        run: node tools/test-demihead-apply.js
+      - name: Static local-only and sidecar provenance audit
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const page = fs.readFileSync('demihead-apply.html','utf8');
+          const adapter = fs.readFileSync('demihead-apply.js','utf8');
+          const provenance = fs.readFileSync('demihead-provenance.js','utf8');
+          const sidecar = fs.readFileSync('demihead.html','utf8');
+          for (const forbidden of ['postMessage(', 'fetch(', 'XMLHttpRequest', 'api.github.com/repos/']) {
+            if (page.includes(forbidden) || adapter.includes(forbidden) || provenance.includes(forbidden)) throw new Error(`forbidden apply channel: ${forbidden}`);
+          }
+          if ((page.match(/localStorage\.setItem/g)||[]).length !== 2) throw new Error('apply page must expose exactly metadata+workspace writes');
+          if (adapter.includes('localStorage.setItem') || provenance.includes('localStorage.setItem')) throw new Error('pure modules must not perform I/O');
+          if (sidecar.includes('localStorage.setItem')) throw new Error('read-only sidecar must remain write-free');
+          if (!sidecar.includes('provenance.overlayWorkspace(workspace, metadata)')) throw new Error('sidecar provenance overlay missing');
+          if (!page.includes('ACCEPT LOCALLY') || !page.includes('DECLINE')) throw new Error('explicit choice controls missing');
+          if (!page.includes('GITHUB_PAGES_PROJECT_PATH != ORIGIN_ISOLATION')) throw new Error('same-origin threat model law missing');
+          if (!page.includes('LOCAL_METADATA != TRUSTED_ATTESTATION')) throw new Error('local metadata claim ceiling missing');
+          console.log('LOCAL_ONLY_APPLY_SURFACE=PASS');
+          console.log('READ_ONLY_SIDECAR_WRITE_FREE=true');
+          console.log('LOCAL_METADATA_TRUSTED_ATTESTATION=false');
+          NODE
