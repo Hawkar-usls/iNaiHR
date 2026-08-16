@@ -3,22 +3,33 @@
   "project": "iNaiHR",
   "repository": "https://github.com/Hawkar-usls/iNaiHR",
   "portfolio_class": "interaction_prototype",
-  "last_reviewed": "2026-08-09",
+  "last_reviewed": "2026-08-16",
   "maturity": "ACTIVE_PROTOTYPE",
   "completion_status": "PROTOTYPE",
-  "summary": "Experimental LLM-assisted semantic graph interface for expanding short or low-bandwidth user input into editable candidate concepts.",
+  "summary": "Experimental semantic graph interface with backend-first optional LLM assistance, deterministic local semantic fallback, and browser-local workspace isolation from JANUS Meta Registry.",
   "implemented": [
     "semantic graph expansion",
     "browser interaction",
-    "optional LLM suggestions",
-    "manual inspection/editing of generated graph content"
+    "optional remote LLM suggestions through a backend",
+    "deterministic local semantic fallback when remote AI is unavailable",
+    "manual inspection/editing of generated graph content",
+    "legacy local-workspace migration",
+    "local-only workspace clearing",
+    "public frontend contains no provider API credential"
   ],
+  "data_boundary": {
+    "local_workspace_is_registry": false,
+    "clear_local_desk_mutates_registry": false,
+    "local_node_delete_mutates_registry": false,
+    "provider_secret_may_be_embedded_in_frontend": false
+  },
   "not_established": [
     "clinical efficacy",
     "specific implanted-BCI compatibility",
     "measured communication-throughput multiplier",
     "medical-device or regulatory readiness",
-    "patient-pilot readiness"
+    "patient-pilot readiness",
+    "remote AI availability guarantee"
   ],
   "live_demo": "https://hawkar-usls.github.io/iNaiHR/",
   "manual_companion": "https://github.com/Hawkar-usls/Hrain",
