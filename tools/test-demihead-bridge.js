@@ -37,6 +37,22 @@ assert(packet.control.direct_cross_hemisphere_mutation === false, 'direct mutati
 assert(packet.control.authority_delta === 0, 'authority delta must remain zero');
 assert(packet.control.mass_effect_budget_delta === 0, 'mass effect delta must remain zero');
 
+const requestId = 'req-20260816-0002';
+assert(bridge.validateRequestId(requestId) === requestId, 'valid request id rejected');
+const response = bridge.buildResponse(requestId, workspace, {
+  capturedAt: '2026-08-16T08:53:00Z',
+  packetId: 'inaihr-ci-response'
+});
+assert(response.type === bridge.RESPONSE_TYPE, 'response type mismatch');
+assert(response.request_id === requestId, 'response must echo exact request id');
+assert(response.packet.hemisphere === 'RIGHT_INAIHR', 'response packet hemisphere mismatch');
+
+for (const invalidRequestId of [undefined, null, '', 'short', 'contains space', '*', 'x'.repeat(129)]) {
+  let refused = false;
+  try { bridge.validateRequestId(invalidRequestId); } catch (_) { refused = true; }
+  assert(refused, `invalid request id must fail closed: ${String(invalidRequestId)}`);
+}
+
 let failedClosed = false;
 try {
   bridge.buildPacket({nodes: [{id: 1, label: 'A'}], links: [{source: 1, target: 9}]});
@@ -56,11 +72,14 @@ for (const forbidden of [
 ]) {
   assert(!sidecar.includes(forbidden), `sidecar contains forbidden write/network surface: ${forbidden}`);
 }
-assert(sidecar.includes('JANUS_DEMIHEAD_REQUEST_PACKET_V1'), 'request message contract missing');
-assert(sidecar.includes('JANUS_DEMIHEAD_HEMISPHERE_PACKET_V1'), 'response message contract missing');
-assert(!sidecar.includes("postMessage({type: 'JANUS_DEMIHEAD_HEMISPHERE_PACKET_V1', packet: current}, '*')"), 'wildcard packet postMessage forbidden');
+assert(sidecar.includes('bridge.REQUEST_TYPE'), 'request message contract missing');
+assert(sidecar.includes('bridge.RESPONSE_TYPE'), 'response message contract missing');
+assert(sidecar.includes('bridge.validateRequestId(event.data.request_id)'), 'request id validation missing');
+assert(sidecar.includes('request_id: requestId'), 'exact request id echo missing');
+assert(!sidecar.includes("postMessage({type: bridge.RESPONSE_TYPE, request_id: requestId, packet: current}, '*')"), 'wildcard packet postMessage forbidden');
 
 console.log('INAIHR_DEMIHEAD_RIGHT_HEMISPHERE_BRIDGE=PASS');
+console.log('REQUEST_ID_BINDING=PASS');
 console.log('REMOTE_AI_ORIGIN_PRESERVED=true');
 console.log('LOCAL_FALLBACK_NOT_MODEL_OUTPUT=true');
 console.log('DIRECT_CROSS_HEMISPHERE_MUTATION=false');
