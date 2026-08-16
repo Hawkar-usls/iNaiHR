@@ -20,6 +20,7 @@ REMOTE_AI_OUTPUT != INDEPENDENT_WITNESS
 BOTH_HEMISPHERES_AGREE != TRUTH
 PACKET_TRANSFER = READ_ONLY
 REQUEST_ID_ECHO != AUTHENTICATION
+LOCAL_METADATA != TRUSTED_ATTESTATION
 AUTHORITY_DELTA = 0
 MASS_EFFECT_BUDGET_DELTA = 0</div>
   <div class="panel">
@@ -36,11 +37,13 @@ MASS_EFFECT_BUDGET_DELTA = 0</div>
   </div>
 </div>
 <script src="./demihead-bridge.js"></script>
+<script src="./demihead-provenance.js"></script>
 <script>
 (() => {
   'use strict';
   const STORAGE_KEYS = ['inaihr_v2', 'inaihr_v1'];
   const bridge = window.JANUSDemiHeadiNaiHRBridge;
+  const provenance = window.JANUSDemiHeadiNaiHRProvenance;
   const packetBox = document.getElementById('packet');
   const status = document.getElementById('status');
   let packet = null;
@@ -56,13 +59,19 @@ MASS_EFFECT_BUDGET_DELTA = 0</div>
     return {nodes: [], links: []};
   }
 
+  function readWorkspaceWithProvenance() {
+    const workspace = readWorkspace();
+    const metadata = provenance.parseMetadata(localStorage.getItem(provenance.META_KEY));
+    return provenance.overlayWorkspace(workspace, metadata);
+  }
+
   function refresh() {
     try {
-      packet = bridge.buildPacket(readWorkspace());
+      packet = bridge.buildPacket(readWorkspaceWithProvenance());
       packetBox.value = JSON.stringify(packet, null, 2);
       const origins = packet.graph.nodes.reduce((acc,node)=>{acc[node.origin]=(acc[node.origin]||0)+1;return acc;},{});
       status.className = 'status';
-      status.textContent = `${packet.graph.nodes.length} nodes · ${packet.graph.links.length} links · origins ${JSON.stringify(origins)}. Old non-AI nodes stay LEGACY_UNKNOWN unless origin was explicit.`;
+      status.textContent = `${packet.graph.nodes.length} nodes · ${packet.graph.links.length} links · origins ${JSON.stringify(origins)}. Old non-AI nodes stay LEGACY_UNKNOWN unless origin was explicit or locally bound to a DemiHead proposal receipt.`;
     } catch (err) {
       packet = null;
       packetBox.value = '';
