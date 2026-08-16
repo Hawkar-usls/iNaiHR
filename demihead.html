@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#05000a">
+<title>iNaiHR · DemiHead Right Hemisphere</title>
+<style>
+:root{color-scheme:dark;--bg:#05000a;--panel:#12001d;--line:#3b1550;--accent:#d300ff;--cyan:#00e5ff;--muted:#a38db2;--danger:#ff2a6d}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#19002d,var(--bg) 55%);color:#f5e8ff;font:15px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;min-height:100vh}.wrap{max-width:980px;margin:auto;padding:28px}.kicker{color:var(--cyan);letter-spacing:.12em;font-weight:700}.panel{background:rgba(18,0,29,.92);border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:18px;box-shadow:0 14px 40px rgba(0,0,0,.28)}h1{margin:.2em 0;font-size:clamp(1.5rem,5vw,2.4rem)}p{color:#cfb9db}.laws{white-space:pre-wrap;color:#d8bee7}.row{display:flex;gap:10px;flex-wrap:wrap}.btn{border:1px solid var(--accent);background:#24002f;color:#f0b8ff;padding:10px 14px;border-radius:8px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none}.btn.secondary{border-color:#5f4d69;color:#e3d8e8;background:#170c1d}.status{margin-top:12px;color:var(--muted)}.status.error{color:var(--danger)}textarea{width:100%;min-height:360px;background:#040006;color:#fae9ff;border:1px solid #3a1748;border-radius:10px;padding:14px;font:12px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;resize:vertical}a{color:var(--cyan)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">JANUS DEMIHEAD · RIGHT_INAIHR</div>
+  <h1>Associative Context Hemisphere</h1>
+  <p>This sidecar reads the existing iNaiHR browser-local workspace and emits a <strong>read-only</strong> DemiHead hemisphere packet. It never promotes semantic association into evidence and has no cross-hemisphere write channel.</p>
+  <div class="panel laws">HEMISPHERE_METAPHOR != NEUROSCIENCE_CLAIM
+ASSOCIATION != EVIDENCE
+REMOTE_AI_OUTPUT != INDEPENDENT_WITNESS
+BOTH_HEMISPHERES_AGREE != TRUTH
+PACKET_TRANSFER = READ_ONLY
+AUTHORITY_DELTA = 0
+MASS_EFFECT_BUDGET_DELTA = 0</div>
+  <div class="panel">
+    <div class="row">
+      <button class="btn" id="refresh">REFRESH SNAPSHOT</button>
+      <button class="btn" id="download">DOWNLOAD PACKET</button>
+      <button class="btn secondary" id="copy">COPY JSON</button>
+      <a class="btn secondary" href="./">BACK TO iNaiHR</a>
+    </div>
+    <div class="status" id="status">Loading local workspace…</div>
+  </div>
+  <div class="panel">
+    <textarea id="packet" spellcheck="false" readonly></textarea>
+  </div>
+</div>
+<script src="./demihead-bridge.js"></script>
+<script>
+(() => {
+  'use strict';
+  const STORAGE_KEYS = ['inaihr_v2', 'inaihr_v1'];
+  const bridge = window.JANUSDemiHeadiNaiHRBridge;
+  const packetBox = document.getElementById('packet');
+  const status = document.getElementById('status');
+  let packet = null;
+
+  function readWorkspace() {
+    for (const key of STORAGE_KEYS) {
+      const raw = localStorage.getItem(key);
+      if (!raw) continue;
+      const value = JSON.parse(raw);
+      if (!value || !Array.isArray(value.nodes) || !Array.isArray(value.links)) throw new Error(`Stored iNaiHR workspace ${key} is malformed`);
+      return value;
+    }
+    return {nodes: [], links: []};
+  }
+
+  function refresh() {
+    try {
+      packet = bridge.buildPacket(readWorkspace());
+      packetBox.value = JSON.stringify(packet, null, 2);
+      const origins = packet.graph.nodes.reduce((acc,node)=>{acc[node.origin]=(acc[node.origin]||0)+1;return acc;},{});
+      status.className = 'status';
+      status.textContent = `${packet.graph.nodes.length} nodes · ${packet.graph.links.length} links · origins ${JSON.stringify(origins)}. Old non-AI nodes stay LEGACY_UNKNOWN unless origin was explicit.`;
+    } catch (err) {
+      packet = null;
+      packetBox.value = '';
+      status.className = 'status error';
+      status.textContent = `REFUSED: ${err.message}`;
+    }
+    return packet;
+  }
+
+  function download() {
+    const current = refresh();
+    if (!current) return;
+    const blob = new Blob([JSON.stringify(current, null, 2) + '\n'], {type: 'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `janus_demihead_right_inaihr_${new Date().toISOString().replace(/[:.]/g,'-')}.json`;
+    document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+  }
+
+  function allowedParentOrigin(origin) {
+    if (origin === location.origin) return true;
+    if (origin === 'https://hawkar-usls.github.io') return true;
+    return /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+  }
+
+  window.addEventListener('message', (event) => {
+    if (!allowedParentOrigin(event.origin)) return;
+    if (!event.data || event.data.type !== 'JANUS_DEMIHEAD_REQUEST_PACKET_V1') return;
+    const current = refresh();
+    if (!current || !event.source) return;
+    event.source.postMessage({type: 'JANUS_DEMIHEAD_HEMISPHERE_PACKET_V1', packet: current}, event.origin);
+  });
+
+  document.getElementById('refresh').onclick = refresh;
+  document.getElementById('download').onclick = download;
+  document.getElementById('copy').onclick = async () => {
+    const current = refresh();
+    if (!current) return;
+    try { await navigator.clipboard.writeText(JSON.stringify(current, null, 2)); status.textContent += ' · copied'; }
+    catch (_) { status.textContent += ' · clipboard unavailable'; }
+  };
+
+  refresh();
+})();
+</script>
+</body>
+</html>

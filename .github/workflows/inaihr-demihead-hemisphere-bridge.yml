@@ -1,0 +1,55 @@
+name: iNaiHR DemiHead right-hemisphere bridge
+
+on:
+  push:
+    paths:
+      - 'demihead.html'
+      - 'demihead-bridge.js'
+      - 'tools/test-demihead-bridge.js'
+      - 'README.md'
+      - 'PROJECT_STATUS.json'
+      - '.github/workflows/inaihr-demihead-hemisphere-bridge.yml'
+  pull_request:
+    paths:
+      - 'demihead.html'
+      - 'demihead-bridge.js'
+      - 'tools/test-demihead-bridge.js'
+      - 'README.md'
+      - 'PROJECT_STATUS.json'
+      - '.github/workflows/inaihr-demihead-hemisphere-bridge.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Verify deterministic packet builder and read-only sidecar
+        run: node tools/test-demihead-bridge.js
+      - name: Verify provenance and no provider/write surface was added
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          bridge = Path('demihead-bridge.js').read_text(encoding='utf-8')
+          sidecar = Path('demihead.html').read_text(encoding='utf-8')
+          text = bridge + '\n' + sidecar
+          assert 'AIza' not in text
+          assert 'github_pat_' not in text
+          assert 'ghp_' not in text
+          assert 'localStorage.setItem' not in sidecar
+          assert 'localStorage.removeItem' not in sidecar
+          assert 'fetch(' not in sidecar
+          assert "if (node && node.isAI === true) return 'REMOTE_AI'" in bridge
+          assert "return 'LEGACY_UNKNOWN'" in bridge
+          assert 'direct_cross_hemisphere_mutation: false' in bridge
+          assert 'authority_delta: 0' in bridge
+          assert 'mass_effect_budget_delta: 0' in bridge
+          print('READ_ONLY_SIDECAR=PASS')
+          print('REMOTE_AI_PROVENANCE_PRESERVED=true')
+          print('UNKNOWN_NON_AI_PROVENANCE_NOT_GUESSED=true')
+          print('PROVIDER_SECRET_EMBEDDED=false')
+          print('REGISTRY_WRITE_SURFACE=false')
+          PY

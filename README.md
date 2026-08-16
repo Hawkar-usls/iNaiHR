@@ -26,7 +26,46 @@ The public browser build is now **backend-first and secret-free**: no provider A
 - deterministic `LOCAL SEMANTIC FALLBACK` when the remote uplink is unavailable;
 - user inspection and rejection/editing of generated content;
 - migration of legacy browser-local graph data;
-- local-only workspace clearing.
+- local-only workspace clearing;
+- read-only DemiHead `RIGHT_INAIHR` hemisphere sidecar with deterministic packet normalization.
+
+## DemiHead right hemisphere
+
+iNaiHR now exposes a separate [`demihead.html`](demihead.html) sidecar and [`demihead-bridge.js`](demihead-bridge.js) builder for the JANUS DemiHead bicameral bridge.
+
+The hemisphere terminology is a **software metaphor**, not a biological claim:
+
+```text
+HRain / LEFT_HRAIN   = STRUCTURAL_CONTEXT
+DemiHead              = bind / compare / preserve disagreement
+iNaiHR / RIGHT_INAIHR = ASSOCIATIVE_CONTEXT
+```
+
+The sidecar reads only the browser-local semantic workspace and emits `janus.demihead.hemisphere_packet.v1`. It cannot write to HRain, JANUS Meta Registry, GitHub or external platforms.
+
+For legacy data, provenance is deliberately conservative:
+
+```text
+old node with isAI=true  -> REMOTE_AI
+explicit origin field    -> preserve exact supported origin
+old non-AI node           -> LEGACY_UNKNOWN
+```
+
+An old non-AI node is **not** guessed to be `USER` or `LOCAL_FALLBACK`, because the existing persisted format does not distinguish those histories.
+
+```text
+HEMISPHERE_METAPHOR != NEUROSCIENCE_CLAIM
+ASSOCIATION != EVIDENCE
+REMOTE_AI_OUTPUT != INDEPENDENT_WITNESS
+LOCAL_FALLBACK != MODEL_OUTPUT
+BOTH_HEMISPHERES_AGREE != TRUTH
+PACKET_TRANSFER = READ_ONLY
+DIRECT_CROSS_HEMISPHERE_MUTATION = false
+AUTHORITY_DELTA = 0
+MASS_EFFECT_BUDGET_DELTA = 0
+```
+
+The sidecar may answer an explicit `JANUS_DEMIHEAD_REQUEST_PACKET_V1` `postMessage` from the same GitHub Pages origin or a localhost development origin. The response is sent back only to that exact requesting origin, never to `*`.
 
 ## Data and deletion boundary
 
@@ -54,6 +93,7 @@ BCI_DEVICE_INTEGRATION = NOT_ESTABLISHED
 CLINICAL_VALIDATION = NOT_PERFORMED
 PATIENT_PILOT_READINESS = NOT_CLAIMED
 MEASURED_THROUGHPUT_GAIN = NOT_ESTABLISHED
+MEASURED_BICAMERAL_COGNITIVE_GAIN = NOT_ESTABLISHED
 REGULATORY_OR_MEDICAL_DEVICE_STATUS = NOT_CLAIMED
 ```
 
@@ -62,6 +102,7 @@ Potential BCI use is a research direction, not an established capability. Any fu
 ## Review
 
 - Live demo: https://hawkar-usls.github.io/iNaiHR/
+- DemiHead right-hemisphere sidecar: https://hawkar-usls.github.io/iNaiHR/demihead.html
 - Machine-readable project status: [`PROJECT_STATUS.json`](PROJECT_STATUS.json)
 - Local-first companion: [HRain](https://github.com/Hawkar-usls/Hrain)
 - JANUS Registry Mode: https://hawkar-usls.github.io/Hrain/janus.html
