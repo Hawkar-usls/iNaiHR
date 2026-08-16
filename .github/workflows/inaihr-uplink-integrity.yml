@@ -1,0 +1,85 @@
+name: iNaiHR uplink and local-data integrity
+
+on:
+  push:
+    paths:
+      - 'index.html'
+      - 'README.md'
+      - 'PROJECT_STATUS.json'
+      - '.github/workflows/inaihr-uplink-integrity.yml'
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'README.md'
+      - 'PROJECT_STATUS.json'
+      - '.github/workflows/inaihr-uplink-integrity.yml'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Validate frontend security, fallback, and data boundary
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json, re
+
+          html = Path('index.html').read_text(encoding='utf-8')
+          readme = Path('README.md').read_text(encoding='utf-8')
+          status = json.loads(Path('PROJECT_STATUS.json').read_text(encoding='utf-8'))
+
+          required = [
+              'LOCAL SEMANTIC FALLBACK',
+              'REMOTE AI',
+              '/api/hrain/sync',
+              'CLEAR LOCAL DESK',
+              'LOCAL DESK CLEARED · REGISTRY UNTOUCHED',
+              'LOCAL WORKSPACE != JANUS REGISTRY',
+              'https://hawkar-usls.github.io/janus-meta-registry/',
+              'https://hawkar-usls.github.io/Hrain/janus.html',
+              'fetchWithTimeout',
+              'remoteSynthesis',
+              'localFallback',
+          ]
+          for marker in required:
+              assert marker in html, marker
+
+          # Public frontend must never contain provider credentials or direct provider API calls.
+          assert not re.search(r'AIza[0-9A-Za-z_-]{20,}', html), 'Google API key-like secret found'
+          assert 'generativelanguage.googleapis.com' not in html
+          assert '?key=' not in html
+          assert 'AI ERROR' not in html
+
+          # iNaiHR may persist only its browser-local user workspace.
+          assert "localStorage.setItem(STORAGE_KEY" in html
+          assert "localStorage.removeItem(STORAGE_KEY)" in html
+          assert "localStorage.removeItem(LEGACY_KEY)" in html
+          assert "method:'DELETE'" not in html and 'method:"DELETE"' not in html
+          assert "method:'PUT'" not in html and 'method:"PUT"' not in html
+          assert "method:'PATCH'" not in html and 'method:"PATCH"' not in html
+          assert 'github.com/repos/Hawkar-usls/janus-meta-registry/contents' not in html
+          assert 'api.github.com/repos/Hawkar-usls/janus-meta-registry' not in html
+
+          assert status['data_boundary']['local_workspace_is_registry'] is False
+          assert status['data_boundary']['clear_local_desk_mutates_registry'] is False
+          assert status['data_boundary']['local_node_delete_mutates_registry'] is False
+          assert status['data_boundary']['provider_secret_may_be_embedded_in_frontend'] is False
+          assert 'provider API key' in readme
+
+          scripts = re.findall(r'<script>(.*?)</script>', html, re.S)
+          assert scripts, 'inline iNaiHR script missing'
+          Path('/tmp/inaihr-inline.js').write_text(scripts[-1], encoding='utf-8')
+
+          print('INAIHR_PUBLIC_SECRET_SCAN=PASS')
+          print('INAIHR_DIRECT_PROVIDER_CALL=ABSENT')
+          print('INAIHR_REMOTE_UPLINK=BACKEND_ONLY')
+          print('INAIHR_LOCAL_FALLBACK=PRESENT')
+          print('INAIHR_LOCAL_DELETE_BOUNDARY=PASS')
+          print('INAIHR_REGISTRY_MUTATION_CHANNEL=ABSENT')
+          PY
+          node --check /tmp/inaihr-inline.js
