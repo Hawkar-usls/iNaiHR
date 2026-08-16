@@ -5,8 +5,8 @@
   "portfolio_class": "interaction_prototype",
   "last_reviewed": "2026-08-16",
   "maturity": "ACTIVE_PROTOTYPE",
-  "completion_status": "PROTOTYPE",
-  "summary": "Experimental semantic graph interface with backend-first optional LLM assistance, deterministic local semantic fallback, browser-local workspace isolation from JANUS Meta Registry, and a read-only DemiHead RIGHT_INAIHR associative-context bridge.",
+  "completion_status": "PROTOTYPE_WITH_NEXUS_HABITAT_TOOL",
+  "summary": "Experimental semantic graph interface with backend-first optional LLM assistance, deterministic local semantic fallback, browser-local workspace isolation from JANUS Meta Registry, a read-only DemiHead RIGHT_INAIHR associative-context bridge, and a bounded local Habitat tool for Nexus coordination.",
   "implemented": [
     "semantic graph expansion",
     "browser interaction",
@@ -21,7 +21,9 @@
     "legacy isAI=true preservation as REMOTE_AI",
     "unknown old non-AI provenance preserved as LEGACY_UNKNOWN",
     "origin-restricted postMessage packet response",
-    "zero authority and mass-effect delta in hemisphere packets"
+    "zero authority and mass-effect delta in hemisphere packets",
+    "local janus.habitat.inaihr.request.v1 -> janus.habitat.inaihr.response.v1 tool",
+    "BRIDGE_PACKET and grounded SYNTH_LOCAL Habitat operations with no network use or source mutation"
   ],
   "data_boundary": {
     "local_workspace_is_registry": false,
@@ -47,6 +49,23 @@
     "hemisphere_agreement_is_truth": false,
     "neuroscience_claim": false
   },
+  "nexus_habitat_binding": {
+    "contract": "JANUS_NEXUS_HABITAT_V1",
+    "head_id": "INAIHR",
+    "role": "ASSOCIATIVE_CONTEXT",
+    "exact_repository_head_reviewed": "8dc65570e01a8437d610f67cee2270f9e6a3e4d3",
+    "local_tool": "habitat-tool.js",
+    "local_request_schema": "janus.habitat.inaihr.request.v1",
+    "local_response_schema": "janus.habitat.inaihr.response.v1",
+    "nexus_payload_kind": "HEMISPHERE_PACKET",
+    "nexus_target": "BICAMERAL_BRIDGE",
+    "live_nexus_delivery": false,
+    "network_used_by_local_tool": false,
+    "source_mutation_allowed": false,
+    "authority_delta": 0,
+    "mass_effect_budget_delta": 0,
+    "external_effect_authority": false
+  },
   "not_established": [
     "clinical efficacy",
     "specific implanted-BCI compatibility",
@@ -56,11 +75,14 @@
     "remote AI availability guarantee",
     "measured cognitive-performance gain from the DemiHead bicameral bridge",
     "biological equivalence to a human right hemisphere",
-    "truth or independent corroboration from bicameral agreement"
+    "truth or independent corroboration from bicameral agreement",
+    "live inter-repository Nexus transport",
+    "target delivery merely because a local Habitat response was generated"
   ],
   "live_demo": "https://hawkar-usls.github.io/iNaiHR/",
   "demihead_sidecar": "https://hawkar-usls.github.io/iNaiHR/demihead.html",
   "manual_companion": "https://github.com/Hawkar-usls/Hrain",
   "demihead": "https://github.com/Hawkar-usls/Demi_Head",
+  "nexus_habitat": "https://github.com/Hawkar-usls/Demi_Head/blob/main/docs/NEXUS_HABITAT.md",
   "visibility_policy": "https://github.com/Hawkar-usls/Janus/blob/main/portfolio-visibility.json"
 }
