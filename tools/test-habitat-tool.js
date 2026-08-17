@@ -14,40 +14,23 @@ assert.equal(goldprompt.STARTUP_DEPENDENCY_MANIFEST_DIGEST,goldprompt.EXPECTED_D
 
 function fixtureAnchor(){
   const anchor={
-    schema:intent.ANCHOR_SCHEMA,
-    current_turn_digest:'1'.repeat(64),
-    requested_operation:'COMPARE',
+    schema:intent.ANCHOR_SCHEMA,current_turn_digest:'1'.repeat(64),requested_operation:'COMPARE',
     primary_entities:{OSIRIS:['осирис','осириса'],JESUS_CHRIST:['иисус','христос','христа']},
     must_answer_points:['Compare Osiris restoration with Christ resurrection','Distinguish resurrection from Second Coming'],
     required_answer_evidence:[['осирис','осириса'],['иисус','христос'],['воскрес','resurrection'],['второе пришествие','second coming']],
-    operation_markers:['сравн','различ','сход'],
-    optional_association_markers:['bd101','janus'],
-    explicit_constraints:[],
-    allow_anaphoric_continuation:false,
-    context_priority:Object.keys(intent.CONTEXT_TIERS).map(k=>intent.CONTEXT_TIERS[k])
+    operation_markers:['сравн','различ','сход'],optional_association_markers:['bd101','janus'],explicit_constraints:[],
+    allow_anaphoric_continuation:false,context_priority:Object.keys(intent.CONTEXT_TIERS).map(k=>intent.CONTEXT_TIERS[k])
   };
-  anchor.intent_id=intent.sha256(anchor);
-  return anchor;
+  anchor.intent_id=intent.sha256(anchor);return anchor;
 }
 const intentAnchor=fixtureAnchor();
 assert.equal(intent.verifyAnchor(intentAnchor),true);
 
-const req={
-  schema:tool.REQUEST_SCHEMA,
-  request_id:'HABITAT-INAIHR-0001',
-  operation:'SYNTH_LOCAL',
-  intent_anchor:intentAnchor,
-  lang:'en',
-  parent_label:'Test parent',
-  records:[
-    {path:'$.purpose',value:'Preserve an inspectable semantic map.'},
-    {path:'$.claim.status',value:'OPEN'},
-    {path:'$.evidence.tests[0]',value:'A deterministic test passed.'},
-    {path:'$.boundary.claim_ceiling',value:'SYNTH != SOURCE AUTHORITY'},
-    {path:'$.next.gate',value:'Run external verification.'},
-    {path:'$.lineage.source',value:'Canonical source record.'}
-  ]
-};
+const req={schema:tool.REQUEST_SCHEMA,request_id:'HABITAT-INAIHR-0001',operation:'SYNTH_LOCAL',intent_anchor:intentAnchor,lang:'en',parent_label:'Test parent',records:[
+  {path:'$.purpose',value:'Preserve an inspectable semantic map.'},{path:'$.claim.status',value:'OPEN'},
+  {path:'$.evidence.tests[0]',value:'A deterministic test passed.'},{path:'$.boundary.claim_ceiling',value:'SYNTH != SOURCE AUTHORITY'},
+  {path:'$.next.gate',value:'Run external verification.'},{path:'$.lineage.source',value:'Canonical source record.'}
+]};
 const response=tool.handle(req);
 assert.equal(response.status,'SYNTH_READY_OPTIONAL');
 assert.equal(response.tool_id,'JANUS.INAIHR.SYNTH.LOCAL');
@@ -60,8 +43,7 @@ assert.equal(response.intent_handoff.current_turn_digest,intentAnchor.current_tu
 assert.equal(response.intent_handoff.requested_operation,intentAnchor.requested_operation);
 assert.equal(response.intent_handoff.face_id,'RIGHT_INAIHR');
 assert.equal(intent.verifyHandoff(intentAnchor,response.intent_handoff,'RIGHT_INAIHR'),true);
-const allowed=new Set(req.records.map(r=>r.path));
-for(const c of response.concepts){assert.ok(c.sourcePaths.length>0);for(const p of c.sourcePaths) assert.ok(allowed.has(p));}
+const allowed=new Set(req.records.map(r=>r.path));for(const c of response.concepts){assert.ok(c.sourcePaths.length>0);for(const p of c.sourcePaths) assert.ok(allowed.has(p));}
 const receipt=response.goldprompt_receipt;
 assert.equal(receipt.schema,goldprompt.RECEIPT_SCHEMA);
 assert.equal(receipt.face_id,'RIGHT_INAIHR');
@@ -73,9 +55,7 @@ assert.equal(receipt.contract_digest_sha256,goldprompt.EXPECTED_CONTRACT_DIGEST)
 assert.equal(receipt.dependency_manifest_reference,goldprompt.DEPENDENCY_MANIFEST_REFERENCE);
 assert.equal(receipt.dependency_manifest_digest_sha256,goldprompt.EXPECTED_DEPENDENCY_MANIFEST_DIGEST);
 assert.equal(receipt.source_revision,(process.env.GITHUB_SHA||TEST_SHA).toLowerCase());
-assert.equal(receipt.authority_weight,0);
-assert.equal(receipt.compliance_state,'COMPLIANT');
-assert.equal(goldprompt.verifyReceipt(receipt),true);
+assert.equal(receipt.authority_weight,0);assert.equal(receipt.compliance_state,'COMPLIANT');assert.equal(goldprompt.verifyReceipt(receipt),true);
 
 function rehash(candidate){const payload={...candidate};delete payload.receipt_sha256;return {...payload,receipt_sha256:goldprompt.sha256(payload)};}
 assert.equal(goldprompt.verifyReceipt(rehash({...receipt,face_role:'TRUTH_ORACLE'})),false);
@@ -85,7 +65,6 @@ assert.equal(goldprompt.verifyReceipt(rehash({...receipt,dependency_manifest_dig
 assert.equal(goldprompt.verifyReceipt(rehash({...receipt,extra_authority_hint:true})),false);
 assert.throws(()=>goldprompt.resolveRuntimeSourceRevision({}),/TRUSTED_SOURCE_REVISION_REQUIRED/);
 assert.throws(()=>goldprompt.resolveRuntimeSourceRevision({JANUS_SOURCE_REVISION:'TEST-REV'}),/JANUS_SOURCE_REVISION_INVALID/);
-
 assert.throws(()=>tool.handle({...req,request_id:'HABITAT-INAIHR-0002',source_revision:'c'.repeat(40)}),/CALLER_SOURCE_REVISION_FORBIDDEN/);
 assert.throws(()=>tool.handle({...req,request_id:'HABITAT-INAIHR-0006',intent_anchor:undefined}),/INTENT_ANCHOR_REQUIRED_OR_INVALID/);
 const tamperedIntent=JSON.parse(JSON.stringify(intentAnchor));tamperedIntent.requested_operation='SUMMARIZE';
@@ -94,17 +73,21 @@ assert.throws(()=>tool.handle({...req,request_id:'HABITAT-INAIHR-0003',records:[
 assert.throws(()=>tool.handle({...req,request_id:'HABITAT-INAIHR-0004',records:[{path:'$.a',value:'x'},{path:'$.a',value:'y'}]}),/DUPLICATE_SOURCE_PATH/);
 
 const bridge=tool.handle({schema:tool.REQUEST_SCHEMA,request_id:'HABITAT-INAIHR-0005',operation:'BRIDGE_PACKET',intent_anchor:intentAnchor,workspace:{nodes:[{id:'a',label:'A'}],links:[]}});
-assert.equal(bridge.packet.schema,'janus.demihead.hemisphere_packet.v2');
+assert.equal(bridge.packet.schema,'janus.demihead.hemisphere_packet.v3');
 assert.equal(bridge.packet.source.source_revision,bridge.goldprompt_receipt.source_revision);
 assert.equal(bridge.packet.source.goldprompt_receipt_sha256,bridge.goldprompt_receipt.receipt_sha256);
 assert.deepEqual(bridge.packet.goldprompt_receipt,bridge.goldprompt_receipt);
 assert.equal(bridge.intent_handoff.intent_id,intentAnchor.intent_id);
 assert.equal(intent.verifyHandoff(intentAnchor,bridge.intent_handoff,'RIGHT_INAIHR'),true);
+assert.deepEqual(bridge.packet.intent_anchor,intentAnchor);
+assert.deepEqual(bridge.packet.intent_handoff,bridge.intent_handoff);
+assert.equal(bridge.packet.source.intent_id,intentAnchor.intent_id);
+assert.equal(bridge.packet.source.intent_handoff_sha256,bridge.intent_handoff.handoff_sha256);
 
 console.log('INAIHR_HABITAT_TOOL=PASS');
 console.log('INAIHR_GOLDPROMPT_HANDSHAKE_V1_1=PASS');
 console.log('INAIHR_GOLDPROMPT_TRANSITIVE_PIN_BINDING=PASS');
-console.log('INAIHR_PACKET_EMBEDS_UPSTREAM_RECEIPT=PASS');
+console.log('INAIHR_PACKET_V3_EMBEDS_RECEIPT_AND_INTENT=PASS');
 console.log('INAIHR_GOLDPROMPT_CALLER_REVISION_OVERRIDE=REJECTED');
 console.log('INAIHR_GOLDPROMPT_FULL_POLICY_VERIFY=PASS');
 console.log('INAIHR_INTENT_LOCK=PASS');
