@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'habitat-tool.js'
+      - 'goldprompt-handshake.js'
       - 'demihead-bridge.js'
       - 'tools/test-habitat-tool.js'
       - '.github/workflows/inaihr-habitat-tool.yml'
@@ -11,6 +12,7 @@ on:
     branches: [main]
     paths:
       - 'habitat-tool.js'
+      - 'goldprompt-handshake.js'
       - 'demihead-bridge.js'
       - 'tools/test-habitat-tool.js'
       - '.github/workflows/inaihr-habitat-tool.yml'
@@ -26,19 +28,34 @@ jobs:
       - name: Syntax and unit tests
         run: |
           node --check habitat-tool.js
+          node --check goldprompt-handshake.js
           node --check demihead-bridge.js
           node tools/test-habitat-tool.js
-      - name: CLI smoke
+      - name: CLI smoke with live GoldPrompt handshake
+        env:
+          JANUS_SOURCE_REVISION: ${{ github.sha }}
         run: |
           printf '%s\n' '{"schema":"janus.habitat.inaihr.request.v1","request_id":"CI-INAIHR-0001","operation":"SYNTH_LOCAL","parent_label":"Root","records":[{"path":"$.purpose","value":"Map meaning"},{"path":"$.evidence.test","value":"Test receipt"},{"path":"$.boundary.limit","value":"No authority upgrade"}]}' | node habitat-tool.js >/tmp/inaihr.json
           node - <<'NODE'
           const fs=require('fs');
+          const gp=require('./goldprompt-handshake.js');
           const v=JSON.parse(fs.readFileSync('/tmp/inaihr.json','utf8'));
           if(v.status!=='SYNTH_READY_OPTIONAL') throw new Error('status');
           if(v.exact_source_path_grounding!==true) throw new Error('grounding');
           if(v.source_mutation_allowed!==false) throw new Error('mutation boundary');
           if(v.network_used_by_tool!==false) throw new Error('network boundary');
+          if(!gp.verifyReceipt(v.goldprompt_receipt)) throw new Error('goldprompt receipt');
+          if(v.goldprompt_receipt.source_revision!==process.env.JANUS_SOURCE_REVISION) throw new Error('source revision');
           const allowed=new Set(['$.purpose','$.evidence.test','$.boundary.limit']);
           for(const c of v.concepts) for(const p of c.sourcePaths) if(!allowed.has(p)) throw new Error('ungrounded');
+          fs.writeFileSync('inaihr-goldprompt-startup-receipt.json', JSON.stringify(v.goldprompt_receipt,null,2)+'\n');
           console.log('INAIHR_HABITAT_CLI=PASS');
+          console.log('INAIHR_GOLDPROMPT_STARTUP_RECEIPT=PASS');
           NODE
+      - name: Upload GoldPrompt startup receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: inaihr-goldprompt-startup-receipt
+          path: inaihr-goldprompt-startup-receipt.json
+          if-no-files-found: error
+          retention-days: 30
