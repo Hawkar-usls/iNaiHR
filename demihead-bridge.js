@@ -5,10 +5,10 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
 
-  const PACKET_SCHEMA = 'janus.demihead.hemisphere_packet.v2';
-  const BRIDGE_CONTRACT = 'JANUS_DEMIHEAD_BICAMERAL_BRIDGE_V2';
-  const REQUEST_TYPE = 'JANUS_DEMIHEAD_REQUEST_PACKET_V2';
-  const RESPONSE_TYPE = 'JANUS_DEMIHEAD_HEMISPHERE_PACKET_V2';
+  const PACKET_SCHEMA = 'janus.demihead.hemisphere_packet.v3';
+  const BRIDGE_CONTRACT = 'JANUS_DEMIHEAD_BICAMERAL_BRIDGE_V3';
+  const REQUEST_TYPE = 'JANUS_DEMIHEAD_REQUEST_PACKET_V3';
+  const RESPONSE_TYPE = 'JANUS_DEMIHEAD_HEMISPHERE_PACKET_V3';
   const UNATTESTED_PACKET_SCHEMA = 'janus.demihead.hemisphere_packet.v1';
   const UNATTESTED_BRIDGE_CONTRACT = 'JANUS_DEMIHEAD_BICAMERAL_BRIDGE_V1';
   const UNATTESTED_REQUEST_TYPE = 'JANUS_DEMIHEAD_REQUEST_PACKET_V1';
@@ -74,17 +74,39 @@
     if (typeof receipt.receipt_sha256 !== 'string' || !SHA256_RE.test(receipt.receipt_sha256)) throw new Error('GoldPrompt receipt SHA-256 required');
     return JSON.parse(JSON.stringify(receipt));
   }
+  function validateIntentEnvelope(anchor, handoff) {
+    if (!anchor || typeof anchor !== 'object' || Array.isArray(anchor)) throw new Error('intentAnchor required for intent-bound packet');
+    if (!handoff || typeof handoff !== 'object' || Array.isArray(handoff)) throw new Error('intentHandoff required for intent-bound packet');
+    if (anchor.schema !== 'janus.goldprompt.intent_anchor.v1') throw new Error('Intent anchor schema mismatch');
+    if (handoff.schema !== 'janus.goldprompt.intent_handoff.v1') throw new Error('Intent handoff schema mismatch');
+    if (typeof anchor.intent_id !== 'string' || !SHA256_RE.test(anchor.intent_id)) throw new Error('Intent ID required');
+    if (handoff.intent_id !== anchor.intent_id) throw new Error('Intent handoff/anchor mismatch');
+    if (handoff.face_id !== HEMISPHERE) throw new Error('Intent handoff Face mismatch');
+    if (handoff.current_turn_digest !== anchor.current_turn_digest) throw new Error('Intent current-turn mismatch');
+    if (handoff.requested_operation !== anchor.requested_operation) throw new Error('Intent operation mismatch');
+    if (typeof handoff.handoff_sha256 !== 'string' || !SHA256_RE.test(handoff.handoff_sha256)) throw new Error('Intent handoff SHA required');
+    return { anchor: JSON.parse(JSON.stringify(anchor)), handoff: JSON.parse(JSON.stringify(handoff)) };
+  }
   function buildPacket(workspace, options) {
     const opts = options || {};
     const sourceRevision = typeof opts.sourceRevision === 'string' && opts.sourceRevision ? opts.sourceRevision : null;
     if (!sourceRevision) throw new Error('sourceRevision required for GoldPrompt-bound packet');
     const goldpromptReceipt = validateGoldPromptReceipt(opts.goldpromptReceipt, sourceRevision);
+    const intentEnvelope = validateIntentEnvelope(opts.intentAnchor, opts.intentHandoff);
     return {
       schema: PACKET_SCHEMA,
       packet_id: opts.packetId || `inaihr-right-${Date.now()}`,
       hemisphere: HEMISPHERE, role: ROLE, captured_at: opts.capturedAt || new Date().toISOString(),
-      source: { repository: REPOSITORY, bridge_contract: BRIDGE_CONTRACT, source_revision: sourceRevision, goldprompt_receipt_sha256: goldpromptReceipt.receipt_sha256, workspace_mode: WORKSPACE_MODE },
+      source: {
+        repository: REPOSITORY, bridge_contract: BRIDGE_CONTRACT, source_revision: sourceRevision,
+        goldprompt_receipt_sha256: goldpromptReceipt.receipt_sha256,
+        intent_id: intentEnvelope.anchor.intent_id,
+        intent_handoff_sha256: intentEnvelope.handoff.handoff_sha256,
+        workspace_mode: WORKSPACE_MODE
+      },
       goldprompt_receipt: goldpromptReceipt,
+      intent_anchor: intentEnvelope.anchor,
+      intent_handoff: intentEnvelope.handoff,
       graph: normalizeWorkspace(workspace),
       control: { read_only_transfer: true, direct_cross_hemisphere_mutation: false, authority_delta: 0, mass_effect_budget_delta: 0 }
     };
@@ -107,7 +129,7 @@
     PACKET_SCHEMA, BRIDGE_CONTRACT, REQUEST_TYPE, RESPONSE_TYPE,
     UNATTESTED_PACKET_SCHEMA, UNATTESTED_BRIDGE_CONTRACT, UNATTESTED_REQUEST_TYPE, UNATTESTED_RESPONSE_TYPE,
     HEMISPHERE, ROLE, REPOSITORY, WORKSPACE_MODE,
-    validateRequestId, normalizeOrigin, normalizeWorkspace, validateGoldPromptReceipt,
+    validateRequestId, normalizeOrigin, normalizeWorkspace, validateGoldPromptReceipt, validateIntentEnvelope,
     buildPacket, buildUnattestedPacket, buildResponse, buildUnattestedResponse
   };
 });
