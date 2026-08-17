@@ -73,8 +73,16 @@ function handle(request){
 
   const goldpromptReceipt=buildGoldPromptReceipt();
   if(operation==='BRIDGE_PACKET'){
-    const packet=bridge.buildPacket(request.workspace||{}, {packetId:`habitat-inaihr-${requestId}`,capturedAt:request.captured_at||new Date().toISOString(),sourceRevision:goldpromptReceipt.source_revision,goldpromptReceipt});
+    const packet=bridge.buildPacket(request.workspace||{}, {
+      packetId:`habitat-inaihr-${requestId}`,
+      capturedAt:request.captured_at||new Date().toISOString(),
+      sourceRevision:goldpromptReceipt.source_revision,
+      goldpromptReceipt,
+      intentAnchor:request.intent_anchor,
+      intentHandoff
+    });
     if(packet.source.goldprompt_receipt_sha256!==goldpromptReceipt.receipt_sha256) fail('INAIHR_PACKET_RECEIPT_BINDING_FAILED');
+    if(packet.source.intent_id!==request.intent_anchor.intent_id||packet.source.intent_handoff_sha256!==intentHandoff.handoff_sha256) fail('INAIHR_PACKET_INTENT_BINDING_FAILED');
     return {schema:RESPONSE_SCHEMA,request_id:requestId,tool_id:TOOL_ID,tool:'iNaiHR',role:'ASSOCIATIVE_CONTEXT',status:'BRIDGE_PACKET_READY_OPTIONAL',intent_anchor:request.intent_anchor,intent_handoff:intentHandoff,goldprompt_receipt:goldpromptReceipt,packet,may_be_ignored:true,authority_delta:0,mass_effect_budget_delta:0,world_effect_requested:false,source_mutation_allowed:false,network_used_by_tool:false};
   }
   const lang=['en','ua','ru'].includes(request.lang)?request.lang:'en';
