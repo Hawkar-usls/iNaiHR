@@ -70,10 +70,15 @@ function handle(request){
   const operation=String(request.operation||'');
   if(operation!=='BRIDGE_PACKET'&&operation!=='SYNTH_LOCAL') fail('INAIHR_HABITAT_OPERATION_UNSUPPORTED');
 
-  // Runtime provenance is resolved only from process-level trusted metadata.
   const goldpromptReceipt=buildGoldPromptReceipt();
   if(operation==='BRIDGE_PACKET'){
-    const packet=bridge.buildPacket(request.workspace||{}, {packetId:`habitat-inaihr-${requestId}`,capturedAt:request.captured_at||new Date().toISOString(),sourceRevision:goldpromptReceipt.source_revision});
+    const packet=bridge.buildPacket(request.workspace||{}, {
+      packetId:`habitat-inaihr-${requestId}`,
+      capturedAt:request.captured_at||new Date().toISOString(),
+      sourceRevision:goldpromptReceipt.source_revision,
+      goldpromptReceipt
+    });
+    if(packet.source.goldprompt_receipt_sha256!==goldpromptReceipt.receipt_sha256) fail('INAIHR_PACKET_RECEIPT_BINDING_FAILED');
     return {schema:RESPONSE_SCHEMA,request_id:requestId,tool_id:TOOL_ID,tool:'iNaiHR',role:'ASSOCIATIVE_CONTEXT',status:'BRIDGE_PACKET_READY_OPTIONAL',goldprompt_receipt:goldpromptReceipt,packet,may_be_ignored:true,authority_delta:0,mass_effect_budget_delta:0,world_effect_requested:false,source_mutation_allowed:false,network_used_by_tool:false};
   }
   const lang=['en','ua','ru'].includes(request.lang)?request.lang:'en';

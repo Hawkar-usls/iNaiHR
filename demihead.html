@@ -13,12 +13,13 @@
 <div class="wrap">
   <div class="kicker">JANUS DEMIHEAD · RIGHT_INAIHR</div>
   <h1>Associative Context Hemisphere</h1>
-  <p>This sidecar reads the existing iNaiHR browser-local workspace and emits a <strong>read-only</strong>, request-bound DemiHead hemisphere packet. It never promotes semantic association into evidence and has no cross-hemisphere write channel.</p>
+  <p>This browser sidecar reads the existing iNaiHR browser-local workspace and emits a <strong>read-only unattested local export</strong>. Runtime-attested v2 packets are emitted only by the process-level Habitat tool.</p>
   <div class="panel laws">HEMISPHERE_METAPHOR != NEUROSCIENCE_CLAIM
 ASSOCIATION != EVIDENCE
 REMOTE_AI_OUTPUT != INDEPENDENT_WITNESS
 BOTH_HEMISPHERES_AGREE != TRUTH
 PACKET_TRANSFER = READ_ONLY
+BROWSER_EXPORT != RUNTIME_ATTESTATION
 REQUEST_ID_ECHO != AUTHENTICATION
 LOCAL_METADATA != TRUSTED_ATTESTATION
 AUTHORITY_DELTA = 0
@@ -32,9 +33,7 @@ MASS_EFFECT_BUDGET_DELTA = 0</div>
     </div>
     <div class="status" id="status">Loading local workspace…</div>
   </div>
-  <div class="panel">
-    <textarea id="packet" spellcheck="false" readonly></textarea>
-  </div>
+  <div class="panel"><textarea id="packet" spellcheck="false" readonly></textarea></div>
 </div>
 <script src="./demihead-bridge.js"></script>
 <script src="./demihead-provenance.js"></script>
@@ -67,28 +66,23 @@ MASS_EFFECT_BUDGET_DELTA = 0</div>
 
   function refresh() {
     try {
-      packet = bridge.buildPacket(readWorkspaceWithProvenance());
+      packet = bridge.buildUnattestedPacket(readWorkspaceWithProvenance());
       packetBox.value = JSON.stringify(packet, null, 2);
       const origins = packet.graph.nodes.reduce((acc,node)=>{acc[node.origin]=(acc[node.origin]||0)+1;return acc;},{});
       status.className = 'status';
-      status.textContent = `${packet.graph.nodes.length} nodes · ${packet.graph.links.length} links · origins ${JSON.stringify(origins)}. Old non-AI nodes stay LEGACY_UNKNOWN unless origin was explicit or locally bound to a DemiHead proposal receipt.`;
+      status.textContent = `${packet.graph.nodes.length} nodes · ${packet.graph.links.length} links · UNATTESTED_LOCAL_EXPORT · origins ${JSON.stringify(origins)}.`;
     } catch (err) {
-      packet = null;
-      packetBox.value = '';
-      status.className = 'status error';
-      status.textContent = `REFUSED: ${err.message}`;
+      packet = null; packetBox.value = ''; status.className = 'status error'; status.textContent = `REFUSED: ${err.message}`;
     }
     return packet;
   }
 
   function download() {
-    const current = refresh();
-    if (!current) return;
+    const current = refresh(); if (!current) return;
     const blob = new Blob([JSON.stringify(current, null, 2) + '\n'], {type: 'application/json'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
-    a.href = url;
-    a.download = `janus_demihead_right_inaihr_${new Date().toISOString().replace(/[:.]/g,'-')}.json`;
+    a.href = url; a.download = `janus_demihead_right_inaihr_unattested_${new Date().toISOString().replace(/[:.]/g,'-')}.json`;
     document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
   }
 
@@ -100,24 +94,21 @@ MASS_EFFECT_BUDGET_DELTA = 0</div>
 
   window.addEventListener('message', (event) => {
     if (!allowedParentOrigin(event.origin)) return;
-    if (!event.data || event.data.type !== bridge.REQUEST_TYPE) return;
+    if (!event.data || event.data.type !== bridge.UNATTESTED_REQUEST_TYPE) return;
     let requestId;
-    try { requestId = bridge.validateRequestId(event.data.request_id); }
-    catch (_) { return; }
+    try { requestId = bridge.validateRequestId(event.data.request_id); } catch (_) { return; }
     const current = refresh();
     if (!current || !event.source) return;
-    event.source.postMessage({type: bridge.RESPONSE_TYPE, request_id: requestId, packet: current}, event.origin);
+    event.source.postMessage({type: bridge.UNATTESTED_RESPONSE_TYPE, request_id: requestId, packet: current, proof_state:'UNATTESTED_LOCAL_EXPORT'}, event.origin);
   });
 
   document.getElementById('refresh').onclick = refresh;
   document.getElementById('download').onclick = download;
   document.getElementById('copy').onclick = async () => {
-    const current = refresh();
-    if (!current) return;
+    const current = refresh(); if (!current) return;
     try { await navigator.clipboard.writeText(JSON.stringify(current, null, 2)); status.textContent += ' · copied'; }
     catch (_) { status.textContent += ' · clipboard unavailable'; }
   };
-
   refresh();
 })();
 </script>

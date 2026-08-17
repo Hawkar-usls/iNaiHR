@@ -17,6 +17,12 @@ on:
       - 'tools/test-habitat-tool.js'
       - '.github/workflows/inaihr-habitat-tool.yml'
 
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+  artifact-metadata: write
+
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -33,30 +39,73 @@ jobs:
           node --check goldprompt-handshake.js
           node --check demihead-bridge.js
           node tools/test-habitat-tool.js
-      - name: CLI smoke with trusted GoldPrompt provenance
+      - name: CLI smoke with pinned GoldPrompt provenance
         run: |
-          printf '%s\n' '{"schema":"janus.habitat.inaihr.request.v1","request_id":"CI-INAIHR-0001","operation":"SYNTH_LOCAL","parent_label":"Root","records":[{"path":"$.purpose","value":"Map meaning"},{"path":"$.evidence.test","value":"Test receipt"},{"path":"$.boundary.limit","value":"No authority upgrade"}]}' | node habitat-tool.js >/tmp/inaihr.json
+          printf '%s\n' '{"schema":"janus.habitat.inaihr.request.v1","request_id":"CI-INAIHR-0001","operation":"SYNTH_LOCAL","parent_label":"Root","records":[{"path":"$.purpose","value":"Map meaning"},{"path":"$.evidence.test","value":"Test receipt"},{"path":"$.boundary.limit","value":"No authority upgrade"}]}' | node habitat-tool.js >/tmp/inaihr-synth.json
+          printf '%s\n' '{"schema":"janus.habitat.inaihr.request.v1","request_id":"CI-INAIHR-0002","operation":"BRIDGE_PACKET","captured_at":"2026-08-16T00:00:00Z","workspace":{"nodes":[{"id":"a","label":"A"},{"id":"b","label":"B"}],"links":[{"source":"a","target":"b"}]}}' | node habitat-tool.js >/tmp/inaihr-bridge.json
           node - <<'NODE'
           const fs=require('fs');
           const gp=require('./goldprompt-handshake.js');
-          const v=JSON.parse(fs.readFileSync('/tmp/inaihr.json','utf8'));
-          if(v.status!=='SYNTH_READY_OPTIONAL') throw new Error('status');
-          if(v.exact_source_path_grounding!==true) throw new Error('grounding');
-          if(v.source_mutation_allowed!==false) throw new Error('mutation boundary');
-          if(v.network_used_by_tool!==false) throw new Error('network boundary');
+          const synth=JSON.parse(fs.readFileSync('/tmp/inaihr-synth.json','utf8'));
+          const v=JSON.parse(fs.readFileSync('/tmp/inaihr-bridge.json','utf8'));
+          if(synth.status!=='SYNTH_READY_OPTIONAL'||synth.exact_source_path_grounding!==true) throw new Error('synth');
+          if(v.status!=='BRIDGE_PACKET_READY_OPTIONAL') throw new Error('bridge status');
+          if(v.packet.schema!=='janus.demihead.hemisphere_packet.v2') throw new Error('packet schema');
+          if(v.packet.hemisphere!=='RIGHT_INAIHR') throw new Error('hemisphere');
+          if(v.source_mutation_allowed!==false||v.network_used_by_tool!==false) throw new Error('boundary');
           if(!gp.verifyReceipt(v.goldprompt_receipt)) throw new Error('goldprompt receipt');
           if(v.goldprompt_receipt.source_revision!==process.env.GITHUB_SHA.toLowerCase()) throw new Error('source revision');
-          const allowed=new Set(['$.purpose','$.evidence.test','$.boundary.limit']);
-          for(const c of v.concepts) for(const p of c.sourcePaths) if(!allowed.has(p)) throw new Error('ungrounded');
-          fs.writeFileSync('inaihr-goldprompt-startup-receipt.json', JSON.stringify(v.goldprompt_receipt,null,2)+'\n');
+          if(v.goldprompt_receipt.dependency_manifest_digest_sha256!==gp.EXPECTED_DEPENDENCY_MANIFEST_DIGEST) throw new Error('dependency manifest');
+          if(v.packet.source.goldprompt_receipt_sha256!==v.goldprompt_receipt.receipt_sha256) throw new Error('packet/receipt sha mismatch');
+          if(JSON.stringify(v.packet.goldprompt_receipt)!==JSON.stringify(v.goldprompt_receipt)) throw new Error('embedded receipt mismatch');
+          fs.writeFileSync('inaihr-goldprompt-startup-receipt.json',JSON.stringify(v.goldprompt_receipt,null,2)+'\n');
+          const envelope={schema:'janus.goldprompt.face_message_envelope.v1',face_id:v.goldprompt_receipt.face_id,source_revision:v.goldprompt_receipt.source_revision,packet:v.packet};
+          envelope.envelope_sha256=gp.sha256(envelope);
+          fs.writeFileSync('inaihr-goldprompt-message-envelope.json',JSON.stringify(envelope,null,2)+'\n');
           console.log('INAIHR_HABITAT_CLI=PASS');
-          console.log('INAIHR_GOLDPROMPT_STARTUP_RECEIPT=PASS');
-          console.log('INAIHR_GOLDPROMPT_TRUSTED_REVISION=PASS');
+          console.log('INAIHR_GOLDPROMPT_STARTUP_RECEIPT_V1_1=PASS');
+          console.log('INAIHR_GOLDPROMPT_TRANSITIVE_PIN=PASS');
+          console.log('INAIHR_PACKET_RECEIPT_BINDING=PASS');
+          NODE
+      - name: Attest iNaiHR receipt and message envelope
+        id: attest
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/attest@v4
+        with:
+          subject-path: |
+            inaihr-goldprompt-startup-receipt.json
+            inaihr-goldprompt-message-envelope.json
+      - name: Record iNaiHR origin attestation reference
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          ATTESTATION_ID: ${{ steps.attest.outputs.attestation-id }}
+          ATTESTATION_URL: ${{ steps.attest.outputs.attestation-url }}
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),crypto=require('crypto');
+          const digest=p=>'sha256:'+crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+          const ref={schema:'janus.goldprompt.origin_attestation_ref.v1',provider:'GITHUB_ACTIONS_OIDC_SIGSTORE',repository:process.env.GITHUB_REPOSITORY,workflow_run_id:process.env.GITHUB_RUN_ID,source_revision:process.env.GITHUB_SHA.toLowerCase(),attestation_id:process.env.ATTESTATION_ID,attestation_url:process.env.ATTESTATION_URL,subjects:{'inaihr-goldprompt-startup-receipt.json':digest('inaihr-goldprompt-startup-receipt.json'),'inaihr-goldprompt-message-envelope.json':digest('inaihr-goldprompt-message-envelope.json')},authority_delta:0};
+          fs.writeFileSync('inaihr-goldprompt-origin-attestation-ref.json',JSON.stringify(ref,null,2)+'\n');
           NODE
       - name: Upload GoldPrompt startup receipt
         uses: actions/upload-artifact@v4
         with:
           name: inaihr-goldprompt-startup-receipt
           path: inaihr-goldprompt-startup-receipt.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Upload GoldPrompt message envelope
+        uses: actions/upload-artifact@v4
+        with:
+          name: inaihr-goldprompt-message-envelope
+          path: inaihr-goldprompt-message-envelope.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Upload origin attestation reference
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v4
+        with:
+          name: inaihr-goldprompt-origin-attestation-ref
+          path: inaihr-goldprompt-origin-attestation-ref.json
           if-no-files-found: error
           retention-days: 30

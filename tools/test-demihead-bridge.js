@@ -17,16 +17,18 @@ const workspace = {
   links: [{source: 1, target: 2}, {source: 1, target: 3}]
 };
 
-const packet = bridge.buildPacket(workspace, {
+const packet = bridge.buildUnattestedPacket(workspace, {
   capturedAt: '2026-08-16T08:53:00Z',
   packetId: 'inaihr-ci-right'
 });
 
-assert(packet.schema === 'janus.demihead.hemisphere_packet.v1', 'wrong packet schema');
+assert(packet.schema === bridge.UNATTESTED_PACKET_SCHEMA, 'wrong unattested packet schema');
 assert(packet.hemisphere === 'RIGHT_INAIHR', 'wrong hemisphere');
 assert(packet.role === 'ASSOCIATIVE_CONTEXT', 'wrong role');
 assert(packet.source.repository === 'Hawkar-usls/iNaiHR', 'wrong repository');
-assert(packet.source.bridge_contract === 'JANUS_DEMIHEAD_BICAMERAL_BRIDGE_V1', 'wrong bridge contract');
+assert(packet.source.bridge_contract === bridge.UNATTESTED_BRIDGE_CONTRACT, 'wrong bridge contract');
+assert(packet.source.source_revision === null, 'browser export must not invent trusted revision');
+assert(!Object.prototype.hasOwnProperty.call(packet, 'goldprompt_receipt'), 'browser export must not invent GoldPrompt receipt');
 assert(packet.graph.nodes[0].origin === 'LEGACY_UNKNOWN', 'old non-AI node must remain unknown');
 assert(packet.graph.nodes[1].origin === 'REMOTE_AI', 'legacy isAI=true must remain identifiable as remote AI');
 assert(packet.graph.nodes[2].origin === 'LOCAL_FALLBACK', 'explicit local fallback origin must be preserved');
@@ -39,13 +41,14 @@ assert(packet.control.mass_effect_budget_delta === 0, 'mass effect delta must re
 
 const requestId = 'req-20260816-0002';
 assert(bridge.validateRequestId(requestId) === requestId, 'valid request id rejected');
-const response = bridge.buildResponse(requestId, workspace, {
+const response = bridge.buildUnattestedResponse(requestId, workspace, {
   capturedAt: '2026-08-16T08:53:00Z',
   packetId: 'inaihr-ci-response'
 });
-assert(response.type === bridge.RESPONSE_TYPE, 'response type mismatch');
+assert(response.type === bridge.UNATTESTED_RESPONSE_TYPE, 'response type mismatch');
 assert(response.request_id === requestId, 'response must echo exact request id');
 assert(response.packet.hemisphere === 'RIGHT_INAIHR', 'response packet hemisphere mismatch');
+assert(response.proof_state === 'UNATTESTED_LOCAL_EXPORT', 'unattested proof-state boundary missing');
 
 for (const invalidRequestId of [undefined, null, '', 'short', 'contains space', '*', 'x'.repeat(129)]) {
   let refused = false;
@@ -55,7 +58,7 @@ for (const invalidRequestId of [undefined, null, '', 'short', 'contains space', 
 
 let failedClosed = false;
 try {
-  bridge.buildPacket({nodes: [{id: 1, label: 'A'}], links: [{source: 1, target: 9}]});
+  bridge.buildUnattestedPacket({nodes: [{id: 1, label: 'A'}], links: [{source: 1, target: 9}]});
 } catch (_) {
   failedClosed = true;
 }
@@ -72,13 +75,15 @@ for (const forbidden of [
 ]) {
   assert(!sidecar.includes(forbidden), `sidecar contains forbidden write/network surface: ${forbidden}`);
 }
-assert(sidecar.includes('bridge.REQUEST_TYPE'), 'request message contract missing');
-assert(sidecar.includes('bridge.RESPONSE_TYPE'), 'response message contract missing');
+assert(sidecar.includes('bridge.UNATTESTED_REQUEST_TYPE'), 'unattested request contract missing');
+assert(sidecar.includes('bridge.UNATTESTED_RESPONSE_TYPE'), 'unattested response contract missing');
 assert(sidecar.includes('bridge.validateRequestId(event.data.request_id)'), 'request id validation missing');
 assert(sidecar.includes('request_id: requestId'), 'exact request id echo missing');
-assert(!sidecar.includes("postMessage({type: bridge.RESPONSE_TYPE, request_id: requestId, packet: current}, '*')"), 'wildcard packet postMessage forbidden');
+assert(sidecar.includes('BROWSER_EXPORT != RUNTIME_ATTESTATION'), 'browser/runtime proof boundary missing');
 
 console.log('INAIHR_DEMIHEAD_RIGHT_HEMISPHERE_BRIDGE=PASS');
+console.log('BROWSER_EXPORT_ATTESTED=false');
+console.log('STRICT_V2_TESTED_BY_HABITAT=true');
 console.log('REQUEST_ID_BINDING=PASS');
 console.log('REMOTE_AI_ORIGIN_PRESERVED=true');
 console.log('LOCAL_FALLBACK_NOT_MODEL_OUTPUT=true');
