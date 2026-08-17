@@ -5,6 +5,7 @@ on:
     paths:
       - 'habitat-tool.js'
       - 'goldprompt-handshake.js'
+      - 'intent-handoff.js'
       - 'demihead-bridge.js'
       - 'tools/test-habitat-tool.js'
       - '.github/workflows/inaihr-habitat-tool.yml'
@@ -13,6 +14,7 @@ on:
     paths:
       - 'habitat-tool.js'
       - 'goldprompt-handshake.js'
+      - 'intent-handoff.js'
       - 'demihead-bridge.js'
       - 'tools/test-habitat-tool.js'
       - '.github/workflows/inaihr-habitat-tool.yml'
@@ -37,20 +39,37 @@ jobs:
         run: |
           node --check habitat-tool.js
           node --check goldprompt-handshake.js
+          node --check intent-handoff.js
           node --check demihead-bridge.js
           node tools/test-habitat-tool.js
-      - name: CLI smoke with pinned GoldPrompt provenance
+      - name: CLI smoke with pinned GoldPrompt provenance and intent lock
         run: |
-          printf '%s\n' '{"schema":"janus.habitat.inaihr.request.v1","request_id":"CI-INAIHR-0001","operation":"SYNTH_LOCAL","parent_label":"Root","records":[{"path":"$.purpose","value":"Map meaning"},{"path":"$.evidence.test","value":"Test receipt"},{"path":"$.boundary.limit","value":"No authority upgrade"}]}' | node habitat-tool.js >/tmp/inaihr-synth.json
-          printf '%s\n' '{"schema":"janus.habitat.inaihr.request.v1","request_id":"CI-INAIHR-0002","operation":"BRIDGE_PACKET","captured_at":"2026-08-16T00:00:00Z","workspace":{"nodes":[{"id":"a","label":"A"},{"id":"b","label":"B"}],"links":[{"source":"a","target":"b"}]}}' | node habitat-tool.js >/tmp/inaihr-bridge.json
+          node - <<'NODE' >/tmp/intent-anchor.json
+          const intent=require('./intent-handoff.js');
+          const anchor={schema:intent.ANCHOR_SCHEMA,current_turn_digest:'1'.repeat(64),requested_operation:'COMPARE',primary_entities:{OSIRIS:['osiris'],JESUS_CHRIST:['jesus','christ']},must_answer_points:['Compare Osiris restoration with Christ resurrection','Distinguish resurrection from Second Coming'],required_answer_evidence:[['osiris'],['christ'],['resurrection'],['second coming']],operation_markers:['compare'],optional_association_markers:['bd101','janus'],explicit_constraints:[],allow_anaphoric_continuation:false,context_priority:Object.keys(intent.CONTEXT_TIERS).map(k=>intent.CONTEXT_TIERS[k])};
+          anchor.intent_id=intent.sha256(anchor);
+          process.stdout.write(JSON.stringify(anchor));
+          NODE
+          node - <<'NODE' >/tmp/inaihr-synth-request.json
+          const fs=require('fs'); const anchor=JSON.parse(fs.readFileSync('/tmp/intent-anchor.json','utf8'));
+          process.stdout.write(JSON.stringify({schema:'janus.habitat.inaihr.request.v1',request_id:'CI-INAIHR-0001',operation:'SYNTH_LOCAL',intent_anchor:anchor,parent_label:'Root',records:[{path:'$.purpose',value:'Map meaning'},{path:'$.evidence.test',value:'Test receipt'},{path:'$.boundary.limit',value:'No authority upgrade'}]}));
+          NODE
+          node - <<'NODE' >/tmp/inaihr-bridge-request.json
+          const fs=require('fs'); const anchor=JSON.parse(fs.readFileSync('/tmp/intent-anchor.json','utf8'));
+          process.stdout.write(JSON.stringify({schema:'janus.habitat.inaihr.request.v1',request_id:'CI-INAIHR-0002',operation:'BRIDGE_PACKET',intent_anchor:anchor,captured_at:'2026-08-16T00:00:00Z',workspace:{nodes:[{id:'a',label:'A'},{id:'b',label:'B'}],links:[{source:'a',target:'b'}]}}));
+          NODE
+          node habitat-tool.js </tmp/inaihr-synth-request.json >/tmp/inaihr-synth.json
+          node habitat-tool.js </tmp/inaihr-bridge-request.json >/tmp/inaihr-bridge.json
           node - <<'NODE'
           const fs=require('fs');
           const gp=require('./goldprompt-handshake.js');
+          const intent=require('./intent-handoff.js');
           const synth=JSON.parse(fs.readFileSync('/tmp/inaihr-synth.json','utf8'));
           const v=JSON.parse(fs.readFileSync('/tmp/inaihr-bridge.json','utf8'));
           if(synth.status!=='SYNTH_READY_OPTIONAL'||synth.exact_source_path_grounding!==true) throw new Error('synth');
+          if(!intent.verifyAnchor(synth.intent_anchor)||!intent.verifyHandoff(synth.intent_anchor,synth.intent_handoff,'RIGHT_INAIHR')) throw new Error('synth intent');
           if(v.status!=='BRIDGE_PACKET_READY_OPTIONAL') throw new Error('bridge status');
-          if(v.packet.schema!=='janus.demihead.hemisphere_packet.v2') throw new Error('packet schema');
+          if(v.packet.schema!=='janus.demihead.hemisphere_packet.v3') throw new Error('packet schema');
           if(v.packet.hemisphere!=='RIGHT_INAIHR') throw new Error('hemisphere');
           if(v.source_mutation_allowed!==false||v.network_used_by_tool!==false) throw new Error('boundary');
           if(!gp.verifyReceipt(v.goldprompt_receipt)) throw new Error('goldprompt receipt');
@@ -58,14 +77,19 @@ jobs:
           if(v.goldprompt_receipt.dependency_manifest_digest_sha256!==gp.EXPECTED_DEPENDENCY_MANIFEST_DIGEST) throw new Error('dependency manifest');
           if(v.packet.source.goldprompt_receipt_sha256!==v.goldprompt_receipt.receipt_sha256) throw new Error('packet/receipt sha mismatch');
           if(JSON.stringify(v.packet.goldprompt_receipt)!==JSON.stringify(v.goldprompt_receipt)) throw new Error('embedded receipt mismatch');
+          if(!intent.verifyAnchor(v.intent_anchor)||!intent.verifyHandoff(v.intent_anchor,v.intent_handoff,'RIGHT_INAIHR')) throw new Error('bridge intent');
+          if(v.packet.source.intent_id!==v.intent_anchor.intent_id) throw new Error('packet intent id');
+          if(v.packet.source.intent_handoff_sha256!==v.intent_handoff.handoff_sha256) throw new Error('packet intent handoff');
+          if(JSON.stringify(v.packet.intent_anchor)!==JSON.stringify(v.intent_anchor)||JSON.stringify(v.packet.intent_handoff)!==JSON.stringify(v.intent_handoff)) throw new Error('embedded intent mismatch');
           fs.writeFileSync('inaihr-goldprompt-startup-receipt.json',JSON.stringify(v.goldprompt_receipt,null,2)+'\n');
-          const envelope={schema:'janus.goldprompt.face_message_envelope.v1',face_id:v.goldprompt_receipt.face_id,source_revision:v.goldprompt_receipt.source_revision,packet:v.packet};
+          const envelope={schema:'janus.goldprompt.face_message_envelope.v2',face_id:v.goldprompt_receipt.face_id,source_revision:v.goldprompt_receipt.source_revision,intent_id:v.intent_anchor.intent_id,packet:v.packet};
           envelope.envelope_sha256=gp.sha256(envelope);
           fs.writeFileSync('inaihr-goldprompt-message-envelope.json',JSON.stringify(envelope,null,2)+'\n');
           console.log('INAIHR_HABITAT_CLI=PASS');
           console.log('INAIHR_GOLDPROMPT_STARTUP_RECEIPT_V1_1=PASS');
           console.log('INAIHR_GOLDPROMPT_TRANSITIVE_PIN=PASS');
           console.log('INAIHR_PACKET_RECEIPT_BINDING=PASS');
+          console.log('INAIHR_PACKET_INTENT_BINDING=PASS');
           NODE
       - name: Attest iNaiHR receipt and message envelope
         id: attest
