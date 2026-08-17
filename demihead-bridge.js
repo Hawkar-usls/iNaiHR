@@ -5,16 +5,17 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
 
-  const PACKET_SCHEMA = 'janus.demihead.hemisphere_packet.v1';
-  const BRIDGE_CONTRACT = 'JANUS_DEMIHEAD_BICAMERAL_BRIDGE_V1';
-  const REQUEST_TYPE = 'JANUS_DEMIHEAD_REQUEST_PACKET_V1';
-  const RESPONSE_TYPE = 'JANUS_DEMIHEAD_HEMISPHERE_PACKET_V1';
+  const PACKET_SCHEMA = 'janus.demihead.hemisphere_packet.v2';
+  const BRIDGE_CONTRACT = 'JANUS_DEMIHEAD_BICAMERAL_BRIDGE_V2';
+  const REQUEST_TYPE = 'JANUS_DEMIHEAD_REQUEST_PACKET_V2';
+  const RESPONSE_TYPE = 'JANUS_DEMIHEAD_HEMISPHERE_PACKET_V2';
   const HEMISPHERE = 'RIGHT_INAIHR';
   const ROLE = 'ASSOCIATIVE_CONTEXT';
   const REPOSITORY = 'Hawkar-usls/iNaiHR';
   const WORKSPACE_MODE = 'SEMANTIC_GRAPH';
   const ORIGINS = new Set(['USER', 'REMOTE_AI', 'LOCAL_FALLBACK', 'LEGACY_UNKNOWN', 'SYSTEM']);
   const REQUEST_ID_RE = /^[A-Za-z0-9._:-]{8,128}$/;
+  const SHA256_RE = /^[0-9a-f]{64}$/;
 
   function endpointId(value) {
     if (typeof value === 'boolean' || (typeof value !== 'string' && typeof value !== 'number')) {
@@ -75,11 +76,28 @@
     return { nodes, links };
   }
 
+  function validateGoldPromptReceipt(receipt, sourceRevision) {
+    if (!receipt || typeof receipt !== 'object' || Array.isArray(receipt)) {
+      throw new Error('GoldPrompt receipt must be an object');
+    }
+    if (receipt.face_id !== HEMISPHERE) throw new Error('GoldPrompt receipt Face mismatch');
+    if (receipt.repository !== REPOSITORY) throw new Error('GoldPrompt receipt repository mismatch');
+    if (receipt.source_revision !== sourceRevision) throw new Error('GoldPrompt receipt/source revision mismatch');
+    if (receipt.compliance_state !== 'COMPLIANT') throw new Error('GoldPrompt receipt must be COMPLIANT');
+    if (receipt.authority_weight !== 0) throw new Error('GoldPrompt receipt cannot add authority');
+    if (typeof receipt.receipt_sha256 !== 'string' || !SHA256_RE.test(receipt.receipt_sha256)) {
+      throw new Error('GoldPrompt receipt SHA-256 required');
+    }
+    return JSON.parse(JSON.stringify(receipt));
+  }
+
   function buildPacket(workspace, options) {
     const opts = options || {};
     const capturedAt = opts.capturedAt || new Date().toISOString();
     const packetId = opts.packetId || `inaihr-right-${Date.now()}`;
     const sourceRevision = typeof opts.sourceRevision === 'string' && opts.sourceRevision ? opts.sourceRevision : null;
+    if (!sourceRevision) throw new Error('sourceRevision required for GoldPrompt-bound packet');
+    const goldpromptReceipt = validateGoldPromptReceipt(opts.goldpromptReceipt, sourceRevision);
     return {
       schema: PACKET_SCHEMA,
       packet_id: packetId,
@@ -90,8 +108,10 @@
         repository: REPOSITORY,
         bridge_contract: BRIDGE_CONTRACT,
         source_revision: sourceRevision,
+        goldprompt_receipt_sha256: goldpromptReceipt.receipt_sha256,
         workspace_mode: WORKSPACE_MODE
       },
+      goldprompt_receipt: goldpromptReceipt,
       graph: normalizeWorkspace(workspace),
       control: {
         read_only_transfer: true,
@@ -122,6 +142,7 @@
     validateRequestId,
     normalizeOrigin,
     normalizeWorkspace,
+    validateGoldPromptReceipt,
     buildPacket,
     buildResponse
   };
