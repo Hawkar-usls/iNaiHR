@@ -3,10 +3,12 @@
 
 const bridge = require('./demihead-bridge.js');
 const goldprompt = require('./goldprompt-handshake.js');
+const intent = require('./intent-handoff.js');
 
 const REQUEST_SCHEMA = 'janus.habitat.inaihr.request.v1';
 const RESPONSE_SCHEMA = 'janus.habitat.inaihr.response.v1';
 const TOOL_ID = 'JANUS.INAIHR.SYNTH.LOCAL';
+const FACE_ID = 'RIGHT_INAIHR';
 const REQUEST_ID_RE = /^[A-Za-z0-9._:-]{8,128}$/;
 
 const CAT = [
@@ -49,12 +51,7 @@ function synthLocal(records,lang,maxConcepts){
     for(const r of records){const m=r.path.match(/^\$\.([^\.\[]+)/);const k=m?m[1]:'context';(byTop[k]||(byTop[k]=[])).push(r);}
     entries=Object.entries(byTop).sort((a,b)=>b[1].length-a[1].length).slice(0,maxConcepts);
   }
-  return entries.map(([key,rs])=>({
-    title:(LABEL[lang]&&LABEL[lang][key])||humanize(key),
-    emoji:EMOJI[key]||'✦',
-    summary:rs[0]?.value||'',
-    sourcePaths:rs.slice(0,10).map(r=>r.path)
-  }));
+  return entries.map(([key,rs])=>({title:(LABEL[lang]&&LABEL[lang][key])||humanize(key),emoji:EMOJI[key]||'✦',summary:rs[0]?.value||'',sourcePaths:rs.slice(0,10).map(r=>r.path)}));
 }
 function buildGoldPromptReceipt(){
   const receipt=goldprompt.buildRuntimeReceipt();
@@ -70,16 +67,23 @@ function handle(request){
   const operation=String(request.operation||'');
   if(operation!=='BRIDGE_PACKET'&&operation!=='SYNTH_LOCAL') fail('INAIHR_HABITAT_OPERATION_UNSUPPORTED');
 
+  if(!intent.verifyAnchor(request.intent_anchor)) fail('INAIHR_GOLDPROMPT_INTENT_ANCHOR_REQUIRED_OR_INVALID');
+  const intentHandoff=intent.buildHandoff(request.intent_anchor,FACE_ID,2);
+  if(!intent.verifyHandoff(request.intent_anchor,intentHandoff,FACE_ID)) fail('INAIHR_GOLDPROMPT_INTENT_HANDOFF_SELF_VERIFY_FAILED');
+
   const goldpromptReceipt=buildGoldPromptReceipt();
   if(operation==='BRIDGE_PACKET'){
     const packet=bridge.buildPacket(request.workspace||{}, {
       packetId:`habitat-inaihr-${requestId}`,
       capturedAt:request.captured_at||new Date().toISOString(),
       sourceRevision:goldpromptReceipt.source_revision,
-      goldpromptReceipt
+      goldpromptReceipt,
+      intentAnchor:request.intent_anchor,
+      intentHandoff
     });
     if(packet.source.goldprompt_receipt_sha256!==goldpromptReceipt.receipt_sha256) fail('INAIHR_PACKET_RECEIPT_BINDING_FAILED');
-    return {schema:RESPONSE_SCHEMA,request_id:requestId,tool_id:TOOL_ID,tool:'iNaiHR',role:'ASSOCIATIVE_CONTEXT',status:'BRIDGE_PACKET_READY_OPTIONAL',goldprompt_receipt:goldpromptReceipt,packet,may_be_ignored:true,authority_delta:0,mass_effect_budget_delta:0,world_effect_requested:false,source_mutation_allowed:false,network_used_by_tool:false};
+    if(packet.source.intent_id!==request.intent_anchor.intent_id||packet.source.intent_handoff_sha256!==intentHandoff.handoff_sha256) fail('INAIHR_PACKET_INTENT_BINDING_FAILED');
+    return {schema:RESPONSE_SCHEMA,request_id:requestId,tool_id:TOOL_ID,tool:'iNaiHR',role:'ASSOCIATIVE_CONTEXT',status:'BRIDGE_PACKET_READY_OPTIONAL',intent_anchor:request.intent_anchor,intent_handoff:intentHandoff,goldprompt_receipt:goldpromptReceipt,packet,may_be_ignored:true,authority_delta:0,mass_effect_budget_delta:0,world_effect_requested:false,source_mutation_allowed:false,network_used_by_tool:false};
   }
   const lang=['en','ua','ru'].includes(request.lang)?request.lang:'en';
   const max=Math.max(2,Math.min(6,Number.isInteger(request.max_concepts)?request.max_concepts:6));
@@ -89,25 +93,12 @@ function handle(request){
   const allowed=new Set(records.map(r=>r.path));
   for(const c of concepts) for(const p of c.sourcePaths) if(!allowed.has(p)) fail('INAIHR_HABITAT_UNGROUNDED_SOURCE_PATH');
   return {
-    schema:RESPONSE_SCHEMA,
-    request_id:requestId,
-    tool_id:TOOL_ID,
-    tool:'iNaiHR',
-    role:'ASSOCIATIVE_CONTEXT',
-    status:'SYNTH_READY_OPTIONAL',
-    goldprompt_receipt:goldpromptReceipt,
-    synth_mode:'LOCAL_SEMANTIC_SYNTH',
-    parent_label:String(request.parent_label||'').slice(0,240),
-    concepts,
-    exact_source_path_grounding:true,
-    may_be_ignored:true,
-    authority_delta:0,
-    mass_effect_budget_delta:0,
-    world_effect_requested:false,
-    source_mutation_allowed:false,
-    network_used_by_tool:false
+    schema:RESPONSE_SCHEMA,request_id:requestId,tool_id:TOOL_ID,tool:'iNaiHR',role:'ASSOCIATIVE_CONTEXT',status:'SYNTH_READY_OPTIONAL',
+    intent_anchor:request.intent_anchor,intent_handoff:intentHandoff,goldprompt_receipt:goldpromptReceipt,
+    synth_mode:'LOCAL_SEMANTIC_SYNTH',parent_label:String(request.parent_label||'').slice(0,240),concepts,exact_source_path_grounding:true,
+    may_be_ignored:true,authority_delta:0,mass_effect_budget_delta:0,world_effect_requested:false,source_mutation_allowed:false,network_used_by_tool:false
   };
 }
 function runCli(){let raw='';process.stdin.setEncoding('utf8');process.stdin.on('data',c=>raw+=c);process.stdin.on('end',()=>{try{process.stdout.write(JSON.stringify(handle(JSON.parse(raw||'{}')))+'\n');}catch(err){process.stderr.write(JSON.stringify({schema:'janus.habitat.inaihr.error.v1',status:'REJECTED',error:String(err&&(err.code||err.message)||'UNKNOWN')})+'\n');process.exitCode=2;}});}
 if(require.main===module)runCli();
-module.exports=Object.freeze({REQUEST_SCHEMA,RESPONSE_SCHEMA,TOOL_ID,cleanRecords,synthLocal,buildGoldPromptReceipt,handle});
+module.exports=Object.freeze({REQUEST_SCHEMA,RESPONSE_SCHEMA,TOOL_ID,FACE_ID,cleanRecords,synthLocal,buildGoldPromptReceipt,handle});
