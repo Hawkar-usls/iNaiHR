@@ -2,6 +2,7 @@
 'use strict';
 
 const bridge = require('./demihead-bridge.js');
+const goldprompt = require('./goldprompt-handshake.js');
 
 const REQUEST_SCHEMA = 'janus.habitat.inaihr.request.v1';
 const RESPONSE_SCHEMA = 'janus.habitat.inaihr.response.v1';
@@ -55,15 +56,24 @@ function synthLocal(records,lang,maxConcepts){
     sourcePaths:rs.slice(0,10).map(r=>r.path)
   }));
 }
+function buildGoldPromptReceipt(request){
+  const sourceRevision=typeof request.source_revision==='string'
+    ? request.source_revision
+    : (process.env.GITHUB_SHA||process.env.JANUS_SOURCE_REVISION||null);
+  const receipt=goldprompt.buildReceipt({sourceRevision});
+  if(!goldprompt.verifyReceipt(receipt)) fail('INAIHR_GOLDPROMPT_RECEIPT_SELF_VERIFY_FAILED');
+  return receipt;
+}
 function handle(request){
   if(!request||typeof request!=='object'||Array.isArray(request)) fail('INAIHR_HABITAT_REQUEST_OBJECT_REQUIRED');
   if(request.schema!==REQUEST_SCHEMA) fail('INAIHR_HABITAT_REQUEST_SCHEMA_MISMATCH');
   const requestId=String(request.request_id||'');
   if(!REQUEST_ID_RE.test(requestId)) fail('INAIHR_HABITAT_REQUEST_ID_INVALID');
   const operation=String(request.operation||'');
+  const goldpromptReceipt=buildGoldPromptReceipt(request);
   if(operation==='BRIDGE_PACKET'){
-    const packet=bridge.buildPacket(request.workspace||{}, {packetId:`habitat-inaihr-${requestId}`,capturedAt:request.captured_at||new Date().toISOString(),sourceRevision:typeof request.source_revision==='string'?request.source_revision:null});
-    return {schema:RESPONSE_SCHEMA,request_id:requestId,tool_id:TOOL_ID,tool:'iNaiHR',role:'ASSOCIATIVE_CONTEXT',status:'BRIDGE_PACKET_READY_OPTIONAL',packet,may_be_ignored:true,authority_delta:0,mass_effect_budget_delta:0,world_effect_requested:false,source_mutation_allowed:false,network_used_by_tool:false};
+    const packet=bridge.buildPacket(request.workspace||{}, {packetId:`habitat-inaihr-${requestId}`,capturedAt:request.captured_at||new Date().toISOString(),sourceRevision:goldpromptReceipt.source_revision});
+    return {schema:RESPONSE_SCHEMA,request_id:requestId,tool_id:TOOL_ID,tool:'iNaiHR',role:'ASSOCIATIVE_CONTEXT',status:'BRIDGE_PACKET_READY_OPTIONAL',goldprompt_receipt:goldpromptReceipt,packet,may_be_ignored:true,authority_delta:0,mass_effect_budget_delta:0,world_effect_requested:false,source_mutation_allowed:false,network_used_by_tool:false};
   }
   if(operation!=='SYNTH_LOCAL') fail('INAIHR_HABITAT_OPERATION_UNSUPPORTED');
   const lang=['en','ua','ru'].includes(request.lang)?request.lang:'en';
@@ -80,6 +90,7 @@ function handle(request){
     tool:'iNaiHR',
     role:'ASSOCIATIVE_CONTEXT',
     status:'SYNTH_READY_OPTIONAL',
+    goldprompt_receipt:goldpromptReceipt,
     synth_mode:'LOCAL_SEMANTIC_SYNTH',
     parent_label:String(request.parent_label||'').slice(0,240),
     concepts,
@@ -94,4 +105,4 @@ function handle(request){
 }
 function runCli(){let raw='';process.stdin.setEncoding('utf8');process.stdin.on('data',c=>raw+=c);process.stdin.on('end',()=>{try{process.stdout.write(JSON.stringify(handle(JSON.parse(raw||'{}')))+'\n');}catch(err){process.stderr.write(JSON.stringify({schema:'janus.habitat.inaihr.error.v1',status:'REJECTED',error:String(err&&(err.code||err.message)||'UNKNOWN')})+'\n');process.exitCode=2;}});}
 if(require.main===module)runCli();
-module.exports=Object.freeze({REQUEST_SCHEMA,RESPONSE_SCHEMA,TOOL_ID,cleanRecords,synthLocal,handle});
+module.exports=Object.freeze({REQUEST_SCHEMA,RESPONSE_SCHEMA,TOOL_ID,cleanRecords,synthLocal,buildGoldPromptReceipt,handle});
