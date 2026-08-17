@@ -9,37 +9,21 @@ const apply = require(path.join('..', 'demihead-apply.js'));
 function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
-
-function clone(value) {
-  return JSON.parse(JSON.stringify(value));
-}
-
-function enrichedGraph(workspace, metadata, packetId = 'base') {
-  return bridge.buildPacket(provenance.overlayWorkspace(workspace, metadata), {
-    capturedAt: '2026-08-16T10:05:00Z', packetId
-  }).graph;
+function clone(value) { return JSON.parse(JSON.stringify(value)); }
+function enrichedGraph(workspace, metadata) {
+  return bridge.normalizeWorkspace(provenance.overlayWorkspace(workspace, metadata));
 }
 
 async function makeEnvelope(workspace, metadata, overrides = {}) {
-  const graph = enrichedGraph(workspace, metadata, 'inaihr-apply-test-base');
+  const graph = enrichedGraph(workspace, metadata);
   const proposal = {
     schema: apply.PROPOSAL_SCHEMA,
     proposal_id: 'proposal-inaihr-test-0001',
     created_at: '2026-08-16T10:05:00Z',
     target: {hemisphere: 'RIGHT_INAIHR', repository: 'Hawkar-usls/iNaiHR'},
     base_graph_sha256: await apply.sha256Json(graph),
-    operation: {
-      type: 'ADD_NODE',
-      node: {id: 'dh-node-inaihr-test-0001', label: 'Candidate association', origin: 'SYSTEM'}
-    },
-    control: {
-      auto_apply: false,
-      requires_explicit_local_accept: true,
-      direct_cross_hemisphere_write: false,
-      external_effect_permitted: false,
-      authority_delta: 0,
-      mass_effect_budget_delta: 0
-    }
+    operation: { type: 'ADD_NODE', node: {id: 'dh-node-inaihr-test-0001', label: 'Candidate association', origin: 'SYSTEM'} },
+    control: { auto_apply: false, requires_explicit_local_accept: true, direct_cross_hemisphere_write: false, external_effect_permitted: false, authority_delta: 0, mass_effect_budget_delta: 0 }
   };
   if (overrides.target) proposal.target = overrides.target;
   if (overrides.control) proposal.control = overrides.control;
@@ -89,9 +73,6 @@ async function main() {
   assert(enrichedAdded.demiheadProposalId === envelope.proposal.proposal_id, 'sidecar proposal id overlay lost');
   assert(enrichedAdded.demiheadProposalSha256 === envelope.proposal_sha256, 'sidecar proposal hash overlay lost');
 
-  // Simulate the existing iNaiHR application's narrow saveData serializer. The
-  // graph keeps the node while the independent sidecar metadata restores its
-  // provenance on the next DemiHead read.
   const sanitizedWorkspace = {
     nodes: prepared.workspace.nodes.map((node) => ({id:node.id,label:node.label,x:node.x,y:node.y,isAI:!!node.isAI})),
     links: prepared.workspace.links.map((link) => ({source:link.source.id||link.source,target:link.target.id||link.target}))
@@ -100,12 +81,11 @@ async function main() {
   const restoredNode = restoredAfterAppSave.nodes.find((node) => node.id === added.id);
   assert(restoredNode && restoredNode.origin === 'SYSTEM', 'proposal provenance must survive existing app serializer via sidecar metadata');
 
-  // Stale/orphan metadata cannot create a graph node by itself.
   const noNodeWorkspace = {nodes:[{id:1,label:'Origin',x:0,y:0,isAI:false}],links:[]};
   const orphanOverlay = provenance.overlayWorkspace(noNodeWorkspace, prepared.metadata);
   assert(!orphanOverlay.nodes.some((node) => node.id === added.id), 'metadata must never create a missing graph node');
 
-  const afterGraph = enrichedGraph(prepared.workspace, prepared.metadata, 'after');
+  const afterGraph = enrichedGraph(prepared.workspace, prepared.metadata);
   const afterSha = await apply.sha256Json(afterGraph);
   const receipt = apply.buildReceipt({
     proposalId: prepared.proposal_id,
@@ -132,31 +112,22 @@ async function main() {
   const wrongTarget = await makeEnvelope(workspace, metadata, {target:{hemisphere:'LEFT_HRAIN',repository:'Hawkar-usls/Hrain'}});
   await expectRefusal(() => apply.verifyEnvelope(wrongTarget), 'proposal target mismatch');
 
-  const autoApply = await makeEnvelope(workspace, metadata, {control:{
-    auto_apply: true,
-    requires_explicit_local_accept: true,
-    direct_cross_hemisphere_write: false,
-    external_effect_permitted: false,
-    authority_delta: 0,
-    mass_effect_budget_delta: 0
-  }});
+  const autoApply = await makeEnvelope(workspace, metadata, {control:{auto_apply:true,requires_explicit_local_accept:true,direct_cross_hemisphere_write:false,external_effect_permitted:false,authority_delta:0,mass_effect_budget_delta:0}});
   await expectRefusal(() => apply.verifyEnvelope(autoApply), 'proposal control boundary drifted');
 
   const changedWorkspace = clone(workspace);
   changedWorkspace.nodes[0].label = 'Origin changed after proposal';
-  const changedGraph = enrichedGraph(changedWorkspace, metadata, 'changed');
+  const changedGraph = enrichedGraph(changedWorkspace, metadata);
   await expectRefusal(() => apply.prepareAcceptedMutation(changedWorkspace, changedGraph, metadata, provenance, envelope), 'BASE_WORKSPACE_CHANGED_REPROPOSE_REQUIRED');
 
   const duplicateWorkspace = clone(workspace);
   duplicateWorkspace.nodes.push({id:'dh-node-inaihr-test-0001',label:'Already here',x:0,y:0,isAI:false});
   const duplicateEnvelope = await makeEnvelope(duplicateWorkspace, metadata);
-  const duplicateGraph = enrichedGraph(duplicateWorkspace, metadata, 'duplicate');
+  const duplicateGraph = enrichedGraph(duplicateWorkspace, metadata);
   await expectRefusal(() => apply.prepareAcceptedMutation(duplicateWorkspace, duplicateGraph, metadata, provenance, duplicateEnvelope), 'PROPOSED_NODE_ID_ALREADY_EXISTS');
 
   const page = fs.readFileSync(path.join(__dirname, '..', 'demihead-apply.html'), 'utf8');
-  for (const forbidden of ['postMessage(', 'fetch(', 'XMLHttpRequest', 'api.github.com/repos/']) {
-    assert(!page.includes(forbidden), `apply page contains forbidden remote/write channel: ${forbidden}`);
-  }
+  for (const forbidden of ['postMessage(', 'fetch(', 'XMLHttpRequest', 'api.github.com/repos/']) assert(!page.includes(forbidden), `apply page contains forbidden remote/write channel: ${forbidden}`);
   assert((page.match(/localStorage\.setItem/g) || []).length === 2, 'iNaiHR apply page must contain exactly metadata+workspace writes');
   const metaWrite = 'localStorage.setItem(provenance.META_KEY, JSON.stringify(prepared.metadata))';
   const graphWrite = 'localStorage.setItem(apply.STORAGE_KEY, JSON.stringify(prepared.workspace))';
@@ -174,6 +145,7 @@ async function main() {
   const sidecar = fs.readFileSync(path.join(__dirname, '..', 'demihead.html'), 'utf8');
   assert(sidecar.includes('provenance.overlayWorkspace(workspace, metadata)'), 'read-only sidecar must overlay proposal provenance');
   assert(sidecar.includes('LOCAL_METADATA != TRUSTED_ATTESTATION'), 'sidecar metadata claim ceiling missing');
+  assert(sidecar.includes('BROWSER_EXPORT != RUNTIME_ATTESTATION'), 'browser/runtime proof boundary missing');
   assert(!sidecar.includes('localStorage.setItem'), 'read-only sidecar must remain write-free');
 
   console.log('INAIHR_DEMIHEAD_LOCAL_ACCEPT_GATE=PASS');
