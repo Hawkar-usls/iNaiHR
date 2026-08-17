@@ -56,11 +56,8 @@ function synthLocal(records,lang,maxConcepts){
     sourcePaths:rs.slice(0,10).map(r=>r.path)
   }));
 }
-function buildGoldPromptReceipt(request){
-  const sourceRevision=typeof request.source_revision==='string'
-    ? request.source_revision
-    : (process.env.GITHUB_SHA||process.env.JANUS_SOURCE_REVISION||null);
-  const receipt=goldprompt.buildReceipt({sourceRevision});
+function buildGoldPromptReceipt(){
+  const receipt=goldprompt.buildRuntimeReceipt();
   if(!goldprompt.verifyReceipt(receipt)) fail('INAIHR_GOLDPROMPT_RECEIPT_SELF_VERIFY_FAILED');
   return receipt;
 }
@@ -69,13 +66,16 @@ function handle(request){
   if(request.schema!==REQUEST_SCHEMA) fail('INAIHR_HABITAT_REQUEST_SCHEMA_MISMATCH');
   const requestId=String(request.request_id||'');
   if(!REQUEST_ID_RE.test(requestId)) fail('INAIHR_HABITAT_REQUEST_ID_INVALID');
+  if(Object.prototype.hasOwnProperty.call(request,'source_revision')) fail('INAIHR_CALLER_SOURCE_REVISION_FORBIDDEN');
   const operation=String(request.operation||'');
-  const goldpromptReceipt=buildGoldPromptReceipt(request);
+  if(operation!=='BRIDGE_PACKET'&&operation!=='SYNTH_LOCAL') fail('INAIHR_HABITAT_OPERATION_UNSUPPORTED');
+
+  // Runtime provenance is resolved only from process-level trusted metadata.
+  const goldpromptReceipt=buildGoldPromptReceipt();
   if(operation==='BRIDGE_PACKET'){
     const packet=bridge.buildPacket(request.workspace||{}, {packetId:`habitat-inaihr-${requestId}`,capturedAt:request.captured_at||new Date().toISOString(),sourceRevision:goldpromptReceipt.source_revision});
     return {schema:RESPONSE_SCHEMA,request_id:requestId,tool_id:TOOL_ID,tool:'iNaiHR',role:'ASSOCIATIVE_CONTEXT',status:'BRIDGE_PACKET_READY_OPTIONAL',goldprompt_receipt:goldpromptReceipt,packet,may_be_ignored:true,authority_delta:0,mass_effect_budget_delta:0,world_effect_requested:false,source_mutation_allowed:false,network_used_by_tool:false};
   }
-  if(operation!=='SYNTH_LOCAL') fail('INAIHR_HABITAT_OPERATION_UNSUPPORTED');
   const lang=['en','ua','ru'].includes(request.lang)?request.lang:'en';
   const max=Math.max(2,Math.min(6,Number.isInteger(request.max_concepts)?request.max_concepts:6));
   const records=cleanRecords(request.records);
