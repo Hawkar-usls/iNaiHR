@@ -2,6 +2,7 @@
 const assert=require('assert');
 const tool=require('../habitat-tool.js');
 const goldprompt=require('../goldprompt-handshake.js');
+const intent=require('../intent-handoff.js');
 
 const TEST_SHA='b'.repeat(40);
 process.env.JANUS_SOURCE_REVISION=process.env.GITHUB_SHA||TEST_SHA;
@@ -11,10 +12,31 @@ assert.equal(goldprompt.STARTUP_CONTRACT_DIGEST,goldprompt.EXPECTED_CONTRACT_DIG
 assert.equal(goldprompt.dependencyManifestDigest(),goldprompt.EXPECTED_DEPENDENCY_MANIFEST_DIGEST);
 assert.equal(goldprompt.STARTUP_DEPENDENCY_MANIFEST_DIGEST,goldprompt.EXPECTED_DEPENDENCY_MANIFEST_DIGEST);
 
+function fixtureAnchor(){
+  const anchor={
+    schema:intent.ANCHOR_SCHEMA,
+    current_turn_digest:'1'.repeat(64),
+    requested_operation:'COMPARE',
+    primary_entities:{OSIRIS:['осирис','осириса'],JESUS_CHRIST:['иисус','христос','христа']},
+    must_answer_points:['Compare Osiris restoration with Christ resurrection','Distinguish resurrection from Second Coming'],
+    required_answer_evidence:[['осирис','осириса'],['иисус','христос'],['воскрес','resurrection'],['второе пришествие','second coming']],
+    operation_markers:['сравн','различ','сход'],
+    optional_association_markers:['bd101','janus'],
+    explicit_constraints:[],
+    allow_anaphoric_continuation:false,
+    context_priority:Object.keys(intent.CONTEXT_TIERS).map(k=>intent.CONTEXT_TIERS[k])
+  };
+  anchor.intent_id=intent.sha256(anchor);
+  return anchor;
+}
+const intentAnchor=fixtureAnchor();
+assert.equal(intent.verifyAnchor(intentAnchor),true);
+
 const req={
   schema:tool.REQUEST_SCHEMA,
   request_id:'HABITAT-INAIHR-0001',
   operation:'SYNTH_LOCAL',
+  intent_anchor:intentAnchor,
   lang:'en',
   parent_label:'Test parent',
   records:[
@@ -32,11 +54,14 @@ assert.equal(response.tool_id,'JANUS.INAIHR.SYNTH.LOCAL');
 assert.equal(response.exact_source_path_grounding,true);
 assert.equal(response.source_mutation_allowed,false);
 assert.equal(response.network_used_by_tool,false);
+assert.deepEqual(response.intent_anchor,intentAnchor);
+assert.equal(response.intent_handoff.intent_id,intentAnchor.intent_id);
+assert.equal(response.intent_handoff.current_turn_digest,intentAnchor.current_turn_digest);
+assert.equal(response.intent_handoff.requested_operation,intentAnchor.requested_operation);
+assert.equal(response.intent_handoff.face_id,'RIGHT_INAIHR');
+assert.equal(intent.verifyHandoff(intentAnchor,response.intent_handoff,'RIGHT_INAIHR'),true);
 const allowed=new Set(req.records.map(r=>r.path));
-for(const c of response.concepts){
-  assert.ok(c.sourcePaths.length>0);
-  for(const p of c.sourcePaths) assert.ok(allowed.has(p));
-}
+for(const c of response.concepts){assert.ok(c.sourcePaths.length>0);for(const p of c.sourcePaths) assert.ok(allowed.has(p));}
 const receipt=response.goldprompt_receipt;
 assert.equal(receipt.schema,goldprompt.RECEIPT_SCHEMA);
 assert.equal(receipt.face_id,'RIGHT_INAIHR');
@@ -62,14 +87,19 @@ assert.throws(()=>goldprompt.resolveRuntimeSourceRevision({}),/TRUSTED_SOURCE_RE
 assert.throws(()=>goldprompt.resolveRuntimeSourceRevision({JANUS_SOURCE_REVISION:'TEST-REV'}),/JANUS_SOURCE_REVISION_INVALID/);
 
 assert.throws(()=>tool.handle({...req,request_id:'HABITAT-INAIHR-0002',source_revision:'c'.repeat(40)}),/CALLER_SOURCE_REVISION_FORBIDDEN/);
+assert.throws(()=>tool.handle({...req,request_id:'HABITAT-INAIHR-0006',intent_anchor:undefined}),/INTENT_ANCHOR_REQUIRED_OR_INVALID/);
+const tamperedIntent=JSON.parse(JSON.stringify(intentAnchor));tamperedIntent.requested_operation='SUMMARIZE';
+assert.throws(()=>tool.handle({...req,request_id:'HABITAT-INAIHR-0007',intent_anchor:tamperedIntent}),/INTENT_ANCHOR_REQUIRED_OR_INVALID/);
 assert.throws(()=>tool.handle({...req,request_id:'HABITAT-INAIHR-0003',records:[{path:'bad.path',value:'x'}]}),/SOURCE_PATH_INVALID/);
 assert.throws(()=>tool.handle({...req,request_id:'HABITAT-INAIHR-0004',records:[{path:'$.a',value:'x'},{path:'$.a',value:'y'}]}),/DUPLICATE_SOURCE_PATH/);
 
-const bridge=tool.handle({schema:tool.REQUEST_SCHEMA,request_id:'HABITAT-INAIHR-0005',operation:'BRIDGE_PACKET',workspace:{nodes:[{id:'a',label:'A'}],links:[]}});
+const bridge=tool.handle({schema:tool.REQUEST_SCHEMA,request_id:'HABITAT-INAIHR-0005',operation:'BRIDGE_PACKET',intent_anchor:intentAnchor,workspace:{nodes:[{id:'a',label:'A'}],links:[]}});
 assert.equal(bridge.packet.schema,'janus.demihead.hemisphere_packet.v2');
 assert.equal(bridge.packet.source.source_revision,bridge.goldprompt_receipt.source_revision);
 assert.equal(bridge.packet.source.goldprompt_receipt_sha256,bridge.goldprompt_receipt.receipt_sha256);
 assert.deepEqual(bridge.packet.goldprompt_receipt,bridge.goldprompt_receipt);
+assert.equal(bridge.intent_handoff.intent_id,intentAnchor.intent_id);
+assert.equal(intent.verifyHandoff(intentAnchor,bridge.intent_handoff,'RIGHT_INAIHR'),true);
 
 console.log('INAIHR_HABITAT_TOOL=PASS');
 console.log('INAIHR_GOLDPROMPT_HANDSHAKE_V1_1=PASS');
@@ -77,6 +107,9 @@ console.log('INAIHR_GOLDPROMPT_TRANSITIVE_PIN_BINDING=PASS');
 console.log('INAIHR_PACKET_EMBEDS_UPSTREAM_RECEIPT=PASS');
 console.log('INAIHR_GOLDPROMPT_CALLER_REVISION_OVERRIDE=REJECTED');
 console.log('INAIHR_GOLDPROMPT_FULL_POLICY_VERIFY=PASS');
+console.log('INAIHR_INTENT_LOCK=PASS');
+console.log('INAIHR_INTENT_HANDOFF_CONTINUITY=PASS');
+console.log('INAIHR_INTENT_REINTERPRETATION=REJECTED');
 console.log('INAIHR_EXACT_SOURCEPATH_GROUNDING=PASS');
 console.log('INAIHR_SOURCE_MUTATION=FALSE');
 console.log('INAIHR_NETWORK_USED=FALSE');
