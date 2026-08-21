@@ -1,0 +1,39 @@
+{
+  "schema": "janus.inaihr.deep_analysis_5d_link.v1",
+  "source_repository": "Hawkar-usls/iNaiHR",
+  "hemisphere": "RIGHT_INAIHR",
+  "role": "ASSOCIATIVE_CONTEXT",
+  "target_repository": "Hawkar-usls/-Terminal-for-Janus",
+  "target_contract": "contracts/JANUS_JSON_5D_DEEP_ANALYSIS_PROTOCOL-v1.0.json",
+  "accepted_axis": "D4_ASSOCIATIVE",
+  "workspace_shape": {
+    "nodes": "[{id,label,origin,isAI?}]",
+    "links": "[{source,target}]"
+  },
+  "deep_operations": [
+    "SEMANTIC_EXPANSION",
+    "CROSS_DOMAIN_ANALOGY_PROPOSAL",
+    "COUNTEREXAMPLE_PROPOSAL",
+    "COUNTERHYPOTHESIS_PROPOSAL",
+    "LATENT_RELATION_PROPOSAL",
+    "GRAPH_PATCH_PROPOSAL"
+  ],
+  "graph_growth": {
+    "may_propose_non_tail_node": true,
+    "may_propose_splice": true,
+    "may_propose_branch": true,
+    "may_propose_cross_link": true,
+    "source_mutation": false,
+    "patch_requires_anchor_reason_provenance": true
+  },
+  "control": {
+    "read_only_transfer": true,
+    "direct_cross_hemisphere_mutation": false,
+    "automatic_graph_merge": false,
+    "authority_delta": 0,
+    "mass_effect_budget_delta": 0,
+    "association_is_evidence": false,
+    "remote_ai_output_is_independent_witness": false,
+    "hemisphere_agreement_is_truth": false
+  }
+}
