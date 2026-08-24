@@ -1,0 +1,16 @@
+{
+  "schema": "janus.organism.member_link.v1",
+  "organism_id": "JANUS_FEDERATED_ORGANISM",
+  "canonical_manifest": "Hawkar-usls/Janus:organism/JANUS_ORGANISM_v1.json",
+  "member_repository": "Hawkar-usls/iNaiHR",
+  "organ_key": "right_association",
+  "class": "CORE",
+  "role": "ASSOCIATIVE_SEMANTIC_HEMISPHERE",
+  "consumes": ["HUMAN_PROMPT", "SEMANTIC_CONTEXT"],
+  "emits": ["SEMANTIC_GRAPH", "ASSOCIATION", "HEMISPHERE_PACKET"],
+  "routes_to": ["guardian_cortex", "hypothesis_metabolism"],
+  "authority": "ASSOCIATION_ONLY",
+  "authority_delta": 0,
+  "cross_repo_write_default": "DENY",
+  "claim_boundary": ["ASSOCIATION != EVIDENCE", "REMOTE_AI_OUTPUT != INDEPENDENT_WITNESS", "BOTH_HEMISPHERES_AGREE != TRUTH"]
+}
