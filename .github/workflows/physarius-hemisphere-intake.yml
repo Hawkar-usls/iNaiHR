@@ -1,0 +1,41 @@
+name: RIGHT_INAIHR Physarius Intake
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'physarius-intake.js'
+      - 'physarius-internal-intake.js'
+      - 'hemispheric-commissure.js'
+      - '.github/workflows/physarius-hemisphere-intake.yml'
+permissions:
+  contents: read
+jobs:
+  verify-right-intake:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Load external and internal Physarius graphs
+        run: |
+          node - <<'NODE'
+          const assert=require('node:assert/strict');
+          const ext=require('./physarius-intake.js');
+          const internal=require('./physarius-internal-intake.js');
+          const commissure=require('./hemispheric-commissure.js');
+          (async()=>{
+            const e=await ext.load();
+            const i=await internal.load();
+            assert.equal(e.hemisphere,'RIGHT_INAIHR');
+            assert.equal(e.role,'ASSOCIATIVE_CONTEXT');
+            assert.equal(e.contentExposed,false);
+            assert.equal(i.hemisphere,'RIGHT_INAIHR');
+            assert.equal(i.role,'ASSOCIATIVE_CONTEXT');
+            assert.equal(i.contentExposed,false);
+            assert.ok(i.nodes.some(n=>n.label==='Hawkar-usls/janus-meta-registry'));
+            assert.ok(i.nodes.some(n=>n.label==='Hawkar-usls/janus-lapis'));
+            assert.ok(i.nodes.some(n=>n.label==='Hawkar-usls/iNaiHR'));
+            assert.equal(commissure.LOCAL,'RIGHT_INAIHR');
+            assert.equal(commissure.PEER,'LEFT_HRAIN');
+            console.log('RIGHT_INAIHR_PHYSARIUS_INTAKE_PASS');
+            console.log(JSON.stringify({external:{nodes:e.nodes.length,links:e.links.length,sha:e.graphSha256},internal:{nodes:i.nodes.length,links:i.links.length,sha:i.graphSha256}},null,2));
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
