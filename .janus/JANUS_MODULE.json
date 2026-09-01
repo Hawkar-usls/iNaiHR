@@ -1,0 +1,38 @@
+{
+  "schema": "janus.repository_module.descriptor.v1",
+  "module_id": "RIGHT_INAIHR",
+  "repository": "Hawkar-usls/iNaiHR",
+  "default_ref": "main",
+  "role": "ASSOCIATIVE_CONTEXT",
+  "organ_channel": "ASSOCIATIVE_CONTEXT",
+  "scout_agent_id": "SCOUT_INAIHR_03",
+  "actuator": {
+    "enabled": true,
+    "authority_lane": "BRANCH_AND_VERIFY",
+    "proposal_source_repository": "Hawkar-usls/janus-meta-registry",
+    "proposal_source_branch": "janus/native-self-memory-modular-organism-v1",
+    "proposal_directory": "JANUS/PATCHES/PROPOSALS",
+    "branch_prefix": "janus-self/",
+    "max_files": 3,
+    "max_changed_bytes": 50000,
+    "max_attempts": 2,
+    "direct_main_write": false,
+    "autonomous_merge": false
+  },
+  "verification_profiles": {
+    "INTERHEMISPHERE_BRIDGE_TEST": ["node", "tools/test-eye-interhemisphere-bridge.js"]
+  },
+  "forbidden_paths": [
+    ".github/workflows/",
+    ".git/",
+    "secrets/",
+    "credentials/"
+  ],
+  "epistemic_firewalls": [
+    "INAIHR_ASSOCIATION != EVIDENCE",
+    "BICAMERAL_AGREEMENT != TRUTH",
+    "MODEL_PATCH_PROPOSAL != VERIFIED_FIX",
+    "NO_VERIFY => NO_PASS"
+  ],
+  "bound_from_commit": "9ef156682d80706b0bd6be1c60e94f7a8b038d78"
+}
