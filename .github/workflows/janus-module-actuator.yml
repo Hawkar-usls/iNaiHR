@@ -94,8 +94,10 @@ jobs:
           print(f'JANUS_MODULE_PATCH_CONTRACT=PASS bytes={total} files={len(files)}')
           PY
 
-      - name: Apply proposal on isolated branch
+      - name: Apply proposal on isolated branch or recognize verified replay
+        id: apply
         if: steps.select.outputs.has_proposal == 'true'
+        shell: bash
         run: |
           PROPOSAL_ID='${{ steps.select.outputs.proposal_id }}'
           BRANCH="janus-self/${PROPOSAL_ID}"
@@ -103,9 +105,28 @@ jobs:
             echo 'JANUS_MODULE_REPLAY_BRANCH_ALREADY_EXISTS'
             git fetch origin "$BRANCH"
             git switch -C "$BRANCH" FETCH_HEAD
-            test -f ".janus/receipts/${PROPOSAL_ID}.json"
+            RECEIPT=".janus/receipts/${PROPOSAL_ID}.json"
+            test -f "$RECEIPT"
+            python - <<'PY'
+          import json, os
+          from pathlib import Path
+          proposal=json.loads(Path('runtime/selected-proposal.json').read_text())
+          receipt=json.loads((Path('.janus/receipts')/f"{proposal['proposal_id']}.json").read_text())
+          if receipt.get('schema')!='janus.module_actuator.receipt.v1': raise SystemExit('REPLAY_RECEIPT_SCHEMA_REJECTED')
+          if receipt.get('proposal_id')!=proposal.get('proposal_id'): raise SystemExit('REPLAY_RECEIPT_PROPOSAL_REJECTED')
+          if receipt.get('target_repository')!=os.environ['GITHUB_REPOSITORY']: raise SystemExit('REPLAY_RECEIPT_TARGET_REJECTED')
+          if receipt.get('base_commit')!=(proposal.get('target') or {}).get('expected_target_commit'): raise SystemExit('REPLAY_RECEIPT_BASE_REJECTED')
+          if receipt.get('status')!='VERIFY_PASS': raise SystemExit('REPLAY_RECEIPT_NOT_PASS')
+          if receipt.get('main_mutated') is not False or receipt.get('autonomous_merge') is not False: raise SystemExit('REPLAY_RECEIPT_AUTHORITY_REJECTED')
+          if not receipt.get('patch_commit') or receipt.get('branch')!=f"janus-self/{proposal['proposal_id']}": raise SystemExit('REPLAY_RECEIPT_LINEAGE_REJECTED')
+          print('JANUS_MODULE_VERIFIED_REPLAY=PASS')
+          PY
+            echo 'replay=true' >> "$GITHUB_OUTPUT"
+            echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
             exit 0
           fi
+          echo 'replay=false' >> "$GITHUB_OUTPUT"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
           git switch -c "$BRANCH"
           python - <<'PY'
           import hashlib,json
@@ -130,7 +151,7 @@ jobs:
 
       - name: Verify patch inside organ
         id: verify
-        if: steps.select.outputs.has_proposal == 'true'
+        if: steps.select.outputs.has_proposal == 'true' && steps.apply.outputs.replay != 'true'
         shell: bash
         run: |
           PROFILE=$(python -c "import json;print(json.load(open('runtime/selected-proposal.json'))['verification_profile'])")
@@ -146,7 +167,7 @@ jobs:
           echo 'JANUS_MODULE_VERIFY=PASS'
 
       - name: Seal actuator receipt and push branch
-        if: steps.select.outputs.has_proposal == 'true' && steps.verify.outcome == 'success'
+        if: steps.select.outputs.has_proposal == 'true' && steps.apply.outputs.replay != 'true' && steps.verify.outcome == 'success'
         run: |
           python - <<'PY'
           import hashlib,json,os
@@ -173,3 +194,8 @@ jobs:
           git commit -m "JANUS module receipt ${{ steps.select.outputs.proposal_id }}: VERIFY_PASS"
           git push origin HEAD:"$JANUS_BRANCH"
           echo 'JANUS_MODULE_BRANCH_AND_VERIFY=PASS'
+
+      - name: Accept already verified replay without new mutation
+        if: steps.select.outputs.has_proposal == 'true' && steps.apply.outputs.replay == 'true'
+        run: |
+          echo 'JANUS_MODULE_EXACTLY_ONCE_REPLAY=PASS'
