@@ -1,0 +1,80 @@
+name: iNaiHR Autonomous Semantic Evolution
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 */3 * * *'
+  push:
+    branches: [main, feature/janus-durable-semantic-evolution-v2]
+    paths:
+      - 'tools/janus_autonomous_semantic_evolution.py'
+      - 'tests/test_janus_autonomous_semantic_evolution.py'
+      - '.janus/JANUS_SEMANTIC_EVOLUTION_V2.json'
+      - '.github/workflows/inaihr-autonomous-semantic-evolution.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: inaihr-autonomous-semantic-evolution
+  cancel-in-progress: false
+
+jobs:
+  synthesize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile and adversarial unit gates
+        run: |
+          python -m py_compile tools/janus_autonomous_semantic_evolution.py
+          python -m unittest tests.test_janus_autonomous_semantic_evolution -v
+      - name: Fetch authoritative read-only HRaiN registry projection
+        run: |
+          mkdir -p runtime
+          curl --fail --location --retry 3 --max-time 30 \
+            'https://hawkar-usls.github.io/janus-meta-registry/assets/hrain-registry-index.json' \
+            -o runtime/hrain-registry-index.json
+      - name: Run JANUS semantic evolution
+        run: |
+          python tools/janus_autonomous_semantic_evolution.py \
+            --registry runtime/hrain-registry-index.json \
+            --state janus-synth/state/JANUS_SYNTH_LATEST.json
+      - name: Semantic authority firewall
+        run: |
+          python - <<'PY'
+          import json
+          p='janus-synth/state/JANUS_SYNTH_LATEST.json'
+          x=json.load(open(p,encoding='utf-8'))
+          assert x['schema']=='janus.inaihr.semantic_evolution.v2'
+          assert x['limits']['max_depth']==4
+          assert x['attention']['attention_weight_is_evidence_weight'] is False
+          for c in x['candidates']:
+              assert c['authority']['truth'] is False
+              assert c['authority']['proof'] is False
+              assert c['authority']['mutation'] is False
+              assert c['authority']['automatic_promotion'] is False
+              assert 1 <= c['depth'] <= 4
+          print('JANUS_SEMANTIC_EVOLUTION_FIREWALL=PASS')
+          PY
+      - name: Persist candidate evolution state only when changed
+        run: |
+          if git diff --quiet -- janus-synth/state/JANUS_SYNTH_LATEST.json; then
+            echo 'JANUS_SYNTH_STATE_UNCHANGED=PASS'
+            exit 0
+          fi
+          git config user.name 'janus-semantic-evolution'
+          git config user.email 'janus-semantic-evolution@users.noreply.github.com'
+          git add janus-synth/state/JANUS_SYNTH_LATEST.json
+          git commit -m 'JANUS SYNTH: preserve autonomous candidate meaning evolution [skip ci]'
+          git push
+      - name: Upload immutable run witness
+        uses: actions/upload-artifact@v4
+        with:
+          name: janus-semantic-evolution-${{ github.run_id }}
+          path: janus-synth/state/JANUS_SYNTH_LATEST.json
+          retention-days: 90
