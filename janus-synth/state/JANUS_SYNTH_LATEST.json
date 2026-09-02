@@ -2,11 +2,11 @@
   "attention": {
     "attention_weight_is_evidence_weight": false,
     "focus_age": 1,
-    "focus_key": "lineage:CONTINUOUS-CERTIFICATE-SUMMARY",
+    "focus_key": "path:EYE/r4_7_rt",
     "no_fixed_hypothesis_center": true,
     "policy": "MIGRATING_FOCUS_WITH_REPLAY_FATIGUE_AND_LINEAGE_DIVERSITY"
   },
-  "candidate_count": 8,
+  "candidate_count": 12,
   "candidates": [
     {
       "attention_score": 31.5,
@@ -527,15 +527,275 @@
       },
       "signature": "0d3b6bf97e7799c36de62b82ec2daf15ab2211c5b876d06e5bae1168bcb9d99b",
       "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 26.0,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-02T21:08:10.732657+00:00",
+      "depth": 1,
+      "focus_key": "path:EYE/r4_7_rt",
+      "id": "syn:23af100342de6f8fbabc",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S1 · validate retro tahyon competing model ↔ Retro-Tahyon competing-model minimum-witness b / retro tahyon com",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "a8408d93113f464582ff1567e7e2bd76494f13b0",
+          "source_records": [
+            {
+              "id": "obj:62c95f4541b303a11bd2",
+              "lineage_key": "VALIDATE-RETRO-TAHYON-COMPETING-MODEL",
+              "path": "EYE/r4_7_rt/validate_retro_tahyon_competing_model.py",
+              "sha256": "45591b4d258b18f5af3c12038642ab2811a48f6bdce4c3fe69e0caab8de86263",
+              "status": null
+            },
+            {
+              "id": "obj:0eb0128a63d606a75bd4",
+              "lineage_key": "RETRO-TAHYON-COMPETING-MODEL-BENCHMARK",
+              "path": "EYE/r4_7_rt/retro_tahyon_competing_model_benchmark.json",
+              "sha256": "a0acaffb922febab6d1c781e5f37ea50e4c87804b34ace4583ec7a7e3f24ff74",
+              "status": "IDENTIFIABILITY_CANDIDATE"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": null,
+          "source_ids": [
+            "obj:62c95f4541b303a11bd2",
+            "obj:0eb0128a63d606a75bd4"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when validate retro tahyon competing model and Retro-Tahyon competing-model minimum-witness b / retro tahyon competing  are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "f651d1b24fc41d4c1623ee9e1de55b143db18a7a0810fa94e8173796c08a3357",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 26.0,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-02T21:08:10.732808+00:00",
+      "depth": 1,
+      "focus_key": "pivot:surface:other",
+      "id": "syn:3ca8ef3b445662378cdc",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S1 · Retro-Tahyon competing-model benchmark for min / EYE R4.7 RT RETROCAUSAL ↔ validate retro tahyon competin",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "a8408d93113f464582ff1567e7e2bd76494f13b0",
+          "source_records": [
+            {
+              "id": "obj:d6c6bd4dbce382469f57",
+              "lineage_key": "EYE-R4-7-RT-RETROCAUSAL-COMPETING-MODEL-BENCHMARK",
+              "path": "data/EYE-R4.7-RT-RETROCAUSAL-COMPETING-MODEL-BENCHMARK-2026-09-02-v1.0.json",
+              "sha256": "f929077d4d5eaa3a6d9039401998abdb402215540afd1d430ad69fa0b700eadb",
+              "status": "ACTIVE_EXECUTABLE_BENCHMARK_CONTRACT"
+            },
+            {
+              "id": "obj:62c95f4541b303a11bd2",
+              "lineage_key": "VALIDATE-RETRO-TAHYON-COMPETING-MODEL",
+              "path": "EYE/r4_7_rt/validate_retro_tahyon_competing_model.py",
+              "sha256": "45591b4d258b18f5af3c12038642ab2811a48f6bdce4c3fe69e0caab8de86263",
+              "status": null
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": null,
+          "source_ids": [
+            "obj:d6c6bd4dbce382469f57",
+            "obj:62c95f4541b303a11bd2"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when Retro-Tahyon competing-model benchmark for min / EYE R4.7 RT RETROCAUSAL and validate retro tahyon competing model are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "3dcaeaecc83cbd73a486348fbf90dd8f29bf84fcd5c9a79443866837e3dc75ca",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 23.0,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-02T21:08:10.732961+00:00",
+      "depth": 1,
+      "focus_key": "path:EYE/generated",
+      "id": "syn:7cc6e44081766c6ad579",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S1 · JANUS-EYE-META-REGISTRY-TRAINING-RECEIPT / EYE TRAINING RECEIPT ↔ janus.eye.trump_routing_index.v1 / EYE ",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "a8408d93113f464582ff1567e7e2bd76494f13b0",
+          "source_records": [
+            {
+              "id": "obj:ec1fceb09f9b1ad53e10",
+              "lineage_key": "EYE-TRAINING-RECEIPT",
+              "path": "EYE/generated/EYE-TRAINING-RECEIPT.json",
+              "sha256": "fde7738d75a474ec60b7013a5246f8ba02bc36243b4458aea9026359f7353458",
+              "status": "PASS"
+            },
+            {
+              "id": "obj:7232b2236989756efdb2",
+              "lineage_key": "EYE-TRUMP-ROUTING-INDEX",
+              "path": "EYE/generated/EYE-TRUMP-ROUTING-INDEX.json",
+              "sha256": "b44902c27f294ba20b8c6c41fd2788f95a74c00f56460759d8dcb05ea1949eca",
+              "status": "DERIVATIVE_ADVISORY_ROUTING_INDEX"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": null,
+          "source_ids": [
+            "obj:ec1fceb09f9b1ad53e10",
+            "obj:7232b2236989756efdb2"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when JANUS-EYE-META-REGISTRY-TRAINING-RECEIPT / EYE TRAINING RECEIPT and janus.eye.trump_routing_index.v1 / EYE TRUMP ROUTING INDEX are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "0ad84d740c338fc796761fd9063fdf4a6d88042882d94b4594e105e1deb1b944",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 23.0,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-02T21:08:10.733083+00:00",
+      "depth": 1,
+      "focus_key": "path:EYE/r3",
+      "id": "syn:c38c93844a36dc57f230",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S1 · JANUS-EYE-R3-RECEIPT / EYE R3 RECEIPT ↔ JANUS-EYE-R3-MACHINE-CATALOG / EYE R3 MACHINE CATALOG",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "a8408d93113f464582ff1567e7e2bd76494f13b0",
+          "source_records": [
+            {
+              "id": "obj:d816349e6c74f0e8fa16",
+              "lineage_key": "EYE-R3-RECEIPT",
+              "path": "EYE/r3/generated/EYE-R3-RECEIPT.json",
+              "sha256": "d55927f04ca5e12c32787dccaeb3a5f19f817df22f68cb72f9f62a92fe33eef7",
+              "status": "PASS"
+            },
+            {
+              "id": "obj:1dd46a8cee37337793f8",
+              "lineage_key": "EYE-R3-MACHINE-CATALOG",
+              "path": "EYE/r3/generated/EYE-R3-MACHINE-CATALOG.json",
+              "sha256": "47eb110ca37575dd953d6c04ce085af0a0b2654b3a504430cf241f0a03a1d19f",
+              "status": "DESCRIPTIVE_ORDERED_MACHINE_MAP__NOT_DISCOVERY"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": null,
+          "source_ids": [
+            "obj:d816349e6c74f0e8fa16",
+            "obj:1dd46a8cee37337793f8"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when JANUS-EYE-R3-RECEIPT / EYE R3 RECEIPT and JANUS-EYE-R3-MACHINE-CATALOG / EYE R3 MACHINE CATALOG are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "03f50fc8d90064c8957ef945f5ca1d6693ebbd65a4d1b5667194861e4f4bcfca",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
     }
   ],
   "created_this_run": [
-    "syn:82abdebead1f7e1d6293",
-    "syn:7becac8fa63334d85030",
-    "syn:8cba704dd3db17b18511",
-    "syn:a447a3fe3f37cf38d642"
+    "syn:23af100342de6f8fbabc",
+    "syn:3ca8ef3b445662378cdc",
+    "syn:7cc6e44081766c6ad579",
+    "syn:c38c93844a36dc57f230"
   ],
-  "generated_at": "2026-09-02T16:31:22.682019+00:00",
+  "generated_at": "2026-09-02T21:08:10.733089+00:00",
   "laws": [
     "EXISTING_LINKS -> FOCUS -> COMPOSE -> CANDIDATE -> CORROBORATE",
     "SYNTHESIS != TRUTH",
@@ -636,15 +896,55 @@
       "signature": "0d3b6bf97e7799c36de62b82ec2daf15ab2211c5b876d06e5bae1168bcb9d99b",
       "source_commit": "4c1382055d1547251380769c0c3ed76070778fa3",
       "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:23af100342de6f8fbabc",
+      "created_at": "2026-09-02T21:08:10.732657+00:00",
+      "focus_key": "path:EYE/r4_7_rt",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "f651d1b24fc41d4c1623ee9e1de55b143db18a7a0810fa94e8173796c08a3357",
+      "source_commit": "a8408d93113f464582ff1567e7e2bd76494f13b0",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:3ca8ef3b445662378cdc",
+      "created_at": "2026-09-02T21:08:10.732808+00:00",
+      "focus_key": "pivot:surface:other",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "3dcaeaecc83cbd73a486348fbf90dd8f29bf84fcd5c9a79443866837e3dc75ca",
+      "source_commit": "a8408d93113f464582ff1567e7e2bd76494f13b0",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:7cc6e44081766c6ad579",
+      "created_at": "2026-09-02T21:08:10.732961+00:00",
+      "focus_key": "path:EYE/generated",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "0ad84d740c338fc796761fd9063fdf4a6d88042882d94b4594e105e1deb1b944",
+      "source_commit": "a8408d93113f464582ff1567e7e2bd76494f13b0",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:c38c93844a36dc57f230",
+      "created_at": "2026-09-02T21:08:10.733083+00:00",
+      "focus_key": "path:EYE/r3",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "03f50fc8d90064c8957ef945f5ca1d6693ebbd65a4d1b5667194861e4f4bcfca",
+      "source_commit": "a8408d93113f464582ff1567e7e2bd76494f13b0",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
     }
   ],
   "registry": {
-    "link_count": 210,
-    "node_count": 211,
+    "link_count": 236,
+    "node_count": 237,
     "repository": "Hawkar-usls/janus-meta-registry",
-    "source_commit": "4c1382055d1547251380769c0c3ed76070778fa3"
+    "source_commit": "a8408d93113f464582ff1567e7e2bd76494f13b0"
   },
   "schema": "janus.inaihr.semantic_evolution.v2",
-  "state_sha256": "ca2c936bcb89544b17eef26f661bbb1b4d85ccc3dabb2c202f62ff65b78c30ca",
+  "state_sha256": "0e12286fd37ddd97b6c05e48da99e340c70339f31eb76ac699d917d8061618a3",
   "status": "ACTIVE_AUTONOMOUS_CANDIDATE_EVOLUTION"
 }
