@@ -63,7 +63,7 @@ jobs:
           PY
       - name: Persist candidate evolution state only when changed
         run: |
-          if git diff --quiet -- janus-synth/state/JANUS_SYNTH_LATEST.json; then
+          if [ -z "$(git status --porcelain -- janus-synth/state/JANUS_SYNTH_LATEST.json)" ]; then
             echo 'JANUS_SYNTH_STATE_UNCHANGED=PASS'
             exit 0
           fi
