@@ -57,6 +57,35 @@ def parent_groups(nodes: list[dict]) -> dict[str, list[dict]]:
     return groups
 
 
+def path_role(node: dict) -> str:
+    p = str(node.get("path") or "")
+    if not p:
+        return ""
+    stem = Path(p).stem
+    stem = re.sub(r"[-_]+", " ", stem)
+    return clean(stem, 38)
+
+
+def node_identity(node: dict) -> str:
+    label = clean(node.get("label"), 46)
+    role = path_role(node)
+    if role and token_set(role) != token_set(label):
+        return clean(f"{label} / {role}", 72)
+    return label or role or str(node.get("id"))
+
+
+def focus_key(a: dict, b: dict, pivot: str) -> str:
+    la = str(a.get("lineageKey") or "")
+    lb = str(b.get("lineageKey") or "")
+    if la and la == lb:
+        return "lineage:" + la
+    pa = str(a.get("path") or "").split("/")[:2]
+    pb = str(b.get("path") or "").split("/")[:2]
+    if pa and pa == pb:
+        return "path:" + "/".join(pa)
+    return "pivot:" + pivot
+
+
 def pair_signature(a: dict, b: dict, pivot: str, source_commit: str, prior_id: str | None = None) -> str:
     ids = sorted([str(a.get("id")), str(b.get("id"))])
     raw = {"ids": ids, "pivot": pivot, "source_commit": source_commit, "prior": prior_id}
@@ -64,18 +93,17 @@ def pair_signature(a: dict, b: dict, pivot: str, source_commit: str, prior_id: s
 
 
 def candidate_label(a: dict, b: dict, depth: int) -> str:
-    la = clean(a.get("label"), 34)
-    lb = clean(b.get("label"), 34)
-    return clean(f"S{depth} · {la} ↔ {lb}", 88)
+    return clean(f"S{depth} · {node_identity(a)} ↔ {node_identity(b)}", 110)
 
 
 def meaning_frame(a: dict, b: dict, pivot_label: str, source_commit: str, prior: dict | None) -> dict:
     lineage = [
-        {"id": a.get("id"), "path": a.get("path"), "status": a.get("status"), "sha256": a.get("sourceSha256")},
-        {"id": b.get("id"), "path": b.get("path"), "status": b.get("status"), "sha256": b.get("sourceSha256")},
+        {"id": a.get("id"), "path": a.get("path"), "status": a.get("status"), "sha256": a.get("sourceSha256"), "lineage_key": a.get("lineageKey")},
+        {"id": b.get("id"), "path": b.get("path"), "status": b.get("status"), "sha256": b.get("sourceSha256"), "lineage_key": b.get("lineageKey")},
     ]
+    ia, ib = node_identity(a), node_identity(b)
     return {
-        "purpose": f"Explore a candidate joint meaning that becomes visible only when {clean(a.get('label'), 72)} and {clean(b.get('label'), 72)} are considered together.",
+        "purpose": f"Explore a candidate joint meaning that becomes visible only when {ia} and {ib} are considered together.",
         "mechanism": f"Existing relation-machine: SOURCE_A -> {clean(pivot_label, 72)} -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
         "evidence": {"registry_source_commit": source_commit, "source_records": lineage, "independent_replication_established": False},
         "boundaries": [
@@ -95,9 +123,11 @@ def meaning_frame(a: dict, b: dict, pivot_label: str, source_commit: str, prior:
 
 
 def score_pair(a: dict, b: dict, group_size: int, focus_penalty: int) -> float:
-    shared = len(token_set(a.get("label")) & token_set(b.get("label")))
+    shared = len(token_set(node_identity(a)) & token_set(node_identity(b)))
     recency = int(bool(a.get("modifiedAt"))) + int(bool(b.get("modifiedAt")))
-    return 10.0 + min(group_size, 12) * 0.5 + shared * 3.0 + recency - focus_penalty
+    lineage_bonus = 4 if a.get("lineageKey") and a.get("lineageKey") == b.get("lineageKey") else 0
+    status_contrast = 2 if a.get("status") != b.get("status") else 0
+    return 10.0 + min(group_size, 12) * 0.5 + shared * 1.5 + recency + lineage_bonus + status_contrast - focus_penalty
 
 
 def build(registry: dict, previous: dict | None) -> dict:
@@ -111,50 +141,57 @@ def build(registry: dict, previous: dict | None) -> dict:
     groups = parent_groups(nodes)
     previous = previous if isinstance(previous, dict) and previous.get("schema") == SCHEMA else None
     candidates = list((previous or {}).get("candidates") or [])[-MAX_CANDIDATES:]
+    prior_candidates = list(candidates)  # only prior-run candidates may seed deeper meaning
     receipts = list((previous or {}).get("receipts") or [])[-256:]
     seen = {str(r.get("signature")) for r in receipts[-FATIGUE_WINDOW:] if r.get("signature")}
-    previous_focus = ((previous or {}).get("attention") or {}).get("focus_parent")
+    previous_focus = ((previous or {}).get("attention") or {}).get("focus_key")
     previous_focus_age = int(((previous or {}).get("attention") or {}).get("focus_age") or 0)
 
     pivot_labels = {str(n.get("id")): clean(n.get("label")) for n in registry.get("nodes", [])}
-    scored: list[tuple[float, str, dict, dict, str]] = []
+    scored: list[tuple[float, str, str, dict, dict, str]] = []
     for pivot, arr in groups.items():
         if len(arr) < 2:
             continue
-        arr = sorted(arr, key=lambda n: (str(n.get("modifiedAt") or ""), str(n.get("id"))), reverse=True)[:18]
-        penalty = min(previous_focus_age * 2, 8) if pivot == previous_focus else 0
+        arr = sorted(arr, key=lambda n: (str(n.get("modifiedAt") or ""), str(n.get("id"))), reverse=True)[:24]
         for i in range(len(arr)):
             for j in range(i + 1, len(arr)):
                 a, b = arr[i], arr[j]
+                if a.get("id") == b.get("id"):
+                    continue
+                fk = focus_key(a, b, pivot)
+                penalty = min(previous_focus_age * 2, 8) if fk == previous_focus else 0
                 sig = pair_signature(a, b, pivot, source_commit)
                 if sig in seen:
                     continue
-                scored.append((score_pair(a, b, len(arr), penalty), pivot, a, b, sig))
-    scored.sort(key=lambda x: (-x[0], x[4]))
+                scored.append((score_pair(a, b, len(arr), penalty), fk, pivot, a, b, sig))
+    scored.sort(key=lambda x: (-x[0], x[1], x[5]))
 
     created: list[dict] = []
     used_signatures: set[str] = set()
-    for rank, (score, pivot, a, b, sig) in enumerate(scored):
+    used_focus_keys: set[str] = set()
+    for score, fk, pivot, a, b, sig in scored:
         if len(created) >= MAX_NEW_PER_RUN:
             break
-        if sig in used_signatures:
+        if sig in used_signatures or fk in used_focus_keys:
             continue
         prior = None
-        # Recursive meaning development: a previous candidate sharing one source may seed a deeper synthesis.
-        for c in reversed(candidates):
+        for c in reversed(prior_candidates):
             if int(c.get("depth") or 1) >= MAX_DEPTH:
                 continue
             src_ids = set(((c.get("meaning") or {}).get("lineage") or {}).get("source_ids") or [])
             if a.get("id") in src_ids or b.get("id") in src_ids:
                 prior = c
                 break
-        depth = min(MAX_DEPTH, (int(prior.get("depth")) + 1) if prior else 1)
+        depth = (int(prior.get("depth")) + 1) if prior else 1
+        if depth > MAX_DEPTH:
+            continue
         evolved_sig = pair_signature(a, b, pivot, source_commit, prior.get("id") if prior else None)
         if evolved_sig in seen or evolved_sig in used_signatures:
             continue
         body = {
             "signature": evolved_sig,
             "source_commit": source_commit,
+            "focus_key": fk,
             "pivot": {"id": pivot, "label": pivot_labels.get(pivot, pivot)},
             "source_ids": [a.get("id"), b.get("id")],
             "prior_candidate_id": prior.get("id") if prior else None,
@@ -167,6 +204,7 @@ def build(registry: dict, previous: dict | None) -> dict:
             "label": candidate_label(a, b, depth),
             "depth": depth,
             "attention_score": round(score, 3),
+            "focus_key": fk,
             "pivot": body["pivot"],
             "meaning": meaning_frame(a, b, pivot_labels.get(pivot, pivot), source_commit, prior),
             "authority": {"truth": False, "proof": False, "causal": False, "mutation": False, "automatic_promotion": False},
@@ -177,21 +215,23 @@ def build(registry: dict, previous: dict | None) -> dict:
         candidates.append(cand)
         created.append(cand)
         used_signatures.add(evolved_sig)
+        used_focus_keys.add(fk)
         receipts.append({
             "schema": "janus.inaihr.semantic_synth_receipt.v2",
             "candidate_id": cid,
             "signature": evolved_sig,
             "source_commit": source_commit,
+            "focus_key": fk,
             "verdict": "PRESERVED_CANDIDATE_ONLY",
             "attention_is_evidence": False,
             "created_at": cand["created_at"],
         })
 
     if created:
-        focus_parent = str(created[0]["pivot"]["id"])
-        focus_age = previous_focus_age + 1 if focus_parent == previous_focus else 1
+        current_focus = str(created[0]["focus_key"])
+        focus_age = previous_focus_age + 1 if current_focus == previous_focus else 1
     else:
-        focus_parent = None
+        current_focus = None
         focus_age = 0
 
     state = {
@@ -200,13 +240,13 @@ def build(registry: dict, previous: dict | None) -> dict:
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "registry": {"repository": registry.get("repository"), "source_commit": source_commit, "node_count": registry.get("nodeCount"), "link_count": registry.get("linkCount")},
         "attention": {
-            "policy": "MIGRATING_FOCUS_WITH_REPLAY_FATIGUE",
-            "focus_parent": focus_parent,
+            "policy": "MIGRATING_FOCUS_WITH_REPLAY_FATIGUE_AND_LINEAGE_DIVERSITY",
+            "focus_key": current_focus,
             "focus_age": focus_age,
             "no_fixed_hypothesis_center": True,
             "attention_weight_is_evidence_weight": False,
         },
-        "limits": {"max_depth": MAX_DEPTH, "max_new_per_run": MAX_NEW_PER_RUN, "fatigue_window": FATIGUE_WINDOW, "candidate_cap": MAX_CANDIDATES},
+        "limits": {"max_depth": MAX_DEPTH, "max_new_per_run": MAX_NEW_PER_RUN, "fatigue_window": FATIGUE_WINDOW, "candidate_cap": MAX_CANDIDATES, "max_one_depth_advance_per_cycle": True, "no_forced_fill": True},
         "created_this_run": [c["id"] for c in created],
         "candidate_count": min(len(candidates), MAX_CANDIDATES),
         "candidates": candidates[-MAX_CANDIDATES:],
@@ -216,8 +256,11 @@ def build(registry: dict, previous: dict | None) -> dict:
             "SYNTHESIS != TRUTH",
             "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
             "REPETITION_WITHOUT_NEW_INFORMATION => FATIGUE",
-            "FOCUS_MAY_MIGRATE_OR_DIE",
-            "SEMANTIC_CANDIDATE MAY SEED A DEEPER CANDIDATE UP TO DEPTH 4",
+            "FOCUS MAY MIGRATE OR DIE",
+            "LIMIT != TARGET COUNT",
+            "NO STRONG MATCH != FILL WITH NOISE",
+            "A CANDIDATE MAY ADVANCE AT MOST ONE SEMANTIC DEPTH PER CYCLE",
+            "SEMANTIC CANDIDATE MAY SEED A DEEPER CANDIDATE UP TO DEPTH 4",
             "CANDIDATE CREATION DOES NOT MUTATE SOURCE REGISTRY",
         ],
     }
