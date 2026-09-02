@@ -1,0 +1,62 @@
+{
+  "schema": "janus.inaihr.semantic_evolution_contract.v2",
+  "status": "ACTIVE_CANDIDATE_PENDING_CLEAN_LIVE_PROOF",
+  "purpose": "Allow JANUS to autonomously create, recursively develop and connect candidate meanings from existing HRaiN/iNaiHR relationships while preserving provenance and epistemic ceilings.",
+  "inputs": [
+    "Hawkar-usls/janus-meta-registry/assets/hrain-registry-index.json",
+    "prior janus.inaihr.semantic_evolution.v2 state"
+  ],
+  "historical_lineage": {
+    "hrain_attention_ecology": "1497713771ed3c3b0577df12354f038b941ecd09",
+    "hrain_focus_cluster": "7f2bce679ddced87c01b743067de4600327f256f",
+    "inaihr_guided_recursive_synth": "f3a676d2a6d295ce96439512c3e349b7946c4630",
+    "principles_reused": [
+      "FOCUS_MAY_MIGRATE_OR_DIE",
+      "REPLAY_SATURATES_AND_FATIGUES",
+      "LIMIT_IS_UPPER_BOUND_NOT_TARGET_COUNT",
+      "NO_STRONG_MATCH_DOES_NOT_FILL_WITH_NOISE",
+      "RECURSIVE_SEMANTIC_BRANCHES_ARE_BOUNDED",
+      "SOURCE_PATH_PROVENANCE_IS_PRESERVED"
+    ]
+  },
+  "machine": [
+    "READ_EXISTING_LINKS",
+    "SELECT_MIGRATING_LINEAGE_FOCUS",
+    "COMPOSE_CANDIDATE_MEANING",
+    "PRESERVE_SOURCE_LINEAGE",
+    "CREATE_CANDIDATE_EDGES",
+    "ALLOW_AT_MOST_ONE_DEPTH_ADVANCE_PER_CYCLE",
+    "APPLY_REPLAY_FATIGUE",
+    "WAIT_FOR_CORROBORATION_OR_VERIFICATION"
+  ],
+  "limits": {
+    "max_depth": 4,
+    "max_new_candidates_per_run": 4,
+    "candidate_cap": 128,
+    "fatigue_window": 24,
+    "max_one_depth_advance_per_cycle": true,
+    "no_forced_fill": true,
+    "one_candidate_per_focus_key_per_cycle": true
+  },
+  "authority": {
+    "source_registry_write": false,
+    "truth": false,
+    "proof": false,
+    "causal_claim": false,
+    "automatic_promotion": false,
+    "automatic_merge": false
+  },
+  "laws": [
+    "SYNTHESIS != TRUTH",
+    "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+    "GRAPH_DENSITY != EVIDENCE",
+    "CANDIDATE_EDGE != CAUSAL_EDGE",
+    "REPETITION_WITHOUT_NEW_INFORMATION => FATIGUE",
+    "FOCUS_MAY_MIGRATE_OR_DIE",
+    "LIMIT != TARGET_COUNT",
+    "NO STRONG MATCH != FILL WITH NOISE",
+    "A CANDIDATE MAY ADVANCE AT MOST ONE SEMANTIC DEPTH PER CYCLE",
+    "SEMANTIC_CANDIDATE MAY SEED A DEEPER CANDIDATE UP TO DEPTH 4",
+    "NO VERIFY => NO VERIFIED FIX"
+  ]
+}
