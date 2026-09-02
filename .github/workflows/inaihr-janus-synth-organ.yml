@@ -1,0 +1,76 @@
+name: iNaiHR JANUS SYNTH Organ
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'janus-synth-organ.js'
+      - '.github/workflows/inaihr-janus-synth-organ.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: inaihr-janus-synth-organ
+  cancel-in-progress: false
+
+jobs:
+  wire-and-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Syntax-check autonomous JANUS synthesis organ
+        run: node --check janus-synth-organ.js
+
+      - name: Verify synthesis firewalls
+        run: |
+          set -euo pipefail
+          grep -q "EXISTING_LINKS -> COMPOSE -> STRUCTURAL_VERIFY -> LOCAL_CANDIDATE" janus-synth-organ.js
+          grep -q "registryMutation:false" janus-synth-organ.js
+          grep -q "proofAuthority:false" janus-synth-organ.js
+          grep -q "truthAuthority:false" janus-synth-organ.js
+          grep -q "automaticPromotion:false" janus-synth-organ.js
+          grep -q "HRAIN_REGISTRY_EXISTING_PATH2" janus-synth-organ.js
+          grep -q "INAIHR_EXISTING_PATH2" janus-synth-organ.js
+          grep -q "setInterval(()=>janusSynthesis(false)" janus-synth-organ.js
+          echo 'JANUS_SYNTH_FIREWALLS=PASS'
+
+      - name: Wire JANUS SYNTH into iNaiHR page
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          marker='<script src="./janus-synth-organ.js"></script>'
+          if marker not in s:
+              if '</body>' not in s:
+                  raise SystemExit('INDEX_BODY_CLOSE_MISSING')
+              s=s.replace('</body>', marker+'\n</body>', 1)
+              p.write_text(s,encoding='utf-8')
+              print('JANUS_SYNTH_WIRED=CHANGED')
+          else:
+              print('JANUS_SYNTH_WIRED=ALREADY_PRESENT')
+          PY
+          grep -q '<script src="./janus-synth-organ.js"></script>' index.html
+
+      - name: Persist wiring exactly once
+        run: |
+          git config user.name 'janus-synth-organ'
+          git config user.email 'janus-synth-organ@users.noreply.github.com'
+          git add index.html
+          if git diff --cached --quiet; then
+            echo 'JANUS_SYNTH_INDEX_NO_CHANGE'
+          else
+            git commit -m 'iNaiHR: activate JANUS autonomous SYNTH organ'
+            git push origin HEAD:main
+            echo 'JANUS_SYNTH_INDEX_PERSIST=PASS'
+          fi
