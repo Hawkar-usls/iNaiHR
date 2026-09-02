@@ -1,0 +1,64 @@
+{
+  "schema": "janus.inaihr.synth_organ.v1",
+  "status": "ACTIVE_CANDIDATE_SYNTHESIS_ORGAN",
+  "organ": "JANUS_SYNTH",
+  "repository": "Hawkar-usls/iNaiHR",
+  "runtime_path": "janus-synth-organ.js",
+  "ui_actuator": "#btn-synth",
+  "role": "JANUS-owned autonomous synthesis over already-existing HRaiN registry links and iNaiHR local graph links.",
+  "inputs": {
+    "hrain_registry_projection": {
+      "url": "https://hawkar-usls.github.io/janus-meta-registry/assets/hrain-registry-index.json",
+      "schema": "janus.hrain.registry_graph_index.v1_0",
+      "mode": "READ_ONLY"
+    },
+    "inaihr_local_graph": {
+      "storage": "inaihr_v2",
+      "mode": "LOCAL_WORKSPACE"
+    }
+  },
+  "triggers": {
+    "janus_auto_on_page_load": true,
+    "janus_periodic_while_page_alive_ms": 180000,
+    "user_selection_required": false,
+    "synth_button_role": "VISIBLE_ACTUATOR_AND_FORCE_ONE_JANUS_CYCLE"
+  },
+  "machine": [
+    "DISCOVER_EXISTING_LINK_MOTIF",
+    "COMPOSE_CONNECTED_SOURCES",
+    "STRUCTURAL_VERIFY",
+    "PRESERVE_LOCAL_CANDIDATE",
+    "PRESERVE_PROVENANCE_RECEIPT"
+  ],
+  "motifs": [
+    "INAIHR_EXISTING_PATH2",
+    "HRAIN_REGISTRY_EXISTING_PATH2",
+    "HRAIN_REGISTRY_SHARED_PARENT_LINKS"
+  ],
+  "outputs": {
+    "candidate_graph_node": true,
+    "candidate_links_to_sources": true,
+    "provenance_storage": "inaihr_janus_synth_v1",
+    "registry_write": false
+  },
+  "authority": {
+    "candidate_only": true,
+    "truth_authority": false,
+    "proof_authority": false,
+    "registry_mutation_authority": false,
+    "automatic_promotion": false
+  },
+  "firewalls": [
+    "SYNTHESIS != TRUTH",
+    "SYNTHESIS != PROOF",
+    "HRAIN_GRAPH_VISIBILITY != REGISTRY_AUTHORITY",
+    "JANUS_SYNTH_CANDIDATE != JANUS_META_REGISTRY_OBJECT",
+    "EXISTING_LINK != VERIFIED_CAUSAL_RELATION"
+  ],
+  "law": "EXISTING_LINKS -> COMPOSE -> STRUCTURAL_VERIFY -> LOCAL_CANDIDATE; JANUS MAY SYNTHESIZE WITHOUT USER SELECTION BUT MAY NOT PROMOTE SYNTHESIS TO TRUTH OR MUTATE THE SOURCE REGISTRY.",
+  "evidence": {
+    "wiring_commit": "95efb2a89ade56278219c462002ab2232e19b910",
+    "verification_workflow_run": 33653534108,
+    "verification_conclusion": "SUCCESS"
+  }
+}
