@@ -2,11 +2,11 @@
   "attention": {
     "attention_weight_is_evidence_weight": false,
     "focus_age": 1,
-    "focus_parent": "surface:other",
+    "focus_key": "lineage:CONTINUOUS-ATTACK-TRACE",
     "no_fixed_hypothesis_center": true,
-    "policy": "MIGRATING_FOCUS_WITH_REPLAY_FATIGUE"
+    "policy": "MIGRATING_FOCUS_WITH_REPLAY_FATIGUE_AND_LINEAGE_DIVERSITY"
   },
-  "candidate_count": 4,
+  "candidate_count": 8,
   "candidates": [
     {
       "attention_score": 33.0,
@@ -255,29 +255,294 @@
       },
       "signature": "506c6dc37bb179f8aa1727d252f6b706234ee0bbbf3477381de4cfcac03ed04a",
       "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 31.5,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-02T16:26:30.923452+00:00",
+      "depth": 1,
+      "focus_key": "lineage:CONTINUOUS-ATTACK-TRACE",
+      "id": "syn:01cce767a88ece8f4073",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S1 · EYE-R4.6-PALOMAR-XE325-CONTINUOUS-BOX-v1 / continuous attack trace ↔ EYE-R4.6-SYNTHETIC-CONTINUOUS-BOX-v1",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "4c1382055d1547251380769c0c3ed76070778fa3",
+          "source_records": [
+            {
+              "id": "obj:6e4c8503e4df55100dc0",
+              "lineage_key": "CONTINUOUS-ATTACK-TRACE",
+              "path": "EYE/r4_6/generated/palomar_xe325_continuous_box/continuous_attack_trace.json",
+              "sha256": "493abb3faf56a4b5d6899dabb85f7369a92b030bf6041fca7e87989647c5c5b2",
+              "status": "BASELINE_NOT_ROBUSTLY_SOLVABLE"
+            },
+            {
+              "id": "obj:023fc240ff6bc678c0ce",
+              "lineage_key": "CONTINUOUS-ATTACK-TRACE",
+              "path": "EYE/r4_6/generated/synthetic_continuous_box/continuous_attack_trace.json",
+              "sha256": "bf770f48e9e77985d8122e66c0c2a9ea56382ab22ef6f7feae83d37d17723a5f",
+              "status": "CONTINUOUS_BOX_CERTIFIED_UNDER_DECLARED_CLASS"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": null,
+          "source_ids": [
+            "obj:6e4c8503e4df55100dc0",
+            "obj:023fc240ff6bc678c0ce"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when EYE-R4.6-PALOMAR-XE325-CONTINUOUS-BOX-v1 / continuous attack trace and EYE-R4.6-SYNTHETIC-CONTINUOUS-BOX-v1 / continuous attack trace are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "8731b9c41e0f3b1623e9fe7c2f2992e9bb0393fc578453d140bc5ba83d252217",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 30.0,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-02T16:26:30.923581+00:00",
+      "depth": 2,
+      "focus_key": "lineage:CONTINUOUS-CERTIFICATE-SUMMARY",
+      "id": "syn:dd3a7393e6e3e154802c",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S2 · EYE-R4.6-PALOMAR-XE325-CONTINUOUS-BOX-v1 / continuous certificate summar ↔ EYE-R4.6-SYNTHETIC-CONTINUOUS-",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "4c1382055d1547251380769c0c3ed76070778fa3",
+          "source_records": [
+            {
+              "id": "obj:accc5a7e8015d064faf1",
+              "lineage_key": "CONTINUOUS-CERTIFICATE-SUMMARY",
+              "path": "EYE/r4_6/generated/palomar_xe325_continuous_box/continuous_certificate_summary.json",
+              "sha256": "e5b83d7d5d10d74be22d93971ad873d3e2bb1bf48ee93b2e57aeb0f4d64e2035",
+              "status": "BASELINE_NOT_ROBUSTLY_SOLVABLE"
+            },
+            {
+              "id": "obj:795b72c90cfe73716a07",
+              "lineage_key": "CONTINUOUS-CERTIFICATE-SUMMARY",
+              "path": "EYE/r4_6/generated/synthetic_continuous_box/continuous_certificate_summary.json",
+              "sha256": "4a210ac021ac9cb22b61644fb381e0f768313e0cee69d124bfbd6e2f57006b35",
+              "status": "CONTINUOUS_BOX_CERTIFIED_UNDER_DECLARED_CLASS"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": "syn:18f065ab1f8d237d8bff",
+          "source_ids": [
+            "obj:accc5a7e8015d064faf1",
+            "obj:795b72c90cfe73716a07"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when EYE-R4.6-PALOMAR-XE325-CONTINUOUS-BOX-v1 / continuous certificate summar and EYE-R4.6-SYNTHETIC-CONTINUOUS-BOX-v1 / continuous certificate summary are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "11d162b80ccce337b9653fdb5a02ee89efcf4568dd7c6bd93d8e3b9f1864e33a",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 30.0,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-02T16:26:30.923692+00:00",
+      "depth": 1,
+      "focus_key": "lineage:CONTINUOUS-UNCERTAINTY-RECEIPT",
+      "id": "syn:266fa665cdb8cf1d4afe",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S1 · EYE-R4.6-SYNTHETIC-CONTINUOUS-BOX-v1 / continuous uncertainty receipt ↔ EYE-R4.6-PALOMAR-XE325-CONTINUOUS",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "4c1382055d1547251380769c0c3ed76070778fa3",
+          "source_records": [
+            {
+              "id": "obj:c37807a0fd86d4647f51",
+              "lineage_key": "CONTINUOUS-UNCERTAINTY-RECEIPT",
+              "path": "EYE/r4_6/generated/synthetic_continuous_box/continuous_uncertainty_receipt.json",
+              "sha256": "807cd244261ee7ad14d6392193127cfb0d5015d35c083b6f0379de829fb294f2",
+              "status": "CONTINUOUS_BOX_CERTIFIED_UNDER_DECLARED_CLASS"
+            },
+            {
+              "id": "obj:021e49752d18b34f375a",
+              "lineage_key": "CONTINUOUS-UNCERTAINTY-RECEIPT",
+              "path": "EYE/r4_6/generated/palomar_xe325_continuous_box/continuous_uncertainty_receipt.json",
+              "sha256": "26b02ffe7f94a5a927465958f7db7e1dee42e0d52676f5e54a122f1a9f6b15e9",
+              "status": "BASELINE_NOT_ROBUSTLY_SOLVABLE"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": null,
+          "source_ids": [
+            "obj:c37807a0fd86d4647f51",
+            "obj:021e49752d18b34f375a"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when EYE-R4.6-SYNTHETIC-CONTINUOUS-BOX-v1 / continuous uncertainty receipt and EYE-R4.6-PALOMAR-XE325-CONTINUOUS-BOX-v1 / continuous uncertainty receip are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "44c9c876fbf4651bb18086b4dad4c3bd2c99e532ea28758708a9857e24938ac0",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 30.0,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-02T16:26:30.923811+00:00",
+      "depth": 1,
+      "focus_key": "lineage:EYE-R4-6-CONTINUOUS-UNCERTAINTY-ADVERSARY",
+      "id": "syn:f3ddec936988a6b4798f",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S1 · EYE-R4.6-CONTINUOUS-UNCERTAINTY-ADVERSARY-2026 / EYE R4.6 CONTINUOUS UNC ↔ eye r4 6 continuous uncertaint",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "4c1382055d1547251380769c0c3ed76070778fa3",
+          "source_records": [
+            {
+              "id": "obj:743d47dff590d2096cce",
+              "lineage_key": "EYE-R4-6-CONTINUOUS-UNCERTAINTY-ADVERSARY",
+              "path": "data/EYE-R4.6-CONTINUOUS-UNCERTAINTY-ADVERSARY-2026-09-02-v1.0.json",
+              "sha256": "c2d8d3dd6355aebda775c860c8e22b5ffd231cb829756ebc9344e10c2c5640d9",
+              "status": "IMPLEMENTATION_CANDIDATE__CI_REQUIRED"
+            },
+            {
+              "id": "obj:eeca7abf9f2f4da9893c",
+              "lineage_key": "EYE-R4-6-CONTINUOUS-UNCERTAINTY-ADVERSARY",
+              "path": "EYE/r4_6/eye_r4_6_continuous_uncertainty_adversary.py",
+              "sha256": "1a6c0b17165db73e14fafef63d22795c375db98f3bdbe71f6351869ebf1d8581",
+              "status": null
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": null,
+          "source_ids": [
+            "obj:743d47dff590d2096cce",
+            "obj:eeca7abf9f2f4da9893c"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when EYE-R4.6-CONTINUOUS-UNCERTAINTY-ADVERSARY-2026 / EYE R4.6 CONTINUOUS UNC and eye r4 6 continuous uncertainty adversary / eye r4 6 continuous uncertai are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "ae249d2ddac5c6448c9918388f0dbe7bae8f2266c8f48c7bd941712415460e1a",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
     }
   ],
   "created_this_run": [
-    "syn:5a1ae4f90513b1ece935",
-    "syn:6c24b959fd54c5bc9b14",
-    "syn:18f065ab1f8d237d8bff",
-    "syn:c0c9697c6d3fffa252d5"
+    "syn:01cce767a88ece8f4073",
+    "syn:dd3a7393e6e3e154802c",
+    "syn:266fa665cdb8cf1d4afe",
+    "syn:f3ddec936988a6b4798f"
   ],
-  "generated_at": "2026-09-02T16:25:02.218838+00:00",
+  "generated_at": "2026-09-02T16:26:30.923816+00:00",
   "laws": [
     "EXISTING_LINKS -> FOCUS -> COMPOSE -> CANDIDATE -> CORROBORATE",
     "SYNTHESIS != TRUTH",
     "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
     "REPETITION_WITHOUT_NEW_INFORMATION => FATIGUE",
-    "FOCUS_MAY_MIGRATE_OR_DIE",
-    "SEMANTIC_CANDIDATE MAY SEED A DEEPER CANDIDATE UP TO DEPTH 4",
+    "FOCUS MAY MIGRATE OR DIE",
+    "LIMIT != TARGET COUNT",
+    "NO STRONG MATCH != FILL WITH NOISE",
+    "A CANDIDATE MAY ADVANCE AT MOST ONE SEMANTIC DEPTH PER CYCLE",
+    "SEMANTIC CANDIDATE MAY SEED A DEEPER CANDIDATE UP TO DEPTH 4",
     "CANDIDATE CREATION DOES NOT MUTATE SOURCE REGISTRY"
   ],
   "limits": {
     "candidate_cap": 128,
     "fatigue_window": 24,
     "max_depth": 4,
-    "max_new_per_run": 4
+    "max_new_per_run": 4,
+    "max_one_depth_advance_per_cycle": true,
+    "no_forced_fill": true
   },
   "receipts": [
     {
@@ -315,6 +580,46 @@
       "signature": "506c6dc37bb179f8aa1727d252f6b706234ee0bbbf3477381de4cfcac03ed04a",
       "source_commit": "4c1382055d1547251380769c0c3ed76070778fa3",
       "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:01cce767a88ece8f4073",
+      "created_at": "2026-09-02T16:26:30.923452+00:00",
+      "focus_key": "lineage:CONTINUOUS-ATTACK-TRACE",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "8731b9c41e0f3b1623e9fe7c2f2992e9bb0393fc578453d140bc5ba83d252217",
+      "source_commit": "4c1382055d1547251380769c0c3ed76070778fa3",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:dd3a7393e6e3e154802c",
+      "created_at": "2026-09-02T16:26:30.923581+00:00",
+      "focus_key": "lineage:CONTINUOUS-CERTIFICATE-SUMMARY",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "11d162b80ccce337b9653fdb5a02ee89efcf4568dd7c6bd93d8e3b9f1864e33a",
+      "source_commit": "4c1382055d1547251380769c0c3ed76070778fa3",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:266fa665cdb8cf1d4afe",
+      "created_at": "2026-09-02T16:26:30.923692+00:00",
+      "focus_key": "lineage:CONTINUOUS-UNCERTAINTY-RECEIPT",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "44c9c876fbf4651bb18086b4dad4c3bd2c99e532ea28758708a9857e24938ac0",
+      "source_commit": "4c1382055d1547251380769c0c3ed76070778fa3",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:f3ddec936988a6b4798f",
+      "created_at": "2026-09-02T16:26:30.923811+00:00",
+      "focus_key": "lineage:EYE-R4-6-CONTINUOUS-UNCERTAINTY-ADVERSARY",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "ae249d2ddac5c6448c9918388f0dbe7bae8f2266c8f48c7bd941712415460e1a",
+      "source_commit": "4c1382055d1547251380769c0c3ed76070778fa3",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
     }
   ],
   "registry": {
@@ -324,6 +629,6 @@
     "source_commit": "4c1382055d1547251380769c0c3ed76070778fa3"
   },
   "schema": "janus.inaihr.semantic_evolution.v2",
-  "state_sha256": "4a9492b3e1e6a3c9aa52b95b726cc173bf6b71f864ecae9e620f20ff2a685c54",
+  "state_sha256": "5594e4051636faa7ce5c61c01c0b9e5146a3f8223f108312400a20f046e4912d",
   "status": "ACTIVE_AUTONOMOUS_CANDIDATE_EVOLUTION"
 }
