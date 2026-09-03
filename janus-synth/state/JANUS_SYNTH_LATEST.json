@@ -2,11 +2,11 @@
   "attention": {
     "attention_weight_is_evidence_weight": false,
     "focus_age": 1,
-    "focus_key": "lineage:JANUS-CROFT-LIMA-EGYPT-INSTITUTIONAL-CORRIDOR-OSIRIS-CONTROL",
+    "focus_key": "pivot:surface:other",
     "no_fixed_hypothesis_center": true,
     "policy": "MIGRATING_FOCUS_WITH_REPLAY_FATIGUE_AND_LINEAGE_DIVERSITY"
   },
-  "candidate_count": 30,
+  "candidate_count": 33,
   "candidates": [
     {
       "attention_score": 31.5,
@@ -1957,15 +1957,209 @@
       },
       "signature": "ad61b4dd57c3b88e7c9b35bc9f8a5bda346f0963f2199206d8061e20e3ee01c2",
       "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 27.5,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-03T23:20:06.515772+00:00",
+      "depth": 1,
+      "focus_key": "pivot:surface:other",
+      "id": "syn:3c18da32641d0b9b3c37",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S1 · JANUS-OSIRIS-ABYDOS-DJER-TOMB-O-SURVIVING-HUMA / JANUS OSIRIS ABYDOS DJE ↔ JANUS-OSIRIS-ABYDOS-DJER-LOST-",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "937ef312ae3cdb224d4bbb13e41f9b1335e5bafb",
+          "source_records": [
+            {
+              "id": "obj:2a509d2360c54a3e5913",
+              "lineage_key": "JANUS-OSIRIS-ABYDOS-DJER-TOMB-O-SURVIVING-HUMAN-BONE-C14-GATE",
+              "path": "data/JANUS-OSIRIS-ABYDOS-DJER-TOMB-O-SURVIVING-HUMAN-BONE-C14-GATE-2026-09-04-v1.0.json",
+              "sha256": "8dc926b0320a54baf73977581fad71fe344ce6649b00f869e3ee16be116aad1d",
+              "status": "ACTIVE__THREE_DJER_TOMB_O_HUMAN_BONE_C14_RECORDS_LOCKED__CUSTODY_AND_INDIVIDUAL…"
+            },
+            {
+              "id": "obj:4016dfb7dd3d786fe3e6",
+              "lineage_key": "JANUS-OSIRIS-ABYDOS-DJER-LOST-ARM-BIOLOGICAL-CONTROL-GATE",
+              "path": "data/JANUS-OSIRIS-ABYDOS-DJER-LOST-ARM-BIOLOGICAL-CONTROL-GATE-2026-09-04-v1.0.json",
+              "sha256": "562aa19ed4caff2154057b650679b8ee5f1b23f6b5956f0db7093df20ee0db78",
+              "status": "ACTIVE__REAL_HUMAN_MEMBER_FROM_LATER_OSIRIS_TOMB_CONTEXT__ORIGINAL_ARM_LOST__SU…"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": null,
+          "source_ids": [
+            "obj:2a509d2360c54a3e5913",
+            "obj:4016dfb7dd3d786fe3e6"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when JANUS-OSIRIS-ABYDOS-DJER-TOMB-O-SURVIVING-HUMA / JANUS OSIRIS ABYDOS DJE and JANUS-OSIRIS-ABYDOS-DJER-LOST-ARM-BIOLOGICAL-C / JANUS OSIRIS ABYDOS DJE are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "8f5e7a6865dcb9ceb48cad103b85d9d8a503cb80e808b578a6fbc3f6ebc28843",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 27.0,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-03T23:20:06.515913+00:00",
+      "depth": 1,
+      "focus_key": "path:data/JANUS-NEURAL-LINK",
+      "id": "syn:f3e25eaaafe6a95bb0da",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S1 · janus.neural_link.archive_event.v1 / comment 5530859728 f777503f8652107d ↔ janus.neural_link.archive_even",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "937ef312ae3cdb224d4bbb13e41f9b1335e5bafb",
+          "source_records": [
+            {
+              "id": "obj:fe1e7ea157975305d74c",
+              "lineage_key": "COMMENT-5530859728-F777503F8652107D",
+              "path": "data/JANUS-NEURAL-LINK/events/comment-5530859728-f777503f8652107d.json",
+              "sha256": "6cf511c10319c74f1128a50bdc0ea22d7e9a6dd9ca3703a918cbe40122b12df2",
+              "status": null
+            },
+            {
+              "id": "obj:c87b71cce19e5da77ef5",
+              "lineage_key": "COMMENT-5532653097-69B3AAA590609DD7",
+              "path": "data/JANUS-NEURAL-LINK/events/comment-5532653097-69b3aaa590609dd7.json",
+              "sha256": "70467c5b3b8b89c87ec2d770bb8f6c17445f72cdceefff93fa9bbf97c419b01f",
+              "status": null
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": null,
+          "source_ids": [
+            "obj:fe1e7ea157975305d74c",
+            "obj:c87b71cce19e5da77ef5"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when janus.neural_link.archive_event.v1 / comment 5530859728 f777503f8652107d and janus.neural_link.archive_event.v1 / comment 5532653097 69b3aaa590609dd7 are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "13198a23a5bb992b2aea688a7d8841cb002702428bed1be0d0abac87040799e8",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 23.0,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-03T23:20:06.516051+00:00",
+      "depth": 4,
+      "focus_key": "path:EYE/r3",
+      "id": "syn:6d942a13fe8ce8bdf2e6",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S4 · JANUS-EYE-R3-RECEIPT / EYE R3 RECEIPT ↔ JANUS-EYE-R3-MACHINE-CATALOG / EYE R3 MACHINE CATALOG",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "937ef312ae3cdb224d4bbb13e41f9b1335e5bafb",
+          "source_records": [
+            {
+              "id": "obj:d816349e6c74f0e8fa16",
+              "lineage_key": "EYE-R3-RECEIPT",
+              "path": "EYE/r3/generated/EYE-R3-RECEIPT.json",
+              "sha256": "17ff8c17d248358d0d9967a9e57b518850af7d086cf6ac84579f104b5312c7d0",
+              "status": "PASS"
+            },
+            {
+              "id": "obj:1dd46a8cee37337793f8",
+              "lineage_key": "EYE-R3-MACHINE-CATALOG",
+              "path": "EYE/r3/generated/EYE-R3-MACHINE-CATALOG.json",
+              "sha256": "08be0229a97d5e439e60653bb18cc1d61b6f3a38b5fb2faed287beaea4fd5e32",
+              "status": "DESCRIPTIVE_ORDERED_MACHINE_MAP__NOT_DISCOVERY"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": "syn:a078e3efebcc134d4e04",
+          "source_ids": [
+            "obj:d816349e6c74f0e8fa16",
+            "obj:1dd46a8cee37337793f8"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when JANUS-EYE-R3-RECEIPT / EYE R3 RECEIPT and JANUS-EYE-R3-MACHINE-CATALOG / EYE R3 MACHINE CATALOG are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "cdeddf440172d6f857006e4dfee541b9d6dc3c2425ec623de7d6ab044b1102a0",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
     }
   ],
   "created_this_run": [
-    "syn:f7e65b9f7aa0d8eaf4b2",
-    "syn:2add2e61a4c7ca35f940",
-    "syn:d0578e7d56e5938bfe1d",
-    "syn:e39f48c886cad03d2682"
+    "syn:3c18da32641d0b9b3c37",
+    "syn:f3e25eaaafe6a95bb0da",
+    "syn:6d942a13fe8ce8bdf2e6"
   ],
-  "generated_at": "2026-09-03T21:07:52.541187+00:00",
+  "generated_at": "2026-09-03T23:20:06.516086+00:00",
   "laws": [
     "EXISTING_LINKS -> FOCUS -> COMPOSE -> CANDIDATE -> CORROBORATE",
     "SYNTHESIS != TRUTH",
@@ -2286,15 +2480,45 @@
       "signature": "ad61b4dd57c3b88e7c9b35bc9f8a5bda346f0963f2199206d8061e20e3ee01c2",
       "source_commit": "0f882fb3b0a31df0ca5e672935043ebffd5946f9",
       "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:3c18da32641d0b9b3c37",
+      "created_at": "2026-09-03T23:20:06.515772+00:00",
+      "focus_key": "pivot:surface:other",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "8f5e7a6865dcb9ceb48cad103b85d9d8a503cb80e808b578a6fbc3f6ebc28843",
+      "source_commit": "937ef312ae3cdb224d4bbb13e41f9b1335e5bafb",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:f3e25eaaafe6a95bb0da",
+      "created_at": "2026-09-03T23:20:06.515913+00:00",
+      "focus_key": "path:data/JANUS-NEURAL-LINK",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "13198a23a5bb992b2aea688a7d8841cb002702428bed1be0d0abac87040799e8",
+      "source_commit": "937ef312ae3cdb224d4bbb13e41f9b1335e5bafb",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:6d942a13fe8ce8bdf2e6",
+      "created_at": "2026-09-03T23:20:06.516051+00:00",
+      "focus_key": "path:EYE/r3",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "cdeddf440172d6f857006e4dfee541b9d6dc3c2425ec623de7d6ab044b1102a0",
+      "source_commit": "937ef312ae3cdb224d4bbb13e41f9b1335e5bafb",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
     }
   ],
   "registry": {
-    "link_count": 214,
-    "node_count": 215,
+    "link_count": 207,
+    "node_count": 208,
     "repository": "Hawkar-usls/janus-meta-registry",
-    "source_commit": "0f882fb3b0a31df0ca5e672935043ebffd5946f9"
+    "source_commit": "937ef312ae3cdb224d4bbb13e41f9b1335e5bafb"
   },
   "schema": "janus.inaihr.semantic_evolution.v2",
-  "state_sha256": "060e315d4cb608631cff9759bf8bfb2517a4dff4043ba7d72b7dda2a683e3826",
+  "state_sha256": "0fcca32fc34c969f9987362b428ba7e1bd0890685155bbccc3efabd51e993fc6",
   "status": "ACTIVE_AUTONOMOUS_CANDIDATE_EVOLUTION"
 }
