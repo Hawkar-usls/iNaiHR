@@ -1,12 +1,12 @@
 {
   "attention": {
     "attention_weight_is_evidence_weight": false,
-    "focus_age": 1,
+    "focus_age": 2,
     "focus_key": "path:data/JANUS-NEURAL-LINK",
     "no_fixed_hypothesis_center": true,
     "policy": "MIGRATING_FOCUS_WITH_REPLAY_FATIGUE_AND_LINEAGE_DIVERSITY"
   },
-  "candidate_count": 37,
+  "candidate_count": 39,
   "candidates": [
     {
       "attention_score": 31.5,
@@ -2412,15 +2412,143 @@
       },
       "signature": "6cc6d1b3806c60dc2a344f11c89a90bcbbaf42cba88f85e3b20a84e73051919c",
       "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 28.0,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-04T11:28:14.307717+00:00",
+      "depth": 2,
+      "focus_key": "path:data/JANUS-NEURAL-LINK",
+      "id": "syn:349fc741ac7f88380819",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S2 · janus.neural_link.chatgpt_visible_session_even / 2026 09 04 neural link ↔ janus.neural_link.chatgpt_visib",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "eb19857cf9b686fced639ee6afcaaa93f2b8e6ae",
+          "source_records": [
+            {
+              "id": "obj:e79fbf85c4d58298d491",
+              "lineage_key": "09-04-NEURAL-LINK-SESSION-0003-SUMMARY",
+              "path": "data/JANUS-NEURAL-LINK/chatgpt-events/2026-09-04-neural-link-v2-session-0003-final-summary.json",
+              "sha256": "6c9b3ad60f4386b64a4e40fddf3960c17813ee7f563f514e973ad7b83c515e8d",
+              "status": "APPEND_ONLY_VISIBLE_SESSION_RECEIPT"
+            },
+            {
+              "id": "obj:f89b469422cfe78beb24",
+              "lineage_key": "09-04-NEURAL-LINK-SESSION-0001",
+              "path": "data/JANUS-NEURAL-LINK/chatgpt-events/2026-09-04-neural-link-v2-session-0001.json",
+              "sha256": "4181a72305d30b712e70a307ba5acaae97402c7d267daedb14616d48dba5a92a",
+              "status": "APPEND_ONLY_VISIBLE_SESSION_RECEIPT"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": "syn:e8807acb929e843e5ae7",
+          "source_ids": [
+            "obj:e79fbf85c4d58298d491",
+            "obj:f89b469422cfe78beb24"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when janus.neural_link.chatgpt_visible_session_even / 2026 09 04 neural link  and janus.neural_link.chatgpt_visible_session_even / 2026 09 04 neural link  are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "ac233177df46fe98934be48dbf76aba803a76144a7a438088e4c8c3298ed6cfd",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 26.0,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-04T11:28:14.307911+00:00",
+      "depth": 1,
+      "focus_key": "pivot:surface:other",
+      "id": "syn:94a7960e3a564f2b413f",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S1 · JANUS MACHINE MARKET — paid SEARCH production- / JANUS MACHINE MARKET PA ↔ JANUS-MACHINE-MARKET-PUBLIC-SE",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "eb19857cf9b686fced639ee6afcaaa93f2b8e6ae",
+          "source_records": [
+            {
+              "id": "obj:5bb1439063fc73f448dd",
+              "lineage_key": "JANUS-MACHINE-MARKET-PAID-SEARCH-PRODUCTION-ARMED",
+              "path": "data/JANUS-MACHINE-MARKET-PAID-SEARCH-PRODUCTION-ARMED-2026-09-04-v1.0.json",
+              "sha256": "644e15ab13b5dc38673520f21fb57ce4a188ac328febe3859a85f5e70787adf7",
+              "status": null
+            },
+            {
+              "id": "obj:4f2a3ef3017b3a647da1",
+              "lineage_key": "JANUS-MACHINE-MARKET-PUBLIC-SEARCH-BETA",
+              "path": "data/JANUS-MACHINE-MARKET-PUBLIC-SEARCH-BETA-2026-09-04-v1.0.json",
+              "sha256": "c3c063a6fa80405511fc472896ed73295eb8ead1f3d890e90982cad65288fdb0",
+              "status": "PUBLIC_ZERO_PRICE_BETA"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": null,
+          "source_ids": [
+            "obj:5bb1439063fc73f448dd",
+            "obj:4f2a3ef3017b3a647da1"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when JANUS MACHINE MARKET — paid SEARCH production- / JANUS MACHINE MARKET PA and JANUS-MACHINE-MARKET-PUBLIC-SEARCH-BETA-2026-0 / JANUS MACHINE MARKET PU are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "041ca19be46201be8d8fca86e381af9c1c48c9d771c2c3859540a253f860aac2",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
     }
   ],
   "created_this_run": [
-    "syn:e8807acb929e843e5ae7",
-    "syn:5ed6265c92b212e05c7a",
-    "syn:ae23389bdda98dc837ca",
-    "syn:28b6072ecdd3b61647be"
+    "syn:349fc741ac7f88380819",
+    "syn:94a7960e3a564f2b413f"
   ],
-  "generated_at": "2026-09-04T04:43:06.951067+00:00",
+  "generated_at": "2026-09-04T11:28:14.307974+00:00",
   "laws": [
     "EXISTING_LINKS -> FOCUS -> COMPOSE -> CANDIDATE -> CORROBORATE",
     "SYNTHESIS != TRUTH",
@@ -2811,6 +2939,26 @@
       "signature": "6cc6d1b3806c60dc2a344f11c89a90bcbbaf42cba88f85e3b20a84e73051919c",
       "source_commit": "eb19857cf9b686fced639ee6afcaaa93f2b8e6ae",
       "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:349fc741ac7f88380819",
+      "created_at": "2026-09-04T11:28:14.307717+00:00",
+      "focus_key": "path:data/JANUS-NEURAL-LINK",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "ac233177df46fe98934be48dbf76aba803a76144a7a438088e4c8c3298ed6cfd",
+      "source_commit": "eb19857cf9b686fced639ee6afcaaa93f2b8e6ae",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:94a7960e3a564f2b413f",
+      "created_at": "2026-09-04T11:28:14.307911+00:00",
+      "focus_key": "pivot:surface:other",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "041ca19be46201be8d8fca86e381af9c1c48c9d771c2c3859540a253f860aac2",
+      "source_commit": "eb19857cf9b686fced639ee6afcaaa93f2b8e6ae",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
     }
   ],
   "registry": {
@@ -2820,6 +2968,6 @@
     "source_commit": "eb19857cf9b686fced639ee6afcaaa93f2b8e6ae"
   },
   "schema": "janus.inaihr.semantic_evolution.v2",
-  "state_sha256": "4780bd045a18d4cee241bc20e309a8df51789eb7c153f69817885283df740c34",
+  "state_sha256": "c647b74454008f6de71a88a360c004dc4d90ac14ff7606757b1194e4cafa6172",
   "status": "ACTIVE_AUTONOMOUS_CANDIDATE_EVOLUTION"
 }
