@@ -1,12 +1,12 @@
 {
   "attention": {
     "attention_weight_is_evidence_weight": false,
-    "focus_age": 4,
+    "focus_age": 5,
     "focus_key": "lineage:HAWKAR-GENEALOGICAL-4-HANDSHAKE",
     "no_fixed_hypothesis_center": true,
     "policy": "MIGRATING_FOCUS_WITH_REPLAY_FATIGUE_AND_LINEAGE_DIVERSITY"
   },
-  "candidate_count": 57,
+  "candidate_count": 60,
   "candidates": [
     {
       "attention_score": 31.5,
@@ -3712,14 +3712,209 @@
       },
       "signature": "cc2a83599d234264058eebaa71141a6bac7d023863aedb370a879e3a3e65e086",
       "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 26.0,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-05T15:20:31.213051+00:00",
+      "depth": 4,
+      "focus_key": "lineage:HAWKAR-GENEALOGICAL-4-HANDSHAKE",
+      "id": "syn:9e5f9cc9b081b5c2219d",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S4 · JANUS_PROOF_CARRYING_GENEALOGY_RECORD / HAWKAR GENEALOGICAL 4 HANDSHAKE ↔ JANUS_PROOF_CARRYING_GENEALOGY_",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "d732216b2cca4cb74bd9bc46b609074204ad8415",
+          "source_records": [
+            {
+              "id": "obj:edd3c39045c759c32cc5",
+              "lineage_key": "HAWKAR-GENEALOGICAL-4-HANDSHAKE",
+              "path": "data/HAWKAR-GENEALOGICAL-4-HANDSHAKE-2026-09-04-v1.2.json",
+              "sha256": "ac644406c64ee37bcb326baf348dc7643c9f817d505c75ed47492e2403f53f8a",
+              "status": "ACTIVE_RECONSTRUCTION"
+            },
+            {
+              "id": "obj:e698135984d0e96641b0",
+              "lineage_key": "HAWKAR-GENEALOGICAL-4-HANDSHAKE",
+              "path": "data/HAWKAR-GENEALOGICAL-4-HANDSHAKE-2026-09-04-v1.1.json",
+              "sha256": "6c1567dd585790b87ed845916e9e8a8a2c54b75e4101ace55c034717ef8406d6",
+              "status": "ACTIVE_RECONSTRUCTION"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": "syn:2fb217e517cf10dd8931",
+          "source_ids": [
+            "obj:edd3c39045c759c32cc5",
+            "obj:e698135984d0e96641b0"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when JANUS_PROOF_CARRYING_GENEALOGY_RECORD / HAWKAR GENEALOGICAL 4 HANDSHAKE  and JANUS_PROOF_CARRYING_GENEALOGY_RECORD / HAWKAR GENEALOGICAL 4 HANDSHAKE  are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "6d26ab3eb15fb90f594fd5f4ed540fe3ad7388c13f38bb0e0df84b5aac49a912",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 26.0,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-05T15:20:31.213168+00:00",
+      "depth": 4,
+      "focus_key": "pivot:surface:other",
+      "id": "syn:3835e9f3d57cef4f688a",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S4 · JANUS-BLIND-NUMBER-CHOICE-1-30-DIRECT-SURFACE- / JANUS BLIND NUMBER CHOI ↔ [JANUS CHAT] Blind number choi",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "d732216b2cca4cb74bd9bc46b609074204ad8415",
+          "source_records": [
+            {
+              "id": "obj:8ab896cb457e3ef93ca9",
+              "lineage_key": "JANUS-BLIND-NUMBER-CHOICE-1-30-DIRECT-SURFACE-EXPERIMENT",
+              "path": "data/JANUS-BLIND-NUMBER-CHOICE-1-30-DIRECT-SURFACE-EXPERIMENT-2026-09-04-v2.0.json",
+              "sha256": "4866a2260d0af9754267f303f9a2674db12661c1f00fa039b523d9e23e3403d0",
+              "status": "COMPLETE"
+            },
+            {
+              "id": "obj:c033efc2b9c068fcc795",
+              "lineage_key": "ISSUE-23-2AD914781B5EBC59",
+              "path": "data/JANUS-NEURAL-LINK/events/issue-23-2ad914781b5ebc59.json",
+              "sha256": "e5391010a5e9eac9311ca11c77cdaa23c039a67410a627b94cfd8c3511945cde",
+              "status": "open"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": "syn:5a1e8b86a7e89760b09d",
+          "source_ids": [
+            "obj:8ab896cb457e3ef93ca9",
+            "obj:c033efc2b9c068fcc795"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when JANUS-BLIND-NUMBER-CHOICE-1-30-DIRECT-SURFACE- / JANUS BLIND NUMBER CHOI and [JANUS CHAT] Blind number choice 1–30 / issue 23 2ad914781b5ebc59 are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "242e48aebcdbe34795904bc332b4879471b4e1532444fb364d1e2cabbd2f3e41",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 25.5,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-05T15:20:31.213251+00:00",
+      "depth": 4,
+      "focus_key": "path:EYE/generated",
+      "id": "syn:d6baae752cc52d9b4aa8",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S4 · janus.model.reflection_proposal.v1 / reflection jnr 8660f138cedde04a9f00 ↔ janus.model.reflection_proposa",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "d732216b2cca4cb74bd9bc46b609074204ad8415",
+          "source_records": [
+            {
+              "id": "obj:ed1eddfa2d58a3aa375e",
+              "lineage_key": "REFLECTION-JNR-8660F138CEDDE04A9F00EEBE",
+              "path": "EYE/generated/native_model_reflections/reflection-jnr-8660f138cedde04a9f00eebe.json",
+              "sha256": "fe3288d57b4676e564145c97024f1873a895c54d36a7983d3ebb611ce55afbb9",
+              "status": "UNVERIFIED_MODEL_REFLECTION"
+            },
+            {
+              "id": "obj:6c1e6a6f7b3308b863be",
+              "lineage_key": "REFLECTION-JNR-4CAF05BC81D0EA1D220B53A9",
+              "path": "EYE/generated/native_model_reflections/reflection-jnr-4caf05bc81d0ea1d220b53a9.json",
+              "sha256": "8d4b43a468e925b213dd9cbacebd00ebfd5e798610dc8c32a6101f4478395d58",
+              "status": "UNVERIFIED_MODEL_REFLECTION"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": "syn:f99e105747e262e84536",
+          "source_ids": [
+            "obj:ed1eddfa2d58a3aa375e",
+            "obj:6c1e6a6f7b3308b863be"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when janus.model.reflection_proposal.v1 / reflection jnr 8660f138cedde04a9f00 and janus.model.reflection_proposal.v1 / reflection jnr 4caf05bc81d0ea1d220b are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "b1327ad7d709e26a1b81547b549dff1db5244913e11b8942367c999797b63f9d",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
     }
   ],
   "created_this_run": [
-    "syn:fb4a75ecca34d0968d28",
-    "syn:cf0865aad20ad49f35d1",
-    "syn:f99e105747e262e84536"
+    "syn:9e5f9cc9b081b5c2219d",
+    "syn:3835e9f3d57cef4f688a",
+    "syn:d6baae752cc52d9b4aa8"
   ],
-  "generated_at": "2026-09-05T10:44:27.351690+00:00",
+  "generated_at": "2026-09-05T15:20:31.213298+00:00",
   "laws": [
     "EXISTING_LINKS -> FOCUS -> COMPOSE -> CANDIDATE -> CORROBORATE",
     "SYNTHESIS != TRUTH",
@@ -4310,6 +4505,36 @@
       "signature": "cc2a83599d234264058eebaa71141a6bac7d023863aedb370a879e3a3e65e086",
       "source_commit": "d732216b2cca4cb74bd9bc46b609074204ad8415",
       "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:9e5f9cc9b081b5c2219d",
+      "created_at": "2026-09-05T15:20:31.213051+00:00",
+      "focus_key": "lineage:HAWKAR-GENEALOGICAL-4-HANDSHAKE",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "6d26ab3eb15fb90f594fd5f4ed540fe3ad7388c13f38bb0e0df84b5aac49a912",
+      "source_commit": "d732216b2cca4cb74bd9bc46b609074204ad8415",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:3835e9f3d57cef4f688a",
+      "created_at": "2026-09-05T15:20:31.213168+00:00",
+      "focus_key": "pivot:surface:other",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "242e48aebcdbe34795904bc332b4879471b4e1532444fb364d1e2cabbd2f3e41",
+      "source_commit": "d732216b2cca4cb74bd9bc46b609074204ad8415",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:d6baae752cc52d9b4aa8",
+      "created_at": "2026-09-05T15:20:31.213251+00:00",
+      "focus_key": "path:EYE/generated",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "b1327ad7d709e26a1b81547b549dff1db5244913e11b8942367c999797b63f9d",
+      "source_commit": "d732216b2cca4cb74bd9bc46b609074204ad8415",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
     }
   ],
   "registry": {
@@ -4319,6 +4544,6 @@
     "source_commit": "d732216b2cca4cb74bd9bc46b609074204ad8415"
   },
   "schema": "janus.inaihr.semantic_evolution.v2",
-  "state_sha256": "c52d11f931896245ca88a0543fbf598bfd30d4657aa49420d57ed612e4db160a",
+  "state_sha256": "08aaa914bffae0b26ebc59a6c408417b4d3470bc6e187189bdc7507d6f3b674f",
   "status": "ACTIVE_AUTONOMOUS_CANDIDATE_EVOLUTION"
 }
