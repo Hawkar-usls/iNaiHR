@@ -1,78 +1,13 @@
 {
   "attention": {
     "attention_weight_is_evidence_weight": false,
-    "focus_age": 5,
+    "focus_age": 6,
     "focus_key": "pivot:surface:other",
     "no_fixed_hypothesis_center": true,
     "policy": "MIGRATING_FOCUS_WITH_REPLAY_FATIGUE_AND_LINEAGE_DIVERSITY"
   },
   "candidate_count": 128,
   "candidates": [
-    {
-      "attention_score": 23.0,
-      "authority": {
-        "automatic_promotion": false,
-        "causal": false,
-        "mutation": false,
-        "proof": false,
-        "truth": false
-      },
-      "created_at": "2026-09-03T04:41:03.663660+00:00",
-      "depth": 2,
-      "focus_key": "path:EYE/r4_7_rt_1",
-      "id": "syn:31e305fd4172433742b5",
-      "kind": "SEMANTIC_CANDIDATE",
-      "label": "S2 · EYE-R4.7-RT.1-R4.2-COMPATIBLE-MINIMAX-MODEL-v1 / retro tahyon r4 2 minim ↔ Retro-Tahyon prospective outco",
-      "meaning": {
-        "boundaries": [
-          "SYNTHESIS != TRUTH",
-          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
-          "GRAPH_DENSITY != EVIDENCE",
-          "CANDIDATE_EDGE != CAUSAL_EDGE",
-          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
-        ],
-        "evidence": {
-          "independent_replication_established": false,
-          "registry_source_commit": "c88791c4b844b8fd28b8e710782c3e29a6b94700",
-          "source_records": [
-            {
-              "id": "obj:40db42abb273a4f9f2ec",
-              "lineage_key": "RETRO-TAHYON-R4-2-MINIMAX-MODEL",
-              "path": "EYE/r4_7_rt_1/retro_tahyon_r4_2_minimax_model.json",
-              "sha256": "22ccd962e2817ab6d6e3a4db3c8c565f3420235c1dc48ad3aaf881bb12b96ba0",
-              "status": null
-            },
-            {
-              "id": "obj:bdaa10eee7fe274effaf",
-              "lineage_key": "RETRO-TAHYON-PROSPECTIVE-OUTCOME-CONTRACT",
-              "path": "EYE/r4_7_rt_1/retro_tahyon_prospective_outcome_contract.json",
-              "sha256": "312ca4af0021e79fa53d78817a17c35f1e33dcca3cf75dc0e8e6af387fc3e641",
-              "status": "FORBIDDEN_UNTIL_EMPIRICALLY_CALIBRATED_LIKELIHOODS_EXIST"
-            }
-          ]
-        },
-        "lineage": {
-          "prior_candidate_id": "syn:cb670ef193ddac5f33eb",
-          "source_ids": [
-            "obj:40db42abb273a4f9f2ec",
-            "obj:bdaa10eee7fe274effaf"
-          ]
-        },
-        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
-        "next_steps": [
-          "Search for a counterexample to the proposed bridge.",
-          "Seek an independent source or target-local verifier before promotion.",
-          "If repeated without new evidence, fatigue this motif rather than increase confidence."
-        ],
-        "purpose": "Explore a candidate joint meaning that becomes visible only when EYE-R4.7-RT.1-R4.2-COMPATIBLE-MINIMAX-MODEL-v1 / retro tahyon r4 2 minim and Retro-Tahyon prospective outcome contract / retro tahyon prospective out are considered together."
-      },
-      "pivot": {
-        "id": "surface:other",
-        "label": "Other / cross-project"
-      },
-      "signature": "49f1477372f1e5e6b2ef9d142e9279703414336ceccfd0f7d5c0628ce8ddee14",
-      "status": "CANDIDATE_AWAITING_CORROBORATION"
-    },
     {
       "attention_score": 26.0,
       "authority": {
@@ -8327,12 +8262,77 @@
       },
       "signature": "7aef87e30a479c371ba50b56f0d139a79293738f993e3740dc07b1dfdf8ab8bf",
       "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 16.5,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-12T10:56:35.858631+00:00",
+      "depth": 2,
+      "focus_key": "pivot:surface:other",
+      "id": "syn:f5ea82dcaaa92ca54a31",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S2 · Ocean Beetle first raw UWA field bite — Lapis / JANUS OCEAN BEETLE RAW U ↔ janus.experiment.ocean.real_fi",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "52e08202f368fb1dbcd559f1f8f73433cd635489",
+          "source_records": [
+            {
+              "id": "obj:c474e363943c96663d4c",
+              "lineage_key": "JANUS-OCEAN-BEETLE-RAW-UWA-FIRST-BITE-PASS",
+              "path": "data/JANUS-OCEAN-BEETLE-RAW-UWA-FIRST-BITE-PASS-2026-09-11-v1.0.json",
+              "sha256": "6b089f8f0f9a8e9c7ce9bf92b60a0b1389d1e567509d8f3d6fed60857fac2a1c",
+              "status": "RAW_FIELD_BOUNDED_INGEST_PASS__HTTP_RANGE_CONFIRMED__FIRST_H_HAT_BITE_AND_TRACK…"
+            },
+            {
+              "id": "obj:bb0d33c53c087881bfc0",
+              "lineage_key": "JANUS-OCEAN-REAL-FIELD-VECTOR-SENSOR-COHERENCE-SPOTCHECK",
+              "path": "data/experiments/JANUS-OCEAN-REAL-FIELD-VECTOR-SENSOR-COHERENCE-SPOTCHECK-2026-09-11-v1.0.json",
+              "sha256": "1c9b190e29d2fbd03705eef86c78103aba8bfdb0a1225893e08e74d32c4c2833",
+              "status": "EXECUTED_ON_PUBLISHED_PROCESSED_FIELD_DATA__SYSTEMATIC_THREE_WINDOW_SPOTCHECK__…"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": "syn:c0d0567a2cf2206517bb",
+          "source_ids": [
+            "obj:c474e363943c96663d4c",
+            "obj:bb0d33c53c087881bfc0"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when Ocean Beetle first raw UWA field bite — Lapis / JANUS OCEAN BEETLE RAW U and janus.experiment.ocean.real_field.vector_senso / JANUS OCEAN REAL FIELD  are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "80c82f806baaea806de6d25b398bfc90eb7b58c9803f6f9e5541acc8a44f88b3",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
     }
   ],
   "created_this_run": [
-    "syn:13d2c45b744252282876"
+    "syn:f5ea82dcaaa92ca54a31"
   ],
-  "generated_at": "2026-09-12T04:43:55.433217+00:00",
+  "generated_at": "2026-09-12T10:56:35.858666+00:00",
   "laws": [
     "EXISTING_LINKS -> FOCUS -> COMPOSE -> CANDIDATE -> CORROBORATE",
     "SYNTHESIS != TRUTH",
@@ -9803,6 +9803,16 @@
       "signature": "7aef87e30a479c371ba50b56f0d139a79293738f993e3740dc07b1dfdf8ab8bf",
       "source_commit": "52e08202f368fb1dbcd559f1f8f73433cd635489",
       "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:f5ea82dcaaa92ca54a31",
+      "created_at": "2026-09-12T10:56:35.858631+00:00",
+      "focus_key": "pivot:surface:other",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "80c82f806baaea806de6d25b398bfc90eb7b58c9803f6f9e5541acc8a44f88b3",
+      "source_commit": "52e08202f368fb1dbcd559f1f8f73433cd635489",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
     }
   ],
   "registry": {
@@ -9812,6 +9822,6 @@
     "source_commit": "52e08202f368fb1dbcd559f1f8f73433cd635489"
   },
   "schema": "janus.inaihr.semantic_evolution.v2",
-  "state_sha256": "5f2f9d37884155b10f5dc4f9b8d39d726ec38278ca89198e55c281658c96fb6a",
+  "state_sha256": "0825b77bf5211eefe53c67c8a8417f2d96c84545dd1f498c29db00f3f003f353",
   "status": "ACTIVE_AUTONOMOUS_CANDIDATE_EVOLUTION"
 }
