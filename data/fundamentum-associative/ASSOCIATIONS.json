@@ -1,0 +1,77 @@
+{
+  "schema": "janus.inaihr.fundamentum_associations.v1",
+  "source_repository": "Hawkar-usls/Janus-Fundamentum",
+  "source_commit": "70718d5ad4817327b521d08e0b769354ef059346",
+  "source_index_entry_count": 918,
+  "tracks": {
+    "P_VS_NP": "OPEN",
+    "A3_EXTERNAL_REPLICATION": "NOT_ESTABLISHED",
+    "A3_WORLD_NOVELTY_N4": "NOT_ESTABLISHED",
+    "C023_ASYMPTOTIC_LOWER_BOUND": "OPEN"
+  },
+  "routes": [
+    {
+      "source": "C023_ASYMPTOTIC_LOWER_BOUND",
+      "target": "proof-complexity literature",
+      "relation": "SEARCH_FOR_SIMULATION_OR_COUNTEREXAMPLE",
+      "status": "CANDIDATE_ROUTE"
+    },
+    {
+      "source": "A3_EXTERNAL_REPLICATION",
+      "target": "independent implementation",
+      "relation": "SEARCH_FOR_REPRODUCTION_OR_PRIOR_ART",
+      "status": "CANDIDATE_ROUTE"
+    },
+    {
+      "source": "P_VS_NP",
+      "target": "exact polynomial SAT candidate",
+      "relation": "GENERATE_AND_ATTACK_CANDIDATE",
+      "status": "CANDIDATE_ROUTE"
+    }
+  ],
+  "topa_query_seeds": [
+    {
+      "id": "Q-PNP-SAT-POLY",
+      "focus": "P vs NP / SAT polynomial-time algorithm",
+      "query": "SAT polynomial time algorithm exact proof complexity structural decomposition"
+    },
+    {
+      "id": "Q-C023-CACHE",
+      "focus": "C023 formula caching",
+      "query": "formula caching DPLL clause learning proof complexity lower bounds resolution simulation"
+    },
+    {
+      "id": "Q-REASON-REUSE",
+      "focus": "reason reuse",
+      "query": "reason reuse memoization SAT proof systems cache contextual soundness"
+    },
+    {
+      "id": "Q-A3-PRIOR",
+      "focus": "A3 prior art",
+      "query": "subspace arrangement pathwidth endpoint compression ternary dynamic programming matroid pathwidth"
+    },
+    {
+      "id": "Q-LOWER-BOUND",
+      "focus": "lower-bound barriers",
+      "query": "proof complexity lower bounds resolution caching branching programs SAT"
+    },
+    {
+      "id": "Q-REPRESENTATION",
+      "focus": "representation preservation",
+      "query": "SAT representation change semantic equivalence polynomial reconstruction verification"
+    }
+  ],
+  "authority": {
+    "truth": false,
+    "proof": false,
+    "evidence": false,
+    "automatic_promotion": false,
+    "source_mutation": false
+  },
+  "claim_ceiling": "ASSOCIATIVE_CANDIDATE_MEMORY_ONLY__TARGET_LOCAL_VERIFY_REQUIRED",
+  "laws": [
+    "ASSOCIATION != EVIDENCE",
+    "QUERY_RANK != TRUTH",
+    "P_VS_NP_REMAINS_OPEN_UNLESS_EXPLICIT_PROOF_GATE_PASSES"
+  ]
+}
