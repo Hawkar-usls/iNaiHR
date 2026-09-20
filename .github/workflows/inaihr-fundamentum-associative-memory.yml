@@ -1,0 +1,61 @@
+name: iNaiHR Fundamentum Associative Memory
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: inaihr-fundamentum-associative-memory
+  cancel-in-progress: false
+
+jobs:
+  associate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build iNaiHR associative view from HRAiN source mirror
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/fundamentum-associative
+          python tools/fundamentum_associative_memory.py --out /tmp/fundamentum-associative
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('/tmp/fundamentum-associative/LATEST.json').read_text())
+          assert x['schema']=='janus.inaihr.fundamentum_memory_pointer.v1'
+          assert x['status']=='READY'
+          assert x['source_mutation'] is False
+          assert x['automatic_claim_promotion'] is False
+          assert x['topa_query_seed_count'] > 0
+          print('INAIHR_FUNDAMENTUM_ASSOCIATION_GATE=PASS')
+          PY
+      - name: Persist isolated associative memory
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin janus/fundamentum-associative-memory >/dev/null 2>&1; then
+            git fetch origin janus/fundamentum-associative-memory
+            git switch -C janus/fundamentum-associative-memory origin/janus/fundamentum-associative-memory
+          else
+            git switch --orphan janus/fundamentum-associative-memory
+            git rm -rf . >/dev/null 2>&1 || true
+          fi
+          mkdir -p data/fundamentum-associative
+          cp /tmp/fundamentum-associative/*.json data/fundamentum-associative/
+          printf '%s\n' '# Fundamentum associative memory' '' 'Derived JANUS candidate memory only. Association is not evidence and this branch never mutates Janus-Fundamentum.' > data/fundamentum-associative/README.md
+          git config user.name 'janus-inaihr-fundamentum[bot]'
+          git config user.email 'janus-inaihr-fundamentum[bot]@users.noreply.github.com'
+          git add data/fundamentum-associative
+          git diff --cached --quiet && exit 0
+          git commit -m "inaihr: refresh Fundamentum associative memory"
+          git push origin HEAD:janus/fundamentum-associative-memory
