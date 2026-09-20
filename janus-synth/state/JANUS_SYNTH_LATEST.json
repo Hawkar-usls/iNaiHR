@@ -1,78 +1,13 @@
 {
   "attention": {
     "attention_weight_is_evidence_weight": false,
-    "focus_age": 1,
+    "focus_age": 2,
     "focus_key": "path:registry/p_vs_np",
     "no_fixed_hypothesis_center": true,
     "policy": "MIGRATING_FOCUS_WITH_REPLAY_FATIGUE_AND_LINEAGE_DIVERSITY"
   },
   "candidate_count": 128,
   "candidates": [
-    {
-      "attention_score": 23.0,
-      "authority": {
-        "automatic_promotion": false,
-        "causal": false,
-        "mutation": false,
-        "proof": false,
-        "truth": false
-      },
-      "created_at": "2026-09-12T20:39:37.821755+00:00",
-      "depth": 4,
-      "focus_key": "path:EYE/r2",
-      "id": "syn:ca58833a4f11965a04cb",
-      "kind": "SEMANTIC_CANDIDATE",
-      "label": "S4 · JANUS-EYE-R2-RECEIPT / EYE R2 RECEIPT ↔ JANUS-EYE-R2-OPERATOR-BACKBONE / EYE R2 OPERATOR BACKBONE",
-      "meaning": {
-        "boundaries": [
-          "SYNTHESIS != TRUTH",
-          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
-          "GRAPH_DENSITY != EVIDENCE",
-          "CANDIDATE_EDGE != CAUSAL_EDGE",
-          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
-        ],
-        "evidence": {
-          "independent_replication_established": false,
-          "registry_source_commit": "6569a776eed07754b731937956921443e6b52612",
-          "source_records": [
-            {
-              "id": "obj:cde224a67d187feeeb8b",
-              "lineage_key": "EYE-R2-RECEIPT",
-              "path": "EYE/r2/generated/EYE-R2-RECEIPT.json",
-              "sha256": "2fe6464b6bd929b72b69f33fa96107733ee45e037cc92e3943a2744b022ebbca",
-              "status": "PASS"
-            },
-            {
-              "id": "obj:a9a9bd0983db7e0e348d",
-              "lineage_key": "EYE-R2-OPERATOR-BACKBONE",
-              "path": "EYE/r2/generated/EYE-R2-OPERATOR-BACKBONE.json",
-              "sha256": "9e9285bc41f3aa3f21670ab0357b06c8fc1fd7ce3d3703c5af9470573f0cf9b3",
-              "status": "DESCRIPTIVE_OPERATOR_MAP__NOT_DISCOVERY"
-            }
-          ]
-        },
-        "lineage": {
-          "prior_candidate_id": "syn:6988ffb3caf34ec85d01",
-          "source_ids": [
-            "obj:cde224a67d187feeeb8b",
-            "obj:a9a9bd0983db7e0e348d"
-          ]
-        },
-        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
-        "next_steps": [
-          "Search for a counterexample to the proposed bridge.",
-          "Seek an independent source or target-local verifier before promotion.",
-          "If repeated without new evidence, fatigue this motif rather than increase confidence."
-        ],
-        "purpose": "Explore a candidate joint meaning that becomes visible only when JANUS-EYE-R2-RECEIPT / EYE R2 RECEIPT and JANUS-EYE-R2-OPERATOR-BACKBONE / EYE R2 OPERATOR BACKBONE are considered together."
-      },
-      "pivot": {
-        "id": "surface:other",
-        "label": "Other / cross-project"
-      },
-      "signature": "58fc0499ddccb17fba131625ef4a17f89967a2141aaf2567fc219a9c7b0d285c",
-      "status": "CANDIDATE_AWAITING_CORROBORATION"
-    },
     {
       "attention_score": 28.0,
       "authority": {
@@ -8327,15 +8262,77 @@
       },
       "signature": "cb7b21415fe6949e9d510d20fc65545d0c1ddf9ae16125f1bbbf7d3602d82278",
       "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 27.0,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-20T23:18:17.752583+00:00",
+      "depth": 1,
+      "focus_key": "path:registry/p_vs_np",
+      "id": "syn:0f0e08aac13468360a93",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S1 · JANUS-TRUMP-R5-FULL-COMPONENT-QUOTIENT-LIFT-TH / JANUS P VS NP R5 FULL C ↔ JANUS-TRUMP-R5-FULL-COMPONENT-",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "3a7d16d599c51297117163377d8d5f3eb30b626a",
+          "source_records": [
+            {
+              "id": "obj:30d9de23e341dd511e27",
+              "lineage_key": "JANUS-P-VS-NP-R5-FULL-COMPONENT-QUOTIENT-LIFT-THEOREM-SEAL",
+              "path": "registry/p_vs_np/JANUS_P_VS_NP_R5_FULL_COMPONENT_QUOTIENT_LIFT_THEOREM_SEAL_2026-09-21_v1.0.json",
+              "sha256": "ca08f803856fc10014da8bcc2da116552ac3cdffd85f7550cc166a7ca4f96b61",
+              "status": "PASS_THEOREM_SEAL"
+            },
+            {
+              "id": "obj:97f38efa7b854b4b31b0",
+              "lineage_key": "JANUS-P-VS-NP-R5-FULL-COMPONENT-QUOTIENT-LIFT-PROOF",
+              "path": "registry/p_vs_np/JANUS_P_VS_NP_R5_FULL_COMPONENT_QUOTIENT_LIFT_PROOF_2026-09-21_v1.0.json",
+              "sha256": "fd5a497fb8feb25647e52a1600cad40bbb5af91b4a2ebccd82ddf15f93dc6a86",
+              "status": "PASS_FULL_COMPONENT_QUOTIENT_INDUCED_PATH_LIFT"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": null,
+          "source_ids": [
+            "obj:30d9de23e341dd511e27",
+            "obj:97f38efa7b854b4b31b0"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when JANUS-TRUMP-R5-FULL-COMPONENT-QUOTIENT-LIFT-TH / JANUS P VS NP R5 FULL C and JANUS-TRUMP-R5-FULL-COMPONENT-QUOTIENT-LIFT-PR / JANUS P VS NP R5 FULL C are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "15741236485674bf626b5b07c71b5b1c5387b48d370ef2ad18d7bc5ea972d4ea",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
     }
   ],
   "created_this_run": [
-    "syn:e07e5f07703a94ceb648",
-    "syn:9544695b67c2d6dba607",
-    "syn:2fe5e821314741670d8c",
-    "syn:b1d253c972b6bc2ddd60"
+    "syn:0f0e08aac13468360a93"
   ],
-  "generated_at": "2026-09-20T20:55:10.936734+00:00",
+  "generated_at": "2026-09-20T23:18:17.752613+00:00",
   "laws": [
     "EXISTING_LINKS -> FOCUS -> COMPOSE -> CANDIDATE -> CORROBORATE",
     "SYNTHESIS != TRUTH",
@@ -8357,16 +8354,6 @@
     "no_forced_fill": true
   },
   "receipts": [
-    {
-      "attention_is_evidence": false,
-      "candidate_id": "syn:f8e994396d04d61bebe5",
-      "created_at": "2026-09-03T16:32:33.296362+00:00",
-      "focus_key": "path:EYE/r3",
-      "schema": "janus.inaihr.semantic_synth_receipt.v2",
-      "signature": "b2955e186e9b05840fb2ed5f3b0eaed33db565b9557f76c25f149a9c46123f00",
-      "source_commit": "e5db14f34f2a7eb67123887067c70f4f1740c865",
-      "verdict": "PRESERVED_CANDIDATE_ONLY"
-    },
     {
       "attention_is_evidence": false,
       "candidate_id": "syn:f7e65b9f7aa0d8eaf4b2",
@@ -10916,15 +10903,25 @@
       "signature": "cb7b21415fe6949e9d510d20fc65545d0c1ddf9ae16125f1bbbf7d3602d82278",
       "source_commit": "55d51c530de8f5c25f0902a4f660d2989500dcc4",
       "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:0f0e08aac13468360a93",
+      "created_at": "2026-09-20T23:18:17.752583+00:00",
+      "focus_key": "path:registry/p_vs_np",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "15741236485674bf626b5b07c71b5b1c5387b48d370ef2ad18d7bc5ea972d4ea",
+      "source_commit": "3a7d16d599c51297117163377d8d5f3eb30b626a",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
     }
   ],
   "registry": {
-    "link_count": 90,
-    "node_count": 91,
+    "link_count": 103,
+    "node_count": 104,
     "repository": "Hawkar-usls/janus-meta-registry",
-    "source_commit": "55d51c530de8f5c25f0902a4f660d2989500dcc4"
+    "source_commit": "3a7d16d599c51297117163377d8d5f3eb30b626a"
   },
   "schema": "janus.inaihr.semantic_evolution.v2",
-  "state_sha256": "2c3c2a1d19ebbc6566403ac6d91225c67a2f7918aa85affc5a52877a94aa9054",
+  "state_sha256": "7edb46bc359476fd01dc64a0f4060e08fb603da62751fe0ec5526113bdce0810",
   "status": "ACTIVE_AUTONOMOUS_CANDIDATE_EVOLUTION"
 }
