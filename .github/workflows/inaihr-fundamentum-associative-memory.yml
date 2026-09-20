@@ -1,6 +1,12 @@
 name: iNaiHR Fundamentum Associative Memory
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/fundamentum_associative_memory.py'
+      - '.janus/INAIHR_FUNDAMENTUM_MEMORY_CONTRACT.json'
+      - '.github/workflows/inaihr-fundamentum-associative-memory.yml'
   schedule:
     - cron: '17 * * * *'
   workflow_dispatch:
