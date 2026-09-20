@@ -1,78 +1,13 @@
 {
   "attention": {
     "attention_weight_is_evidence_weight": false,
-    "focus_age": 1,
+    "focus_age": 2,
     "focus_key": "pivot:surface:other",
     "no_fixed_hypothesis_center": true,
     "policy": "MIGRATING_FOCUS_WITH_REPLAY_FATIGUE_AND_LINEAGE_DIVERSITY"
   },
   "candidate_count": 128,
   "candidates": [
-    {
-      "attention_score": 23.0,
-      "authority": {
-        "automatic_promotion": false,
-        "causal": false,
-        "mutation": false,
-        "proof": false,
-        "truth": false
-      },
-      "created_at": "2026-09-11T11:32:17.578992+00:00",
-      "depth": 4,
-      "focus_key": "path:EYE/r3",
-      "id": "syn:6ec84c7a6b5ff3aea41b",
-      "kind": "SEMANTIC_CANDIDATE",
-      "label": "S4 · JANUS-EYE-R3-RECEIPT / EYE R3 RECEIPT ↔ JANUS-EYE-R3-MACHINE-CATALOG / EYE R3 MACHINE CATALOG",
-      "meaning": {
-        "boundaries": [
-          "SYNTHESIS != TRUTH",
-          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
-          "GRAPH_DENSITY != EVIDENCE",
-          "CANDIDATE_EDGE != CAUSAL_EDGE",
-          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
-        ],
-        "evidence": {
-          "independent_replication_established": false,
-          "registry_source_commit": "52e08202f368fb1dbcd559f1f8f73433cd635489",
-          "source_records": [
-            {
-              "id": "obj:d816349e6c74f0e8fa16",
-              "lineage_key": "EYE-R3-RECEIPT",
-              "path": "EYE/r3/generated/EYE-R3-RECEIPT.json",
-              "sha256": "b0b824ce6b11ddae0f83001d9ab3b92e5b3555688d1080e4331f2c0de43af08c",
-              "status": "PASS"
-            },
-            {
-              "id": "obj:1dd46a8cee37337793f8",
-              "lineage_key": "EYE-R3-MACHINE-CATALOG",
-              "path": "EYE/r3/generated/EYE-R3-MACHINE-CATALOG.json",
-              "sha256": "23a9a365c9b256354b95453226fd0025e960bf159fd204171d8c9acdf1fdc029",
-              "status": "DESCRIPTIVE_ORDERED_MACHINE_MAP__NOT_DISCOVERY"
-            }
-          ]
-        },
-        "lineage": {
-          "prior_candidate_id": "syn:a078e3efebcc134d4e04",
-          "source_ids": [
-            "obj:d816349e6c74f0e8fa16",
-            "obj:1dd46a8cee37337793f8"
-          ]
-        },
-        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
-        "next_steps": [
-          "Search for a counterexample to the proposed bridge.",
-          "Seek an independent source or target-local verifier before promotion.",
-          "If repeated without new evidence, fatigue this motif rather than increase confidence."
-        ],
-        "purpose": "Explore a candidate joint meaning that becomes visible only when JANUS-EYE-R3-RECEIPT / EYE R3 RECEIPT and JANUS-EYE-R3-MACHINE-CATALOG / EYE R3 MACHINE CATALOG are considered together."
-      },
-      "pivot": {
-        "id": "surface:other",
-        "label": "Other / cross-project"
-      },
-      "signature": "6e9639f63d2a42093aeb483e7a5c7fa2be03e7cea1a5144015bbba5b8cdede09",
-      "status": "CANDIDATE_AWAITING_CORROBORATION"
-    },
     {
       "attention_score": 24.0,
       "authority": {
@@ -8327,15 +8262,77 @@
       },
       "signature": "059c3deb76d8d20c66354bbc28d3dc7bd365e9e5e1dd93055aa4b8507d7b9cdb",
       "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 28.5,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-20T05:01:17.479500+00:00",
+      "depth": 1,
+      "focus_key": "pivot:surface:other",
+      "id": "syn:2cd13683a78bf412ae44",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S1 · C11_PI_OCTAHEDRON_CORE_MODULATOR_QUANTIFIER_BI / JANUS TRUMP C11 PI OCTA ↔ JANUS-TRUMP-C11-X2-OCTAHEDRON-",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "78e4296dc6c086eadae31db0726c8bff83d92d71",
+          "source_records": [
+            {
+              "id": "obj:824b39ccc4f628c87e57",
+              "lineage_key": "JANUS-TRUMP-C11-PI-OCTAHEDRON-CORE-MODULATOR-QUANTIFIER-BINDING",
+              "path": "data/JANUS-TRUMP-C11-PI-OCTAHEDRON-CORE-MODULATOR-QUANTIFIER-BINDING-2026-09-20-v1.0.json",
+              "sha256": "2d2f42db2129ab129074710085c59489e1c0ecd110973193476bba588eb9bcc2",
+              "status": "FROZEN_QUANTIFIER_BINDING_ADDENDUM__PREREG_UNMODIFIED"
+            },
+            {
+              "id": "obj:6d6e41a4a80128fc66f5",
+              "lineage_key": "JANUS-TRUMP-C11-X2-OCTAHEDRON-CORE-MODULATOR-CONTROL-RESULT",
+              "path": "data/JANUS-TRUMP-C11-X2-OCTAHEDRON-CORE-MODULATOR-CONTROL-RESULT-2026-09-20-v1.0.json",
+              "sha256": "5d406bfbd2cc9dd82c906e62382ed30626c255c3cbd118e2c81d4634f65ee406",
+              "status": "PASS_CURRENT_X2_OCTAHEDRON_CORE_MODULATOR_TERMINAL"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": null,
+          "source_ids": [
+            "obj:824b39ccc4f628c87e57",
+            "obj:6d6e41a4a80128fc66f5"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when C11_PI_OCTAHEDRON_CORE_MODULATOR_QUANTIFIER_BI / JANUS TRUMP C11 PI OCTA and JANUS-TRUMP-C11-X2-OCTAHEDRON-CORE-MODULATOR-C / JANUS TRUMP C11 X2 OCTA are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "688b4da198463f8b4064b8416c96e42ee7beb628cf2d0543c3de3a9d4ef74029",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
     }
   ],
   "created_this_run": [
-    "syn:ee9e876038dae0279593",
-    "syn:bb2c84c500c03d28f5c0",
-    "syn:17ad273c53f40dc4c7a7",
-    "syn:7780e5cdc72fb74c82b1"
+    "syn:2cd13683a78bf412ae44"
   ],
-  "generated_at": "2026-09-19T23:13:48.934174+00:00",
+  "generated_at": "2026-09-20T05:01:17.479548+00:00",
   "laws": [
     "EXISTING_LINKS -> FOCUS -> COMPOSE -> CANDIDATE -> CORROBORATE",
     "SYNTHESIS != TRUTH",
@@ -8357,16 +8354,6 @@
     "no_forced_fill": true
   },
   "receipts": [
-    {
-      "attention_is_evidence": false,
-      "candidate_id": "syn:031842e81bcd31dae0c8",
-      "created_at": "2026-09-02T23:22:23.546726+00:00",
-      "focus_key": "pivot:surface:other",
-      "schema": "janus.inaihr.semantic_synth_receipt.v2",
-      "signature": "bce36463f6f8802a93690c818e106d47886f9733a9ab606ca6040caac9e7b4d0",
-      "source_commit": "a8408d93113f464582ff1567e7e2bd76494f13b0",
-      "verdict": "PRESERVED_CANDIDATE_ONLY"
-    },
     {
       "attention_is_evidence": false,
       "candidate_id": "syn:cb670ef193ddac5f33eb",
@@ -10916,15 +10903,25 @@
       "signature": "059c3deb76d8d20c66354bbc28d3dc7bd365e9e5e1dd93055aa4b8507d7b9cdb",
       "source_commit": "d3741e4aec9079015bfa0af26b78c7a9bcf616ba",
       "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:2cd13683a78bf412ae44",
+      "created_at": "2026-09-20T05:01:17.479500+00:00",
+      "focus_key": "pivot:surface:other",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "688b4da198463f8b4064b8416c96e42ee7beb628cf2d0543c3de3a9d4ef74029",
+      "source_commit": "78e4296dc6c086eadae31db0726c8bff83d92d71",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
     }
   ],
   "registry": {
-    "link_count": 130,
-    "node_count": 131,
+    "link_count": 111,
+    "node_count": 112,
     "repository": "Hawkar-usls/janus-meta-registry",
-    "source_commit": "d3741e4aec9079015bfa0af26b78c7a9bcf616ba"
+    "source_commit": "78e4296dc6c086eadae31db0726c8bff83d92d71"
   },
   "schema": "janus.inaihr.semantic_evolution.v2",
-  "state_sha256": "27ede66019436e7f535724ad0d281f518979653576d00ccf5a9a0414ee40754e",
+  "state_sha256": "24412bee65e96cfb8a6c48d604f36661d29272daf45a3d52ec9c14e031186155",
   "status": "ACTIVE_AUTONOMOUS_CANDIDATE_EVOLUTION"
 }
