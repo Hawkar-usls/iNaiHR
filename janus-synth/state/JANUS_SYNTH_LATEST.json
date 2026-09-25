@@ -1,78 +1,13 @@
 {
   "attention": {
     "attention_weight_is_evidence_weight": false,
-    "focus_age": 6,
+    "focus_age": 7,
     "focus_key": "pivot:surface:other",
     "no_fixed_hypothesis_center": true,
     "policy": "MIGRATING_FOCUS_WITH_REPLAY_FATIGUE_AND_LINEAGE_DIVERSITY"
   },
   "candidate_count": 128,
   "candidates": [
-    {
-      "attention_score": 30.0,
-      "authority": {
-        "automatic_promotion": false,
-        "causal": false,
-        "mutation": false,
-        "proof": false,
-        "truth": false
-      },
-      "created_at": "2026-09-15T21:29:22.765061+00:00",
-      "depth": 1,
-      "focus_key": "lineage:JANUS-EGYPT-EVIDENCE-MAP",
-      "id": "syn:ccdbaf76e7572e2624c4",
-      "kind": "SEMANTIC_CANDIDATE",
-      "label": "S1 · JANUS-EGYPT-EVIDENCE-MAP ↔ JANUS Egypt Evidence Map",
-      "meaning": {
-        "boundaries": [
-          "SYNTHESIS != TRUTH",
-          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
-          "GRAPH_DENSITY != EVIDENCE",
-          "CANDIDATE_EDGE != CAUSAL_EDGE",
-          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
-        ],
-        "evidence": {
-          "independent_replication_established": false,
-          "registry_source_commit": "0e73a53c44cbe2161db047ad7c70670c396fa632",
-          "source_records": [
-            {
-              "id": "obj:d63379ca53e1f9c0a3d7",
-              "lineage_key": "JANUS-EGYPT-EVIDENCE-MAP",
-              "path": "data/JANUS-EGYPT-EVIDENCE-MAP-v1.1.json",
-              "sha256": "ea2aa7564b06e11c88f70d5fc19acf983308b6e34a35ef433cd88e053ea77779",
-              "status": "ACTIVE_FAIL_CLOSED_DECISION_MAP"
-            },
-            {
-              "id": "obj:7aecccfa74fd928dcb2e",
-              "lineage_key": "JANUS-EGYPT-EVIDENCE-MAP",
-              "path": "JANUS-EGYPT-EVIDENCE-MAP-v1.0.json",
-              "sha256": "d775378e27428a4e88099a232c994c4362e0bb0bf1add65e1e94db7b5fd08578",
-              "status": "WAITING_FOR_EXPERT_REPLY"
-            }
-          ]
-        },
-        "lineage": {
-          "prior_candidate_id": null,
-          "source_ids": [
-            "obj:d63379ca53e1f9c0a3d7",
-            "obj:7aecccfa74fd928dcb2e"
-          ]
-        },
-        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
-        "next_steps": [
-          "Search for a counterexample to the proposed bridge.",
-          "Seek an independent source or target-local verifier before promotion.",
-          "If repeated without new evidence, fatigue this motif rather than increase confidence."
-        ],
-        "purpose": "Explore a candidate joint meaning that becomes visible only when JANUS-EGYPT-EVIDENCE-MAP and JANUS Egypt Evidence Map are considered together."
-      },
-      "pivot": {
-        "id": "surface:other",
-        "label": "Other / cross-project"
-      },
-      "signature": "87e726bb83ea0614b32e731600c900f824df05f1c7cc9eb6c06951208dbe92de",
-      "status": "CANDIDATE_AWAITING_CORROBORATION"
-    },
     {
       "attention_score": 25.5,
       "authority": {
@@ -8327,12 +8262,77 @@
       },
       "signature": "be760bd07b613aeb4ffcb0960ca78b0da74f99e93c1dcbe3bfec0949f856de03",
       "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 16.5,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-09-25T11:59:11.000344+00:00",
+      "depth": 2,
+      "focus_key": "pivot:surface:other",
+      "id": "syn:710a3920091a9a2456a4",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S2 · JANUS-P-VS-NP-R5-E9-SIGNED-TORSION-SIDE-CODE-2 / JANUS P VS NP R5 E9 SIG ↔ JANUS-P-VS-NP-R5-E9-SIGNED-BAL",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "340983509e706ce9835530d447663609b8ad1aa5",
+          "source_records": [
+            {
+              "id": "obj:d6c86be5fb54b1e0d849",
+              "lineage_key": "JANUS-P-VS-NP-R5-E9-SIGNED-TORSION-SIDE-CODE",
+              "path": "data/JANUS-P-VS-NP-R5-E9-SIGNED-TORSION-SIDE-CODE-2026-09-23-v1.0.json",
+              "sha256": "cac04ef903e0ce1ffe29b4fecc2b5be7c86cb986a578c7d493e91c41ae7c23d1",
+              "status": "EXACT_SNF_SIDE_CODE_PASS_ON_FROZEN_MICROCORE__GENERAL_COMPOSITION_OPEN"
+            },
+            {
+              "id": "obj:0d4fdf27ec1d1ed57f97",
+              "lineage_key": "JANUS-P-VS-NP-R5-E9-SIGNED-BALANCED-HOLE-INTERACTION",
+              "path": "data/JANUS-P-VS-NP-R5-E9-SIGNED-BALANCED-HOLE-INTERACTION-2026-09-23-v1.0.json",
+              "sha256": "00e09ca249cf78e8157d450e97b959dfff160abedeefc9cd885eb77145331eb5",
+              "status": "SIGNED_BALANCED_POSITIVE_ISLAND_PASS__SIGNED_HOLE_INTERACTION_GATE_OPEN"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": "syn:b33f33896285151d46bb",
+          "source_ids": [
+            "obj:d6c86be5fb54b1e0d849",
+            "obj:0d4fdf27ec1d1ed57f97"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when JANUS-P-VS-NP-R5-E9-SIGNED-TORSION-SIDE-CODE-2 / JANUS P VS NP R5 E9 SIG and JANUS-P-VS-NP-R5-E9-SIGNED-BALANCED-HOLE-INTER / JANUS P VS NP R5 E9 SIG are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "2c90930622908e0fc15151879ac39ee5c00412c8877c92df1593eef55ca511bc",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
     }
   ],
   "created_this_run": [
-    "syn:b33f33896285151d46bb"
+    "syn:710a3920091a9a2456a4"
   ],
-  "generated_at": "2026-09-25T05:05:38.275017+00:00",
+  "generated_at": "2026-09-25T11:59:11.000387+00:00",
   "laws": [
     "EXISTING_LINKS -> FOCUS -> COMPOSE -> CANDIDATE -> CORROBORATE",
     "SYNTHESIS != TRUTH",
@@ -8354,16 +8354,6 @@
     "no_forced_fill": true
   },
   "receipts": [
-    {
-      "attention_is_evidence": false,
-      "candidate_id": "syn:4598159bd8d332b186ae",
-      "created_at": "2026-09-06T15:33:08.670579+00:00",
-      "focus_key": "pivot:surface:other",
-      "schema": "janus.inaihr.semantic_synth_receipt.v2",
-      "signature": "8fd19cac748ae02594d299a12de4aebcbfaf8e6ee2feecccd89bf1f2abe81985",
-      "source_commit": "7883135dc8dcd7b2ad504b0b09421b83f778a07f",
-      "verdict": "PRESERVED_CANDIDATE_ONLY"
-    },
     {
       "attention_is_evidence": false,
       "candidate_id": "syn:b5c71b20b07773f34eef",
@@ -10913,6 +10903,16 @@
       "signature": "be760bd07b613aeb4ffcb0960ca78b0da74f99e93c1dcbe3bfec0949f856de03",
       "source_commit": "340983509e706ce9835530d447663609b8ad1aa5",
       "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:710a3920091a9a2456a4",
+      "created_at": "2026-09-25T11:59:11.000344+00:00",
+      "focus_key": "pivot:surface:other",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "2c90930622908e0fc15151879ac39ee5c00412c8877c92df1593eef55ca511bc",
+      "source_commit": "340983509e706ce9835530d447663609b8ad1aa5",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
     }
   ],
   "registry": {
@@ -10922,6 +10922,6 @@
     "source_commit": "340983509e706ce9835530d447663609b8ad1aa5"
   },
   "schema": "janus.inaihr.semantic_evolution.v2",
-  "state_sha256": "7489a59038809aab44feb559fa99f5c5a5f4fd7aaabc107236a11b6589f7e41a",
+  "state_sha256": "eade9ded1891a5b11635fb7e69e6bb76b68ac8b878a9068b5d5f6f927ec83b1d",
   "status": "ACTIVE_AUTONOMOUS_CANDIDATE_EVOLUTION"
 }
