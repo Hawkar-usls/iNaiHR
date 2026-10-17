@@ -1,7 +1,241 @@
 {
-  "batch_id": "a8b2147a99c8774b20fa",
+  "batch_id": "0c609579b0ea4e54091c",
   "claim_ceiling": "DISCOVERY_MEMORY_ONLY__TARGET_REPO_MUST_VERIFY_INDEPENDENTLY",
   "items": [
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "512fc542764e6babf983c864",
+      "context_id": "7d85377f5368fbe7e7200e28",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "memory",
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 7.2917,
+      "source": "arxiv",
+      "source_published": "2026-10-14T07:37:31Z",
+      "source_updated": "2026-10-14T07:37:31Z",
+      "summary": "Recent video world models have increasingly adopted 3D memory mechanisms to integrate historical observations into a lightweight and persistent scene representation. This naturally raises a complementary question: if 3D representations can serve as an effective mechanism for memorizing observed scenes, can they also be directly used as the latent space for reconstructing and generating scenes? Motivated by this idea, we represent a scene as a compact and unstructured 3D-anchored latent space (\\textbf{SceneAE}). Each latent combines an explicit 3D position with an implicit content feature and is spatially grounded to describe its local scene region, forming a sparse latent point cloud. Unlike conventional video-VAE latents that describe how a scene appears from particular viewpoints, our representation directly describes the scene itself, making it naturally applicable to both reconstruction and generation. For reconstruction, once the scene has been generated, our persistent 3D representation can be projected and decoded into RGB-D observations by different target cameras, without the need to regenerate a video for each new camera trajectory. For generation, we leverage the geometry-content separation to first generate camera-controlled 3D geometry and then synthesize content conditioned on it, reducing camera-appearance entanglement and improving camera controllability. Experiments show that this 3D latent achieves superior generation quality, computational cost, and camera controllability.",
+      "tags": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "SceneAE: Scene Generation and Reconstruction in Queryable 3D-Anchored Latent Space",
+      "url": "https://arxiv.org/abs/2610.19708v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "d3afdb86629d615892e1565b",
+      "context_id": "779d2fe9cdd03234034d7cc4",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "memory",
+        "memory consolidation"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0833,
+      "source": "arxiv",
+      "source_published": "2026-10-14T14:59:04Z",
+      "source_updated": "2026-10-14T14:59:04Z",
+      "summary": "Vision-Language Models (VLMs) have made substantial progress in spatial reasoning, and self-evolving agents further extend these capabilities to embodied environments by learning from interactions. However, current self-evolution remains particularly challenging in embodied spatial tasks, complex and multi-step decisions from partial visual evidence making it difficult to determine why an execution fails. The failure may stem from misperception, insufficient exploration, or incorrect planning, yet execution feedback alone rarely reveals which component is responsible. As a result, simply accumulating interaction experience can reinforce ineffective strategies. To address this, we propose HiMeco, a brain-inspired self-evolving agent for embodied spatial intelligence, inspired by metacognitive monitoring and hippocampal memory consolidation. Through Hippocampal-Metacognitive Reflection, HiMeco diagnoses failures in perception-exploration-planning (PEP), then compares execution attempts to derive reusable strategies and guidance for avoiding recurring errors. It also abstracts interaction programs into parameterized skills, using evidence contracts and execution-based validation to determine their retention and reuse. These strategies and skills guide subsequent interactions, with memory updated only between rounds and model parameters kept frozen. HiMeco achieves state-of-the-art performance on ESI-Bench, and it also improves accuracy on EmbSpatial-Bench by 3.94 percentage points without evolution.",
+      "tags": [
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Reflect After Failure: Brain-Inspired Self-Evolving Agents for Embodied Spatial Intelligence",
+      "url": "https://arxiv.org/abs/2610.20312v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "679cf32a95e04ed1f0acc783",
+      "context_id": "de0bfdd1c55a5fcae0b9a54f",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_published": "2026-10-14T01:09:47Z",
+      "source_updated": "2026-10-14T01:09:47Z",
+      "summary": "Dynamic graph learning models how entities and their relations evolve from historical observations to predict future graph states. Existing methods do not fully address dynamic graph world modelling, which requires learning transitions from temporal context to future latent graph states. This is difficult for three reasons: nodes and relations rely on different historical evidence, structural evolution is path-dependent, and future snapshots provide sparse and realization-specific targets. We propose Dynamic Graph World Modelling (DyG-WM), the first framework to jointly predict future node and relation representations from temporal context by answering three questions: what has evolved, how it evolved, and what will evolve next. To capture what has evolved, a historical node-relation context encoder summarizes node-neighborhood trajectories and pair-specific histories. To characterize how it evolved, a node-relation path-signature encoder captures ordered structural changes. To predict what will evolve next, a dual-level joint-embedding objective predicts target-snapshot node and relation representations without reconstructing the raw graph. Experiments on 12 link-prediction and two node-classification datasets demonstrate the effectiveness of DyG-WM across both tasks.",
+      "tags": [
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Dynamic Graph World Modelling: Learning Future Dynamics from Temporal Context",
+      "url": "https://arxiv.org/abs/2610.19364v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "b1f5bddba1c9221c225c7790",
+      "context_id": "8c816ec6f65f2337473804cf",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_published": "2026-10-15T09:57:14Z",
+      "source_updated": "2026-10-15T09:57:14Z",
+      "summary": "Learning intrinsic dynamics---the relationship between actions and their consequences---is essential for world models. However, visual variations unrelated to the underlying control process can obscure this relationship in learned representations. We investigate the connection between action predictability, defined as the ability to reconstruct an action from consecutive latent states, and the preservation of intrinsic dynamics. Our central hypothesis is that encouraging action predictability discourages representations from discarding the distinctions between different actions and their consequences. We provide two complementary forms of evidence for this connection. Theoretically, we derive a positive lower bound on squared inverse prediction error when the encoder merges distinguishable outcomes of different actions from the same state and appearance, and show that forward prediction can still be exact on those transitions. Empirically, controlled appearance-diversity comparisons, supervision interventions, and latent probes support the role of action prediction in preserving control-relevant transition information. We instantiate action predictability with Concat IDM, which predicts actions from concatenated latent states and updates the shared encoder using action labels already available in offline trajectories, without changing the test-time planner. Across three independent training runs on Push-T with 24 appearances, Concat IDM increases planning success from 9.1% to 77.2%; its paired improvement is 52.9 percentage points larger than that observed with a single appearance. Together, these findings support action predictability as an inductive bias toward intrinsic dynamics and demonstrate the practical benefits of Concat IDM for latent planning under visual diversity.",
+      "tags": [
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Learning Intrinsic Dynamics in Latent World Models",
+      "url": "https://arxiv.org/abs/2610.21612v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "4778213c3b9289136f66785e",
+      "context_id": "5cdd4c631c92ce81ee6d04f1",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_published": "2026-10-15T17:56:18Z",
+      "source_updated": "2026-10-15T17:56:18Z",
+      "summary": "Recent 3D world models increasingly use features from geometry foundation models (GFMs) as predictive world states, benefiting from their rich geometric priors. However, the view dependence of these features entangles scene dynamics with camera-induced variation, making the resulting state evolution harder to predict. We propose GeoState, a view-decoupled geometry representation for predictive 3D world modeling that separates scene-state evolution from camera-dependent observation. Specifically, a scene tokenizer aggregates multi-view GFM features into a view-decoupled scene state, which a geometry decoder queries using camera rays. An autoregressive world model then predicts future scene states, while camera motion is modeled separately. The predicted states can therefore be decoded under either predicted or externally specified cameras, while retaining a single context-derived scale throughout the rollout without per-frame scale alignment. Experiments show that GeoState outperforms prior 3D world models on Waymo, supports geometrically consistent cross-view querying, and generalizes zero-shot to KITTI and nuScenes. Project page: https://hongchang-liu.github.io/GeoState-project-page/",
+      "tags": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "GeoState: Learning View-Decoupled Geometry States for 3D World Modeling",
+      "url": "https://arxiv.org/abs/2610.22343v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "465f077eabdc90f98423a166",
+      "context_id": "4796f7b7832d3eb9b9a4d6ea",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_published": "2026-10-15T17:59:11Z",
+      "source_updated": "2026-10-15T17:59:11Z",
+      "summary": "Predicting how the world responds to an action requires more than what can be seen: robots must account for environmental factors that are neither directly observable nor explicitly specified, from physical properties such as friction and mass to human-defined environmental rules. We introduce T2-Z for test-time optimization of environment latents, which augments a robotic world model with a learnable environment latent to condition world predictions. This compact latent captures underlying environmental variation without supervision of what environmental factors exist or what values they take. During training, T2-Z alternates between two stages: a world-model optimization stage that fixes the latents and learns general action-conditioned dynamics across environments; and an environment-latent optimization stage that freezes the world model and optimizes the conditioning latents, allowing latent structure to emerge purely through world prediction. At test time, the world model remains frozen and a newly initialized environment latent is optimized from one or more test-time interactions, adapting the model to previously unseen environmental configurations. Across 7 simulated settings and 4 real-world robotic tasks, T2-Z reduces object prediction error metric from 15.20 to 7.00 and raises action success from 33.73% to 72.96%. Its emergent latents capture structured representations of individual and compounded factors across diverse visual scenes. Ablations further show that T2-Z can efficiently infer environment latents from as little as a single test-time interaction trajectory.",
+      "tags": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "T2-z: Test-Time Optimization of Environment Latents for Robotic World Models",
+      "url": "https://arxiv.org/abs/2610.22364v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "5ed104a6dd42b2706a3ffa3b",
+      "context_id": "9566ce979e688a51c5f3b07e",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "memory",
+        "representation",
+        "representation learning"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 5.8333,
+      "source": "arxiv",
+      "source_published": "2026-10-15T14:55:39Z",
+      "source_updated": "2026-10-15T14:55:39Z",
+      "summary": "Longitudinal electronic health records (EHRs) contain complementary diagnostic and laboratory information about patient health. However, irregularity, sparsity, heterogeneity, and incompleteness in documentation complicate EHR modeling. To address the problem, we introduce GraphBEAT (Graph-based Bucketized Event Aggregation over Time), a temporal graph representation learning framework that groups clinical events into time buckets and transforms observed features into patient-specific, temporally directed graphs to enable early risk stratification for gastrointestinal cancers. Each node in an EHR graph encodes feature identity, observed value, and temporal position of clinical events. A context-aware, time-decay message-passing mechanism models transitions between successive buckets, followed by multi-head attention pooling to generate patient-level representations. GraphBEAT was trained and evaluated on multi-site longitudinal diagnosis codes and laboratory tests to predict pancreatic, liver, and intestinal cancer at 12-, 24-, and 36-month diagnostic lead times. In all experimental setups, GraphBEAT consistently outperformed baseline graph neural networks (GraphSAGE, GAT, and GCN) and sequence modeling approaches (Transformer and long short-term memory [LSTM]). GraphBEAT also required over 250x fewer floating-point operations per patient and over 20x fewer parameters than the Transformer and LSTM baselines. These results support GraphBEAT as an accurate and computationally efficient approach for cancer risk stratification from sparse, heterogeneous longitudinal health records.",
+      "tags": [
+        "cs.LG",
+        "cs.AI",
+        "eess.SP"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "GraphBEAT: Graph-based Bucketized Event Aggregation Over Time for Early Risk Stratification of Gastrointestinal Cancers",
+      "url": "https://arxiv.org/abs/2610.22014v1"
+    },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
       "candidate_id": "aa4fbf80bf3ad7a066a58778",
@@ -134,11 +368,11 @@
       "url": "https://arxiv.org/abs/2610.21715v1"
     },
     {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "c17a07b4c6d56c18c336450d",
-      "context_id": "a35b03199a5b9529f17c41de",
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "607a4fe05a95cef6f8995fdb",
+      "context_id": "addcbcc62cfa4d964f96eaa8",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
       "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
       "firewall": [
         "ROUTED_NE_VERIFIED",
@@ -148,240 +382,23 @@
         "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
       ],
       "keyword_hits": [
-        "bidirectional"
+        "continual learning",
+        "memory",
+        "representation"
       ],
       "mirror_lens": "FORWARD",
       "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.5417,
+      "score": 4.5833,
       "source": "arxiv",
-      "source_published": "2026-10-15T17:59:07Z",
-      "source_updated": "2026-10-15T17:59:07Z",
-      "summary": "We introduce P$^{3}$-WAM, a unified world action model for egocentric dexterous manipulation that learns 3D perception, action-conditioned prediction, and goal-directed planning through three complementary modes: Perceive, which reconstructs articulated hand motion and camera trajectories from video; Predict, which generates visual futures under prescribed actions; and Plan, which jointly generates action trajectories and their anticipated visual consequences conditioned on an initial image, a language instruction, and an optional visual goal. Our model integrates a compact, structured 3D action representation into a pretrained video diffusion transformer through a mixture-of-transformers architecture with shared base weights, modality-specific adaptation, and bidirectional visual-action attention. Randomized modality visibility lets video and 3D actions serve as either conditioning context or prediction targets across the three modes. Experiments show that unified training improves all three capabilities over single-mode training, including gains in planning quality under a vision-language model evaluation. Through unified training, our model outperforms specialized baselines on 3D hand reconstruction and action-conditioned video prediction across four datasets, while producing goal-directed manipulation videos with stronger instruction adherence and action progression than video-generation baselines. Project Page: https://p3-wam.pages.dev/",
+      "source_published": "2026-10-15T09:03:08Z",
+      "source_updated": "2026-10-15T09:03:08Z",
+      "summary": "Biological intelligence continually adapts to new information while retaining prior skills through localized plasticity. In contrast, continual learning in large language models (LLMs) remains vulnerable to catastrophic forgetting. A promising direction is to identify functionally specialized subnetworks within LLMs that enable targeted and resource-efficient adaptation. Using gradient-attribution profiling, we localize cognition-associated functional subnetworks exhibiting extremely low mutual overlap. Building on this finding, we propose Function-isolated Memory-Efficient Optimization (CiMEO), a continual learning framework that routes each training example to its corresponding functional subnetwork, restricting parameter updates and optimizer states to selected regions. Across 1.4 million sequential instructions, CiMEO achieves the highest average performance among the compared methods on five generative benchmarks spanning programming, examination-style tasks, and mathematical reasoning, while mitigating catastrophic forgetting. Subspace-overlap and principal-angle analyses further indicate that localized updates help preserve pre-trained representations, highlighting functional subnetwork localization as a practical approach to efficient and stable continual learning in LLMs.",
       "tags": [
-        "cs.CV",
-        "cs.RO"
+        "cs.AI"
       ],
       "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Perceive, Predict, and Plan: a Unified World Action Model for Egocentric Dexterous Manipulation",
-      "url": "https://arxiv.org/abs/2610.22363v1"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "23fe21e8190c52a165bac75a",
-      "context_id": "f168ad7ba8a804da7a90d9a3",
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "provenance"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.4167,
-      "source": "github_repository_search",
-      "source_published": null,
-      "source_updated": "2026-10-16T00:39:19Z",
-      "summary": "研究流程编排与证据追踪 | An Agent Skill and Python runtime for research protocols, artifact provenance and review workflows.",
-      "tags": [
-        "agent-skills",
-        "python",
-        "reproducibility",
-        "research-tools",
-        "scientific-computing",
-        "workflow-orchestration"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "KaiserIIII/cs-nature-paper-skill",
-      "url": "https://github.com/KaiserIIII/cs-nature-paper-skill"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "89c36e9eeef594f92200bc7a",
-      "context_id": "f0d6a342477934d98ea26baa",
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "provenance"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.4167,
-      "source": "arxiv",
-      "source_published": "2026-09-25T04:13:17Z",
-      "source_updated": "2026-10-09T18:22:07Z",
-      "summary": "Choosing features is difficult with few labelled molecules, even for a tabular foundation model that learns in context. We study this problem with TabPFN for low-data molecular property prediction, separating input width, feature meaning and predictive usefulness while keeping contexts, query molecules and predictor settings matched. On ADME/Tox assays from Therapeutics Data Commons, endpoint-matched assay predictions improve a compact RDKit descriptor baseline. A provenance audit finds that most audited query molecules already occur in the predictors' training sources. Across 77 FS-Mol tasks drawn from ChEMBL, broad RDKit descriptor and fingerprint families provide a strong default, and learned weighting of their predictions adds further gains at a larger prediction budget. A utility-trained selector builds a traceable 16-column input from 238 source-assay predictors. It modestly improves the baseline but still trails wider representations. Named outputs identify what each feature predicts and where it comes from. Their usefulness for a new assay is assessed alongside the other input features. Paired removal and replacement tests measure what each selected output contributes. Together, these studies offer a protocol for evaluating feature selection, representation choice and data provenance with a fixed tabular foundation model for few-shot molecular property prediction.",
-      "tags": [
-        "cs.LG"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Feature Selection for Tabular Foundation Models: Exploring Feature Utility in Low-Data Molecular Prediction",
-      "url": "https://arxiv.org/abs/2609.30789v2"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "e72160e79f10f262b29174cb",
-      "context_id": "cdf4b36248bc09eefe3e7627",
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "provenance"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.4167,
-      "source": "zenodo",
-      "source_published": "2026-10-16",
-      "source_updated": null,
-      "summary": "Abstract and Prior-Art Disclosure &nbsp;This manuscript serves as a formal public prior-art disclosure, conceptual research archive, and consolidated technical design dossier for the Metric Spacetime Manipulator 25 (MSM-25) architecture . As the direct successor to the MSM-24 revision, MSM-25 preserves the established topology, chronological provenance, authorship, and foundational physical mechanisms of the continuing research program, while introducing defining changes to the materials, output specifications, and operating mechanisms . &nbsp;MSM-25 specifies a cryogenic superconducting device whose active core is a closed-loop chain of series-connected Superconducting Nonlinear Asymmetric Inductive Element (SNAIL) fluxonium cells, designated the SNAILonium . Adjacent galvanically connected SNAIL elements carry alternating loop chirality, with each element containing $n=3$ large Josephson junctions . Moving beyond its predecessor, MSM-25 admits a coplanar waveguide&mdash;with a ground plane conformal to the SNAIL contour and a widened gap near the junctions&mdash;alongside the superconducting flat wire ribbon . The architecture redefines the Josephson junction interlayer as an option between a dielectric insulator, magic-angle twisted bilayer graphene, or moir&eacute;-twisted $MoTe_{2}$ , ensuring the elements function as lumped-element resonance circuits . &nbsp;The design retains three resonance circuit forms, two of which are rigorously re-specified . The flat bifilar Fermat spiral now terminates both arms in tangentially and galvanically coupled SNAILonium rings . The poloidal-toroidal helix is updated to a bifilar concentric toroidal edge-wound stack, pairing a SNAILonium filar directly with a broadside-coupled flux-bias filar . &nbsp;The central operational claim remains: a quantum-squeezed, deep-strong-coupled ground state is reached geometrically through immense superinductance, continuing the retirement of legacy 750 GHz drive and 26.77 T static field requirements . To spatially separate the Positive Energy Density (PED) and Negative Energy Density (NED) branches, MSM-25 introduces a third mechanism&mdash;polaritonic vacuum squeezing&mdash;alongside Floquet engineering and flux-pumped degenerate parametric amplification . &nbsp;The separated branches are extracted via dedicated paths. The NED chain now concludes with a coupled-resonator microwave waveguide (CROW) configured to project a Laguerre-Bessel-Gaussian beam, utilizing per-cell SNAIL phase shifters to synthesize the required aperture function . The system also specifies a Klopfenstein broadside-coupled capacitive feed with a vacuum gap, which can alternately be replaced by an xmon or paddle-shaped transmon capacitor . The composite-boson host framework isotope strictly mandates ${}^{161}Dy^{3+}$ , leveraging its non-zero nuclear spin for Zero First Order Zeeman clock-transition engineering to maintain a Kerr-free coincident operating point . &nbsp;All mechanisms are presented exclusively as exploratory hypotheses and archival records of intellectual development by independent researcher Tran Nhat Minh . Generative artificial intelligence systems were utilized solely as editorial and consistency-checking tools, with full responsibility for the technical content and architectural hypotheses resting solely with the author .",
-      "tags": [],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Metric Spacetime Manipulator 25 (MSM-25)",
-      "url": "https://zenodo.org/records/23427070"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "aaebb5ec7ccec5f1b18a8bbe",
-      "context_id": "c893358627206fd6228433b5",
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "provenance"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.4167,
-      "source": "zenodo",
-      "source_published": "2026-10-16",
-      "source_updated": null,
-      "summary": "Welcome to WARP WARP (WDL Analysis Research Pipelines) repository is a collection of cloud-optimized pipelines for processing biological data from the Broad Institute Data Sciences Platform and collaborators. The contents of this repository are open source and released under the BSD 3-Clause license . Table of Contents WARP Overview Navigating WARP Using WARP WARP Versioning and Releasing Testing in WARP Feedback Acknowledgements WARP Overview WARP pipelines provide robust, standardized data analysis for the Broad Institute Genomics Platform and large consortia like the Human Cell Atlas and the BRAIN Initiative. You can count on WARP for rigorously scientifically validated, high scale, reproducible and open source pipelines. Our pipelines are written as \"workflows\" using the Workflow Description Language (WDL) and they process a broad spectrum of \"omic\" and array-related datasets (see the overview table below). | Pipeline Category | Data Types | | --- | --- | | Germline Variant Discovery | Genomes, Exomes | | Genotyping Arrays | Variant discovery, Chip validation, Joint array analysis | | Single-cell/nuclei Transcriptomics | Droplet based (10x Genomics), Smartseq2 | | Single-cell Epigenomics | Single nuclei ATAC-seq, Single nuclei MethylC-seq | | Joint Genotyping | Genomes, Exomes | | Somatic Alignment (beta) | Exomes | Try our pipelines in Terra , a platform for collaborative cloud analysis! Learn how in the Using WARP section. Navigating WARP All versioned and released pipelines are in one of the three pipelines subdirectories: broad (pipelines for the Broad Institute's Genomics Platform), cemba (pipelines for the BRAIN Initiative) or skylab (pipelines for the Human Cell Atlas Project). Each pipeline directory hosts a main workflow WDL that includes a pipeline version number and a corresponding changelog file. Workflows may call additional WDLs, referred to as tasks, that are located in the tasks directory. Pipelines that are in progress or have not yet been validated are in the beta-pipelines folder. Using WARP There are three ways to use WARP pipelines: 1. Download the workflow and run on a WDL-compatible execution engine WDL workflows run on multiple systems, including Cromwell , miniWDL , and dxWDL (see the openwdl documentation ). To run a pipeline's latest release, first navigate to WARP Releases , search for your pipeline's tag, and download the pipeline's assets (the WDL workflow, the JSON, and the ZIP with accompanying dependencies; see Optimus example below). You can also access a pipeline's release page by selecting the pipeline version number at the top of the pipeline's README. After downloading the pipeline's assets, launch the workflow following your execution engine's instructions. 2. Run the pipeline in Terra Several WARP pipelines are available in public workspaces on the Terra cloud platform. These workspaces include both the WDL workflow and downsampled data so that you can test the pipeline at low-cost. If you are new to Terra, you can get started by registering with your Google account and visiting Terra Support . After registration, search for WARP-related workspaces with the \"warp-pipelines\" tag. To test the pipeline, clone (make a copy of) the workspace following the instructions in this Terra Support guide . 3. Run or export the pipeline from Dockstore Dockstore is a GA4GH compliant open platform for sharing Docker-based tools like WDL workflows. You can find WARP pipelines in Dockstore and run them on the Dockstore platform or export them to other platforms (including Terra). To view all available pipelines, just search \"warp\" in the Dockstore search and browse the workflow list. See Dockstore documentation for details on launching the workflow. WARP Versioning and Releasing Pipelines in WARP are versioned semantically to support reproducibility in scientific analysis and provide clearer analysis provenance. Version numbers allow researchers to confirm their data has all been processed in a compati",
-      "tags": [],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "github.com/broadinstitute/warp/JointGenotyping",
-      "url": "https://zenodo.org/records/23428136"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "b79296ec3e3946361cbb1b70",
-      "context_id": "c4953fd70e4d77e8febd383a",
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "provenance"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.4167,
-      "source": "arxiv",
-      "source_published": "2026-10-13T09:40:58Z",
-      "source_updated": "2026-10-13T09:40:58Z",
-      "summary": "This work investigates the application of the Membership Inference Test (MINT) to large language models (LLMs) fine-tuned with LoRA, aiming to determine whether specific samples were used during training and address concerns about data privacy, leakage, and transparency. Building on our previous LoRA-MINT framework, which relies exclusively on perplexity under a strict black-box setting, we propose an approach based on intermediate model representations, including activations and parameter-dependent signals. These representations enable a MINT classifier to distinguish training from non-training samples without requiring full access to model parameters. We evaluated the method on four LLMs (Qwen, Phi-4, DeepSeek-V3, and LLaMA 3.2-3B) fine-tuned on three datasets covering medical, mathematical, and academic reasoning tasks. Results show consistent performance across architectures and domains, achieving scores between 95% and 98%, with robustness to variations in model configurations and data distributions. The proposed approach enables efficient auditing of sensitive training data and supports data provenance and compliance with emerging privacy and AI governance regulations. Although our experiments focus on LoRA-based fine-tuning, the methodology can be extended to other LLM adaptation techniques and, more broadly, to other AI models.",
-      "tags": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CL"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "inLoRA-MINT: Internal Representations for Auditing Training Data in Domain-adapted LLMs",
-      "url": "https://arxiv.org/abs/2610.18051v1"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "7bfb87375be1923dfddb0318",
-      "context_id": "ad506f5795b126910543b97d",
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "provenance"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.4167,
-      "source": "github_repository_search",
-      "source_published": null,
-      "source_updated": "2026-10-08T06:28:01Z",
-      "summary": "A reproducible research testbed for evidence-gated autonomy, verification, provenance, and escalation in high-consequence AI workflows.",
-      "tags": [],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Hafiz-IIT/EXIM-AI-Evidence-Gated-Autonomy",
-      "url": "https://github.com/Hafiz-IIT/EXIM-AI-Evidence-Gated-Autonomy"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "f2467bf82c5813941e999385",
-      "context_id": "aaeec55048abdb38b5b2e849",
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "provenance"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.4167,
-      "source": "arxiv",
-      "source_published": "2026-10-13T06:31:57Z",
-      "source_updated": "2026-10-13T06:31:57Z",
-      "summary": "Multi-agent collaboration has emerged as a critical paradigm for tackling complex, long-horizon tasks; however, while coordination protocols continue to advance, systemic failures at the inter-agent collaboration interface remain a pervasive bottleneck. In collaborative workflows, systems frequently suffer from \\emph{broken handoffs}---where critical task context is omitted, misrouted, or ignored despite each agent emitting locally plausible responses. To address this challenge, we present \\method, a verifiable runtime control framework that treats handoff repair as selective intervention over explicit dependency graphs. Central to \\method is an integrated fault-attribution and calibration pipeline, \\dataset, which decouples execution dependencies and injects counterfactual handoff perturbations to provide empirical supervision for runtime intervention. Leveraging this diagnostic foundation, \\method dynamically compiles observable interaction traces into a provenance graph to pinpoint unresolved dependencies, without accessing private agent states. It then evaluates candidate repairs through an empirical gate that weighs expected gains against disruption risks, and executes repairs only when formal local postconditions hold. Extensive evaluations across demanding benchmarks demonstrate that \\method boosts task success by up to 12.3 absolute percentage points on SILO-BENCH and 11.1 on TeamBench. Across both backbones, \\method maintains strict cost-effectiveness, adding as little as 2.0\\% marginal token overhead. Furthermore, on 562 handoff-relevant traces from the MAST benchmark, \\method achieves 69.8\\% F1 in a single pass, establishing a reliable operational boundary for verifiable coordination repair.",
-      "tags": [
-        "cs.CL"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "BRIDGE: Selective Boundary Repair with Dependency Graph Evidence in Multi-Agent Systems",
-      "url": "https://arxiv.org/abs/2610.17805v1"
+      "title": "Functional Subnetwork Localization for Efficient Continual Learning in Large Language Models",
+      "url": "https://arxiv.org/abs/2610.21537v1"
     },
     {
       "base_direction_id": "cognition_memory_reverse",
@@ -521,39 +538,6 @@
       "url": "https://arxiv.org/abs/2610.21715v1"
     },
     {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "c17a07b4c6d56c18c336450d",
-      "context_id": "f3a7acaf3a486cf21bb7d050",
-      "direction_id": "mirror_bidirectional_provenance::REVERSE",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "bidirectional",
-        "reconstruction"
-      ],
-      "mirror_lens": "REVERSE",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 9.125,
-      "source": "arxiv",
-      "source_published": "2026-10-15T17:59:07Z",
-      "source_updated": "2026-10-15T17:59:07Z",
-      "summary": "We introduce P$^{3}$-WAM, a unified world action model for egocentric dexterous manipulation that learns 3D perception, action-conditioned prediction, and goal-directed planning through three complementary modes: Perceive, which reconstructs articulated hand motion and camera trajectories from video; Predict, which generates visual futures under prescribed actions; and Plan, which jointly generates action trajectories and their anticipated visual consequences conditioned on an initial image, a language instruction, and an optional visual goal. Our model integrates a compact, structured 3D action representation into a pretrained video diffusion transformer through a mixture-of-transformers architecture with shared base weights, modality-specific adaptation, and bidirectional visual-action attention. Randomized modality visibility lets video and 3D actions serve as either conditioning context or prediction targets across the three modes. Experiments show that unified training improves all three capabilities over single-mode training, including gains in planning quality under a vision-language model evaluation. Through unified training, our model outperforms specialized baselines on 3D hand reconstruction and action-conditioned video prediction across four datasets, while producing goal-directed manipulation videos with stronger instruction adherence and action progression than video-generation baselines. Project Page: https://p3-wam.pages.dev/",
-      "tags": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Perceive, Predict, and Plan: a Unified World Action Model for Egocentric Dexterous Manipulation",
-      "url": "https://arxiv.org/abs/2610.22363v1"
-    },
-    {
       "base_direction_id": "cognition_memory_reverse",
       "candidate_id": "1cf11eea3d1b09c84f69bd75",
       "context_id": "7f3147a5bb48b2b032763d84",
@@ -688,40 +672,6 @@
     },
     {
       "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "c17a07b4c6d56c18c336450d",
-      "context_id": "7fc10e065d125543d0e6075c",
-      "direction_id": "cognition_memory_reverse::REVERSE",
-      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "bidirectional",
-        "reconstruction",
-        "representation"
-      ],
-      "mirror_lens": "REVERSE",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 7.7083,
-      "source": "arxiv",
-      "source_published": "2026-10-15T17:59:07Z",
-      "source_updated": "2026-10-15T17:59:07Z",
-      "summary": "We introduce P$^{3}$-WAM, a unified world action model for egocentric dexterous manipulation that learns 3D perception, action-conditioned prediction, and goal-directed planning through three complementary modes: Perceive, which reconstructs articulated hand motion and camera trajectories from video; Predict, which generates visual futures under prescribed actions; and Plan, which jointly generates action trajectories and their anticipated visual consequences conditioned on an initial image, a language instruction, and an optional visual goal. Our model integrates a compact, structured 3D action representation into a pretrained video diffusion transformer through a mixture-of-transformers architecture with shared base weights, modality-specific adaptation, and bidirectional visual-action attention. Randomized modality visibility lets video and 3D actions serve as either conditioning context or prediction targets across the three modes. Experiments show that unified training improves all three capabilities over single-mode training, including gains in planning quality under a vision-language model evaluation. Through unified training, our model outperforms specialized baselines on 3D hand reconstruction and action-conditioned video prediction across four datasets, while producing goal-directed manipulation videos with stronger instruction adherence and action progression than video-generation baselines. Project Page: https://p3-wam.pages.dev/",
-      "tags": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Perceive, Predict, and Plan: a Unified World Action Model for Egocentric Dexterous Manipulation",
-      "url": "https://arxiv.org/abs/2610.22363v1"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
       "candidate_id": "ec4aff456ed4f6d675591d20",
       "context_id": "ee63c8a75d55751fb64a7bed",
       "direction_id": "cognition_memory_reverse::REVERSE",
@@ -790,6 +740,76 @@
     },
     {
       "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "3c7db58e2f9984380eae7d3a",
+      "context_id": "6c9ef348dcf3996b7be91428",
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "identifiability",
+        "inverse",
+        "recovery"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 7.25,
+      "source": "arxiv",
+      "source_published": "2026-10-15T13:59:45Z",
+      "source_updated": "2026-10-15T13:59:45Z",
+      "summary": "Understanding the objectives that drive agents' behavior is crucial in strategic environments, where multiple agents interact and adapt to one another. This challenge arises in domains such as cybersecurity, autonomous driving, and online markets, where agents' underlying incentives are typically unknown and must be inferred from their observed behavior. Inverse reinforcement learning (IRL) provides a natural framework for this problem, but extending IRL to strategic multi-agent settings introduces a fundamental challenge: a reward that explains observed behavior does not necessarily induce optimal strategies when used for decision-making. In this work, we study this problem through the lens of \\emph{strategic identifiability}, and show that learning from a fixed policy pair can be insufficient to strategically identify rewards, independent of the number of expert samples $K$. Motivated by this, we introduce an active IRL algorithm for two-player repeated Stackelberg games, in which the leader adaptively selects policies to elicit informative responses about the follower's reward. Combining maximum-likelihood estimation with experimental design, we derive finite-sample guarantees on the Stackelberg sub-optimality induced by the learned reward, matching up to polylogarithmic factors a new minimax learning rate of $K^{-1/2}$. Finally, we evaluate our approach in a realistic anti-poaching setting, demonstrating the benefits of active exploration for reward recovery and downstream strategic performance.",
+      "tags": [
+        "cs.GT",
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Learning Rewards in Strategic Games",
+      "url": "https://arxiv.org/abs/2610.21912v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "cb2f447fc2c99b791167bcea",
+      "context_id": "954839adc16ac0cb05a37731",
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "memory",
+        "reconstruction",
+        "retrieval"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 7.2083,
+      "source": "arxiv",
+      "source_published": "2026-10-14T17:57:01Z",
+      "source_updated": "2026-10-14T17:57:01Z",
+      "summary": "Long contexts enlarge key--value (KV) caches, increasing memory use and attention costs during generation. Compressing these caches must preserve information for unseen questions. We introduce **Latent Compaction**, which learns a compact document-specific cache through test-time training. We initialize cache entries using reconstruction importance, teacher attention, and key-space diversity. Training first fits attention outputs and log-normalizers to those of the full cache, with reconstruction-selected entries held fixed. It then jointly optimizes the entire cache through end-to-end distillation from the full-cache model. Model weights remain frozen throughout, and training uses only generic prompts about the document, without access to downstream questions or answers. Experiments on RULER, LongBench, and Phonebook Lookup demonstrate substantial gains over budget-matched compression baselines. On a RULER, for example, our method achieves 96.7% accuracy at 32$\\times$ compression, compared with 40.0% for KVZip+. The method also transfers across model scales and families, with retrieval gains on both Qwen3 and MiniCPM5. These results show that treating the KV cache as a neural network and optimizing it with test-time training can preserve retrieval accuracy under aggressive compression. The code is released at https://www.github.com/THUNLP/latent-compaction",
+      "tags": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Latent Compaction with Test-Time Training",
+      "url": "https://arxiv.org/abs/2610.20582v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
       "candidate_id": "d3afdb86629d615892e1565b",
       "context_id": "82ec731555db09a021b416c3",
       "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
@@ -820,6 +840,37 @@
       "target_repository": "Hawkar-usls/iNaiHR",
       "title": "Reflect After Failure: Brain-Inspired Self-Evolving Agents for Embodied Spatial Intelligence",
       "url": "https://arxiv.org/abs/2610.20312v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "1acb069c9ba848c1e0471373",
+      "context_id": "5ed53c55b57207f962801824",
+      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "confound",
+        "failure",
+        "provenance"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.0417,
+      "source": "zenodo",
+      "source_published": "2026-10-17",
+      "source_updated": null,
+      "summary": "AUTONOMOUS NANOROBOTIC NAVIGATION AND MISSION OBSERVABILITY AT THE LIMIT First-Generation Research Flagship 01 | NANO/MICRO ROBOTICS, POWER &amp; MISSION ENDURANCE Feng Cheng-en (33) x Starli This research atlas asks a difficult engineering question: when low-Reynolds-number microfluidic flows, Brownian orientation noise, boundary adhesion, external field actuation and incomplete sensing all influence a micro/nanorobot, what would justify calling its behavior autonomous navigation rather than externally assisted motion? The volume treats navigation as an auditable, bounded mission instead of an attractive trajectory. It develops a five-layer program spanning stochastic hydrodynamics, instrument and actuation provenance, uncertainty-calibrated belief-state estimation, blinded microfluidic challenges and independent requalification. Thirty linked mathematical stations differentiate physical relations, information-theoretic functionals and proposed navigation utility measures, with assumptions, dimensions and possible falsifiers. Eighty-two research chapters each open with a core mathematical relation, followed by five independent single-page research sections. Two hundred detailed Research Gates describe decisive comparisons, confounding explanations, evidence requirements, failure conditions and successor handoff artifacts. Thirty-three provisional Phoenix Answer Embryos offer revisionable research prototypes rather than predetermined conclusions. The key comparator is an equal-budget experiment: fixed-field sequences, microscope-assisted manual control, externally tracked predictive control and candidate fused navigation are evaluated under matched total energy, information access, geometry, time, collision limits and recovery obligations. The manuscript emphasizes blind targets, flow reversal, sensor dropouts, wall adhesion, correlated observations, full-system power accounting, censored failures and post-mission retrieval. A mission arriving at its target but leaving an unrecovered device is not counted as a fully closed success. This work is a hypothesis-generating Research Atlas v1.0, not an experimental report or a validated medical technology. External magnetic, acoustic, optical and microscope infrastructure must be disclosed; no in-vivo or clinical competence is inferred from bench-top movement. Foundational DOI-linked literature provides context, not proof of the proposed integrated system. Every major claim is designed to be revised, rejected or reconstructed by a successor team using raw evidence and pre-registered falsification rules. PARENT RESEARCH DOI https://doi.org/10.5281/zenodo.23046134 Original parent: NANO/MICRO ROBOTICS, POWER &amp; MISSION ENDURANCE AT THE LIMIT. Parent-chapter lineage: Ch. 06-11 (navigation), 47-51 (estimation/control), 65 and 68 (benchmarking and transfer). The current child manuscript does not yet have an independent DOI; one would be assigned only upon actual repository deposit. Editorial release note: the manuscript prioritizes non-duplicative research content and independent testability over an artificial word-count target. It is suitable as a research architecture for additional scientific review, not a substitute for physical validation.",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "AUTONOMOUS NANOROBOTIC NAVIGATION AND MISSION OBSERVABILITY AT THE LIMIT First-Generation Research Flagship 01 | NANO/MICRO ROBOTICS, POWER & MISSION ENDURANCE Feng Cheng-en (33) x Starli This research atlas asks a difficult engineering question: when low-Reynolds-number microfluidic flows, Brownian orientation noise, boundary adhesion, external field actuation and incomplete sensing all influence a micro/nanorobot, what would justify calling its behavior autonomous navigation rather than externally assisted motion? The volume treats navigation as an auditable, bounded mission instead of an attractive trajectory. It develops a five-layer program spanning stochastic hydrodynamics, instrument and actuation provenance, uncertainty-calibrated belief-state estimation, blinded microfluidic challenges and independent requalification. Thirty linked mathematical stations differentiate physical relations, information-theoretic functionals and proposed navigation utility measures, with assumptions, dimensions and possible falsifiers. Eighty-two research chapters each open with a core mathematical relation, followed by five independent single-page research sections. Two hundred detailed Research Gates describe decisive comparisons, confounding explanations, evidence requirements, failure conditions and successor handoff artifacts. Thirty-three provisional Phoenix Answer Embryos offer revisionable research prototypes rather than predetermined conclusions. The key comparator is an equal-budget experiment: fixed-field sequences, microscope-assisted manual control, externally tracked predictive control and candidate fused navigation are evaluated under matched total energy, information access, geometry, time, collision limits and recovery obligations. The manuscript emphasizes blind targets, flow reversal, sensor dropouts, wall adhesion, correlated observations, full-system power accounting, censored failures and post-mission retrieval. A mission arriving at its target but leaving an unrecovered device is not counted as a fully closed success. This work is a hypothesis-generating Research Atlas v1.0, not an experimental report or a validated medical technology. External magnetic, acoustic, optical and microscope infrastructure must be disclosed; no in-vivo or clinical competence is inferred from bench-top movement. Foundational DOI-linked literature provides context, not proof of the proposed integrated system. Every major claim is designed to be revised, rejected or reconstructed by a successor team using raw evidence and pre-registered falsification rules. PARENT RESEARCH DOI https://doi.org/10.5281/zenodo.23046134 Original parent: NANO/MICRO ROBOTICS, POWER & MISSION ENDURANCE AT THE LIMIT. Parent-chapter lineage: Ch. 06-11 (navigation), 47-51 (estimation/control), 65 and 68 (benchmarking and transfer). The current child manuscript does not yet have an independent DOI; one would be assigned only upon actual repository deposit. Editorial release note: the manuscript prioritizes non-duplicative research content and independent testability over an artificial word-count target. It is suitable as a research architecture for additional scientific review, not a substitute for physical validation.",
+      "url": "https://zenodo.org/records/23428408"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
@@ -1160,41 +1211,6 @@
       "url": "https://arxiv.org/abs/2610.19424v1"
     },
     {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "066b7de10cef97e4336fee39",
-      "context_id": "6b6044238d4e9729ba43a60b",
-      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
-      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "failure",
-        "failure mode",
-        "memory"
-      ],
-      "mirror_lens": "COUNTEREVIDENCE",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 7.0417,
-      "source": "arxiv",
-      "source_published": "2026-10-15T01:23:57Z",
-      "source_updated": "2026-10-15T01:23:57Z",
-      "summary": "Computational biologists increasingly delegate substantial analyses to AI agents in long-horizon, multi-turn sessions, yet most benchmarks of agents' bioinformatics capabilities pose a single short task with a single-shot prompt. We present OmicsBench, a long-horizon, multi-turn bioinformatics benchmark for AI agents. Each of its 97 tasks links dependent subtasks into a directed acyclic graph, for 662 underlying subtasks in all. Each subtask is posed as one user turn and graded deterministically against an answer key, with optional in-context feedback on incorrect answers. Across 12 models on three harnesses, the slowest agent averages 3.6 hours per task, and no combination comes near saturating the benchmark, with mean scores of 0.43 to 0.57 out of a possible 1 without in-context feedback and 0.54 to 0.67 with it. Multi-turn evaluation also uncovers behavior that single-shot prompts cannot, as agents score lower on subtasks that depend on earlier subtasks, and in-context feedback helps agents recover some of that loss. Because deterministic scoring gives no qualitative account of how an agent failed, we also introduce an unsupervised failure mode discovery pipeline that describes, embeds, and clusters agents' failed attempts to surface emergent failure modes. Applied to OmicsBench, this pipeline exposes qualitative shortcomings in how agents carry out bioinformatics analyses, ranging from agents applying their own statistical filters in place of the specified ones to agents writing whole answers from memory.",
-      "tags": [
-        "cs.AI",
-        "q-bio.GN",
-        "q-bio.QM"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "OmicsBench: a long-horizon multi-turn benchmark of AI agents on research-study-scale bioinformatics",
-      "url": "https://arxiv.org/abs/2610.21074v1"
-    },
-    {
       "base_direction_id": "mirror_bidirectional_provenance",
       "candidate_id": "f2467bf82c5813941e999385",
       "context_id": "bafafa94560e31cf1d6627b8",
@@ -1260,6 +1276,37 @@
       "target_repository": "Hawkar-usls/iNaiHR",
       "title": "CoWorld Reasoner: Agentic Multimodal Reasoning with the Evolving Video World Model-Driven Harness",
       "url": "https://arxiv.org/abs/2610.21910v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "1acb069c9ba848c1e0471373",
+      "context_id": "80b875c8c14d58dc4e698a46",
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "control",
+        "provenance"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 13.0833,
+      "source": "zenodo",
+      "source_published": "2026-10-17",
+      "source_updated": null,
+      "summary": "AUTONOMOUS NANOROBOTIC NAVIGATION AND MISSION OBSERVABILITY AT THE LIMIT First-Generation Research Flagship 01 | NANO/MICRO ROBOTICS, POWER &amp; MISSION ENDURANCE Feng Cheng-en (33) x Starli This research atlas asks a difficult engineering question: when low-Reynolds-number microfluidic flows, Brownian orientation noise, boundary adhesion, external field actuation and incomplete sensing all influence a micro/nanorobot, what would justify calling its behavior autonomous navigation rather than externally assisted motion? The volume treats navigation as an auditable, bounded mission instead of an attractive trajectory. It develops a five-layer program spanning stochastic hydrodynamics, instrument and actuation provenance, uncertainty-calibrated belief-state estimation, blinded microfluidic challenges and independent requalification. Thirty linked mathematical stations differentiate physical relations, information-theoretic functionals and proposed navigation utility measures, with assumptions, dimensions and possible falsifiers. Eighty-two research chapters each open with a core mathematical relation, followed by five independent single-page research sections. Two hundred detailed Research Gates describe decisive comparisons, confounding explanations, evidence requirements, failure conditions and successor handoff artifacts. Thirty-three provisional Phoenix Answer Embryos offer revisionable research prototypes rather than predetermined conclusions. The key comparator is an equal-budget experiment: fixed-field sequences, microscope-assisted manual control, externally tracked predictive control and candidate fused navigation are evaluated under matched total energy, information access, geometry, time, collision limits and recovery obligations. The manuscript emphasizes blind targets, flow reversal, sensor dropouts, wall adhesion, correlated observations, full-system power accounting, censored failures and post-mission retrieval. A mission arriving at its target but leaving an unrecovered device is not counted as a fully closed success. This work is a hypothesis-generating Research Atlas v1.0, not an experimental report or a validated medical technology. External magnetic, acoustic, optical and microscope infrastructure must be disclosed; no in-vivo or clinical competence is inferred from bench-top movement. Foundational DOI-linked literature provides context, not proof of the proposed integrated system. Every major claim is designed to be revised, rejected or reconstructed by a successor team using raw evidence and pre-registered falsification rules. PARENT RESEARCH DOI https://doi.org/10.5281/zenodo.23046134 Original parent: NANO/MICRO ROBOTICS, POWER &amp; MISSION ENDURANCE AT THE LIMIT. Parent-chapter lineage: Ch. 06-11 (navigation), 47-51 (estimation/control), 65 and 68 (benchmarking and transfer). The current child manuscript does not yet have an independent DOI; one would be assigned only upon actual repository deposit. Editorial release note: the manuscript prioritizes non-duplicative research content and independent testability over an artificial word-count target. It is suitable as a research architecture for additional scientific review, not a substitute for physical validation.",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "AUTONOMOUS NANOROBOTIC NAVIGATION AND MISSION OBSERVABILITY AT THE LIMIT First-Generation Research Flagship 01 | NANO/MICRO ROBOTICS, POWER & MISSION ENDURANCE Feng Cheng-en (33) x Starli This research atlas asks a difficult engineering question: when low-Reynolds-number microfluidic flows, Brownian orientation noise, boundary adhesion, external field actuation and incomplete sensing all influence a micro/nanorobot, what would justify calling its behavior autonomous navigation rather than externally assisted motion? The volume treats navigation as an auditable, bounded mission instead of an attractive trajectory. It develops a five-layer program spanning stochastic hydrodynamics, instrument and actuation provenance, uncertainty-calibrated belief-state estimation, blinded microfluidic challenges and independent requalification. Thirty linked mathematical stations differentiate physical relations, information-theoretic functionals and proposed navigation utility measures, with assumptions, dimensions and possible falsifiers. Eighty-two research chapters each open with a core mathematical relation, followed by five independent single-page research sections. Two hundred detailed Research Gates describe decisive comparisons, confounding explanations, evidence requirements, failure conditions and successor handoff artifacts. Thirty-three provisional Phoenix Answer Embryos offer revisionable research prototypes rather than predetermined conclusions. The key comparator is an equal-budget experiment: fixed-field sequences, microscope-assisted manual control, externally tracked predictive control and candidate fused navigation are evaluated under matched total energy, information access, geometry, time, collision limits and recovery obligations. The manuscript emphasizes blind targets, flow reversal, sensor dropouts, wall adhesion, correlated observations, full-system power accounting, censored failures and post-mission retrieval. A mission arriving at its target but leaving an unrecovered device is not counted as a fully closed success. This work is a hypothesis-generating Research Atlas v1.0, not an experimental report or a validated medical technology. External magnetic, acoustic, optical and microscope infrastructure must be disclosed; no in-vivo or clinical competence is inferred from bench-top movement. Foundational DOI-linked literature provides context, not proof of the proposed integrated system. Every major claim is designed to be revised, rejected or reconstructed by a successor team using raw evidence and pre-registered falsification rules. PARENT RESEARCH DOI https://doi.org/10.5281/zenodo.23046134 Original parent: NANO/MICRO ROBOTICS, POWER & MISSION ENDURANCE AT THE LIMIT. Parent-chapter lineage: Ch. 06-11 (navigation), 47-51 (estimation/control), 65 and 68 (benchmarking and transfer). The current child manuscript does not yet have an independent DOI; one would be assigned only upon actual repository deposit. Editorial release note: the manuscript prioritizes non-duplicative research content and independent testability over an artificial word-count target. It is suitable as a research architecture for additional scientific review, not a substitute for physical validation.",
+      "url": "https://zenodo.org/records/23428408"
     },
     {
       "base_direction_id": "cognition_memory_reverse",
@@ -1567,42 +1614,6 @@
       "target_repository": "Hawkar-usls/iNaiHR",
       "title": "STRATA: Self-Maintaining Structured Experience Graphs for Self-Evolving Language Agents",
       "url": "https://arxiv.org/abs/2610.19386v1"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "e5327948817c79ae6572e47d",
-      "context_id": "465e8b49e985cb44d2783ad9",
-      "direction_id": "mirror_bidirectional_provenance::CONTROL",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "control",
-        "independent validation",
-        "inverse problem"
-      ],
-      "mirror_lens": "CONTROL",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 10.8333,
-      "source": "arxiv",
-      "source_published": "2026-10-15T10:46:03Z",
-      "source_updated": "2026-10-15T10:46:03Z",
-      "summary": "The logistic smooth-to-hard shrinker is the proximal map of an explicit saturating spectral penalty for general linear inverse problems. Its exact weak convexity yields a unique scaled update and proximal-gradient stationarity guarantees, while independent validation provides finite-grid parameter-selection control. We use MRI as an illustrative example.",
-      "tags": [
-        "math.OC",
-        "eess.IV",
-        "eess.SP",
-        "math.NA"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Data-driven Smooth-to-hard Spectral Regularization for General Linear Inverse Problems",
-      "url": "https://arxiv.org/abs/2610.21664v1"
     }
   ],
   "schema": "janus.beetle.repo_memory_batch.v1",
