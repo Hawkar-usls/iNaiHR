@@ -1,0 +1,1662 @@
+{
+  "batch_id": "6af4ef13cc75f0eab895",
+  "claim_ceiling": "DISCOVERY_MEMORY_ONLY__TARGET_REPO_MUST_VERIFY_INDEPENDENTLY",
+  "items": [
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "512fc542764e6babf983c864",
+      "context_id": "7d85377f5368fbe7e7200e28",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "memory",
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 7.2917,
+      "source": "arxiv",
+      "source_published": "2026-10-14T07:37:31Z",
+      "source_updated": "2026-10-14T07:37:31Z",
+      "summary": "Recent video world models have increasingly adopted 3D memory mechanisms to integrate historical observations into a lightweight and persistent scene representation. This naturally raises a complementary question: if 3D representations can serve as an effective mechanism for memorizing observed scenes, can they also be directly used as the latent space for reconstructing and generating scenes? Motivated by this idea, we represent a scene as a compact and unstructured 3D-anchored latent space (\\textbf{SceneAE}). Each latent combines an explicit 3D position with an implicit content feature and is spatially grounded to describe its local scene region, forming a sparse latent point cloud. Unlike conventional video-VAE latents that describe how a scene appears from particular viewpoints, our representation directly describes the scene itself, making it naturally applicable to both reconstruction and generation. For reconstruction, once the scene has been generated, our persistent 3D representation can be projected and decoded into RGB-D observations by different target cameras, without the need to regenerate a video for each new camera trajectory. For generation, we leverage the geometry-content separation to first generate camera-controlled 3D geometry and then synthesize content conditioned on it, reducing camera-appearance entanglement and improving camera controllability. Experiments show that this 3D latent achieves superior generation quality, computational cost, and camera controllability.",
+      "tags": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "SceneAE: Scene Generation and Reconstruction in Queryable 3D-Anchored Latent Space",
+      "url": "https://arxiv.org/abs/2610.19708v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "679cf32a95e04ed1f0acc783",
+      "context_id": "de0bfdd1c55a5fcae0b9a54f",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_published": "2026-10-14T01:09:47Z",
+      "source_updated": "2026-10-14T01:09:47Z",
+      "summary": "Dynamic graph learning models how entities and their relations evolve from historical observations to predict future graph states. Existing methods do not fully address dynamic graph world modelling, which requires learning transitions from temporal context to future latent graph states. This is difficult for three reasons: nodes and relations rely on different historical evidence, structural evolution is path-dependent, and future snapshots provide sparse and realization-specific targets. We propose Dynamic Graph World Modelling (DyG-WM), the first framework to jointly predict future node and relation representations from temporal context by answering three questions: what has evolved, how it evolved, and what will evolve next. To capture what has evolved, a historical node-relation context encoder summarizes node-neighborhood trajectories and pair-specific histories. To characterize how it evolved, a node-relation path-signature encoder captures ordered structural changes. To predict what will evolve next, a dual-level joint-embedding objective predicts target-snapshot node and relation representations without reconstructing the raw graph. Experiments on 12 link-prediction and two node-classification datasets demonstrate the effectiveness of DyG-WM across both tasks.",
+      "tags": [
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Dynamic Graph World Modelling: Learning Future Dynamics from Temporal Context",
+      "url": "https://arxiv.org/abs/2610.19364v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "b1f5bddba1c9221c225c7790",
+      "context_id": "8c816ec6f65f2337473804cf",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_published": "2026-10-15T09:57:14Z",
+      "source_updated": "2026-10-15T09:57:14Z",
+      "summary": "Learning intrinsic dynamics---the relationship between actions and their consequences---is essential for world models. However, visual variations unrelated to the underlying control process can obscure this relationship in learned representations. We investigate the connection between action predictability, defined as the ability to reconstruct an action from consecutive latent states, and the preservation of intrinsic dynamics. Our central hypothesis is that encouraging action predictability discourages representations from discarding the distinctions between different actions and their consequences. We provide two complementary forms of evidence for this connection. Theoretically, we derive a positive lower bound on squared inverse prediction error when the encoder merges distinguishable outcomes of different actions from the same state and appearance, and show that forward prediction can still be exact on those transitions. Empirically, controlled appearance-diversity comparisons, supervision interventions, and latent probes support the role of action prediction in preserving control-relevant transition information. We instantiate action predictability with Concat IDM, which predicts actions from concatenated latent states and updates the shared encoder using action labels already available in offline trajectories, without changing the test-time planner. Across three independent training runs on Push-T with 24 appearances, Concat IDM increases planning success from 9.1% to 77.2%; its paired improvement is 52.9 percentage points larger than that observed with a single appearance. Together, these findings support action predictability as an inductive bias toward intrinsic dynamics and demonstrate the practical benefits of Concat IDM for latent planning under visual diversity.",
+      "tags": [
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Learning Intrinsic Dynamics in Latent World Models",
+      "url": "https://arxiv.org/abs/2610.21612v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "4778213c3b9289136f66785e",
+      "context_id": "5cdd4c631c92ce81ee6d04f1",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_published": "2026-10-15T17:56:18Z",
+      "source_updated": "2026-10-15T17:56:18Z",
+      "summary": "Recent 3D world models increasingly use features from geometry foundation models (GFMs) as predictive world states, benefiting from their rich geometric priors. However, the view dependence of these features entangles scene dynamics with camera-induced variation, making the resulting state evolution harder to predict. We propose GeoState, a view-decoupled geometry representation for predictive 3D world modeling that separates scene-state evolution from camera-dependent observation. Specifically, a scene tokenizer aggregates multi-view GFM features into a view-decoupled scene state, which a geometry decoder queries using camera rays. An autoregressive world model then predicts future scene states, while camera motion is modeled separately. The predicted states can therefore be decoded under either predicted or externally specified cameras, while retaining a single context-derived scale throughout the rollout without per-frame scale alignment. Experiments show that GeoState outperforms prior 3D world models on Waymo, supports geometrically consistent cross-view querying, and generalizes zero-shot to KITTI and nuScenes. Project page: https://hongchang-liu.github.io/GeoState-project-page/",
+      "tags": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "GeoState: Learning View-Decoupled Geometry States for 3D World Modeling",
+      "url": "https://arxiv.org/abs/2610.22343v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "465f077eabdc90f98423a166",
+      "context_id": "4796f7b7832d3eb9b9a4d6ea",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_published": "2026-10-15T17:59:11Z",
+      "source_updated": "2026-10-15T17:59:11Z",
+      "summary": "Predicting how the world responds to an action requires more than what can be seen: robots must account for environmental factors that are neither directly observable nor explicitly specified, from physical properties such as friction and mass to human-defined environmental rules. We introduce T2-Z for test-time optimization of environment latents, which augments a robotic world model with a learnable environment latent to condition world predictions. This compact latent captures underlying environmental variation without supervision of what environmental factors exist or what values they take. During training, T2-Z alternates between two stages: a world-model optimization stage that fixes the latents and learns general action-conditioned dynamics across environments; and an environment-latent optimization stage that freezes the world model and optimizes the conditioning latents, allowing latent structure to emerge purely through world prediction. At test time, the world model remains frozen and a newly initialized environment latent is optimized from one or more test-time interactions, adapting the model to previously unseen environmental configurations. Across 7 simulated settings and 4 real-world robotic tasks, T2-Z reduces object prediction error metric from 15.20 to 7.00 and raises action success from 33.73% to 72.96%. Its emergent latents capture structured representations of individual and compounded factors across diverse visual scenes. Ablations further show that T2-Z can efficiently infer environment latents from as little as a single test-time interaction trajectory.",
+      "tags": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "T2-z: Test-Time Optimization of Environment Latents for Robotic World Models",
+      "url": "https://arxiv.org/abs/2610.22364v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "2f36b6442c3af60bc4dc5f34",
+      "context_id": "41493b50d1e7004afbbf7507",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "inverse model",
+        "memory"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 5.7917,
+      "source": "zenodo",
+      "source_published": "2026-10-17",
+      "source_updated": null,
+      "summary": "Python code that reproduces all results, figures and supporting tables of Dixit, AchutaRao and Sandeep, \"Future Warming Shortens the Memory of the Pacific Decadal Oscillation and Erodes a Source of Near-Term Predictability\" (submitted to Earth's Future). The analysis uses eleven CMIP6 models (piControl, historical, SSP1-2.6, SSP2-4.5, SSP3-7.0, SSP5-8.5), the CESM2 and MIROC6 large ensembles and ERSSTv5, regridded to the 2-degree ERSSTv5 grid. \"bash run_all.sh\" runs the full analysis. The folder results/ contains the outputs used in the paper, from which most figures can be redrawn without the model data. See README.md for requirements, input data layout and the mapping of scripts to sections, figures and tables.",
+      "tags": [
+        "Pacific Decadal Oscillation",
+        "decadal predictability",
+        "CMIP6",
+        "large ensembles",
+        "mixed layer",
+        "air-sea feedback",
+        "linear inverse model",
+        "nonlinear local Lyapunov exponent"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Code and results for \"Future Warming Shortens the Memory of the Pacific Decadal Oscillation and Erodes a Source of Near-Term Predictability\"",
+      "url": "https://zenodo.org/records/23431665"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "607a4fe05a95cef6f8995fdb",
+      "context_id": "addcbcc62cfa4d964f96eaa8",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "continual learning",
+        "memory",
+        "representation"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 4.5833,
+      "source": "arxiv",
+      "source_published": "2026-10-15T09:03:08Z",
+      "source_updated": "2026-10-15T09:03:08Z",
+      "summary": "Biological intelligence continually adapts to new information while retaining prior skills through localized plasticity. In contrast, continual learning in large language models (LLMs) remains vulnerable to catastrophic forgetting. A promising direction is to identify functionally specialized subnetworks within LLMs that enable targeted and resource-efficient adaptation. Using gradient-attribution profiling, we localize cognition-associated functional subnetworks exhibiting extremely low mutual overlap. Building on this finding, we propose Function-isolated Memory-Efficient Optimization (CiMEO), a continual learning framework that routes each training example to its corresponding functional subnetwork, restricting parameter updates and optimizer states to selected regions. Across 1.4 million sequential instructions, CiMEO achieves the highest average performance among the compared methods on five generative benchmarks spanning programming, examination-style tasks, and mathematical reasoning, while mitigating catastrophic forgetting. Subspace-overlap and principal-angle analyses further indicate that localized updates help preserve pre-trained representations, highlighting functional subnetwork localization as a practical approach to efficient and stable continual learning in LLMs.",
+      "tags": [
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Functional Subnetwork Localization for Efficient Continual Learning in Large Language Models",
+      "url": "https://arxiv.org/abs/2610.21537v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "1cf11eea3d1b09c84f69bd75",
+      "context_id": "d36963ff2645e2a7e5664ca6",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "world model"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 4.4583,
+      "source": "arxiv",
+      "source_published": "2026-10-14T15:14:43Z",
+      "source_updated": "2026-10-14T15:14:43Z",
+      "summary": "Diffusion and flow matching are now dominant frameworks for generative modeling in continuous domains, but they typically require multiple network evaluations at inference. This has motivated extensive research on one-step generative modeling primarily built on diffusion and flow, though existing approaches often rely on complex training machinery. In this work, we introduce Priming Models, a simple two-stage framework for training one-step generators. Motivated by the difficulty of distributional training from scratch, Priming Models are first trained on a reconstruction objective, e.g., pixel-space denoising at a fixed noise level, before undergoing feature-space distributional post-training. Our central scientific finding is that this simple reconstruction stage is already enough to entirely alleviate the difficulty of distributional training. Empirically, across class-conditional image generation, text-to-image generation, and world modeling, Priming Models significantly advance the Pareto frontier of training compute vs. generation quality. On ImageNet at $256 \\times 256$ resolution, we achieve a state-of-the-art FID of $1.19$ among one-step generators using approximately one-tenth the training compute of prior methods with comparable FID. We open-source our codebase at https://github.com/JaeyeonKim01/priming.",
+      "tags": [
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Are We Overthinking One-Step Generation?",
+      "url": "https://arxiv.org/abs/2610.20331v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "4d352b674b8c61570df9d942",
+      "context_id": "945b5b92b0b36f0237c84f4f",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "world model"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 4.4583,
+      "source": "zenodo",
+      "source_published": "2026-10-17",
+      "source_updated": null,
+      "summary": "EHR2Trace converts local hospital EHR extracts (delimited text and spreadsheets) into OMOP CDM 5.4 and MEDS. The two targets are derived independently from a single canonical layer rather than one from the other, every published row carries a link back to the source rows it came from, and fifty-five checks encode the properties a conversion must satisfy before it can be used as training data, including the leakage failures that are invisible to schema validation. Where the data does not answer a question, the converter blocks and says so instead of substituting a default. Companion paper: EHR2Trace: Auditable EHR Data Infrastructure for Patient World Models and Clinical Agents (arXiv:2609.38193).",
+      "tags": [
+        "OMOP CDM",
+        "MEDS",
+        "electronic health records",
+        "data provenance",
+        "ETL validation",
+        "clinical machine learning",
+        "MIMIC-IV"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "EHR2Trace: a deterministic converter from local EHR exports to OMOP CDM 5.4 and MEDS, with row-level lineage",
+      "url": "https://zenodo.org/records/23430727"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "7070b1d624d2e6ecafab11bd",
+      "context_id": "9b0ed88f4f7af0ae323c4d50",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "memory",
+        "representation",
+        "retrieval"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 4.2083,
+      "source": "arxiv",
+      "source_published": "2026-10-13T17:46:33Z",
+      "source_updated": "2026-10-13T17:46:33Z",
+      "summary": "Residual connections propagate information through a network by additively accumulating layer outputs. Recently proposed alternatives, such as Manifold-Constrained Hyper-Connections (mHC) and Attention Residuals (AttnRes), instead use more expressive depth aggregation mechanisms that improve language modeling performance at scale. In this work, we consider the mixing of representations over depth as a problem of storing and retrieving information across layers. Formalizing this perspective, we introduce Depth Memory (DM), a unified framework that describes the standard pre-layer-norm (PreLN) transformer, mHC, and AttnRes in terms of streams that carry representations through the network. One such stream, for example, could be an explicit memory stream that is queried to enrich the input to every layer, and whose output is subsequently written back into the memory for use by later layers. For AttnRes, this memory stream is a growing cache of explicit layer representations. For mHC, it is an expanded residual stream. Building on this view, we propose Linear Depth Memory (LDM), which formulates information retrieval across depth as a regression problem solved using recursive least squares. The resulting architecture propagates three streams across depth: the standard residual stream, a linear associative memory stream, and an inverse covariance stream. For high-throughput training and inference, we propose a hardware-aware implementation of LDM that reduces peak activation memory and memory traffic. LDM consistently achieves the lowest perplexities among PreLN, mHC and AttnRes baselines at the 400M and 1.5B parameter scales, alongside competitive zero-shot accuracy.",
+      "tags": [
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Depth Memory",
+      "url": "https://arxiv.org/abs/2610.18809v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "172ed7ca6482753f13731591",
+      "context_id": "e9ed6db740cee3fddb29633b",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "memory",
+        "representation"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 2.8333,
+      "source": "arxiv",
+      "source_published": "2026-10-15T12:57:19Z",
+      "source_updated": "2026-10-15T12:57:19Z",
+      "summary": "Conditional memory expands language-model capacity through selective lookup, but the full embedding table must remain available for every possible input. We introduce Conditional Program (CP), a compressed representation that reconstructs only the rows an input requests. CP represents each row by a short code and a local scale, with a reconstruction program shared across the table. We instantiate this representation with a Gaussian trellis, norm restoration and independently decodable row records. CP's two-bit code lowers output KL by 41--63\\% relative to 2-bit round-to-nearest. Analysis across three trained n-gram memory families shows that Gaussian-like coordinate statistics coexist with learned relationships among rows; at matched storage budgets, the shared trellis outperforms the fitted codebooks and low-rank residual variants we test. For DeepSeek, it reduces table storage from 203GB to 51GB, leaving room for larger workloads when the table is kept on GPU.",
+      "tags": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "N-Gram Memories at Two Bits: Quantizing Lookup Tables in Large Language Models",
+      "url": "https://arxiv.org/abs/2610.21810v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "ec4aff456ed4f6d675591d20",
+      "context_id": "1833ce0a17d855c39b2f2426",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "memory",
+        "representation"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 2.8333,
+      "source": "arxiv",
+      "source_published": "2026-10-14T16:46:48Z",
+      "source_updated": "2026-10-14T16:46:48Z",
+      "summary": "Multi-head latent attention (MLA) compresses the content of a key-value cache into a shared latent per token, making low-bit storage attractive for long-context inference. At two bits, errors in this representation perturb both attention matching and value readout, with effects that depend on error direction and reconstruction scale. We introduce RoLaQ (Rotation-calibrated Latent Quantization), an offline method for joint rotation and range calibration. RoLaQ refines a shared rotation within subspaces defined by the frozen key and value projections, and jointly learns quantization ranges whose thresholds and reconstruction gains are coupled to control the shared signal's response. Prediction matching and attention-output supervision guide calibration with model weights frozen. Across three MLA models and six benchmarks, RoLaQ achieves the highest average accuracy among the compared 2-bit methods both without and with token protection. On DeepSeek-V2-Lite, an SGLang implementation provides 3.96 times the BF16 KV capacity under the same memory budget and 2.51 times its decode throughput with 256K input tokens.",
+      "tags": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "RoLaQ: Joint Rotation and Range Calibration for 2-Bit KV Caches in Multi-Head Latent Attention",
+      "url": "https://arxiv.org/abs/2610.20686v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "184a91076b56e4a34903cec1",
+      "context_id": "c839ed8658da62440a68becb",
+      "direction_id": "mirror_bidirectional_provenance::REVERSE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "inverse",
+        "inverse problem",
+        "inversion"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 13.2917,
+      "source": "zenodo",
+      "source_published": "2026-10-17",
+      "source_updated": null,
+      "summary": "Code and results for the manuscript *Identifying the Caputo order of time-fractional diffusion with physics-informed neural networks: a controlled benchmark against classical inversion* (A. Boucenna). All data are synthetic, generated from the exact Mittag-Leffler solution; no experimental or patient data are used.",
+      "tags": [
+        "time-fractional diffusion, Caputo derivative, physics-informed neural networks, inverse problem."
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Code and data for: Identifying the Caputo order of time-fractional diffusion with physics-informed neural networks",
+      "url": "https://zenodo.org/records/23434623"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "512fc542764e6babf983c864",
+      "context_id": "e6d05435b5ff98cf2422b648",
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "memory",
+        "reconstruction",
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 11.875,
+      "source": "arxiv",
+      "source_published": "2026-10-14T07:37:31Z",
+      "source_updated": "2026-10-14T07:37:31Z",
+      "summary": "Recent video world models have increasingly adopted 3D memory mechanisms to integrate historical observations into a lightweight and persistent scene representation. This naturally raises a complementary question: if 3D representations can serve as an effective mechanism for memorizing observed scenes, can they also be directly used as the latent space for reconstructing and generating scenes? Motivated by this idea, we represent a scene as a compact and unstructured 3D-anchored latent space (\\textbf{SceneAE}). Each latent combines an explicit 3D position with an implicit content feature and is spatially grounded to describe its local scene region, forming a sparse latent point cloud. Unlike conventional video-VAE latents that describe how a scene appears from particular viewpoints, our representation directly describes the scene itself, making it naturally applicable to both reconstruction and generation. For reconstruction, once the scene has been generated, our persistent 3D representation can be projected and decoded into RGB-D observations by different target cameras, without the need to regenerate a video for each new camera trajectory. For generation, we leverage the geometry-content separation to first generate camera-controlled 3D geometry and then synthesize content conditioned on it, reducing camera-appearance entanglement and improving camera controllability. Experiments show that this 3D latent achieves superior generation quality, computational cost, and camera controllability.",
+      "tags": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "SceneAE: Scene Generation and Reconstruction in Queryable 3D-Anchored Latent Space",
+      "url": "https://arxiv.org/abs/2610.19708v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "b1f5bddba1c9221c225c7790",
+      "context_id": "a7c8fc8b6771366f756273b4",
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "inverse",
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.3333,
+      "source": "arxiv",
+      "source_published": "2026-10-15T09:57:14Z",
+      "source_updated": "2026-10-15T09:57:14Z",
+      "summary": "Learning intrinsic dynamics---the relationship between actions and their consequences---is essential for world models. However, visual variations unrelated to the underlying control process can obscure this relationship in learned representations. We investigate the connection between action predictability, defined as the ability to reconstruct an action from consecutive latent states, and the preservation of intrinsic dynamics. Our central hypothesis is that encouraging action predictability discourages representations from discarding the distinctions between different actions and their consequences. We provide two complementary forms of evidence for this connection. Theoretically, we derive a positive lower bound on squared inverse prediction error when the encoder merges distinguishable outcomes of different actions from the same state and appearance, and show that forward prediction can still be exact on those transitions. Empirically, controlled appearance-diversity comparisons, supervision interventions, and latent probes support the role of action prediction in preserving control-relevant transition information. We instantiate action predictability with Concat IDM, which predicts actions from concatenated latent states and updates the shared encoder using action labels already available in offline trajectories, without changing the test-time planner. Across three independent training runs on Push-T with 24 appearances, Concat IDM increases planning success from 9.1% to 77.2%; its paired improvement is 52.9 percentage points larger than that observed with a single appearance. Together, these findings support action predictability as an inductive bias toward intrinsic dynamics and demonstrate the practical benefits of Concat IDM for latent planning under visual diversity.",
+      "tags": [
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Learning Intrinsic Dynamics in Latent World Models",
+      "url": "https://arxiv.org/abs/2610.21612v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "2f36b6442c3af60bc4dc5f34",
+      "context_id": "a04d14e48338224d902d6375",
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "inverse",
+        "inverse model",
+        "memory"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.0833,
+      "source": "zenodo",
+      "source_published": "2026-10-17",
+      "source_updated": null,
+      "summary": "Python code that reproduces all results, figures and supporting tables of Dixit, AchutaRao and Sandeep, \"Future Warming Shortens the Memory of the Pacific Decadal Oscillation and Erodes a Source of Near-Term Predictability\" (submitted to Earth's Future). The analysis uses eleven CMIP6 models (piControl, historical, SSP1-2.6, SSP2-4.5, SSP3-7.0, SSP5-8.5), the CESM2 and MIROC6 large ensembles and ERSSTv5, regridded to the 2-degree ERSSTv5 grid. \"bash run_all.sh\" runs the full analysis. The folder results/ contains the outputs used in the paper, from which most figures can be redrawn without the model data. See README.md for requirements, input data layout and the mapping of scripts to sections, figures and tables.",
+      "tags": [
+        "Pacific Decadal Oscillation",
+        "decadal predictability",
+        "CMIP6",
+        "large ensembles",
+        "mixed layer",
+        "air-sea feedback",
+        "linear inverse model",
+        "nonlinear local Lyapunov exponent"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Code and results for \"Future Warming Shortens the Memory of the Pacific Decadal Oscillation and Erodes a Source of Near-Term Predictability\"",
+      "url": "https://zenodo.org/records/23431665"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "08874516a770789837a850d6",
+      "context_id": "6f8404f6a06b4d88da902c4d",
+      "direction_id": "mirror_bidirectional_provenance::REVERSE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "inverse",
+        "reverse",
+        "symmetry"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 9.9167,
+      "source": "zenodo",
+      "source_published": "2026-10-17",
+      "source_updated": null,
+      "summary": "This metadata entry record constitutes the fourth, concluding installment of a foundational cosmological paper tetralogy (complementing the preceding works registered under DOI:10.5281/zenodo.22763071, DOI:10.5281/zenodo.23153625, and DOI:10.5281/zenodo.23209528).&nbsp; In this final paper, we formalize the self-consistent microphysical scenarios and underlying relativistic field equations governing primordial lepto- and baryogenesis within a strictly deterministic, parameter-free Extremal Quantum Black Hole (EQBH) cosmological bounce framework occurring immediately post-turnaround. Operating within the rigid geometric boundaries of an effective N=1 supergravity (SUGRA) action and a q-deformed U_q(su(2)) horizon algebra, we trace the top-down reverse-engineering map from Planck-scale remnants to Standard Model matter fields without invoking highly tuned auxiliary fields or unconstrained post-bounce inflation boundaries. Crucially, this work resolves the long-standing flavor puzzle within the ansatz by introducing a top-down, two-stage Inverse Spin-Seesaw cascade for the charged lepton sector. We demonstrate that below the Riemann-regularized zero-spin vacuum threshold (M_crit &asymp; 0.5601 M_P), where both the asymptotic selectron and electron states obey the unshifted Casimir spin-algebraic relation, the discrete spin mismatch (&Delta;J = &radic;3/2) structurally locks the effective Yukawa coupling. This mechanism dynamically projects the heavy Planck-scale scalar selectron mass gap (M_e &asymp; 0.002584 M_P) down to the Standard Model electron mass scale (m_e &asymp; 0.511 MeV) via a single low-energy electroweak parameter (v_EW = 246.22 GeV), completely stripping the low-energy lepton flavor sector of arbitrary, adjustable inputs. Concurrently, the paper maps out: 1. Unified Lepto- and Baryogenesis Dynamics: Tracing the sub-Planckian three-body beta decays of dark-sector super-neutrons that seed the primary lepton background and active neutrino mass scales (m_nu_a &asymp; 0.05 eV, m_nu_s &asymp; 0.009 eV), paired with a laser-driven CP-violation mechanism that secures the observed baryon asymmetry. 2. Dual-Component Super-Atomic Dark Matter: Formalizing the freeze-out of unreacted sub-Planckian defects into single-charge ionic [M_0,0 x e]^- configurations regulated by an internal Coulomb blockade, and saturated neutral [M_0,0 x N&nu;] sneutrino super-atoms bounded by the strict Kaup-Ruffini-Bonazzola mass limit (M_max &asymp; 0.29 g). This multi-component partitioning naturally resolves the empirical dark sector allocations (&Omega;_&Lambda; &asymp; 68.3%, &Omega;_c &asymp; 26.9%). 3. Definitive Empirical Signatures: Providing explicit mappings onto next-generation polarization surveys, including a monochromatic microwave laser chirp (&nu;_now &asymp; 1.5 GHz) that naturally matches the ARCADE 2 cosmic radio excess, and a sub-kilohertz wide-bandwidth stochastic gravitational wave noise background centered at 310.3 Hz. As the definitive structural synthesis of the entire tetralogy, this concluding work establishes a unified cosmological paradigm that is fundamentally parameter-free, independent of localized baryon asymmetry signs, and structurally renormalizable across varying deep ultraviolet scales.",
+      "tags": [
+        "Cosmological Bounce, Zero-Spin Vacuum, Primordial Genesis,  Inverse Spin-Seesaw Mechanism, Low-Energy Electron Mass Assessment,  Supergravity Phenomelogies, Quantum Geometry of Isolated Horizons,  Non-Commutative Casimir Operators, Quantum Groups and Algebraic Mismatch,  Type-I Seesaw Neutrino Physics, Super-Neutron Three-Body Beta Decay,  Distributed Feedback (DFB) Axion-Photon Laser, Frame-Dragging CP-Violation,  Dual-Component Super-Atomic Dark Matter, Kaup-Ruffini-Bonazzola Limit,  Internal Coulomb Blockade Solitons, Dark Sector Perfect Fluid Partitions,  ARCADE 2 Cosmic Radio Background Anomaly, Stochastic Gravitational Wave Whisper,  Birefringence Narrow Corridor Telemetry, Parameter-Free Bouncing Cosmology,  Top-Down Renormalizable Scale Invariance, Multi-Field Conformal Metric Closure."
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Primordial Genesis in a Zero-Spin Vacuum Bouncing Cosmology",
+      "url": "https://zenodo.org/records/23434893"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "1cf11eea3d1b09c84f69bd75",
+      "context_id": "7f3147a5bb48b2b032763d84",
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "reconstruction",
+        "world model"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 9.0417,
+      "source": "arxiv",
+      "source_published": "2026-10-14T15:14:43Z",
+      "source_updated": "2026-10-14T15:14:43Z",
+      "summary": "Diffusion and flow matching are now dominant frameworks for generative modeling in continuous domains, but they typically require multiple network evaluations at inference. This has motivated extensive research on one-step generative modeling primarily built on diffusion and flow, though existing approaches often rely on complex training machinery. In this work, we introduce Priming Models, a simple two-stage framework for training one-step generators. Motivated by the difficulty of distributional training from scratch, Priming Models are first trained on a reconstruction objective, e.g., pixel-space denoising at a fixed noise level, before undergoing feature-space distributional post-training. Our central scientific finding is that this simple reconstruction stage is already enough to entirely alleviate the difficulty of distributional training. Empirically, across class-conditional image generation, text-to-image generation, and world modeling, Priming Models significantly advance the Pareto frontier of training compute vs. generation quality. On ImageNet at $256 \\times 256$ resolution, we achieve a state-of-the-art FID of $1.19$ among one-step generators using approximately one-tenth the training compute of prior methods with comparable FID. We open-source our codebase at https://github.com/JaeyeonKim01/priming.",
+      "tags": [
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Are We Overthinking One-Step Generation?",
+      "url": "https://arxiv.org/abs/2610.20331v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "184a91076b56e4a34903cec1",
+      "context_id": "7b58c849bc4811aaa434c7d3",
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "inverse",
+        "inversion"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.6667,
+      "source": "zenodo",
+      "source_published": "2026-10-17",
+      "source_updated": null,
+      "summary": "Code and results for the manuscript *Identifying the Caputo order of time-fractional diffusion with physics-informed neural networks: a controlled benchmark against classical inversion* (A. Boucenna). All data are synthetic, generated from the exact Mittag-Leffler solution; no experimental or patient data are used.",
+      "tags": [
+        "time-fractional diffusion, Caputo derivative, physics-informed neural networks, inverse problem."
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Code and data for: Identifying the Caputo order of time-fractional diffusion with physics-informed neural networks",
+      "url": "https://zenodo.org/records/23434623"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "08874516a770789837a850d6",
+      "context_id": "ba8fa15a39112225baf7528a",
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "inverse",
+        "reverse"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.5833,
+      "source": "zenodo",
+      "source_published": "2026-10-17",
+      "source_updated": null,
+      "summary": "This metadata entry record constitutes the fourth, concluding installment of a foundational cosmological paper tetralogy (complementing the preceding works registered under DOI:10.5281/zenodo.22763071, DOI:10.5281/zenodo.23153625, and DOI:10.5281/zenodo.23209528).&nbsp; In this final paper, we formalize the self-consistent microphysical scenarios and underlying relativistic field equations governing primordial lepto- and baryogenesis within a strictly deterministic, parameter-free Extremal Quantum Black Hole (EQBH) cosmological bounce framework occurring immediately post-turnaround. Operating within the rigid geometric boundaries of an effective N=1 supergravity (SUGRA) action and a q-deformed U_q(su(2)) horizon algebra, we trace the top-down reverse-engineering map from Planck-scale remnants to Standard Model matter fields without invoking highly tuned auxiliary fields or unconstrained post-bounce inflation boundaries. Crucially, this work resolves the long-standing flavor puzzle within the ansatz by introducing a top-down, two-stage Inverse Spin-Seesaw cascade for the charged lepton sector. We demonstrate that below the Riemann-regularized zero-spin vacuum threshold (M_crit &asymp; 0.5601 M_P), where both the asymptotic selectron and electron states obey the unshifted Casimir spin-algebraic relation, the discrete spin mismatch (&Delta;J = &radic;3/2) structurally locks the effective Yukawa coupling. This mechanism dynamically projects the heavy Planck-scale scalar selectron mass gap (M_e &asymp; 0.002584 M_P) down to the Standard Model electron mass scale (m_e &asymp; 0.511 MeV) via a single low-energy electroweak parameter (v_EW = 246.22 GeV), completely stripping the low-energy lepton flavor sector of arbitrary, adjustable inputs. Concurrently, the paper maps out: 1. Unified Lepto- and Baryogenesis Dynamics: Tracing the sub-Planckian three-body beta decays of dark-sector super-neutrons that seed the primary lepton background and active neutrino mass scales (m_nu_a &asymp; 0.05 eV, m_nu_s &asymp; 0.009 eV), paired with a laser-driven CP-violation mechanism that secures the observed baryon asymmetry. 2. Dual-Component Super-Atomic Dark Matter: Formalizing the freeze-out of unreacted sub-Planckian defects into single-charge ionic [M_0,0 x e]^- configurations regulated by an internal Coulomb blockade, and saturated neutral [M_0,0 x N&nu;] sneutrino super-atoms bounded by the strict Kaup-Ruffini-Bonazzola mass limit (M_max &asymp; 0.29 g). This multi-component partitioning naturally resolves the empirical dark sector allocations (&Omega;_&Lambda; &asymp; 68.3%, &Omega;_c &asymp; 26.9%). 3. Definitive Empirical Signatures: Providing explicit mappings onto next-generation polarization surveys, including a monochromatic microwave laser chirp (&nu;_now &asymp; 1.5 GHz) that naturally matches the ARCADE 2 cosmic radio excess, and a sub-kilohertz wide-bandwidth stochastic gravitational wave noise background centered at 310.3 Hz. As the definitive structural synthesis of the entire tetralogy, this concluding work establishes a unified cosmological paradigm that is fundamentally parameter-free, independent of localized baryon asymmetry signs, and structurally renormalizable across varying deep ultraviolet scales.",
+      "tags": [
+        "Cosmological Bounce, Zero-Spin Vacuum, Primordial Genesis,  Inverse Spin-Seesaw Mechanism, Low-Energy Electron Mass Assessment,  Supergravity Phenomelogies, Quantum Geometry of Isolated Horizons,  Non-Commutative Casimir Operators, Quantum Groups and Algebraic Mismatch,  Type-I Seesaw Neutrino Physics, Super-Neutron Three-Body Beta Decay,  Distributed Feedback (DFB) Axion-Photon Laser, Frame-Dragging CP-Violation,  Dual-Component Super-Atomic Dark Matter, Kaup-Ruffini-Bonazzola Limit,  Internal Coulomb Blockade Solitons, Dark Sector Perfect Fluid Partitions,  ARCADE 2 Cosmic Radio Background Anomaly, Stochastic Gravitational Wave Whisper,  Birefringence Narrow Corridor Telemetry, Parameter-Free Bouncing Cosmology,  Top-Down Renormalizable Scale Invariance, Multi-Field Conformal Metric Closure."
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Primordial Genesis in a Zero-Spin Vacuum Bouncing Cosmology",
+      "url": "https://zenodo.org/records/23434893"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "7070b1d624d2e6ecafab11bd",
+      "context_id": "23141e6136b4b7bd0a9fbd7c",
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "inverse",
+        "memory",
+        "representation",
+        "retrieval"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.5,
+      "source": "arxiv",
+      "source_published": "2026-10-13T17:46:33Z",
+      "source_updated": "2026-10-13T17:46:33Z",
+      "summary": "Residual connections propagate information through a network by additively accumulating layer outputs. Recently proposed alternatives, such as Manifold-Constrained Hyper-Connections (mHC) and Attention Residuals (AttnRes), instead use more expressive depth aggregation mechanisms that improve language modeling performance at scale. In this work, we consider the mixing of representations over depth as a problem of storing and retrieving information across layers. Formalizing this perspective, we introduce Depth Memory (DM), a unified framework that describes the standard pre-layer-norm (PreLN) transformer, mHC, and AttnRes in terms of streams that carry representations through the network. One such stream, for example, could be an explicit memory stream that is queried to enrich the input to every layer, and whose output is subsequently written back into the memory for use by later layers. For AttnRes, this memory stream is a growing cache of explicit layer representations. For mHC, it is an expanded residual stream. Building on this view, we propose Linear Depth Memory (LDM), which formulates information retrieval across depth as a regression problem solved using recursive least squares. The resulting architecture propagates three streams across depth: the standard residual stream, a linear associative memory stream, and an inverse covariance stream. For high-throughput training and inference, we propose a hardware-aware implementation of LDM that reduces peak activation memory and memory traffic. LDM consistently achieves the lowest perplexities among PreLN, mHC and AttnRes baselines at the 400M and 1.5B parameter scales, alongside competitive zero-shot accuracy.",
+      "tags": [
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Depth Memory",
+      "url": "https://arxiv.org/abs/2610.18809v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "ec4aff456ed4f6d675591d20",
+      "context_id": "ee63c8a75d55751fb64a7bed",
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "memory",
+        "reconstruction",
+        "representation"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 7.4167,
+      "source": "arxiv",
+      "source_published": "2026-10-14T16:46:48Z",
+      "source_updated": "2026-10-14T16:46:48Z",
+      "summary": "Multi-head latent attention (MLA) compresses the content of a key-value cache into a shared latent per token, making low-bit storage attractive for long-context inference. At two bits, errors in this representation perturb both attention matching and value readout, with effects that depend on error direction and reconstruction scale. We introduce RoLaQ (Rotation-calibrated Latent Quantization), an offline method for joint rotation and range calibration. RoLaQ refines a shared rotation within subspaces defined by the frozen key and value projections, and jointly learns quantization ranges whose thresholds and reconstruction gains are coupled to control the shared signal's response. Prediction matching and attention-output supervision guide calibration with model weights frozen. Across three MLA models and six benchmarks, RoLaQ achieves the highest average accuracy among the compared 2-bit methods both without and with token protection. On DeepSeek-V2-Lite, an SGLang implementation provides 3.96 times the BF16 KV capacity under the same memory budget and 2.51 times its decode throughput with 256K input tokens.",
+      "tags": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "RoLaQ: Joint Rotation and Range Calibration for 2-Bit KV Caches in Multi-Head Latent Attention",
+      "url": "https://arxiv.org/abs/2610.20686v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "172ed7ca6482753f13731591",
+      "context_id": "71c73a925c7ab0443945f85a",
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "memory",
+        "reconstruction",
+        "representation"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 7.4167,
+      "source": "arxiv",
+      "source_published": "2026-10-15T12:57:19Z",
+      "source_updated": "2026-10-15T12:57:19Z",
+      "summary": "Conditional memory expands language-model capacity through selective lookup, but the full embedding table must remain available for every possible input. We introduce Conditional Program (CP), a compressed representation that reconstructs only the rows an input requests. CP represents each row by a short code and a local scale, with a reconstruction program shared across the table. We instantiate this representation with a Gaussian trellis, norm restoration and independently decodable row records. CP's two-bit code lowers output KL by 41--63\\% relative to 2-bit round-to-nearest. Analysis across three trained n-gram memory families shows that Gaussian-like coordinate statistics coexist with learned relationships among rows; at matched storage budgets, the shared trellis outperforms the fitted codebooks and low-rank residual variants we test. For DeepSeek, it reduces table storage from 203GB to 51GB, leaving room for larger workloads when the table is kept on GPU.",
+      "tags": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "N-Gram Memories at Two Bits: Quantizing Lookup Tables in Large Language Models",
+      "url": "https://arxiv.org/abs/2610.21810v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "cb2f447fc2c99b791167bcea",
+      "context_id": "954839adc16ac0cb05a37731",
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "memory",
+        "reconstruction",
+        "retrieval"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 7.2083,
+      "source": "arxiv",
+      "source_published": "2026-10-14T17:57:01Z",
+      "source_updated": "2026-10-14T17:57:01Z",
+      "summary": "Long contexts enlarge key--value (KV) caches, increasing memory use and attention costs during generation. Compressing these caches must preserve information for unseen questions. We introduce **Latent Compaction**, which learns a compact document-specific cache through test-time training. We initialize cache entries using reconstruction importance, teacher attention, and key-space diversity. Training first fits attention outputs and log-normalizers to those of the full cache, with reconstruction-selected entries held fixed. It then jointly optimizes the entire cache through end-to-end distillation from the full-cache model. Model weights remain frozen throughout, and training uses only generic prompts about the document, without access to downstream questions or answers. Experiments on RULER, LongBench, and Phonebook Lookup demonstrate substantial gains over budget-matched compression baselines. On a RULER, for example, our method achieves 96.7% accuracy at 32$\\times$ compression, compared with 40.0% for KVZip+. The method also transfers across model scales and families, with retrieval gains on both Qwen3 and MiniCPM5. These results show that treating the KV cache as a neural network and optimizing it with test-time training can preserve retrieval accuracy under aggressive compression. The code is released at https://www.github.com/THUNLP/latent-compaction",
+      "tags": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Latent Compaction with Test-Time Training",
+      "url": "https://arxiv.org/abs/2610.20582v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "1acb069c9ba848c1e0471373",
+      "context_id": "5ed53c55b57207f962801824",
+      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "confound",
+        "failure",
+        "provenance"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.0417,
+      "source": "zenodo",
+      "source_published": "2026-10-17",
+      "source_updated": null,
+      "summary": "AUTONOMOUS NANOROBOTIC NAVIGATION AND MISSION OBSERVABILITY AT THE LIMIT First-Generation Research Flagship 01 | NANO/MICRO ROBOTICS, POWER &amp; MISSION ENDURANCE Feng Cheng-en (33) x Starli This research atlas asks a difficult engineering question: when low-Reynolds-number microfluidic flows, Brownian orientation noise, boundary adhesion, external field actuation and incomplete sensing all influence a micro/nanorobot, what would justify calling its behavior autonomous navigation rather than externally assisted motion? The volume treats navigation as an auditable, bounded mission instead of an attractive trajectory. It develops a five-layer program spanning stochastic hydrodynamics, instrument and actuation provenance, uncertainty-calibrated belief-state estimation, blinded microfluidic challenges and independent requalification. Thirty linked mathematical stations differentiate physical relations, information-theoretic functionals and proposed navigation utility measures, with assumptions, dimensions and possible falsifiers. Eighty-two research chapters each open with a core mathematical relation, followed by five independent single-page research sections. Two hundred detailed Research Gates describe decisive comparisons, confounding explanations, evidence requirements, failure conditions and successor handoff artifacts. Thirty-three provisional Phoenix Answer Embryos offer revisionable research prototypes rather than predetermined conclusions. The key comparator is an equal-budget experiment: fixed-field sequences, microscope-assisted manual control, externally tracked predictive control and candidate fused navigation are evaluated under matched total energy, information access, geometry, time, collision limits and recovery obligations. The manuscript emphasizes blind targets, flow reversal, sensor dropouts, wall adhesion, correlated observations, full-system power accounting, censored failures and post-mission retrieval. A mission arriving at its target but leaving an unrecovered device is not counted as a fully closed success. This work is a hypothesis-generating Research Atlas v1.0, not an experimental report or a validated medical technology. External magnetic, acoustic, optical and microscope infrastructure must be disclosed; no in-vivo or clinical competence is inferred from bench-top movement. Foundational DOI-linked literature provides context, not proof of the proposed integrated system. Every major claim is designed to be revised, rejected or reconstructed by a successor team using raw evidence and pre-registered falsification rules. PARENT RESEARCH DOI https://doi.org/10.5281/zenodo.23046134 Original parent: NANO/MICRO ROBOTICS, POWER &amp; MISSION ENDURANCE AT THE LIMIT. Parent-chapter lineage: Ch. 06-11 (navigation), 47-51 (estimation/control), 65 and 68 (benchmarking and transfer). The current child manuscript does not yet have an independent DOI; one would be assigned only upon actual repository deposit. Editorial release note: the manuscript prioritizes non-duplicative research content and independent testability over an artificial word-count target. It is suitable as a research architecture for additional scientific review, not a substitute for physical validation.",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "AUTONOMOUS NANOROBOTIC NAVIGATION AND MISSION OBSERVABILITY AT THE LIMIT First-Generation Research Flagship 01 | NANO/MICRO ROBOTICS, POWER & MISSION ENDURANCE Feng Cheng-en (33) x Starli This research atlas asks a difficult engineering question: when low-Reynolds-number microfluidic flows, Brownian orientation noise, boundary adhesion, external field actuation and incomplete sensing all influence a micro/nanorobot, what would justify calling its behavior autonomous navigation rather than externally assisted motion? The volume treats navigation as an auditable, bounded mission instead of an attractive trajectory. It develops a five-layer program spanning stochastic hydrodynamics, instrument and actuation provenance, uncertainty-calibrated belief-state estimation, blinded microfluidic challenges and independent requalification. Thirty linked mathematical stations differentiate physical relations, information-theoretic functionals and proposed navigation utility measures, with assumptions, dimensions and possible falsifiers. Eighty-two research chapters each open with a core mathematical relation, followed by five independent single-page research sections. Two hundred detailed Research Gates describe decisive comparisons, confounding explanations, evidence requirements, failure conditions and successor handoff artifacts. Thirty-three provisional Phoenix Answer Embryos offer revisionable research prototypes rather than predetermined conclusions. The key comparator is an equal-budget experiment: fixed-field sequences, microscope-assisted manual control, externally tracked predictive control and candidate fused navigation are evaluated under matched total energy, information access, geometry, time, collision limits and recovery obligations. The manuscript emphasizes blind targets, flow reversal, sensor dropouts, wall adhesion, correlated observations, full-system power accounting, censored failures and post-mission retrieval. A mission arriving at its target but leaving an unrecovered device is not counted as a fully closed success. This work is a hypothesis-generating Research Atlas v1.0, not an experimental report or a validated medical technology. External magnetic, acoustic, optical and microscope infrastructure must be disclosed; no in-vivo or clinical competence is inferred from bench-top movement. Foundational DOI-linked literature provides context, not proof of the proposed integrated system. Every major claim is designed to be revised, rejected or reconstructed by a successor team using raw evidence and pre-registered falsification rules. PARENT RESEARCH DOI https://doi.org/10.5281/zenodo.23046134 Original parent: NANO/MICRO ROBOTICS, POWER & MISSION ENDURANCE AT THE LIMIT. Parent-chapter lineage: Ch. 06-11 (navigation), 47-51 (estimation/control), 65 and 68 (benchmarking and transfer). The current child manuscript does not yet have an independent DOI; one would be assigned only upon actual repository deposit. Editorial release note: the manuscript prioritizes non-duplicative research content and independent testability over an artificial word-count target. It is suitable as a research architecture for additional scientific review, not a substitute for physical validation.",
+      "url": "https://zenodo.org/records/23428408"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "4d352b674b8c61570df9d942",
+      "context_id": "5bd1cf68190b015bc1f9f3d1",
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "world model"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.75,
+      "source": "zenodo",
+      "source_published": "2026-10-17",
+      "source_updated": null,
+      "summary": "EHR2Trace converts local hospital EHR extracts (delimited text and spreadsheets) into OMOP CDM 5.4 and MEDS. The two targets are derived independently from a single canonical layer rather than one from the other, every published row carries a link back to the source rows it came from, and fifty-five checks encode the properties a conversion must satisfy before it can be used as training data, including the leakage failures that are invisible to schema validation. Where the data does not answer a question, the converter blocks and says so instead of substituting a default. Companion paper: EHR2Trace: Auditable EHR Data Infrastructure for Patient World Models and Clinical Agents (arXiv:2609.38193).",
+      "tags": [
+        "OMOP CDM",
+        "MEDS",
+        "electronic health records",
+        "data provenance",
+        "ETL validation",
+        "clinical machine learning",
+        "MIMIC-IV"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "EHR2Trace: a deterministic converter from local EHR exports to OMOP CDM 5.4 and MEDS, with row-level lineage",
+      "url": "https://zenodo.org/records/23430727"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "4d352b674b8c61570df9d942",
+      "context_id": "ea33d779d0a79ea9be0fac6e",
+      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "provenance"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.7083,
+      "source": "zenodo",
+      "source_published": "2026-10-17",
+      "source_updated": null,
+      "summary": "EHR2Trace converts local hospital EHR extracts (delimited text and spreadsheets) into OMOP CDM 5.4 and MEDS. The two targets are derived independently from a single canonical layer rather than one from the other, every published row carries a link back to the source rows it came from, and fifty-five checks encode the properties a conversion must satisfy before it can be used as training data, including the leakage failures that are invisible to schema validation. Where the data does not answer a question, the converter blocks and says so instead of substituting a default. Companion paper: EHR2Trace: Auditable EHR Data Infrastructure for Patient World Models and Clinical Agents (arXiv:2609.38193).",
+      "tags": [
+        "OMOP CDM",
+        "MEDS",
+        "electronic health records",
+        "data provenance",
+        "ETL validation",
+        "clinical machine learning",
+        "MIMIC-IV"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "EHR2Trace: a deterministic converter from local EHR exports to OMOP CDM 5.4 and MEDS, with row-level lineage",
+      "url": "https://zenodo.org/records/23430727"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "f2467bf82c5813941e999385",
+      "context_id": "91e00abb79da1502e2cfa42e",
+      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "provenance"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.7083,
+      "source": "arxiv",
+      "source_published": "2026-10-13T06:31:57Z",
+      "source_updated": "2026-10-13T06:31:57Z",
+      "summary": "Multi-agent collaboration has emerged as a critical paradigm for tackling complex, long-horizon tasks; however, while coordination protocols continue to advance, systemic failures at the inter-agent collaboration interface remain a pervasive bottleneck. In collaborative workflows, systems frequently suffer from \\emph{broken handoffs}---where critical task context is omitted, misrouted, or ignored despite each agent emitting locally plausible responses. To address this challenge, we present \\method, a verifiable runtime control framework that treats handoff repair as selective intervention over explicit dependency graphs. Central to \\method is an integrated fault-attribution and calibration pipeline, \\dataset, which decouples execution dependencies and injects counterfactual handoff perturbations to provide empirical supervision for runtime intervention. Leveraging this diagnostic foundation, \\method dynamically compiles observable interaction traces into a provenance graph to pinpoint unresolved dependencies, without accessing private agent states. It then evaluates candidate repairs through an empirical gate that weighs expected gains against disruption risks, and executes repairs only when formal local postconditions hold. Extensive evaluations across demanding benchmarks demonstrate that \\method boosts task success by up to 12.3 absolute percentage points on SILO-BENCH and 11.1 on TeamBench. Across both backbones, \\method maintains strict cost-effectiveness, adding as little as 2.0\\% marginal token overhead. Furthermore, on 562 handoff-relevant traces from the MAST benchmark, \\method achieves 69.8\\% F1 in a single pass, establishing a reliable operational boundary for verifiable coordination repair.",
+      "tags": [
+        "cs.CL"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "BRIDGE: Selective Boundary Repair with Dependency Graph Evidence in Multi-Agent Systems",
+      "url": "https://arxiv.org/abs/2610.17805v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "512fc542764e6babf983c864",
+      "context_id": "23c06803c44f7d7e914017ba",
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "memory",
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 7.2917,
+      "source": "arxiv",
+      "source_published": "2026-10-14T07:37:31Z",
+      "source_updated": "2026-10-14T07:37:31Z",
+      "summary": "Recent video world models have increasingly adopted 3D memory mechanisms to integrate historical observations into a lightweight and persistent scene representation. This naturally raises a complementary question: if 3D representations can serve as an effective mechanism for memorizing observed scenes, can they also be directly used as the latent space for reconstructing and generating scenes? Motivated by this idea, we represent a scene as a compact and unstructured 3D-anchored latent space (\\textbf{SceneAE}). Each latent combines an explicit 3D position with an implicit content feature and is spatially grounded to describe its local scene region, forming a sparse latent point cloud. Unlike conventional video-VAE latents that describe how a scene appears from particular viewpoints, our representation directly describes the scene itself, making it naturally applicable to both reconstruction and generation. For reconstruction, once the scene has been generated, our persistent 3D representation can be projected and decoded into RGB-D observations by different target cameras, without the need to regenerate a video for each new camera trajectory. For generation, we leverage the geometry-content separation to first generate camera-controlled 3D geometry and then synthesize content conditioned on it, reducing camera-appearance entanglement and improving camera controllability. Experiments show that this 3D latent achieves superior generation quality, computational cost, and camera controllability.",
+      "tags": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "SceneAE: Scene Generation and Reconstruction in Queryable 3D-Anchored Latent Space",
+      "url": "https://arxiv.org/abs/2610.19708v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "9b3f1333e42a3045523dbeca",
+      "context_id": "287bb0c91c1fd693c38da7ad",
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "memory",
+        "representation"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 7.125,
+      "source": "arxiv",
+      "source_published": "2026-10-10T03:24:05Z",
+      "source_updated": "2026-10-10T03:24:05Z",
+      "summary": "Long-horizon multi-agent collaboration requires memory that preserves both successful actions and the coordination structure underlying them. Existing memory systems support information sharing or procedural reuse, but often leave the evolution of shared procedures disconnected from the task dependencies and execution states of collaborating agents. This coupling also limits the direct transfer of procedural memory designed for individual agents to team settings. We propose Self-Evolving Procedural Memory (SEPM), a framework that uses task dependency graphs as a common representation for online coordination and procedural memory evolution. During execution, a lightweight shared blackboard records structured evidence alongside task dependencies, supporting the detection of goal, plan, and world-state divergence and evidence-based realignment. After execution, verified actions and dependencies are distilled into reusable procedures, while recurring failures inform warnings and constraints. The shared procedure pool evolves through creation, refinement, specialization, and retirement, guided by success and cost utility and constrained by evidence and safety requirements. Together, these mechanisms preserve the collaborative structure and applicability conditions needed to reuse experience across tasks. Evaluations on ALFWorld, WebArena, and OfficeBench under AutoGen and DyLAN show that SEPM achieves the highest task scores among the compared methods in all six benchmark settings. Under AutoGen, it improves task scores over the no-added-memory baseline by 29.85, 25.86, and 13.00 percentage points, respectively. The codebase is available at https://github.com/cookieApril/SEPM.",
+      "tags": [
+        "cs.MA"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "SEPM: Self-Evolving Procedural Memory Grounded in Task Graphs for Multi-Agent Collaboration",
+      "url": "https://arxiv.org/abs/2610.14515v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "1acb069c9ba848c1e0471373",
+      "context_id": "816dd233f23332c2672828ca",
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "confound",
+        "failure",
+        "retrieval"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 7.0,
+      "source": "zenodo",
+      "source_published": "2026-10-17",
+      "source_updated": null,
+      "summary": "AUTONOMOUS NANOROBOTIC NAVIGATION AND MISSION OBSERVABILITY AT THE LIMIT First-Generation Research Flagship 01 | NANO/MICRO ROBOTICS, POWER &amp; MISSION ENDURANCE Feng Cheng-en (33) x Starli This research atlas asks a difficult engineering question: when low-Reynolds-number microfluidic flows, Brownian orientation noise, boundary adhesion, external field actuation and incomplete sensing all influence a micro/nanorobot, what would justify calling its behavior autonomous navigation rather than externally assisted motion? The volume treats navigation as an auditable, bounded mission instead of an attractive trajectory. It develops a five-layer program spanning stochastic hydrodynamics, instrument and actuation provenance, uncertainty-calibrated belief-state estimation, blinded microfluidic challenges and independent requalification. Thirty linked mathematical stations differentiate physical relations, information-theoretic functionals and proposed navigation utility measures, with assumptions, dimensions and possible falsifiers. Eighty-two research chapters each open with a core mathematical relation, followed by five independent single-page research sections. Two hundred detailed Research Gates describe decisive comparisons, confounding explanations, evidence requirements, failure conditions and successor handoff artifacts. Thirty-three provisional Phoenix Answer Embryos offer revisionable research prototypes rather than predetermined conclusions. The key comparator is an equal-budget experiment: fixed-field sequences, microscope-assisted manual control, externally tracked predictive control and candidate fused navigation are evaluated under matched total energy, information access, geometry, time, collision limits and recovery obligations. The manuscript emphasizes blind targets, flow reversal, sensor dropouts, wall adhesion, correlated observations, full-system power accounting, censored failures and post-mission retrieval. A mission arriving at its target but leaving an unrecovered device is not counted as a fully closed success. This work is a hypothesis-generating Research Atlas v1.0, not an experimental report or a validated medical technology. External magnetic, acoustic, optical and microscope infrastructure must be disclosed; no in-vivo or clinical competence is inferred from bench-top movement. Foundational DOI-linked literature provides context, not proof of the proposed integrated system. Every major claim is designed to be revised, rejected or reconstructed by a successor team using raw evidence and pre-registered falsification rules. PARENT RESEARCH DOI https://doi.org/10.5281/zenodo.23046134 Original parent: NANO/MICRO ROBOTICS, POWER &amp; MISSION ENDURANCE AT THE LIMIT. Parent-chapter lineage: Ch. 06-11 (navigation), 47-51 (estimation/control), 65 and 68 (benchmarking and transfer). The current child manuscript does not yet have an independent DOI; one would be assigned only upon actual repository deposit. Editorial release note: the manuscript prioritizes non-duplicative research content and independent testability over an artificial word-count target. It is suitable as a research architecture for additional scientific review, not a substitute for physical validation.",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "AUTONOMOUS NANOROBOTIC NAVIGATION AND MISSION OBSERVABILITY AT THE LIMIT First-Generation Research Flagship 01 | NANO/MICRO ROBOTICS, POWER & MISSION ENDURANCE Feng Cheng-en (33) x Starli This research atlas asks a difficult engineering question: when low-Reynolds-number microfluidic flows, Brownian orientation noise, boundary adhesion, external field actuation and incomplete sensing all influence a micro/nanorobot, what would justify calling its behavior autonomous navigation rather than externally assisted motion? The volume treats navigation as an auditable, bounded mission instead of an attractive trajectory. It develops a five-layer program spanning stochastic hydrodynamics, instrument and actuation provenance, uncertainty-calibrated belief-state estimation, blinded microfluidic challenges and independent requalification. Thirty linked mathematical stations differentiate physical relations, information-theoretic functionals and proposed navigation utility measures, with assumptions, dimensions and possible falsifiers. Eighty-two research chapters each open with a core mathematical relation, followed by five independent single-page research sections. Two hundred detailed Research Gates describe decisive comparisons, confounding explanations, evidence requirements, failure conditions and successor handoff artifacts. Thirty-three provisional Phoenix Answer Embryos offer revisionable research prototypes rather than predetermined conclusions. The key comparator is an equal-budget experiment: fixed-field sequences, microscope-assisted manual control, externally tracked predictive control and candidate fused navigation are evaluated under matched total energy, information access, geometry, time, collision limits and recovery obligations. The manuscript emphasizes blind targets, flow reversal, sensor dropouts, wall adhesion, correlated observations, full-system power accounting, censored failures and post-mission retrieval. A mission arriving at its target but leaving an unrecovered device is not counted as a fully closed success. This work is a hypothesis-generating Research Atlas v1.0, not an experimental report or a validated medical technology. External magnetic, acoustic, optical and microscope infrastructure must be disclosed; no in-vivo or clinical competence is inferred from bench-top movement. Foundational DOI-linked literature provides context, not proof of the proposed integrated system. Every major claim is designed to be revised, rejected or reconstructed by a successor team using raw evidence and pre-registered falsification rules. PARENT RESEARCH DOI https://doi.org/10.5281/zenodo.23046134 Original parent: NANO/MICRO ROBOTICS, POWER & MISSION ENDURANCE AT THE LIMIT. Parent-chapter lineage: Ch. 06-11 (navigation), 47-51 (estimation/control), 65 and 68 (benchmarking and transfer). The current child manuscript does not yet have an independent DOI; one would be assigned only upon actual repository deposit. Editorial release note: the manuscript prioritizes non-duplicative research content and independent testability over an artificial word-count target. It is suitable as a research architecture for additional scientific review, not a substitute for physical validation.",
+      "url": "https://zenodo.org/records/23428408"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "e659ea165434623778492d9b",
+      "context_id": "78377a5c69aab03087830ea8",
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "bias",
+        "failure",
+        "memory"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.7083,
+      "source": "arxiv",
+      "source_published": "2026-10-09T00:02:59Z",
+      "source_updated": "2026-10-12T20:41:24Z",
+      "summary": "Multi-agent systems are increasingly used to solve coding tasks by coordinating agents that share code and plans. These agents are often optimized with reinforcement learning (RL) using automated evaluators, but bypassing evaluation can earn reward without producing a genuine solution. Prior work has largely treated reward hacking as a single-agent failure. In this work, we show that a reward-hacking strategy elicited in one agent can propagate to others and affect system coordination. Across four open-weight backbones, coding RL elicits and amplifies reward hacking in two settings: explicit mechanism descriptions in the system prompt and mid-training that models upstream exposure to facts about the coding environment. Using post-RL agents from the mid-training setting as sources, we observe propagation through code and shared memory, and across roles through natural-language plans. Even agents based on small open-weight models induce reward hacking in stronger closed-weight targets. On hard tasks, propagation can intensify along a transmission chain after the original source leaves as the code acquires more persuasive justifications. We also theoretically analyze conditions under which reward hacking amplifies, persists, or decays across agent interactions. Beyond propagation, reward hacking can bias task routing toward reward-hacking agents and survive candidate aggregation. As potential mitigations, we evaluate code review by the coder or a separate verifier, both of which reduce delivered hacks. Together, these results establish reward hacking as a transmissible strategy whose effects extend beyond the agent in which it first emerges.",
+      "tags": [
+        "cs.AI",
+        "cs.CR",
+        "cs.MA"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Reward Hacking as a Transmissible Strategy in Multi-Agent Coding Systems",
+      "url": "https://arxiv.org/abs/2610.12822v2"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "465f077eabdc90f98423a166",
+      "context_id": "b2162a2f4435806b34c761aa",
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_published": "2026-10-15T17:59:11Z",
+      "source_updated": "2026-10-15T17:59:11Z",
+      "summary": "Predicting how the world responds to an action requires more than what can be seen: robots must account for environmental factors that are neither directly observable nor explicitly specified, from physical properties such as friction and mass to human-defined environmental rules. We introduce T2-Z for test-time optimization of environment latents, which augments a robotic world model with a learnable environment latent to condition world predictions. This compact latent captures underlying environmental variation without supervision of what environmental factors exist or what values they take. During training, T2-Z alternates between two stages: a world-model optimization stage that fixes the latents and learns general action-conditioned dynamics across environments; and an environment-latent optimization stage that freezes the world model and optimizes the conditioning latents, allowing latent structure to emerge purely through world prediction. At test time, the world model remains frozen and a newly initialized environment latent is optimized from one or more test-time interactions, adapting the model to previously unseen environmental configurations. Across 7 simulated settings and 4 real-world robotic tasks, T2-Z reduces object prediction error metric from 15.20 to 7.00 and raises action success from 33.73% to 72.96%. Its emergent latents capture structured representations of individual and compounded factors across diverse visual scenes. Ablations further show that T2-Z can efficiently infer environment latents from as little as a single test-time interaction trajectory.",
+      "tags": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "T2-z: Test-Time Optimization of Environment Latents for Robotic World Models",
+      "url": "https://arxiv.org/abs/2610.22364v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "679cf32a95e04ed1f0acc783",
+      "context_id": "73d1923daae954ec271f05c0",
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_published": "2026-10-14T01:09:47Z",
+      "source_updated": "2026-10-14T01:09:47Z",
+      "summary": "Dynamic graph learning models how entities and their relations evolve from historical observations to predict future graph states. Existing methods do not fully address dynamic graph world modelling, which requires learning transitions from temporal context to future latent graph states. This is difficult for three reasons: nodes and relations rely on different historical evidence, structural evolution is path-dependent, and future snapshots provide sparse and realization-specific targets. We propose Dynamic Graph World Modelling (DyG-WM), the first framework to jointly predict future node and relation representations from temporal context by answering three questions: what has evolved, how it evolved, and what will evolve next. To capture what has evolved, a historical node-relation context encoder summarizes node-neighborhood trajectories and pair-specific histories. To characterize how it evolved, a node-relation path-signature encoder captures ordered structural changes. To predict what will evolve next, a dual-level joint-embedding objective predicts target-snapshot node and relation representations without reconstructing the raw graph. Experiments on 12 link-prediction and two node-classification datasets demonstrate the effectiveness of DyG-WM across both tasks.",
+      "tags": [
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Dynamic Graph World Modelling: Learning Future Dynamics from Temporal Context",
+      "url": "https://arxiv.org/abs/2610.19364v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "4778213c3b9289136f66785e",
+      "context_id": "3291978eda2297971e9e7aec",
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_published": "2026-10-15T17:56:18Z",
+      "source_updated": "2026-10-15T17:56:18Z",
+      "summary": "Recent 3D world models increasingly use features from geometry foundation models (GFMs) as predictive world states, benefiting from their rich geometric priors. However, the view dependence of these features entangles scene dynamics with camera-induced variation, making the resulting state evolution harder to predict. We propose GeoState, a view-decoupled geometry representation for predictive 3D world modeling that separates scene-state evolution from camera-dependent observation. Specifically, a scene tokenizer aggregates multi-view GFM features into a view-decoupled scene state, which a geometry decoder queries using camera rays. An autoregressive world model then predicts future scene states, while camera motion is modeled separately. The predicted states can therefore be decoded under either predicted or externally specified cameras, while retaining a single context-derived scale throughout the rollout without per-frame scale alignment. Experiments show that GeoState outperforms prior 3D world models on Waymo, supports geometrically consistent cross-view querying, and generalizes zero-shot to KITTI and nuScenes. Project page: https://hongchang-liu.github.io/GeoState-project-page/",
+      "tags": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "GeoState: Learning View-Decoupled Geometry States for 3D World Modeling",
+      "url": "https://arxiv.org/abs/2610.22343v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "08a7f2090780c08b7b2107a4",
+      "context_id": "a014578e5e7ebda232faaa0a",
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "representation"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 5.875,
+      "source": "zenodo",
+      "source_published": "2026-10-17",
+      "source_updated": null,
+      "summary": "The Mathematics of 3D Printing Slicing: STL Geometry, Ray-Casting &amp; Toolpaths is an open-access engineering monograph and interactive instructional module published by the Prep4Uni.Online OER Initiative . This work provides an analytical, undergraduate/postgraduate-level treatment of the computational geometry foundations required to translate three-dimensional surface meshes into layer-by-layer machine toolpaths. Aligned with international accreditation standards&mdash;specifically the Washington Accord (WA1&ndash;WA5) and EUR-ACE First/Second Cycle frameworks&mdash;this publication establishes the mathematical proofs, vector algorithms, and point-in-polygon logic governing modern additive manufacturing slicing software. Core Mathematical &amp; Computational Themes: STL Topology &amp; Facet Representation: Analysis of unstructured triangulated surface meshes, outward unit normal vectors (\\(\\mathbf{n}\\)), vertex coordinate systems, and planar boundary extraction. Parametric Facet-Plane Intersection: Step-by-step vector linear interpolation for deriving the intersection segment \\(S_k\\) formed by cutting planes at \\(z = z_k\\), addressing non-manifold edges, vertex touching, and numerical epsilon shifts. Jordan Curve Theorem &amp; Parity Logic: Formal implementation of the 2D Ray-Casting algorithm and Even-Odd Parity test for robust interior, exterior, and internal void classification across arbitrary closed slices. Toolpath Trajectory Generation: Comparative kinematics and geometry between continuous concentric perimeter offset loops and 45&deg; zigzag parallel hatch raster patterns. Formative Assessment Suite: A three-tier verification suite comprising 8 foundational concepts, 7 real-world slicer failure debugging scenarios, and 6 step-by-step quantitative engineering worked examples. Note: The full interactive web edition&mdash;featuring client-side HTML5 simulation canvas engines, dynamic parameter sliders, and real-time slice projection mathematics&mdash;is accessible at: https://prep4uni.online/stem/physical-technologies/industrial-and-manufacturing-technologies/additive-manufacturing-3d-printing/mathematics-of-slicing/",
+      "tags": [
+        "Additive Manufacturing",
+        "3D Printing",
+        "Slicing Mathematics",
+        "STL Geometry",
+        "Computational Geometry",
+        "Ray-Casting Algorithm",
+        "Even-Odd Parity Rule",
+        "Jordan Curve Theorem",
+        "Toolpath Generation",
+        "Facet-Plane Intersection",
+        "Linear Interpolation",
+        "G-code Generation",
+        "Infill Rasterization",
+        "Boundary Contour Offset",
+        "Washington Accord"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "The Mathematics of 3D Printing Slicing: STL Geometry, Ray-Casting & Toolpaths",
+      "url": "https://zenodo.org/records/23428277"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "f2467bf82c5813941e999385",
+      "context_id": "bafafa94560e31cf1d6627b8",
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "calibration",
+        "control",
+        "provenance"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 14.5417,
+      "source": "arxiv",
+      "source_published": "2026-10-13T06:31:57Z",
+      "source_updated": "2026-10-13T06:31:57Z",
+      "summary": "Multi-agent collaboration has emerged as a critical paradigm for tackling complex, long-horizon tasks; however, while coordination protocols continue to advance, systemic failures at the inter-agent collaboration interface remain a pervasive bottleneck. In collaborative workflows, systems frequently suffer from \\emph{broken handoffs}---where critical task context is omitted, misrouted, or ignored despite each agent emitting locally plausible responses. To address this challenge, we present \\method, a verifiable runtime control framework that treats handoff repair as selective intervention over explicit dependency graphs. Central to \\method is an integrated fault-attribution and calibration pipeline, \\dataset, which decouples execution dependencies and injects counterfactual handoff perturbations to provide empirical supervision for runtime intervention. Leveraging this diagnostic foundation, \\method dynamically compiles observable interaction traces into a provenance graph to pinpoint unresolved dependencies, without accessing private agent states. It then evaluates candidate repairs through an empirical gate that weighs expected gains against disruption risks, and executes repairs only when formal local postconditions hold. Extensive evaluations across demanding benchmarks demonstrate that \\method boosts task success by up to 12.3 absolute percentage points on SILO-BENCH and 11.1 on TeamBench. Across both backbones, \\method maintains strict cost-effectiveness, adding as little as 2.0\\% marginal token overhead. Furthermore, on 562 handoff-relevant traces from the MAST benchmark, \\method achieves 69.8\\% F1 in a single pass, establishing a reliable operational boundary for verifiable coordination repair.",
+      "tags": [
+        "cs.CL"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "BRIDGE: Selective Boundary Repair with Dependency Graph Evidence in Multi-Agent Systems",
+      "url": "https://arxiv.org/abs/2610.17805v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "184a91076b56e4a34903cec1",
+      "context_id": "043474ab17fec51f5e90b2bf",
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "control",
+        "inverse problem"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 13.2917,
+      "source": "zenodo",
+      "source_published": "2026-10-17",
+      "source_updated": null,
+      "summary": "Code and results for the manuscript *Identifying the Caputo order of time-fractional diffusion with physics-informed neural networks: a controlled benchmark against classical inversion* (A. Boucenna). All data are synthetic, generated from the exact Mittag-Leffler solution; no experimental or patient data are used.",
+      "tags": [
+        "time-fractional diffusion, Caputo derivative, physics-informed neural networks, inverse problem."
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Code and data for: Identifying the Caputo order of time-fractional diffusion with physics-informed neural networks",
+      "url": "https://zenodo.org/records/23434623"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "1acb069c9ba848c1e0471373",
+      "context_id": "80b875c8c14d58dc4e698a46",
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "control",
+        "provenance"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 13.0833,
+      "source": "zenodo",
+      "source_published": "2026-10-17",
+      "source_updated": null,
+      "summary": "AUTONOMOUS NANOROBOTIC NAVIGATION AND MISSION OBSERVABILITY AT THE LIMIT First-Generation Research Flagship 01 | NANO/MICRO ROBOTICS, POWER &amp; MISSION ENDURANCE Feng Cheng-en (33) x Starli This research atlas asks a difficult engineering question: when low-Reynolds-number microfluidic flows, Brownian orientation noise, boundary adhesion, external field actuation and incomplete sensing all influence a micro/nanorobot, what would justify calling its behavior autonomous navigation rather than externally assisted motion? The volume treats navigation as an auditable, bounded mission instead of an attractive trajectory. It develops a five-layer program spanning stochastic hydrodynamics, instrument and actuation provenance, uncertainty-calibrated belief-state estimation, blinded microfluidic challenges and independent requalification. Thirty linked mathematical stations differentiate physical relations, information-theoretic functionals and proposed navigation utility measures, with assumptions, dimensions and possible falsifiers. Eighty-two research chapters each open with a core mathematical relation, followed by five independent single-page research sections. Two hundred detailed Research Gates describe decisive comparisons, confounding explanations, evidence requirements, failure conditions and successor handoff artifacts. Thirty-three provisional Phoenix Answer Embryos offer revisionable research prototypes rather than predetermined conclusions. The key comparator is an equal-budget experiment: fixed-field sequences, microscope-assisted manual control, externally tracked predictive control and candidate fused navigation are evaluated under matched total energy, information access, geometry, time, collision limits and recovery obligations. The manuscript emphasizes blind targets, flow reversal, sensor dropouts, wall adhesion, correlated observations, full-system power accounting, censored failures and post-mission retrieval. A mission arriving at its target but leaving an unrecovered device is not counted as a fully closed success. This work is a hypothesis-generating Research Atlas v1.0, not an experimental report or a validated medical technology. External magnetic, acoustic, optical and microscope infrastructure must be disclosed; no in-vivo or clinical competence is inferred from bench-top movement. Foundational DOI-linked literature provides context, not proof of the proposed integrated system. Every major claim is designed to be revised, rejected or reconstructed by a successor team using raw evidence and pre-registered falsification rules. PARENT RESEARCH DOI https://doi.org/10.5281/zenodo.23046134 Original parent: NANO/MICRO ROBOTICS, POWER &amp; MISSION ENDURANCE AT THE LIMIT. Parent-chapter lineage: Ch. 06-11 (navigation), 47-51 (estimation/control), 65 and 68 (benchmarking and transfer). The current child manuscript does not yet have an independent DOI; one would be assigned only upon actual repository deposit. Editorial release note: the manuscript prioritizes non-duplicative research content and independent testability over an artificial word-count target. It is suitable as a research architecture for additional scientific review, not a substitute for physical validation.",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "AUTONOMOUS NANOROBOTIC NAVIGATION AND MISSION OBSERVABILITY AT THE LIMIT First-Generation Research Flagship 01 | NANO/MICRO ROBOTICS, POWER & MISSION ENDURANCE Feng Cheng-en (33) x Starli This research atlas asks a difficult engineering question: when low-Reynolds-number microfluidic flows, Brownian orientation noise, boundary adhesion, external field actuation and incomplete sensing all influence a micro/nanorobot, what would justify calling its behavior autonomous navigation rather than externally assisted motion? The volume treats navigation as an auditable, bounded mission instead of an attractive trajectory. It develops a five-layer program spanning stochastic hydrodynamics, instrument and actuation provenance, uncertainty-calibrated belief-state estimation, blinded microfluidic challenges and independent requalification. Thirty linked mathematical stations differentiate physical relations, information-theoretic functionals and proposed navigation utility measures, with assumptions, dimensions and possible falsifiers. Eighty-two research chapters each open with a core mathematical relation, followed by five independent single-page research sections. Two hundred detailed Research Gates describe decisive comparisons, confounding explanations, evidence requirements, failure conditions and successor handoff artifacts. Thirty-three provisional Phoenix Answer Embryos offer revisionable research prototypes rather than predetermined conclusions. The key comparator is an equal-budget experiment: fixed-field sequences, microscope-assisted manual control, externally tracked predictive control and candidate fused navigation are evaluated under matched total energy, information access, geometry, time, collision limits and recovery obligations. The manuscript emphasizes blind targets, flow reversal, sensor dropouts, wall adhesion, correlated observations, full-system power accounting, censored failures and post-mission retrieval. A mission arriving at its target but leaving an unrecovered device is not counted as a fully closed success. This work is a hypothesis-generating Research Atlas v1.0, not an experimental report or a validated medical technology. External magnetic, acoustic, optical and microscope infrastructure must be disclosed; no in-vivo or clinical competence is inferred from bench-top movement. Foundational DOI-linked literature provides context, not proof of the proposed integrated system. Every major claim is designed to be revised, rejected or reconstructed by a successor team using raw evidence and pre-registered falsification rules. PARENT RESEARCH DOI https://doi.org/10.5281/zenodo.23046134 Original parent: NANO/MICRO ROBOTICS, POWER & MISSION ENDURANCE AT THE LIMIT. Parent-chapter lineage: Ch. 06-11 (navigation), 47-51 (estimation/control), 65 and 68 (benchmarking and transfer). The current child manuscript does not yet have an independent DOI; one would be assigned only upon actual repository deposit. Editorial release note: the manuscript prioritizes non-duplicative research content and independent testability over an artificial word-count target. It is suitable as a research architecture for additional scientific review, not a substitute for physical validation.",
+      "url": "https://zenodo.org/records/23428408"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "ec4aff456ed4f6d675591d20",
+      "context_id": "137df6c3daf683f438d951c0",
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "calibration",
+        "control",
+        "memory",
+        "representation"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 12.9583,
+      "source": "arxiv",
+      "source_published": "2026-10-14T16:46:48Z",
+      "source_updated": "2026-10-14T16:46:48Z",
+      "summary": "Multi-head latent attention (MLA) compresses the content of a key-value cache into a shared latent per token, making low-bit storage attractive for long-context inference. At two bits, errors in this representation perturb both attention matching and value readout, with effects that depend on error direction and reconstruction scale. We introduce RoLaQ (Rotation-calibrated Latent Quantization), an offline method for joint rotation and range calibration. RoLaQ refines a shared rotation within subspaces defined by the frozen key and value projections, and jointly learns quantization ranges whose thresholds and reconstruction gains are coupled to control the shared signal's response. Prediction matching and attention-output supervision guide calibration with model weights frozen. Across three MLA models and six benchmarks, RoLaQ achieves the highest average accuracy among the compared 2-bit methods both without and with token protection. On DeepSeek-V2-Lite, an SGLang implementation provides 3.96 times the BF16 KV capacity under the same memory budget and 2.51 times its decode throughput with 256K input tokens.",
+      "tags": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "RoLaQ: Joint Rotation and Range Calibration for 2-Bit KV Caches in Multi-Head Latent Attention",
+      "url": "https://arxiv.org/abs/2610.20686v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "512fc542764e6babf983c864",
+      "context_id": "9797f1cac3fab8711f9d7842",
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "control",
+        "memory",
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 11.5833,
+      "source": "arxiv",
+      "source_published": "2026-10-14T07:37:31Z",
+      "source_updated": "2026-10-14T07:37:31Z",
+      "summary": "Recent video world models have increasingly adopted 3D memory mechanisms to integrate historical observations into a lightweight and persistent scene representation. This naturally raises a complementary question: if 3D representations can serve as an effective mechanism for memorizing observed scenes, can they also be directly used as the latent space for reconstructing and generating scenes? Motivated by this idea, we represent a scene as a compact and unstructured 3D-anchored latent space (\\textbf{SceneAE}). Each latent combines an explicit 3D position with an implicit content feature and is spatially grounded to describe its local scene region, forming a sparse latent point cloud. Unlike conventional video-VAE latents that describe how a scene appears from particular viewpoints, our representation directly describes the scene itself, making it naturally applicable to both reconstruction and generation. For reconstruction, once the scene has been generated, our persistent 3D representation can be projected and decoded into RGB-D observations by different target cameras, without the need to regenerate a video for each new camera trajectory. For generation, we leverage the geometry-content separation to first generate camera-controlled 3D geometry and then synthesize content conditioned on it, reducing camera-appearance entanglement and improving camera controllability. Experiments show that this 3D latent achieves superior generation quality, computational cost, and camera controllability.",
+      "tags": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "SceneAE: Scene Generation and Reconstruction in Queryable 3D-Anchored Latent Space",
+      "url": "https://arxiv.org/abs/2610.19708v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "9b3f1333e42a3045523dbeca",
+      "context_id": "a5fe2f273dd00725e2309017",
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "benchmark",
+        "memory",
+        "representation"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 11.5417,
+      "source": "arxiv",
+      "source_published": "2026-10-10T03:24:05Z",
+      "source_updated": "2026-10-10T03:24:05Z",
+      "summary": "Long-horizon multi-agent collaboration requires memory that preserves both successful actions and the coordination structure underlying them. Existing memory systems support information sharing or procedural reuse, but often leave the evolution of shared procedures disconnected from the task dependencies and execution states of collaborating agents. This coupling also limits the direct transfer of procedural memory designed for individual agents to team settings. We propose Self-Evolving Procedural Memory (SEPM), a framework that uses task dependency graphs as a common representation for online coordination and procedural memory evolution. During execution, a lightweight shared blackboard records structured evidence alongside task dependencies, supporting the detection of goal, plan, and world-state divergence and evidence-based realignment. After execution, verified actions and dependencies are distilled into reusable procedures, while recurring failures inform warnings and constraints. The shared procedure pool evolves through creation, refinement, specialization, and retirement, guided by success and cost utility and constrained by evidence and safety requirements. Together, these mechanisms preserve the collaborative structure and applicability conditions needed to reuse experience across tasks. Evaluations on ALFWorld, WebArena, and OfficeBench under AutoGen and DyLAN show that SEPM achieves the highest task scores among the compared methods in all six benchmark settings. Under AutoGen, it improves task scores over the no-added-memory baseline by 29.85, 25.86, and 13.00 percentage points, respectively. The codebase is available at https://github.com/cookieApril/SEPM.",
+      "tags": [
+        "cs.MA"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "SEPM: Self-Evolving Procedural Memory Grounded in Task Graphs for Multi-Agent Collaboration",
+      "url": "https://arxiv.org/abs/2610.14515v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "b1f5bddba1c9221c225c7790",
+      "context_id": "d08e54870902fd2ec0a77dc4",
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "control",
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.3333,
+      "source": "arxiv",
+      "source_published": "2026-10-15T09:57:14Z",
+      "source_updated": "2026-10-15T09:57:14Z",
+      "summary": "Learning intrinsic dynamics---the relationship between actions and their consequences---is essential for world models. However, visual variations unrelated to the underlying control process can obscure this relationship in learned representations. We investigate the connection between action predictability, defined as the ability to reconstruct an action from consecutive latent states, and the preservation of intrinsic dynamics. Our central hypothesis is that encouraging action predictability discourages representations from discarding the distinctions between different actions and their consequences. We provide two complementary forms of evidence for this connection. Theoretically, we derive a positive lower bound on squared inverse prediction error when the encoder merges distinguishable outcomes of different actions from the same state and appearance, and show that forward prediction can still be exact on those transitions. Empirically, controlled appearance-diversity comparisons, supervision interventions, and latent probes support the role of action prediction in preserving control-relevant transition information. We instantiate action predictability with Concat IDM, which predicts actions from concatenated latent states and updates the shared encoder using action labels already available in offline trajectories, without changing the test-time planner. Across three independent training runs on Push-T with 24 appearances, Concat IDM increases planning success from 9.1% to 77.2%; its paired improvement is 52.9 percentage points larger than that observed with a single appearance. Together, these findings support action predictability as an inductive bias toward intrinsic dynamics and demonstrate the practical benefits of Concat IDM for latent planning under visual diversity.",
+      "tags": [
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Learning Intrinsic Dynamics in Latent World Models",
+      "url": "https://arxiv.org/abs/2610.21612v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "fb8cfa94419cd29709ea37ee",
+      "context_id": "c1c95d5dfc086974c1e081ab",
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "ablation",
+        "benchmark",
+        "replication"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.1667,
+      "source": "zenodo",
+      "source_published": "2026-10-17",
+      "source_updated": null,
+      "summary": "This replication package contains the experimental artifacts, anonymized empirical benchmark dataset (N = 5,000 paired student-opportunity records), statistical verification scripts, database definitions, and microservices source code for the research paper: \"Hybrid Vector-Temporal Matching for Student Freelance Placement: An Empirical Study of Database-Level Vector Offloading\" Targeted for Information and Software Technology (IST, Elsevier). Package Contents: data/: Anonymized benchmark dataset (students_data_tesis_final.csv) featuring 168-hour weekly availability matrices and raw ablation output. benchmarks/: Automated Python scripts for Stratified 5-fold cross-validation ablation (C1 to C4), Wilcoxon Signed-Rank hypothesis testing, Cliff's Delta effect size calculation, and bootstrap confidence intervals. database/: PostgreSQL 16 schema and stored procedure definitions for HNSW Approximate Nearest Neighbor vector search (pgvector) and dynamic schedule intersection. turborepo-src/: Clean source code of the decoupled microservices monorepo (API Gateway, Matching Service, ML Engine, and shared Protocol Buffers). System Requirements: Python 3.10+ with NumPy, SciPy, Pandas, Scikit-Learn, and NLTK. Node.js v20+ / pnpm v9+ and Docker Engine for microservice orchestration.",
+      "tags": [
+        "Software Architecture",
+        "Microservices",
+        "Vector Databases",
+        "pgvector",
+        "CQRS",
+        "Recommender Systems",
+        "Replication Package"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Replication Package: Hybrid Vector-Temporal Matching for Student Freelance Placement",
+      "url": "https://zenodo.org/records/23428430"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "fb8cfa94419cd29709ea37ee",
+      "context_id": "95e8f319adb8a106ed1955dd",
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "ablation",
+        "benchmark",
+        "replication"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.1667,
+      "source": "zenodo",
+      "source_published": "2026-10-17",
+      "source_updated": null,
+      "summary": "This replication package contains the experimental artifacts, anonymized empirical benchmark dataset (N = 5,000 paired student-opportunity records), statistical verification scripts, database definitions, and microservices source code for the research paper: \"Hybrid Vector-Temporal Matching for Student Freelance Placement: An Empirical Study of Database-Level Vector Offloading\" Targeted for Information and Software Technology (IST, Elsevier). Package Contents: data/: Anonymized benchmark dataset (students_data_tesis_final.csv) featuring 168-hour weekly availability matrices and raw ablation output. benchmarks/: Automated Python scripts for Stratified 5-fold cross-validation ablation (C1 to C4), Wilcoxon Signed-Rank hypothesis testing, Cliff's Delta effect size calculation, and bootstrap confidence intervals. database/: PostgreSQL 16 schema and stored procedure definitions for HNSW Approximate Nearest Neighbor vector search (pgvector) and dynamic schedule intersection. turborepo-src/: Clean source code of the decoupled microservices monorepo (API Gateway, Matching Service, ML Engine, and shared Protocol Buffers). System Requirements: Python 3.10+ with NumPy, SciPy, Pandas, Scikit-Learn, and NLTK. Node.js v20+ / pnpm v9+ and Docker Engine for microservice orchestration.",
+      "tags": [
+        "Software Architecture",
+        "Microservices",
+        "Vector Databases",
+        "pgvector",
+        "CQRS",
+        "Recommender Systems",
+        "Replication Package"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Replication Package: Hybrid Vector-Temporal Matching for Student Freelance Placement",
+      "url": "https://zenodo.org/records/23428430"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "ec4aff456ed4f6d675591d20",
+      "context_id": "ffe321e6d16d4c29d64f8e0c",
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "calibration",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.125,
+      "source": "arxiv",
+      "source_published": "2026-10-14T16:46:48Z",
+      "source_updated": "2026-10-14T16:46:48Z",
+      "summary": "Multi-head latent attention (MLA) compresses the content of a key-value cache into a shared latent per token, making low-bit storage attractive for long-context inference. At two bits, errors in this representation perturb both attention matching and value readout, with effects that depend on error direction and reconstruction scale. We introduce RoLaQ (Rotation-calibrated Latent Quantization), an offline method for joint rotation and range calibration. RoLaQ refines a shared rotation within subspaces defined by the frozen key and value projections, and jointly learns quantization ranges whose thresholds and reconstruction gains are coupled to control the shared signal's response. Prediction matching and attention-output supervision guide calibration with model weights frozen. Across three MLA models and six benchmarks, RoLaQ achieves the highest average accuracy among the compared 2-bit methods both without and with token protection. On DeepSeek-V2-Lite, an SGLang implementation provides 3.96 times the BF16 KV capacity under the same memory budget and 2.51 times its decode throughput with 256K input tokens.",
+      "tags": [
+        "cs.LG",
+        "stat.ML"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "RoLaQ: Joint Rotation and Range Calibration for 2-Bit KV Caches in Multi-Head Latent Attention",
+      "url": "https://arxiv.org/abs/2610.20686v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "f2467bf82c5813941e999385",
+      "context_id": "7aa151e16dbc10f0a4b6fc87",
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "calibration",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.125,
+      "source": "arxiv",
+      "source_published": "2026-10-13T06:31:57Z",
+      "source_updated": "2026-10-13T06:31:57Z",
+      "summary": "Multi-agent collaboration has emerged as a critical paradigm for tackling complex, long-horizon tasks; however, while coordination protocols continue to advance, systemic failures at the inter-agent collaboration interface remain a pervasive bottleneck. In collaborative workflows, systems frequently suffer from \\emph{broken handoffs}---where critical task context is omitted, misrouted, or ignored despite each agent emitting locally plausible responses. To address this challenge, we present \\method, a verifiable runtime control framework that treats handoff repair as selective intervention over explicit dependency graphs. Central to \\method is an integrated fault-attribution and calibration pipeline, \\dataset, which decouples execution dependencies and injects counterfactual handoff perturbations to provide empirical supervision for runtime intervention. Leveraging this diagnostic foundation, \\method dynamically compiles observable interaction traces into a provenance graph to pinpoint unresolved dependencies, without accessing private agent states. It then evaluates candidate repairs through an empirical gate that weighs expected gains against disruption risks, and executes repairs only when formal local postconditions hold. Extensive evaluations across demanding benchmarks demonstrate that \\method boosts task success by up to 12.3 absolute percentage points on SILO-BENCH and 11.1 on TeamBench. Across both backbones, \\method maintains strict cost-effectiveness, adding as little as 2.0\\% marginal token overhead. Furthermore, on 562 handoff-relevant traces from the MAST benchmark, \\method achieves 69.8\\% F1 in a single pass, establishing a reliable operational boundary for verifiable coordination repair.",
+      "tags": [
+        "cs.CL"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "BRIDGE: Selective Boundary Repair with Dependency Graph Evidence in Multi-Agent Systems",
+      "url": "https://arxiv.org/abs/2610.17805v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "2f36b6442c3af60bc4dc5f34",
+      "context_id": "e511936fb0a702f78105b16d",
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "control",
+        "inverse model",
+        "memory"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.0833,
+      "source": "zenodo",
+      "source_published": "2026-10-17",
+      "source_updated": null,
+      "summary": "Python code that reproduces all results, figures and supporting tables of Dixit, AchutaRao and Sandeep, \"Future Warming Shortens the Memory of the Pacific Decadal Oscillation and Erodes a Source of Near-Term Predictability\" (submitted to Earth's Future). The analysis uses eleven CMIP6 models (piControl, historical, SSP1-2.6, SSP2-4.5, SSP3-7.0, SSP5-8.5), the CESM2 and MIROC6 large ensembles and ERSSTv5, regridded to the 2-degree ERSSTv5 grid. \"bash run_all.sh\" runs the full analysis. The folder results/ contains the outputs used in the paper, from which most figures can be redrawn without the model data. See README.md for requirements, input data layout and the mapping of scripts to sections, figures and tables.",
+      "tags": [
+        "Pacific Decadal Oscillation",
+        "decadal predictability",
+        "CMIP6",
+        "large ensembles",
+        "mixed layer",
+        "air-sea feedback",
+        "linear inverse model",
+        "nonlinear local Lyapunov exponent"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Code and results for \"Future Warming Shortens the Memory of the Pacific Decadal Oscillation and Erodes a Source of Near-Term Predictability\"",
+      "url": "https://zenodo.org/records/23431665"
+    }
+  ],
+  "schema": "janus.beetle.repo_memory_batch.v1",
+  "selection": "BALANCED_LENS_ROLLING_TOP",
+  "snapshot_cap": 48,
+  "target_repository": "Hawkar-usls/iNaiHR"
+}
