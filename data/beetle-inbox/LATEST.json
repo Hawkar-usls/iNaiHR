@@ -1,5 +1,5 @@
 {
-  "batch_id": "94ac9e20870b089fdb8a",
+  "batch_id": "098d695428154c0bdef6",
   "claim_ceiling": "DISCOVERY_MEMORY_ONLY__TARGET_REPO_MUST_VERIFY_INDEPENDENTLY",
   "fragment_count": 1,
   "fragment_index": 1,
@@ -661,6 +661,72 @@
       "url": "https://zenodo.org/records/23443522"
     },
     {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "b1dcee0232a99d11f0cf7d11",
+      "context_id": "71321f9e1166b8921f4222d5",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::REVERSE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "inverse",
+        "inversion"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.6667,
+      "source": "zenodo",
+      "source_context_sha256": "c509016dd21272e892eee7c8b5f45490e6e941444bd93fc42c6555ccd31c8aa5",
+      "source_published": "2026-10-18",
+      "source_updated": "",
+      "summary": "Profiles across an edge with the covariance between bins, the extra charge per unit length of edge, exact Bayesian error bars without a dense inverse, two unit dependences fixed, and CI-robust tests of the stacked map fit. Added region_profile(coefficients, dw1, dw2, sigma1, sigma2, coordinate, bins, *, mask=None, shift_correlation=None, ref_sigma=None) , returning a RegionProfile : the mean strain and density in bins of a coordinate (for example the distance from an edge), each bin with the error budget of region_mean (shift noise, calibration, reference frequencies, homogeneity check), plus the covariance between all bins ( covariance , covariance_shifts , covariance_calibration , covariance_reference , shape (R, 2, R, 2)). The bins share the lever arms and the reference frequencies, so their errors are correlated: calibration covariance sum_m (x_i^T C_m x_j) k_m k_m^T between bins i and j, reference covariance K^-1 diag(u1^2, u2^2) K^-T for every pair, no shift covariance (different pixels). Propagation as in JCGM 100:2008 (GUM), 5.2.2, Eq. (13), first order in the calibration. RegionProfile.combination(strain_weights, density_weights) (any weighted sum of the bins, with its error parts, as a new LinearEstimate ), RegionProfile.integrated_excess(bulk, quantity=&quot;density&quot;, widths=None) (sum over the other bins of width times value minus the bulk value: across a straight edge, the excess per unit length of edge; the reference error cancels) and RegionProfile.contrast(i, j) (bin i minus bin j, as region_contrast gives it). Validation: each bin equals the mean of the per-pixel SeparationModel.invert maps (1e-14) and region_mean on that bin (relative 1e-12); the cross-bin calibration covariance equals that from a finite-difference Jacobian of an independent re-solve (relative 1e-6); combinations equal c^T C c (relative 1e-10); the integrated excess equals the sum by hand (1e-13), its shift part a pixel-level linear form (1e-10) and its calibration part finite differences (1e-6); contrast equals region_contrast (1e-12). Over 300 seeded trials that repeat calibration, map noise and reference error, the spread of the excess and of a bin mean is within 15 % of the error bars (measured 3 % and 4 %), and the measured correlation of two bins (0.988) matches the reported one (0.987). README: the profile and its refusals in the package list, a third tutorial, test descriptions, corrections and limits. Fixed bayesian_map_inversion depended on the units of the lever arms. Before: with the density column in cm^-2 (K / [1, 1e13]), the maps of the test problem differed from an independent dense solve by a relative 6.1e-4 (density) and 1.4e-4 (strain), and with K * [1, 1e6] by 8e-13. After: 1.1e-15 and 6.7e-16 (density in cm^-2). When the column norms of K differ by more than 2^10, the problem is solved for density / t with t a power of two (exact rescaling) and scaled back. Smaller ratios (all shipped sets, all README examples) run the unchanged code. Test: test_bayesian_map_does_not_depend_on_the_density_unit . MultiModeModel , ThreeCauseModel and bayesian_map_inversion refused a well-separating lever-arm matrix as &quot;rank &lt; 2&quot; (&quot;rank &lt; 3&quot;) when the density was in m^-2 (arms near 1e-17 cm^-1 per m^-2; also for K / [1, 1e15]), and compare_mode_sets returned [] for it instead of three subsets. The rank is now judged on K with unit-length columns ( _has_full_column_rank ), as calibrate_lever_arms does since 0.14.0. After: the results equal those in 1e13 cm^-2, rescaled (measured relative differences below 1e-14); a rank-deficient matrix is still refused in any unit. Test: test_rank_tests_do_not_depend_on_the_units . Documentation and tests: fit_map was documented (module docstring, README) to give &quot;bit for bit&quot; the numbers of the per-pixel loop over fit_two_modes , and nine tests demanded exact equality between the stacked and the single-spectrum fits (and between ThreeCauseModel runs on stacks of diff",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "ramansep: two-mode separation of strain and carrier density in 2D-material Raman maps",
+      "url": "https://zenodo.org/records/23451152"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "b1dcee0232a99d11f0cf7d11",
+      "context_id": "3e7c401c90935632acd1e390",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "inverse",
+        "inversion"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.6667,
+      "source": "zenodo",
+      "source_context_sha256": "f93eb07b2286e4f3224ebdef224cf44611222182cf61f22fb801461f8bf69c84",
+      "source_published": "2026-10-18",
+      "source_updated": "",
+      "summary": "Profiles across an edge with the covariance between bins, the extra charge per unit length of edge, exact Bayesian error bars without a dense inverse, two unit dependences fixed, and CI-robust tests of the stacked map fit. Added region_profile(coefficients, dw1, dw2, sigma1, sigma2, coordinate, bins, *, mask=None, shift_correlation=None, ref_sigma=None) , returning a RegionProfile : the mean strain and density in bins of a coordinate (for example the distance from an edge), each bin with the error budget of region_mean (shift noise, calibration, reference frequencies, homogeneity check), plus the covariance between all bins ( covariance , covariance_shifts , covariance_calibration , covariance_reference , shape (R, 2, R, 2)). The bins share the lever arms and the reference frequencies, so their errors are correlated: calibration covariance sum_m (x_i^T C_m x_j) k_m k_m^T between bins i and j, reference covariance K^-1 diag(u1^2, u2^2) K^-T for every pair, no shift covariance (different pixels). Propagation as in JCGM 100:2008 (GUM), 5.2.2, Eq. (13), first order in the calibration. RegionProfile.combination(strain_weights, density_weights) (any weighted sum of the bins, with its error parts, as a new LinearEstimate ), RegionProfile.integrated_excess(bulk, quantity=&quot;density&quot;, widths=None) (sum over the other bins of width times value minus the bulk value: across a straight edge, the excess per unit length of edge; the reference error cancels) and RegionProfile.contrast(i, j) (bin i minus bin j, as region_contrast gives it). Validation: each bin equals the mean of the per-pixel SeparationModel.invert maps (1e-14) and region_mean on that bin (relative 1e-12); the cross-bin calibration covariance equals that from a finite-difference Jacobian of an independent re-solve (relative 1e-6); combinations equal c^T C c (relative 1e-10); the integrated excess equals the sum by hand (1e-13), its shift part a pixel-level linear form (1e-10) and its calibration part finite differences (1e-6); contrast equals region_contrast (1e-12). Over 300 seeded trials that repeat calibration, map noise and reference error, the spread of the excess and of a bin mean is within 15 % of the error bars (measured 3 % and 4 %), and the measured correlation of two bins (0.988) matches the reported one (0.987). README: the profile and its refusals in the package list, a third tutorial, test descriptions, corrections and limits. Fixed bayesian_map_inversion depended on the units of the lever arms. Before: with the density column in cm^-2 (K / [1, 1e13]), the maps of the test problem differed from an independent dense solve by a relative 6.1e-4 (density) and 1.4e-4 (strain), and with K * [1, 1e6] by 8e-13. After: 1.1e-15 and 6.7e-16 (density in cm^-2). When the column norms of K differ by more than 2^10, the problem is solved for density / t with t a power of two (exact rescaling) and scaled back. Smaller ratios (all shipped sets, all README examples) run the unchanged code. Test: test_bayesian_map_does_not_depend_on_the_density_unit . MultiModeModel , ThreeCauseModel and bayesian_map_inversion refused a well-separating lever-arm matrix as &quot;rank &lt; 2&quot; (&quot;rank &lt; 3&quot;) when the density was in m^-2 (arms near 1e-17 cm^-1 per m^-2; also for K / [1, 1e15]), and compare_mode_sets returned [] for it instead of three subsets. The rank is now judged on K with unit-length columns ( _has_full_column_rank ), as calibrate_lever_arms does since 0.14.0. After: the results equal those in 1e13 cm^-2, rescaled (measured relative differences below 1e-14); a rank-deficient matrix is still refused in any unit. Test: test_rank_tests_do_not_depend_on_the_units . Documentation and tests: fit_map was documented (module docstring, README) to give &quot;bit for bit&quot; the numbers of the per-pixel loop over fit_two_modes , and nine tests demanded exact equality between the stacked and the single-spectrum fits (and between ThreeCauseModel runs on stacks of diff",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "ramansep: two-mode separation of strain and carrier density in 2D-material Raman maps",
+      "url": "https://zenodo.org/records/23451152"
+    },
+    {
       "base_direction_id": "cognition_memory_reverse",
       "candidate_id": "edb1c7f53a8721f2db365409",
       "context_id": "022c5e1bf7e2603e2d887852",
@@ -831,87 +897,6 @@
       "target_repository": "Hawkar-usls/iNaiHR",
       "title": "ramansep: two-mode separation of strain and carrier density in 2D-material Raman maps",
       "url": "https://zenodo.org/records/23443432"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "7a8f2e7874bf292e4608e3c9",
-      "context_id": "84d8d5455db8add3352f4503",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::REVERSE",
-      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "inversion",
-        "representation"
-      ],
-      "mirror_lens": "REVERSE",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 5.9583,
-      "source": "arxiv",
-      "source_context_sha256": "e88aea3196bfe76d22f93b2f75d542cc3d00f2b44f1a3c4549de6f97595716ba",
-      "source_published": "2026-07-02T01:43:57Z",
-      "source_updated": "2026-07-02T01:43:57Z",
-      "summary": "Acoustic-to-Articulatory Inversion (AAI) estimates vocal tract articulator movements from speech, benefiting tasks like ASR, speech synthesis, and speaker verification. While deep learning-based methods (CNNs, RNNs, Transformers) have advanced AAI, recent studies show that Self-Supervised Learning (SSL) features further enhance performance, particularly in low-resource settings. However, SSL feature extractors introduce inference latency and computational overhead. To address this, we propose a novel pretraining method leveraging three target representations-Phoneme Labels, Articulatory Feature Labels, and Critical-articulator Labels-eliminating the need for an SSL extractor during inference. We evaluate our approach against both baseline and SSL-based models across various data conditions. Results demonstrate that our method consistently improves AAI performance, particularly in low-resource scenarios, while significantly reducing inference costs without sacrificing accuracy.",
-      "tags": [
-        "eess.AS"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Enhancing Acoustic-to-Articulatory Inversion with Multi-Target Pretraining for Low-Resource Settings",
-      "url": "https://arxiv.org/abs/2607.01594v1"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "c4db98fc1cf0f74997acb0ee",
-      "context_id": "8248800c2b70a31894b733e7",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::REVERSE",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "identifiability",
-        "recovery"
-      ],
-      "mirror_lens": "REVERSE",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 5.9583,
-      "source": "zenodo",
-      "source_context_sha256": "26200b59536a34e400d7f227d1b447111754bf3a611c73f0a1d07ca009bfcc84",
-      "source_published": "2026-10-18",
-      "source_updated": "",
-      "summary": "The Voynich Manuscript exhibits strong statistical regularities, but the distinction between recoverable grammar and recoverable lexical meaning remains unresolved. This study asks how far a progressively frozen, cross-validated analysis can reconstruct the manuscript&rsquo;s internal word-building system without assigning meanings from illustrations, candidate languages, or post-hoc English paraphrase. Using canonical transcription, protected holdout partitions, alternate-transcription replication, exact host substitutions, and adversarial stopping rules, the analysis recovers a cumulative left-edge morphology, a transferable inventory of 39 surface CORE-0 stem/bodies, reproducible host-by-right-state coupling, a stable K/T referential contrast, and a directed network among powered lexical cores. The 39-core inventory predicts protected-frame combinatorics and content-blind contextual fingerprints out of sample, while attempts to decompose these bodies into a deeper transferable root layer fail. Nine recurring hosts show strongly replicated coupling to EY/EEY/EDY right-edge states, supporting a distributed morphological paradigm rather than independent left- and right-side systems. A 28-node directed CORE network also replicates across canonical calibration, untouched Holdout, and alternate-transcription tests, yielding neutral outbound- and inbound-biased stem classes without requiring part-of-speech or semantic assignments. On the project&rsquo;s fully constrained 1,609-line benchmark, 12,299 of 12,495 positions are role-naturalizable (98.4314%), leaving 196 opaque positions. This percentage is explicitly a conditional benchmark-maturity statistic, not a measure of literal plaintext recovery or manuscript-wide translation accuracy. Repeated attempts to cross from structural organization to ordinary lexical meaning&mdash;including deeper-root induction, topic clustering, functional-neighborhood anchoring, local lexical syntax, illustration matching, source-language fitting, and prospective semantic transfer&mdash;fail the project&rsquo;s promotion criteria. The resulting contribution is therefore a structural decipherment rather than a lexical one: a reproducible grammatical and morphological architecture together with an empirically identified lexical-identifiability ceiling. The work extends, but is distinct from, the earlier controlled-translation release at DOI 10.5281/zenodo.22049207.",
-      "tags": [
-        "Voynich Manuscript",
-        "Voynichese",
-        "decipherment",
-        "computational linguistics",
-        "historical linguistics",
-        "morphology",
-        "unknown writing system",
-        "unsupervised grammar induction",
-        "cryptoanalysis",
-        "cross-validation",
-        "lexical identification",
-        "manuscript studies"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Structural Decipherment Without Lexical Recovery: A Cross-Validated Morphological Analysis of the Voynich Manuscript",
-      "url": "https://zenodo.org/records/23444474"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
