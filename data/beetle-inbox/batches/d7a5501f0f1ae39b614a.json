@@ -1,0 +1,1802 @@
+{
+  "batch_id": "d7a5501f0f1ae39b614a",
+  "claim_ceiling": "DISCOVERY_MEMORY_ONLY__TARGET_REPO_MUST_VERIFY_INDEPENDENTLY",
+  "fragment_count": 1,
+  "fragment_index": 1,
+  "items": [
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "47984b36f342e71eef9bcd1d",
+      "context_id": "2c225f7b4d7b1b66ffd81519",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::FORWARD",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "mirror",
+        "provenance",
+        "reciprocal"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 7.0833,
+      "source": "zenodo",
+      "source_context_sha256": "569a4e2fc53149becf9b836ce00b59c323b8fe48d04b290c4c923d72079e2637",
+      "source_published": "2026-10-20",
+      "source_updated": "",
+      "summary": "This dataset accompanies the Perspective &ldquo;Coupling, Not Mirroring: Complementarity and Credibility in Microphysiological System&ndash;Digital Twin Integration&rdquo; (Bertani et al., NAM Journal, submitted 2026). It contains the evidence behind the article&rsquo;s map of published integrations between microphysiological systems (MPS) and computational models. Forty-two studies were read in full text. Each was classified by the direction of information flow between experiment and model, using six regimes: R0 data extraction, R1 calibration only, R2 calibration and external projection, R3 model-guided design, R4 offline reciprocal cycle and R5 continuous closed loop. The rubric was fixed before the corpus was read. Every classification is supported by locators to the source article (section, page, figure). The script build/build.py regenerates Figure 2, Supplementary Table S1 and every count reported in the article from the records: 8 / 7 / 17 / 5 / 5 / 0 studies across the six regimes; 25 studies evaluate a model output against evidence not used to build the model; 6 project beyond the calibration conditions without evaluating that projection; 11 do neither. Contents: records/: one extraction record per study (Markdown with YAML frontmatter). Each record gives the classification, its provenance, a paraphrased summary and open questions. One further record covers an adjacent experimental system discussed in the article. skills/: the classification rubric (version 1.1), the nine documented readings that settle boundary cases, and the ratification protocol. build/: Python scripts (standard library only) that check consistency across records and build the outputs. out/: the evidence table, Table S1 rows, counts and Figure 2. search/: the Scopus query strings and a recall check against 25 reference studies. provenance/: DOI, Crossref metadata and licence for every classified article. No full text, PDF, figure or bulk extract of the classified articles is included. Verbatim quotations are kept only for articles that Crossref lists under a Creative Commons licence. For the 13 articles without an open licence they have been replaced by placeholders, and the locators are kept. The Scopus exports are not included. The extraction records were drafted by Claude models (Anthropic), one isolated run per article, under the rubric. They were then checked for consistency, and ratified or decided by the authors where flagged; the record shows who made each decision. Some documentation files are in Italian. Licence: CC BY 4.0 for data and documentation, MIT for the code in build/. Quoted passages remain under the licence of their source article.",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "MPS-model-coupling-evidence-map",
+      "url": "https://zenodo.org/records/23501880"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "ed46ef7ac79e83ba11f3115d",
+      "context_id": "d9a6d08866e56d1099eb963b",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_context_sha256": "98d18fe1fde59c372f564aa3b15cbe946d8a988c36aac9357f85015a97b3cc06",
+      "source_published": "2026-10-18T16:04:29Z",
+      "source_updated": "2026-10-18T16:04:29Z",
+      "summary": "World models are increasingly judged by how well they rank plausible futures, yet plausibility alone is the wrong target. The same scene can evolve under many latent rules, and a future that is smooth and physically valid under one rule can be incoherent under the rule actually in force. We formalize the resulting failure, operator-blindness, and show that it is systematically hidden by standard evaluation: a scorer can attain near-perfect generic ranking while separating current-world from other-world futures no better than chance. We introduce Operator-Mismatch Contrastive (OMC) learning, whose semantic hard negatives are valid-but-wrong-operator trajectories, and a matching protocol that measures world-relative coherence directly. On a controlled synthetic benchmark with in- and out-of-distribution operator parameters, across two trajectory-scoring backbones, and on feature-level external validation with CoPhy ballsCF, OMC raises operator-sensitive scoring far above a chance baseline that nonetheless achieves 0.99 generic top-1. We prove that the wrong-operator negative is necessary both for the protocol to detect the failure and for the objective to fix it, and position OMC as an auxiliary coherence signal (a trajectory-coherence scorer, not a generative model, planner, or control agent) that can be attached to existing world-model representations.",
+      "tags": [
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Operator-Mismatch Contrastive Learning for World-Relative Trajectory Coherence",
+      "url": "https://arxiv.org/abs/2610.25360v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "87300c7bc67819631a6a84dd",
+      "context_id": "8e00e28f88cee2d8b58ade81",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_context_sha256": "11967b18880bdc2b2a5f061921d5825a048e65c3b9e5bd7ca6b190aa6c5d8052",
+      "source_published": "2026-10-17T07:54:17Z",
+      "source_updated": "2026-10-17T07:54:17Z",
+      "summary": "Reliable long-horizon prediction remains a central challenge for embodied world models. Although recent generative models can synthesize visually plausible action-conditioned futures, their latent dynamics are typically learned through unconstrained transition modules, which may gradually deviate from coherent physical evolution as predictions are recursively rolled forward. We investigate whether explicitly structuring latent state evolution can improve the stability and utility of such imagined trajectories. To this end, we introduce HWM, a structured dynamics framework that represents backbone latents in a learned phase space consisting of generalized coordinates and momenta. Future states are propagated through dissipative Hamiltonian dynamics and mapped back to the original latent representation through a learnable inverse interface. The resulting formulation can be integrated into existing world-model architectures without redesigning their perception or decoding components, while multi-step transition supervision encourages the structured rollout to remain aligned with the latent trajectories induced by real observations. Controlled simulation experiments show that HWM produces more accurate estimates of velocity, acceleration, and jerk and substantially reduces long-horizon energy drift relative to unstructured latent dynamics. We further evaluate the approach across three distinct embodied world-model settings, covering single-arm multi-view prediction with Ctrl-World, dual-arm single-view prediction with EVAC, and task-oriented single-arm prediction with Cosmos-Predict2.5-2B. On RoboCasa, incorporating HWM into Cosmos-Predict2.5-2B yields a 2.7% relative improvement in task success. On real-world AgiBot World trajectories, it improves nDTW by 9.7% with Ctrl-World and Logic by 8.4% with EVAC.",
+      "tags": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Structured Latent Dynamics for Long-Horizon Embodied World Models",
+      "url": "https://arxiv.org/abs/2610.24534v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "b0eab7e3497e7436d79d13e4",
+      "context_id": "ff949ac72dac42feb1dce405",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::FORWARD",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "duality",
+        "inverse problem"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 5.9167,
+      "source": "arxiv",
+      "source_context_sha256": "ac280e748cf2fbdecf38388e1571934b86c12f476f404b772c204a336c19d9b6",
+      "source_published": "2026-10-19T01:12:20Z",
+      "source_updated": "2026-10-19T01:12:20Z",
+      "summary": "The macroscopic capabilities of intelligent systems arise from the local interactions of many simple units. When such systems are deployed in the real world, their behaviour must nevertheless be constrained, leaving designers caught between releasing adaptability and preventing loss of control, yet without formal tools to resolve the dilemma. This paper proposes a unified research program for controlled emergence that restates this tension as a pair of dual problems: the forward problem explains macroscopic behaviour from local rules, and the inverse problem solves for controllable rules and readout mechanisms from a desired target. We take an augmented quintuple as the formal object shared by both ends, and decompose ``engineering'' into three independently measurable coordinates: controllability, reproducibility, and degree of formalizability. On this basis we give three testable working hypotheses (critical scale; the cooperation and trade-off between constraint and adaptability; minimal constraint) and one feasibility criterion, which reduce inverse design from unconstrained optimization to interval checking. The program takes explicit failure boundaries as its premise, does not pursue complete control, and always preserves the system's room for self-organization. The reduced pilot experiment attached to this paper serves only to verify the executability of the research protocol and does not constitute a statistical test of the working hypotheses. This design language generalizes to multi-agent artificial intelligence, the industrial internet, and emergency response systems, all of which must confront emergence and controllability at once.",
+      "tags": [
+        "cs.AI",
+        "eess.SY"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "The Forward/Inverse Duality of Controlled Emergence:A Computational Design Program from Explanation to Engineering",
+      "url": "https://arxiv.org/abs/2610.25630v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "501d1c88ef0d78115566f82f",
+      "context_id": "d219032bd00efa8bdc70755f",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "memory",
+        "representation",
+        "representation learning"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 5.8333,
+      "source": "arxiv",
+      "source_context_sha256": "469e6aea7000c7b0669277519a1471cc59290fedcfabbb28fa8a915a254c82f3",
+      "source_published": "2026-10-17T06:52:49Z",
+      "source_updated": "2026-10-17T06:52:49Z",
+      "summary": "Irregular time series require models to answer temporal queries at arbitrary coordinates, yet existing approaches typically retain observation-dependent representations that must be repeatedly resolved for each query. We introduce HiPPO Functional Memory (HiPPO-FM), a functional-memory attention operator that compiles an irregular history into a reusable coordinate-addressable state. Instead of storing observation-indexed tokens or latent trajectories, HiPPO-FM writes observations into a fixed-rank functional space and performs direct coordinate evaluation through matched functional geometry. Kernel-smoothed HiPPO coordinates and Gram-based readout define a shared write/read mechanism, while observed-support self-attention enables content-dependent representations before compression. We characterize the induced finite-dimensional query space and derive an error decomposition separating functional geometry approximation from learned-memory mismatch. Across continuous-coordinate reconstruction, irregular representation learning, real-world extrapolation, and event-sequence prediction, HiPPO-FM consistently improves strong irregular time-series baselines, achieving strong reconstruction accuracy on Spiral, competitive performance across 20 UEA datasets, improved real-world extrapolation, and superior results on several irregular event benchmarks. After encoding, the compact functional state can be reused across different query sets without reprocessing the observation history.",
+      "tags": [
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "HiPPO Functional Memory: Coordinate-Queryable Attention for Irregular Time Series",
+      "url": "https://arxiv.org/abs/2610.24501v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "0e993a8e85d46ae438a1cff0",
+      "context_id": "cab700b1ccfea93a145477f1",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::FORWARD",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "inverse problem"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 4.625,
+      "source": "arxiv",
+      "source_context_sha256": "14bb73e779c68585bfd57452963533b3c61ace32bbda114d58e494a9e7ae6153",
+      "source_published": "2026-10-19T10:37:40Z",
+      "source_updated": "2026-10-19T10:37:40Z",
+      "summary": "Geometric full-waveform inversion aims to recover sharp subsurface interfaces from noisy waveform observations. We formulate this problem within a Bayesian level-set framework, where the unknown interface is represented as zero level set of a latent function endowed with a Gaussian prior. Although the level-set-to-medium-parameter map is discontinuous, we establish that the level-set-to-observation map is continuous almost surely with respect to the prior, thereby guaranteeing that the posterior measure is well-posed and locally Lipschitz continuous with respect to the data in the Hellinger metric. To enable tractable posterior computation under the severe nonlinearity of the inverse problem and the resulting multimodality, we develop a multiscale multimodal Laplace approximation. A frequency-continuation strategy incorporates waveform data progressively from low to high frequencies, identifying and propagating multiple candidate modes across successive scales. At the final frequency level, local Gaussian approximations are constructed around the retained modes and combined into a Gaussian mixture, whose weights are determined by least-squares fitting to the unnormalized posterior density. Numerical experiments demonstrate that the method accurately reconstructs anomalous interfaces while effectively capturing posterior multimodality and the local uncertainty associated with distinct plausible geometries.",
+      "tags": [
+        "math.NA"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Bayesian Geometric Inversion for Wave Equation: Well-Posedness and Multiscale Multimodal Posterior Approximation",
+      "url": "https://arxiv.org/abs/2610.26151v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "234be118a67140982ccf41ff",
+      "context_id": "bd508f0752734d51b14a5e21",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::FORWARD",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "identifiability"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 4.625,
+      "source": "arxiv",
+      "source_context_sha256": "e8d402fc1d2e6752b16cd5b11fdc4717a8f0e0ac161ad84c6ed554d6049ed9a5",
+      "source_published": "2026-10-19T17:41:43Z",
+      "source_updated": "2026-10-19T17:41:43Z",
+      "summary": "Ranking data in modern applications often involves covariate vectors whose dimension grows with the number of objects. Identifying relevant covariates and integrating them with item-specific utilities can yield better predictive performance. In this work, we study a Plackett--Luce model that incorporates both item-specific utilities and high-dimensional covariate effects. Under a sparsity assumption on the covariate coefficients, we establish a necessary and sufficient condition for identifiability in terms of the Kruskal rank of the restricted covariate design. We then propose an $\\ell_1$-regularized maximum likelihood estimator for the covariate coefficients. Under suitable design and connectivity conditions, we establish the existence and uniqueness of the estimator with probability tending to one, as well as its uniform consistency. With an additional minimum-signal condition, we further establish exact support recovery. Our analysis combines a hypergraph-based chaining technique with a profile-likelihood perturbation analysis, yielding estimation rates that explicitly capture the effects of the comparison hypergraph's connectivity and the underlying sparsity level. Numerical experiments using synthetic data and a horse racing dataset corroborate our theoretical findings.",
+      "tags": [
+        "stat.ME",
+        "stat.ML"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "High-dimensional covariate-assisted ranking",
+      "url": "https://arxiv.org/abs/2610.26796v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "aea6b839562fca1c4fe76dc8",
+      "context_id": "630cc56d7dc43545d7de0bef",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::FORWARD",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "inverse problem"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 4.625,
+      "source": "arxiv",
+      "source_context_sha256": "9780b75323a8dd0e018fe42ef2e9d1a38efb1f88c7a1b7460f6bf7d2c65c06ef",
+      "source_published": "2026-10-19T11:15:11Z",
+      "source_updated": "2026-10-19T11:15:11Z",
+      "summary": "Image restoration is a fundamental inverse problem that seeks to recover high-quality images from degraded observations. Plug-and-Play (PnP) methods provide a flexible framework for integrating pretrained denoisers into iterative reconstruction, whereas flow matching offers an efficient generative modeling approach based on continuous-time ODE dynamics. Very recently, Martin et al.\\ (ICLR, 2025) developed a PnP-Flow method, which integrates the PnP framework with flow matching through a time-dependent denoiser constructed from a pretrained flow matching model.By incorporating a different time schedule and an additional pixel-space projection operator, this paper proposes a novel efficient PnP-Flow algorithm (HP-PnP-Flow) that enjoys rigorous convergence guarantees under mild assumptions, without imposing restrictive conditions on iterates required by the aforementioned work. Numerical experiments on CelebA and AFHQ-Cat demonstrate that the newly proposed HP-PnP-Flow algorithm significantly outperforms PnP-Flow on several restoration tasks such as denoising, deblurring, super-resolution, random inpainting, and box inpainting. Notably, our algorithm achieves comparable or better reconstruction quality with substantially fewer iterations, reducing the iteration count from $500$ to $100$ for deblurring and super-resolution on AFHQ-Cat.",
+      "tags": [
+        "cs.CV"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "HP-PnP-Flow: Hybrid Time Scheduling and Projection for Plug-and-Play Image Restoration via Flow Matching",
+      "url": "https://arxiv.org/abs/2610.26183v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "589627675e142519fd48c11c",
+      "context_id": "60720e82d2c719d3434cc5dc",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::FORWARD",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "inverse problem"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 4.625,
+      "source": "arxiv",
+      "source_context_sha256": "7f9a3b215ffd359384848ea4cfdf4ca2324f563a322ade2f904815e5f89591d0",
+      "source_published": "2026-10-19T17:19:46Z",
+      "source_updated": "2026-10-19T17:19:46Z",
+      "summary": "We study an inverse problem for the variable coefficient Moore Gibson Thompson (MGT) equation in a bounded domain, where the objective is to recover an unknown initial acceleration from boundary measurements of the acoustic field. We establish both injectivity and stability of the associated measurement operator. Injectivity is established through a unique continuation property by applying a theorem of Tataru for analytically principally normal operators. The argument relies on a factorization of the third order operator into wave type components, combined with Carleman estimates and propagation techniques in the spirit of Tataru. Stability is derived through a microlocal analysis of the forward operator, based on the construction of geometric optics approximate solutions and the identification of an elliptic pseudodifferential operator arising from microlocal back propagation of the data. These results connect the MGT inverse problem with the classical theory of hyperbolic inverse problems, such as photoacoustic tomography, while highlighting new features induced by the third order dynamics and damping.",
+      "tags": [
+        "math.AP"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "An Inverse Problem for the Moore Gibson Thompson Equation: Injectivity and Stability",
+      "url": "https://arxiv.org/abs/2610.26760v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "ad7ad91e3ff2c46f64cd5ac7",
+      "context_id": "3add6a11a34566a52bb4d519",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::FORWARD",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "inverse problem"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 4.625,
+      "source": "arxiv",
+      "source_context_sha256": "a7eddd8626158970b180e354ec07da01aa4215f22e2572f0dbdef5a17aa27e75",
+      "source_published": "2026-10-19T10:44:37Z",
+      "source_updated": "2026-10-19T10:44:37Z",
+      "summary": "We study inverse coefficient problems for two evolution equations with relaxation: a Kelvin--Voigt viscoelastic equation and the Moore--Gibson--Thompson (MGT) equation arising in nonlinear acoustics. In both cases, we establish the Lipschitz stability for recovering a space-dependent coefficient from a single measurement. Our approach exploits an exact factorization of each operator into a classical evolution operator (the heat operator for the viscoelastic system, or the wave operator for the MGT equation) coupled with a first-order differential operator in time. This makes it possible to combine global Carleman estimates with weighted ODE inequalities. For the Kelvin--Voigt model, the data consist of an interior dynamic observation and a Cauchy snapshot at a prescribed positive time. For the MGT equation, a single boundary trace is sufficient under a standard geometric condition. The resulting argument provides a common framework for coefficient inverse problems in evolution equations with relaxation effects.",
+      "tags": [
+        "math.AP"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "A unified Carleman approach to inverse problems for coupled parabolic and hyperbolic-ODE equations",
+      "url": "https://arxiv.org/abs/2610.26157v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "63a29e283805d3cb59a94d7c",
+      "context_id": "d5139682a66b7b53b2ea8682",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::FORWARD",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "bidirectional"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 4.5417,
+      "source": "arxiv",
+      "source_context_sha256": "fc957890eb5e4f84f6d5e2cda58f67d2a34709e5209e49297a277dc457c288c4",
+      "source_published": "2026-10-18T07:38:03Z",
+      "source_updated": "2026-10-18T07:38:03Z",
+      "summary": "Model--harness co-evolution has emerged as a prominent paradigm for recursive self-improving (RSI) agents, jointly evolving their execution scaffolds and intrinsic capabilities. We study the persistent yet often overlooked brain--body mismatch problem in this paradigm, where an evolving harness (body) demands behaviors its model (brain) has not learned or restricts capabilities it already possesses. We introduce CoEvo-RSI, a RSI framework that advances model--harness co-evolution through agent-driven, bidirectional historical inheritance. Drawing on a shared evolutionary archive and execution feedback, a meta-agent coordinates harness development from historical designs with model checkpoint selection or merging and subsequent adaptation under the selected harness, aligning inherited capabilities with evolving execution requirements to reduce brain--body mismatch. Using only supervised fine-tuning (SFT) on its own rejection-sampled trajectories, CoEvo-RSI makes Qwen3.5-9B competitive with larger models across diverse vertical applications, including multi-agent failure attribution, role-aware text-to-SQL, and smart-home instruction following. It surpasses DeepSeek-V4-Pro on TraceElephant (+14.16 agent accuracy) and GLM-5.3 on HomeBench VM (+4.90 success rate), underscoring the need for brain--body alignment and the potential of bidirectional historical inheritance to advance agent co-evolution.",
+      "tags": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "CoEvo-RSI: When Harnesses Evolve, Which Models Should Follow?",
+      "url": "https://arxiv.org/abs/2610.25078v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "acdaafc5e04f3a47cf63447c",
+      "context_id": "446e8955fa9fbbd23d5c49fa",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::FORWARD",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "bidirectional"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 4.5417,
+      "source": "arxiv",
+      "source_context_sha256": "2d77ddf04f6529a07e79b4e9c80b270eb00ad4a88c68fcecd8aecb7a3374e769",
+      "source_published": "2026-10-19T17:38:05Z",
+      "source_updated": "2026-10-19T17:38:05Z",
+      "summary": "Traditional evaluation benchmarks reduce inherently interconnected scientific knowledge in life sciences into flat lists of questions, disregarding the underlying topological structure of the knowledge. We introduce, the first graph-structured benchmark for life sciences, featuring over 10,000 high-quality multiple-choice questions across medicine, biology, and chemistry. Our approach constructs a weighted evaluation graph using bidirectional matching and semantic similarity algorithms, where nodes represent questions and edge weights capture their semantic relationships. Leveraging this graph topology, we design two novel evaluation metrics. The Global Coherence Score (GCS) measures a model's consistency within semantically related neighborhoods, while Knowledge Balance Score (KBS) analyzes how model errors are distributed across the graph to reveal conceptual blind spots. LG-Bench facilitates fine-grained comparison of LLMs by surfacing differences in conceptual coherence and patterns of knowledge organization across models. Our framework shifts the evaluation paradigm from flat accuracy metrics to structure-aware analysis, offering a new lens for diagnosing and improving LLM performance in the life sciences domain.",
+      "tags": [
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "LG-Bench: A Graph-Structured Evaluation Benchmark for Life Sciences",
+      "url": "https://arxiv.org/abs/2610.26787v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "501d1c88ef0d78115566f82f",
+      "context_id": "450bbd50d6aa98f8a00a2b9d",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "memory",
+        "reconstruction",
+        "representation",
+        "representation learning"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.4167,
+      "source": "arxiv",
+      "source_context_sha256": "9cb5543fb75f271974ae4a8f1644193f12ba981990947fbb4b16b15370313747",
+      "source_published": "2026-10-17T06:52:49Z",
+      "source_updated": "2026-10-17T06:52:49Z",
+      "summary": "Irregular time series require models to answer temporal queries at arbitrary coordinates, yet existing approaches typically retain observation-dependent representations that must be repeatedly resolved for each query. We introduce HiPPO Functional Memory (HiPPO-FM), a functional-memory attention operator that compiles an irregular history into a reusable coordinate-addressable state. Instead of storing observation-indexed tokens or latent trajectories, HiPPO-FM writes observations into a fixed-rank functional space and performs direct coordinate evaluation through matched functional geometry. Kernel-smoothed HiPPO coordinates and Gram-based readout define a shared write/read mechanism, while observed-support self-attention enables content-dependent representations before compression. We characterize the induced finite-dimensional query space and derive an error decomposition separating functional geometry approximation from learned-memory mismatch. Across continuous-coordinate reconstruction, irregular representation learning, real-world extrapolation, and event-sequence prediction, HiPPO-FM consistently improves strong irregular time-series baselines, achieving strong reconstruction accuracy on Spiral, competitive performance across 20 UEA datasets, improved real-world extrapolation, and superior results on several irregular event benchmarks. After encoding, the compact functional state can be reused across different query sets without reprocessing the observation history.",
+      "tags": [
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "HiPPO Functional Memory: Coordinate-Queryable Attention for Irregular Time Series",
+      "url": "https://arxiv.org/abs/2610.24501v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "87300c7bc67819631a6a84dd",
+      "context_id": "837b4605f0a1d73427e9965d",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "inverse",
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.3333,
+      "source": "arxiv",
+      "source_context_sha256": "11fb42dc8647bcb0711fb3d8d3104773e6a4aecbfb21e2778885254729d55d29",
+      "source_published": "2026-10-17T07:54:17Z",
+      "source_updated": "2026-10-17T07:54:17Z",
+      "summary": "Reliable long-horizon prediction remains a central challenge for embodied world models. Although recent generative models can synthesize visually plausible action-conditioned futures, their latent dynamics are typically learned through unconstrained transition modules, which may gradually deviate from coherent physical evolution as predictions are recursively rolled forward. We investigate whether explicitly structuring latent state evolution can improve the stability and utility of such imagined trajectories. To this end, we introduce HWM, a structured dynamics framework that represents backbone latents in a learned phase space consisting of generalized coordinates and momenta. Future states are propagated through dissipative Hamiltonian dynamics and mapped back to the original latent representation through a learnable inverse interface. The resulting formulation can be integrated into existing world-model architectures without redesigning their perception or decoding components, while multi-step transition supervision encourages the structured rollout to remain aligned with the latent trajectories induced by real observations. Controlled simulation experiments show that HWM produces more accurate estimates of velocity, acceleration, and jerk and substantially reduces long-horizon energy drift relative to unstructured latent dynamics. We further evaluate the approach across three distinct embodied world-model settings, covering single-arm multi-view prediction with Ctrl-World, dual-arm single-view prediction with EVAC, and task-oriented single-arm prediction with Cosmos-Predict2.5-2B. On RoboCasa, incorporating HWM into Cosmos-Predict2.5-2B yields a 2.7% relative improvement in task success. On real-world AgiBot World trajectories, it improves nDTW by 9.7% with Ctrl-World and Logic by 8.4% with EVAC.",
+      "tags": [
+        "cs.LG",
+        "cs.CV"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Structured Latent Dynamics for Long-Horizon Embodied World Models",
+      "url": "https://arxiv.org/abs/2610.24534v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "b0eab7e3497e7436d79d13e4",
+      "context_id": "2fa351012c3eb68bfd46ce40",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::REVERSE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "duality",
+        "inverse",
+        "inverse problem"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.2083,
+      "source": "arxiv",
+      "source_context_sha256": "d6bfac1d5ec7db278c6695bf4bf1f500d20789330e3ae66ce3c3c9fa96bb7041",
+      "source_published": "2026-10-19T01:12:20Z",
+      "source_updated": "2026-10-19T01:12:20Z",
+      "summary": "The macroscopic capabilities of intelligent systems arise from the local interactions of many simple units. When such systems are deployed in the real world, their behaviour must nevertheless be constrained, leaving designers caught between releasing adaptability and preventing loss of control, yet without formal tools to resolve the dilemma. This paper proposes a unified research program for controlled emergence that restates this tension as a pair of dual problems: the forward problem explains macroscopic behaviour from local rules, and the inverse problem solves for controllable rules and readout mechanisms from a desired target. We take an augmented quintuple as the formal object shared by both ends, and decompose ``engineering'' into three independently measurable coordinates: controllability, reproducibility, and degree of formalizability. On this basis we give three testable working hypotheses (critical scale; the cooperation and trade-off between constraint and adaptability; minimal constraint) and one feasibility criterion, which reduce inverse design from unconstrained optimization to interval checking. The program takes explicit failure boundaries as its premise, does not pursue complete control, and always preserves the system's room for self-organization. The reduced pilot experiment attached to this paper serves only to verify the executability of the research protocol and does not constitute a statistical test of the working hypotheses. This design language generalizes to multi-agent artificial intelligence, the industrial internet, and emergency response systems, all of which must confront emergence and controllability at once.",
+      "tags": [
+        "cs.AI",
+        "eess.SY"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "The Forward/Inverse Duality of Controlled Emergence:A Computational Design Program from Explanation to Engineering",
+      "url": "https://arxiv.org/abs/2610.25630v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "6da95c61ad122da8e8ebcd1e",
+      "context_id": "edb08a67fae56897197116cc",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::REVERSE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "provenance",
+        "reconstruction"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 9.0,
+      "source": "zenodo",
+      "source_context_sha256": "81be53e3a82fc7ab045ec586802ed39d0ff0fbe2a093d6acab6f72e01147e4a5",
+      "source_published": "2026-10-16",
+      "source_updated": "",
+      "summary": "Curated Wearable Physiological Signals for Paediatric ADHD Research, with Task-Aligned Data and EDA Baselines This resource organises existing Empatica EmbracePlus recordings from the BALLADEER paediatric ADHD study into source-traceable native task views, with optional full native context, descriptive quality control (QC) and processed electrodermal activity (EDA). Cohort, acquisition and games are inherited; the added contribution is an inspectable association between observations, original source indices, admitted recording windows, missingness and technical provenance, together with a bounded reuse example. Coverage and signals The inventory comprises 107 participants and five tasks : CogniFit (01), Attention Robots (02), and screen-based Attention Slackline levels 1, 6 and 11 (03&ndash;05). EDA overlaps admitted EEG recording spans for 436 participant/task combinations across 104 people , with 1,129,180 finite selected EDA samples . Of 535 possible EDA cells, 77 lack an EEG span and 22 have EEG but no EDA overlap. Availability and temporal overlap do not establish full-task coverage, physiological suitability or final analytical eligibility. The golden layer contains 37,974,199 native rows across supported streams. The complete native projection contains 228,120,776 rows, including 6,779,644 EDA rows with 20 untimed entries, and extends outside task windows. These representations overlap; do not sum them as independent observations or treat time-series samples/task rows as independent participants. Golden native stream Rows Quantity/unit Accelerometer 18,069,607 Three-axis int32 ADC counts; native calibration context retained BVP 18,067,914 Optical pulse waveform, writer-declared nW; not blood pressure EDA 1,129,180 Signed float32 &micro;S Temperature 282,293 float32 &deg;C Steps 56,461 Vendor int32 counts Systolic peaks 368,743 Vendor event times, original indices and UTC nanosecond source time Wearable tags 1 Native event time, original index and UTC microsecond source time Gyroscope 0 Supported schema, empty stream The single tag is not full-cohort coverage. Availability retains missing combinations explicitly. Participant metadata has exactly participant_id , age , gender and group . Identifiers remain strings; recorded gender is not renamed biological sex. Group 1/2 denotes experimental/ADHD recruitment and comparison under the approved interpretation, not assessment-derived diagnosis or uniformly healthy controls. Downloads and reassembly Logical archive Complete size Upload files golden_dataset.zip 606.25 MB 7 native_projection.zip 2955.75 MB 30 quality_control.zip 2.73 MB 1 processed_eda.zip 35.75 MB 1 baseline_reproduction.zip 18.89 MB 1 Each upload file is at most 100,000,000 bytes . Golden and native archives are byte-split into numbered parts; parts are not independently extractable ZIP files . Download all seven golden_dataset.zip.part001 &ndash; .part007 files for golden data, or all 30 native_projection.zip.part001 &ndash; .part030 files for the native supplement. The other three archives are ordinary single ZIPs. This size is a delivery choice, not a platform limit. Keep archive_registry.json and reassemble.py beside the desired complete part set. Run python3 reassemble.py verify --archive golden_dataset.zip , create a new output directory, then run python3 reassemble.py reassemble golden_dataset.zip --output-dir reassembled . The standard-library helper checks ordered part and complete-ZIP hashes, refuses overwrites and never extracts or runs analysis. Extract the verified ZIP with an ordinary tool into a new empty directory. Substitute the native archive name for that route. For a single ZIP, verify it by name and extract directly. README.md gives exact commands and reconstruction-space guidance. Golden data: primary native wearable task views/events, metadata, schemas, selection membership, QC and scientific provenance; independently usable after its parts are reassembled. Native projection: complete pr",
+      "tags": [
+        "Electrodermal activity",
+        "EDA",
+        "Blood volume pulse",
+        "BVP",
+        "Skin temperature",
+        "Multimodal biosignals",
+        "Reproducible research",
+        "Attention-deficit/hyperactivity disorder",
+        "ADHD",
+        "Wearable physiological signals"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Curated Wearable Physiological Signals for Paediatric ADHD Research, with Task-Aligned Data and EDA Baselines",
+      "url": "https://zenodo.org/records/23418475"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "69a0ba3bb8cf31f9e8600e6e",
+      "context_id": "997b8d15240640f2a681a42d",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::REVERSE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "reconstruction",
+        "reverse"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.875,
+      "source": "zenodo",
+      "source_context_sha256": "185bed8d9f02a93d5de2d70aadf5b9c86cb5d32139870a0a397d7c22e4a3ca25",
+      "source_published": "1999-02-05",
+      "source_updated": "",
+      "summary": "This paper demonstrates an objective method of computing monthly mean 700-mb height anomalies (H) at 108 grid points in the Western Hemisphere for a 40-yr period as a function of concurrent anomalies of monthly mean sea level pressure (P), at the same 108 points used for H, and monthly mean surface air temperature (T) averaged over 112 areas in North America. The authors applied a forward stepwise program to derive linear multiple regression equations that explained 81% of the variance of H by means of only 3.5 variables, averaged over all months and grid points. The stability of these equations held up well on 6 yr of independent data in terms of explained variance, root-mean-square error, and the spatial anomaly correlation coefficient. Therefore, it seems feasible to reconstruct maps of H for the first half of the twentieth century as a function of data on P and T only. Deposited content: descriptive metadata only; underlying research data are not included.",
+      "tags": [
+        "Meteorology",
+        "Bering Sea",
+        "Alaska",
+        "Arctic",
+        "North Pacific Ocean",
+        "pices-metadata-only"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Reconstruction of Monthly Mean 700-mb Heights from Surface Data by Reverse Specification - FGDC XML metadata artifact",
+      "url": "https://zenodo.org/records/23504942"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "69a0ba3bb8cf31f9e8600e6e",
+      "context_id": "3081058dbf7af1e51a2f68ce",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "reconstruction",
+        "reverse"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.875,
+      "source": "zenodo",
+      "source_context_sha256": "f4990316d5b6b3e55eff7d731a3576eb4cfb205acf786ccbb939963d44007125",
+      "source_published": "1999-02-05",
+      "source_updated": "",
+      "summary": "This paper demonstrates an objective method of computing monthly mean 700-mb height anomalies (H) at 108 grid points in the Western Hemisphere for a 40-yr period as a function of concurrent anomalies of monthly mean sea level pressure (P), at the same 108 points used for H, and monthly mean surface air temperature (T) averaged over 112 areas in North America. The authors applied a forward stepwise program to derive linear multiple regression equations that explained 81% of the variance of H by means of only 3.5 variables, averaged over all months and grid points. The stability of these equations held up well on 6 yr of independent data in terms of explained variance, root-mean-square error, and the spatial anomaly correlation coefficient. Therefore, it seems feasible to reconstruct maps of H for the first half of the twentieth century as a function of data on P and T only. Deposited content: descriptive metadata only; underlying research data are not included.",
+      "tags": [
+        "Meteorology",
+        "Bering Sea",
+        "Alaska",
+        "Arctic",
+        "North Pacific Ocean",
+        "pices-metadata-only"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Reconstruction of Monthly Mean 700-mb Heights from Surface Data by Reverse Specification - FGDC XML metadata artifact",
+      "url": "https://zenodo.org/records/23504942"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "47984b36f342e71eef9bcd1d",
+      "context_id": "91d827448f095eb54b37be04",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::REVERSE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "mirror",
+        "provenance",
+        "reciprocal"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 7.0833,
+      "source": "zenodo",
+      "source_context_sha256": "63e35dd733eeb4f1dbbb83dba308023cd98b3ac7cbf91cc44b117780e7828a81",
+      "source_published": "2026-10-20",
+      "source_updated": "",
+      "summary": "This dataset accompanies the Perspective &ldquo;Coupling, Not Mirroring: Complementarity and Credibility in Microphysiological System&ndash;Digital Twin Integration&rdquo; (Bertani et al., NAM Journal, submitted 2026). It contains the evidence behind the article&rsquo;s map of published integrations between microphysiological systems (MPS) and computational models. Forty-two studies were read in full text. Each was classified by the direction of information flow between experiment and model, using six regimes: R0 data extraction, R1 calibration only, R2 calibration and external projection, R3 model-guided design, R4 offline reciprocal cycle and R5 continuous closed loop. The rubric was fixed before the corpus was read. Every classification is supported by locators to the source article (section, page, figure). The script build/build.py regenerates Figure 2, Supplementary Table S1 and every count reported in the article from the records: 8 / 7 / 17 / 5 / 5 / 0 studies across the six regimes; 25 studies evaluate a model output against evidence not used to build the model; 6 project beyond the calibration conditions without evaluating that projection; 11 do neither. Contents: records/: one extraction record per study (Markdown with YAML frontmatter). Each record gives the classification, its provenance, a paraphrased summary and open questions. One further record covers an adjacent experimental system discussed in the article. skills/: the classification rubric (version 1.1), the nine documented readings that settle boundary cases, and the ratification protocol. build/: Python scripts (standard library only) that check consistency across records and build the outputs. out/: the evidence table, Table S1 rows, counts and Figure 2. search/: the Scopus query strings and a recall check against 25 reference studies. provenance/: DOI, Crossref metadata and licence for every classified article. No full text, PDF, figure or bulk extract of the classified articles is included. Verbatim quotations are kept only for articles that Crossref lists under a Creative Commons licence. For the 13 articles without an open licence they have been replaced by placeholders, and the locators are kept. The Scopus exports are not included. The extraction records were drafted by Claude models (Anthropic), one isolated run per article, under the rubric. They were then checked for consistency, and ratified or decided by the authors where flagged; the record shows who made each decision. Some documentation files are in Italian. Licence: CC BY 4.0 for data and documentation, MIT for the code in build/. Quoted passages remain under the licence of their source article.",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "MPS-model-coupling-evidence-map",
+      "url": "https://zenodo.org/records/23501880"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "6da95c61ad122da8e8ebcd1e",
+      "context_id": "7c666f7c8d830c4c6a029e18",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "reconstruction",
+        "representation"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.1667,
+      "source": "zenodo",
+      "source_context_sha256": "94fea0d4c0e163f926040341cdb55850cfdde179d9d6ff0552cda0f2645d84fb",
+      "source_published": "2026-10-16",
+      "source_updated": "",
+      "summary": "Curated Wearable Physiological Signals for Paediatric ADHD Research, with Task-Aligned Data and EDA Baselines This resource organises existing Empatica EmbracePlus recordings from the BALLADEER paediatric ADHD study into source-traceable native task views, with optional full native context, descriptive quality control (QC) and processed electrodermal activity (EDA). Cohort, acquisition and games are inherited; the added contribution is an inspectable association between observations, original source indices, admitted recording windows, missingness and technical provenance, together with a bounded reuse example. Coverage and signals The inventory comprises 107 participants and five tasks : CogniFit (01), Attention Robots (02), and screen-based Attention Slackline levels 1, 6 and 11 (03&ndash;05). EDA overlaps admitted EEG recording spans for 436 participant/task combinations across 104 people , with 1,129,180 finite selected EDA samples . Of 535 possible EDA cells, 77 lack an EEG span and 22 have EEG but no EDA overlap. Availability and temporal overlap do not establish full-task coverage, physiological suitability or final analytical eligibility. The golden layer contains 37,974,199 native rows across supported streams. The complete native projection contains 228,120,776 rows, including 6,779,644 EDA rows with 20 untimed entries, and extends outside task windows. These representations overlap; do not sum them as independent observations or treat time-series samples/task rows as independent participants. Golden native stream Rows Quantity/unit Accelerometer 18,069,607 Three-axis int32 ADC counts; native calibration context retained BVP 18,067,914 Optical pulse waveform, writer-declared nW; not blood pressure EDA 1,129,180 Signed float32 &micro;S Temperature 282,293 float32 &deg;C Steps 56,461 Vendor int32 counts Systolic peaks 368,743 Vendor event times, original indices and UTC nanosecond source time Wearable tags 1 Native event time, original index and UTC microsecond source time Gyroscope 0 Supported schema, empty stream The single tag is not full-cohort coverage. Availability retains missing combinations explicitly. Participant metadata has exactly participant_id , age , gender and group . Identifiers remain strings; recorded gender is not renamed biological sex. Group 1/2 denotes experimental/ADHD recruitment and comparison under the approved interpretation, not assessment-derived diagnosis or uniformly healthy controls. Downloads and reassembly Logical archive Complete size Upload files golden_dataset.zip 606.25 MB 7 native_projection.zip 2955.75 MB 30 quality_control.zip 2.73 MB 1 processed_eda.zip 35.75 MB 1 baseline_reproduction.zip 18.89 MB 1 Each upload file is at most 100,000,000 bytes . Golden and native archives are byte-split into numbered parts; parts are not independently extractable ZIP files . Download all seven golden_dataset.zip.part001 &ndash; .part007 files for golden data, or all 30 native_projection.zip.part001 &ndash; .part030 files for the native supplement. The other three archives are ordinary single ZIPs. This size is a delivery choice, not a platform limit. Keep archive_registry.json and reassemble.py beside the desired complete part set. Run python3 reassemble.py verify --archive golden_dataset.zip , create a new output directory, then run python3 reassemble.py reassemble golden_dataset.zip --output-dir reassembled . The standard-library helper checks ordered part and complete-ZIP hashes, refuses overwrites and never extracts or runs analysis. Extract the verified ZIP with an ordinary tool into a new empty directory. Substitute the native archive name for that route. For a single ZIP, verify it by name and extract directly. README.md gives exact commands and reconstruction-space guidance. Golden data: primary native wearable task views/events, metadata, schemas, selection membership, QC and scientific provenance; independently usable after its parts are reassembled. Native projection: complete pr",
+      "tags": [
+        "Electrodermal activity",
+        "EDA",
+        "Blood volume pulse",
+        "BVP",
+        "Skin temperature",
+        "Multimodal biosignals",
+        "Reproducible research",
+        "Attention-deficit/hyperactivity disorder",
+        "ADHD",
+        "Wearable physiological signals"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Curated Wearable Physiological Signals for Paediatric ADHD Research, with Task-Aligned Data and EDA Baselines",
+      "url": "https://zenodo.org/records/23418475"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "ed46ef7ac79e83ba11f3115d",
+      "context_id": "b9b5cd33f4e708dafca4a57b",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_context_sha256": "835c020a8267d80f27ad4e6797af1bc5f28985a7564747a8b95e7269d888d235",
+      "source_published": "2026-10-18T16:04:29Z",
+      "source_updated": "2026-10-18T16:04:29Z",
+      "summary": "World models are increasingly judged by how well they rank plausible futures, yet plausibility alone is the wrong target. The same scene can evolve under many latent rules, and a future that is smooth and physically valid under one rule can be incoherent under the rule actually in force. We formalize the resulting failure, operator-blindness, and show that it is systematically hidden by standard evaluation: a scorer can attain near-perfect generic ranking while separating current-world from other-world futures no better than chance. We introduce Operator-Mismatch Contrastive (OMC) learning, whose semantic hard negatives are valid-but-wrong-operator trajectories, and a matching protocol that measures world-relative coherence directly. On a controlled synthetic benchmark with in- and out-of-distribution operator parameters, across two trajectory-scoring backbones, and on feature-level external validation with CoPhy ballsCF, OMC raises operator-sensitive scoring far above a chance baseline that nonetheless achieves 0.99 generic top-1. We prove that the wrong-operator negative is necessary both for the protocol to detect the failure and for the objective to fix it, and position OMC as an auxiliary coherence signal (a trajectory-coherence scorer, not a generative model, planner, or control agent) that can be attached to existing world-model representations.",
+      "tags": [
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Operator-Mismatch Contrastive Learning for World-Relative Trajectory Coherence",
+      "url": "https://arxiv.org/abs/2610.25360v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "234be118a67140982ccf41ff",
+      "context_id": "5926623b61a7464c3005b59b",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::REVERSE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "identifiability",
+        "recovery"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 5.9583,
+      "source": "arxiv",
+      "source_context_sha256": "7b0d0d4446c514c43dd583c0d0ecc0599b03fe33762ad6e04e7fe210087320e7",
+      "source_published": "2026-10-19T17:41:43Z",
+      "source_updated": "2026-10-19T17:41:43Z",
+      "summary": "Ranking data in modern applications often involves covariate vectors whose dimension grows with the number of objects. Identifying relevant covariates and integrating them with item-specific utilities can yield better predictive performance. In this work, we study a Plackett--Luce model that incorporates both item-specific utilities and high-dimensional covariate effects. Under a sparsity assumption on the covariate coefficients, we establish a necessary and sufficient condition for identifiability in terms of the Kruskal rank of the restricted covariate design. We then propose an $\\ell_1$-regularized maximum likelihood estimator for the covariate coefficients. Under suitable design and connectivity conditions, we establish the existence and uniqueness of the estimator with probability tending to one, as well as its uniform consistency. With an additional minimum-signal condition, we further establish exact support recovery. Our analysis combines a hypergraph-based chaining technique with a profile-likelihood perturbation analysis, yielding estimation rates that explicitly capture the effects of the comparison hypergraph's connectivity and the underlying sparsity level. Numerical experiments using synthetic data and a horse racing dataset corroborate our theoretical findings.",
+      "tags": [
+        "stat.ME",
+        "stat.ML"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "High-dimensional covariate-assisted ranking",
+      "url": "https://arxiv.org/abs/2610.26796v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "121c6789fba3f6b04723975e",
+      "context_id": "ef2a46fbebd762b4ab0e020f",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "memory",
+        "reconstruction"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 5.8333,
+      "source": "arxiv",
+      "source_context_sha256": "03ca8f0e65deb16f4c407655cb98a731e1e6c8af4d45d40037f33a01dcb45eb2",
+      "source_published": "2026-10-19T05:17:36Z",
+      "source_updated": "2026-10-19T05:17:36Z",
+      "summary": "In reservoir computing, performance depends on whether the fixed dynamics of the reservoir suit the task, and the appropriate memory length and frequency response differ across tasks. The reservoir settings are found by a search on each task, and driving the reservoir with the input and collecting its states for every candidate setting dominates the cost of the search. In a reservoir with a linear recurrence, the dynamics decompose into modes, one per eigenvalue, and the eigenvalue distribution becomes a design variable. We propose the Sector-Ring Linear Reservoir (SRLR), in which the eigenvalue angles are fixed at evenly spaced positions around a circle and one decay timescale, chosen from a few values, is assigned to each sector of consecutive angles. To keep the scale of each mode's state equal across candidates, the input weights are scaled using the power spectrum of the training input. To reduce the cost of the search, the states of the modes for each decay-timescale value are computed once and reused across candidates. On prediction and reconstruction benchmarks built from chaotic systems, the SRLR achieved, in all eight cases, a lower mean test error than a reference model in which all modes share one decay timescale, and was competitive with nonlinear echo state network and leaky-integrator echo state network baselines. The selected decay-timescale profiles changed with the prediction target and horizon. The state reuse reduced the number of computed mode trajectories in the search by 99.8% relative to per-candidate recomputation.",
+      "tags": [
+        "cs.LG",
+        "cs.NE"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Sector-Ring Linear Reservoirs: Sector-Wise Decay-Timescale Allocation With State Reuse Across Candidate Settings",
+      "url": "https://arxiv.org/abs/2610.25806v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "19eadad366a53aa0c02f9afb",
+      "context_id": "196f6175056f5f94d058b63c",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "memory",
+        "reconstruction"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 5.8333,
+      "source": "arxiv",
+      "source_context_sha256": "d2c1a7381fdf06f7a9df749b6bb42a505f01f89f02c1a11b75f0d232e15a8d09",
+      "source_published": "2026-10-17T02:39:54Z",
+      "source_updated": "2026-10-17T02:39:54Z",
+      "summary": "Financial time series exhibit multi-scale, high-noise, and non-stationary volatility dynamics. Decomposition--integration frameworks built on complete ensemble empirical mode decomposition with adaptive noise (CEEMDAN) have advanced this field, yet existing CEEMDAN hybrids remain unstable: high-frequency mode mixing contaminates downstream predictors, and the heterogeneous volatility of decomposed components is not matched by any volatility-adaptive mechanism. To address these gaps, this paper proposes CEEMDAN-SE-SSA-VMGL. CEEMDAN adaptively decomposes the original series, and sample-entropy-driven K-means clustering groups the intrinsic mode functions into high-, mid-, and low-frequency and residual components. Singular spectrum analysis (SSA) is then applied to the high-frequency group, whose singular-value decomposition of the trajectory matrix and principal-component reconstruction decouple intertwined pseudo-oscillatory modes and alleviate mode mixing. We further design a plug-and-play robust LSTM variant, the volatility-modulated GARCH-LSTM (VMGL), which embeds a differentiable GARCH(1,1) layer inside the LSTM cell as a risk gate; the estimated conditional volatility multiplicatively scales the forget-gate activation, letting memory decay adapt to the instantaneous volatility while remaining fully end-to-end trainable. Component predictions are linearly combined. On five US and Chinese financial series (CSI 300, CSI 500, AAPL, GOOGL, S&P 500), the proposed model is compared with eleven benchmark architectures, lowering the forecasting error by 9% to 24% relative to the best benchmark and by 60% to 70% relative to a standard LSTM. Diebold--Mariano and model-confidence-set (MCS) tests confirm the statistical significance and stability of the gains, spectral analyses verify the SSA denoising efficacy, and backtesting demonstrates the framework's economic utility.",
+      "tags": [
+        "cs.CE",
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "A decomposition-integration framework coupling singular spectrum analysis with a volatility-adaptive LSTM for stock price forecasting",
+      "url": "https://arxiv.org/abs/2610.24384v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "ed46ef7ac79e83ba11f3115d",
+      "context_id": "b9f3714239113d56e5a3c54e",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.3333,
+      "source": "arxiv",
+      "source_context_sha256": "932ed20f561559e3b49c7e737d673f8be5e7df9a832caa54eb6cee0f753303f9",
+      "source_published": "2026-10-18T16:04:29Z",
+      "source_updated": "2026-10-18T16:04:29Z",
+      "summary": "World models are increasingly judged by how well they rank plausible futures, yet plausibility alone is the wrong target. The same scene can evolve under many latent rules, and a future that is smooth and physically valid under one rule can be incoherent under the rule actually in force. We formalize the resulting failure, operator-blindness, and show that it is systematically hidden by standard evaluation: a scorer can attain near-perfect generic ranking while separating current-world from other-world futures no better than chance. We introduce Operator-Mismatch Contrastive (OMC) learning, whose semantic hard negatives are valid-but-wrong-operator trajectories, and a matching protocol that measures world-relative coherence directly. On a controlled synthetic benchmark with in- and out-of-distribution operator parameters, across two trajectory-scoring backbones, and on feature-level external validation with CoPhy ballsCF, OMC raises operator-sensitive scoring far above a chance baseline that nonetheless achieves 0.99 generic top-1. We prove that the wrong-operator negative is necessary both for the protocol to detect the failure and for the objective to fix it, and position OMC as an auxiliary coherence signal (a trajectory-coherence scorer, not a generative model, planner, or control agent) that can be attached to existing world-model representations.",
+      "tags": [
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Operator-Mismatch Contrastive Learning for World-Relative Trajectory Coherence",
+      "url": "https://arxiv.org/abs/2610.25360v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "9502e4e98255cf3d342bc9d7",
+      "context_id": "a2e174b093df84ead328f097",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "failure mode",
+        "world model"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.25,
+      "source": "arxiv",
+      "source_context_sha256": "a08c4f1ca660f41bb1fce9ac48d55e7de4ebfd885ddeb9d4d0fb83a9e2b7f9a7",
+      "source_published": "2026-10-17T07:29:46Z",
+      "source_updated": "2026-10-17T07:29:46Z",
+      "summary": "Recent research-level physics-reasoning benchmarks for LLMs reveal a failure mode that lies not in knowledge or execution, but in modeling the world being reasoned about. Models often silently alter given quantities, fabricate laws, or inject unstated assumptions to force a problem into familiar patterns, and then reason inside this corrupted world. We define this premise-level divergence as modeling drift: the gap between a model's internal axiomatic world model (AWM) and the true physical world specified in the problem. Although RLVR and PRM have yielded substantial gains in mathematics and code, their reward shapes do not directly supervise world modeling in axiomatic domains such as physics. We propose Reinforcement Learning with Axiomatic World Modeling (RLAWM), which optimizes the policy by penalizing divergence between its inferred axiomatic world model and the true physics world. RLAWM probes physics reasoning at two hierarchical levels (modeling and solving), each scored by a physically grounded reward. The modeling reward targets abstract knowledge formulation, evaluating whether the model captures the true axiomatic world before attempting calculation. The solving reward targets instantiated knowledge reasoning, checking whether the model's concrete derivation remains consistent with the axiomatic world. This two-level structure separates what world the model believes it is reasoning in from how it reasons within that world. The framework operates exclusively during training, with no extra cost during inference. RLAWM improves performance by up to +12.2 points on PhysReason and +5.2 on PHYSICS over the baseline. It also generalizes zero-shot across difficulty, source, and domain, with a 2.45x gain and +10 points over the strongest baseline on olympiad-level physics and math.",
+      "tags": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Axiomatic World Modeling for Physics Reasoning",
+      "url": "https://arxiv.org/abs/2610.24519v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "b0eab7e3497e7436d79d13e4",
+      "context_id": "d38ca615ee1f35f2bbe15a63",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "duality",
+        "failure",
+        "inverse problem"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.2083,
+      "source": "arxiv",
+      "source_context_sha256": "9c510036e038b754adfca04cf937b045c7d9c53781d4cc8be8764770e6063cd0",
+      "source_published": "2026-10-19T01:12:20Z",
+      "source_updated": "2026-10-19T01:12:20Z",
+      "summary": "The macroscopic capabilities of intelligent systems arise from the local interactions of many simple units. When such systems are deployed in the real world, their behaviour must nevertheless be constrained, leaving designers caught between releasing adaptability and preventing loss of control, yet without formal tools to resolve the dilemma. This paper proposes a unified research program for controlled emergence that restates this tension as a pair of dual problems: the forward problem explains macroscopic behaviour from local rules, and the inverse problem solves for controllable rules and readout mechanisms from a desired target. We take an augmented quintuple as the formal object shared by both ends, and decompose ``engineering'' into three independently measurable coordinates: controllability, reproducibility, and degree of formalizability. On this basis we give three testable working hypotheses (critical scale; the cooperation and trade-off between constraint and adaptability; minimal constraint) and one feasibility criterion, which reduce inverse design from unconstrained optimization to interval checking. The program takes explicit failure boundaries as its premise, does not pursue complete control, and always preserves the system's room for self-organization. The reduced pilot experiment attached to this paper serves only to verify the executability of the research protocol and does not constitute a statistical test of the working hypotheses. This design language generalizes to multi-agent artificial intelligence, the industrial internet, and emergency response systems, all of which must confront emergence and controllability at once.",
+      "tags": [
+        "cs.AI",
+        "eess.SY"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "The Forward/Inverse Duality of Controlled Emergence:A Computational Design Program from Explanation to Engineering",
+      "url": "https://arxiv.org/abs/2610.25630v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "d932440cb94934a009824bbe",
+      "context_id": "2350f03e847317f407bc52b2",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "limitation",
+        "provenance"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.125,
+      "source": "arxiv",
+      "source_context_sha256": "c16bad31645ad76bd0df525dc559c28fc1e8807a13146c91ac43ae193a83cadf",
+      "source_published": "2026-03-18T16:06:21Z",
+      "source_updated": "2026-10-18T22:34:58Z",
+      "summary": "Large language models (LLMs) are trained through multi-stage pipelines over heterogeneous data sources, yet developers lack a principled way to pinpoint the specific data responsible for an observed behavior. This lack of observability reduces debugging to reactive patching and makes failures prone to recur under distribution shift or subsequent model updates. To address this limitation, we propose DebugLM, a framework that equips LLMs with built-in data provenance, enabling them to explicitly trace the origins of their behaviors to specific training data sources. Specifically, the model learns to associate its responses with unique provenance tags that indicate the responsible dataset, empowering developers to precisely identify where undesirable behaviors are learned. Building on this capability, DebugLM further supports targeted test-time remediation, enabling developers to selectively trigger targeted refusal for specified data sources without retraining or modifying model parameters. Experiments demonstrate that DebugLM provides accurate behavior tracing in multi-stage training pipelines and effective test-time remediation while preserving the general utility of the model.",
+      "tags": [
+        "cs.CL"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "DebugLM: Learning Traceable Training Data Provenance for LLMs",
+      "url": "https://arxiv.org/abs/2603.17884v2"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "63a29e283805d3cb59a94d7c",
+      "context_id": "17e0d64b014058bcd4944c80",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "bidirectional",
+        "failure"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.8333,
+      "source": "arxiv",
+      "source_context_sha256": "7e58c3fa08d081d2b946300e11671865db62fb299aa6f044a9352ab057f46d62",
+      "source_published": "2026-10-18T07:38:03Z",
+      "source_updated": "2026-10-18T07:38:03Z",
+      "summary": "Model--harness co-evolution has emerged as a prominent paradigm for recursive self-improving (RSI) agents, jointly evolving their execution scaffolds and intrinsic capabilities. We study the persistent yet often overlooked brain--body mismatch problem in this paradigm, where an evolving harness (body) demands behaviors its model (brain) has not learned or restricts capabilities it already possesses. We introduce CoEvo-RSI, a RSI framework that advances model--harness co-evolution through agent-driven, bidirectional historical inheritance. Drawing on a shared evolutionary archive and execution feedback, a meta-agent coordinates harness development from historical designs with model checkpoint selection or merging and subsequent adaptation under the selected harness, aligning inherited capabilities with evolving execution requirements to reduce brain--body mismatch. Using only supervised fine-tuning (SFT) on its own rejection-sampled trajectories, CoEvo-RSI makes Qwen3.5-9B competitive with larger models across diverse vertical applications, including multi-agent failure attribution, role-aware text-to-SQL, and smart-home instruction following. It surpasses DeepSeek-V4-Pro on TraceElephant (+14.16 agent accuracy) and GLM-5.3 on HomeBench VM (+4.90 success rate), underscoring the need for brain--body alignment and the potential of bidirectional historical inheritance to advance agent co-evolution.",
+      "tags": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "CoEvo-RSI: When Harnesses Evolve, Which Models Should Follow?",
+      "url": "https://arxiv.org/abs/2610.25078v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "eb3f42d97fc09ee4e07d0b09",
+      "context_id": "9aa9ef8aa1725c8320ee0078",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "provenance"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.7083,
+      "source": "arxiv",
+      "source_context_sha256": "3c3ad120e7405800f1eb3c91f18b9b5665fddab03d7d61ba631b8b044bfde01b",
+      "source_published": "2026-10-19T09:50:57Z",
+      "source_updated": "2026-10-19T09:50:57Z",
+      "summary": "Autonomous clinical-modeling agents can optimize predictive performance while violating conditions that make a model usable. We introduce LeakBench, an executable, guideline-derived audit suite that tests agent decisions for prediction-time leakage, calibration, site-level evaluation, support awareness, and decision-curve net benefit. LeakBench combines a synthetic task with known failure structure and two real-data settings: MIMIC-IV (430k admissions) and governed multi-hospital inpatient record front-page (MHFP) data. Our primary analysis uses reward hacking descriptively, without attributing intent: an agent selects prediction-time-invalid inputs because they improve its validation reward. A deterministic optimizer and every evaluated unconstrained local-model configuration select a fatal leaking feature. In fully logged September 2026 A/B runs, DeepSeek Flash and GPT-6-astra each leak in 10/10 unconstrained runs and 0/10 runs with an explicit admission-time constraint. This contrast is version-sensitive: a blinded Claude/Fable-5.1 chat run does not leak in either condition, while explicit-constraint violations appear only in a historical August 2026 slice lacking raw trajectories. Replacing AUROC with AUPRC does not remove leakage selection. Renaming or disguising the leaking inputs changes neither selection nor provenance-based detection; a name-based filter fails. A deterministic provenance verifier-in-loop removes the leak, making the LLM repair loop defense-in-depth. Specific verifier feedback clears fatal leakage in a hosted agent, and a three-seed ablation finds principle-only feedback clears decision-level defects, though these mitigation results are limited. LeakBench treats trustworthy clinical prediction as a property of an agent's modeling process, not merely its score; it is an audit testbed with known-failure controls, not yet an expert-validated benchmark.",
+      "tags": [
+        "cs.CR",
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "LeakBench: Auditing Reward Hacking through Prediction-Time Leakage in Clinical Modeling Agents",
+      "url": "https://arxiv.org/abs/2610.26088v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "5cc3c05425044782df8872e2",
+      "context_id": "8b93f0a0e503af61b216e3a5",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "memory",
+        "representation"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 7.125,
+      "source": "arxiv",
+      "source_context_sha256": "cc01d6d9976c3fa537a0e6a27d842915714825295f794d395c8807706c3ffe74",
+      "source_published": "2026-10-17T07:58:29Z",
+      "source_updated": "2026-10-17T07:58:29Z",
+      "summary": "Long videos often exceed the context capacity of multimodal large language models (MLLMs), while agentic search repeats costly video processing and grounding for each query. Reusable memory can amortize this cost, but must preserve information for questions unknown during construction. We propose Video-EMem, an evolvable video memory harness built on time-anchored perceptual observations. This representation combines compact free-form text with sparse images to preserve semantic content and complementary visual details across temporal scales, supporting temporal navigation without a fixed semantic schema. A Writer encodes each video once by consolidating overlapping multiscale observations, and a Reader retrieves and organizes evidence solely from the resulting memory. With the underlying models frozen, we evolve their workflows and operators using distinct feedback: query-independent source fidelity and coverage for the Writer, and QA failures in evidence localization and utilization for the Reader. Experiments support this separation for generalization beyond development queries, with our evolution strategy improving average accuracy by 7.2% over the unevolved harness. While reducing storage by about 99.86% on average relative to raw videos, Video-EMem improves Qwen3-VL-30B by an average of 2.6% across three long-video QA benchmarks over direct input of 2,048 frames. Using the same o3 answer model as the state-of-the-art agentic method, it improves average accuracy by 2.5% with lower per-query latency.",
+      "tags": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Write Once, Query Many: Evolving Compact Reusable Memory for Long Videos",
+      "url": "https://arxiv.org/abs/2610.24537v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "47984b36f342e71eef9bcd1d",
+      "context_id": "2af6e27b23fd2ae5a4947573",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "mirror",
+        "provenance",
+        "reciprocal"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 7.0833,
+      "source": "zenodo",
+      "source_context_sha256": "192e45a47a29c1c900bcf54546e53e9e11f0d56b89b0afbddd644ad6daf0e2bb",
+      "source_published": "2026-10-20",
+      "source_updated": "",
+      "summary": "This dataset accompanies the Perspective &ldquo;Coupling, Not Mirroring: Complementarity and Credibility in Microphysiological System&ndash;Digital Twin Integration&rdquo; (Bertani et al., NAM Journal, submitted 2026). It contains the evidence behind the article&rsquo;s map of published integrations between microphysiological systems (MPS) and computational models. Forty-two studies were read in full text. Each was classified by the direction of information flow between experiment and model, using six regimes: R0 data extraction, R1 calibration only, R2 calibration and external projection, R3 model-guided design, R4 offline reciprocal cycle and R5 continuous closed loop. The rubric was fixed before the corpus was read. Every classification is supported by locators to the source article (section, page, figure). The script build/build.py regenerates Figure 2, Supplementary Table S1 and every count reported in the article from the records: 8 / 7 / 17 / 5 / 5 / 0 studies across the six regimes; 25 studies evaluate a model output against evidence not used to build the model; 6 project beyond the calibration conditions without evaluating that projection; 11 do neither. Contents: records/: one extraction record per study (Markdown with YAML frontmatter). Each record gives the classification, its provenance, a paraphrased summary and open questions. One further record covers an adjacent experimental system discussed in the article. skills/: the classification rubric (version 1.1), the nine documented readings that settle boundary cases, and the ratification protocol. build/: Python scripts (standard library only) that check consistency across records and build the outputs. out/: the evidence table, Table S1 rows, counts and Figure 2. search/: the Scopus query strings and a recall check against 25 reference studies. provenance/: DOI, Crossref metadata and licence for every classified article. No full text, PDF, figure or bulk extract of the classified articles is included. Verbatim quotations are kept only for articles that Crossref lists under a Creative Commons licence. For the 13 articles without an open licence they have been replaced by placeholders, and the locators are kept. The Scopus exports are not included. The extraction records were drafted by Claude models (Anthropic), one isolated run per article, under the rubric. They were then checked for consistency, and ratified or decided by the authors where flagged; the record shows who made each decision. Some documentation files are in Italian. Licence: CC BY 4.0 for data and documentation, MIT for the code in build/. Quoted passages remain under the licence of their source article.",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "MPS-model-coupling-evidence-map",
+      "url": "https://zenodo.org/records/23501880"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "617db659cdd63f8534937c5b",
+      "context_id": "ae3c896a09e2163f53fb373e",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "failure mode",
+        "memory"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 7.0417,
+      "source": "arxiv",
+      "source_context_sha256": "f7c5463f35c4749f9cde98f94c72532d4aa64f6e98ca373fd7cdd102462013e1",
+      "source_published": "2026-10-19T13:53:38Z",
+      "source_updated": "2026-10-19T13:53:38Z",
+      "summary": "Rubric-based reinforcement learning (RL) trains policies for open-ended generation with natural-language criteria as rewards, but these rewards can become ineffective as training progresses. We identify two failure modes. Under non-discriminative rewards, scores collapse to uniformly low or high values due to insufficient exploration or a mismatch between task difficulty and policy capability. Under spurious rewards, higher scores do not correspond to better responses. Both reflect a training configuration whose task sampling, exploration, and evaluation stay fixed as the policy evolves. We introduce HarnessRL, a training-time harness that co-evolves with the policy through three interfaces for task sampling, rollout guidance, and rubric criteria. HarnessRL maintains a training-time memory from which a harness evolver retrieves within-task history and cross-task evidence. Using this evidence, the evolver attributes each reward failure to the interface whose update can address it. It then runs a proposer and just-in-time critic loop in which the critic accepts a candidate update only after measuring its effect on the current frozen policy, returning rejected candidates for revision. We also curate Rubric-Mix-10k, a five-domain training and evaluation suite for open-ended RL across medical, science, writing, role-play, and instruction-following tasks. On Rubric-Mix-10k, HarnessRL outperforms the strongest baselines by 2.8 to 3.1 points across both 4B and 9B model scales and nearly halves the training steps to its best checkpoint. Code and data are available at https://github.com/Tongyi-ConvAI/Qwen-Character/tree/main/HarnessRL.",
+      "tags": [
+        "cs.CL"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "HarnessRL: Co-Evolving Policies with a Just-in-Time Training Harness for Open-Ended RL",
+      "url": "https://arxiv.org/abs/2610.26426v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "87d3624fb7b0e319e82599d0",
+      "context_id": "7e2452db9e8e3852446fd717",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "failure mode",
+        "memory"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 7.0417,
+      "source": "arxiv",
+      "source_context_sha256": "685921b85757b7e18379a01c72d5acdda73bb6f1990947dff9d1baeb7e0dc6c7",
+      "source_published": "2026-10-18T18:44:14Z",
+      "source_updated": "2026-10-18T18:44:14Z",
+      "summary": "Post-training compression of pretrained medical segmentation models commonly uses quantization, pruning, or distillation to reduce model size and computational cost. Existing medical segmentation quantization studies mainly evaluate Dice, model size, memory, and latency, but this is incomplete for safety-critical use because compressed models should also preserve uncertainty signals that indicate unreliable predictions. We study this problem in compressed MRI/CT segmentation and formalize why Dice can remain stable while uncertainty changes. Motivated by this failure mode, we propose score-guided aggregate-validated mixed precision (SGAV-MP), a post-training compression framework that selects layer precisions under reliability constraints. SGAV-MP ranks quantization actions with a compact benefit-risk score and accepts them only after full-model reliability validation on a calibration set. Across five 2D backbones and three 3D benchmarks, SGAV-MP preserves FP32-level Dice and high uncertainty-map agreement, achieving $3.59\\times$--$7.8\\times$ compression in 2D and $4.73\\times$--$7.82\\times$ in 3D. We also report backend-supported TensorRT deployment measurements separately to distinguish runtime execution from reliability-preserving storage compression.",
+      "tags": [
+        "eess.IV",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG",
+        "eess.SP"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Reliability-Preserving Compression for Deployable Medical Image Segmentation",
+      "url": "https://arxiv.org/abs/2610.25460v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "261c9792be053e5df00878b2",
+      "context_id": "79b91be4e54af03acdd186eb",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "memory",
+        "retrieval"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.9167,
+      "source": "arxiv",
+      "source_context_sha256": "e3e002acef303d8ea420c9a458489f6909511183c79fd8b11f41d30f4a35d0dc",
+      "source_published": "2026-10-19T17:59:39Z",
+      "source_updated": "2026-10-19T17:59:39Z",
+      "summary": "Distributed LLM serving relies on a global index to locate reusable key-value cache (KVCache) blocks through prefix matching. Losing the index after a crash or restart forces affected requests to recompute existing KVCache on GPUs. Persisting the index restores access after a failure. Existing persistent indexes face a tension between prefix-matching performance and recovery time. A snapshot-backed in-memory index supports fast prefix matching, but rebuilding the full index delays recovery. An on-SSD index avoids this rebuild, but adds storage accesses to prefix matching. Our core insight is that extending a matched prefix over a short span typically requires distinguishing only a few token sequences, suggesting that sparse in-memory routing state may suffice. Prefix matching also accesses block metadata in sequence order, allowing metadata for consecutive blocks to be retrieved together. We present SARP (Sparse Adaptive Routing and Packing), an on-SSD KVCache index for fast recovery and prefix matching. SARP groups consecutive block IDs and metadata into segments to amortize storage accesses across multiple blocks. A compact in-memory routing directory identifies candidate segments using entries at selected block positions. SARP limits segment retrievals and uses compact filters to prioritize candidates with longer potential matches. After retrieval, SARP verifies block IDs against the query and reuses only KVCache blocks covered by the verified prefix. After a restart, SARP restores the sparse routing directory from a snapshot. Across four multi-turn chat and agentic workloads, SARP recovers 8.0x to 77.5x faster than the in-memory index baselines and delivers 1.15x to 66.6x the request throughput of the on-SSD index baselines, while reusing only 0.0030% to 0.029% fewer tokens than exact prefix matching.",
+      "tags": [
+        "cs.DB"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "SARP: An On-SSD Index for KVCache with Fast Prefix Matching and Recovery",
+      "url": "https://arxiv.org/abs/2610.26849v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "02f03e9c293c55f04fab793f",
+      "context_id": "6b2c05557a5be083008d26cb",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "memory",
+        "retrieval"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.9167,
+      "source": "arxiv",
+      "source_context_sha256": "70285d965f27929271ff9b2c6eb7228715cfd1b606bd7c692de0a93f386ece6d",
+      "source_published": "2026-10-18T16:24:33Z",
+      "source_updated": "2026-10-18T16:24:33Z",
+      "summary": "Long-running agents rely on memory of their past interactions for task state, such as what has been completed and which conditions still hold. Such state is usually a derived state. No record states it, and it must be computed by rules from multiple records of an evolving history. Existing memory benchmarks score only the final answer, with no reference for the intermediate states behind it. A wrong answer therefore cannot be traced to the state that was missed, and a state that silently became outdated goes undetected. We present MemDerive, a diagnostic benchmark for agent memory over evolving data. It specifies each scenario symbolically, derives exact gold answers with Datalog, records the gold derivation DAG and the supporting events of every query, and renders the history in natural language with fictional entities and distractors. Its 10 scenarios contain 4,692 events and 1,503 queries whose difficulty varies along access, evolution, and composition. On this ground truth, MemDerive evaluates answer reliability, diagnoses failures by probing the nodes of the gold derivation DAG, and tracks whether answers stay correct as events arrive. Our evaluation of four memory systems reveals failures that final-answer benchmarks hide. On derived state, every memory system falls behind simple BM25 retrieval, although the same answer model reaches 96.01% when given the supporting events. Most failures are ungathered, as a system holds the missing intermediate state but does not retrieve it for the question that needs it. Memory systems also rarely propagate implicit changes, which no new record states. These results suggest three principles for memory design. Gather inputs along the derivation, store rules with their versions, and maintain derived states through recorded dependencies.",
+      "tags": [
+        "cs.DB",
+        "cs.AI",
+        "cs.CL",
+        "cs.IR"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "MemDerive: A Diagnostic Benchmark for Agent Memory over Evolving Data",
+      "url": "https://arxiv.org/abs/2610.25373v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "ed46ef7ac79e83ba11f3115d",
+      "context_id": "4e1bd748ff8be73cc1fd3d75",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "benchmark",
+        "control",
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 19.0417,
+      "source": "arxiv",
+      "source_context_sha256": "be5d9beec4ecf62caca92d09123f2f64801d768c8c9bb6e4a770ffdcee1151c6",
+      "source_published": "2026-10-18T16:04:29Z",
+      "source_updated": "2026-10-18T16:04:29Z",
+      "summary": "World models are increasingly judged by how well they rank plausible futures, yet plausibility alone is the wrong target. The same scene can evolve under many latent rules, and a future that is smooth and physically valid under one rule can be incoherent under the rule actually in force. We formalize the resulting failure, operator-blindness, and show that it is systematically hidden by standard evaluation: a scorer can attain near-perfect generic ranking while separating current-world from other-world futures no better than chance. We introduce Operator-Mismatch Contrastive (OMC) learning, whose semantic hard negatives are valid-but-wrong-operator trajectories, and a matching protocol that measures world-relative coherence directly. On a controlled synthetic benchmark with in- and out-of-distribution operator parameters, across two trajectory-scoring backbones, and on feature-level external validation with CoPhy ballsCF, OMC raises operator-sensitive scoring far above a chance baseline that nonetheless achieves 0.99 generic top-1. We prove that the wrong-operator negative is necessary both for the protocol to detect the failure and for the objective to fix it, and position OMC as an auxiliary coherence signal (a trajectory-coherence scorer, not a generative model, planner, or control agent) that can be attached to existing world-model representations.",
+      "tags": [
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Operator-Mismatch Contrastive Learning for World-Relative Trajectory Coherence",
+      "url": "https://arxiv.org/abs/2610.25360v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "eb3f42d97fc09ee4e07d0b09",
+      "context_id": "28d57c13525aa12dcc143127",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "ablation",
+        "benchmark",
+        "calibration",
+        "control",
+        "provenance"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 15.875,
+      "source": "arxiv",
+      "source_context_sha256": "e0bddb51bded0c357d10f74c6eb6df77b390eb37aa024c181784c6e917cfd269",
+      "source_published": "2026-10-19T09:50:57Z",
+      "source_updated": "2026-10-19T09:50:57Z",
+      "summary": "Autonomous clinical-modeling agents can optimize predictive performance while violating conditions that make a model usable. We introduce LeakBench, an executable, guideline-derived audit suite that tests agent decisions for prediction-time leakage, calibration, site-level evaluation, support awareness, and decision-curve net benefit. LeakBench combines a synthetic task with known failure structure and two real-data settings: MIMIC-IV (430k admissions) and governed multi-hospital inpatient record front-page (MHFP) data. Our primary analysis uses reward hacking descriptively, without attributing intent: an agent selects prediction-time-invalid inputs because they improve its validation reward. A deterministic optimizer and every evaluated unconstrained local-model configuration select a fatal leaking feature. In fully logged September 2026 A/B runs, DeepSeek Flash and GPT-6-astra each leak in 10/10 unconstrained runs and 0/10 runs with an explicit admission-time constraint. This contrast is version-sensitive: a blinded Claude/Fable-5.1 chat run does not leak in either condition, while explicit-constraint violations appear only in a historical August 2026 slice lacking raw trajectories. Replacing AUROC with AUPRC does not remove leakage selection. Renaming or disguising the leaking inputs changes neither selection nor provenance-based detection; a name-based filter fails. A deterministic provenance verifier-in-loop removes the leak, making the LLM repair loop defense-in-depth. Specific verifier feedback clears fatal leakage in a hosted agent, and a three-seed ablation finds principle-only feedback clears decision-level defects, though these mitigation results are limited. LeakBench treats trustworthy clinical prediction as a property of an agent's modeling process, not merely its score; it is an audit testbed with known-failure controls, not yet an expert-validated benchmark.",
+      "tags": [
+        "cs.CR",
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "LeakBench: Auditing Reward Hacking through Prediction-Time Leakage in Clinical Modeling Agents",
+      "url": "https://arxiv.org/abs/2610.26088v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "501d1c88ef0d78115566f82f",
+      "context_id": "fd67affdfdcf54d7b0c93653",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "benchmark",
+        "memory",
+        "representation",
+        "representation learning"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 14.5417,
+      "source": "arxiv",
+      "source_context_sha256": "9fbc51959ff019cb55c61b96b50a0746c8e2cf23f92827c031695efc0fabc461",
+      "source_published": "2026-10-17T06:52:49Z",
+      "source_updated": "2026-10-17T06:52:49Z",
+      "summary": "Irregular time series require models to answer temporal queries at arbitrary coordinates, yet existing approaches typically retain observation-dependent representations that must be repeatedly resolved for each query. We introduce HiPPO Functional Memory (HiPPO-FM), a functional-memory attention operator that compiles an irregular history into a reusable coordinate-addressable state. Instead of storing observation-indexed tokens or latent trajectories, HiPPO-FM writes observations into a fixed-rank functional space and performs direct coordinate evaluation through matched functional geometry. Kernel-smoothed HiPPO coordinates and Gram-based readout define a shared write/read mechanism, while observed-support self-attention enables content-dependent representations before compression. We characterize the induced finite-dimensional query space and derive an error decomposition separating functional geometry approximation from learned-memory mismatch. Across continuous-coordinate reconstruction, irregular representation learning, real-world extrapolation, and event-sequence prediction, HiPPO-FM consistently improves strong irregular time-series baselines, achieving strong reconstruction accuracy on Spiral, competitive performance across 20 UEA datasets, improved real-world extrapolation, and superior results on several irregular event benchmarks. After encoding, the compact functional state can be reused across different query sets without reprocessing the observation history.",
+      "tags": [
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "HiPPO Functional Memory: Coordinate-Queryable Attention for Irregular Time Series",
+      "url": "https://arxiv.org/abs/2610.24501v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "6da95c61ad122da8e8ebcd1e",
+      "context_id": "023bf1e7b861bb7a5afbd1a4",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "calibration",
+        "control",
+        "provenance"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 14.5,
+      "source": "zenodo",
+      "source_context_sha256": "5be7be58cb51d7acde465dde7b6b69a6cecf8c956dad4195dda89e17b5a91ddb",
+      "source_published": "2026-10-16",
+      "source_updated": "",
+      "summary": "Curated Wearable Physiological Signals for Paediatric ADHD Research, with Task-Aligned Data and EDA Baselines This resource organises existing Empatica EmbracePlus recordings from the BALLADEER paediatric ADHD study into source-traceable native task views, with optional full native context, descriptive quality control (QC) and processed electrodermal activity (EDA). Cohort, acquisition and games are inherited; the added contribution is an inspectable association between observations, original source indices, admitted recording windows, missingness and technical provenance, together with a bounded reuse example. Coverage and signals The inventory comprises 107 participants and five tasks : CogniFit (01), Attention Robots (02), and screen-based Attention Slackline levels 1, 6 and 11 (03&ndash;05). EDA overlaps admitted EEG recording spans for 436 participant/task combinations across 104 people , with 1,129,180 finite selected EDA samples . Of 535 possible EDA cells, 77 lack an EEG span and 22 have EEG but no EDA overlap. Availability and temporal overlap do not establish full-task coverage, physiological suitability or final analytical eligibility. The golden layer contains 37,974,199 native rows across supported streams. The complete native projection contains 228,120,776 rows, including 6,779,644 EDA rows with 20 untimed entries, and extends outside task windows. These representations overlap; do not sum them as independent observations or treat time-series samples/task rows as independent participants. Golden native stream Rows Quantity/unit Accelerometer 18,069,607 Three-axis int32 ADC counts; native calibration context retained BVP 18,067,914 Optical pulse waveform, writer-declared nW; not blood pressure EDA 1,129,180 Signed float32 &micro;S Temperature 282,293 float32 &deg;C Steps 56,461 Vendor int32 counts Systolic peaks 368,743 Vendor event times, original indices and UTC nanosecond source time Wearable tags 1 Native event time, original index and UTC microsecond source time Gyroscope 0 Supported schema, empty stream The single tag is not full-cohort coverage. Availability retains missing combinations explicitly. Participant metadata has exactly participant_id , age , gender and group . Identifiers remain strings; recorded gender is not renamed biological sex. Group 1/2 denotes experimental/ADHD recruitment and comparison under the approved interpretation, not assessment-derived diagnosis or uniformly healthy controls. Downloads and reassembly Logical archive Complete size Upload files golden_dataset.zip 606.25 MB 7 native_projection.zip 2955.75 MB 30 quality_control.zip 2.73 MB 1 processed_eda.zip 35.75 MB 1 baseline_reproduction.zip 18.89 MB 1 Each upload file is at most 100,000,000 bytes . Golden and native archives are byte-split into numbered parts; parts are not independently extractable ZIP files . Download all seven golden_dataset.zip.part001 &ndash; .part007 files for golden data, or all 30 native_projection.zip.part001 &ndash; .part030 files for the native supplement. The other three archives are ordinary single ZIPs. This size is a delivery choice, not a platform limit. Keep archive_registry.json and reassemble.py beside the desired complete part set. Run python3 reassemble.py verify --archive golden_dataset.zip , create a new output directory, then run python3 reassemble.py reassemble golden_dataset.zip --output-dir reassembled . The standard-library helper checks ordered part and complete-ZIP hashes, refuses overwrites and never extracts or runs analysis. Extract the verified ZIP with an ordinary tool into a new empty directory. Substitute the native archive name for that route. For a single ZIP, verify it by name and extract directly. README.md gives exact commands and reconstruction-space guidance. Golden data: primary native wearable task views/events, metadata, schemas, selection membership, QC and scientific provenance; independently usable after its parts are reassembled. Native projection: complete pr",
+      "tags": [
+        "Electrodermal activity",
+        "EDA",
+        "Blood volume pulse",
+        "BVP",
+        "Skin temperature",
+        "Multimodal biosignals",
+        "Reproducible research",
+        "Attention-deficit/hyperactivity disorder",
+        "ADHD",
+        "Wearable physiological signals"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Curated Wearable Physiological Signals for Paediatric ADHD Research, with Task-Aligned Data and EDA Baselines",
+      "url": "https://zenodo.org/records/23418475"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "58b227496d14fcee9bfb83a0",
+      "context_id": "871ba28b6381ceea60217e88",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "ablation",
+        "benchmark",
+        "control",
+        "provenance"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 14.4167,
+      "source": "zenodo",
+      "source_context_sha256": "6cf2b530f75a98a018a6ff451052c353c4678471021e6afb2e3caa9071464662",
+      "source_published": "2026-10-20",
+      "source_updated": "",
+      "summary": "Companion code for the preprint \"Benchmarking Real-Time DETR Detectors for Multibeam Forward-Looking Sonar: DEIMv2, Detector-Specific Test-Time Fusion, and Domain Shift Analysis on UATD\" (Preprints 2026, 2026090449, doi:10.20944/preprints202609.0449.v3). Contains the DEIMv2 engine with UATD configs, the TTA/WBF fusion tooling (default --wbf-rule view-dedup; query-level retained as reproduction control), the paired image-level bootstrap CI scripts, the paper's three central results tables as CSV, and unit tests pinning the WBF view-dedup rule and the bootstrap identity property. The UATD dataset itself is NOT redistributed; fetch it from the official figshare channel (article 21331143) via the included download scripts. License: benchmark code MIT; the DEIMv2 engine remains under the DEIMv2 non-commercial license (LICENSE-DEIMv2.md). v3 (2026-09-29): reviewer-comment C13 fix — analysis/bootstrap_ci.py now averages AR@100 over valid recall entries only (excluding the -1 sentinel for classes absent from a bootstrap resample), matching the COCOeval convention already used for mAP. Adds analysis/bootstrap_arfix_recompute.py (analytic recompute of all 14 archived AR@100 bootstrap intervals from the per-replicate CSVs), results/boot_out/*_arfixed.json (defective-vs-fixed intervals; max change 0.001 on any bound, no reported number changes), and tests/test_bootstrap_missing_class.py pinning the fixed behavior. v4 (2026-10-17): adds the DEIMv2-S seed-43/44 fusion summary ( results/ablation_wbf_dedup_seed4344_summary.json ) with its generation script ( tools/ablation_wbf_dedup_seed4344.py ) and the run log ( results/S_seed4344_fusion_20261014.md ), as referenced in the paper's Table II note; README updated (preprint v3 DOI, 90/10 seed-42 split reproduction command, seed-43/44 result registration, and a note cross-checking the vendored WBF against the reference PyPI package ensemble-boxes 1.0.6); manifests regenerated (252 files). v5 (2026-10-18): adds the score-only control ablation for the view-deduplication analysis (paper Sec. III-B): generation script ( tools/ablation_scoreonly_test1.py ) and results ( results/ablation_scoreonly_test1.json , Test_1: query-level vs score-only vs view-dedup, isolating score normalization from member removal); README updated (tool and result registration); manifests regenerated (254 files). The preprint reference remains doi:10.20944/preprints202609.0449.v3. v6 (2026-10-19): adds the multi-seed fusion evidence released with the companion paper (arXiv-style short report): per-seed fusion results for RT-DETRv2-R18 ( results/B1_*.json , seeds 42-44, both fusion rules, both test splits), paired per-seed difference table ( results/table3_paired_seed_results.csv ), tau-sensitivity scan and vendored-WBF reference arm ( results/results_tau_sensitivity.json , results/results_wbf_reference.json ; scripts tools/exp_tau_sensitivity.py , tools/exp_wbf_reference.py ; vendored reference implementation in ref_impl/ ); README updated (reproduction and metric-semantics notes); manifests regenerated (275 files). The preprint reference remains doi:10.20944/preprints202609.0449.v3. v7 (2026-10-20): adds the sixteen per-view prediction dumps ( results/*_views_test*.json ; 1,440,000 records each: 800 images x top-300 x 6 TTA views) for DEIMv2-S seeds 42-44, RT-DETRv2-R18 seeds 42-44, D-FINE-HGNetV2-S seed 42, and DEIM-HGNetV2-S seed 42, together with per-unit cluster-size statistics ( results/tu_cluster_stats/ ), a provenance record ( results/per_view_dump_provenance.json ), and tools/tu_cluster_stats.py ; ablation_wbf_dedup.py and ablation_wbf_dedup_seed4344.py now read dumps from ../results/ . These dumps back the per-seed fusion results ( results/table3_paired_seed_results.csv ) and the cluster statistics of the companion paper. DEIMv2-M has no per-view dump by design.",
+      "tags": [
+        "forward-looking sonar",
+        "object detection",
+        "DEIMv2",
+        "DETR",
+        "UATD",
+        "weighted boxes fusion",
+        "bootstrap",
+        "underwater acoustics"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Code release: Benchmarking Real-Time DETR Detectors for Multibeam Forward-Looking Sonar (DEIMv2/UATD)",
+      "url": "https://zenodo.org/records/23503272"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "9502e4e98255cf3d342bc9d7",
+      "context_id": "1cdead37cccc6aada2b0adc8",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "benchmark",
+        "world model"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 13.1667,
+      "source": "arxiv",
+      "source_context_sha256": "ab23c77e2ae7aba12a1d4eee49d39017f218432d0a211f2155bbfc90c33cbd45",
+      "source_published": "2026-10-17T07:29:46Z",
+      "source_updated": "2026-10-17T07:29:46Z",
+      "summary": "Recent research-level physics-reasoning benchmarks for LLMs reveal a failure mode that lies not in knowledge or execution, but in modeling the world being reasoned about. Models often silently alter given quantities, fabricate laws, or inject unstated assumptions to force a problem into familiar patterns, and then reason inside this corrupted world. We define this premise-level divergence as modeling drift: the gap between a model's internal axiomatic world model (AWM) and the true physical world specified in the problem. Although RLVR and PRM have yielded substantial gains in mathematics and code, their reward shapes do not directly supervise world modeling in axiomatic domains such as physics. We propose Reinforcement Learning with Axiomatic World Modeling (RLAWM), which optimizes the policy by penalizing divergence between its inferred axiomatic world model and the true physics world. RLAWM probes physics reasoning at two hierarchical levels (modeling and solving), each scored by a physically grounded reward. The modeling reward targets abstract knowledge formulation, evaluating whether the model captures the true axiomatic world before attempting calculation. The solving reward targets instantiated knowledge reasoning, checking whether the model's concrete derivation remains consistent with the axiomatic world. This two-level structure separates what world the model believes it is reasoning in from how it reasons within that world. The framework operates exclusively during training, with no extra cost during inference. RLAWM improves performance by up to +12.2 points on PhysReason and +5.2 on PHYSICS over the baseline. It also generalizes zero-shot across difficulty, source, and domain, with a 2.45x gain and +10 points over the strongest baseline on olympiad-level physics and math.",
+      "tags": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Axiomatic World Modeling for Physics Reasoning",
+      "url": "https://arxiv.org/abs/2610.24519v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "b1974e9ce96f04b874fbc227",
+      "context_id": "04561ad8622ace411a7dc21e",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "benchmark",
+        "provenance"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 13.125,
+      "source": "zenodo",
+      "source_context_sha256": "d23a20d22823545f798c11571995904bb9e1ed7c59e243e2e49267ccc9b4eb1c",
+      "source_published": "2026-10-20",
+      "source_updated": "",
+      "summary": "annotations4all is a schema-first Python library for LLM-assisted span annotation, including named entity recognition. Users define their own tag schemas; the library generates chat prompts, parses annotated model responses and maps annotations to character offsets in the original text. The library keeps annotation mechanics separate from research workflows: it bundles no corpus or fixed ontology, performs no evaluation, and does not promise model quality. Provider support uses explicit OpenAI-compatible routes rather than native SDKs. What the library provides Schema-first prompt generation and response parsing. Configurable taggers, German and English prompt templates, metadata-bearing spans and structured parser warnings. Per-label annotation and deterministic merge. Independent label runs can be combined using containment-derived hierarchy, explicit conflict reports and bounded anchoring. One request per run has a corresponding inference cost; merge is not a semantic error repair. Provider policies and capability evidence. A generic OpenAI-compatible client, provider-policy clients, explicit reasoning activation and effort, request limits, packaged hints and offline capability reports. Remote verification requires opt-in; metadata does not prove account access or successful inference. Optional read-only terminal viewer. Browse saved annotations, inspect nested spans and compare two sources using synchronized split or compact diff views. The viewer does not modify annotation files or run inference. Release notes 0.3.1 Request pacing now resolves symlinks in the parent directories of the per-user state file, so a symlinked cache root no longer fails every paced request. The state file keeps its no-follow, regular-file and ownership protection, and cross-process locking is unchanged. Documentation is available in both languages: tutorial and viewer guide each in German and English. Release 0.3.0 introduced provider-policy clients, capability reporting, the optional viewer, data-dependent contrast optimization and deprecation warnings for the legacy native wrappers; the 0.3 notes remain the reference for that feature set. 0.3.1 release notes ; 0.3 feature release notes and screenshots ; initial 0.2 feature baseline . Installation, documentation and verification Python 3.11 or newer. Install with pip install annotations4all==0.3.1 ; add the optional viewer with pip install 'annotations4all[view]==0.3.1' . The tutorial in German and English, the API guides, release notes and screenshot provenance are included with the source archive. Verification: 984 passing tests, 92.8% coverage, Ruff lint/format checks, warning-free Markdownlint, package metadata checks and fresh-environment installation tests under Python 3.11 and 3.13. Viewer checks include real optimization subprocesses and terminal restoration. These are code and packaging checks, not live-provider benchmarks. Versioning, license and citation Version 0.3.1 . MIT license. The source archive includes machine-readable CITATION.cff metadata. Version DOI: 10.5281/zenodo.23494842 . The unchanged concept DOI 10.5281/zenodo.22011370 identifies the software across versions. Source code and issues ; Python package .",
+      "tags": [
+        "ner",
+        "llm",
+        "nlp",
+        "span-annotation",
+        "tagger",
+        "Project: annotations4all 🥼",
+        "Type: Software 💾"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "annotations4all",
+      "url": "https://zenodo.org/records/23494842"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "a12d0f111966b5d22a7db59e",
+      "context_id": "8be15f366d1ab3a214249eba",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "benchmark",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 13.0,
+      "source": "arxiv",
+      "source_context_sha256": "87c5c4058545da7fca921f7b59614bf1e017708f160f5aa62049f4195c891751",
+      "source_published": "2026-10-19T17:59:17Z",
+      "source_updated": "2026-10-19T17:59:17Z",
+      "summary": "Recent advances in multimodal models have enabled GPT-6 Astra to perform robotic manipulation through in-context learning. Yet contact-rich control and tactile perception are often regarded as strengths of specialist policies, leaving open whether Astra can directly understand and use tactile observations. We provide, to our knowledge, the first demonstration that Astra directly interprets vision-based tactile images and uses their contact cues for manipulation. Tactile RGB images enter through its existing visual interface, enabling few-shot closed-loop control on nineteen simulated UniVTAC and OpenViTac tasks with 210 sampled scene seeds per setting. With visuo-tactile input, Astra achieves mean success rates of 93.8% and 81.8%, exceeding the strongest reported specialist baselines in our comparison by 22.9 and 13.1 percentage points, respectively. Vision-only performance also leads these baselines, reaching 76.3% and 80.6%. Trajectory analysis reveals active probing, cautious grasping, contact-guided alignment, and recovery, alongside difficulties with tangential loading and corrective execution. Our findings challenge the exclusivity of specialist policies in contact-rich manipulation and show that fine-grained vision can partially compensate for missing touch. They also identify vision-based tactile sensing as an interface for scaling contact understanding with foundation models and reveal signs of benchmark saturation. These results motivate joint visual-tactile pretraining, harder contact-rich evaluations, and physical-robot validation.",
+      "tags": [
+        "cs.RO"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "GPT-6 Astra Is a Native Visuo-Tactile Policy for Contact-Rich Manipulation",
+      "url": "https://arxiv.org/abs/2610.26846v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "ed46ef7ac79e83ba11f3115d",
+      "context_id": "3cfd72f532a4d94387ac7baa",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "benchmark",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 13.0,
+      "source": "arxiv",
+      "source_context_sha256": "c6b865734051820e2bee3b9018f92ef63dc65bfb791a99fb84abb400a5563380",
+      "source_published": "2026-10-18T16:04:29Z",
+      "source_updated": "2026-10-18T16:04:29Z",
+      "summary": "World models are increasingly judged by how well they rank plausible futures, yet plausibility alone is the wrong target. The same scene can evolve under many latent rules, and a future that is smooth and physically valid under one rule can be incoherent under the rule actually in force. We formalize the resulting failure, operator-blindness, and show that it is systematically hidden by standard evaluation: a scorer can attain near-perfect generic ranking while separating current-world from other-world futures no better than chance. We introduce Operator-Mismatch Contrastive (OMC) learning, whose semantic hard negatives are valid-but-wrong-operator trajectories, and a matching protocol that measures world-relative coherence directly. On a controlled synthetic benchmark with in- and out-of-distribution operator parameters, across two trajectory-scoring backbones, and on feature-level external validation with CoPhy ballsCF, OMC raises operator-sensitive scoring far above a chance baseline that nonetheless achieves 0.99 generic top-1. We prove that the wrong-operator negative is necessary both for the protocol to detect the failure and for the objective to fix it, and position OMC as an auxiliary coherence signal (a trajectory-coherence scorer, not a generative model, planner, or control agent) that can be attached to existing world-model representations.",
+      "tags": [
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Operator-Mismatch Contrastive Learning for World-Relative Trajectory Coherence",
+      "url": "https://arxiv.org/abs/2610.25360v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "a12d0f111966b5d22a7db59e",
+      "context_id": "32324faf419b0071c15d499a",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "benchmark",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 13.0,
+      "source": "arxiv",
+      "source_context_sha256": "a11880ea30c8ae6b84eb2564a1ba661382d1b04c436882c741a81556884f5693",
+      "source_published": "2026-10-19T17:59:17Z",
+      "source_updated": "2026-10-19T17:59:17Z",
+      "summary": "Recent advances in multimodal models have enabled GPT-6 Astra to perform robotic manipulation through in-context learning. Yet contact-rich control and tactile perception are often regarded as strengths of specialist policies, leaving open whether Astra can directly understand and use tactile observations. We provide, to our knowledge, the first demonstration that Astra directly interprets vision-based tactile images and uses their contact cues for manipulation. Tactile RGB images enter through its existing visual interface, enabling few-shot closed-loop control on nineteen simulated UniVTAC and OpenViTac tasks with 210 sampled scene seeds per setting. With visuo-tactile input, Astra achieves mean success rates of 93.8% and 81.8%, exceeding the strongest reported specialist baselines in our comparison by 22.9 and 13.1 percentage points, respectively. Vision-only performance also leads these baselines, reaching 76.3% and 80.6%. Trajectory analysis reveals active probing, cautious grasping, contact-guided alignment, and recovery, alongside difficulties with tangential loading and corrective execution. Our findings challenge the exclusivity of specialist policies in contact-rich manipulation and show that fine-grained vision can partially compensate for missing touch. They also identify vision-based tactile sensing as an interface for scaling contact understanding with foundation models and reveal signs of benchmark saturation. These results motivate joint visual-tactile pretraining, harder contact-rich evaluations, and physical-robot validation.",
+      "tags": [
+        "cs.RO"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "GPT-6 Astra Is a Native Visuo-Tactile Policy for Contact-Rich Manipulation",
+      "url": "https://arxiv.org/abs/2610.26846v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "6da95c61ad122da8e8ebcd1e",
+      "context_id": "ca49d5f2055f8cdd81fb5fda",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "calibration",
+        "control",
+        "representation"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 11.6667,
+      "source": "zenodo",
+      "source_context_sha256": "235b7c1467c5280438e496fe137aa8f3730685cf93b6d82955f3f1329b3b63f0",
+      "source_published": "2026-10-16",
+      "source_updated": "",
+      "summary": "Curated Wearable Physiological Signals for Paediatric ADHD Research, with Task-Aligned Data and EDA Baselines This resource organises existing Empatica EmbracePlus recordings from the BALLADEER paediatric ADHD study into source-traceable native task views, with optional full native context, descriptive quality control (QC) and processed electrodermal activity (EDA). Cohort, acquisition and games are inherited; the added contribution is an inspectable association between observations, original source indices, admitted recording windows, missingness and technical provenance, together with a bounded reuse example. Coverage and signals The inventory comprises 107 participants and five tasks : CogniFit (01), Attention Robots (02), and screen-based Attention Slackline levels 1, 6 and 11 (03&ndash;05). EDA overlaps admitted EEG recording spans for 436 participant/task combinations across 104 people , with 1,129,180 finite selected EDA samples . Of 535 possible EDA cells, 77 lack an EEG span and 22 have EEG but no EDA overlap. Availability and temporal overlap do not establish full-task coverage, physiological suitability or final analytical eligibility. The golden layer contains 37,974,199 native rows across supported streams. The complete native projection contains 228,120,776 rows, including 6,779,644 EDA rows with 20 untimed entries, and extends outside task windows. These representations overlap; do not sum them as independent observations or treat time-series samples/task rows as independent participants. Golden native stream Rows Quantity/unit Accelerometer 18,069,607 Three-axis int32 ADC counts; native calibration context retained BVP 18,067,914 Optical pulse waveform, writer-declared nW; not blood pressure EDA 1,129,180 Signed float32 &micro;S Temperature 282,293 float32 &deg;C Steps 56,461 Vendor int32 counts Systolic peaks 368,743 Vendor event times, original indices and UTC nanosecond source time Wearable tags 1 Native event time, original index and UTC microsecond source time Gyroscope 0 Supported schema, empty stream The single tag is not full-cohort coverage. Availability retains missing combinations explicitly. Participant metadata has exactly participant_id , age , gender and group . Identifiers remain strings; recorded gender is not renamed biological sex. Group 1/2 denotes experimental/ADHD recruitment and comparison under the approved interpretation, not assessment-derived diagnosis or uniformly healthy controls. Downloads and reassembly Logical archive Complete size Upload files golden_dataset.zip 606.25 MB 7 native_projection.zip 2955.75 MB 30 quality_control.zip 2.73 MB 1 processed_eda.zip 35.75 MB 1 baseline_reproduction.zip 18.89 MB 1 Each upload file is at most 100,000,000 bytes . Golden and native archives are byte-split into numbered parts; parts are not independently extractable ZIP files . Download all seven golden_dataset.zip.part001 &ndash; .part007 files for golden data, or all 30 native_projection.zip.part001 &ndash; .part030 files for the native supplement. The other three archives are ordinary single ZIPs. This size is a delivery choice, not a platform limit. Keep archive_registry.json and reassemble.py beside the desired complete part set. Run python3 reassemble.py verify --archive golden_dataset.zip , create a new output directory, then run python3 reassemble.py reassemble golden_dataset.zip --output-dir reassembled . The standard-library helper checks ordered part and complete-ZIP hashes, refuses overwrites and never extracts or runs analysis. Extract the verified ZIP with an ordinary tool into a new empty directory. Substitute the native archive name for that route. For a single ZIP, verify it by name and extract directly. README.md gives exact commands and reconstruction-space guidance. Golden data: primary native wearable task views/events, metadata, schemas, selection membership, QC and scientific provenance; independently usable after its parts are reassembled. Native projection: complete pr",
+      "tags": [
+        "Electrodermal activity",
+        "EDA",
+        "Blood volume pulse",
+        "BVP",
+        "Skin temperature",
+        "Multimodal biosignals",
+        "Reproducible research",
+        "Attention-deficit/hyperactivity disorder",
+        "ADHD",
+        "Wearable physiological signals"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Curated Wearable Physiological Signals for Paediatric ADHD Research, with Task-Aligned Data and EDA Baselines",
+      "url": "https://zenodo.org/records/23418475"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "eb3f42d97fc09ee4e07d0b09",
+      "context_id": "66c4451dbe224e6faa0700ed",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "ablation",
+        "benchmark",
+        "calibration",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 11.4583,
+      "source": "arxiv",
+      "source_context_sha256": "186f2671bde508500645b150c970a57de9a4c80594ebfe29481ec8a682562f44",
+      "source_published": "2026-10-19T09:50:57Z",
+      "source_updated": "2026-10-19T09:50:57Z",
+      "summary": "Autonomous clinical-modeling agents can optimize predictive performance while violating conditions that make a model usable. We introduce LeakBench, an executable, guideline-derived audit suite that tests agent decisions for prediction-time leakage, calibration, site-level evaluation, support awareness, and decision-curve net benefit. LeakBench combines a synthetic task with known failure structure and two real-data settings: MIMIC-IV (430k admissions) and governed multi-hospital inpatient record front-page (MHFP) data. Our primary analysis uses reward hacking descriptively, without attributing intent: an agent selects prediction-time-invalid inputs because they improve its validation reward. A deterministic optimizer and every evaluated unconstrained local-model configuration select a fatal leaking feature. In fully logged September 2026 A/B runs, DeepSeek Flash and GPT-6-astra each leak in 10/10 unconstrained runs and 0/10 runs with an explicit admission-time constraint. This contrast is version-sensitive: a blinded Claude/Fable-5.1 chat run does not leak in either condition, while explicit-constraint violations appear only in a historical August 2026 slice lacking raw trajectories. Replacing AUROC with AUPRC does not remove leakage selection. Renaming or disguising the leaking inputs changes neither selection nor provenance-based detection; a name-based filter fails. A deterministic provenance verifier-in-loop removes the leak, making the LLM repair loop defense-in-depth. Specific verifier feedback clears fatal leakage in a hosted agent, and a three-seed ablation finds principle-only feedback clears decision-level defects, though these mitigation results are limited. LeakBench treats trustworthy clinical prediction as a property of an agent's modeling process, not merely its score; it is an audit testbed with known-failure controls, not yet an expert-validated benchmark.",
+      "tags": [
+        "cs.CR",
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "LeakBench: Auditing Reward Hacking through Prediction-Time Leakage in Clinical Modeling Agents",
+      "url": "https://arxiv.org/abs/2610.26088v1"
+    }
+  ],
+  "schema": "janus.beetle.repo_memory_batch.v1",
+  "selection": "BALANCED_LENS_ROLLING_TOP",
+  "snapshot_cap": 48,
+  "snapshot_items_total": 48,
+  "target_repository": "Hawkar-usls/iNaiHR"
+}
