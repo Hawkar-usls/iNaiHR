@@ -1,13 +1,49 @@
 {
-  "batch_id": "47faa31d030a7fa47765",
+  "batch_id": "94e548c757bc2fb29937",
   "claim_ceiling": "DISCOVERY_MEMORY_ONLY__TARGET_REPO_MUST_VERIFY_INDEPENDENTLY",
   "fragment_count": 1,
   "fragment_index": 1,
   "items": [
     {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "0d5625043a4eb5b626b3185e",
+      "context_id": "f554bb9f72aded0e5a191697",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "memory",
+        "memory consolidation",
+        "retrieval"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 7.4583,
+      "source": "arxiv",
+      "source_context_sha256": "82be1538c3f21bd02adfafe86b97df7d18b3c857a3868a38b808126553dd8a77",
+      "source_published": "2026-10-21T09:21:33Z",
+      "source_updated": "2026-10-21T09:21:33Z",
+      "summary": "Long-horizon dialogue agents need to keep user memories stable enough for personalization while adapting when the user genuinely changes. Existing memory systems often append every observation or overwrite old entries by heuristic rules, which makes transient noise hard to distinguish from real belief drift. We introduce PreCoMem, a memory consolidation framework inspired by predictive coding that represents memory as confidence-weighted beliefs about the user's state. Its core signal, Effective Surprisal, combines semantic deviation and contradiction evidence, then downweights this signal when retrieval is diffuse and unreliable. According to effective surprisal, a two-threshold gate maps each turn to one of three deterministic updates: MAINTAIN reinforces supported beliefs, PROFILE stores ambiguous cues as low-confidence hypotheses, and CORRECT softly decays reliably contradicted facts. The PROFILE stage acts as an explicit waiting room, preventing premature commitment to noisy evidence. Experiments on LoCoMo, LongMemEval-S, and PersonaMem-v2 show consistent state-of-the-art accuracy; our new DiMoBench confirms that PreCoMem adapts to non-stationary belief drift without over-reacting to noise. The code is available at https://github.com/ZhongWishing/PreCoMem.",
+      "tags": [
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "PreCoMem: Predictive Cognitive Memory for Self-Evolving Long-Term Dialogue Agents",
+      "url": "https://arxiv.org/abs/2610.29467v1"
+    },
+    {
       "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "4e7abae2791dfb02ac449467",
-      "context_id": "ece08b8f2afa37fe3760e78e",
+      "candidate_id": "1d0e29e3c467fc7f458351fc",
+      "context_id": "0aa2b9a2557e52a2fa605153",
       "delivery_preview_only": true,
       "delivery_preview_truncated": false,
       "direction_id": "mirror_bidirectional_provenance::FORWARD",
@@ -21,23 +57,180 @@
         "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
       ],
       "keyword_hits": [
-        "inverse problem"
+        "provenance",
+        "reciprocal",
+        "reverse"
       ],
       "mirror_lens": "FORWARD",
       "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.625,
-      "source": "arxiv",
-      "source_context_sha256": "49803844904b2b626097af1fa54c2d31d59395b2ab0fb181360c8499d7ff05ef",
-      "source_published": "2026-10-21T10:34:24Z",
-      "source_updated": "2026-10-21T10:34:24Z",
-      "summary": "We consider the problem of Bayesian estimation associated to inverse problems governed by partial differential equations (PDEs). In most cases of practical interest, one must use numerical solvers to implement computational methods based on Monte Carlo methods. This inevitably leads to an adaptation of multilevel Monte Carlo (MLMC) methods to reduce computational efforts to achieve a pre-specified mean square error (MSE). MLMC is based on sampling coupled versions of Bayesian posteriors associated to increasingly precise numerical solves of the PDE. In this article we present a novel method to implement MLMC based upon sequential entropic optimal transport couplings learned with light Schrödinger bridges, and correct the transport with Metropolis--Hastings steps that preserve the pairing. We bound the mean square error associated to a version of our new estimation method and show, for an elliptic inverse problem, that to achieve a MSE of $\\mathcal{O}(δ^2)$ ($δ>0$) one can have an optimal cost of $\\mathcal{O}(δ^{-2})$. The results feature explicit bounds on the effect of the fitted transport and of the Metropolis--Hastings correction. From a numerical perspective, on elliptic, Darcy-flow and Navier-Stokes problems, the method reduces the variance of the most precise solver by a factor of five to ten and is faster than multilevel sequential Monte Carlo [arXiv:1503.07259] at tight accuracies.",
+      "score": 7.125,
+      "source": "zenodo",
+      "source_context_sha256": "9086d859fe3c594deacdf8c7289faf60d3bc96cdee80abc52d5c911c56947efc",
+      "source_published": "2026-10-22",
+      "source_updated": "",
+      "summary": "Version 2.0 preserves the original June 2026 Bridge Settlement manuscript and adds a separately dated October 2026 supplement. The addendum introduces Residual Strategic Optionality as an extension of Stakeholder Coherence Theory, examining the incentives of actors capable of disrupting negotiated settlements. It also compares the Bridge Settlement with Jeffrey Sachs's October 2026 peace framework for Ukraine, identifying areas of conceptual convergence and distinguishing the Bridge Settlement's emphasis on reciprocal economic interests, institutional participation, and self-reinforcing peace mechanisms. The original manuscript remains unchanged. This study develops a comparative Bayesian framework for evaluating natural zoonotic and research-associated hypotheses for the proximal origin of SARS-CoV-2 under incomplete evidence. To reduce double counting, correlated observations are consolidated into three causal blocks addressing phenotype and proximal adaptation, the Huanan Seafood Wholesale Market and early epidemic topology, and the Wuhan sarbecovirus research environment. The central calibration yields a likelihood ratio of approximately 1.49 favoring research-associated emergence, while alternative defensible calibrations reverse or strengthen that preference, demonstrating substantial sensitivity to evidentiary weighting. The paper introduces the &ldquo;Missing Bridge&rdquo; as the unresolved proximal viral population and transmission history connecting deeper sarbecovirus ancestry to sustained human transmission. It argues that provenance-rich evidence&mdash;including authenticated proximal viruses, earliest-human genomic and epidemiological linkage, and upstream ecological or research records&mdash;has substantially greater discriminatory value than additional circumstantial observations. The resulting assessment is characterized as&nbsp; preference without closure .",
       "tags": [
-        "math.NA",
-        "stat.CO"
+        "SARS-CoV-2",
+        "Covid-19 Origins",
+        "zoonotic spillover",
+        "research-associated emergence",
+        "Huanan Seafood Wholesale Market",
+        "sarbecovirus",
+        "Bayesian inference",
+        "likelihood ratio",
+        "proximal origin",
+        "Missing Bridge",
+        "myxoma virus",
+        "value of information",
+        "outbreak forensics"
       ],
       "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Sequential Entropic Optimal Transport for Bayesian Inverse Problems via Multilevel Monte Carlo",
-      "url": "https://arxiv.org/abs/2610.29546v1"
+      "title": "The Missing Bridge",
+      "url": "https://zenodo.org/records/23576971"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "80803844e83a3a17c410f14a",
+      "context_id": "68c921ae8f7b94bf377dc06e",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_context_sha256": "94ee3d59bb19fbdb14912c30a9d1f4497d45e6b8af48e93dcf7022fb4ea6046f",
+      "source_published": "2026-10-21T03:59:35Z",
+      "source_updated": "2026-10-21T03:59:35Z",
+      "summary": "World action models (WAMs) are shown to substantially diverge under generalization performance based on their generative backbones. We investigate this gap through the representational geometry that WAMs inherit from their backbones and how policy training reorganizes it. Our central hypothesis is that a useful representational prior would structure geometry that separates nuisance information from the in-distribution manifold in advance of training as a policy. We quantify this with nuisance orthogonality; orthogonality of the feature under visual variation outside the empirical in-distribution manifold. Across various image and video backbones, we show that a higher orthogonality from the representational prior is associated with stronger robustness to visual variations after WAM training, enabling policy generalization measurable prospectively for world models. In addition, analyzing the resulting robust WAMs reveals nuisance suppression; relative suppression of feature displacement caused by such variations and robust action generation of the policy. Together, these findings provide a geometric perspective on how the representational prior of the world model shapes the generalization performance of WAMs.",
+      "tags": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "How Representational Priors Shape Generalization in World Action Models",
+      "url": "https://arxiv.org/abs/2610.29168v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "2fc92ae292ccfd2579a40faf",
+      "context_id": "41f2f2c5fc654c3eeeb11d69",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_context_sha256": "c7c1f48fdd3813d51d4af535dd0e8fb752614848ee73d35eebf53c9cf933ed3f",
+      "source_published": "2026-10-21T11:27:25Z",
+      "source_updated": "2026-10-21T11:27:25Z",
+      "summary": "Reliable video perception over bandwidth-constrained wireless links requires transmitting information that the receiver cannot already recover from its evolving scene representation. This paper introduces WorldGT, a world-model-guided semantic packet transmission framework that prioritizes information according to its contribution to the receiver's perception. A shared feature-space world model predicts the receiver's scene state through affine motion compensation and learned residual displacement, while sender-side verification identifies reusable predictions. An acknowledgment-synchronized receiver twin estimates task-impact scores through two counterfactual evaluations, guiding packet selection and unequal error protection over LDPC-coded wireless channels. A compact 3-bit feature representation increases spatial coverage under stringent bandwidth constraints, while predictive fallback sustains perception during packet outages. Experiments on KITTI and VisDrone under Rayleigh fading and AWGN demonstrate substantial gains in low-SNR conditions. On KITTI at a 4.13% reference bandwidth budget, WorldGT achieves 47.5% J&F at 0 dB Rayleigh SNR, outperforming H.264 by 11.3 percentage points. Controlled ablations show that world-model prediction contributes up to 8.7 points under Rayleigh fading. Object-detection experiments further demonstrate the transferability of receiver-relative predictive transmission across visual perception tasks. These results establish world-model-guided, receiver-state-aware transmission as an effective approach to robust video perception under severe communication constraints.",
+      "tags": [
+        "cs.MM"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Guess and Send: World-Model-Guided Semantic Packet Transmission for Robust Video Perception",
+      "url": "https://arxiv.org/abs/2610.29587v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "b4a938f7ac46c1a4e3288d76",
+      "context_id": "40dfbf0c818bffaa8581a5ab",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_context_sha256": "7905c0925cf7c8ee1f5d7dcce67cef5b186524291a4e83cf12128a3072efa00f",
+      "source_published": "2026-10-21T07:01:25Z",
+      "source_updated": "2026-10-21T07:01:25Z",
+      "summary": "Dynamic scheduling requires dispatching online arrivals while anticipating future jobs, as poor decisions can compound downstream costs under nonlinear tardiness objectives. We show that a pretrained large language model (LLM) can serve as the exogenous component of a structured world model, forecasting uncertain future job arrivals. Specifically, we exploit an afterstate decomposition, which separates known deterministic shop transitions from uncertain exogenous job arrivals, enabling the LLM to forecast only the latter through a compact belief representation. Building on this, we develop Afterstate World-Model Planning (AWMP), which combines an evolved, belief-conditioned dispatching strategy with short scenario-based rollouts. A surprise-triggered refresh mechanism queries the LLM only when newly observed arrivals deviate sufficiently from previous forecast, and online residual self-calibration further conditions the LLM on its recent forecast errors to handle nonstationary arrivals. Across diverse arrival distributions, AWMP reduces weighted tardiness by 6-21% on dynamic job-shop and 22-46% on flexible job-shop benchmarks, relative to the best of eight classical priority-dispatching rules.",
+      "tags": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "LLM-Based Exogenous World Modeling for Dynamic Scheduling",
+      "url": "https://arxiv.org/abs/2610.29308v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "1e51cfa70b31949a15301055",
+      "context_id": "09809cd68e6361106d5f28da",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_context_sha256": "05993831a48aaf6c22753e3ed751b7419bd5c0f719dd8e0a57bd433442e9a0d8",
+      "source_published": "2026-10-21T01:40:59Z",
+      "source_updated": "2026-10-21T01:40:59Z",
+      "summary": "Amodal video segmentation asks for the complete mask of an object in every frame, including the parts hidden behind other objects. The best current methods generate these masks with fine-tuned video diffusion models, which need many denoising steps and an extra depth network, and give a different answer for every sample. Self-supervised video world models of the JEPA family are trained on a closely related task: predicting the representation of masked space-time regions from the visible ones. We therefore treat occlusion as masking. The tokens that the object's visible mask does not cover are dropped, the pre-trained V-JEPA 2.1 predictor fills them in, and a light head decodes the observed and predicted features into amodal masks. The resulting model, OccJEPA (Occlusion-as-masking JEPA), is deterministic and 33.5x faster than the diffusion-based state of the art, and more accurate on SAIL-VOS, on TAO-Amodal, including a held-out test split (+4.00 AP50) and visible masks tracked by SAM2, and on Kubric. Controlled experiments trace the gain to the predictor's pre-trained weights rather than to its capacity, for world models from 87M to 1.85B parameters. Code is available at https://github.com/zgp110/occjepa.",
+      "tags": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "OccJEPA: Occlusion as Masking for Amodal Video Segmentation",
+      "url": "https://arxiv.org/abs/2610.29061v1"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
@@ -75,6 +268,38 @@
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "5afdc929ea0dd51f3f41d599",
+      "context_id": "e1dd80cf3b0c9e0dbc122903",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": true,
+      "direction_id": "mirror_bidirectional_provenance::FORWARD",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "identifiability"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 4.625,
+      "source": "zenodo",
+      "source_context_sha256": "607f940e51b55d20dc39ccc53ecf1eec89259d10d005bff245fa52621141d4b6",
+      "source_published": "2026-10-22",
+      "source_updated": "",
+      "summary": "AUTONOMOUS QUANTUM BIOSENSOR DRIFT DIAGNOSIS AND RECOVERY AT THE LIMIT Drift Identifiability &times; Reference Transfer &times; Safe Requalification STARLI Research Institute XXIX &mdash; Flagship Research Monograph 06 Can an autonomous quantum-enabled biosensing platform distinguish genuine specimen changes from thermal response, optical ageing, clock instability, reference-source drift, and permanent component degradation? More importantly, can the platform recognize when calibration is insufficient and an instrument must remain outside the scientific measurement process? This research monograph develops a hypothesis-forming, nonclinical framework for autonomous biosensor drift diagnosis, independently traceable reference transfer, and evidence-based recovery decisions. Its central scientific distinction is between making an instrument appear numerically stable and demonstrating that the instrument has genuinely regained acceptable measurement performance. The proposed architecture combines state-space estimation, controlled environmental perturbations, independent measurement references, multivariate uncertainty analysis, quantum sensing physics, classical sensor comparisons, and verifiable calibration governance. Particular attention is given to the identifiability problem: a mathematical model may separate sample and instrument states in its equations without possessing sufficient experimental information to distinguish them in reality. The 771-page volume contains 82 research chapters, 410 independently paginated investigations, 30 interconnected mathematical research plates, 200 Research Gates, and 33 Phoenix Answer Embryos. Major research directions include nitrogen-vacancy diamond resonance thermometry, photon-counting uncertainty, ODMR spectral interpretation, optical contrast degradation, thermal hysteresis, frequency-reference instability, material ageing, common-mode reference failure, blind fault injection, calibration transfer, immutable measurement histories, and independent instrument requalification. Each chapter establishes a specific technical mechanism, a competing explanation, an experimental intervention, and conditions under which its proposed interpretation should be rejected. The 200 Research Gates preserve falsifiable research questions, proposed experimental methods, measurable outcomes, independent comparators, uncertainty-aware acceptance conditions, and evidence-preserving stopping procedures. The 33 Phoenix Answer Embryos introduce provisional research architectures that future human and AI investigators may challenge, modify, reconstruct, or replace. Seventeen DOI-linked scientific publications and metrological standards provide foundations in quantum sensing, sensor drift compensation, statistical state estimation, and measurement uncertainty. These references support established physical principles and methodological approaches. They do not constitute experimental validation of the proposed integrated STARLI F06 system. Scientific Scope and Limitations This monograph presents a theoretical and experimental research blueprint rather than completed laboratory findings. It does not establish autonomous clinical diagnostic capability, physical self-healing, reversal of biological deterioration, or universal quantum sensing superiority. Recovery is restricted to independently verified recalibration, qualified component replacement, or documented retirement. The proposed experiments are limited to nonclinical standards, artificial phantoms, closed-chip modules, and appropriately authorized research materials. STARLI Research Philosophy A scientific instrument should not regain authority simply because an algorithm has learned to explain its residual errors. Trust must be restored through evidence that remains independent of the instrument being evaluated. A reliable autonomous research system is distinguished not only by its ability to identify and correct faults, but also by its willingness to wit",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "AUTONOMOUS QUANTUM BIOSENSOR DRIFT DIAGNOSIS AND RECOVERY AT THE LIMIT Drift Identifiability × Reference Transfer × Safe Requalification STARLI Research Institute XXIX — Flagship Research Monograph 06 Can an autonomous quantum-enabled biosensing platform distinguish genuine specimen changes from the",
+      "url": "https://zenodo.org/records/23574646"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
       "candidate_id": "8bad07b8eed5c0d50f59e87d",
       "context_id": "d987301e15134eb0469aa907",
       "delivery_preview_only": true,
@@ -106,74 +331,6 @@
       "target_repository": "Hawkar-usls/iNaiHR",
       "title": "NLOS-Aware TDOA-Based UAV Localization: Cramér-Rao Bounds, Measurement Modeling, and Experimental Validation",
       "url": "https://arxiv.org/abs/2610.30053v1"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "82dfe87d8f6d5b935c1296ca",
-      "context_id": "a3060bb7db59bfdb1ca0e99b",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "inverse problem"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.625,
-      "source": "arxiv",
-      "source_context_sha256": "0416ab80f122a3becd8299398d1304f6929503ff3f7dd5735be8e48776b2e29d",
-      "source_published": "2026-10-21T08:22:11Z",
-      "source_updated": "2026-10-21T08:22:11Z",
-      "summary": "Magneto-mechanical resonators (MMRs) are a recently introduced sensor technology for tracking and sensing applications that enables effective miniaturization down to the millimeter regime. However, estimating sensor parameters such as position from raw signals remains computationally challenging, because it requires solving a nonlinear inverse problem with computationally demanding objective function evaluations. In this work, we show how a deep learning method can accelerate this process by directly learning the inverse mapping from the measured signals. We consider the localization problem as an example and show that a convolutional-transformer regressor trained on simulated data with recorded noise can generalize to experimental data. The method achieves a median Euclidean distance error of 7 mm, which is comparable to the size of the sensor and corresponds to 6% of the size of a single coil. These results suggest that deep learning is a promising approach for rapid estimation of MMR parameters.",
-      "tags": [
-        "eess.SP"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Data-Driven Localization of Magneto-Mechanical Resonators from Time Signals",
-      "url": "https://arxiv.org/abs/2610.29394v1"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "3890dc730e7722c9ab6200a7",
-      "context_id": "8c01f32584c2f0a21e9754b4",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "inverse problem"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.625,
-      "source": "arxiv",
-      "source_context_sha256": "189cd3ba7d29271759aa7339207c193937669a3b55bd01e535d4d1468f79113c",
-      "source_published": "2026-10-21T11:00:26Z",
-      "source_updated": "2026-10-21T11:00:26Z",
-      "summary": "In this article, we propose ContactFlowFilter, a novel approach for contact estimation that determines the number of active contacts, their locations, and the associated force vectors. We consider a robot manipulator equipped with joint torque sensors and a base force/torque sensor; such a proprioceptive-only setup presents a challenging inverse problem characterized by (i) multi-modality from non-unique solutions, (ii) temporal dependencies in state evolution, and (iii) discrete contact events involving contact addition/removal. Existing approaches, such as particle filters (PFs) and learning-based methods, often struggle to address these challenges simultaneously. To overcome this, ContactFlowFilter integrates a generative model into the PF framework. The recursive structure of the PF captures temporal dependencies, while the flow matching model serves as an auxiliary proposal distribution to track multi-modal beliefs and detect contact events. Extensive validation in both simulation and real-world experiments confirms the effectiveness of the proposed method. In real-world settings, ContactFlowFilter achieves the lowest dissimilarity from the target distribution, with errors of only 0.36 cm and 0.88 cm for single- and dual-contact scenarios, respectively, while operating at 0.69 ms and 2.69 ms.",
-      "tags": [
-        "cs.RO"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Mixture of Flow Matching and Particle Filter for Proprioception-Based Online Contact Estimation",
-      "url": "https://arxiv.org/abs/2610.29568v1"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
@@ -280,141 +437,6 @@
     {
       "base_direction_id": "mirror_bidirectional_provenance",
       "candidate_id": "337a3ba8312985ae25c1c652",
-      "context_id": "63f73fa5f997ea852aaf200e",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": true,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "inverse problem"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.625,
-      "source": "zenodo",
-      "source_context_sha256": "572a3007b4412d2a820edafe7a87be2bf7eea66bd8594e7bc1e02555d315ee22",
-      "source_published": "2026-10-22",
-      "source_updated": "",
-      "summary": "QUANTUM SENSING AND MICROROBOTIC PERTURBATION ANALYSIS OF CELLULAR MICROENVIRONMENTS AT THE LIMIT Microenvironment Gradients &times; Quantum Readout &times; Measurement-Induced Perturbation Separation STARLI Research Institute XXIX &mdash; Flagship Research Monograph 13 What happens when an instrument changes the very microenvironment it is supposed to measure? This research monograph investigates the scientific and engineering boundaries of quantum-enabled thermometry and microrobotic observation in confined, nonclinical cellular microenvironment models. Its central question is whether a localized temperature or magnetic-field gradient can be separated from disturbances introduced by the sensing and manipulation apparatus itself. The proposed research architecture combines hydrogel phantoms, controlled heat sources, nitrogen-vacancy (NV) diamond sensors, independent classical fluorescent thermometry, spatial reference points, blinded sham-actuation experiments, and uncertainty-aware thermal-field reconstruction. Rather than treating a sharp image or improved instrument sensitivity as proof of biological discovery, the study asks how to establish the physical origin, spatial validity, and reproducibility of each reported field. The 770-page volume contains 82 research chapters, five independently paginated research sections per chapter, 30 interconnected mathematical derivation plates, 200 Research Gates, and 33 Phoenix Answer Embryos. Topics range from NV resonance cross-sensitivity, microwave and laser heating, photon statistics, soft-matter interfaces, hydrodynamic motion, and anisotropic thermal conduction to causal controls, inverse problems, spatial covariance, interlaboratory comparison, and qualified instrument retirement. Each research chapter connects a physical mechanism to a falsifiable claim, a nonclinical experimental comparator, a measurement endpoint, and an explicit condition for withholding or retiring the conclusion. The Research Gates preserve actionable questions for future investigators. The Phoenix Answer Embryos offer provisional designs that can be separated, reconfigured, or abandoned when evidence contradicts them. DOI-linked scholarly literature supplies foundations for metrology, quantum sensing, microhandling, and thermal-field measurement without being mistaken for validation of the proposed integrated platform. Scientific Scope and Limitations This is a hypothesis-forming research blueprint, not a report of completed laboratory experiments or independently peer-reviewed findings. It does not establish autonomous nanoscale robotic systems, clinical diagnostic performance, therapeutic efficacy, or universal quantum advantage. Its minimum experimental setting uses confined hydrogels, artificial microenvironments, and properly authorized reference materials. A temperature or magnetic-field reading alone cannot establish cell health, metabolism, viability, or treatment outcomes. STARLI Research Philosophy A scientifically responsible observation includes the possibility that observing changed the result. By making such failures measurable, preserving negative evidence, and leaving research questions open to revision, this monograph invites future human and AI researchers to challenge, extend, and reconstruct its proposed methods.",
-      "tags": [],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "QUANTUM SENSING AND MICROROBOTIC PERTURBATION ANALYSIS OF CELLULAR MICROENVIRONMENTS AT THE LIMIT Microenvironment Gradients × Quantum Readout × Measurement-Induced Perturbation Separation STARLI Research Institute XXIX — Flagship Research Monograph 13 What happens when an instrument changes the ver",
-      "url": "https://zenodo.org/records/23562293"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "cb160ec43c4481d05ae0144a",
-      "context_id": "3371ad36f85998197cdf33c2",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "inverse problem"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.625,
-      "source": "arxiv",
-      "source_context_sha256": "e539dca38cc17944182f8772747e70d5405eb317fd1bbd991bddb8dbf54af2cd",
-      "source_published": "2026-10-21T07:54:26Z",
-      "source_updated": "2026-10-21T07:54:26Z",
-      "summary": "X-ray and neutron scattering are indispensable for structural characterization across condensed-matter physics and materials science. Yet, because scattering experiments generally record intensities without phase information, distinct structures can yield similar scattering patterns, rendering the corresponding inverse problems non-unique. This ambiguity can be reduced by combining complementary measurements, but their integration into machine-learning frameworks remains challenging. Here we introduce a modular framework for probabilistic multi-measurement analysis based on prior-amortized flow matching. Single-observation posterior estimators are trained separately for individual observation types or physical probes and combined only at inference time through a compositional sampler. This late fusion approach allows pretrained single-observation models to be reused without dedicated joint retraining. As a case in point, we consider reflectometry, which provides depth-resolved, nanometer-scale information about thin films and interfaces. Our single-observation demonstrations span X-ray, time-of-flight neutron and polarized neutron reflectometry. In separate co-refinement studies, task-matched estimators enable homogeneous composition across multiple neutron contrasts and heterogeneous multimodal composition of X-ray and neutron measurements. Together, these results establish compositional flow matching as a modular approach to uncertainty-aware inversion and co-refinement, with potential applicability to other scattering problems in which multiple observations constrain a common physical structure while retaining measurement-specific parameters.",
-      "tags": [
-        "cs.LG",
-        "cond-mat.mtrl-sci",
-        "physics.app-ph"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Compositional neural networks for multimodal X-ray and neutron scattering inversion",
-      "url": "https://arxiv.org/abs/2610.29362v1"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "65de13ca52b6a8c3c54e999c",
-      "context_id": "0c20e746cc3d122d37b10cbd",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": true,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "identifiability"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.625,
-      "source": "zenodo",
-      "source_context_sha256": "6ed8aab26717c831c735f99da272af86f43e25859db340889e3f5d17dac3c872",
-      "source_published": "2026-10-22",
-      "source_updated": "",
-      "summary": "COUNTERFACTUAL MEASUREMENT AND CAUSAL INFERENCE IN MICROROBOTIC SAMPLING AT THE LIMIT &nbsp; Intervention Design &times; Counterfactual Controls &times; Scientific Identifiability &nbsp; STARLI Research Institute XXIX &mdash; Flagship Research Monograph 12 &nbsp; When a microrobot manipulates a biological sample, how can researchers determine whether an observed change originates from the sample itself, the manipulation process, or the measurement system? &nbsp; This research monograph explores the intersection of microrobotic engineering, experimental design, causal inference, measurement science, and uncertainty quantification. &nbsp; Its central investigation concerns the fundamental problem of counterfactual measurement: the same physical sample cannot simultaneously experience two mutually exclusive interventions. &nbsp; Consequently, establishing causal effects requires carefully constructed experimental comparisons, explicit identification assumptions, independent reference measurements, and transparent uncertainty assessment. &nbsp; The research framework investigates randomized microrobotic manipulation, passive transport controls, sham interventions, treatment carryover, temporal confounding, measurement interference, sample contamination, and sensor drift. &nbsp; Particular attention is given to distinguishing genuine intervention effects from apparent improvements caused by changing experimental conditions, measurement calibration, or selective sample recovery. &nbsp; The monograph is organized around 82 research chapters, 30 interconnected mathematical research plates, 200 Research Gates, and 33 Phoenix Answer Embryos. &nbsp; Its mathematical investigations incorporate potential outcomes, average treatment effects, randomized estimators, causal diagrams, interference models, hierarchical uncertainty, measurement covariance, sensitivity analysis, and counterfactual identification. &nbsp; Each Research Gate introduces a scientific question intended to support independent investigation, critical examination, experimental falsification, and future methodological development. &nbsp; The Phoenix Answer Embryos offer provisional research architectures that may be revised, reconstructed, or replaced as new evidence emerges. &nbsp; DOI-linked scientific literature provides methodological foundations and relevant engineering background, while clearly distinguishing established knowledge from proposed research directions. &nbsp; Scientific Boundaries &nbsp; This work presents a hypothesis-forming, nonclinical research architecture. It does not establish autonomous nanoscale robotic capabilities, validated clinical applications, or demonstrated quantum sensing superiority. &nbsp; Its objective is to support the development of reproducible research methods capable of separating observed correlations from experimentally defensible causal explanations. &nbsp; STARLI Research Philosophy &nbsp; Scientific progress is not measured solely by the number of questions answered. &nbsp; It also depends on whether unanswered questions remain accessible, testable, and open to future generations. &nbsp; This monograph is designed to preserve those opportunities for continued discovery.",
-      "tags": [],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "COUNTERFACTUAL MEASUREMENT AND CAUSAL INFERENCE IN MICROROBOTIC SAMPLING AT THE LIMIT Intervention Design × Counterfactual Controls × Scientific Identifiability STARLI Research Institute XXIX — Flagship Research Monograph 12 When a microrobot manipulates a biological sample, how can researchers dete",
-      "url": "https://zenodo.org/records/23561181"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "37e7020427a4f51b35093574",
-      "context_id": "32218545cf1f21f0dc769a5f",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "bidirectional"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.5417,
-      "source": "arxiv",
-      "source_context_sha256": "ae4cfa400b6b5ae7e724f5e8528fa05e66ad1e5507b679aaf30fb036586f53df",
-      "source_published": "2026-10-21T11:42:19Z",
-      "source_updated": "2026-10-21T11:42:19Z",
-      "summary": "Diffusion language models generate by iteratively denoising a masked sequence under bidirectional attention, without the strict left-to-right commitment of autoregressive decoding. Whether this difference affects how reliably they remain grounded in structured inputs is largely unexplored. We study this question in table-to-text generation using ToTTo, where highlighted source cells make factual grounding directly testable. We compare the masked diffusion models MDLM and LLaDA with GPT-2 and GPT-Neo under an identical retrieval-based few-shot protocol, together with a QLoRA-adapted LLaDA, and we score reference similarity and source grounding as separate axes. The two pull apart. Within LLaDA, additional demonstrations raise BLEU from 11.3 to 22.0 while NLI entailment against the source table falls from 0.78 to 0.52; QLoRA reaches the best BLEU of the study, 24.15, and grounds no better for it. Manual annotation shows the failure modes differ in kind: the autoregressive baselines tend to wander off the table, while LLaDA-based models more often stay on topic and swap out individual entities. Reference-based metrics alone are insufficient to assess faithfulness in table-to-text generation.",
-      "tags": [
-        "cs.CL",
-        "cs.LG"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "A Diagnostic Study of Faithfulness in Diffusion Language Models for Table-to-Text Generation",
-      "url": "https://arxiv.org/abs/2610.29602v1"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "337a3ba8312985ae25c1c652",
       "context_id": "6560a24357d6fed7b49e1655",
       "delivery_preview_only": true,
       "delivery_preview_truncated": true,
@@ -448,8 +470,42 @@
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "cb160ec43c4481d05ae0144a",
-      "context_id": "d3f3810252bd1b07eb29d5fd",
+      "candidate_id": "5afdc929ea0dd51f3f41d599",
+      "context_id": "f1c2cea9b06d0b30f794b8b0",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": true,
+      "direction_id": "mirror_bidirectional_provenance::REVERSE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "identifiability",
+        "reconstruction",
+        "recovery"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.5417,
+      "source": "zenodo",
+      "source_context_sha256": "c896a543e05b94ee29e6058e8883e1d7fbb2c4b5e6eee2508a88710179927f4b",
+      "source_published": "2026-10-22",
+      "source_updated": "",
+      "summary": "AUTONOMOUS QUANTUM BIOSENSOR DRIFT DIAGNOSIS AND RECOVERY AT THE LIMIT Drift Identifiability &times; Reference Transfer &times; Safe Requalification STARLI Research Institute XXIX &mdash; Flagship Research Monograph 06 Can an autonomous quantum-enabled biosensing platform distinguish genuine specimen changes from thermal response, optical ageing, clock instability, reference-source drift, and permanent component degradation? More importantly, can the platform recognize when calibration is insufficient and an instrument must remain outside the scientific measurement process? This research monograph develops a hypothesis-forming, nonclinical framework for autonomous biosensor drift diagnosis, independently traceable reference transfer, and evidence-based recovery decisions. Its central scientific distinction is between making an instrument appear numerically stable and demonstrating that the instrument has genuinely regained acceptable measurement performance. The proposed architecture combines state-space estimation, controlled environmental perturbations, independent measurement references, multivariate uncertainty analysis, quantum sensing physics, classical sensor comparisons, and verifiable calibration governance. Particular attention is given to the identifiability problem: a mathematical model may separate sample and instrument states in its equations without possessing sufficient experimental information to distinguish them in reality. The 771-page volume contains 82 research chapters, 410 independently paginated investigations, 30 interconnected mathematical research plates, 200 Research Gates, and 33 Phoenix Answer Embryos. Major research directions include nitrogen-vacancy diamond resonance thermometry, photon-counting uncertainty, ODMR spectral interpretation, optical contrast degradation, thermal hysteresis, frequency-reference instability, material ageing, common-mode reference failure, blind fault injection, calibration transfer, immutable measurement histories, and independent instrument requalification. Each chapter establishes a specific technical mechanism, a competing explanation, an experimental intervention, and conditions under which its proposed interpretation should be rejected. The 200 Research Gates preserve falsifiable research questions, proposed experimental methods, measurable outcomes, independent comparators, uncertainty-aware acceptance conditions, and evidence-preserving stopping procedures. The 33 Phoenix Answer Embryos introduce provisional research architectures that future human and AI investigators may challenge, modify, reconstruct, or replace. Seventeen DOI-linked scientific publications and metrological standards provide foundations in quantum sensing, sensor drift compensation, statistical state estimation, and measurement uncertainty. These references support established physical principles and methodological approaches. They do not constitute experimental validation of the proposed integrated STARLI F06 system. Scientific Scope and Limitations This monograph presents a theoretical and experimental research blueprint rather than completed laboratory findings. It does not establish autonomous clinical diagnostic capability, physical self-healing, reversal of biological deterioration, or universal quantum sensing superiority. Recovery is restricted to independently verified recalibration, qualified component replacement, or documented retirement. The proposed experiments are limited to nonclinical standards, artificial phantoms, closed-chip modules, and appropriately authorized research materials. STARLI Research Philosophy A scientific instrument should not regain authority simply because an algorithm has learned to explain its residual errors. Trust must be restored through evidence that remains independent of the instrument being evaluated. A reliable autonomous research system is distinguished not only by its ability to identify and correct faults, but also by its willingness to wit",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "AUTONOMOUS QUANTUM BIOSENSOR DRIFT DIAGNOSIS AND RECOVERY AT THE LIMIT Drift Identifiability × Reference Transfer × Safe Requalification STARLI Research Institute XXIX — Flagship Research Monograph 06 Can an autonomous quantum-enabled biosensing platform distinguish genuine specimen changes from the",
+      "url": "https://zenodo.org/records/23574646"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "1d0e29e3c467fc7f458351fc",
+      "context_id": "92852d468f8dcd3ffae65294",
       "delivery_preview_only": true,
       "delivery_preview_truncated": false,
       "direction_id": "mirror_bidirectional_provenance::REVERSE",
@@ -463,26 +519,36 @@
         "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
       ],
       "keyword_hits": [
-        "inverse",
-        "inverse problem",
-        "inversion"
+        "provenance",
+        "reciprocal",
+        "reverse"
       ],
       "mirror_lens": "REVERSE",
       "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 13.2917,
-      "source": "arxiv",
-      "source_context_sha256": "98cb27f47ec4388f22aa23aa59613344641df6e193f08c3b8840360b3fc07cec",
-      "source_published": "2026-10-21T07:54:26Z",
-      "source_updated": "2026-10-21T07:54:26Z",
-      "summary": "X-ray and neutron scattering are indispensable for structural characterization across condensed-matter physics and materials science. Yet, because scattering experiments generally record intensities without phase information, distinct structures can yield similar scattering patterns, rendering the corresponding inverse problems non-unique. This ambiguity can be reduced by combining complementary measurements, but their integration into machine-learning frameworks remains challenging. Here we introduce a modular framework for probabilistic multi-measurement analysis based on prior-amortized flow matching. Single-observation posterior estimators are trained separately for individual observation types or physical probes and combined only at inference time through a compositional sampler. This late fusion approach allows pretrained single-observation models to be reused without dedicated joint retraining. As a case in point, we consider reflectometry, which provides depth-resolved, nanometer-scale information about thin films and interfaces. Our single-observation demonstrations span X-ray, time-of-flight neutron and polarized neutron reflectometry. In separate co-refinement studies, task-matched estimators enable homogeneous composition across multiple neutron contrasts and heterogeneous multimodal composition of X-ray and neutron measurements. Together, these results establish compositional flow matching as a modular approach to uncertainty-aware inversion and co-refinement, with potential applicability to other scattering problems in which multiple observations constrain a common physical structure while retaining measurement-specific parameters.",
+      "score": 10.125,
+      "source": "zenodo",
+      "source_context_sha256": "d78ce381f3b84a8aaaf81740b1f11d70deb2d0cd04fe753f8c419cf9862bf165",
+      "source_published": "2026-10-22",
+      "source_updated": "",
+      "summary": "Version 2.0 preserves the original June 2026 Bridge Settlement manuscript and adds a separately dated October 2026 supplement. The addendum introduces Residual Strategic Optionality as an extension of Stakeholder Coherence Theory, examining the incentives of actors capable of disrupting negotiated settlements. It also compares the Bridge Settlement with Jeffrey Sachs's October 2026 peace framework for Ukraine, identifying areas of conceptual convergence and distinguishing the Bridge Settlement's emphasis on reciprocal economic interests, institutional participation, and self-reinforcing peace mechanisms. The original manuscript remains unchanged. This study develops a comparative Bayesian framework for evaluating natural zoonotic and research-associated hypotheses for the proximal origin of SARS-CoV-2 under incomplete evidence. To reduce double counting, correlated observations are consolidated into three causal blocks addressing phenotype and proximal adaptation, the Huanan Seafood Wholesale Market and early epidemic topology, and the Wuhan sarbecovirus research environment. The central calibration yields a likelihood ratio of approximately 1.49 favoring research-associated emergence, while alternative defensible calibrations reverse or strengthen that preference, demonstrating substantial sensitivity to evidentiary weighting. The paper introduces the &ldquo;Missing Bridge&rdquo; as the unresolved proximal viral population and transmission history connecting deeper sarbecovirus ancestry to sustained human transmission. It argues that provenance-rich evidence&mdash;including authenticated proximal viruses, earliest-human genomic and epidemiological linkage, and upstream ecological or research records&mdash;has substantially greater discriminatory value than additional circumstantial observations. The resulting assessment is characterized as&nbsp; preference without closure .",
       "tags": [
-        "cs.LG",
-        "cond-mat.mtrl-sci",
-        "physics.app-ph"
+        "SARS-CoV-2",
+        "Covid-19 Origins",
+        "zoonotic spillover",
+        "research-associated emergence",
+        "Huanan Seafood Wholesale Market",
+        "sarbecovirus",
+        "Bayesian inference",
+        "likelihood ratio",
+        "proximal origin",
+        "Missing Bridge",
+        "myxoma virus",
+        "value of information",
+        "outbreak forensics"
       ],
       "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Compositional neural networks for multimodal X-ray and neutron scattering inversion",
-      "url": "https://arxiv.org/abs/2610.29362v1"
+      "title": "The Missing Bridge",
+      "url": "https://zenodo.org/records/23576971"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
@@ -577,112 +643,6 @@
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "4e7abae2791dfb02ac449467",
-      "context_id": "e9ddae4f888c7eea5e0b8a52",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::REVERSE",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "inverse",
-        "inverse problem"
-      ],
-      "mirror_lens": "REVERSE",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 8.9167,
-      "source": "arxiv",
-      "source_context_sha256": "c3289adc5b8880d608d7810437aabcf727e62785aeb8d03d69d5e32b403eb149",
-      "source_published": "2026-10-21T10:34:24Z",
-      "source_updated": "2026-10-21T10:34:24Z",
-      "summary": "We consider the problem of Bayesian estimation associated to inverse problems governed by partial differential equations (PDEs). In most cases of practical interest, one must use numerical solvers to implement computational methods based on Monte Carlo methods. This inevitably leads to an adaptation of multilevel Monte Carlo (MLMC) methods to reduce computational efforts to achieve a pre-specified mean square error (MSE). MLMC is based on sampling coupled versions of Bayesian posteriors associated to increasingly precise numerical solves of the PDE. In this article we present a novel method to implement MLMC based upon sequential entropic optimal transport couplings learned with light Schrödinger bridges, and correct the transport with Metropolis--Hastings steps that preserve the pairing. We bound the mean square error associated to a version of our new estimation method and show, for an elliptic inverse problem, that to achieve a MSE of $\\mathcal{O}(δ^2)$ ($δ>0$) one can have an optimal cost of $\\mathcal{O}(δ^{-2})$. The results feature explicit bounds on the effect of the fitted transport and of the Metropolis--Hastings correction. From a numerical perspective, on elliptic, Darcy-flow and Navier-Stokes problems, the method reduces the variance of the most precise solver by a factor of five to ten and is faster than multilevel sequential Monte Carlo [arXiv:1503.07259] at tight accuracies.",
-      "tags": [
-        "math.NA",
-        "stat.CO"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Sequential Entropic Optimal Transport for Bayesian Inverse Problems via Multilevel Monte Carlo",
-      "url": "https://arxiv.org/abs/2610.29546v1"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "82dfe87d8f6d5b935c1296ca",
-      "context_id": "d7145ffcafdda54ee3cb9ba7",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::REVERSE",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "inverse",
-        "inverse problem"
-      ],
-      "mirror_lens": "REVERSE",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 8.9167,
-      "source": "arxiv",
-      "source_context_sha256": "fd3c1dab31fdfb178aebce94098f7e78ae6b1722e381066df0e6203c06ce68b2",
-      "source_published": "2026-10-21T08:22:11Z",
-      "source_updated": "2026-10-21T08:22:11Z",
-      "summary": "Magneto-mechanical resonators (MMRs) are a recently introduced sensor technology for tracking and sensing applications that enables effective miniaturization down to the millimeter regime. However, estimating sensor parameters such as position from raw signals remains computationally challenging, because it requires solving a nonlinear inverse problem with computationally demanding objective function evaluations. In this work, we show how a deep learning method can accelerate this process by directly learning the inverse mapping from the measured signals. We consider the localization problem as an example and show that a convolutional-transformer regressor trained on simulated data with recorded noise can generalize to experimental data. The method achieves a median Euclidean distance error of 7 mm, which is comparable to the size of the sensor and corresponds to 6% of the size of a single coil. These results suggest that deep learning is a promising approach for rapid estimation of MMR parameters.",
-      "tags": [
-        "eess.SP"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Data-Driven Localization of Magneto-Mechanical Resonators from Time Signals",
-      "url": "https://arxiv.org/abs/2610.29394v1"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "3890dc730e7722c9ab6200a7",
-      "context_id": "cf041cb4e659a7028052d48d",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::REVERSE",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "inverse",
-        "inverse problem"
-      ],
-      "mirror_lens": "REVERSE",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 8.9167,
-      "source": "arxiv",
-      "source_context_sha256": "8c14f02964a3b8c36da3754a90a9891905c4ae1303f7f0c187f15568fd5e1740",
-      "source_published": "2026-10-21T11:00:26Z",
-      "source_updated": "2026-10-21T11:00:26Z",
-      "summary": "In this article, we propose ContactFlowFilter, a novel approach for contact estimation that determines the number of active contacts, their locations, and the associated force vectors. We consider a robot manipulator equipped with joint torque sensors and a base force/torque sensor; such a proprioceptive-only setup presents a challenging inverse problem characterized by (i) multi-modality from non-unique solutions, (ii) temporal dependencies in state evolution, and (iii) discrete contact events involving contact addition/removal. Existing approaches, such as particle filters (PFs) and learning-based methods, often struggle to address these challenges simultaneously. To overcome this, ContactFlowFilter integrates a generative model into the PF framework. The recursive structure of the PF captures temporal dependencies, while the flow matching model serves as an auxiliary proposal distribution to track multi-modal beliefs and detect contact events. Extensive validation in both simulation and real-world experiments confirms the effectiveness of the proposed method. In real-world settings, ContactFlowFilter achieves the lowest dissimilarity from the target distribution, with errors of only 0.36 cm and 0.88 cm for single- and dual-contact scenarios, respectively, while operating at 0.69 ms and 2.69 ms.",
-      "tags": [
-        "cs.RO"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Mixture of Flow Matching and Particle Filter for Proprioception-Based Online Contact Estimation",
-      "url": "https://arxiv.org/abs/2610.29568v1"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
       "candidate_id": "7772eb9a1eb5246299e2e89d",
       "context_id": "9f374407e778f9d5857ff21f",
       "delivery_preview_only": true,
@@ -751,43 +711,6 @@
     },
     {
       "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "cb160ec43c4481d05ae0144a",
-      "context_id": "606c31b64257279a908fcadd",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::REVERSE",
-      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "inverse",
-        "inversion"
-      ],
-      "mirror_lens": "REVERSE",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 8.6667,
-      "source": "arxiv",
-      "source_context_sha256": "790c3d3f62b3a06b13746f2f713243c880af332f6af2c6e0c6fec1dcec55cf37",
-      "source_published": "2026-10-21T07:54:26Z",
-      "source_updated": "2026-10-21T07:54:26Z",
-      "summary": "X-ray and neutron scattering are indispensable for structural characterization across condensed-matter physics and materials science. Yet, because scattering experiments generally record intensities without phase information, distinct structures can yield similar scattering patterns, rendering the corresponding inverse problems non-unique. This ambiguity can be reduced by combining complementary measurements, but their integration into machine-learning frameworks remains challenging. Here we introduce a modular framework for probabilistic multi-measurement analysis based on prior-amortized flow matching. Single-observation posterior estimators are trained separately for individual observation types or physical probes and combined only at inference time through a compositional sampler. This late fusion approach allows pretrained single-observation models to be reused without dedicated joint retraining. As a case in point, we consider reflectometry, which provides depth-resolved, nanometer-scale information about thin films and interfaces. Our single-observation demonstrations span X-ray, time-of-flight neutron and polarized neutron reflectometry. In separate co-refinement studies, task-matched estimators enable homogeneous composition across multiple neutron contrasts and heterogeneous multimodal composition of X-ray and neutron measurements. Together, these results establish compositional flow matching as a modular approach to uncertainty-aware inversion and co-refinement, with potential applicability to other scattering problems in which multiple observations constrain a common physical structure while retaining measurement-specific parameters.",
-      "tags": [
-        "cs.LG",
-        "cond-mat.mtrl-sci",
-        "physics.app-ph"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Compositional neural networks for multimodal X-ray and neutron scattering inversion",
-      "url": "https://arxiv.org/abs/2610.29362v1"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
       "candidate_id": "f61a675e2d713ef283e2f29e",
       "context_id": "a714fba1e0396d73aea2c7b5",
       "delivery_preview_only": true,
@@ -845,6 +768,40 @@
     },
     {
       "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "5afdc929ea0dd51f3f41d599",
+      "context_id": "af0901185af2f58947488013",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": true,
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "identifiability",
+        "reconstruction",
+        "recovery"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 7.5417,
+      "source": "zenodo",
+      "source_context_sha256": "b6448b6beb42d9221f248221123080d1f380a101aff195b9e960e386b3e64618",
+      "source_published": "2026-10-22",
+      "source_updated": "",
+      "summary": "AUTONOMOUS QUANTUM BIOSENSOR DRIFT DIAGNOSIS AND RECOVERY AT THE LIMIT Drift Identifiability &times; Reference Transfer &times; Safe Requalification STARLI Research Institute XXIX &mdash; Flagship Research Monograph 06 Can an autonomous quantum-enabled biosensing platform distinguish genuine specimen changes from thermal response, optical ageing, clock instability, reference-source drift, and permanent component degradation? More importantly, can the platform recognize when calibration is insufficient and an instrument must remain outside the scientific measurement process? This research monograph develops a hypothesis-forming, nonclinical framework for autonomous biosensor drift diagnosis, independently traceable reference transfer, and evidence-based recovery decisions. Its central scientific distinction is between making an instrument appear numerically stable and demonstrating that the instrument has genuinely regained acceptable measurement performance. The proposed architecture combines state-space estimation, controlled environmental perturbations, independent measurement references, multivariate uncertainty analysis, quantum sensing physics, classical sensor comparisons, and verifiable calibration governance. Particular attention is given to the identifiability problem: a mathematical model may separate sample and instrument states in its equations without possessing sufficient experimental information to distinguish them in reality. The 771-page volume contains 82 research chapters, 410 independently paginated investigations, 30 interconnected mathematical research plates, 200 Research Gates, and 33 Phoenix Answer Embryos. Major research directions include nitrogen-vacancy diamond resonance thermometry, photon-counting uncertainty, ODMR spectral interpretation, optical contrast degradation, thermal hysteresis, frequency-reference instability, material ageing, common-mode reference failure, blind fault injection, calibration transfer, immutable measurement histories, and independent instrument requalification. Each chapter establishes a specific technical mechanism, a competing explanation, an experimental intervention, and conditions under which its proposed interpretation should be rejected. The 200 Research Gates preserve falsifiable research questions, proposed experimental methods, measurable outcomes, independent comparators, uncertainty-aware acceptance conditions, and evidence-preserving stopping procedures. The 33 Phoenix Answer Embryos introduce provisional research architectures that future human and AI investigators may challenge, modify, reconstruct, or replace. Seventeen DOI-linked scientific publications and metrological standards provide foundations in quantum sensing, sensor drift compensation, statistical state estimation, and measurement uncertainty. These references support established physical principles and methodological approaches. They do not constitute experimental validation of the proposed integrated STARLI F06 system. Scientific Scope and Limitations This monograph presents a theoretical and experimental research blueprint rather than completed laboratory findings. It does not establish autonomous clinical diagnostic capability, physical self-healing, reversal of biological deterioration, or universal quantum sensing superiority. Recovery is restricted to independently verified recalibration, qualified component replacement, or documented retirement. The proposed experiments are limited to nonclinical standards, artificial phantoms, closed-chip modules, and appropriately authorized research materials. STARLI Research Philosophy A scientific instrument should not regain authority simply because an algorithm has learned to explain its residual errors. Trust must be restored through evidence that remains independent of the instrument being evaluated. A reliable autonomous research system is distinguished not only by its ability to identify and correct faults, but also by its willingness to wit",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "AUTONOMOUS QUANTUM BIOSENSOR DRIFT DIAGNOSIS AND RECOVERY AT THE LIMIT Drift Identifiability × Reference Transfer × Safe Requalification STARLI Research Institute XXIX — Flagship Research Monograph 06 Can an autonomous quantum-enabled biosensing platform distinguish genuine specimen changes from the",
+      "url": "https://zenodo.org/records/23574646"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
       "candidate_id": "0d5625043a4eb5b626b3185e",
       "context_id": "b5ad721fd4157c9f9a7dc8c0",
       "delivery_preview_only": true,
@@ -878,6 +835,79 @@
       "target_repository": "Hawkar-usls/iNaiHR",
       "title": "PreCoMem: Predictive Cognitive Memory for Self-Evolving Long-Term Dialogue Agents",
       "url": "https://arxiv.org/abs/2610.29467v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "b35eb99d703d72ed9e65a721",
+      "context_id": "b6aae52778d08759317a5242",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "memory",
+        "reconstruction",
+        "representation"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 7.4167,
+      "source": "arxiv",
+      "source_context_sha256": "2a64d6e779a6ce9b37a3d5ed8b8172890c95e6f5c5c0db9b549ec8ecabfddaa3",
+      "source_published": "2026-10-21T15:06:08Z",
+      "source_updated": "2026-10-21T15:06:08Z",
+      "summary": "Autonomous mobile robots operating in dense crowds and cluttered sites require $360^\\circ$ perception to react to surrounding hazards. While panoramic LiDAR offers full-surround coverage, learning representations within reinforcement learning (RL) is sample-inefficient under sparse rewards, and existing 3D pretrained point-cloud encoders are too memory-heavy for massively parallel RL simulation. We present RangeNav, a compact (183k parameters) LiDAR range-image encoder pretrained entirely on synthetic data. RangeNav uses anisotropic convolutions and circular padding to handle the extreme aspect ratio and azimuthal seam of range images. We pretrain the network using a navigation-aligned objective combining range reconstruction, semantic segmentation, and bird's-eye-view (BEV) prediction, then freeze it for policy learning. In simulation, adding semantic and BEV supervision increases success rates over a reconstruction-only baseline by an average of 32.03 and 23.73 percentage points (pp) in procedurally generated training and out-of-distribution realistic test environments, respectively. Zero-shot real-world deployments on a Unitree B2-W quadruped demonstrate robust navigation through dense crowds, low-light settings, and construction zones where limited-field-of-view depth policies struggle. Code and models will be open-sourced.",
+      "tags": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "RangeNav: Task-Aligned LiDAR Range-Image Pretraining for Robot Navigation",
+      "url": "https://arxiv.org/abs/2610.29845v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "c5447cc3a2bc9db4a83a6655",
+      "context_id": "1684492244727a9a4c3de4ca",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "reconstruction",
+        "representation"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.1667,
+      "source": "arxiv",
+      "source_context_sha256": "424a4174780e786b111790408f710a0b679a0879a2529f46e090fe2861937f2e",
+      "source_published": "2026-10-21T14:38:19Z",
+      "source_updated": "2026-10-21T14:38:19Z",
+      "summary": "Driven by recent advancements in hearing assistive devices, target speaker extraction (TSE) in multi-talker environments has drawn significant attention. To address this, hearing technologies identify attention using neural signals recorded via electroencephalography (EEG) to guide TSE, enabling neuro-steered auditory attention decoding. However, most existing techniques rely on time-frequency masking, which suffers from low fidelity in spectro-temporally overlapping regions and is often restricted to narrowband audio. In contrast, we introduce NeuroCodec, which, to the best of our knowledge, is the first generative EEG-guided TSE framework operating in the latent space of a neural audio codec. Specifically, NeuroCodec models spatial EEG dependencies via graph convolutions and fuses cross-modal EEG and speech representations through attention mechanisms and Mamba-based temporal modeling. We further introduce a six-phase training curriculum that progressively incorporates latent reconstruction, multi-scale spectral, and adversarial objectives to ensure stable, high-fidelity speech generation. Experiments on the public Cocktail Party and KUL datasets show NeuroCodec outperforms baselines, across several perceptual metrics. A listening experiment with 20 participants validated that NeuroCodec offers greater perceptual accuracy, achieving a mean score of 82.24 compared with 49.63 for M3ANet. Additionally, the proposed method is seen to enable 44.1 kHz reconstruction with spectral content extending up to 20 kHz, further supporting the perceptual results. Finally, we extend NeuroCodec with a causal streaming formulation suited for real-time processing, providing a basis for hearing assistive devices.",
+      "tags": [
+        "eess.AS",
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "NeuroCodec: EEG-Guided Latent-Domain Generative Model for High-Fidelity Target Speaker Extraction",
+      "url": "https://arxiv.org/abs/2610.29815v1"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
@@ -915,6 +945,40 @@
       "target_repository": "Hawkar-usls/iNaiHR",
       "title": "A Diagnostic Study of Faithfulness in Diffusion Language Models for Table-to-Text Generation",
       "url": "https://arxiv.org/abs/2610.29602v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "5afdc929ea0dd51f3f41d599",
+      "context_id": "7f0c4289c78c076106c811a6",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": true,
+      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "identifiability",
+        "limitation"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.3333,
+      "source": "zenodo",
+      "source_context_sha256": "eb194cc051e268ee8b0c3f01be1e839dd343a8a962ec6c6906580641f9d898ab",
+      "source_published": "2026-10-22",
+      "source_updated": "",
+      "summary": "AUTONOMOUS QUANTUM BIOSENSOR DRIFT DIAGNOSIS AND RECOVERY AT THE LIMIT Drift Identifiability &times; Reference Transfer &times; Safe Requalification STARLI Research Institute XXIX &mdash; Flagship Research Monograph 06 Can an autonomous quantum-enabled biosensing platform distinguish genuine specimen changes from thermal response, optical ageing, clock instability, reference-source drift, and permanent component degradation? More importantly, can the platform recognize when calibration is insufficient and an instrument must remain outside the scientific measurement process? This research monograph develops a hypothesis-forming, nonclinical framework for autonomous biosensor drift diagnosis, independently traceable reference transfer, and evidence-based recovery decisions. Its central scientific distinction is between making an instrument appear numerically stable and demonstrating that the instrument has genuinely regained acceptable measurement performance. The proposed architecture combines state-space estimation, controlled environmental perturbations, independent measurement references, multivariate uncertainty analysis, quantum sensing physics, classical sensor comparisons, and verifiable calibration governance. Particular attention is given to the identifiability problem: a mathematical model may separate sample and instrument states in its equations without possessing sufficient experimental information to distinguish them in reality. The 771-page volume contains 82 research chapters, 410 independently paginated investigations, 30 interconnected mathematical research plates, 200 Research Gates, and 33 Phoenix Answer Embryos. Major research directions include nitrogen-vacancy diamond resonance thermometry, photon-counting uncertainty, ODMR spectral interpretation, optical contrast degradation, thermal hysteresis, frequency-reference instability, material ageing, common-mode reference failure, blind fault injection, calibration transfer, immutable measurement histories, and independent instrument requalification. Each chapter establishes a specific technical mechanism, a competing explanation, an experimental intervention, and conditions under which its proposed interpretation should be rejected. The 200 Research Gates preserve falsifiable research questions, proposed experimental methods, measurable outcomes, independent comparators, uncertainty-aware acceptance conditions, and evidence-preserving stopping procedures. The 33 Phoenix Answer Embryos introduce provisional research architectures that future human and AI investigators may challenge, modify, reconstruct, or replace. Seventeen DOI-linked scientific publications and metrological standards provide foundations in quantum sensing, sensor drift compensation, statistical state estimation, and measurement uncertainty. These references support established physical principles and methodological approaches. They do not constitute experimental validation of the proposed integrated STARLI F06 system. Scientific Scope and Limitations This monograph presents a theoretical and experimental research blueprint rather than completed laboratory findings. It does not establish autonomous clinical diagnostic capability, physical self-healing, reversal of biological deterioration, or universal quantum sensing superiority. Recovery is restricted to independently verified recalibration, qualified component replacement, or documented retirement. The proposed experiments are limited to nonclinical standards, artificial phantoms, closed-chip modules, and appropriately authorized research materials. STARLI Research Philosophy A scientific instrument should not regain authority simply because an algorithm has learned to explain its residual errors. Trust must be restored through evidence that remains independent of the instrument being evaluated. A reliable autonomous research system is distinguished not only by its ability to identify and correct faults, but also by its willingness to wit",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "AUTONOMOUS QUANTUM BIOSENSOR DRIFT DIAGNOSIS AND RECOVERY AT THE LIMIT Drift Identifiability × Reference Transfer × Safe Requalification STARLI Research Institute XXIX — Flagship Research Monograph 06 Can an autonomous quantum-enabled biosensing platform distinguish genuine specimen changes from the",
+      "url": "https://zenodo.org/records/23574646"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
@@ -1055,6 +1119,48 @@
       "target_repository": "Hawkar-usls/iNaiHR",
       "title": "Steering Black-Box Large Language Model Agents with Pitfall Anticipation World Model",
       "url": "https://arxiv.org/abs/2610.29139v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "cdce76a4d6db1b5e0952ff6b",
+      "context_id": "90e7222cd6d1bc2c8c3cd995",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "provenance"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.7083,
+      "source": "zenodo",
+      "source_context_sha256": "ebc276c77516049276eeb3e7943b1e08c256df4511b78da70d0dcb28e62aa125",
+      "source_published": "2026-10-22",
+      "source_updated": "",
+      "summary": "This archive provides the computational methods, structural coordinate files, source data, model outputs, and reproducibility documentation supporting an exploratory investigation of geometric persistence and prediction uncertainty at HIV-1 envelope (Env) glycan sites. The research examines whether local sequence divergence and sparse structural-context observations can improve the identification of unreliable glycan-site geometric predictions. The approach combines sequence-informed error estimation with residual information obtained from six observed glycan-site probes. Held-out evaluations included five BG505-derived Env structures and two JR-FL structures. In the original experiments, the six-probe method improved pooled dangerous-error discrimination relative to sequence-only prediction, with ROC AUC increasing from 0.704 to 0.945 in BG505 and from 0.522 to 0.761 in JR-FL. These results are exploratory. The original evaluations contained only two dangerous underestimates in BG505 and three in JR-FL. Within-structure discrimination did not consistently improve, and training-test construct overlap was identified. Additional construct-family exclusion analyses document the sensitivity of the findings to training composition and failure prevalence. The principal computational outputs were regenerated exactly from archived structural coordinates using the supplied scripts. The archive includes frozen protocols, structural data, prediction tables, provenance audits, family-exclusion analyses, and a companion manuscript draft. The study supports further investigation of sparse structural context for uncertainty assessment but does not establish reliable cross-strain site-level failure detection, glycan occupancy prediction, or protein synthesis prediction. This deposit is intended to support transparency, independent reproduction, methodological evaluation, and future extension of HIV-1 Env structural bioinformatics research. This research extends the author's previously deposited HIV-1 Env glycan-shield investigations by examining the predictive and uncertainty-assessment implications of geometric persistence, local structural constraints, and glycan-site organization.",
+      "tags": [
+        "HIV-1 Env",
+        "Glycan shield",
+        "Structural bioinformatics",
+        "Protein Structure",
+        "Glycosylation sequons",
+        "Uncertainty assessment",
+        "Geometric persistence",
+        "Reproducible research"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Ensemble Geometric Persistence: HIV-1 Env Glycan-Site Geometry and Sparse Structural-Context Uncertainty Assessment (Reproducibility Archive)",
+      "url": "https://zenodo.org/records/23576520"
     },
     {
       "base_direction_id": "cognition_memory_reverse",
@@ -1205,8 +1311,8 @@
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "2ccfc6431282e95062823fae",
-      "context_id": "8eddf42a8e996e7f1f6fbe5c",
+      "candidate_id": "1d0e29e3c467fc7f458351fc",
+      "context_id": "67f56e984ee3476e631eac8f",
       "delivery_preview_only": true,
       "delivery_preview_truncated": false,
       "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
@@ -1220,94 +1326,36 @@
         "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
       ],
       "keyword_hits": [
-        "bias",
-        "failure",
-        "symmetry"
+        "provenance",
+        "reciprocal",
+        "reverse"
       ],
       "mirror_lens": "COUNTEREVIDENCE",
       "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 6.7917,
+      "score": 7.125,
       "source": "zenodo",
-      "source_context_sha256": "aa80f91a8ae64761d18d2cbbdf357d6ac12ef228759c114b2f4eb2d2e0b02c4b",
+      "source_context_sha256": "7b3c4d8f0290a0bdbf9fdf9256cd074b7dcd9ee9c52477493d55b4177eb4a485",
       "source_published": "2026-10-22",
       "source_updated": "",
-      "summary": "Experimental outputs for manuscript \"Beyond Viewpoint Affinity: Measuring Political Bias in LLMs as a Failure of Epistemic Consistency\" Political bias in large language models is often measured by treating responses to political questionnaires as evidence of ideological preference. This approach can conflate bias with differences in evidential support: asymmetric viewpoint preferences are not necessarily biased if one side is better supported by the available evidence. We explore a different facet of political bias: failures of epistemic consistency, in which models apply different evidentiary or evaluative standards to substantively equivalent items that carry different political cues. We operationalize this definition in two sets of experimental tasks. In person-attribution tasks, models evaluate nonpolitical items&mdash;such as mathematical proofs, logical arguments, or artistic artifacts---while only the political identity of the person associated with the item changes. In politicized-context tasks, models judge politically framed items, such as research designs, news articles, or policy outcomes, while partisan sources, group identities, or the left&ndash;right valence of the substantive outcome change. Across thirty LLMs, person-attribution tasks yield only modest left-leaning asymmetry&mdash;and this bias shrinks toward zero in more capable models. By contrast, politicized-context tasks yield large left-leaning asymmetries that do not shrink with model capability. Debiasing interventions---such as increasing reasoning effort, system prompts that emphasize epistemic rigor, and explicit instructions to ignore specific political cues&mdash;mitigate bias, but only partially. These results suggest that current LLMs show little bias based on an individual&rsquo;s political identity when evaluating nonpolitical or politically orthogonal items. However, on politicized-context tasks, LLMs are persistently biased by task-irrelevant political cues, even when the relevant evidence is objectively assessable or held constant across political variants. Note: A previous version of the&nbsp; experimental_results &nbsp;archive contained partial and incomplete outputs for the legacy OpenAI model&nbsp; gpt-4-0613 from 2023 . These results were not included in the analyses reported in the paper. The run was stopped partway through after we observed that this older model was incurring excessive API costs. As of April 2026, the input/output costs per 1M tokens of gpt-4-0613 were 30\\$ and 60\\$ respectively (between one and several orders of magnitude higher than newer OpenAI models used in the study, see: https://developers.openai.com/api/docs/models/gpt-4).&nbsp; Completing the full benchmark for&nbsp; gpt-4-0613 would have caused the project to exceed its compute budget, so we created a new version of the experimental outputs archive with those incomplete files for gpt-4-0613 removed. In the code repository (https://anonymous.4open.science/r/llms_epistemic_consistency-D133/README.md) associated with this experimental output there is the following bug for the Debiasing interventions using system prompts (\"centrist\" and \"epistemically rigorous\") experiment, which does not affect the experimental results but affects one field of the meta information saved to the CSV files&nbsp; In vpei/epistemic_consistency/experiment_types.py, all six run_model functions build a payload dict before the API call: payload = { &nbsp; &nbsp; \"system_prompt\": system_prompt, &nbsp; # &larr; saves the BASE prompt only &nbsp; &nbsp; &nbsp; ... } messages = [{\"role\": \"system\", \"content\": system_prompt}, ...] tasks.append((payload, make_llm_request_async(model_name, messages, ...))) Then inside make_llm_request_async &rarr; prepare_request_params() (llm_requests_v3.py:309&ndash;314), the system_prompt_prefix (EPISTEMICALLY_RIGOROUS_LLM_SYSTEM_PROMPT) is prepended to the system message after the payload is already constructed. So: - LLM API receives: EPISTEMICALLY_RIGORO",
-      "tags": [],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Dataset for \"Beyond Viewpoint Affinity: Measuring Political Bias in LLMs as a Failure of Epistemic Consistency\"",
-      "url": "https://zenodo.org/records/23552888"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "2fc92ae292ccfd2579a40faf",
-      "context_id": "9be7e768ac96b3512954bfc6",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
-      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "representation",
-        "world model"
-      ],
-      "mirror_lens": "COUNTEREVIDENCE",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 6.0417,
-      "source": "arxiv",
-      "source_context_sha256": "648c71ce00dc309e05d83e1e385d3d13d1b62c0430627071a117dfbd9b30aac1",
-      "source_published": "2026-10-21T11:27:25Z",
-      "source_updated": "2026-10-21T11:27:25Z",
-      "summary": "Reliable video perception over bandwidth-constrained wireless links requires transmitting information that the receiver cannot already recover from its evolving scene representation. This paper introduces WorldGT, a world-model-guided semantic packet transmission framework that prioritizes information according to its contribution to the receiver's perception. A shared feature-space world model predicts the receiver's scene state through affine motion compensation and learned residual displacement, while sender-side verification identifies reusable predictions. An acknowledgment-synchronized receiver twin estimates task-impact scores through two counterfactual evaluations, guiding packet selection and unequal error protection over LDPC-coded wireless channels. A compact 3-bit feature representation increases spatial coverage under stringent bandwidth constraints, while predictive fallback sustains perception during packet outages. Experiments on KITTI and VisDrone under Rayleigh fading and AWGN demonstrate substantial gains in low-SNR conditions. On KITTI at a 4.13% reference bandwidth budget, WorldGT achieves 47.5% J&F at 0 dB Rayleigh SNR, outperforming H.264 by 11.3 percentage points. Controlled ablations show that world-model prediction contributes up to 8.7 points under Rayleigh fading. Object-detection experiments further demonstrate the transferability of receiver-relative predictive transmission across visual perception tasks. These results establish world-model-guided, receiver-state-aware transmission as an effective approach to robust video perception under severe communication constraints.",
+      "summary": "Version 2.0 preserves the original June 2026 Bridge Settlement manuscript and adds a separately dated October 2026 supplement. The addendum introduces Residual Strategic Optionality as an extension of Stakeholder Coherence Theory, examining the incentives of actors capable of disrupting negotiated settlements. It also compares the Bridge Settlement with Jeffrey Sachs's October 2026 peace framework for Ukraine, identifying areas of conceptual convergence and distinguishing the Bridge Settlement's emphasis on reciprocal economic interests, institutional participation, and self-reinforcing peace mechanisms. The original manuscript remains unchanged. This study develops a comparative Bayesian framework for evaluating natural zoonotic and research-associated hypotheses for the proximal origin of SARS-CoV-2 under incomplete evidence. To reduce double counting, correlated observations are consolidated into three causal blocks addressing phenotype and proximal adaptation, the Huanan Seafood Wholesale Market and early epidemic topology, and the Wuhan sarbecovirus research environment. The central calibration yields a likelihood ratio of approximately 1.49 favoring research-associated emergence, while alternative defensible calibrations reverse or strengthen that preference, demonstrating substantial sensitivity to evidentiary weighting. The paper introduces the &ldquo;Missing Bridge&rdquo; as the unresolved proximal viral population and transmission history connecting deeper sarbecovirus ancestry to sustained human transmission. It argues that provenance-rich evidence&mdash;including authenticated proximal viruses, earliest-human genomic and epidemiological linkage, and upstream ecological or research records&mdash;has substantially greater discriminatory value than additional circumstantial observations. The resulting assessment is characterized as&nbsp; preference without closure .",
       "tags": [
-        "cs.MM"
+        "SARS-CoV-2",
+        "Covid-19 Origins",
+        "zoonotic spillover",
+        "research-associated emergence",
+        "Huanan Seafood Wholesale Market",
+        "sarbecovirus",
+        "Bayesian inference",
+        "likelihood ratio",
+        "proximal origin",
+        "Missing Bridge",
+        "myxoma virus",
+        "value of information",
+        "outbreak forensics"
       ],
       "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Guess and Send: World-Model-Guided Semantic Packet Transmission for Robust Video Perception",
-      "url": "https://arxiv.org/abs/2610.29587v1"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "80803844e83a3a17c410f14a",
-      "context_id": "87899c39ccc8041b47cf93be",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
-      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "representation",
-        "world model"
-      ],
-      "mirror_lens": "COUNTEREVIDENCE",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 6.0417,
-      "source": "arxiv",
-      "source_context_sha256": "5795cabb17d89cd14a02b843273a77fb0171c68cdc9da12f84761f138b929a3c",
-      "source_published": "2026-10-21T03:59:35Z",
-      "source_updated": "2026-10-21T03:59:35Z",
-      "summary": "World action models (WAMs) are shown to substantially diverge under generalization performance based on their generative backbones. We investigate this gap through the representational geometry that WAMs inherit from their backbones and how policy training reorganizes it. Our central hypothesis is that a useful representational prior would structure geometry that separates nuisance information from the in-distribution manifold in advance of training as a policy. We quantify this with nuisance orthogonality; orthogonality of the feature under visual variation outside the empirical in-distribution manifold. Across various image and video backbones, we show that a higher orthogonality from the representational prior is associated with stronger robustness to visual variations after WAM training, enabling policy generalization measurable prospectively for world models. In addition, analyzing the resulting robust WAMs reveals nuisance suppression; relative suppression of feature displacement caused by such variations and robust action generation of the policy. Together, these findings provide a geometric perspective on how the representational prior of the world model shapes the generalization performance of WAMs.",
-      "tags": [
-        "cs.RO",
-        "cs.AI",
-        "cs.CV"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "How Representational Priors Shape Generalization in World Action Models",
-      "url": "https://arxiv.org/abs/2610.29168v1"
+      "title": "The Missing Bridge",
+      "url": "https://zenodo.org/records/23576971"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
@@ -1381,44 +1429,6 @@
       "target_repository": "Hawkar-usls/iNaiHR",
       "title": "Second Thoughts: Exploring and Planning through Comparative Imagination in World Models",
       "url": "https://arxiv.org/abs/2610.28779v1"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "3251e62acdfab90fc409b4a0",
-      "context_id": "c0f9b621fa0761e65494bdac",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::CONTROL",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "baseline",
-        "control",
-        "replication",
-        "reverse"
-      ],
-      "mirror_lens": "CONTROL",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 14.375,
-      "source": "arxiv",
-      "source_context_sha256": "a3cf19750a14852f8ecc8a064e04936da363ecc06eefb18d517e4c24685e37f3",
-      "source_published": "2026-10-21T08:36:09Z",
-      "source_updated": "2026-10-21T08:36:09Z",
-      "summary": "Outcome-predictive signals are often treated as promising optimization targets in reinforcement learning, but predictive validity and optimization utility are different claims. We expose this distinction in GuanDan, a multi-round imperfect-information game in which the implication of a round outcome depends on the public match state. Held-out analysis shows that state--gain interactions provide incremental predictive value beyond a constant signed-gain effect, establishing that match progress is predictively meaningful. We then use changes in a frozen match-win predictor, $ΔΦ$, as a controlled round-level supervision intervention in a matched DanZero-style Monte Carlo self-play protocol. The intervention can succeed in an individual lineage: a selected progress-augmented checkpoint substantially outperforms its matched Baseline on a locked evaluation. Yet the method-level result reverses this impression: none of five preregistered replication seeds is positive, the pooled ten-seed interval includes zero, and across-iteration effects repeatedly change sign without a common late-stage advantage. These results identify a predictive--optimization gap: under the studied learner, a signal can describe outcome-relevant progress while failing to provide a reliably beneficial optimization direction.",
-      "tags": [
-        "cs.LG",
-        "stat.ML"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "The Predictive--Optimization Gap in GuanDan Self-Play",
-      "url": "https://arxiv.org/abs/2610.29411v1"
     },
     {
       "base_direction_id": "cognition_memory_reverse",
@@ -1530,43 +1540,6 @@
       "target_repository": "Hawkar-usls/iNaiHR",
       "title": "Remembering Through Change: Provenance-Preserving Hypergraph Memory for Multimodal Agents",
       "url": "https://arxiv.org/abs/2610.29995v1"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "3251e62acdfab90fc409b4a0",
-      "context_id": "db5d6ed8843ce2ebcef19b10",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::CONTROL",
-      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "baseline",
-        "control",
-        "replication"
-      ],
-      "mirror_lens": "CONTROL",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 13.0833,
-      "source": "arxiv",
-      "source_context_sha256": "3de3d9ca174a4b70c2dd7212416bcb123a2c45d63c6fce75e5b31aeb697023db",
-      "source_published": "2026-10-21T08:36:09Z",
-      "source_updated": "2026-10-21T08:36:09Z",
-      "summary": "Outcome-predictive signals are often treated as promising optimization targets in reinforcement learning, but predictive validity and optimization utility are different claims. We expose this distinction in GuanDan, a multi-round imperfect-information game in which the implication of a round outcome depends on the public match state. Held-out analysis shows that state--gain interactions provide incremental predictive value beyond a constant signed-gain effect, establishing that match progress is predictively meaningful. We then use changes in a frozen match-win predictor, $ΔΦ$, as a controlled round-level supervision intervention in a matched DanZero-style Monte Carlo self-play protocol. The intervention can succeed in an individual lineage: a selected progress-augmented checkpoint substantially outperforms its matched Baseline on a locked evaluation. Yet the method-level result reverses this impression: none of five preregistered replication seeds is positive, the pooled ten-seed interval includes zero, and across-iteration effects repeatedly change sign without a common late-stage advantage. These results identify a predictive--optimization gap: under the studied learner, a signal can describe outcome-relevant progress while failing to provide a reliably beneficial optimization direction.",
-      "tags": [
-        "cs.LG",
-        "stat.ML"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "The Predictive--Optimization Gap in GuanDan Self-Play",
-      "url": "https://arxiv.org/abs/2610.29411v1"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
@@ -1757,6 +1730,81 @@
       "target_repository": "Hawkar-usls/iNaiHR",
       "title": "MOSAIC: An Omni-Modal Benchmark for Long-Term Memory and Cross-Modal Reasoning in Conversational Agents",
       "url": "https://arxiv.org/abs/2610.29249v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "b4a938f7ac46c1a4e3288d76",
+      "context_id": "13aef26837c65eb4480c036e",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "calibration",
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 11.875,
+      "source": "arxiv",
+      "source_context_sha256": "389e7105f4de8c7a9d9f8cd42c6033cad25a7f1e46ebad5c644a1a553f1a3dee",
+      "source_published": "2026-10-21T07:01:25Z",
+      "source_updated": "2026-10-21T07:01:25Z",
+      "summary": "Dynamic scheduling requires dispatching online arrivals while anticipating future jobs, as poor decisions can compound downstream costs under nonlinear tardiness objectives. We show that a pretrained large language model (LLM) can serve as the exogenous component of a structured world model, forecasting uncertain future job arrivals. Specifically, we exploit an afterstate decomposition, which separates known deterministic shop transitions from uncertain exogenous job arrivals, enabling the LLM to forecast only the latter through a compact belief representation. Building on this, we develop Afterstate World-Model Planning (AWMP), which combines an evolved, belief-conditioned dispatching strategy with short scenario-based rollouts. A surprise-triggered refresh mechanism queries the LLM only when newly observed arrivals deviate sufficiently from previous forecast, and online residual self-calibration further conditions the LLM on its recent forecast errors to handle nonstationary arrivals. Across diverse arrival distributions, AWMP reduces weighted tardiness by 6-21% on dynamic job-shop and 22-46% on flexible job-shop benchmarks, relative to the best of eight classical priority-dispatching rules.",
+      "tags": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "LLM-Based Exogenous World Modeling for Dynamic Scheduling",
+      "url": "https://arxiv.org/abs/2610.29308v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "2fc92ae292ccfd2579a40faf",
+      "context_id": "b785dbf857584951cc366cf0",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "ablation",
+        "control",
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 11.6667,
+      "source": "arxiv",
+      "source_context_sha256": "61a9b1404b774b9071ecfff93f517ad26d910e196d9cdb3deff43ee3a943a120",
+      "source_published": "2026-10-21T11:27:25Z",
+      "source_updated": "2026-10-21T11:27:25Z",
+      "summary": "Reliable video perception over bandwidth-constrained wireless links requires transmitting information that the receiver cannot already recover from its evolving scene representation. This paper introduces WorldGT, a world-model-guided semantic packet transmission framework that prioritizes information according to its contribution to the receiver's perception. A shared feature-space world model predicts the receiver's scene state through affine motion compensation and learned residual displacement, while sender-side verification identifies reusable predictions. An acknowledgment-synchronized receiver twin estimates task-impact scores through two counterfactual evaluations, guiding packet selection and unequal error protection over LDPC-coded wireless channels. A compact 3-bit feature representation increases spatial coverage under stringent bandwidth constraints, while predictive fallback sustains perception during packet outages. Experiments on KITTI and VisDrone under Rayleigh fading and AWGN demonstrate substantial gains in low-SNR conditions. On KITTI at a 4.13% reference bandwidth budget, WorldGT achieves 47.5% J&F at 0 dB Rayleigh SNR, outperforming H.264 by 11.3 percentage points. Controlled ablations show that world-model prediction contributes up to 8.7 points under Rayleigh fading. Object-detection experiments further demonstrate the transferability of receiver-relative predictive transmission across visual perception tasks. These results establish world-model-guided, receiver-state-aware transmission as an effective approach to robust video perception under severe communication constraints.",
+      "tags": [
+        "cs.MM"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Guess and Send: World-Model-Guided Semantic Packet Transmission for Robust Video Perception",
+      "url": "https://arxiv.org/abs/2610.29587v1"
     }
   ],
   "schema": "janus.beetle.repo_memory_batch.v1",
