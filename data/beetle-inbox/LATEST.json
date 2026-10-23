@@ -1,9 +1,46 @@
 {
-  "batch_id": "7a5609bf72d724e54781",
+  "batch_id": "f435aa043894e30dd38c",
   "claim_ceiling": "DISCOVERY_MEMORY_ONLY__TARGET_REPO_MUST_VERIFY_INDEPENDENTLY",
   "fragment_count": 1,
   "fragment_index": 1,
   "items": [
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "dbf702dcd44f712283fbe90e",
+      "context_id": "e1bf7286bf6a39d86fee21e2",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "representation learning",
+        "world model"
+      ],
+      "mirror_lens": "FORWARD",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 9.0417,
+      "source": "arxiv",
+      "source_context_sha256": "9c654326dd77b489843cd7bb0df25101b27dd4ebc200d9a80d6c7e46233327fc",
+      "source_published": "2026-10-22T04:46:49Z",
+      "source_updated": "2026-10-22T04:46:49Z",
+      "summary": "Video provides a natural source of supervision: what happens next serves as a learning signal for visual world modeling. Yet masked video pretraining focuses on recovering missing content from surrounding context rather than predicting the future from the past. Autoregressive methods instead predict forward one token at a time, but have yet to match joint-embedding methods in representation quality. This gap motivates us to revisit the granularity and space of future prediction. In this work, we introduce VANE, a self-supervised visual pretraining framework built on next-frame prediction in embedding space. A causal encoder summarizes past observations for a state predictor that infers the representation of the entire next frame, making temporal evolution the primary learning signal. This prediction is carried out in a fixed embedding space provided by a frozen semantic tokenizer, emphasizing scene content and structure. To retain fine-grained spatial detail alongside semantic content, a lightweight auxiliary generative decoder reconstructs future-frame patches conditioned on the predicted representations. To unify visual modeling across images and videos, we construct a local-to-global crop sequence for still images, allowing the same encoder to predict newly revealed regions from earlier crops under the same objective. Experiments show that VANE improves with model and data scaling, achieving SOTA on most anticipation, recognition, and dense perception benchmarks among unified encoders. Especially on EPIC-KITCHENS-100 action anticipation, it surpasses V-JEPA 2.1 by 7.1 points in mean-class recall@5. These results demonstrate that next-frame prediction in embedding space is effective and scalable for visual world modeling.",
+      "tags": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Learning from Next-Frame Prediction: Towards Unified and Scalable Visual Representation Learning",
+      "url": "https://arxiv.org/abs/2610.30724v1"
+    },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
       "candidate_id": "1d0e29e3c467fc7f458351fc",
@@ -361,13 +398,13 @@
       "url": "https://arxiv.org/abs/2610.31215v1"
     },
     {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "d863707a1cdc7efbaec80329",
-      "context_id": "f349bc41e6cb852f8b22b9e6",
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "aa5648a70ad713a8d67d1c6f",
+      "context_id": "ee4cd594efea3e6ed5c742bf",
       "delivery_preview_only": true,
       "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
+      "direction_id": "cognition_memory_reverse::FORWARD",
+      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
       "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
       "firewall": [
         "ROUTED_NE_VERIFIED",
@@ -377,52 +414,22 @@
         "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
       ],
       "keyword_hits": [
-        "provenance"
+        "world model"
       ],
       "mirror_lens": "FORWARD",
       "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.4167,
-      "source": "zenodo",
-      "source_context_sha256": "02c2ef9ed2b85023b22822af0f10f658499d4fee3027fa8ce4548546a3be30db",
-      "source_published": "2026-10-23",
-      "source_updated": "",
-      "summary": "EnzyPair is a benchmark dataset for evaluating enzyme-function similarity at low sequence identity. It contains 1,664 same-EC4 protein pairs and 4,992 structure-matched different-EC4 controls involving 2,465 proteins. The release includes protein sequences, EC annotations, TM-align measurements, residue alignments, exclusion records, source provenance and software versions.",
-      "tags": [],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "EnzyPair: a dataset of same-function enzyme pairs with structure-matched controls at low sequence identity",
-      "url": "https://zenodo.org/records/23597110"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "88b5986413a3f9b6d4a9cf01",
-      "context_id": "d27849b041f950c24400bd29",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      "score": 4.4583,
+      "source": "arxiv",
+      "source_context_sha256": "8a626eac78c5adf7b3b70029ff29ba055988b467fa47890ebff90de32d09a7bc",
+      "source_published": "2026-10-22T10:44:35Z",
+      "source_updated": "2026-10-22T10:44:35Z",
+      "summary": "World Models (WMs) can support Multimodal Agents (MAs) through simulated experience, while Agent trajectories can inform World Model refinement. Evaluating this interaction requires separate evidence about action selection and state evolution. We introduce Dual Exam, which tests Agents under fixed environment response mechanisms and World Models under fixed action interventions across physical, digital, social, and scientific domains. The Agent track compares 10 configurations on 1,088 items in 15 reporting categories. The World Model track contains 400 cases across eight scenarios; 15 configurations have full coverage and one covers six scenarios. GPT 6 Astra leads the case-weighted Agent Index at 31.3, and GPT-Image-2 leads the full-coverage WM Overall at 21.7. These scores use different tasks and metrics and are not directly comparable. A 150-case pilot of one coupled pairing records zero task successes and motivates component-level diagnosis. Results reveal uneven task performance and failures to preserve task-relevant state. Their value for predicting coupled success or sustained reciprocal learning remains to be established.",
+      "tags": [
+        "cs.AI"
       ],
-      "keyword_hits": [
-        "provenance"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.4167,
-      "source": "zenodo",
-      "source_context_sha256": "5d45ba15061f87e20968a1293270c654fb55dcba16d8a607027ccb5aee42fd1a",
-      "source_published": "2026-10-22",
-      "source_updated": "",
-      "summary": "One annotation table for the alleles of the VarChAMP allele collection and the alleles assayed by Lacoste et al. 2024 (Cell, doi:10.1016/j.cell.2024.09.003) that are not in the collection: 8,963 alleles &times; 1,267 columns (8,619 collection , 344 lacoste , column allele_origin ). It is a lookup table for assay results: join the tested alleles on the key ( orf_id , mut_id , ccsb_mutation_id ). To describe the collection itself, filter allele_origin == \"collection\" . Built by the VarChAMP allele-metadata pipeline (GitHub: varchamp-allele-metadata, commit in metadata.json ) from the inputs record (lab data and snapshots, doi:10.5281/zenodo.23373387) and public resources pinned by checksum. metadata.json records the provenance of every input (origin, version, licence, checksum) and the QC counts of every step. Version 1.1 adds the measurements of three published studies of the lab (Sahni et al. 2015, Rolland et al. 2014, Luck et al. 2020), keyed on the same clone key, and a mapping of every study allele to the collection (file published_studies.zip ). The allele table is unchanged from version 1.0 (same files, same checksums). Files File Content varchamp_allele_metadata_public.parquet The table (Apache Parquet, with column types). varchamp_allele_metadata_public.tsv The same table as tab-separated text. metadata.json Provenance of every input, pipeline commit, per-step QC counts, the columns left out of this public release. published_studies.zip The published studies (folder published_studies/ ), two tables as Parquet and TSV: published_study_alleles (2,606 rows, one per study allele: the study's identifiers, its match to the collection &mdash; clone key, status , rule , gene, reference/alternate and position checks &mdash; and the per-allele readouts edgotype_class , chaperone_responsive and n_chaperones_expressed ) and published_study_edges (3,345 rows, one per allele &times; partner &times; study: Y2H from Sahni Table S3A, Rolland and Luck; WT rows flagged; the partner's Ensembl gene; each study's scores as published, in columns prefixed by study); metadata.json with the provenance and QC of the study steps. data_licences.md The terms of every source in the table and what they require. THIRD_PARTY_NOTICES.md Copyright and permission notices of the MIT- and Apache-licensed scores. Columns The first 52 columns are a stable contract; definitions are in the pipeline's README. Identity: key, CCSB allele id, source collection, gene symbol, Ensembl gene and protein ids, ORF nucleotide and amino-acid change, SPDI and genomic position (GRCh38). Sequence confirmation: Y/N calls per clone (entry, DB, N2H, DUAL-IPA, mislocalisation); is_entry_seq_confirmed . ClinVar (variant_summary 2026-10): clinical significance (raw and cleaned categories), review status, phenotypes ( PhenotypeList , PhenotypeIDS ), OMIM numbers ( OMIM_IDs ). Protein coordinates: UniProt accession and the change on the UniProt canonical sequence. dbNSFP 5.0a (academic branch): 513 columns of variant scores and annotations for the matched transcript. Predictors: AlphaMissense ( am_pathogenicity ), SpliceAI ( splicing_variant ), ThermoMPNN &Delta;&Delta;G on AlphaFold DB v6 models. Structure: pLDDT and relative solvent accessibility at the residue (AlphaFold DB v6 F1 model). Domains and features: TED domains and the hit at the variant (CATH v4.4.0 names); G2P protein features ( g2p_* ). Disease: mode of inheritance (GenCC, or Lacoste et al. 2024 Table S1 where GenCC's modes disagree), rare-disease modules of the gene (Buphamalai et al. 2021). Flags: is_synonymous , in_analysis_set . Published studies The studies' supplementary tables are pinned by publisher URL and checksum and kept as published; only the clone key ( orf_id , mut_id , ccsb_mutation_id ) is added. Matching to the collection: Study Alleles Matched Dropped by the collection's rules Unmapped Sahni et al. 2015 2,470 2,420 45 5 Rolland et al. 2014 115 114 1 0 Luck et al. 2020 21 21 0 0 Sahni: by the RC4 mutat",
-      "tags": [],
       "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "VarChAMP allele metadata table: annotations of the VarChAMP 1% allele collection and Lacoste et al. 2024 alleles, and the measurements of three published studies keyed on the collection",
-      "url": "https://zenodo.org/records/23574322"
+      "title": "Dual Exam: Controlled Evaluation of Multimodal Agents and World Models",
+      "url": "https://arxiv.org/abs/2610.31066v1"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
@@ -1750,13 +1757,13 @@
       "url": "https://zenodo.org/records/23574646"
     },
     {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "aa1d926e8556e7e89480f10e",
-      "context_id": "0098939698428174812f5a0e",
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "d9db9598e8bde4ebde8824d1",
+      "context_id": "1db24710640d03fcad61a56e",
       "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::CONTROL",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "delivery_preview_truncated": true,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
       "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
       "firewall": [
         "ROUTED_NE_VERIFIED",
@@ -1766,32 +1773,22 @@
         "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
       ],
       "keyword_hits": [
+        "benchmark",
         "calibration",
-        "provenance",
         "replication"
       ],
       "mirror_lens": "CONTROL",
       "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 10.3333,
+      "score": 10.2917,
       "source": "zenodo",
-      "source_context_sha256": "da6541ba218efce01247b3dec7979cc8f4e734e86510f4e279274839cfa745b3",
-      "source_published": "2026-10-20",
+      "source_context_sha256": "2ba7653308d1da5d2b8eb9c70a561aa130d6e0766d09f02d9e88b3bdbd2628fa",
+      "source_published": "2026-10-22",
       "source_updated": "",
-      "summary": "We implement a narrow, testable next step in the MICA-NEX proposal: cryptographically binding nanoscale instrument measurement claims to externally provisioned acquisition and calibration signer roles while denying model planners the ability to self-certify measurement status. The reference implementation uses Ed25519 signatures, SHA-256 content binding, typed units, time windows, source-kind separation, and a persistent local replay ledger. In a hardware-disconnected test harness, 60/60 signed synthetic test records from three simulated instrument classes were admitted and 30/30 adversarial cases were rejected for the expected reason; 28/28 Python tests passed. No instrument, laboratory calibration, external reviewer, clinical context or independent physical replication was involved. Signature validity is deliberately distinguished from scientific validity. Status: SOFTWARE SYNTHETIC PASS; PHYSICAL INTEROPERABILITY NOT RUN; INDEPENDENT REPLICATION NOT RUN; FIRST-IN-WORLD NOVELTY NOT ESTABLISHED. Research report v0.3 dated 2026-10-20; substantial AI-assisted code, writing, test design and analysis. Source: the author's iCloud Recents (files dated 2026-10-21), downloaded 2026-10-22; published on Zenodo per the author's standing approval to publish all of his research, including items marked confidential/proprietary. (Two byte-identical copies of the report and of the package were found; each is deposited once.) IETF status: converted by the author's assistant into the RFCXML v3 Internet-Draft draft-watts-mica-nex-measurement-ingestion-00 (intended status Informational), validated with xml2rfc 3.34.1 (no errors or warnings) and idnits 3 (0 errors, 0 warnings; 1 comment for the non-ASCII author name). Submitted to the IETF Datatracker on 2026-10-22 as submission 170762 ( status ); it is awaiting the author's email confirmation and is not posted until confirmed. Internet-Drafts are works in progress, not IETF standards. The I-D text is a faithful conversion of the paper (math rendered as plain text; the figure described in prose); the confidentiality handling label was left out of the I-D because it cannot carry one under BCP 78, and IANA/Security Considerations sections were added. License: the research package's own LICENSE file is retained unchanged (it carries the author's 'CONFIDENTIAL — PROPRIETARY' handling label and reserves rights; the author has since approved open publication). No Creative Commons license is granted; the Zenodo license field ('other open') refers to these terms. The attached Internet-Draft files ( .xml , .txt , .pdf named draft-watts-* ) are subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents ( https://trustee.ietf.org/license-info ). Files: MICA-NEX_v0.3_Research_Report.pdf (sha256 3e5b6b30a47c9e640a6fb053fb26069f42bd0bebc73d145d9332664705d9afa0) MICA-NEX_v0.3_Research_Package.zip (sha256 07a072eed3db29a270c0960d4fb977cfbc91976c84f0777fdcd8b54025f856c3) draft-watts-mica-nex-measurement-ingestion-00.xml (sha256 d31e046daa30825d8077c05a34b14494b8c77cb8f5a21fe95a1cdad5ec85d721) draft-watts-mica-nex-measurement-ingestion-00.txt (sha256 f884ae089323323d76aef82c339b3e40ea850c9e799106585b73e5104c462c0d) draft-watts-mica-nex-measurement-ingestion-00.pdf (sha256 d3fc12c55d3c011b8ffd83742bc82a9542cf7602ca5959fa0b25429a03018e27)",
-      "tags": [
-        "MICA-NEX",
-        "nanotechnology",
-        "measurement provenance",
-        "Ed25519",
-        "agent swarms",
-        "metrological traceability",
-        "IETF",
-        "Internet-Draft",
-        "draft-watts-mica-nex-measurement-ingestion"
-      ],
+      "summary": "TRUSTWORTHY AUTONOMOUS BIOLABORATORIES THROUGH MICROROBOTICS AND QUANTUM SENSING AT THE LIMIT Replayable Experiments x Permission Governance x External Metrology STARLI Research Institute XXIX - Flagship Research Monograph 20 Can an autonomous biolaboratory become scientifically useful without acquiring the authority to redefine its own permissions, validate its own evidence, or release untraceable measurements? This nonclinical research monograph investigates a bounded laboratory architecture connecting microrobotic sample handling, quantum-enabled and classical sensing, independent metrological reference chains, experiment replay, physical safe stopping, and human authority. Its central proposition is that reliable autonomy is a property of the entire evidence pathway rather than of any single robotic manipulator or AI model. A laboratory result is eligible for release only when sample identity and integrity, authorized execution, traceable references, justified uncertainty limits, and external acceptance are all demonstrated. An apparently successful action is not equivalent to a scientifically accepted sample. Digital replay does not replace physical replication, cryptographic event integrity does not guarantee sensor truth, and a quantum hardware label does not establish a practical sensing advantage. The research design is developed across 82 chapter-level inquiries with five independently paginated investigations per chapter, 30 connected mathematical research plates, 200 distinct Research Gates, and 33 Phoenix Answer Embryos. The chapters address typed authority graphs, specimen provenance, sample exposure, closed-chip physics, covariance-aware sensing, AI planning within finite action spaces, common-cause fault injection, external interlocks, blinded classical benchmarks, evidence DAGs, cross-site replication, data retention, and responsible system retirement. The proposed minimum experimental prototype uses a closed microfluidic chip with interchangeable handling modules, two independently referenced readout channels, simulated or inert-tracer specimens, a separate audit service, and a physically verifiable stop mechanism. Proposed tests include unauthorized-action challenges, hidden calibration drift, interrupted events, sample contamination, unannounced network partitions, and independent laboratory replay or rerun. DOI-linked scientific references establish the relevant literature in automated laboratories, microrobotics, quantum sensing, uncertainty metrology, FAIR data stewardship, and computational reproducibility. They do not independently validate the integrated system proposed here. SCIENTIFIC STATUS AND LIMITATIONS This book is a hypothesis-forming nonclinical research architecture. It reports no completed microrobotic or quantum biosensing experiments, no demonstrated clinical performance, no universal quantum advantage, and no autonomous system capable of authorizing itself. Statistical models, formulas, and decision policies require experimental verification, specialized review, and appropriate boundary conditions. A failed external reference, unavailable provenance chain, or revoked permission requires abstention rather than inference by convenience. STARLI RESEARCH PHILOSOPHY A trustworthy laboratory must remain answerable to evidence outside itself. Autonomy becomes scientifically meaningful when an experiment can be stopped, questioned, reconstructed, and handed to future researchers who retain the right to refuse its original assumptions.",
+      "tags": [],
       "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "MICA-NEX v0.3: Authenticated Measurement Ingestion for Model-Agnostic Nano-Instrument Agent Swarms",
-      "url": "https://zenodo.org/records/23572688"
+      "title": "TRUSTWORTHY AUTONOMOUS BIOLABORATORIES THROUGH MICROROBOTICS AND QUANTUM SENSING AT THE LIMIT Replayable Experiments x Permission Governance x External Metrology STARLI Research Institute XXIX - Flagship Research Monograph 20 Can an autonomous biolaboratory become scientifically useful without acqui",
+      "url": "https://zenodo.org/records/23572483"
     }
   ],
   "schema": "janus.beetle.repo_memory_batch.v1",
