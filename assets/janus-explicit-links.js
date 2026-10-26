@@ -16,6 +16,7 @@
    if(r&&typeof r.id==='string'&&typeof r.sourceUrl==='string'&&
       r.readOnly===true&&r.deleteAllowed===false&&
       r.sourceUrl.startsWith('https://github.com/Hawkar-usls/')&&
+      r.sourceUrl.includes('/blob/'+r.sourceCommit+'/')&&
       /^[a-f0-9]{40}$/.test(r.sourceCommit||'')) targets.set(r.sourceUrl,r);
   }
   let scanned=0, truncated=false;
