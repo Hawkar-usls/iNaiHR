@@ -1,0 +1,51 @@
+name: iNaiHR JANUS Public JSON Mindmap Boundary
+on:
+  pull_request:
+    paths:
+      - 'janus-map.html'
+      - '.janus/JANUS_PUBLIC_JSON_CONSTELLATION_SEMANTIC_LENS_V1.json'
+      - '.github/workflows/inaihr-janus-json-mindmap-integrity.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'janus-map.html'
+      - '.janus/JANUS_PUBLIC_JSON_CONSTELLATION_SEMANTIC_LENS_V1.json'
+      - '.github/workflows/inaihr-janus-json-mindmap-integrity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-semantic-source-safety:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Assert no credentials, no mutation, and trusted upstream HRAiN lens
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          h=Path('janus-map.html').read_text(encoding='utf-8')
+          c=json.loads(Path('.janus/JANUS_PUBLIC_JSON_CONSTELLATION_SEMANTIC_LENS_V1.json').read_text())
+          assert 'data-lens="semantic"' in h
+          assert 'https://hawkar-usls.github.io/Hrain/assets/janus-json-map.js' in h
+          assert 'https://hawkar-usls.github.io/Hrain/assets/janus-json-map.css' in h
+          assert 'id="graph"' in h
+          assert 'id="results"' in h
+          assert '<input' in h
+          assert c['readOnly']['no_contents_write']
+          assert c['readOnly']['no_delete']
+          assert c['readOnly']['unverified_semantic_link_has_no_causal_weight']
+          assert c['coverage']['private_repositories_not_discoverable']
+          for bad in ('ROWAN_API_KEY','sk-', 'fetch("https://api.openai.com',
+                      'method:"POST"','method:"DELETE"', 'localStorage.setItem'):
+              assert bad not in h
+          print('INAIHR_PUBLIC_JSON_MINDMAP=READONLY_ASSOCIATION_ONLY_PASS')
+          PY
