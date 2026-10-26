@@ -40,7 +40,6 @@ header a{pointer-events:auto;text-decoration:none;color:rgba(255,255,255,.45);fo
 </header>
 <div class="langbar"><button data-lang="en">EN</button><button data-lang="ua">UA</button><button data-lang="ru">ru</button></div>
 <div class="controls">
-<a href="./janus-map.html" class="btn" style="text-decoration:none;display:inline-flex;align-items:center">JANUS MAP</a>
 <button id="btn-synth" class="btn" type="button">SYNTH</button>
 <button id="btn-guide" class="btn active" type="button">JANUS GUIDE</button>
 <button id="btn-ascend" class="btn" type="button">ASCEND</button>
@@ -96,7 +95,7 @@ function toObjectNode(n){return {...n,kind:'object',emoji:n.emoji||'◈',sourceP
 function renderBreadcrumbs(){const c=document.getElementById('nav-context');c.textContent='';const a=document.createElement('span');a.className='crumb'+(!currentSurface?' active':'');a.textContent='JANUS';a.onclick=rootView;c.appendChild(a);if(currentSurface){const b=document.createElement('span');b.className='crumb active';b.textContent=(indexData&&indexData.nodes.find(n=>n.id===`surface:${currentSurface}`)?.label)||currentSurface;c.appendChild(b)}}
 
 function selectNode(d,human){selected=d;if(human){lastHumanAction=Date.now();clearGuide()}render();updateControls();openPanel(d);if(human)scheduleGuide(d)}
-function canSynth(d){return !!d&&(d.kind==='object'||d.kind==='semantic')&&(d.depth||0)<MAX_DEPTH}
+function canSynth(d){return !!d&&!d.atlasExternal&&(d.kind==='object'||d.kind==='semantic')&&(d.depth||0)<MAX_DEPTH}
 function updateControls(){const b=document.getElementById('btn-synth');b.classList.toggle('active',canSynth(selected)&&!synthBusy);document.getElementById('btn-guide').classList.toggle('active',guideEnabled)}
 function closePanel(){document.getElementById('panel').classList.remove('open')}
 document.getElementById('panel-close').onclick=closePanel;
@@ -142,8 +141,31 @@ function toast(text){const x=document.getElementById('toast');x.textContent=text
 
 async function boot(){applyLanguage();try{const r=await fetch(INDEX_URL,{cache:'no-store',headers:{Accept:'application/json'}});if(!r.ok)throw new Error('index '+r.status);indexData=await r.json();if(indexData.mutationPolicy?.interfaceWriteAuthority!==false||indexData.mutationPolicy?.interfaceDeleteAuthority!==false)throw new Error('unsafe mutation policy');rootView();const params=new URLSearchParams(location.search);const wanted=params.get('object');if(wanted){const n=indexData.nodes.find(x=>x.path===wanted||x.id===wanted);if(n&&n.surface&&n.path?.endsWith('.json')){enterSurface(n.surface);setTimeout(()=>{const d=nodes.find(x=>x.id===n.id);if(d)selectNode(d,false)},300)}}document.getElementById('loading').classList.add('hidden')}catch(e){console.error(e);document.getElementById('loading').textContent='JANUS REGISTRY UNAVAILABLE'}}
 window.addEventListener('resize',()=>{width=innerWidth;height=innerHeight;sim.force('x',d3.forceX(()=>width/2).strength(.012));sim.force('y',d3.forceY(()=>height/2).strength(.012));sim.alpha(.25).restart()});
+
+  // The real iNaiHR force-directed semantic graph is reused, not a replica.
+  // Every atlas node is ephemeral and EXCLUDED from remote or local SYNTH.
+  window.JANUSAtlasNativeFocus=(records)=>{
+    if(!indexData||!Array.isArray(records)||!records.length)return;
+    const selectedRecords=records.slice(0,16).filter(r=>r.readOnly===true&&r.deleteAllowed===false&&
+      /^Hawkar-usls\/[\w.-]+$/.test(r.repository)&&
+      /^https:\/\/github\.com\/Hawkar-usls\//.test(r.sourceUrl||''));
+    if(!selectedRecords.length)return;
+    const root={id:'atlas:inaihr-root',label:'JANUS · JSON MEMORY',
+      emoji:'🧬',kind:'root',summary:'Temporary source-pinned JSON context inside ORIGINAL iNaiHR graph.',
+      atlasExternal:true,readOnly:true};
+    const items=selectedRecords.map(r=>({id:'atlas:'+r.id,label:r.path.split('/').pop().slice(0,70),
+      kind:'object',emoji:'◈',path:r.path,sourceUrl:r.sourceUrl,
+      sourceObjectId:null,atlasExternal:true,readOnly:true,depth:0,sourcePaths:[],
+      summary:'Verified-index GitHub source candidate; cannot SYNTH until explicitly separately vetted.'}));
+    currentSurface=null;
+    setView([root,...items],items.map(n=>({source:root.id,target:n.id})));
+    renderBreadcrumbs();
+  };
+  window.JANUSAtlasNativeRestore=()=>{if(indexData)rootView()};
+
 boot();
 })();
 </script>
+<script src="./assets/janus-native-atlas.js" defer></script>
 </body>
 </html>

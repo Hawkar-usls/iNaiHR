@@ -1,0 +1,54 @@
+name: JANUS Native Organism UI Preservation
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'janus.html'
+      - 'janus-map.html'
+      - 'memory.html'
+      - 'assets/janus-native-atlas.js'
+      - 'tests/test_janus_native_atlas.py'
+      - '.github/workflows/janus-native-atlas-integrity.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'janus.html'
+      - 'janus-map.html'
+      - 'memory.html'
+      - 'assets/janus-native-atlas.js'
+      - 'tests/test_janus_native_atlas.py'
+      - '.github/workflows/janus-native-atlas-integrity.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preserve-real-neural-interface:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Guard native D3/brains and SHA-only source admission
+        run: python -m unittest discover -v -s tests -p 'test_janus_native_atlas.py'
+      - name: Validate native browser module syntax
+        run: node --check assets/janus-native-atlas.js
+      - name: Verify original source family has not been replaced
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          home=Path('index.html').read_text()
+          organism=Path('janus.html').read_text()
+          assert '<script src="./assets/janus-native-atlas.js"' in home
+          assert '<script src="./assets/janus-native-atlas.js"' in organism
+          assert 'window.JANUSAtlasNativeFocus' in organism
+          assert 'd3.v7.min.js' in home and 'd3.v7.min.js' in organism
+          print('JANUS_NATIVE_ORGANISM=ORIGINAL_UI_SOURCE_ONLY_OVERLAY_PASS')
+          PY

@@ -1,18 +1,19 @@
 {
   "schema": "janus.inaihr.hrain.public_json_constellation_semantic_lens.v1",
-  "status": "READ_ONLY_CANDIDATE_LENS_OF_SHARED_HRAIN_JSON_ATLAS",
+  "status": "NATIVE_INAIHR_SEMANTIC_NEXUS_WITH_SOURCE_VERIFIED_PUBLIC_JSON_OVERLAY",
   "date": "2026-10-26",
   "sharedIndex": "https://raw.githubusercontent.com/Hawkar-usls/Hrain/main/assets/janus-json-atlas/manifest.json",
   "sharedVerifiedAssets": {
-    "script": "https://hawkar-usls.github.io/Hrain/assets/janus-json-map.js",
-    "style": "https://hawkar-usls.github.io/Hrain/assets/janus-json-map.css"
+    "catalogManifest": "https://raw.githubusercontent.com/Hawkar-usls/Hrain/main/assets/janus-json-atlas/manifest.json",
+    "readOnlyNativeClient": "./assets/janus-native-atlas.js",
+    "note": "One shared JSON source catalog, but native iNaiHR renderer and scripts are its own; no HRAiN replica HTML"
   },
-  "frontend": "janus-map.html",
+  "frontend": "index.html?atlas=1",
   "nativeSynthesis": "janus.html",
   "readMode": {
     "janus_role": "READ_ONLY_JSON_SOURCE_NAVIGATION",
     "hrain_role": "STRUCTURAL_REPOSITORY_PATH_TO_JSON_GRAPH",
-    "inaihr_role": "SEMANTIC_PATH_TOKEN_ASSOCIATION_CANDIDATE",
+    "inaihr_role": "ORIGINAL_SEMANTIC_NEXUS_WITH_LOCAL_SYNTH_AND_READ_ONLY_GITHUB_SOURCE_NODES",
     "meta_registry_role": "SOURCE_TRUTH_AUTHORITY_AND_DATA_HOLDER"
   },
   "readOnly": {
@@ -22,7 +23,9 @@
     "no_browser_credential": true,
     "no_provider_billing": true,
     "local_association_not_automatically_promoted": true,
-    "unverified_semantic_link_has_no_causal_weight": true
+    "unverified_semantic_link_has_no_causal_weight": true,
+    "nativeWorkspacesUnchangedByImport": true,
+    "sourceNodesNotSynthesisInput": true
   },
   "coverage": {
     "public_only": true,
@@ -44,5 +47,7 @@
     "PATH_TOKEN_OVERLAP != MECHANISM",
     "MEMORY_CATALOG != EXPERIMENTAL_VALIDATION",
     "JANUS_MINDMAP != AUTONOMOUS_BROWSER_OR_MCP_PERMISSION"
-  ]
+  ],
+  "nativeSemanticRegistry": "janus.html?atlas=1",
+  "legacyReplicaFrontend": "janus-map.html redirects to original native index.html?atlas=1"
 }
