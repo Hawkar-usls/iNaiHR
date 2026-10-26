@@ -34,12 +34,17 @@ jobs:
           import json
           h=Path('janus-map.html').read_text(encoding='utf-8')
           c=json.loads(Path('.janus/JANUS_PUBLIC_JSON_CONSTELLATION_SEMANTIC_LENS_V1.json').read_text())
-          assert 'data-lens="semantic"' in h
-          assert 'https://hawkar-usls.github.io/Hrain/assets/janus-json-map.js' in h
-          assert 'https://hawkar-usls.github.io/Hrain/assets/janus-json-map.css' in h
-          assert 'id="graph"' in h
-          assert 'id="results"' in h
-          assert '<input' in h
+          # The retired 14-spoke replica must NOT be advertised as the
+          # actual organism. The real D3 iNaiHR lives at index/janus.html.
+          assert "location.replace('./?atlas=1')" in h
+          assert 'id="graph"' not in h
+          organism=Path('index.html').read_text()
+          registry=Path('janus.html').read_text()
+          native=Path('assets/janus-native-atlas.js').read_text()
+          assert 'iNaiHR · Semantic Nexus' in organism
+          assert 'JANUSAtlasNativeFocus' in registry
+          assert './assets/janus-native-atlas.js' in organism
+          assert 'GITHUB_BLOB_INTEGRITY_HOLD' in native
           assert c['readOnly']['no_contents_write']
           assert c['readOnly']['no_delete']
           assert c['readOnly']['unverified_semantic_link_has_no_causal_weight']
