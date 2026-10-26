@@ -123,7 +123,7 @@ function choose(r){
  panel.append(make('h3',r.path.split('/').pop()),make('code',r.repository+'@'+r.sourceCommit+':'+r.path));
  const link=make('a','OPEN EXACT GITHUB SOURCE ↗','janus-atlas-action');
  link.href=r.sourceUrl;link.target='_blank';link.rel='noopener noreferrer';panel.append(link);
- const add=make('button','VIEW IN ORIGINAL NEURAL GRAPH','janus-atlas-action');
+ const add=make('button','VIEW INDEX NEIGHBOURS · CANDIDATES ONLY','janus-atlas-action');
  add.onclick=()=>{if(typeof window.JANUSAtlasNativeFocus==='function'){
    window.JANUSAtlasNativeFocus([r,...STORE.matches.filter(x=>x.id!==r.id).slice(0,15)]);closeDrawer(false);
  }else{
@@ -139,6 +139,33 @@ function choose(r){
    fields.replaceChildren(make('p','VERIFIED SHA256 '+v.digest.slice(0,24)+'… · '+v.size+' bytes','janus-atlas-ok'));
    for(const [ptr,val] of enumerate(v.doc)){let item=make('div',null,'janus-atlas-field');
     item.append(make('code',ptr),make('span',val));fields.append(item)}
+   if(!window.JANUSExplicitLinks?.find)throw Error('EXPLICIT_REFERENCE_RESOLVER_UNAVAILABLE');
+   const refs=window.JANUSExplicitLinks.find(v.doc,r,STORE.rows);
+   fields.append(make('h4','EXPLICIT PINNED JSON LINKS · '+refs.resolved.length+' indexed','janus-atlas-ok'));
+   fields.append(make('p','Source bytes SHA/Git verified. Linked targets are INDEXED only; target bytes and scientific claims are NOT verified by this edge.','janus-atlas-note'));
+   if(!refs.resolved.length)fields.append(make('p','No target URLs in loaded verified shards. Use VERIFY ALL to resolve cross-repository links.','janus-atlas-note'));
+   for(const edge of refs.resolved.slice(0,16)){
+    const target=STORE.rows.get(edge.targetId);
+    if(!target)throw Error('EDGE_TARGET_NOT_INDEXED');
+    const btn=make('button',null,'janus-atlas-hit');
+    btn.type='button';btn.append(make('strong',edge.pointer||'(root)'),make('small','EXPLICIT URL → '+target.repository+'/'+target.path+' · target indexed only'));
+    btn.onclick=()=>choose(target);fields.append(btn);
+   }
+   if(refs.unresolved.length)fields.append(make('p',refs.unresolved.length+' pinned URLs without an indexed target in loaded verified shards; no edge inferred.','janus-atlas-note'));
+   if(refs.truncated)fields.append(make('p','Bounded reference scan: results may be incomplete.','janus-atlas-note'));
+   if(refs.resolved.length&&typeof window.JANUSAtlasNativeFocus==='function'){
+    const unique=[...new Set(refs.resolved.map(e=>e.targetId))].slice(0,12);
+    const graph=make('button','PROJECT EXPLICIT LINKS INTO ORIGINAL GRAPH','janus-atlas-action');
+    graph.onclick=()=>{
+     if(STORE.focus!==r)return;
+     const records=[r,...unique.map(id=>STORE.rows.get(id)).filter(Boolean)];
+     const ids=new Set(records.map(x=>x.id));
+     const links=refs.resolved.filter(e=>ids.has(e.targetId)).map(e=>({sourceId:e.sourceId,targetId:e.targetId,pointer:e.pointer,evidence:'explicit-json-url'}));
+     window.JANUSAtlasNativeFocus(records,links);closeDrawer(false);
+    };
+    fields.append(graph);
+   }
+
   }catch(e){fields.replaceChildren(make('p','FAIL CLOSED · '+e.message,'janus-atlas-fail'))}
   finally{verify.disabled=false}
  };
