@@ -84,7 +84,9 @@ const svg=d3.select('#chart').append('svg').attr('width','100%').attr('height','
 const sim=d3.forceSimulation().force('link',d3.forceLink().id(d=>d.id).distance(d=>d.kind==='semantic'?125:150)).force('charge',d3.forceManyBody().strength(-430)).force('collide',d3.forceCollide().radius(d=>(d.r||35)+16).iterations(2)).force('x',d3.forceX(()=>width/2).strength(.012)).force('y',d3.forceY(()=>height/2).strength(.012)).velocityDecay(.52);
 
 function setView(nextNodes,nextLinks){nodes=nextNodes;links=nextLinks;selected=null;render();updateControls();closePanel();centerView()}
-function render(){nodes.forEach(n=>n.r=n.kind==='root'?48:n.kind==='surface'?39:n.kind==='object'?34:30);const l=linkLayer.selectAll('line').data(links,d=>`${idOf(d.source)}>${idOf(d.target)}`);l.exit().remove();l.enter().append('line').attr('class','link').merge(l);const n=nodeLayer.selectAll('g.node').data(nodes,d=>d.id);n.exit().remove();const e=n.enter().append('g').attr('class','node').call(d3.drag().on('start',(ev,d)=>{if(!ev.active)sim.alphaTarget(.25).restart();d.fx=d.x;d.fy=d.y}).on('drag',(ev,d)=>{d.fx=ev.x;d.fy=ev.y}).on('end',(ev,d)=>{if(!ev.active)sim.alphaTarget(0);d.fx=null;d.fy=null})).on('click',(ev,d)=>{ev.stopPropagation();selectNode(d,true)}).on('dblclick',(ev,d)=>{ev.stopPropagation();if(d.kind==='surface')enterSurface(d.surface);else if(canSynth(d))synthSelected(false)});e.append('circle').attr('class','aura');e.append('circle').attr('class','membrane');e.append('circle').attr('class','core');e.append('text').attr('class','emoji');e.append('text').attr('class','label');const all=e.merge(n).attr('class',d=>`node type-${d.kind} ${selected&&selected.id===d.id?'selected':''}`);all.select('.aura').attr('r',d=>d.r*1.15);all.select('.membrane').attr('r',d=>d.r*1.42);all.select('.core').attr('r',d=>d.r*.46);all.select('.emoji').text(d=>d.emoji||'◇');all.select('.label').text(d=>clip(d.label,30)).attr('dy',d=>d.r+15);sim.nodes(nodes).on('tick',()=>{linkLayer.selectAll('line').attr('x1',d=>d.source.x).attr('y1',d=>d.source.y).attr('x2',d=>d.target.x).attr('y2',d=>d.target.y);all.attr('transform',d=>`translate(${d.x},${d.y})`)});sim.force('link').links(links);sim.alpha(.78).restart()}
+function render(){nodes.forEach(n=>n.r=n.kind==='root'?48:n.kind==='surface'?39:n.kind==='object'?34:30);const l=linkLayer.selectAll('line').data(links,d=>`${idOf(d.source)}>${idOf(d.target)}`);l.exit().remove();const allLinks=l.enter().append('line').attr('class','link').merge(l);
+ allLinks.style('stroke-dasharray',d=>d.kind==='explicit-json-url'?'7 6':null)
+   .attr('data-source-pointer',d=>d.kind==='explicit-json-url'?d.pointer:null);const n=nodeLayer.selectAll('g.node').data(nodes,d=>d.id);n.exit().remove();const e=n.enter().append('g').attr('class','node').call(d3.drag().on('start',(ev,d)=>{if(!ev.active)sim.alphaTarget(.25).restart();d.fx=d.x;d.fy=d.y}).on('drag',(ev,d)=>{d.fx=ev.x;d.fy=ev.y}).on('end',(ev,d)=>{if(!ev.active)sim.alphaTarget(0);d.fx=null;d.fy=null})).on('click',(ev,d)=>{ev.stopPropagation();selectNode(d,true)}).on('dblclick',(ev,d)=>{ev.stopPropagation();if(d.kind==='surface')enterSurface(d.surface);else if(canSynth(d))synthSelected(false)});e.append('circle').attr('class','aura');e.append('circle').attr('class','membrane');e.append('circle').attr('class','core');e.append('text').attr('class','emoji');e.append('text').attr('class','label');const all=e.merge(n).attr('class',d=>`node type-${d.kind} ${selected&&selected.id===d.id?'selected':''}`);all.select('.aura').attr('r',d=>d.r*1.15);all.select('.membrane').attr('r',d=>d.r*1.42);all.select('.core').attr('r',d=>d.r*.46);all.select('.emoji').text(d=>d.emoji||'◇');all.select('.label').text(d=>clip(d.label,30)).attr('dy',d=>d.r+15);sim.nodes(nodes).on('tick',()=>{linkLayer.selectAll('line').attr('x1',d=>d.source.x).attr('y1',d=>d.source.y).attr('x2',d=>d.target.x).attr('y2',d=>d.target.y);all.attr('transform',d=>`translate(${d.x},${d.y})`)});sim.force('link').links(links);sim.alpha(.78).restart()}
 function idOf(x){return typeof x==='object'?x.id:x}
 function clip(s,n){s=String(s||'');return s.length>n?s.slice(0,n-1)+'…':s}
 function centerView(){setTimeout(()=>{const x=d3.zoomIdentity.translate(width/2,height/2).scale(.9).translate(-width/2,-height/2);svg.transition().duration(450).call(zoom.transform,x)},80)}
@@ -144,7 +146,7 @@ window.addEventListener('resize',()=>{width=innerWidth;height=innerHeight;sim.fo
 
   // The real iNaiHR force-directed semantic graph is reused, not a replica.
   // Every atlas node is ephemeral and EXCLUDED from remote or local SYNTH.
-  window.JANUSAtlasNativeFocus=(records)=>{
+  window.JANUSAtlasNativeFocus=(records,explicitLinks=[])=>{
     if(!indexData||!Array.isArray(records)||!records.length)return;
     const selectedRecords=records.slice(0,16).filter(r=>r.readOnly===true&&r.deleteAllowed===false&&
       /^Hawkar-usls\/[\w.-]+$/.test(r.repository)&&
@@ -158,7 +160,19 @@ window.addEventListener('resize',()=>{width=innerWidth;height=innerHeight;sim.fo
       sourceObjectId:null,atlasExternal:true,readOnly:true,depth:0,sourcePaths:[],
       summary:'Verified-index GitHub source candidate; cannot SYNTH until explicitly separately vetted.'}));
     currentSurface=null;
-    setView([root,...items],items.map(n=>({source:root.id,target:n.id})));
+    const ids=new Set(selectedRecords.map(r=>r.id));
+    const exact=(Array.isArray(explicitLinks)?explicitLinks:[]).slice(0,24)
+      .filter(e=>e&&e.evidence==='explicit-json-url'&&ids.has(e.sourceId)&&ids.has(e.targetId)&&
+        e.sourceId!==e.targetId&&typeof e.pointer==='string'&&(e.pointer===''||e.pointer.startsWith('/')));
+    const edges=[...items.map(n=>({source:root.id,target:n.id})),
+      ...exact.map(e=>({source:'atlas:'+e.sourceId,target:'atlas:'+e.targetId,
+        kind:'explicit-json-url',pointer:e.pointer}))];
+    for(const edge of exact){
+      const node=items.find(n=>n.id==='atlas:'+edge.targetId);
+      if(node)node.summary='EXPLICIT URL in SHA-verified source JSON at '+edge.pointer+
+       '. Target metadata indexed only; target bytes, SYNTH and scientific claims remain unverified.';
+    }
+    setView([root,...items],edges);
     renderBreadcrumbs();
   };
   window.JANUSAtlasNativeRestore=()=>{if(indexData)rootView()};
@@ -166,6 +180,7 @@ window.addEventListener('resize',()=>{width=innerWidth;height=innerHeight;sim.fo
 boot();
 })();
 </script>
+<script src="./assets/janus-explicit-links.js" defer></script>
 <script src="./assets/janus-native-atlas.js" defer></script>
 </body>
 </html>

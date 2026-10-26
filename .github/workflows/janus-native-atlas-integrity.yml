@@ -7,6 +7,8 @@ on:
       - 'janus-map.html'
       - 'memory.html'
       - 'assets/janus-native-atlas.js'
+      - 'assets/janus-explicit-links.js'
+      - 'tests/test_janus_explicit_links.py'
       - 'tests/test_janus_native_atlas.py'
       - '.github/workflows/janus-native-atlas-integrity.yml'
   push:
@@ -17,6 +19,8 @@ on:
       - 'janus-map.html'
       - 'memory.html'
       - 'assets/janus-native-atlas.js'
+      - 'assets/janus-explicit-links.js'
+      - 'tests/test_janus_explicit_links.py'
       - 'tests/test_janus_native_atlas.py'
       - '.github/workflows/janus-native-atlas-integrity.yml'
   workflow_dispatch:
@@ -38,8 +42,12 @@ jobs:
           node-version: '22'
       - name: Guard native D3/brains and SHA-only source admission
         run: python -m unittest discover -v -s tests -p 'test_janus_native_atlas.py'
+      - name: Exact JSON field reference and pinned-commit regression
+        run: python -m unittest discover -v -s tests -p 'test_janus_explicit_links.py'
       - name: Validate native browser module syntax
         run: node --check assets/janus-native-atlas.js
+      - name: Validate explicit-reference module syntax
+        run: node --check assets/janus-explicit-links.js
       - name: Verify original source family has not been replaced
         run: |
           python - <<'PY'
