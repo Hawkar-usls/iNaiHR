@@ -18,7 +18,7 @@ const row = {id:'target',repository:'Hawkar-usls/tranception',path:'.janus/HABIT
 const fields = {'refs/path':[good,unknown,'similar HABITAT_LINK.json',
   'https://github.com/Hawkar-usls/tranception/blob/main/.janus/HABITAT_LINK.json']};
 const a = find(fields,source,new Map([['target',row]]));
-assert.equal(a.resolved.length,1);
+assert.equal(a.resolved.length,2); // pinned SHA plus explicitly authored main-branch reference
 assert.equal(a.unresolved.length,1);
 assert.equal(a.resolved[0].pointer,'/refs~1path/0');
 assert.equal(a.resolved[0].targetId,'target');
