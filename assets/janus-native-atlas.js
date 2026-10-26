@@ -141,17 +141,17 @@ function choose(r){
     item.append(make('code',ptr),make('span',val));fields.append(item)}
    if(!window.JANUSExplicitLinks?.find)throw Error('EXPLICIT_REFERENCE_RESOLVER_UNAVAILABLE');
    const refs=window.JANUSExplicitLinks.find(v.doc,r,STORE.rows);
-   fields.append(make('h4','EXPLICIT PINNED JSON LINKS · '+refs.resolved.length+' indexed','janus-atlas-ok'));
-   fields.append(make('p','Source bytes SHA/Git verified. Linked targets are INDEXED only; target bytes and scientific claims are NOT verified by this edge.','janus-atlas-note'));
+   fields.append(make('h4','EXPLICIT JSON LINKS · FROZEN CATALOG · '+refs.resolved.length+' indexed','janus-atlas-ok'));
+   fields.append(make('p','Source bytes SHA/Git verified. A main-branch link is rebound ONLY to catalog snapshot; target INDEXED only. No historical identity, target-byte verification or scientific truth implied.','janus-atlas-note'));
    if(!refs.resolved.length)fields.append(make('p','No target URLs in loaded verified shards. Use VERIFY ALL to resolve cross-repository links.','janus-atlas-note'));
    for(const edge of refs.resolved.slice(0,16)){
     const target=STORE.rows.get(edge.targetId);
     if(!target)throw Error('EDGE_TARGET_NOT_INDEXED');
     const btn=make('button',null,'janus-atlas-hit');
-    btn.type='button';btn.append(make('strong',edge.pointer||'(root)'),make('small','EXPLICIT URL → '+target.repository+'/'+target.path+' · target indexed only'));
+    btn.type='button';btn.append(make('strong',edge.pointer||'(root)'),make('small','EXPLICIT '+(edge.referenceMode==='BRANCH_MAIN_REBOUND_TO_SNAPSHOT'?'main→snapshot':'pinned commit')+' → '+target.repository+'/'+target.path+' · target indexed only'));
     btn.onclick=()=>choose(target);fields.append(btn);
    }
-   if(refs.unresolved.length)fields.append(make('p',refs.unresolved.length+' pinned URLs without an indexed target in loaded verified shards; no edge inferred.','janus-atlas-note'));
+   if(refs.unresolved.length)fields.append(make('p',refs.unresolved.length+' explicit URLs without a matching target in loaded verified shards; no edge inferred.','janus-atlas-note'));
    if(refs.truncated)fields.append(make('p','Bounded reference scan: results may be incomplete.','janus-atlas-note'));
    if(refs.resolved.length&&typeof window.JANUSAtlasNativeFocus==='function'){
     const unique=[...new Set(refs.resolved.map(e=>e.targetId))].slice(0,12);
