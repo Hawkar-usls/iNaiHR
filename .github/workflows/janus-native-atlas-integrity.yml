@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - 'index.html'
+      - 'spore-original.html'
+      - 'ai-nexus-original.html'
       - 'janus.html'
       - 'janus-map.html'
       - 'memory.html'
@@ -12,11 +14,15 @@ on:
       - 'tests/test_janus_native_atlas.py'
       - 'tests/test_janus_relation_ui.py'
       - 'tests/janus_relation_browser_smoke.py'
+      - 'tests/test_original_inaihr_restoration.py'
+      - 'tests/inaihr_originals_browser.py'
       - '.github/workflows/janus-native-atlas-integrity.yml'
   push:
     branches: [main]
     paths:
       - 'index.html'
+      - 'spore-original.html'
+      - 'ai-nexus-original.html'
       - 'janus.html'
       - 'janus-map.html'
       - 'memory.html'
@@ -26,6 +32,8 @@ on:
       - 'tests/test_janus_native_atlas.py'
       - 'tests/test_janus_relation_ui.py'
       - 'tests/janus_relation_browser_smoke.py'
+      - 'tests/test_original_inaihr_restoration.py'
+      - 'tests/inaihr_originals_browser.py'
       - '.github/workflows/janus-native-atlas-integrity.yml'
   workflow_dispatch:
 permissions:
@@ -33,7 +41,7 @@ permissions:
 jobs:
   preserve-real-neural-interface:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with:
@@ -62,6 +70,10 @@ jobs:
         env:
           JANUS_ORGANISM: iNaiHR
         run: python tests/janus_relation_browser_smoke.py
+      - name: Guard historical secret, ngrok and mutating API removal from restored originals
+        run: python -m unittest discover -v -s tests -p 'test_original_inaihr_restoration.py'
+      - name: Chromium original SPORE and purple AI Nexus, real public Cosmos source edge, no writes
+        run: python tests/inaihr_originals_browser.py
       - name: Verify original source family has not been replaced
         run: |
           python - <<'PY'
