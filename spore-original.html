@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>iNaiHR: SPORE MIND · ORIGINAL RESTORED</title>
+    <script src="./assets/janus-explicit-links.js" defer></script>
+    <script src="./assets/janus-native-atlas.js" defer></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* ORGANIC PALETTE */
+            --bg-deep: #051a24;
+            --c-cell: #a3e635;    /* Spore Green */
+            --c-core: #d9f99d;    /* Light Green */
+            --c-link: #84cc16;    
+            --c-janus: #f472b6;   /* Soft Pink */
+            --glass: rgba(255, 255, 255, 0.1);
+        }
+
+        body, html { 
+            margin: 0; padding: 0; width: 100%; height: 100%; 
+            background: radial-gradient(circle at center, #134e4a 0%, #020617 100%); 
+            overflow: hidden; font-family: 'Comfortaa', cursive; color: #fff; user-select: none; 
+        }
+        
+        /* PRIMORDIAL SOUP BACKGROUND */
+        #soup {
+            position: absolute; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.3;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIyIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjIiLz48L3N2Zz4=');
+            animation: drift 60s linear infinite;
+        }
+        @keyframes drift { from { background-position: 0 0; } to { background-position: 100px 100px; } }
+
+        /* UI LAYER */
+        #ui-layer { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10; 
+            display: flex; flex-direction: column; justify-content: space-between; padding: 20px; 
+        }
+        
+        .header { display: flex; align-items: center; gap: 10px; pointer-events: auto; }
+        .logo { font-weight: 700; font-size: 20px; text-shadow: 0 0 10px var(--c-cell); color: var(--c-core); }
+        .status-blob { width: 12px; height: 12px; background: #555; border-radius: 50%; transition: 0.5s; box-shadow: 0 0 5px #000; }
+
+        .controls { display: flex; justify-content: center; gap: 20px; pointer-events: auto; padding-bottom: 30px; }
+        .fab { 
+            width: 60px; height: 60px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.2); 
+            background: rgba(255,255,255,0.1); backdrop-filter: blur(5px); color: #fff; font-size: 24px; 
+            cursor: pointer; transition: 0.2s; display: flex; justify-content: center; align-items: center; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .fab:hover { transform: scale(1.1); background: rgba(255,255,255,0.2); border-color: var(--c-cell); }
+        .fab:active { transform: scale(0.95); }
+
+        /* MODAL (Organic Shape) */
+        .modal-overlay { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); 
+            backdrop-filter: blur(5px); z-index: 100; display: none; justify-content: center; align-items: center; 
+        }
+        .modal-overlay.active { display: flex; }
+        
+        .blob-card { 
+            width: 300px; padding: 30px; background: rgba(20, 40, 35, 0.8); border-radius: 40px 10px 40px 10px; 
+            border: 2px solid var(--c-cell); box-shadow: 0 0 30px rgba(163, 230, 53, 0.2); text-align: center; 
+            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes popIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+        .blob-card h2 { margin: 0 0 15px 0; color: var(--c-core); }
+        .blob-card input { 
+            width: 100%; padding: 12px; border-radius: 20px; border: none; background: rgba(0,0,0,0.3); 
+            color: #fff; font-family: inherit; margin-bottom: 20px; outline: none; text-align: center; 
+        }
+        .actions { display: flex; gap: 10px; justify-content: center; }
+        .btn { padding: 10px 20px; border-radius: 20px; border: none; font-weight: 700; cursor: pointer; }
+        .btn-save { background: var(--c-cell); color: #002; }
+        .btn-del { background: #ef4444; color: #fff; }
+        .btn-close { background: transparent; color: #aaa; border: 1px solid #aaa; }
+
+        /* D3 CHART */
+        #chart { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        
+        .link { stroke: rgba(255, 255, 255, 0.2); stroke-width: 2px; stroke-linecap: round; transition: stroke 0.3s; }
+        .link.active { stroke: var(--c-cell); stroke-width: 3px; }
+
+        .node { cursor: pointer; }
+        .node circle.membrane { fill: rgba(255,255,255,0.05); stroke: var(--c-cell); stroke-width: 1.5px; transition: all 0.3s; }
+        .node circle.core { fill: var(--c-cell); transition: all 0.3s; }
+        
+        .node:hover circle.membrane { fill: rgba(163, 230, 53, 0.2); r: 28; }
+        .node:hover circle.core { r: 12; fill: #fff; }
+
+        .node.janus circle.membrane { stroke: var(--c-janus); stroke-dasharray: 4,4; }
+        .node.janus circle.core { fill: var(--c-janus); }
+
+        .node.selected circle.membrane { stroke: #fff; stroke-width: 3px; filter: drop-shadow(0 0 10px #fff); }
+
+        .node text { 
+            font-size: 12px; fill: #fff; pointer-events: none; text-shadow: 0 2px 4px #000; 
+            font-weight: 700; opacity: 0.8; transition: 0.3s;
+        }
+        
+        /* Pulsing Animation */
+        @keyframes pulse { 0% { r: 8; } 50% { r: 10; } 100% { r: 8; } }
+        .node circle.core { animation: pulse 3s infinite ease-in-out; animation-delay: var(--delay); }
+
+    </style>
+</head>
+<body>
+
+    <div id="soup"></div>
+    <div id="chart"></div>
+
+    <div id="ui-layer">
+        <div class="header">
+            <div class="status-blob" id="connection-dot"></div>
+            <div class="logo">iNaiHR · SPORE MIND</div>
+            <span id="spore-status" style="font:700 10px Comfortaa;color:#d9f99d">LOCAL DRAFT · NO REMOTE SYNC</span>
+            <a href="./index.html" style="color:#d9f99d;font-size:11px;text-decoration:underline">SEMANTIC NEXUS</a>
+        </div>
+        
+        <div class="controls">
+            <button class="fab" onclick="openAddModal()">+</button>
+            <button class="fab" onclick="centerView()" style="font-size:16px">⌖</button>
+            <button class="fab" style="font-size:13px" onclick="sporeExport()" title="Export local draft, no server writes">SAVE</button>
+            <button class="fab" style="font-size:13px" onclick="sporeImport()" title="Import an explicit local draft">LOAD</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal">
+        <div class="blob-card">
+            <h2 id="m-title">Новая Клетка</h2>
+            <input type="text" id="node-input" placeholder="Название..." maxlength="20">
+            <div class="actions">
+                <button class="btn btn-close" onclick="closeModal()">✕</button>
+                <button class="btn btn-del" id="btn-del" onclick="deleteNode()" style="display:none">Удалить</button>
+                <button class="btn btn-save" onclick="saveNode()">Сохранить</button>
+            </div>
+            <div style="margin-top:15px; font-size:10px; color:#888;">
+                Shift + Клик для связи двух клеток
+            </div>
+        </div>
+    </div>
+
+<script>
+    // Offline original SPORE renderer. Legacy ngrok endpoint and browser USER_ID removed.
+    const SPORE_DRAFT_KEY = 'janus_inaihr_spore_classic_draft_v1';
+    window.JANUSSporeAtlasActive=false;
+    let JANUSSporePrevious=null;
+
+    let nodes = [];
+    let links = [];
+    let simulation;
+    let svg, g, linkG, nodeG;
+    
+    let editModeNode = null; // Node being edited
+    let linkSource = null;   // Node selected for linking
+
+    window.onload = () => {
+        initGraph();
+        let candidate=null;
+        try{candidate=JSON.parse(sessionStorage.getItem(SPORE_DRAFT_KEY)||'null')}catch(e){}
+        if(candidate&&candidate.schema==='janus.inaihr.spore.local_draft.v1'&&
+           Array.isArray(candidate.nodes)&&Array.isArray(candidate.links)&&
+           candidate.nodes.length<=2500&&candidate.links.length<=10000) {
+            nodes=candidate.nodes; links=candidate.links;
+        }else{nodes=[{id:1,label:'Я',type:'janus',x:innerWidth/2,y:innerHeight/2}];links=[]}
+        updateGraph();
+        document.getElementById('connection-dot').style.background='#eab308';
+    };
+
+    function initGraph() {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        svg = d3.select("#chart").append("svg")
+            .attr("width", width).attr("height", height)
+            .on("click", (e) => { 
+                if(e.target.tagName === 'svg') { closeModal(); deselect(); } 
+            });
+
+        g = svg.append("g");
+        linkG = g.append("g");
+        nodeG = g.append("g");
+
+        const zoom = d3.zoom().scaleExtent([0.1, 4]).on("zoom", (e) => g.attr("transform", e.transform));
+        svg.call(zoom);
+
+        simulation = d3.forceSimulation()
+            .force("link", d3.forceLink().id(d => d.id).distance(150))
+            .force("charge", d3.forceManyBody().strength(-300))
+            .force("center", d3.forceCenter(width / 2, height / 2))
+            .force("collide", d3.forceCollide(40).strength(0.7))
+            .on("tick", ticked);
+    }
+
+    // --- API SYNC ---
+    // Local drafts replace the historical unauthenticated ngrok /get and /sync API.
+    async function fetchNodes() { return false; }
+    async function sync() {
+        if(window.JANUSSporeAtlasActive) return;
+        const nd=nodes.map(n=>({id:n.id,label:String(n.label||'').slice(0,200),
+          type:n.type==='janus'?'janus':'cell',x:Number.isFinite(+n.x)?+n.x:0,
+          y:Number.isFinite(+n.y)?+n.y:0}));
+        const ln=links.map(l=>({source:l.source?.id??l.source,target:l.target?.id??l.target}))
+          .filter(l=>nd.some(n=>n.id===l.source)&&nd.some(n=>n.id===l.target));
+        try{sessionStorage.setItem(SPORE_DRAFT_KEY,JSON.stringify({
+             schema:'janus.inaihr.spore.local_draft.v1',nodes:nd,links:ln}))}
+        catch(e){document.getElementById('spore-status').textContent='DRAFT STORAGE FULL · EXPORT'}
+    }
+    function sporeExport(){
+        if(window.JANUSSporeAtlasActive)return;
+        const data={schema:'janus.inaihr.spore.local_draft.v1',
+          nodes:nodes.map(n=>({id:n.id,label:n.label,type:n.type,x:n.x,y:n.y})),
+          links:links.map(l=>({source:l.source?.id??l.source,target:l.target?.id??l.target}))};
+        const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+        const a=document.createElement('a'),url=URL.createObjectURL(blob);
+        a.href=url;a.download='JANUS-iNaiHR-SPORE-LOCAL-DRAFT.json';
+        document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    }
+    function sporeImport(){
+        if(window.JANUSSporeAtlasActive)return;
+        const input=document.createElement('input');input.type='file';input.accept='.json,application/json';
+        input.onchange=async()=>{
+            const f=input.files?.[0];if(!f||f.size>2000000)return;
+            try{
+                const v=JSON.parse(await f.text());
+                if(v.schema!=='janus.inaihr.spore.local_draft.v1'||!Array.isArray(v.nodes)||
+                 !Array.isArray(v.links)||v.nodes.length>2500||v.links.length>10000)throw Error('SCHEMA_HOLD');
+                const ids=new Set();
+                for(const n of v.nodes){if(!['number','string'].includes(typeof n.id)||ids.has(n.id)||
+                 String(n.id).startsWith('json:'))throw Error('NODE_HOLD');ids.add(n.id)}
+                for(const l of v.links){if(!ids.has(l.source)||!ids.has(l.target))throw Error('LINK_HOLD')}
+                if(!confirm('Replace this browser SPORE draft only? Remote state is untouched.'))return;
+                nodes=v.nodes;links=v.links;linkSource=null;updateGraph();sync();
+            }catch(e){document.getElementById('spore-status').textContent='INVALID LOCAL DRAFT'}
+        };input.click();
+    }
+
+    // --- D3 LOGIC ---
+    function updateGraph() {
+        // NODES
+        let nodeSel = nodeG.selectAll(".node").data(nodes, d => d.id);
+        
+        const nodeEnter = nodeSel.enter().append("g")
+            .attr("class", d => `node ${d.type || 'cell'}`)
+            .call(d3.drag().on("start", dragstart).on("drag", dragged).on("end", dragend))
+            .on("click", clickNode)
+            .on("dblclick", dblClickNode); // Double click to edit
+
+        // Membrane
+        nodeEnter.append("circle").attr("class", "membrane").attr("r", 22).attr("fill", "transparent");
+        
+        // Core
+        nodeEnter.append("circle").attr("class", "core").attr("r", 8).style("--delay", d => Math.random()+"s");
+
+        // Label
+        nodeEnter.append("text").attr("dy", 35).attr("text-anchor", "middle").text(d => d.label);
+
+        nodeSel.exit().transition().duration(300).attr("transform", "scale(0)").remove();
+
+        // Update Text
+        nodeSel.select("text").text(d => d.label);
+        nodeSel.attr("class", d => `node ${d.type || 'cell'} ${linkSource && linkSource.id === d.id ? 'selected' : ''}`);
+
+        // LINKS
+        let linkSel = linkG.selectAll(".link").data(links, d => (d.source?.id??d.source) + "-" + (d.target?.id??d.target));
+        linkSel.enter().append("line").attr("class", "link").merge(linkSel)
+          .style("stroke-dasharray",d=>d.provenance==='EXPLICIT_SOURCE_REFERENCE'?'6 4':null)
+          .attr("data-source-pointer",d=>d.provenance==='EXPLICIT_SOURCE_REFERENCE'?d.pointer:null);
+        linkSel.exit().remove();
+
+        simulation.nodes(nodes);
+        simulation.force("link").links(links);
+        simulation.alpha(0.3).restart();
+    }
+
+    window.JANUSAtlasNativeFocus=(records,relations=[])=>{
+        if(!Array.isArray(records)||records.length>50||!Array.isArray(relations)||relations.length>100)return;
+        if(JANUSSporePrevious)window.JANUSAtlasNativeRestore();
+        const view=records.filter(r=>r&&r.readOnly===true&&r.deleteAllowed===false&&
+           typeof r.id==='string'&&r.id.startsWith('json:'));
+        if(!view.length)return;
+        const allowed=new Set(view.map(r=>r.id));
+        JANUSSporePrevious={nodes,links,linkSource};
+        window.JANUSSporeAtlasActive=true;
+        closeModal();linkSource=null;
+        nodes=view.map((r,i)=>({id:r.id,label:String(r.path||r.id).split('/').pop().slice(0,55),
+          type:'cell',x:innerWidth/2+(i%7)*32,y:innerHeight/2+Math.floor(i/7)*42}));
+        links=relations.filter(e=>e?.evidence==='explicit-json-url'&&
+          allowed.has(e.sourceId)&&allowed.has(e.targetId)&&typeof e.pointer==='string'&&
+          (e.pointer===''||e.pointer.startsWith('/'))).map(e=>({
+            source:e.sourceId,target:e.targetId,provenance:'EXPLICIT_SOURCE_REFERENCE',pointer:e.pointer
+          }));
+        updateGraph();document.getElementById('spore-status').textContent='VERIFIED SOURCE REFS · READ ONLY · TOPA PENDING';
+    };
+    window.JANUSAtlasNativeRestore=()=>{
+        if(!JANUSSporePrevious)return;
+        nodes=JANUSSporePrevious.nodes;links=JANUSSporePrevious.links;
+        linkSource=JANUSSporePrevious.linkSource;JANUSSporePrevious=null;
+        window.JANUSSporeAtlasActive=false;updateGraph();
+        document.getElementById('spore-status').textContent='LOCAL DRAFT · NO REMOTE SYNC';
+    };
+    function ticked() {
+        linkG.selectAll(".link")
+            .attr("x1", d => d.source.x).attr("y1", d => d.source.y)
+            .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
+        nodeG.selectAll(".node").attr("transform", d => `translate(${d.x},${d.y})`);
+    }
+
+    // --- INTERACTIONS ---
+    function clickNode(e, d) {
+        e.stopPropagation();
+        
+        if(window.JANUSSporeAtlasActive)return;
+        // Shift + Click = Link
+        if (e.shiftKey) {
+            if (!linkSource) {
+                linkSource = d;
+                updateGraph(); // Highlight source
+            } else {
+                if (linkSource.id !== d.id) {
+                    // Create Link
+                    links.push({ source: linkSource.id, target: d.id });
+                    linkSource = null;
+                    updateGraph();
+                    sync();
+                }
+            }
+        } 
+        // Normal Click = Just highlight (optional)
+    }
+
+    function dblClickNode(e, d) {
+        e.stopPropagation();
+        openEditModal(d);
+    }
+
+    function deselect() {
+        linkSource = null;
+        updateGraph();
+    }
+
+    // --- MODAL LOGIC ---
+    function openAddModal() {
+        if(window.JANUSSporeAtlasActive)return;
+        editModeNode = null;
+        document.getElementById('m-title').innerText = "Новая Клетка";
+        document.getElementById('node-input').value = "";
+        document.getElementById('btn-del').style.display = 'none';
+        document.getElementById('modal').classList.add('active');
+        document.getElementById('node-input').focus();
+    }
+
+    function openEditModal(d) {
+        if(window.JANUSSporeAtlasActive)return;
+        editModeNode = d;
+        document.getElementById('m-title').innerText = "Изменить Клетку";
+        document.getElementById('node-input').value = d.label;
+        document.getElementById('btn-del').style.display = 'inline-block';
+        document.getElementById('modal').classList.add('active');
+    }
+
+    function closeModal() {
+        document.getElementById('modal').classList.remove('active');
+    }
+
+    function saveNode() {
+        if(window.JANUSSporeAtlasActive)return;
+        const txt = document.getElementById('node-input').value.trim();
+        if (!txt) return;
+
+        if (editModeNode) {
+            // Edit existing
+            editModeNode.label = txt;
+        } else {
+            // Create new
+            const newNode = {
+                id: Date.now(),
+                label: txt,
+                type: 'cell',
+                x: window.innerWidth/2 + (Math.random()-0.5)*50,
+                y: window.innerHeight/2 + (Math.random()-0.5)*50
+            };
+            nodes.push(newNode);
+        }
+        updateGraph();
+        sync();
+        closeModal();
+    }
+
+    function deleteNode() {
+        if(window.JANUSSporeAtlasActive)return;
+        if (!editModeNode) return;
+        nodes = nodes.filter(n => n.id !== editModeNode.id);
+        links = links.filter(l => (l.source?.id??l.source) !== editModeNode.id && (l.target?.id??l.target) !== editModeNode.id);
+        updateGraph();
+        sync();
+        closeModal();
+    }
+
+    function centerView() {
+        svg.transition().duration(1000).call(
+            d3.zoom().transform, 
+            d3.zoomIdentity.translate(window.innerWidth/2, window.innerHeight/2).scale(1)
+        );
+    }
+
+    // Drag handlers
+    function dragstart(e, d) { if (!e.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; }
+    function dragged(e, d) { d.fx = e.x; d.fy = e.y; }
+    function dragend(e, d) { if (!e.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; }
+
+</script>
+</body>
+</html>
