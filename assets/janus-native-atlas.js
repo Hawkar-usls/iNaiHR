@@ -67,22 +67,49 @@ async function loadSelection(all=false){
  }catch(e){status('HOLD · '+e.message,true)}
  finally{STORE.busy=false;X('load').disabled=false;X('all').disabled=false}
 }
+// Filename version and first directory are metadata facets, NOT scientific layers.
+function sourceDirectory(path){
+ const p=String(path||'').split('/');
+ return p.length>1?p[0]:'(root)';
+}
+function sourceVersion(path){
+ const name=String(path||'').split('/').pop().replace(/\.json$/i,'');
+ const tokens=[...name.matchAll(/(?:^|[._-])(v[0-9]+(?:[._-][0-9]+){0,3})(?=$|[._-])/gi)];
+ return tokens.length?tokens[tokens.length-1][1].toLowerCase().replace(/[_-]/g,'.'):'';
+}
 function filterRows(){
  const query=X('query').value.trim().toLocaleLowerCase(),rep=X('repo').value;
+ const version=X('version').value.trim().toLowerCase().replace(/[_-]/g,'.');
+ const directorySelect=X('layer');
+ const eligible=[...STORE.rows.values()].filter(r=>!rep||r.repository===rep);
+ // Regenerate directory options only from already SHA-verified shard records.
+ const options=[...new Set(eligible.map(r=>sourceDirectory(r.path)))].sort();
+ const previous=directorySelect.value;
+ directorySelect.replaceChildren();
+ const all=make('option','ALL SOURCE DIRECTORIES · NOT SCIENTIFIC LAYERS');all.value='';directorySelect.append(all);
+ for(const dir of options){const option=make('option',dir);option.value=dir;directorySelect.append(option)}
+ directorySelect.value=options.includes(previous)?previous:'';
+ const layer=directorySelect.value;
  const words=query.split(/\s+/).filter(Boolean);
- const rows=[...STORE.rows.values()].filter(r=>(!rep||rep===r.repository)&&(!words.length||words.every(w=>(r.path+' '+r.repository).toLowerCase().includes(w))));
+ const rows=eligible.filter(r=>(!layer||sourceDirectory(r.path)===layer)&&
+  (!version|| (version==='(none)'?!sourceVersion(r.path):
+      sourceVersion(r.path)===version||sourceVersion(r.path).startsWith(version+'.')))&&
+  (!words.length||words.every(w=>(r.path+' '+r.repository).toLowerCase().includes(w))));
  rows.sort((a,b)=>a.repository.localeCompare(b.repository)||a.path.localeCompare(b.path));
  STORE.matches=rows;
  const list=X('results');list.replaceChildren();
- X('shown').textContent=rows.length.toLocaleString()+' matching indexed JSON';
+ X('shown').textContent=rows.length.toLocaleString()+' matching SOURCE PATHS · '+eligible.length.toLocaleString()+
+  ' loaded SHA-indexed paths in selected repository scope';
  for(const r of rows.slice(0,100)){
   const b=make('button',null,'janus-atlas-hit');b.type='button';
-  b.append(make('strong',r.path.split('/').pop()),make('small',r.repository+' / '+r.path));
+  const ver=sourceVersion(r.path)||'not declared in filename';
+  b.append(make('strong',r.path.split('/').pop()),
+   make('small',r.repository+' / '+r.path+' · dir '+sourceDirectory(r.path)+' · filename version '+ver));
   b.onclick=()=>choose(r);
   list.append(b);
  }
  if(rows.length>100)list.append(make('p','Showing first 100; refine your query.','janus-atlas-note'));
- if(!rows.length)list.append(make('p','No verified source matches. Choose a repository or VERIFY ALL.','janus-atlas-note'));
+ if(!rows.length)list.append(make('p','No verified source matches. Choose a repository or VERIFY ALL. Directory/version labels are path metadata only.','janus-atlas-note'));
 }
 async function sourceBytes(r){
  if(!/^Hawkar-usls\/[A-Za-z0-9_.-]+$/.test(r.repository)||!(/^[a-f0-9]{40}$/.test(r.sourceCommit))||
@@ -319,6 +346,13 @@ function mount(){
  const stamp=make('p','Connecting…','janus-atlas-note');stamp.id='janus-atlas-stamp';drawer.append(stamp);
  const repo=make('select');repo.id='janus-atlas-repo';let all=make('option','ALL VERIFIED REPOSITORIES');all.value='';repo.append(all);repo.onchange=()=>loadSelection(false);drawer.append(repo);
  const query=make('input');query.id='janus-atlas-query';query.placeholder='Rowan · Tranception · Osiris · JANUS…';query.type='search';query.oninput=filterRows;drawer.append(query);
+ const facets=make('div',null,'janus-atlas-grid');
+ const version=make('input');version.id='janus-atlas-version';version.type='search';
+ version.placeholder='FILENAME VERSION · v2.1 (or (none))';version.oninput=filterRows;
+ const layer=make('select');layer.id='janus-atlas-layer';layer.onchange=filterRows;
+ const allLayer=make('option','ALL SOURCE DIRECTORIES · NOT SCIENTIFIC LAYERS');allLayer.value='';layer.append(allLayer);
+ facets.append(version,layer);drawer.append(facets);
+ drawer.append(make('p','Version = literal filename token only; directory = first folder in SHA-verified Git tree. These are NOT scientific classifications, historical equivalence or TOPA evidence.','janus-atlas-note'));
  const row=make('div',null,'janus-atlas-grid');
  const load=make('button','LOAD REPOSITORY');load.id='janus-atlas-load';load.onclick=()=>loadSelection(false);
  const allBtn=make('button','VERIFY ALL');allBtn.id='janus-atlas-all';allBtn.onclick=()=>loadSelection(true);
