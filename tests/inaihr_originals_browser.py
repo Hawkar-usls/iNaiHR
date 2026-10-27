@@ -46,6 +46,9 @@ def run():
                     page.evaluate("synthAI()")
                     assert page.evaluate("!!sessionStorage.getItem(NEXUS_SAFE_KEY)")
                     assert page.evaluate("localStorage.getItem('inaihr_v1')===null")
+                    # Original createNewNode opens rename modal; close it like user
+                    # before opening the separate JSON memory drawer.
+                    page.evaluate("document.getElementById('rename-modal').style.display='none'")
                 count=page.evaluate("nodes.length")
                 page.locator(".janus-native-atlas-launch").click()
                 page.wait_for_function("!document.querySelector('#janus-atlas-drawer').hidden",timeout=10000)
