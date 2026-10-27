@@ -11,6 +11,7 @@ on:
       - 'tests/test_janus_explicit_links.py'
       - 'tests/test_janus_native_atlas.py'
       - 'tests/test_janus_relation_ui.py'
+      - 'tests/janus_relation_browser_smoke.py'
       - '.github/workflows/janus-native-atlas-integrity.yml'
   push:
     branches: [main]
@@ -24,6 +25,7 @@ on:
       - 'tests/test_janus_explicit_links.py'
       - 'tests/test_janus_native_atlas.py'
       - 'tests/test_janus_relation_ui.py'
+      - 'tests/janus_relation_browser_smoke.py'
       - '.github/workflows/janus-native-atlas-integrity.yml'
   workflow_dispatch:
 permissions:
@@ -52,6 +54,14 @@ jobs:
         run: node --check assets/janus-native-atlas.js
       - name: Validate explicit-reference module syntax
         run: node --check assets/janus-explicit-links.js
+      - name: Install Chrome browser driver for native end-to-end test
+        run: |
+          python -m pip install --quiet playwright
+          python -m playwright install chromium
+      - name: Original D3 and compiled relation overlay Chrome regression
+        env:
+          JANUS_ORGANISM: iNaiHR
+        run: python tests/janus_relation_browser_smoke.py
       - name: Verify original source family has not been replaced
         run: |
           python - <<'PY'
