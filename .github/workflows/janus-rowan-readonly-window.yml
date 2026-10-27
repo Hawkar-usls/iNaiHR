@@ -1,0 +1,28 @@
+name: JANUS Rowan Read-Only Research Window
+on:
+  pull_request:
+    paths:
+      - 'assets/janus-rowan-readonly.mjs'
+      - 'rowan.html'
+      - 'tests/test_rowan_readonly.test.mjs'
+      - '.github/workflows/janus-rowan-readonly-window.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'assets/janus-rowan-readonly.mjs'
+      - 'rowan.html'
+      - 'tests/test_rowan_readonly.test.mjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  readonly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source integrity and read-only failure regressions
+        run: node --test tests/test_rowan_readonly.test.mjs
