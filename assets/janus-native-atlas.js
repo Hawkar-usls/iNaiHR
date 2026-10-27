@@ -170,6 +170,113 @@ function choose(r){
   finally{verify.disabled=false}
  };
  panel.append(verify,fields);
+ const index=make('button','INDEXED LINKS · FULL PUBLIC CATALOG','janus-atlas-action');
+ const result=make('div',null,'janus-atlas-fields');
+ index.onclick=async()=>{
+  index.disabled=true;result.replaceChildren(make('p','Checking relation-index snapshot provenance…','janus-atlas-note'));
+  try{await showIndexedLinks(r,result)}
+  catch(e){result.replaceChildren(make('p','RELATION INDEX HOLD · '+e.message,'janus-atlas-fail'))}
+  finally{index.disabled=false}
+ };
+ panel.append(index,result);
+}
+const RELATION_API='https://api.github.com/repos/Hawkar-usls/Hrain/commits?path=assets/janus-json-relations/manifest.json&per_page=1';
+const RELATIONS={revision:'',manifest:null,catalogHash:'',shards:new Map()};
+async function getPinnedJSON(url){
+ const response=await fetch(url,{cache:'no-store'});
+ if(!response.ok)throw Error('HTTP_'+response.status);
+ const bytes=await response.arrayBuffer();
+ return {digest:await sha(bytes),value:JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(bytes))};
+}
+async function verifyRelationManifest(){
+ if(RELATIONS.manifest)return RELATIONS.manifest;
+ const catalogue=await initCatalog();
+ const hashes=await getPinnedJSON(ORIGIN+STORE.revision+'/assets/janus-json-atlas/manifest.json');
+ if(hashes.value.schema!==catalogue.schema||hashes.value.jsonCount!==catalogue.jsonCount)throw Error('CATALOG_REPIN_HOLD');
+ const commits=await limitJSON(RELATION_API);
+ const rev=commits?.[0]?.sha;
+ if(!/^[a-f0-9]{40}$/.test(rev||''))throw Error('NO_RELATION_INDEX_COMMIT');
+ const obj=await getPinnedJSON(ORIGIN+rev+'/assets/janus-json-relations/manifest.json');
+ const m=obj.value;
+ if(m.schema!=='janus.hrain.json_explicit_relations.v1'||m.authority?.readOnly!==true||
+    m.authority?.writeAuthority!==false||m.authority?.sourceMutationAllowed!==false||
+    m.authority?.semanticHypothesesAreEvidence!==false||m.authority?.topaVerdictsAreAutoInferred!==false||
+    m.sourceCatalogSha256!==hashes.digest||m.sourceCatalogJsonCount!==catalogue.jsonCount||
+    m.publicRepositoryCount!==catalogue.repositoryCount||!Array.isArray(m.shards)||
+    m.shards.length!==catalogue.repositoryCount)
+  throw Error('RELATION_INDEX_NOT_FOR_CURRENT_VERIFIED_CATALOG');
+ RELATIONS.revision=rev;RELATIONS.catalogHash=hashes.digest;RELATIONS.manifest=m;
+ return m;
+}
+async function verifyRelationShard(repo){
+ if(RELATIONS.shards.has(repo))return RELATIONS.shards.get(repo);
+ const m=await verifyRelationManifest();
+ const desc=m.shards.find(s=>s.repository===repo);
+ if(!desc||!/^assets\/janus-json-relations\/shards\/[0-9]{2}\.json$/.test(desc.path)||
+  !/^[a-f0-9]{64}$/.test(desc.sha256||'')||!Number.isInteger(desc.count))throw Error('RELATION_SHARD_POLICY');
+ const obj=await getPinnedJSON(ORIGIN+RELATIONS.revision+'/'+desc.path);
+ if(obj.digest!==desc.sha256||obj.value.schema!==m.schema||obj.value.repository!==repo||
+    obj.value.catalogSha256!==RELATIONS.catalogHash||obj.value.readOnly!==true||
+    obj.value.semanticHypothesesAreEvidence!==false||
+    obj.value.topaScientificVerdict!=='NOT_ADJUDICATED'||obj.value.edges?.length!==desc.count)
+  throw Error('RELATION_SHARD_HASH_OR_AUTHORITY');
+ const edges=obj.value.edges;
+ for(const e of edges){
+  if(!e.sourceId?.startsWith('json:')||!e.targetId?.startsWith('json:')||
+    typeof e.jsonPointer!=='string'||(e.jsonPointer!==''&&!e.jsonPointer.startsWith('/'))||
+    !/^[a-f0-9]{40}$/.test(e.sourceGitBlobSha||'')||
+    !/^[a-f0-9]{64}$/.test(e.sourceSha256||'')||
+    !/^[a-f0-9]{40}$/.test(e.targetSnapshotCommit||'')||
+    !['BRANCH_MAIN_REBOUND_TO_SNAPSHOT','PINNED_SAME_COMMIT'].includes(e.referenceMode)||
+    e.relationClass!=='EXPLICIT_SOURCE_REFERENCE'||e.scientificVerdict!=='NOT_TOPA_ADJUDICATED')
+    throw Error('RELATION_EDGE_POLICY_HOLD');
+ }
+ RELATIONS.shards.set(repo,edges);
+ return edges;
+}
+async function showIndexedLinks(origin,box){
+ const manifest=await verifyRelationManifest();
+ if(STORE.focus!==origin)return;
+ const edges=(await verifyRelationShard(origin.repository))
+    .filter(e=>e.sourceId===origin.id&&e.sourceGitBlobSha===origin.gitBlobSha);
+ if(STORE.focus!==origin)return;
+ const info=make('p',manifest.scannedVerifiedFiles.toLocaleString()+' / '+manifest.sourceCatalogJsonCount.toLocaleString()+
+  ' source JSON byte-verified · '+manifest.directEdges.toLocaleString()+' DIRECT edges · '+manifest.pendingFiles+
+  ' PENDING · '+manifest.heldFiles+' HOLD · '+manifest.truncatedFiles+' TRUNCATED','janus-atlas-note');
+ box.replaceChildren(info,make('p','EXPLICIT SOURCE REFERENCES only. iNaiHR semantic hypotheses are separate CANDIDATES. TOPA scientific claims remain NOT ADJUDICATED.','janus-atlas-note'));
+ if(!edges.length){box.append(make('p','No verified direct edge indexed for this JSON. This does not prove no relation exists.','janus-atlas-note'));return}
+ const indexed=edges.slice(0,24);
+ for(const e of indexed){
+  const target=STORE.rows.get(e.targetId);
+  const msg=e.jsonPointer+' → '+(target?target.repository+'/'+target.path:e.targetId+' (load target shard)')+
+    ' · '+(e.referenceMode==='BRANCH_MAIN_REBOUND_TO_SNAPSHOT'?'main→snapshot':'exact SHA')+' · TOPA: PENDING';
+  const b=make('button',msg,'janus-atlas-hit');
+  b.disabled=!target||target.sourceCommit!==e.targetSnapshotCommit;
+  b.onclick=()=>{if(target)choose(target)};
+  box.append(b);
+ }
+ if(indexed.length!==edges.length)box.append(make('p','More relations exist; this UI shows first 24.','janus-atlas-note'));
+ const button=make('button','VERIFY ALL TARGET SHARDS & PROJECT SOURCE EDGES','janus-atlas-action');
+ button.onclick=async()=>{
+  button.disabled=true;
+  try{
+   await loadSelection(true);
+   if(STORE.focus!==origin)return;
+   const targetRecords=[],links=[],seen=new Set([origin.id]);
+   for(const e of indexed){
+    const t=STORE.rows.get(e.targetId);
+    if(!t||t.sourceCommit!==e.targetSnapshotCommit)continue;
+    if(!seen.has(t.id)){seen.add(t.id);targetRecords.push(t)}
+    links.push({sourceId:origin.id,targetId:t.id,pointer:e.jsonPointer,evidence:'explicit-json-url'});
+    if(targetRecords.length>=12)break;
+   }
+   if(!links.length)throw Error('NO_VERIFIED_TARGET_CATALOG_ROWS');
+   if(typeof window.JANUSAtlasNativeFocus!=='function')throw Error('NATIVE_GRAPH_UNAVAILABLE');
+   window.JANUSAtlasNativeFocus([origin,...targetRecords],links);closeDrawer(false);
+  }catch(e){status('RELATION GRAPH HOLD · '+e.message,true)}
+  finally{button.disabled=false}
+ };
+ box.append(button);
 }
 function closeDrawer(restore=false){X('drawer').hidden=true;if(restore)window.JANUSAtlasNativeRestore?.()}
 function openDrawer(){X('drawer').hidden=false;initCatalog().catch(e=>status('HOLD · '+e.message,true))}
