@@ -10,6 +10,7 @@ on:
       - 'assets/janus-explicit-links.js'
       - 'tests/test_janus_explicit_links.py'
       - 'tests/test_janus_native_atlas.py'
+      - 'tests/test_janus_relation_ui.py'
       - '.github/workflows/janus-native-atlas-integrity.yml'
   push:
     branches: [main]
@@ -22,6 +23,7 @@ on:
       - 'assets/janus-explicit-links.js'
       - 'tests/test_janus_explicit_links.py'
       - 'tests/test_janus_native_atlas.py'
+      - 'tests/test_janus_relation_ui.py'
       - '.github/workflows/janus-native-atlas-integrity.yml'
   workflow_dispatch:
 permissions:
@@ -42,6 +44,8 @@ jobs:
           node-version: '22'
       - name: Guard native D3/brains and SHA-only source admission
         run: python -m unittest discover -v -s tests -p 'test_janus_native_atlas.py'
+      - name: Full-corpus relation UI truth-classification guard
+        run: python -m unittest discover -v -s tests -p 'test_janus_relation_ui.py'
       - name: Exact JSON field reference and pinned-commit regression
         run: python -m unittest discover -v -s tests -p 'test_janus_explicit_links.py'
       - name: Validate native browser module syntax
