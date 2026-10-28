@@ -1,0 +1,1783 @@
+{
+  "batch_id": "627cf218366a9c7c7c49",
+  "claim_ceiling": "DISCOVERY_MEMORY_ONLY__TARGET_REPO_MUST_VERIFY_INDEPENDENTLY",
+  "fragment_count": 1,
+  "fragment_index": 1,
+  "items": [
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "08e7af85b700485380503a30",
+      "context_id": "e37a0a56c674329e0c9b1f3d",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "identifiability",
+        "inverse problem",
+        "limitation",
+        "non-identifiability",
+        "symmetry"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 13.7917,
+      "source": "arxiv",
+      "source_context_sha256": "1cb9d1781d331dcacd91f83c9b7b1f1b6a08c471b6aeba31141381f178c3417b",
+      "source_published": "2026-10-27T16:45:22Z",
+      "source_updated": "2026-10-27T16:45:22Z",
+      "summary": "A persistent belief in modern AI is that sufficiently large learners trained on sufficiently much data can make explicit domain knowledge optional. This paper examines a limitation of that belief. We define structure-encoded problems: tasks whose input-output map is determined, or sharply constrained, by known structure such as a solver, symmetry group, graph, physical law, measurement operator, grammar, combinatorial search space, or optimization objective. For such tasks, the central question is not expressivity--a dense neural network may contain the desired map--but finite-data identification, extrapolation, and certification. We introduce the structure gap: the finite-resource gap between a method that receives the governing structure and a learner that receives only examples. The strongest useful form of the claim is asymptotic rather than absolute: structure-agnostic learning may approach a structured solver as coverage grows, but every finite dataset can leave residual uncertainty that the structure resolves by construction. We prove this exactly for a Gaussian inverse problem: the known-operator Wiener solver attains Bayes risk, while the dense empirical learner in the correct linear class has persistent expected excess risk. We also prove a cell-coverage lower bound and an unobserved-orbit non-identifiability result. Controlled experiments in known-operator inversion, sparse recovery, and graph reachability with size extrapolation instantiate the mechanisms. When validated structure is available, it can constrain the hypothesis space before learning begins, leaving learning to address components the structure does not specify.",
+      "tags": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "The Structure Gap: When More Data Cannot Replace Structured Reasoning",
+      "url": "https://arxiv.org/abs/2610.37523v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "4390e583cbe8280ed4c0abeb",
+      "context_id": "144a1e3a25c6dd3b9e062d6e",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "inverse problem",
+        "null result"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 13.375,
+      "source": "zenodo",
+      "source_context_sha256": "693b98b31508ddf5aab0cf4a87468aa1a08d0e17ebed4035866dd37955740b2b",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "Version 1.2 (28 October 2026) adds a notice on the arithmetic precision of the split‑Gibbs runs (NOTICE_v1.2.md), with the check behind it (TF32_CHECK.md, tf32_check_files.zip). DP1&rsquo;s split‑Gibbs runs used reduced‑precision (TF32) matrix products, which a later like‑for‑like check found shift that sampler&rsquo;s estimates, while its predictions ran in full float32. The split‑Gibbs null result therefore has a further candidate explanation that DP1 cannot separate. DPS is unaffected. No file of earlier versions has changed. A pre-specified pilot testing whether a blindness-risk score computed before any target data are seen ranks the realised blindness (undetected and uncovered error) of diffusion-prior inference on real X-ray CT objects (2DeteCT) under simulated restricted access. Study DP-A: weak attenuation (F = 32,000), 240 errors &times; 20 bases. Study DP-B: bounded-reach control, 120 errors &times; 20 bases. Two samplers: split-Gibbs plug-and-play (primary) and diffusion posterior sampling (secondary). It follows the learned (VAE) pilot, arXiv:2610.28155 (reproducibility package doi:10.5281/zenodo.23392686). The analysis plan, decision rules and fixed result sentences were approved by the author, and predictions and calibration were committed by SHA-256 hash, before any trial. The plan was not lodged with an external registry, so the study is described as pre-specified; the files named PREREG_&hellip; are that plan (their names, and the word \"pre-registered\" inside the hashed plan and the dated log, are kept unchanged so that the recorded hashes still match). Version 1.1 (26 October 2026) adds a post-hoc check of the linear response used by the blindness-risk score, specified in a dated plan and approved before any computation (response_check_plan_v1.md, response_check.py, response_check_results.json, RESPONSE_CHECK.md). Under the plan&rsquo;s pre-specified reading, the response was not adequate for either sampler in either study, so the null result for the learned score does not separate the learned prior from this approximation. The pre-specified results of version 1.0 are unchanged. README.md and freeze_log.txt are updated accordingly.",
+      "tags": [
+        "uncertainty quantification",
+        "silent failure",
+        "diffusion models",
+        "Bayesian inverse problems",
+        "computed tomography",
+        "restricted access",
+        "pre-specification"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "BLINDSET diffusion-prior blind-set pilot: analysis plan, code, frozen predictions, trial records and results",
+      "url": "https://zenodo.org/records/23733048"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "f8b79606619824853d6232d5",
+      "context_id": "d4340d320dff837801070a1a",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "failure mode",
+        "representation",
+        "representation learning",
+        "retrieval"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 11.75,
+      "source": "arxiv",
+      "source_context_sha256": "e3a62fc3c2475a60606f870450f2a38cb5ae0da79a97addf7fab8783f7573d2c",
+      "source_published": "2026-10-27T10:13:34Z",
+      "source_updated": "2026-10-27T10:13:34Z",
+      "summary": "A user history can admit multiple plausible next interactions, yet conventional sequential recommenders produce a single deterministic ranking. While diffusion models offer a natural way to sample alternative continuations, we show that existing target-item diffusion recommenders often suffer from severe sampling collapse, producing nearly identical outputs across independent draws. We identify two ubiquitous design choices that promote this collapse: joint learning of the latent space and denoiser, and in-trajectory supervision via discrete losses. To address these failure modes, we introduce DARTS (Diverse and Accurate Recommendation Through Sampling), a three-stage latent diffusion framework that explicitly decouples representation learning, generative modeling, and discrete ranking by learning and freezing the latent space before diffusion training and postponing ranking supervision to the final decoding stage. We further characterize sampling diversity using complementary measures of variation before and after decoding, and use posterior-predictive aggregation to exploit this diversity at inference. Across three Amazon Reviews 2023 categories, DARTS preserves substantially greater sampling diversity while outperforming strong sequential, generative-retrieval, and diffusion baselines by 7-12% on standard ranking metrics. Aggregating multiple samples further improves ranking accuracy at a fixed slate size.",
+      "tags": [
+        "cs.IR"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "When Diffusion Recommenders Stop Sampling: Preserving Generative Diversity",
+      "url": "https://arxiv.org/abs/2610.36954v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "32497e90573a7e7f64b3514e",
+      "context_id": "25ddd0afa9e9f57dcc5b09b7",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": true,
+      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "limitation",
+        "negative result",
+        "provenance"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.4583,
+      "source": "zenodo",
+      "source_context_sha256": "9200ed671fbd586bb1586374496cecd6158a321b4aea0a061812b28e67178cb3",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "QIGONG BREATHING AND INTELLIGENT ACUPUNCTURE NEUROFEEDBACK COUPLING AT THE LIMIT is a 777-page English Research Working Edition that constructs a falsifiable, explicitly nonclinical research program joining measured breathing tasks, cardiorespiratory and EEG feedback, and isolated microscale actuator surrogates. The central problem is not whether breathing changes heart-rate variability - that has established ordinary physiological explanations - but whether a proposed feedback architecture adds independently measurable predictive or benchtop-control value after breathing rate, phase, expectancy, ordinary cardiorespiratory dynamics, sensor calibration, stimulus timing and strong conventional controllers have been fairly matched. The primary hypothesis is deliberately narrow. A prospective factorial design separates a preregistered breathing condition from an isolated, non-human phantom-drive condition. Its interaction term, order effects, washout, hierarchical sampling units, pressure-related mechanisms and full-episode denominators are subjected to masked scheduling, matched sham sensory cues, covariance-aware uncertainty and independent laboratory reconstruction. Any apparent signal explained by paced breathing or cue entrainment is treated as a legitimate negative result. A bench interaction is not evidence of physiological effects from actual acupuncture in a person. Thirty mathematically differentiated research plates address factorial contrasts, hierarchical estimands, respiratory sinus arrhythmia, ECG event genealogy, pressure-respiration transfer, spectral coherence, lag and phase, multiple comparisons, uncertainty covariance, causal identification, feedback latency, safe-state projection, isolated charge and thermal constraints, abstention and provenance. Across 82 chapters and 410 separately paginated scientific investigations, the book examines operational breathing definitions, reference instruments, EEG and ECG artifacts, blinded feedback protocols, mechanical and electrical phantoms, strong ordinary competitors, statistics, safety vetoes and reproducible handoff. Two hundred full-page Research Gates place their complete falsifiable research question in large deep-navy type, followed by an independently measurable outcome, adverse experiment, conventional physical rival and stopping rule. Thirty-three Phoenix Answer Embryos propose distinct successor objects ranging from calibration bridges and sham credibility tests to independent hardware vetoes, covariance sentinels, multisite reference capsules and protected null-result archives. An accompanying Excel index links formulas, chapters, Gates, candidate objects, citations and explicit evidence limitations. This work reports no executed integrated experiments, in-human needling, electrical stimulation, clinical efficacy, diagnosis or regulatory authorization. Its three STARLI mother-volume DOIs establish author research-method ancestry. Thirteen separately identified external research and metrology DOIs support established measurement, breathing physiology, neurofeedback reporting, uncertainty and statistical methodology, not the novel combined hypothesis. The 777-page layout, formula-clearance checks and 200 Gate color checks were automated; recurring editorial phrasing remains and full independent scientific peer review has not taken place. Author: White Rainbow Epoch / Feng Cheng-en (33) x Starli Series: STARLI Research Institute XXXIII / Flagship 48 of 90 Edition: Research Working Edition v1.3 / October 2026 Join the STARLI Research Community Explore more than 100 interdisciplinary research themes and follow the evolving STARLI Research Gate community: https://zenodo.org/communities/starli-research-gate/",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "QIGONG BREATHING AND INTELLIGENT ACUPUNCTURE NEUROFEEDBACK COUPLING AT THE LIMIT is a 777-page English Research Working Edition that constructs a falsifiable, explicitly nonclinical research program joining measured breathing tasks, cardiorespiratory and EEG feedback, and isolated microscale actuato",
+      "url": "https://zenodo.org/records/23731193"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "4390e583cbe8280ed4c0abeb",
+      "context_id": "66139420df933f9b56c09378",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "null result"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.75,
+      "source": "zenodo",
+      "source_context_sha256": "acd3f0a45270247200ac233496ccb9b374e7830412828c017cbec88a55cb82cb",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "Version 1.2 (28 October 2026) adds a notice on the arithmetic precision of the split‑Gibbs runs (NOTICE_v1.2.md), with the check behind it (TF32_CHECK.md, tf32_check_files.zip). DP1&rsquo;s split‑Gibbs runs used reduced‑precision (TF32) matrix products, which a later like‑for‑like check found shift that sampler&rsquo;s estimates, while its predictions ran in full float32. The split‑Gibbs null result therefore has a further candidate explanation that DP1 cannot separate. DPS is unaffected. No file of earlier versions has changed. A pre-specified pilot testing whether a blindness-risk score computed before any target data are seen ranks the realised blindness (undetected and uncovered error) of diffusion-prior inference on real X-ray CT objects (2DeteCT) under simulated restricted access. Study DP-A: weak attenuation (F = 32,000), 240 errors &times; 20 bases. Study DP-B: bounded-reach control, 120 errors &times; 20 bases. Two samplers: split-Gibbs plug-and-play (primary) and diffusion posterior sampling (secondary). It follows the learned (VAE) pilot, arXiv:2610.28155 (reproducibility package doi:10.5281/zenodo.23392686). The analysis plan, decision rules and fixed result sentences were approved by the author, and predictions and calibration were committed by SHA-256 hash, before any trial. The plan was not lodged with an external registry, so the study is described as pre-specified; the files named PREREG_&hellip; are that plan (their names, and the word \"pre-registered\" inside the hashed plan and the dated log, are kept unchanged so that the recorded hashes still match). Version 1.1 (26 October 2026) adds a post-hoc check of the linear response used by the blindness-risk score, specified in a dated plan and approved before any computation (response_check_plan_v1.md, response_check.py, response_check_results.json, RESPONSE_CHECK.md). Under the plan&rsquo;s pre-specified reading, the response was not adequate for either sampler in either study, so the null result for the learned score does not separate the learned prior from this approximation. The pre-specified results of version 1.0 are unchanged. README.md and freeze_log.txt are updated accordingly.",
+      "tags": [
+        "uncertainty quantification",
+        "silent failure",
+        "diffusion models",
+        "Bayesian inverse problems",
+        "computed tomography",
+        "restricted access",
+        "pre-specification"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "BLINDSET diffusion-prior blind-set pilot: analysis plan, code, frozen predictions, trial records and results",
+      "url": "https://zenodo.org/records/23733048"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "055f957347b1ca82fd53c469",
+      "context_id": "1135b7372b3c4a37520234e8",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": true,
+      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "provenance"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.7083,
+      "source": "zenodo",
+      "source_context_sha256": "4fa23388893ce6d58b1469b192a6fb65a813eb8fa5729d510afab534b4c3ce99",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "TRUSTWORTHY MANUFACTURING AND DIGITAL QUALITY PASSPORTS FOR BIOMEDICAL MICRO/NANOROBOTS AT THE LIMIT Manufacturing Evidence x Digital Traceability x Quality Release This 770-page Research Working Edition develops a falsification-oriented, nonclinical architecture for proving whether every biomedical micro/nanorobot product or batch can be linked to sufficient material, tool, model, process, test and failure evidence for an independent team to reconstruct its release rationale. It distinguishes record completeness from product qualification and treats physical identity, typed provenance, signature status, version compatibility, raw functional evidence, uncertainty, recall and retirement as separate scientific objects. The monograph contains 30 mathematical research plates, 82 chapters, 410 single-page investigations, 200 differentiated Research Gates and 33 genuinely distinguishable Phoenix Answer Embryos. The minimum demonstrator conceals three critical evidence gaps inside a signed passport and tests whether an independent audit refuses release without original-author assistance. A critical missing ancestor, ambiguous product identity, unverifiable signature, incompatible model evidence or unreplayable release decision is a hard veto. This is a prospective scientific architecture, not an executed clinical or regulatory study. It does not claim in-body safety, therapeutic efficacy, regulatory approval or clinical benefit. DOI-linked publications support component methods and boundaries; they do not validate the integrated F25 system. Technical profile: 770 pages; approximately 166,832 English words; 30 formula families; 82 chapters; 410 single-page studies; 200 Research Gates; 33 Phoenix Answer Embryos; 22 DOI records; navigable bookmarks; sixfold QA. Author: Feng Cheng-en (33) x Starli STARLI Research Institute XXXIV / Flagship 25 Join the STARLI Research Community Explore more than 100 interdisciplinary research themes and follow the evolving STARLI Research Gate community: https://zenodo.org/communities/starli-research-gate/",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "TRUSTWORTHY MANUFACTURING AND DIGITAL QUALITY PASSPORTS FOR BIOMEDICAL MICRO/NANOROBOTS AT THE LIMIT Manufacturing Evidence x Digital Traceability x Quality Release This 770-page Research Working Edition develops a falsification-oriented, nonclinical architecture for proving whether every biomedical",
+      "url": "https://zenodo.org/records/23733435"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "8774858f49eaf934105b2faf",
+      "context_id": "ecc30eed6cf71ed13747e3db",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "confound",
+        "failure",
+        "memory"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.875,
+      "source": "arxiv",
+      "source_context_sha256": "4cd2e3732f74babf716b855a0d9ffa763d70811886d76e37105d75297a6dbff4",
+      "source_published": "2026-10-27T17:49:39Z",
+      "source_updated": "2026-10-27T17:49:39Z",
+      "summary": "When an LLM group's discussion is compressed into a short memory for a final decision maker, what should the memory keep? Two natural heuristics keep the rarest claims or the claims relevant to the decision criteria. On hidden-profile tasks both look attractive, because how widely a fact is held is confounded with whether it helps. We introduce CrossProfile, a diagnostic benchmark of 60 templates with automatically verified answer keys, in which the ownership of supporting, decoy, and irrelevant facts is crossed while their text is held fixed (480 tasks). Across Qwen2.5-7B, Llama-3.1-8B, and two DeepSeek models, both heuristics fail in predictable places. Selecting by relevance readmits decoys, because decoys are on topic: even a perfect relevance filter loses 23 to 31 points to rarest-first selection in the classic hidden-profile configuration. Rarest-first selection is no better than random selection on average and wins only where the rare facts happen to be the useful ones. In both cases accuracy follows the balance of evidence the memory keeps, not the policy that kept it. The decision model adds a third failure, a form of social proof: it gives extra weight to facts attributed to many agents. Removing the attribution tags, or reassigning them at random with line order fixed, raises accuracy in the classic configuration by 13 to 24 points. In natural discussions the evidence is lost before any memory acts: the complete transcript yields lower accuracy than no notes at all.",
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.MA",
+        "cs.SI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Rare, Relevant, and Still Wrong: How Memory Fails LLM Group Decisions",
+      "url": "https://arxiv.org/abs/2610.37624v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "b9ddbe2f6533c62194f1699c",
+      "context_id": "bafaf6dde5e8b2be02943812",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_context_sha256": "400c4b3eb2e40737681dd4f81a696bc665b394352709c8a5101d5bed35311a05",
+      "source_published": "2026-10-27T15:09:10Z",
+      "source_updated": "2026-10-27T15:09:10Z",
+      "summary": "Vision--Language--Action (VLA) models generate robot actions from visual observations and language instructions, but their understanding of physical dynamics remains limited. Video world models can capture scene dynamics, yet generating future videos introduces high latency into the control loop. We introduce PDRVLA, whose lightweight Physical Dynamics Module extracts physical tokens from vision--language features to condition action generation without online video generation. The module learns through direct prediction of future RGB, depth, and optical-flow features, with auxiliary supervision through a frozen pretrained video world model. Training relies entirely on publicly available data, expanded through human-to-robot synthesis, subtask annotation, and embodied chain-of-thought (ECoT) annotation. Across four simulation benchmarks, PDRVLA achieves success rates of 99.3% on LIBERO, 89.9% on LIBERO-Plus, 93.6% on RoboTwin~2.0, and 81.5% on SimplerEnv. Ablations show improved future prediction with world-model supervision and evaluate how subtask conditioning, future object-pose supervision, and ECoT training affect action success.",
+      "tags": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations",
+      "url": "https://arxiv.org/abs/2610.37381v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "32497e90573a7e7f64b3514e",
+      "context_id": "9c4ded2aa804d69c65869007",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": true,
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "limitation",
+        "negative result"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "zenodo",
+      "source_context_sha256": "21c2a02cd94d78dcd50f516c63ad39ff275c4e2111bf3f0bed6bde7e27c73d94",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "QIGONG BREATHING AND INTELLIGENT ACUPUNCTURE NEUROFEEDBACK COUPLING AT THE LIMIT is a 777-page English Research Working Edition that constructs a falsifiable, explicitly nonclinical research program joining measured breathing tasks, cardiorespiratory and EEG feedback, and isolated microscale actuator surrogates. The central problem is not whether breathing changes heart-rate variability - that has established ordinary physiological explanations - but whether a proposed feedback architecture adds independently measurable predictive or benchtop-control value after breathing rate, phase, expectancy, ordinary cardiorespiratory dynamics, sensor calibration, stimulus timing and strong conventional controllers have been fairly matched. The primary hypothesis is deliberately narrow. A prospective factorial design separates a preregistered breathing condition from an isolated, non-human phantom-drive condition. Its interaction term, order effects, washout, hierarchical sampling units, pressure-related mechanisms and full-episode denominators are subjected to masked scheduling, matched sham sensory cues, covariance-aware uncertainty and independent laboratory reconstruction. Any apparent signal explained by paced breathing or cue entrainment is treated as a legitimate negative result. A bench interaction is not evidence of physiological effects from actual acupuncture in a person. Thirty mathematically differentiated research plates address factorial contrasts, hierarchical estimands, respiratory sinus arrhythmia, ECG event genealogy, pressure-respiration transfer, spectral coherence, lag and phase, multiple comparisons, uncertainty covariance, causal identification, feedback latency, safe-state projection, isolated charge and thermal constraints, abstention and provenance. Across 82 chapters and 410 separately paginated scientific investigations, the book examines operational breathing definitions, reference instruments, EEG and ECG artifacts, blinded feedback protocols, mechanical and electrical phantoms, strong ordinary competitors, statistics, safety vetoes and reproducible handoff. Two hundred full-page Research Gates place their complete falsifiable research question in large deep-navy type, followed by an independently measurable outcome, adverse experiment, conventional physical rival and stopping rule. Thirty-three Phoenix Answer Embryos propose distinct successor objects ranging from calibration bridges and sham credibility tests to independent hardware vetoes, covariance sentinels, multisite reference capsules and protected null-result archives. An accompanying Excel index links formulas, chapters, Gates, candidate objects, citations and explicit evidence limitations. This work reports no executed integrated experiments, in-human needling, electrical stimulation, clinical efficacy, diagnosis or regulatory authorization. Its three STARLI mother-volume DOIs establish author research-method ancestry. Thirteen separately identified external research and metrology DOIs support established measurement, breathing physiology, neurofeedback reporting, uncertainty and statistical methodology, not the novel combined hypothesis. The 777-page layout, formula-clearance checks and 200 Gate color checks were automated; recurring editorial phrasing remains and full independent scientific peer review has not taken place. Author: White Rainbow Epoch / Feng Cheng-en (33) x Starli Series: STARLI Research Institute XXXIII / Flagship 48 of 90 Edition: Research Working Edition v1.3 / October 2026 Join the STARLI Research Community Explore more than 100 interdisciplinary research themes and follow the evolving STARLI Research Gate community: https://zenodo.org/communities/starli-research-gate/",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "QIGONG BREATHING AND INTELLIGENT ACUPUNCTURE NEUROFEEDBACK COUPLING AT THE LIMIT is a 777-page English Research Working Edition that constructs a falsifiable, explicitly nonclinical research program joining measured breathing tasks, cardiorespiratory and EEG feedback, and isolated microscale actuato",
+      "url": "https://zenodo.org/records/23731193"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "577288cb7e0341e36f7af2de",
+      "context_id": "5053bc467457a0a29177ff34",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.0417,
+      "source": "arxiv",
+      "source_context_sha256": "001ba7169725a03b5433462113d828d5cd99e0c137e23ba738f83b82c5570c50",
+      "source_published": "2026-10-27T15:48:09Z",
+      "source_updated": "2026-10-27T15:48:09Z",
+      "summary": "Visual world models increasingly support spatial reasoning by generating RGB views of unobserved states. However, RGB has become the default interface largely because it is well suited for visual generation, rather than necessarily being the most effective representation for downstream reasoning. Different spatial questions may benefit from different representations of the same imagined state: top-down geometry can facilitate global distance comparisons, while panoramic views provide broader context for reasoning about open space. To isolate the role of representation in spatial imagination, we introduce ImagiRep, a simulator-grounded benchmark of 922 questions spanning seven question types across two settings, Viewpoint Imagination and Cross-view Integration, providing oracle RGB and six alternative representations (e.g., depth, panoramic views, and top-down geometry) of the same unobserved state. This controlled comparison reveals that even accurate imagined RGB does not guarantee accurate spatial reasoning, and different questions benefit from different representations. Similar trends hold for representations derived from world-model-estimated states. Notably, estimated RGB alone can mislead spatial reasoning, while alternative representations retain complementary benefits. Building on these findings, we introduce GEARS, a lightweight test-time strategy for adaptive representation selection, outperforming existing spatial imagination methods and showing that reasoning about unseen states requires more than generating RGB views.",
+      "tags": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Representing the Unseen: Rethinking Visual Imagination for Spatial Reasoning",
+      "url": "https://arxiv.org/abs/2610.37437v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "c584902f122cc38eb58f83f0",
+      "context_id": "a5e679e11711361997a7a385",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "limitation",
+        "provenance"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 5.8333,
+      "source": "arxiv",
+      "source_context_sha256": "f561ad3dd4cc58378bd8f9213e65f47f3fe1c27ba81efcae11734e46d7aedc69",
+      "source_published": "2026-10-27T16:34:24Z",
+      "source_updated": "2026-10-27T16:34:24Z",
+      "summary": "We examine conditional charged-multiplicity fluctuations at fixed multiparton interaction (MPI) count in retained PYTHIA proton-proton samples at centre-of-mass energies of 2.76, 7, and 13 TeV. Charged particles satisfy |eta| < 0.8 and 0.15 < pT < 20 GeV/c. In the historical colour-reconnection (CR)-labelled baseline samples, the CR-ON conditional mean is smaller by a larger fraction than the standard deviation: the absolute width is smaller, while the coefficient of variation is larger in every retained matched MPI bin. Effective lifetime/decay settings and their per-run correspondence are unverified for this baseline, so these comparisons do not establish that CR alone causes the observed differences or their energy dependence. A separately documented 13 TeV comparison using the Compact Muon Solenoid (CMS) CP5 tune, with equal non-CR physics settings and particle data across the ON/OFF pair, exhibits the same absolute-versus-relative width ordering. Retained independent Monash and A14 samples also show this pattern, subject to historical production-record limitations. A comparison with mean-transverse-momentum data from A Large Ion Collider Experiment (ALICE) and simulated activity estimators provides final-state context within the stated particle-definition and provenance limits.",
+      "tags": [
+        "hep-ph"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Color-Reconnection Effects on the nMPI-Nch Conditional Multiplicity Fluctuations in PYTHIA 8 pp Collisions",
+      "url": "https://arxiv.org/abs/2610.37511v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "7c44502c845cffdf4f94e908",
+      "context_id": "97852631777489ef4437ac53",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "failure mode"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 5.7917,
+      "source": "arxiv",
+      "source_context_sha256": "6f2a8c86d8b512194ac752f373f05e5427dcd1b1865c8b3d8023bf0bfb6b022b",
+      "source_published": "2026-10-27T10:18:45Z",
+      "source_updated": "2026-10-27T10:18:45Z",
+      "summary": "Several apparently distinct formulations of the charged-lepton mass relation $p_2/e_1^2 = 2/3$ share a common algebraic object: the ratio of flavor-breaking to flavor-symmetric amplitude components on an internal family space. We show that (i) the relation expressed as a Fourier-mode constraint on Shulga's compact cycle, (ii) the same relation as a Descartes curvature condition in the sense of Kocik, and (iii) the Soddy completion of the resulting circle configuration are related by exact algebra, with no approximations. The Soddy completion defines a companion scale $F^2 = α^2 μ_\\star$ with $α= \\sqrt{3/2} - 1$ and $μ_\\star = \\sum_\\ell m_\\ell$; identifying this scale with $\\bar{m}^{\\rm MS}_s(μ_\\star)$ yields a light-quark mass cascade with the ratio $m_d/m_s = 5/2 - \\sqrt{6}$. Combined with the leading Gatto-Sartori-Tonin relation, this gives the down-sector Cabibbo seed $\\sqrt{m_d/m_s} = \\sqrt{3/2} - 1 = 0.22474\\ldots$, numerically close to the measured $|V_{us}| = 0.22503 \\pm 0.00068$ ($0.4σ$). A full CKM evaluation requires the up-sector phase correction, which we defer. The correspondence is testable by future lattice QCD+QED determinations of $m_d/m_s$; explicit failure modes are listed.",
+      "tags": [
+        "physics.gen-ph"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Descartes Curvature Geometry, Compact-Cycle Amplitudes, and the GST Cabibbo Seed",
+      "url": "https://arxiv.org/abs/2610.36960v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "92c621c2924cfaa8c5feb7a1",
+      "context_id": "85b51d2dae909bd2eca5bb79",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": true,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "ablation",
+        "baseline",
+        "benchmark",
+        "calibration",
+        "provenance",
+        "replication"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 20.375,
+      "source": "zenodo",
+      "source_context_sha256": "542ec15b9b942132289a0e5d439fd6a2eaec0983f24e63106b30afd2e95ff629",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "DIGITAL TWINS OF VOLITION, BIOELECTRICITY AND NANOSENSING ACUPUNCTURE AT THE LIMIT is a 777-page English Research Working Edition developing a falsifiable engineering architecture for synchronizing prospective task labels, authorized noninvasive EEG/EMG records, and the physical state of an isolated needle-emulator on a nonliving phantom. The principal question is whether a frozen digital twin improves independently verified prediction of event time, signal and surrogate-device state under deliberately hidden cross-sensor clock delays. The central candidate relation is x[k+1]=A x[k]+B u[k]+w[k], z[k]=C x[k]+v[k]. This is an established mathematical modeling form, not an original biological law or evidence of private thought decoding. The framework treats timebase skew, cue leakage, repeated EEG-window contamination, model discrepancy, shared calibration covariance and hidden actuator latency as explicit challengers. A strong ordinary baseline includes prospective persistence, linear autoregression, calibrated Kalman models and time/cue-only prediction, evaluated on entirely held-out acquisition episodes and unseen days. Thirty differentiated physical and mathematical plates connect state observability, clock drift, covariance propagation, prediction intervals, source ablation, independent actuator safety and external validation to their respective experiments. Across 82 scientific chapters and 410 separately paginated studies, the book develops signal identity, calibration, synchronization, latent-state recovery, prospective prediction, blind falsification, hardware interlocks and second-site replication. Two hundred detailed Research Gates, printed with prominent deep-navy questions on individual pages, lead future investigators through unknown perturbations, strong countermodels, measurable disconfirmation, hard stops and successor evidence packages. Thirty-three Phoenix Answer Embryos propose scientifically distinguishable instruments and paths for revision. The three STARLI author mother volumes contribute method ancestry on sensing identity, functional requalification and sample-to-signal provenance. Eleven separately identified published method references support classical state estimation, EEG algorithm benchmarking, clock synchronization, leakage prevention, cross-subject validation and digital-twin qualification. Those sources do not constitute experimental evidence for the new architecture. All proposed experiments remain unperformed: the volume does not establish clinical acupuncture, autonomous microneedle treatment, volition-to-actuation efficacy or regulatory authorization. Safe early validation is restricted to consent-scoped archived or noninvasive data, inert bench devices and independently calibrated reference instruments. Author: White Rainbow Epoch &Acirc;&middot; 33 x Starli Original Series: STARLI Research Institute XXXIII / Flagship 49 of 90 Edition: Nonclinical Research Working Edition v1.0 / October 2026 Join the STARLI Research Community Explore more than 100 interdisciplinary research themes and follow the evolving STARLI Research Gate community: https://zenodo.org/communities/starli-research-gate/",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "DIGITAL TWINS OF VOLITION, BIOELECTRICITY AND NANOSENSING ACUPUNCTURE AT THE LIMIT is a 777-page English Research Working Edition developing a falsifiable engineering architecture for synchronizing prospective task labels, authorized noninvasive EEG/EMG records, and the physical state of an isolated",
+      "url": "https://zenodo.org/records/23731275"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "b9ddbe2f6533c62194f1699c",
+      "context_id": "879ef8c443156fab24b39df6",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "ablation",
+        "benchmark",
+        "control",
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 16.0417,
+      "source": "arxiv",
+      "source_context_sha256": "e1bb02a082d41e1273eda2e8a6a4ba47d0dd45d56d3328ddc51467a532fd224a",
+      "source_published": "2026-10-27T15:09:10Z",
+      "source_updated": "2026-10-27T15:09:10Z",
+      "summary": "Vision--Language--Action (VLA) models generate robot actions from visual observations and language instructions, but their understanding of physical dynamics remains limited. Video world models can capture scene dynamics, yet generating future videos introduces high latency into the control loop. We introduce PDRVLA, whose lightweight Physical Dynamics Module extracts physical tokens from vision--language features to condition action generation without online video generation. The module learns through direct prediction of future RGB, depth, and optical-flow features, with auxiliary supervision through a frozen pretrained video world model. Training relies entirely on publicly available data, expanded through human-to-robot synthesis, subtask annotation, and embodied chain-of-thought (ECoT) annotation. Across four simulation benchmarks, PDRVLA achieves success rates of 99.3% on LIBERO, 89.9% on LIBERO-Plus, 93.6% on RoboTwin~2.0, and 81.5% on SimplerEnv. Ablations show improved future prediction with world-model supervision and evaluate how subtask conditioning, future object-pose supervision, and ECoT training affect action success.",
+      "tags": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations",
+      "url": "https://arxiv.org/abs/2610.37381v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "92c621c2924cfaa8c5feb7a1",
+      "context_id": "a9acd6430e91e1742e74aeb4",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": true,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "ablation",
+        "baseline",
+        "benchmark",
+        "calibration",
+        "replication"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 15.9583,
+      "source": "zenodo",
+      "source_context_sha256": "7e4d0ef9869c6a8f581ab3bc8645ab6c4194c514186dafb14335c1d95ee844d8",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "DIGITAL TWINS OF VOLITION, BIOELECTRICITY AND NANOSENSING ACUPUNCTURE AT THE LIMIT is a 777-page English Research Working Edition developing a falsifiable engineering architecture for synchronizing prospective task labels, authorized noninvasive EEG/EMG records, and the physical state of an isolated needle-emulator on a nonliving phantom. The principal question is whether a frozen digital twin improves independently verified prediction of event time, signal and surrogate-device state under deliberately hidden cross-sensor clock delays. The central candidate relation is x[k+1]=A x[k]+B u[k]+w[k], z[k]=C x[k]+v[k]. This is an established mathematical modeling form, not an original biological law or evidence of private thought decoding. The framework treats timebase skew, cue leakage, repeated EEG-window contamination, model discrepancy, shared calibration covariance and hidden actuator latency as explicit challengers. A strong ordinary baseline includes prospective persistence, linear autoregression, calibrated Kalman models and time/cue-only prediction, evaluated on entirely held-out acquisition episodes and unseen days. Thirty differentiated physical and mathematical plates connect state observability, clock drift, covariance propagation, prediction intervals, source ablation, independent actuator safety and external validation to their respective experiments. Across 82 scientific chapters and 410 separately paginated studies, the book develops signal identity, calibration, synchronization, latent-state recovery, prospective prediction, blind falsification, hardware interlocks and second-site replication. Two hundred detailed Research Gates, printed with prominent deep-navy questions on individual pages, lead future investigators through unknown perturbations, strong countermodels, measurable disconfirmation, hard stops and successor evidence packages. Thirty-three Phoenix Answer Embryos propose scientifically distinguishable instruments and paths for revision. The three STARLI author mother volumes contribute method ancestry on sensing identity, functional requalification and sample-to-signal provenance. Eleven separately identified published method references support classical state estimation, EEG algorithm benchmarking, clock synchronization, leakage prevention, cross-subject validation and digital-twin qualification. Those sources do not constitute experimental evidence for the new architecture. All proposed experiments remain unperformed: the volume does not establish clinical acupuncture, autonomous microneedle treatment, volition-to-actuation efficacy or regulatory authorization. Safe early validation is restricted to consent-scoped archived or noninvasive data, inert bench devices and independently calibrated reference instruments. Author: White Rainbow Epoch &Acirc;&middot; 33 x Starli Original Series: STARLI Research Institute XXXIII / Flagship 49 of 90 Edition: Nonclinical Research Working Edition v1.0 / October 2026 Join the STARLI Research Community Explore more than 100 interdisciplinary research themes and follow the evolving STARLI Research Gate community: https://zenodo.org/communities/starli-research-gate/",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "DIGITAL TWINS OF VOLITION, BIOELECTRICITY AND NANOSENSING ACUPUNCTURE AT THE LIMIT is a 777-page English Research Working Edition developing a falsifiable engineering architecture for synchronizing prospective task labels, authorized noninvasive EEG/EMG records, and the physical state of an isolated",
+      "url": "https://zenodo.org/records/23731275"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "08e7af85b700485380503a30",
+      "context_id": "9cdd7c4a63701707a489b741",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "control",
+        "identifiability",
+        "inverse problem",
+        "symmetry"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 14.875,
+      "source": "arxiv",
+      "source_context_sha256": "00dbf5615884d96cbcc00458c6ae7d4f8db99c912c30069cdfafb09ce0da6ebc",
+      "source_published": "2026-10-27T16:45:22Z",
+      "source_updated": "2026-10-27T16:45:22Z",
+      "summary": "A persistent belief in modern AI is that sufficiently large learners trained on sufficiently much data can make explicit domain knowledge optional. This paper examines a limitation of that belief. We define structure-encoded problems: tasks whose input-output map is determined, or sharply constrained, by known structure such as a solver, symmetry group, graph, physical law, measurement operator, grammar, combinatorial search space, or optimization objective. For such tasks, the central question is not expressivity--a dense neural network may contain the desired map--but finite-data identification, extrapolation, and certification. We introduce the structure gap: the finite-resource gap between a method that receives the governing structure and a learner that receives only examples. The strongest useful form of the claim is asymptotic rather than absolute: structure-agnostic learning may approach a structured solver as coverage grows, but every finite dataset can leave residual uncertainty that the structure resolves by construction. We prove this exactly for a Gaussian inverse problem: the known-operator Wiener solver attains Bayes risk, while the dense empirical learner in the correct linear class has persistent expected excess risk. We also prove a cell-coverage lower bound and an unobserved-orbit non-identifiability result. Controlled experiments in known-operator inversion, sparse recovery, and graph reachability with size extrapolation instantiate the mechanisms. When validated structure is available, it can constrain the hypothesis space before learning begins, leaving learning to address components the structure does not specify.",
+      "tags": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "The Structure Gap: When More Data Cannot Replace Structured Reasoning",
+      "url": "https://arxiv.org/abs/2610.37523v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "577288cb7e0341e36f7af2de",
+      "context_id": "3426b43c826510af7a784ca4",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "control",
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 14.7083,
+      "source": "arxiv",
+      "source_context_sha256": "33ac1a724dc9b9c8fa22a3be9be93784bba424e895073de385cc6b82295a93d2",
+      "source_published": "2026-10-27T15:48:09Z",
+      "source_updated": "2026-10-27T15:48:09Z",
+      "summary": "Visual world models increasingly support spatial reasoning by generating RGB views of unobserved states. However, RGB has become the default interface largely because it is well suited for visual generation, rather than necessarily being the most effective representation for downstream reasoning. Different spatial questions may benefit from different representations of the same imagined state: top-down geometry can facilitate global distance comparisons, while panoramic views provide broader context for reasoning about open space. To isolate the role of representation in spatial imagination, we introduce ImagiRep, a simulator-grounded benchmark of 922 questions spanning seven question types across two settings, Viewpoint Imagination and Cross-view Integration, providing oracle RGB and six alternative representations (e.g., depth, panoramic views, and top-down geometry) of the same unobserved state. This controlled comparison reveals that even accurate imagined RGB does not guarantee accurate spatial reasoning, and different questions benefit from different representations. Similar trends hold for representations derived from world-model-estimated states. Notably, estimated RGB alone can mislead spatial reasoning, while alternative representations retain complementary benefits. Building on these findings, we introduce GEARS, a lightweight test-time strategy for adaptive representation selection, outperforming existing spatial imagination methods and showing that reasoning about unseen states requires more than generating RGB views.",
+      "tags": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Representing the Unseen: Rethinking Visual Imagination for Spatial Reasoning",
+      "url": "https://arxiv.org/abs/2610.37437v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "b5223bb99b32b80f6da40394",
+      "context_id": "82d0a221aacf75636daac54e",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "control",
+        "inverse problem"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 13.2917,
+      "source": "arxiv",
+      "source_context_sha256": "3cc429bc7853ee39acb0a71d4e04d110e84c7d67d95226f852dc4e0e926db182",
+      "source_published": "2026-10-27T14:56:16Z",
+      "source_updated": "2026-10-27T14:56:16Z",
+      "summary": "We develop a multifidelity black-box variational inference (MF-BBVI) approach for PDE-constrained Bayesian inverse problems in which forward solves are expensive and PDE gradients are unavailable. The method is built on score-function estimators for the evidence lower bound (ELBO), which avoid differentiation through the PDE model but are known to suffer from high variance. To address this high variance, we employ multifidelity approximate control-variate estimators that combine a small number of high-fidelity samples with a larger number of low-fidelity samples to reduce estimator variance and the number of high-fidelity evaluations required for optimization. We further develop a PDE-derivative-free second-order optimization strategy based on both gradient and Hessian score-function estimators. For low-fidelity model generation, we propose an on-the-fly strategy that builds and adaptively updates a reduced-order model (ROM) as the variational distribution evolves throughout the optimization. We investigate strategies for adapting the ROM and estimating the approximate control-variate gains, examining tradeoffs between estimator bias, variance reduction, and computational cost. The resulting approach facilitates derivative-free variational inference for large-scale inverse problems through a reduction in overall computational cost. We demonstrate the method on four numerical examples: a linear benchmark with an exact posterior and three PDE-constrained inverse problems.",
+      "tags": [
+        "math.NA"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Multifidelity variational inference for derivative-free PDE-constrained inverse problems",
+      "url": "https://arxiv.org/abs/2610.37359v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "07f381f6b100f784c06fae98",
+      "context_id": "3bd5fc77619ac05c13aefe71",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "benchmark",
+        "memory",
+        "retrieval"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 11.3333,
+      "source": "arxiv",
+      "source_context_sha256": "0712a76465aee6b36b22bcfc52c4658e3f758ad593c8b65ef70ed68602dbddf7",
+      "source_published": "2026-10-27T10:23:50Z",
+      "source_updated": "2026-10-27T10:23:50Z",
+      "summary": "Proactive LLM agents anticipate service opportunities from ongoing observations and accumulated history. Existing approaches emphasize recent context or retrieval of related memories, providing limited support for validating recurring behavioral regularities and assessing their applicability to the current event. We propose Proactive Memory (ProactMem), which organizes history into recent events, temporal trajectories, and behavioral regularities. Trajectory facts are checked against source events, and regularities are assessed through historical replay before being matched to current conditions. We also construct ProactiveStream, a longitudinal benchmark covering three application scopes, where agents process isolated event streams chronologically under episode-aware opportunity labels. On ProactiveStream, ProactMem achieves an overall effectiveness (F1) of 52.6%, a 21.4% relative improvement over the strongest of five external baselines. Code is available at: https://anonymous.4open.science/r/ProactMem-5351/.",
+      "tags": [
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Proactive Memory for Event-Driven LLM Agents",
+      "url": "https://arxiv.org/abs/2610.36967v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "4390e583cbe8280ed4c0abeb",
+      "context_id": "edf228018c27085692e83809",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "calibration",
+        "control",
+        "inverse problem"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.375,
+      "source": "zenodo",
+      "source_context_sha256": "c7e4e09ddd2bc516a2df51a5b4d7c5eecc1abde26f82c82071a3ce27e44d14c0",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "Version 1.2 (28 October 2026) adds a notice on the arithmetic precision of the split‑Gibbs runs (NOTICE_v1.2.md), with the check behind it (TF32_CHECK.md, tf32_check_files.zip). DP1&rsquo;s split‑Gibbs runs used reduced‑precision (TF32) matrix products, which a later like‑for‑like check found shift that sampler&rsquo;s estimates, while its predictions ran in full float32. The split‑Gibbs null result therefore has a further candidate explanation that DP1 cannot separate. DPS is unaffected. No file of earlier versions has changed. A pre-specified pilot testing whether a blindness-risk score computed before any target data are seen ranks the realised blindness (undetected and uncovered error) of diffusion-prior inference on real X-ray CT objects (2DeteCT) under simulated restricted access. Study DP-A: weak attenuation (F = 32,000), 240 errors &times; 20 bases. Study DP-B: bounded-reach control, 120 errors &times; 20 bases. Two samplers: split-Gibbs plug-and-play (primary) and diffusion posterior sampling (secondary). It follows the learned (VAE) pilot, arXiv:2610.28155 (reproducibility package doi:10.5281/zenodo.23392686). The analysis plan, decision rules and fixed result sentences were approved by the author, and predictions and calibration were committed by SHA-256 hash, before any trial. The plan was not lodged with an external registry, so the study is described as pre-specified; the files named PREREG_&hellip; are that plan (their names, and the word \"pre-registered\" inside the hashed plan and the dated log, are kept unchanged so that the recorded hashes still match). Version 1.1 (26 October 2026) adds a post-hoc check of the linear response used by the blindness-risk score, specified in a dated plan and approved before any computation (response_check_plan_v1.md, response_check.py, response_check_results.json, RESPONSE_CHECK.md). Under the plan&rsquo;s pre-specified reading, the response was not adequate for either sampler in either study, so the null result for the learned score does not separate the learned prior from this approximation. The pre-specified results of version 1.0 are unchanged. README.md and freeze_log.txt are updated accordingly.",
+      "tags": [
+        "uncertainty quantification",
+        "silent failure",
+        "diffusion models",
+        "Bayesian inverse problems",
+        "computed tomography",
+        "restricted access",
+        "pre-specification"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "BLINDSET diffusion-prior blind-set pilot: analysis plan, code, frozen predictions, trial records and results",
+      "url": "https://zenodo.org/records/23733048"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "f8b79606619824853d6232d5",
+      "context_id": "d49ce1690c57ec24a1ede63d",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "representation",
+        "representation learning",
+        "retrieval"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.2917,
+      "source": "arxiv",
+      "source_context_sha256": "fc1decb356e3c955229e1940121be11a207efadbb62160ddd4979c24db19a278",
+      "source_published": "2026-10-27T10:13:34Z",
+      "source_updated": "2026-10-27T10:13:34Z",
+      "summary": "A user history can admit multiple plausible next interactions, yet conventional sequential recommenders produce a single deterministic ranking. While diffusion models offer a natural way to sample alternative continuations, we show that existing target-item diffusion recommenders often suffer from severe sampling collapse, producing nearly identical outputs across independent draws. We identify two ubiquitous design choices that promote this collapse: joint learning of the latent space and denoiser, and in-trajectory supervision via discrete losses. To address these failure modes, we introduce DARTS (Diverse and Accurate Recommendation Through Sampling), a three-stage latent diffusion framework that explicitly decouples representation learning, generative modeling, and discrete ranking by learning and freezing the latent space before diffusion training and postponing ranking supervision to the final decoding stage. We further characterize sampling diversity using complementary measures of variation before and after decoding, and use posterior-predictive aggregation to exploit this diversity at inference. Across three Amazon Reviews 2023 categories, DARTS preserves substantially greater sampling diversity while outperforming strong sequential, generative-retrieval, and diffusion baselines by 7-12% on standard ranking metrics. Aggregating multiple samples further improves ranking accuracy at a fixed slate size.",
+      "tags": [
+        "cs.IR"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "When Diffusion Recommenders Stop Sampling: Preserving Generative Diversity",
+      "url": "https://arxiv.org/abs/2610.36954v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "32497e90573a7e7f64b3514e",
+      "context_id": "81e3ec2bc8cc0844cca4ed4c",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": true,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "calibration",
+        "control",
+        "provenance"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.1667,
+      "source": "zenodo",
+      "source_context_sha256": "d35c474e9f05632c212bed55dea8a694f6895c4656f5a45388282ae09eb2c2a5",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "QIGONG BREATHING AND INTELLIGENT ACUPUNCTURE NEUROFEEDBACK COUPLING AT THE LIMIT is a 777-page English Research Working Edition that constructs a falsifiable, explicitly nonclinical research program joining measured breathing tasks, cardiorespiratory and EEG feedback, and isolated microscale actuator surrogates. The central problem is not whether breathing changes heart-rate variability - that has established ordinary physiological explanations - but whether a proposed feedback architecture adds independently measurable predictive or benchtop-control value after breathing rate, phase, expectancy, ordinary cardiorespiratory dynamics, sensor calibration, stimulus timing and strong conventional controllers have been fairly matched. The primary hypothesis is deliberately narrow. A prospective factorial design separates a preregistered breathing condition from an isolated, non-human phantom-drive condition. Its interaction term, order effects, washout, hierarchical sampling units, pressure-related mechanisms and full-episode denominators are subjected to masked scheduling, matched sham sensory cues, covariance-aware uncertainty and independent laboratory reconstruction. Any apparent signal explained by paced breathing or cue entrainment is treated as a legitimate negative result. A bench interaction is not evidence of physiological effects from actual acupuncture in a person. Thirty mathematically differentiated research plates address factorial contrasts, hierarchical estimands, respiratory sinus arrhythmia, ECG event genealogy, pressure-respiration transfer, spectral coherence, lag and phase, multiple comparisons, uncertainty covariance, causal identification, feedback latency, safe-state projection, isolated charge and thermal constraints, abstention and provenance. Across 82 chapters and 410 separately paginated scientific investigations, the book examines operational breathing definitions, reference instruments, EEG and ECG artifacts, blinded feedback protocols, mechanical and electrical phantoms, strong ordinary competitors, statistics, safety vetoes and reproducible handoff. Two hundred full-page Research Gates place their complete falsifiable research question in large deep-navy type, followed by an independently measurable outcome, adverse experiment, conventional physical rival and stopping rule. Thirty-three Phoenix Answer Embryos propose distinct successor objects ranging from calibration bridges and sham credibility tests to independent hardware vetoes, covariance sentinels, multisite reference capsules and protected null-result archives. An accompanying Excel index links formulas, chapters, Gates, candidate objects, citations and explicit evidence limitations. This work reports no executed integrated experiments, in-human needling, electrical stimulation, clinical efficacy, diagnosis or regulatory authorization. Its three STARLI mother-volume DOIs establish author research-method ancestry. Thirteen separately identified external research and metrology DOIs support established measurement, breathing physiology, neurofeedback reporting, uncertainty and statistical methodology, not the novel combined hypothesis. The 777-page layout, formula-clearance checks and 200 Gate color checks were automated; recurring editorial phrasing remains and full independent scientific peer review has not taken place. Author: White Rainbow Epoch / Feng Cheng-en (33) x Starli Series: STARLI Research Institute XXXIII / Flagship 48 of 90 Edition: Research Working Edition v1.3 / October 2026 Join the STARLI Research Community Explore more than 100 interdisciplinary research themes and follow the evolving STARLI Research Gate community: https://zenodo.org/communities/starli-research-gate/",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "QIGONG BREATHING AND INTELLIGENT ACUPUNCTURE NEUROFEEDBACK COUPLING AT THE LIMIT is a 777-page English Research Working Edition that constructs a falsifiable, explicitly nonclinical research program joining measured breathing tasks, cardiorespiratory and EEG feedback, and isolated microscale actuato",
+      "url": "https://zenodo.org/records/23731193"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "7af155f0fa16fc71f7b2e908",
+      "context_id": "21ac871542763aadb7948b06",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "calibration",
+        "control",
+        "provenance"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.1667,
+      "source": "zenodo",
+      "source_context_sha256": "e016a858260989e989bf4e608e66643b1351c9e2bb73e28a04f6046e0fecaa1b",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "This record provides the research data and supporting documentation for the revised systematic review &ldquo;Tactile and Physical Interaction Problems in In-Vehicle Infotainment Systems: A Systematic Literature Review&rdquo;. The current corpus comprises 342 eligible reports assessed using 34 operational codes across seven categories, yielding 11,628 report&ndash;code decisions: 3,635 positive, 7,677 negative and 316 unresolved. The materials are organised into eight editable Word volumes, each with a linked table of contents: Methods and Figures: supplementary sections S1&ndash;S12, review methods, operational codebook, PRISMA crosswalk, Figures 1&ndash;2 and a source-to-volume index. Corpus and Eligibility: the complete bibliography, bibliographic provenance, retrieval records and eligibility decisions. Characterisation and Appraisal: report characteristics and MMAT domain-level appraisals. Coding Evidence: all 11,628 coding decisions, source-page locators and supporting rationales. Synthesis and Decision Changes: synthesis matrices, coverage and overlap bounds, sensitivity analyses, historical-to-current decision comparisons and Figures 3&ndash;5. Historical Citation Screening: historical citation metadata and title-and-abstract screening decisions. Historical Full-Text Eligibility: historical reviewer assessments, eligibility decisions and consensus records. Historical Coding and Reproducibility: historical calibration, independent coding, adjudication and reliability records, together with package documentation and verification-script texts. The current 342-report evidence base is distinguished from the earlier 228-report archive. Historical-to-current linkage covers 5,916 decision pairs for 174 retained reports. Historical independent ratings and consensus decisions remain separate from the authors&rsquo; joint source verification conducted from 13 to 23 October 2026. Tables are presented as editable Word content. Repeated wording is retained through linked value keys, and verification scripts are reproduced as editable text in Volume 8. Five updated figures are embedded in the relevant volumes. Copyrighted primary publications and extended verbatim source quotations are not redistributed. Bibliographic identifiers, source-page locators and paraphrased rationales support traceability. Computational consistency checks do not, by themselves, establish scientific validity.",
+      "tags": [
+        "in-vehicle infotainment systems",
+        "IVIS",
+        "human–computer interaction",
+        "tactile interaction",
+        "physical controls",
+        "touchscreen",
+        "haptic feedback",
+        "systematic literature review",
+        "PRISMA 2020"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Research Data and Reproducibility Materials for \"Tactile and Physical Interaction Problems in In-Vehicle Infotainment Systems: A Systematic Literature Review\"",
+      "url": "https://zenodo.org/records/23728566"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "11e32a2f4509aacc3f4eefe5",
+      "context_id": "e593e31c39f269736afb3872",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": true,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "calibration",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.0833,
+      "source": "zenodo",
+      "source_context_sha256": "68b793d33966a2726f42cf5495abdb85a8cda7c7f5e7e8a3a7e494fd6f4d3708",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "BIOELECTRIC FEEDBACK AND PERSONALIZED INTELLIGENT ACUPUNCTURE CONTROL AT THE LIMIT is a 777-page prospective nonclinical research monograph on the boundary between measured bioelectric variability, personalized feedback algorithms, and genuinely verified safe closed-loop operation on inert phantoms and isolated bench hardware. Its primary question is whether a controller calibrated on limited reference data retains a meaningful improvement for entirely unseen simulated individuals while meeting hard, independently witnessed limits. The governing design separates physiological sensing, identification of individual model parameters, selection of feedback commands, and observed physical outcomes. The inherited objective is corrected to a unit-consistent normalized tracking loss and separately measured bench-output burden; no mathematical optimum can compensate a failed hardware veto, force cap, thermal boundary, or missing permission record. A synthetic dummy-output budget is explicitly not a clinical stimulation dose or therapeutic recommendation. Thirty differentiated mathematical plates explore covariance-aware metrology, personal and hierarchical system identification, robust model predictive control, posterior coverage, safe-set feasibility, population shift, abstention, actuator latency, thermal loading, physical isolation, state-space reachability, distributional tail risk and independent requalification. Each plate states construction assumptions, native units, blind tests, stop conditions and a crosswalk to relevant chapters and successor gates. Eighty-two chapters, each with five separately paginated studies, develop electrode and reference calibration, timebase reliability, individual parameter uncertainty, adversarial new-person transfer, fair PID and classical MPC comparisons, closed-loop constraints, sham feedback, safety engineering and handoff to an unrelated laboratory. Two hundred full-page Research Gates are designed as distinctly falsifiable future entry points, including blind reconstruction, strong conventional rivals and external adversarial continuation. Thirty-three Phoenix Answer Embryos propose different metrology tools, decision records, baseline devices or smaller successor theories that can survive disproof of the larger control claim. The three author mother-volume version DOIs are M1 10.5281/zenodo.23480803, M2 10.5281/zenodo.23486020 and M3 10.5281/zenodo.23318840. Separately identified published external DOI studies on neural decoding, population generalization, system identification, control and neurostimulation provide context only: none demonstrates this F47 integrated apparatus. This is a Research Working Edition, not an executed laboratory study, clinical trial, review approval or evidence of therapeutic benefit. Future human stimulation, puncture, clinical research and patient-facing equipment require their own independent regulatory and ethics program. Author: White Rainbow Epoch - 33 x STARLI Series: STARLI Research Institute XXXIII / Acupuncture Trilogy / Flagship 47 of 90 Edition: Research Working Edition v1.0 / October 2026 Join the STARLI Research Community Explore more than 100 interdisciplinary research themes and follow the evolving STARLI Research Gate community: https://zenodo.org/communities/starli-research-gate/",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "BIOELECTRIC FEEDBACK AND PERSONALIZED INTELLIGENT ACUPUNCTURE CONTROL AT THE LIMIT is a 777-page prospective nonclinical research monograph on the boundary between measured bioelectric variability, personalized feedback algorithms, and genuinely verified safe closed-loop operation on inert phantoms ",
+      "url": "https://zenodo.org/records/23731081"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "11e32a2f4509aacc3f4eefe5",
+      "context_id": "627d2fae3ee332f1baf3844a",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": true,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "calibration",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.0833,
+      "source": "zenodo",
+      "source_context_sha256": "8a44289ed07e49b6967840ae3c9efe9a3952bac09a60c798eccd4cb3021f28a4",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "BIOELECTRIC FEEDBACK AND PERSONALIZED INTELLIGENT ACUPUNCTURE CONTROL AT THE LIMIT is a 777-page prospective nonclinical research monograph on the boundary between measured bioelectric variability, personalized feedback algorithms, and genuinely verified safe closed-loop operation on inert phantoms and isolated bench hardware. Its primary question is whether a controller calibrated on limited reference data retains a meaningful improvement for entirely unseen simulated individuals while meeting hard, independently witnessed limits. The governing design separates physiological sensing, identification of individual model parameters, selection of feedback commands, and observed physical outcomes. The inherited objective is corrected to a unit-consistent normalized tracking loss and separately measured bench-output burden; no mathematical optimum can compensate a failed hardware veto, force cap, thermal boundary, or missing permission record. A synthetic dummy-output budget is explicitly not a clinical stimulation dose or therapeutic recommendation. Thirty differentiated mathematical plates explore covariance-aware metrology, personal and hierarchical system identification, robust model predictive control, posterior coverage, safe-set feasibility, population shift, abstention, actuator latency, thermal loading, physical isolation, state-space reachability, distributional tail risk and independent requalification. Each plate states construction assumptions, native units, blind tests, stop conditions and a crosswalk to relevant chapters and successor gates. Eighty-two chapters, each with five separately paginated studies, develop electrode and reference calibration, timebase reliability, individual parameter uncertainty, adversarial new-person transfer, fair PID and classical MPC comparisons, closed-loop constraints, sham feedback, safety engineering and handoff to an unrelated laboratory. Two hundred full-page Research Gates are designed as distinctly falsifiable future entry points, including blind reconstruction, strong conventional rivals and external adversarial continuation. Thirty-three Phoenix Answer Embryos propose different metrology tools, decision records, baseline devices or smaller successor theories that can survive disproof of the larger control claim. The three author mother-volume version DOIs are M1 10.5281/zenodo.23480803, M2 10.5281/zenodo.23486020 and M3 10.5281/zenodo.23318840. Separately identified published external DOI studies on neural decoding, population generalization, system identification, control and neurostimulation provide context only: none demonstrates this F47 integrated apparatus. This is a Research Working Edition, not an executed laboratory study, clinical trial, review approval or evidence of therapeutic benefit. Future human stimulation, puncture, clinical research and patient-facing equipment require their own independent regulatory and ethics program. Author: White Rainbow Epoch - 33 x STARLI Series: STARLI Research Institute XXXIII / Acupuncture Trilogy / Flagship 47 of 90 Edition: Research Working Edition v1.0 / October 2026 Join the STARLI Research Community Explore more than 100 interdisciplinary research themes and follow the evolving STARLI Research Gate community: https://zenodo.org/communities/starli-research-gate/",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "BIOELECTRIC FEEDBACK AND PERSONALIZED INTELLIGENT ACUPUNCTURE CONTROL AT THE LIMIT is a 777-page prospective nonclinical research monograph on the boundary between measured bioelectric variability, personalized feedback algorithms, and genuinely verified safe closed-loop operation on inert phantoms ",
+      "url": "https://zenodo.org/records/23731081"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "b3c398c7bec6442bbe0208b9",
+      "context_id": "32bc4994daffa1f549937589",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "benchmark",
+        "retrieval"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.0833,
+      "source": "zenodo",
+      "source_context_sha256": "a8fcad39335eb811acad11d61fe8610c472351fd3da9bc33d43a4fc990fc6377",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "Supplementary material for the TGDK article \"What the Oracle Knew\". It contains the answer-generation and judging harness, the retrieval scorer, the benchmark fixtures and slices whose licences allow redistribution (LC-QuAD 2.0 CC BY 4.0, MetaQA CC BY 3.0, BRINK-family MIT; ComplexWebQuestions as identifiers only), and the frozen outputs of every condition, with md5 checksums. Every retrieval and generated-answer table of the article can be recomputed from these files without the Knowledge Navigator code; README.md gives the commands. The Knowledge Navigator code needed to re-run retrieval is deposited separately with restricted access. Version 1.3: adds the rebuilt MetaQA slice metaqa-kn-v1 (DECISIONS D14): the same 300 questions, with the relation path read from the official MetaQA question types instead of being inferred from the answers, and the full MetaQA knowledge base as A-Box. Includes the slice, the MetaQA files it is built from (question types, test questions, KB; CC BY 3.0) and its builder; the C_metaqa_v1 captures, revision summaries, generations and judgements for the six conditions and both generators (outputs/rev2, with MANIFEST.json and DIAGNOSTICS.md); and paper-side scripts (rev2_stats, agreement_v1, answer_bounds, metaqa_audit_sensitivity, diagnostics_to_json) checked by run_all.sh. In the article MetaQA v1 replaces v0 in Tables 3 to 8 and Figures 2 and 3; v0 is discussed only in Section 5.3 and stays in the archive for comparison. Every version 1.2 file and result is unchanged except the documentation (README, DATASETS, LICENSE-DATA, EXCLUDED, code/paper README), the harness (C_metaqa_v1 support; every earlier output reproduces byte for byte), run_all.sh (now 21 checks, Python 3.12 or later) and the md5 lists. Version 1.2: adds the linker-restricted baseline (Graph BFS restricted to the relations the production relation linker returned, DECISIONS D11) and the MetaQA vector-retrieval cell (D12), both at Knowledge Navigator commit 3e850458, with their captures, revision summaries, generations and judgements, the harness that recomputes them (KN_PAPER_REVISION=1) and three paper-side scripts (ci_rev1, linker_breakdown, answer_sensitivity) checked by run_all.sh. Used in Tables 3, 4, 6, 7 and 8 and Sections 6.4, 6.5 and 7.1 of the article. The frozen version 1.1 results are unchanged. Correction: byte-identical reproduction needs Python 3.12 or later (version 1.1 stated 3.10+); run_all.sh now checks it. Version 1.1: adds code/paper (the statistics the article reports outside the two summary files, with frozen expected outputs and run_all.sh); keeps, for the ComplexWebQuestions runs, the per-case relation-linker error flag (no dataset text) so that Table 5 can count timeouts; removes a stray __pycache__ present in 1.0. Tables and frozen outputs are unchanged.",
+      "tags": [
+        "knowledge graph",
+        "retrieval-augmented generation",
+        "relation linking",
+        "benchmark",
+        "question answering"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Supplementary material for \"What the Oracle Knew\": relation linking and generated answers in the Knowledge Navigator benchmark",
+      "url": "https://zenodo.org/records/23732979"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "669fa7b22fb4459ce6998d91",
+      "context_id": "35faa0cdbdaf5bc957182f27",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "control",
+        "retrieval"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.0417,
+      "source": "arxiv",
+      "source_context_sha256": "ae9a819b7d7f388407f355a64aea9f5ae1154b1f00adafb7a399a4524a7542bf",
+      "source_published": "2026-10-27T17:15:54Z",
+      "source_updated": "2026-10-27T17:15:54Z",
+      "summary": "Many real-world decisions require teams to integrate information distributed across participants. Yet AI agents are still primarily trained and benchmarked in isolation. We introduce TeamGym, an environment for evaluating and training language model-based agents on team decision-making problems constructed from real-world legal, finance, medical, and software engineering corpora. TeamGym introduces a method to identify a minimal set of facts, each element of which is necessary and all of which are collectively sufficient for a correct final decision, which we call pivotal information. This enables TeamGym to both control the distribution of pivotal information and track how well agents identify and integrate pivotal information when making team decisions. Examining 8 language models on 12 source corpora, we find that current AI agents often fail to effectively share information: Distributing pivotal information across participants lowers success rate by 22.9 percentage points on average relative to giving the same information to a single model (a communication gap). We also document that participants do not effectively retrieve decision-relevant information on their own: A team's success rate is lowered by a further 19.9 points when participants must identify and extract pivotal information from source material rather than receiving it directly (a retrieval gap). To help remedy these deficits, we use TeamGym to train policies through reinforcement learning on team decision loss. Across two policy-training experiments, we find that training improves final-decision quality and induces emergent coordination in participation, speaker selection, and communication, even though the reward evaluates only the final decision.",
+      "tags": [
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "TeamGym: A Gym for Team Decision-Making by AI Agents with Distributed Information",
+      "url": "https://arxiv.org/abs/2610.37571v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "b9ddbe2f6533c62194f1699c",
+      "context_id": "4d7de773be7ece71dc3b2832",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "ablation",
+        "benchmark",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.0,
+      "source": "arxiv",
+      "source_context_sha256": "e6e99baee8c26c01655313ca8e46848537a033ca3d9a56dd183159e706a07a25",
+      "source_published": "2026-10-27T15:09:10Z",
+      "source_updated": "2026-10-27T15:09:10Z",
+      "summary": "Vision--Language--Action (VLA) models generate robot actions from visual observations and language instructions, but their understanding of physical dynamics remains limited. Video world models can capture scene dynamics, yet generating future videos introduces high latency into the control loop. We introduce PDRVLA, whose lightweight Physical Dynamics Module extracts physical tokens from vision--language features to condition action generation without online video generation. The module learns through direct prediction of future RGB, depth, and optical-flow features, with auxiliary supervision through a frozen pretrained video world model. Training relies entirely on publicly available data, expanded through human-to-robot synthesis, subtask annotation, and embodied chain-of-thought (ECoT) annotation. Across four simulation benchmarks, PDRVLA achieves success rates of 99.3% on LIBERO, 89.9% on LIBERO-Plus, 93.6% on RoboTwin~2.0, and 81.5% on SimplerEnv. Ablations show improved future prediction with world-model supervision and evaluate how subtask conditioning, future object-pose supervision, and ECoT training affect action success.",
+      "tags": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations",
+      "url": "https://arxiv.org/abs/2610.37381v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "22645ab8790fa10bfac3f63d",
+      "context_id": "4aea803b5f0ff80fa989b5fb",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "bidirectional",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.8333,
+      "source": "arxiv",
+      "source_context_sha256": "ec3142f4d7a337f14d5fa136cf3466ecdf2372f8df79f22bbd52531e1ebb9a60",
+      "source_published": "2026-10-27T00:20:21Z",
+      "source_updated": "2026-10-27T00:20:21Z",
+      "summary": "Electric vehicle (EV) charging stations integrating photovoltaic (PV) generation, battery storage, and bidirectional grid exchange must coordinate access to limited chargers with energy supply while considering both energy cost and carbon emissions. This paper proposes a solver-free greedy heuristic (SFGH) for dynamic vehicle scheduling (VS) and a twin delayed deep deterministic policy gradient (TD3) controller for carbon-aware energy dispatch (ED). SFGH assigns EVs according to reductions in service delays, and TD3 controls battery operation to balance energy costs and carbon emissions while meeting the resulting charging demand. The model allows both PV and battery exports, accounting for export revenue and carbon credits. Simulations on year-long case studies show that SFGH--TD3 achieves the lowest accumulated service delay, energy cost, and carbon emissions among the evaluated heuristic and multi-agent deep reinforcement learning (DRL) configurations.",
+      "tags": [
+        "eess.SY"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Electric Vehicle Scheduling and Carbon-Aware Energy Dispatch for Charging Stations",
+      "url": "https://arxiv.org/abs/2610.36426v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "c6d4e9e2e68b44949e256a9b",
+      "context_id": "eea07f8a48732e2d198923e1",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "world model"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.7917,
+      "source": "arxiv",
+      "source_context_sha256": "869560ef290726a898b311352a2102ea5a08f8e9e437bfcf592fe0776d36869f",
+      "source_published": "2026-10-27T15:14:41Z",
+      "source_updated": "2026-10-27T15:14:41Z",
+      "summary": "Accurate acquisition of full channel state information (CSI) is essential for multiple-input multiple-output orthogonal frequency-division multiplexing (MIMO-OFDM) wireless systems, while dense pilot-based estimation incurs substantial overhead. Directly minimizing the prediction error over raw CSI coefficients is fragile in realistic propagation environments, since small-scale fading, mobility, local scattering, and small spatial perturbations can induce large phase-sensitive variations. Nevertheless, wireless channels contain strong spatial, temporal, and frequency-domain correlations that can be more predictably represented in a latent propagation-field domain. Motivated by this observation, we propose a joint-embedding predictive architecture (JEPA)-inspired field world model, defined as a latent predictive model of the wireless propagation field, for sparse-pilot channel reconstruction. The model maps CSI observations into latent time-frequency tokens, predicts masked or future latent field states from historical multi-band context, and fuses the predicted latent prior with sparse noisy current pilots to reconstruct the full MIMO-OFDM channel. Ray-tracing experiments show that the proposed method improves normalized mean square error (NMSE) over pilot-only and direct reconstruction baselines, supporting latent field prediction as an effective prior for sparse-pilot channel acquisition.",
+      "tags": [
+        "eess.SP",
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "JEPA-Inspired Latent Field Prediction for Sparse-Pilot MIMO-OFDM Channel Reconstruction",
+      "url": "https://arxiv.org/abs/2610.37391v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "732180d50bbf6c31ad7bf4a9",
+      "context_id": "1eb81264ecdfcb32768d0325",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "provenance"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.7917,
+      "source": "zenodo",
+      "source_context_sha256": "bbf488743168f1ea6c85dfc0821a098607d45392f3f88ee53e5dec289d1bba26",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "Technical artifacts supporting the manuscript \"AnxietyVRET: Reproducible Technical Evaluation of an Ontology-Driven, Safety-Aware, and FHIR-Oriented Architecture for Traceable GAD-Oriented Virtual Reality Exposure Workflows\". The package contains the corrected and versioned AnxietyVRET OWL 2 DL ontology with embedded SWRL rules, the corrected example ABox, deterministic boundary-test scripts and outputs, ten executable SPARQL competency-question queries, computational-benchmark scripts and logs, eight representative HL7 FHIR R5 JSON resources with structural-validation output, the AnxietyVRET-to-FHIR mapping crosswalk, semantic-preservation materials, and provenance-reconstruction scripts and outputs. No independently collected clinical patient dataset is included. See README.md for reproduction instructions.",
+      "tags": [
+        "generalized anxiety disorder",
+        "OWL 2 DL",
+        "HL7 FHIR",
+        "provenance",
+        "reproducibility"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "AnxietyVRET reproducibility package: corrected ontology, example ABox, validation scripts, benchmark logs, and representative FHIR R5 resources",
+      "url": "https://zenodo.org/records/23731283"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "6b9abee6725c58b438527ad9",
+      "context_id": "bc3434c7d92f3dab201d1571",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "control",
+        "replication"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.75,
+      "source": "zenodo",
+      "source_context_sha256": "d30ac11ac54427afc05de44c79ce8c935714c45bc3b2153f1a297e7058971da1",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "Data, coding materials, raw language-model output, analysis script and figures for the article \"Whole-of-society defence under the test of war: which rules Ukraine's preparedness statutes could settle in advance, 2022&ndash;2026\" (version 1.1.0 of the deposit; the article is under review). The dataset covers all 877 provisions (paragraphs of the official consolidated text) of Law No. 389-VIII on the legal regime of martial law, Law No. 4765-VI on compulsory alienation of property and Law No. 3543-XII on mobilisation, as published on 5 October 2026. Each provision carries its functional class (powers; decision-making authority; burden-sharing; enforcement; organisational), its addressee (citizens; enterprises; state bodies; mixed; none), whether it existed on 23 February 2022, and whether it was amended by a separate act, located in an article restated in full, or added during the war, together with the amending acts named in the editorial notes before and after 24 February 2022. Version 1.1.0 adds the addressee variable, a control corpus of 430 provisions of Cabinet of Ministers Resolutions No. 76 (2023, reservation of employees) and No. 998 (2012, compensation for requisitioned property) coded with the same scheme, the list of amending resolutions of Resolution No. 76, official series of recorded offences under Articles 336 and 337 of the Criminal Code from the Office of the Prosecutor General (Form 1, data.gov.ua), other series on enforcement, reservation and opinion polls with sources, and the chronology of change by half-year. All Ukrainian text fields in the data files carry English translations in parallel columns. The coding was produced by a large language model in independent runs under rules fixed in advance and verified by two authors; the deposit includes the exact prompts, the input files, the raw output of every run (including two excluded pilot runs and the adjudicating runs), the authors' rule decisions, and English renderings of the coding instructions. The script analysis/reproduce.py reproduces every number reported in the article. Supplementary files give the amendments tabled to Bill No. 10449 by member of parliament and the economic series used for context.",
+      "tags": [
+        "wartime legislation",
+        "institutional change",
+        "burden-sharing",
+        "mobilisation",
+        "martial law",
+        "Ukraine",
+        "legislative amendments",
+        "content analysis",
+        "large language model coding"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Replication package: Whole-of-society defence under the test of war: which rules Ukraine's preparedness statutes could settle in advance, 2022–2026",
+      "url": "https://zenodo.org/records/23723010"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "c584902f122cc38eb58f83f0",
+      "context_id": "a864aa6765d9229b5536c968",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "provenance"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.75,
+      "source": "arxiv",
+      "source_context_sha256": "39cd53a2f452d4a29cc0596985f8bbd0247de7ae813d180fdc3560a794744424",
+      "source_published": "2026-10-27T16:34:24Z",
+      "source_updated": "2026-10-27T16:34:24Z",
+      "summary": "We examine conditional charged-multiplicity fluctuations at fixed multiparton interaction (MPI) count in retained PYTHIA proton-proton samples at centre-of-mass energies of 2.76, 7, and 13 TeV. Charged particles satisfy |eta| < 0.8 and 0.15 < pT < 20 GeV/c. In the historical colour-reconnection (CR)-labelled baseline samples, the CR-ON conditional mean is smaller by a larger fraction than the standard deviation: the absolute width is smaller, while the coefficient of variation is larger in every retained matched MPI bin. Effective lifetime/decay settings and their per-run correspondence are unverified for this baseline, so these comparisons do not establish that CR alone causes the observed differences or their energy dependence. A separately documented 13 TeV comparison using the Compact Muon Solenoid (CMS) CP5 tune, with equal non-CR physics settings and particle data across the ON/OFF pair, exhibits the same absolute-versus-relative width ordering. Retained independent Monash and A14 samples also show this pattern, subject to historical production-record limitations. A comparison with mean-transverse-momentum data from A Large Ion Collider Experiment (ALICE) and simulated activity estimators provides final-state context within the stated particle-definition and provenance limits.",
+      "tags": [
+        "hep-ph"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Color-Reconnection Effects on the nMPI-Nch Conditional Multiplicity Fluctuations in PYTHIA 8 pp Collisions",
+      "url": "https://arxiv.org/abs/2610.37511v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "6b9abee6725c58b438527ad9",
+      "context_id": "20d3420e29032a2efe6cab14",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "control",
+        "replication"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.75,
+      "source": "zenodo",
+      "source_context_sha256": "f4d81b388112c95f0a8b4b0b95baa7042e43528b29be7d18ec4a359babf05a25",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "Data, coding materials, raw language-model output, analysis script and figures for the article \"Whole-of-society defence under the test of war: which rules Ukraine's preparedness statutes could settle in advance, 2022&ndash;2026\" (version 1.1.0 of the deposit; the article is under review). The dataset covers all 877 provisions (paragraphs of the official consolidated text) of Law No. 389-VIII on the legal regime of martial law, Law No. 4765-VI on compulsory alienation of property and Law No. 3543-XII on mobilisation, as published on 5 October 2026. Each provision carries its functional class (powers; decision-making authority; burden-sharing; enforcement; organisational), its addressee (citizens; enterprises; state bodies; mixed; none), whether it existed on 23 February 2022, and whether it was amended by a separate act, located in an article restated in full, or added during the war, together with the amending acts named in the editorial notes before and after 24 February 2022. Version 1.1.0 adds the addressee variable, a control corpus of 430 provisions of Cabinet of Ministers Resolutions No. 76 (2023, reservation of employees) and No. 998 (2012, compensation for requisitioned property) coded with the same scheme, the list of amending resolutions of Resolution No. 76, official series of recorded offences under Articles 336 and 337 of the Criminal Code from the Office of the Prosecutor General (Form 1, data.gov.ua), other series on enforcement, reservation and opinion polls with sources, and the chronology of change by half-year. All Ukrainian text fields in the data files carry English translations in parallel columns. The coding was produced by a large language model in independent runs under rules fixed in advance and verified by two authors; the deposit includes the exact prompts, the input files, the raw output of every run (including two excluded pilot runs and the adjudicating runs), the authors' rule decisions, and English renderings of the coding instructions. The script analysis/reproduce.py reproduces every number reported in the article. Supplementary files give the amendments tabled to Bill No. 10449 by member of parliament and the economic series used for context.",
+      "tags": [
+        "wartime legislation",
+        "institutional change",
+        "burden-sharing",
+        "mobilisation",
+        "martial law",
+        "Ukraine",
+        "legislative amendments",
+        "content analysis",
+        "large language model coding"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Replication package: Whole-of-society defence under the test of war: which rules Ukraine's preparedness statutes could settle in advance, 2022–2026",
+      "url": "https://zenodo.org/records/23723010"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "8383903df80d00dc86e24c76",
+      "context_id": "f852c1bd0861338a1b50ce28",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "benchmark"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.7083,
+      "source": "arxiv",
+      "source_context_sha256": "b87e903aae438cccdd940e58d92277a6bd157dc43a3c0e9fc144a5b013fe1b06",
+      "source_published": "2026-10-26T23:14:07Z",
+      "source_updated": "2026-10-26T23:14:07Z",
+      "summary": "Evaluating natural language explanations in recommender systems is essential for fostering user trust, transparency, and engagement. However, existing evaluation approaches like human evaluations, while accurate, are resource-intensive and impractical at the scale required by modern recommendation platforms. Also, automated methods using single-agent LLMs suffer from prompt sensitivity and inconsistent outputs. To address these challenges, we propose MAREval, a structured multi-agent framework for evaluating recommendation explanations using large language models. MAREval orchestrates (i) a planner agent that uses a novel Chain of Debate (CoD) prompting strategy to coordinate agent roles and enforce logically consistent evaluation plans; (ii) a moderator agent that regulates discussions by mitigating prompt drift; and (iii) an arbitrator agent that aggregates outputs from multiple evaluation rounds and (iv) a Monte Carlo sampling method, improving robustness and alignment with human judgment. We conduct comprehensive evaluations on both public (TopicalChat) and proprietary recommendation datasets, demonstrating that MAREval outperforms state-of-the-art baselines. Comprehensive experiments on a public benchmark and a proprietary e-commerce dataset show that MAREval improves alignment with human judgments over strong singleand multi-agent baselines. Stability analyses indicate substantially lower variability across repeated trials. In a large human-annotation gate, MAREval meets production quality thresholds where prior evaluators fall short, and online A/B testing demonstrates statistically significant improvements in engagement and revenue metrics. These results establish MAREval as a scalable and reliable solution for human-aligned evaluation of recommendation explanations in real-world systems",
+      "tags": [
+        "cs.AI",
+        "cs.IR"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "MAREval: A Multi-Agent Framework for Evaluating Natural Language Recommendation Explanations",
+      "url": "https://arxiv.org/abs/2610.36389v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "8383903df80d00dc86e24c76",
+      "context_id": "b0a39d5e1e36c08ef01be6a4",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "benchmark"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.7083,
+      "source": "arxiv",
+      "source_context_sha256": "8b9283cbd89d36e6ac2f45395045967f5e43532b73f6baa79fefbd469eb780ae",
+      "source_published": "2026-10-26T23:14:07Z",
+      "source_updated": "2026-10-26T23:14:07Z",
+      "summary": "Evaluating natural language explanations in recommender systems is essential for fostering user trust, transparency, and engagement. However, existing evaluation approaches like human evaluations, while accurate, are resource-intensive and impractical at the scale required by modern recommendation platforms. Also, automated methods using single-agent LLMs suffer from prompt sensitivity and inconsistent outputs. To address these challenges, we propose MAREval, a structured multi-agent framework for evaluating recommendation explanations using large language models. MAREval orchestrates (i) a planner agent that uses a novel Chain of Debate (CoD) prompting strategy to coordinate agent roles and enforce logically consistent evaluation plans; (ii) a moderator agent that regulates discussions by mitigating prompt drift; and (iii) an arbitrator agent that aggregates outputs from multiple evaluation rounds and (iv) a Monte Carlo sampling method, improving robustness and alignment with human judgment. We conduct comprehensive evaluations on both public (TopicalChat) and proprietary recommendation datasets, demonstrating that MAREval outperforms state-of-the-art baselines. Comprehensive experiments on a public benchmark and a proprietary e-commerce dataset show that MAREval improves alignment with human judgments over strong singleand multi-agent baselines. Stability analyses indicate substantially lower variability across repeated trials. In a large human-annotation gate, MAREval meets production quality thresholds where prior evaluators fall short, and online A/B testing demonstrates statistically significant improvements in engagement and revenue metrics. These results establish MAREval as a scalable and reliable solution for human-aligned evaluation of recommendation explanations in real-world systems",
+      "tags": [
+        "cs.AI",
+        "cs.IR"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "MAREval: A Multi-Agent Framework for Evaluating Natural Language Recommendation Explanations",
+      "url": "https://arxiv.org/abs/2610.36389v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "b3c398c7bec6442bbe0208b9",
+      "context_id": "a8c4b1aa66e0133885db10e7",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "benchmark"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.7083,
+      "source": "zenodo",
+      "source_context_sha256": "a190511f441d66c33a33456e84f8449515ed233b1e68c178be97cf327a6cc8cc",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "Supplementary material for the TGDK article \"What the Oracle Knew\". It contains the answer-generation and judging harness, the retrieval scorer, the benchmark fixtures and slices whose licences allow redistribution (LC-QuAD 2.0 CC BY 4.0, MetaQA CC BY 3.0, BRINK-family MIT; ComplexWebQuestions as identifiers only), and the frozen outputs of every condition, with md5 checksums. Every retrieval and generated-answer table of the article can be recomputed from these files without the Knowledge Navigator code; README.md gives the commands. The Knowledge Navigator code needed to re-run retrieval is deposited separately with restricted access. Version 1.3: adds the rebuilt MetaQA slice metaqa-kn-v1 (DECISIONS D14): the same 300 questions, with the relation path read from the official MetaQA question types instead of being inferred from the answers, and the full MetaQA knowledge base as A-Box. Includes the slice, the MetaQA files it is built from (question types, test questions, KB; CC BY 3.0) and its builder; the C_metaqa_v1 captures, revision summaries, generations and judgements for the six conditions and both generators (outputs/rev2, with MANIFEST.json and DIAGNOSTICS.md); and paper-side scripts (rev2_stats, agreement_v1, answer_bounds, metaqa_audit_sensitivity, diagnostics_to_json) checked by run_all.sh. In the article MetaQA v1 replaces v0 in Tables 3 to 8 and Figures 2 and 3; v0 is discussed only in Section 5.3 and stays in the archive for comparison. Every version 1.2 file and result is unchanged except the documentation (README, DATASETS, LICENSE-DATA, EXCLUDED, code/paper README), the harness (C_metaqa_v1 support; every earlier output reproduces byte for byte), run_all.sh (now 21 checks, Python 3.12 or later) and the md5 lists. Version 1.2: adds the linker-restricted baseline (Graph BFS restricted to the relations the production relation linker returned, DECISIONS D11) and the MetaQA vector-retrieval cell (D12), both at Knowledge Navigator commit 3e850458, with their captures, revision summaries, generations and judgements, the harness that recomputes them (KN_PAPER_REVISION=1) and three paper-side scripts (ci_rev1, linker_breakdown, answer_sensitivity) checked by run_all.sh. Used in Tables 3, 4, 6, 7 and 8 and Sections 6.4, 6.5 and 7.1 of the article. The frozen version 1.1 results are unchanged. Correction: byte-identical reproduction needs Python 3.12 or later (version 1.1 stated 3.10+); run_all.sh now checks it. Version 1.1: adds code/paper (the statistics the article reports outside the two summary files, with frozen expected outputs and run_all.sh); keeps, for the ComplexWebQuestions runs, the per-case relation-linker error flag (no dataset text) so that Table 5 can count timeouts; removes a stray __pycache__ present in 1.0. Tables and frozen outputs are unchanged.",
+      "tags": [
+        "knowledge graph",
+        "retrieval-augmented generation",
+        "relation linking",
+        "benchmark",
+        "question answering"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Supplementary material for \"What the Oracle Knew\": relation linking and generated answers in the Knowledge Navigator benchmark",
+      "url": "https://zenodo.org/records/23732979"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "07f381f6b100f784c06fae98",
+      "context_id": "23ca6d51b5f03ac325a53c41",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "benchmark"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.7083,
+      "source": "arxiv",
+      "source_context_sha256": "b018714237953babbfb23cf87fecc5062f2902037daf465e8cd2d315aad79b98",
+      "source_published": "2026-10-27T10:23:50Z",
+      "source_updated": "2026-10-27T10:23:50Z",
+      "summary": "Proactive LLM agents anticipate service opportunities from ongoing observations and accumulated history. Existing approaches emphasize recent context or retrieval of related memories, providing limited support for validating recurring behavioral regularities and assessing their applicability to the current event. We propose Proactive Memory (ProactMem), which organizes history into recent events, temporal trajectories, and behavioral regularities. Trajectory facts are checked against source events, and regularities are assessed through historical replay before being matched to current conditions. We also construct ProactiveStream, a longitudinal benchmark covering three application scopes, where agents process isolated event streams chronologically under episode-aware opportunity labels. On ProactiveStream, ProactMem achieves an overall effectiveness (F1) of 52.6%, a 21.4% relative improvement over the strongest of five external baselines. Code is available at: https://anonymous.4open.science/r/ProactMem-5351/.",
+      "tags": [
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Proactive Memory for Event-Driven LLM Agents",
+      "url": "https://arxiv.org/abs/2610.36967v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "d18ce40f39241e983db4229b",
+      "context_id": "e69d72e6898192e7b710907e",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.6667,
+      "source": "arxiv",
+      "source_context_sha256": "fa63e328ebb3f0eead03e717c345ec402b7ffe2c39189b53de97e88472563e0a",
+      "source_published": "2026-10-27T11:42:47Z",
+      "source_updated": "2026-10-27T11:42:47Z",
+      "summary": "Background and purpose: Radiotherapy planning agents based on large language models (LLMs) decide when to submit a plan or request review but are evaluated mainly by dose. This study developed OpenGray, a benchmark of planning tasks with known correct decisions. Materials and methods: OpenGray adds tasks with known answers to the OpenKBP-Opt head-and-neck dataset, including two contradictions with dose goals proven incompatible and a feasible control with a stored plan meeting every hard goal. Four systems, from a rule-based planning script to a full LLM agent, were evaluated on 30 patients, the LLM-based ones with a commercial (Terra) and a local (Ministral 3 8B) LLM. Decisions, achieved dose, problem recognition, and technical failures were recorded and also read from logs of 39 stereotactic radiosurgery runs of SAGE, a clinical LLM agent. Results: With Terra, the script preceded by an LLM review and the full agent had decision accuracies of 95.4% and 92.1%, respectively, yet escalated only 50% (95% confidence interval, 25-75%) and 25% (10-40%) of overlap contradictions, which required arithmetic on the anatomy. All four systems submitted every feasible control, but 24% of these plans missed a hard goal that the stored plan had met. In four SAGE runs, one goal failed at every attempt; the agent identified it in every reply but had no action for stopping. Conclusions: Favorable aggregate scores concealed specific decision failures. Planning agents should be evaluated on their decisions as well as their dose and given an explicit action for stopping and requesting review.",
+      "tags": [
+        "cs.AI",
+        "physics.med-ph"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "OpenGray: a benchmark for evaluating the decisions of radiotherapy planning agents",
+      "url": "https://arxiv.org/abs/2610.37081v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "577288cb7e0341e36f7af2de",
+      "context_id": "dd09d1fd2fbb9451c8cb5507",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.6667,
+      "source": "arxiv",
+      "source_context_sha256": "5c0827f1ff810a0cc83b4e8ebacae5197a020af05b9962869253db8afec9613a",
+      "source_published": "2026-10-27T15:48:09Z",
+      "source_updated": "2026-10-27T15:48:09Z",
+      "summary": "Visual world models increasingly support spatial reasoning by generating RGB views of unobserved states. However, RGB has become the default interface largely because it is well suited for visual generation, rather than necessarily being the most effective representation for downstream reasoning. Different spatial questions may benefit from different representations of the same imagined state: top-down geometry can facilitate global distance comparisons, while panoramic views provide broader context for reasoning about open space. To isolate the role of representation in spatial imagination, we introduce ImagiRep, a simulator-grounded benchmark of 922 questions spanning seven question types across two settings, Viewpoint Imagination and Cross-view Integration, providing oracle RGB and six alternative representations (e.g., depth, panoramic views, and top-down geometry) of the same unobserved state. This controlled comparison reveals that even accurate imagined RGB does not guarantee accurate spatial reasoning, and different questions benefit from different representations. Similar trends hold for representations derived from world-model-estimated states. Notably, estimated RGB alone can mislead spatial reasoning, while alternative representations retain complementary benefits. Building on these findings, we introduce GEARS, a lightweight test-time strategy for adaptive representation selection, outperforming existing spatial imagination methods and showing that reasoning about unseen states requires more than generating RGB views.",
+      "tags": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Representing the Unseen: Rethinking Visual Imagination for Spatial Reasoning",
+      "url": "https://arxiv.org/abs/2610.37437v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "b5223bb99b32b80f6da40394",
+      "context_id": "bba19241feccaefb636e4c30",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.6667,
+      "source": "arxiv",
+      "source_context_sha256": "a76dbb9dfe1cf17f1cc79548c6c1094b2f0ce9e6aee6f436850100dad7cee53e",
+      "source_published": "2026-10-27T14:56:16Z",
+      "source_updated": "2026-10-27T14:56:16Z",
+      "summary": "We develop a multifidelity black-box variational inference (MF-BBVI) approach for PDE-constrained Bayesian inverse problems in which forward solves are expensive and PDE gradients are unavailable. The method is built on score-function estimators for the evidence lower bound (ELBO), which avoid differentiation through the PDE model but are known to suffer from high variance. To address this high variance, we employ multifidelity approximate control-variate estimators that combine a small number of high-fidelity samples with a larger number of low-fidelity samples to reduce estimator variance and the number of high-fidelity evaluations required for optimization. We further develop a PDE-derivative-free second-order optimization strategy based on both gradient and Hessian score-function estimators. For low-fidelity model generation, we propose an on-the-fly strategy that builds and adaptively updates a reduced-order model (ROM) as the variational distribution evolves throughout the optimization. We investigate strategies for adapting the ROM and estimating the approximate control-variate gains, examining tradeoffs between estimator bias, variance reduction, and computational cost. The resulting approach facilitates derivative-free variational inference for large-scale inverse problems through a reduction in overall computational cost. We demonstrate the method on four numerical examples: a linear benchmark with an exact posterior and three PDE-constrained inverse problems.",
+      "tags": [
+        "math.NA"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Multifidelity variational inference for derivative-free PDE-constrained inverse problems",
+      "url": "https://arxiv.org/abs/2610.37359v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "06b82ea618688956907d0f93",
+      "context_id": "b16344c9d4a66f93cd886e4e",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.6667,
+      "source": "zenodo",
+      "source_context_sha256": "f1016855a6b7e354565a4d1bb7bded94145bbf1154bc79d13c3d8bcc3bb0f63e",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "Lake-Zurich-Bacterial-Integrated-Time-Series (LZ-BITS) Genome architecture predicts proteome allocation in natural bacterial communities Cyrill Hofer&sup1;, Lucas Serra Moncadas&sup1;, Jakob Pernthaler&sup1;, Adrian-Stefan Andrei&sup1;* &sup1; Limnological Station, Department of Plant and Microbial Biology, University of Zurich, Kilchberg 8802, Switzerland *Corresponding author: stefan.andrei@limnol.uzh.ch Overview This Zenodo record contains the archived data and analysis resources associated with the study \"Genome architecture predicts proteome allocation in natural bacterial communities\". The project integrates metagenomic, metaproteomic, flow-cytometric, and environmental time-series data from Lake Zurich, Switzerland, to investigate how genome architecture constrains and predicts proteome investment patterns in natural bacterial communities. Primary raw Lake Zurich metagenomic and metaproteomic data are deposited in ENA and PRIDE, respectively. This archive contains the processed and integrated datasets, analysis workflows, supporting data, Lake Zurich flow-cytometry data, and independent MockD6300 benchmarking datasets. Archive organization Data.zip &mdash; Data processing, prepared data, and supporting raw data Contains data-type-specific processing workflows, processed and curated data, intermediate files, and selected raw supporting datasets. Depending on the analysis, files from Data/ are either used directly or incorporated into integrated datasets. The archive additionally contains: Lake Zurich flow-cytometry raw data ( .fcs and CytExpert .xit ) MockD6300 Illumina and Nanopore raw sequencing data MockD6300 raw and corrected draft genome assemblies and assembly benchmarking MockD6300 raw proteomics data ( .mzML ) and associated processing and benchmarking data Datasets.zip &mdash; Integrated datasets Contains curated and integrated datasets generated by combining information across data types. These analysis-ready tables are used in downstream comparative and statistical analyses. DataAnalysis_SpringBloom2021.zip &mdash; Analysis workflows Contains the workflows used to generate the main and supplementary results of the study, including analysis scripts, statistical analyses, intermediate analysis objects, figure-generation workflows, and figure outputs. Depending on the analysis, inputs originate from Data/ , Datasets/ , or both. Lake Zurich flow cytometry Raw flow-cytometry data are located under: Data/Lake_Data/Raw_Data/Flowcytometry_Data/ Measurements were acquired using a CytoFLEX S flow cytometer (Beckman Coulter) and analyzed using CytExpert v2.4.0.28. 01_Epilimnion_SB2021/ and 01_Epilimnion_SB2021.xit contain the high-resolution integrated epilimnetic measurements corresponding to the same integrated samples as the 37 samples represented in the LZ-BITS dataset. The ZS_YYMMDD directories contain complementary approximately biweekly depth-resolved measurements from the Lake Zurich long-term sampling point at 0, 2.5, 5, 7.5, 10, 12.5, 15, 20, and 40 m depth. A dedicated README.txt accompanies these files. MockD6300 benchmarking data A ZymoBIOMICS Microbial Community Standard D6300 (MockD6300) was used as an independent benchmark for the metagenomic assembly and metaproteomic workflows. To keep the primary public ENA and PRIDE repositories restricted to environmental Lake Zurich LZ-BITS samples, the MockD6300 benchmarking data are provided through this Zenodo archive. Genomic data are located under: Data/Mock_Data/Genomic/ and include paired-end Illumina raw reads, Nanopore raw reads, alternative raw and corrected draft assemblies, and assembly workflow comparisons. Proteomic data are located under: Data/Mock_Data/Proteomic/ and include raw .mzML files, protein-database preparation, DIA-NN outputs, peptide and protein tables, quality-control analyses, and benchmarking workflows. Data repositories Raw Lake Zurich metagenomic sequencing: ENA &ndash; European Nucleotide Archive Accession: PRJEB95916 Raw Lake Zurich",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Lake-Zurich-Bacterial-Integrated-Time-Series-LZ-BITS",
+      "url": "https://zenodo.org/records/23733216"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "669fa7b22fb4459ce6998d91",
+      "context_id": "ae0702699e6ff9cf72b8b967",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.6667,
+      "source": "arxiv",
+      "source_context_sha256": "8c783414fc42b3c932f8e066286b701073a45307d7bff57a8e32ed6246c52eda",
+      "source_published": "2026-10-27T17:15:54Z",
+      "source_updated": "2026-10-27T17:15:54Z",
+      "summary": "Many real-world decisions require teams to integrate information distributed across participants. Yet AI agents are still primarily trained and benchmarked in isolation. We introduce TeamGym, an environment for evaluating and training language model-based agents on team decision-making problems constructed from real-world legal, finance, medical, and software engineering corpora. TeamGym introduces a method to identify a minimal set of facts, each element of which is necessary and all of which are collectively sufficient for a correct final decision, which we call pivotal information. This enables TeamGym to both control the distribution of pivotal information and track how well agents identify and integrate pivotal information when making team decisions. Examining 8 language models on 12 source corpora, we find that current AI agents often fail to effectively share information: Distributing pivotal information across participants lowers success rate by 22.9 percentage points on average relative to giving the same information to a single model (a communication gap). We also document that participants do not effectively retrieve decision-relevant information on their own: A team's success rate is lowered by a further 19.9 points when participants must identify and extract pivotal information from source material rather than receiving it directly (a retrieval gap). To help remedy these deficits, we use TeamGym to train policies through reinforcement learning on team decision loss. Across two policy-training experiments, we find that training improves final-decision quality and induces emergent coordination in participation, speaker selection, and communication, even though the reward evaluates only the final decision.",
+      "tags": [
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "TeamGym: A Gym for Team Decision-Making by AI Agents with Distributed Information",
+      "url": "https://arxiv.org/abs/2610.37571v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "d18ce40f39241e983db4229b",
+      "context_id": "98c9aecc93b9816d8079d9ee",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.6667,
+      "source": "arxiv",
+      "source_context_sha256": "0122f6684776fce8f694b21e7557e008d2836a4d61d986c677448546b5699e64",
+      "source_published": "2026-10-27T11:42:47Z",
+      "source_updated": "2026-10-27T11:42:47Z",
+      "summary": "Background and purpose: Radiotherapy planning agents based on large language models (LLMs) decide when to submit a plan or request review but are evaluated mainly by dose. This study developed OpenGray, a benchmark of planning tasks with known correct decisions. Materials and methods: OpenGray adds tasks with known answers to the OpenKBP-Opt head-and-neck dataset, including two contradictions with dose goals proven incompatible and a feasible control with a stored plan meeting every hard goal. Four systems, from a rule-based planning script to a full LLM agent, were evaluated on 30 patients, the LLM-based ones with a commercial (Terra) and a local (Ministral 3 8B) LLM. Decisions, achieved dose, problem recognition, and technical failures were recorded and also read from logs of 39 stereotactic radiosurgery runs of SAGE, a clinical LLM agent. Results: With Terra, the script preceded by an LLM review and the full agent had decision accuracies of 95.4% and 92.1%, respectively, yet escalated only 50% (95% confidence interval, 25-75%) and 25% (10-40%) of overlap contradictions, which required arithmetic on the anatomy. All four systems submitted every feasible control, but 24% of these plans missed a hard goal that the stored plan had met. In four SAGE runs, one goal failed at every attempt; the agent identified it in every reply but had no action for stopping. Conclusions: Favorable aggregate scores concealed specific decision failures. Planning agents should be evaluated on their decisions as well as their dose and given an explicit action for stopping and requesting review.",
+      "tags": [
+        "cs.AI",
+        "physics.med-ph"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "OpenGray: a benchmark for evaluating the decisions of radiotherapy planning agents",
+      "url": "https://arxiv.org/abs/2610.37081v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "06b82ea618688956907d0f93",
+      "context_id": "7a1ec9879475e3cdb17d4b3f",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.6667,
+      "source": "zenodo",
+      "source_context_sha256": "28d1eb0ee45df17c21661ec6afd59153db75417d34cc95190559247d6ba7cd1f",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "Lake-Zurich-Bacterial-Integrated-Time-Series (LZ-BITS) Genome architecture predicts proteome allocation in natural bacterial communities Cyrill Hofer&sup1;, Lucas Serra Moncadas&sup1;, Jakob Pernthaler&sup1;, Adrian-Stefan Andrei&sup1;* &sup1; Limnological Station, Department of Plant and Microbial Biology, University of Zurich, Kilchberg 8802, Switzerland *Corresponding author: stefan.andrei@limnol.uzh.ch Overview This Zenodo record contains the archived data and analysis resources associated with the study \"Genome architecture predicts proteome allocation in natural bacterial communities\". The project integrates metagenomic, metaproteomic, flow-cytometric, and environmental time-series data from Lake Zurich, Switzerland, to investigate how genome architecture constrains and predicts proteome investment patterns in natural bacterial communities. Primary raw Lake Zurich metagenomic and metaproteomic data are deposited in ENA and PRIDE, respectively. This archive contains the processed and integrated datasets, analysis workflows, supporting data, Lake Zurich flow-cytometry data, and independent MockD6300 benchmarking datasets. Archive organization Data.zip &mdash; Data processing, prepared data, and supporting raw data Contains data-type-specific processing workflows, processed and curated data, intermediate files, and selected raw supporting datasets. Depending on the analysis, files from Data/ are either used directly or incorporated into integrated datasets. The archive additionally contains: Lake Zurich flow-cytometry raw data ( .fcs and CytExpert .xit ) MockD6300 Illumina and Nanopore raw sequencing data MockD6300 raw and corrected draft genome assemblies and assembly benchmarking MockD6300 raw proteomics data ( .mzML ) and associated processing and benchmarking data Datasets.zip &mdash; Integrated datasets Contains curated and integrated datasets generated by combining information across data types. These analysis-ready tables are used in downstream comparative and statistical analyses. DataAnalysis_SpringBloom2021.zip &mdash; Analysis workflows Contains the workflows used to generate the main and supplementary results of the study, including analysis scripts, statistical analyses, intermediate analysis objects, figure-generation workflows, and figure outputs. Depending on the analysis, inputs originate from Data/ , Datasets/ , or both. Lake Zurich flow cytometry Raw flow-cytometry data are located under: Data/Lake_Data/Raw_Data/Flowcytometry_Data/ Measurements were acquired using a CytoFLEX S flow cytometer (Beckman Coulter) and analyzed using CytExpert v2.4.0.28. 01_Epilimnion_SB2021/ and 01_Epilimnion_SB2021.xit contain the high-resolution integrated epilimnetic measurements corresponding to the same integrated samples as the 37 samples represented in the LZ-BITS dataset. The ZS_YYMMDD directories contain complementary approximately biweekly depth-resolved measurements from the Lake Zurich long-term sampling point at 0, 2.5, 5, 7.5, 10, 12.5, 15, 20, and 40 m depth. A dedicated README.txt accompanies these files. MockD6300 benchmarking data A ZymoBIOMICS Microbial Community Standard D6300 (MockD6300) was used as an independent benchmark for the metagenomic assembly and metaproteomic workflows. To keep the primary public ENA and PRIDE repositories restricted to environmental Lake Zurich LZ-BITS samples, the MockD6300 benchmarking data are provided through this Zenodo archive. Genomic data are located under: Data/Mock_Data/Genomic/ and include paired-end Illumina raw reads, Nanopore raw reads, alternative raw and corrected draft assemblies, and assembly workflow comparisons. Proteomic data are located under: Data/Mock_Data/Proteomic/ and include raw .mzML files, protein-database preparation, DIA-NN outputs, peptide and protein tables, quality-control analyses, and benchmarking workflows. Data repositories Raw Lake Zurich metagenomic sequencing: ENA &ndash; European Nucleotide Archive Accession: PRJEB95916 Raw Lake Zurich",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Lake-Zurich-Bacterial-Integrated-Time-Series-LZ-BITS",
+      "url": "https://zenodo.org/records/23733216"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "ee8ec9c634176dbdf269bcd3",
+      "context_id": "e7dfc478079b8f702bc6f23b",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.625,
+      "source": "arxiv",
+      "source_context_sha256": "369c8557f2b20b4872919201e0df2b0be274e7d31e85a043b6fd9e007a8cb2fd",
+      "source_published": "2026-10-27T16:25:16Z",
+      "source_updated": "2026-10-27T16:25:16Z",
+      "summary": "Face swapping transfers a source identity onto a target image while preserving the target's pose, expression, hair, and lighting. The most realistic current methods are diffusion-based, but they need many network evaluations per image. GAN-based methods are fast, yet trained from scratch they must learn realism from the adversarial signal alone and produce visibly weaker results. We present ALADDIN (Adversarial Latent Diffusion Distillation for One-Step Identity Swapping), a one-step face swapper obtained by initialising the generator from a pre-trained multi-step flow-matching model and training it adversarially under identity and target-preservation constraints. We expose a controllable trade-off between identity transfer and target-attribute preservation by training a student model with triplet pseudo-label supervision. We additionally identify a bias in the standard evaluation protocol, which favours methods trained against the same identity encoder used to score them, and re-evaluate all baselines with an independent one. ALADDIN is state-of-the-art among one-step methods in realism and target preservation at comparable identity transfer, and matches the best multi-step model with 28 times fewer network evaluations and an order of magnitude fewer training pairs.",
+      "tags": [
+        "cs.CV"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "ALADDIN: Adversarial Latent Diffusion Distillation for One-Step Identity Swapping",
+      "url": "https://arxiv.org/abs/2610.37503v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "ee8ec9c634176dbdf269bcd3",
+      "context_id": "3025a778f525f591de3b426c",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.625,
+      "source": "arxiv",
+      "source_context_sha256": "42ae21d3702687786be84ac4ef5063e398c281929794892cf56665d7281ebd14",
+      "source_published": "2026-10-27T16:25:16Z",
+      "source_updated": "2026-10-27T16:25:16Z",
+      "summary": "Face swapping transfers a source identity onto a target image while preserving the target's pose, expression, hair, and lighting. The most realistic current methods are diffusion-based, but they need many network evaluations per image. GAN-based methods are fast, yet trained from scratch they must learn realism from the adversarial signal alone and produce visibly weaker results. We present ALADDIN (Adversarial Latent Diffusion Distillation for One-Step Identity Swapping), a one-step face swapper obtained by initialising the generator from a pre-trained multi-step flow-matching model and training it adversarially under identity and target-preservation constraints. We expose a controllable trade-off between identity transfer and target-attribute preservation by training a student model with triplet pseudo-label supervision. We additionally identify a bias in the standard evaluation protocol, which favours methods trained against the same identity encoder used to score them, and re-evaluate all baselines with an independent one. ALADDIN is state-of-the-art among one-step methods in realism and target preservation at comparable identity transfer, and matches the best multi-step model with 28 times fewer network evaluations and an order of magnitude fewer training pairs.",
+      "tags": [
+        "cs.CV"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "ALADDIN: Adversarial Latent Diffusion Distillation for One-Step Identity Swapping",
+      "url": "https://arxiv.org/abs/2610.37503v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "e6dbe33caa3cc38225420df2",
+      "context_id": "14f4a8a9a16207677cf48c6f",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.625,
+      "source": "zenodo",
+      "source_context_sha256": "f87c6c3a57394a072ecdb86fe28e392b70464047705f2ff378351bdb7bcf5c6b",
+      "source_published": "2026-06-30",
+      "source_updated": "",
+      "summary": "This is the second annual account of BR implementation and biosecurity under the D4.1 Biosecurity Measures Plan. It updates the ante-operam position reported in D4.3 and focuses on the physical construction pathway, the materials and equipment used, and the controls that limited the risk of transferring non-indigenous species (NIS), pathogens or associated organisms during BLR deployment. Permitting and design: the EIA process concluded positively in July 2025, and the executive project was adopted by the Municipality of Ravenna on 26 August 2025. Construction materials: netting and geotextile were new, while limestone was sourced from a quarry. The physical structure was therefore not assembled from previously used marine materials. BLR design: the executive design uses 5.00 x 2.00 x 0.30/0.60 m modular wire-mesh mattresses filled with 100/200 mm limestone, arranged in macro-blocks over an approximately 100 x 48 m footprint (4,800 m&sup2;). Local logistics: mattresses were assembled in the Port of Ravenna, approximately 7 nautical miles from the receiving site. The barge used for deployment operated only on local Emilia-Romagna coastal works and was not used at other sites during the LIFE NatuReef work period. Diving operations: support divers worked only at the project site or in its immediate vicinity during the period; equipment was washed between different jobs. NIS baseline: Jassa slatteryi, Paranthura japonica, Ruditapes philippinarum and Callinectes sapidus were already documented in the area before BLR deployment and remain the appropriate baseline for post-construction interpretation.",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "2nd annual report on BRs implementation and biosecurity. Deliverable 4.4 of the LIFE NatuReef project: Nature-based reef solution for coastal protection and marine biodiversity enhancement. LIFE22-NAT-IT-LIFE-NatuReef/101113742",
+      "url": "https://zenodo.org/records/23733243"
+    }
+  ],
+  "schema": "janus.beetle.repo_memory_batch.v1",
+  "selection": "BALANCED_LENS_ROLLING_TOP",
+  "snapshot_cap": 48,
+  "snapshot_items_total": 48,
+  "target_repository": "Hawkar-usls/iNaiHR"
+}
