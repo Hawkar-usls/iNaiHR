@@ -1,17 +1,17 @@
 {
-  "batch_id": "a7a67541c789fb9012ca",
+  "batch_id": "12e17060d0504d11e8a0",
   "claim_ceiling": "DISCOVERY_MEMORY_ONLY__TARGET_REPO_MUST_VERIFY_INDEPENDENTLY",
   "fragment_count": 1,
   "fragment_index": 1,
   "items": [
     {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "f7bd885e1abb9452d766b96b",
-      "context_id": "afab5dd7eccb762362f6d2a0",
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "08e7af85b700485380503a30",
+      "context_id": "888a6b90e06c16527b3d2d86",
       "delivery_preview_only": true,
       "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::FORWARD",
-      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
+      "direction_id": "mirror_bidirectional_provenance::REVERSE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
       "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
       "firewall": [
         "ROUTED_NE_VERIFIED",
@@ -21,432 +21,28 @@
         "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
       ],
       "keyword_hits": [
-        "representation",
-        "representation learning",
-        "world model"
+        "identifiability",
+        "inverse",
+        "inverse problem",
+        "inversion",
+        "recovery",
+        "symmetry"
       ],
-      "mirror_lens": "FORWARD",
+      "mirror_lens": "REVERSE",
       "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 9.0417,
+      "score": 20.5833,
       "source": "arxiv",
-      "source_context_sha256": "37ce0af09092b0f7cba7758bb4ccfe02da4fbb2aef2b0a54a3ac5f696d5c21b4",
-      "source_published": "2026-10-26T00:50:03Z",
-      "source_updated": "2026-10-26T00:50:03Z",
-      "summary": "Video world models trained on large-scale robot data promise a safe and scalable approach for learning and evaluating policies that act in the physical world. However, they still struggle with long-horizon rollouts and out-of-distribution generalization, and they remain computationally demanding at inference time. Typically, video world models make predictions in the latent space of a reconstruction-trained autoencoder, which however is not directly optimized for dynamics modeling. On the other hand, world models designed for latent planning usually optimize latents to be predictable, but they forgo accurate prediction of observations in pixel space. In this paper, we show that it is possible to achieve the best of both worlds: a latent geometry optimized to make future prediction as simple as possible without sacrificing accurate prediction of future observations. More precisely, we find that temporal objectives for representation learning, paired with a past-conditioned decoder architecture, lead to consistent improvements in generative video world models at the same training budget. The gains include up to 5x cheaper inference, over 7x faster training, and 15-24% lower pixel and perceptual errors out of distribution and over long horizons. Our world models also agree more closely with real-world policy evaluation when using a vision-language model to judge task success from their pixel-space predictions. Overall, our study indicates that temporal predictability is an important design criterion for the latent space of video world models, and provides concrete guidance on how to incorporate it into the training of autoencoders.",
+      "source_context_sha256": "03d627855e35372f2fef886e0733e7336b23b006c1b6372854c73c45b7123a7a",
+      "source_published": "2026-10-27T16:45:22Z",
+      "source_updated": "2026-10-27T16:45:22Z",
+      "summary": "A persistent belief in modern AI is that sufficiently large learners trained on sufficiently much data can make explicit domain knowledge optional. This paper examines a limitation of that belief. We define structure-encoded problems: tasks whose input-output map is determined, or sharply constrained, by known structure such as a solver, symmetry group, graph, physical law, measurement operator, grammar, combinatorial search space, or optimization objective. For such tasks, the central question is not expressivity--a dense neural network may contain the desired map--but finite-data identification, extrapolation, and certification. We introduce the structure gap: the finite-resource gap between a method that receives the governing structure and a learner that receives only examples. The strongest useful form of the claim is asymptotic rather than absolute: structure-agnostic learning may approach a structured solver as coverage grows, but every finite dataset can leave residual uncertainty that the structure resolves by construction. We prove this exactly for a Gaussian inverse problem: the known-operator Wiener solver attains Bayes risk, while the dense empirical learner in the correct linear class has persistent expected excess risk. We also prove a cell-coverage lower bound and an unobserved-orbit non-identifiability result. Controlled experiments in known-operator inversion, sparse recovery, and graph reachability with size extrapolation instantiate the mechanisms. When validated structure is available, it can constrain the hypothesis space before learning begins, leaving learning to address components the structure does not specify.",
       "tags": [
         "cs.LG",
-        "cs.AI",
-        "cs.CV",
-        "cs.RO"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Video World Models Need Predictable Latents",
-      "url": "https://arxiv.org/abs/2610.34663v1"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "d3ddd2cd896642f5506812cb",
-      "context_id": "e94687653978f4fcda212fc6",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::FORWARD",
-      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "representation",
-        "world model"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 6.0417,
-      "source": "arxiv",
-      "source_context_sha256": "3fe32147b706b166e307c930d5413ace3e0aa9f47746dc787346f39a0f8b29dd",
-      "source_published": "2026-10-27T09:51:08Z",
-      "source_updated": "2026-10-27T09:51:08Z",
-      "summary": "Learning from experience is essential for building the next generation of agents that continually expand their capabilities. Pretrained vision-language models (VLMs) already internalize rich world knowledge, yet this knowledge is rarely leveraged to drive policy improvement through online interaction. Realizing this potential efficiently remains challenging, as policy updates shift the agent's interaction distribution, requiring the world model to adapt accordingly, while continually updating large pretrained models is computationally expensive. To address this challenge, we introduce Dwell, a model-based reinforcement learning (RL) framework that reframes a VLM as a recurrent latent transition operator, endowing it with the ability to predict, adjust, and act in latent space. Leveraging the VLM's own representations and its dual role as both world model and policy, the agent continually learns from real interactions to anticipate and evaluate action outcomes, and from latent imagination to improve its behavior. Across five interactive visual environments, Dwell achieves the strongest overall performance among trainable methods while substantially reducing the compute required for imagination, showing that effective world models for VLM agents need not reconstruct the future; they need to predict futures that are useful for action. Our code is publicly available at https://github.com/Tom111-lhx/Dwell",
-      "tags": [
         "cs.AI"
       ],
       "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Vision-Language Agents Can Learn in Their Own Latent Worlds",
-      "url": "https://arxiv.org/abs/2610.36925v1"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "4a16067d4e590f78098dca3e",
-      "context_id": "a8bcdbfb61d75f193eca2804",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::FORWARD",
-      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "memory",
-        "representation",
-        "representation learning"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 5.8333,
-      "source": "arxiv",
-      "source_context_sha256": "573fb2ae41257016c990751c3565c509bc3e543b781f7b63a0ae7005981a2cae",
-      "source_published": "2026-10-26T23:18:47Z",
-      "source_updated": "2026-10-26T23:18:47Z",
-      "summary": "Modeling multi-scale dynamics in urban road networks is essential for intelligent transportation systems but is often hindered by the computational cost of long-range historical context and the challenge of fusing heterogeneous modalities. Existing spatio-temporal frameworks face a trade-off between sequence length and memory overhead, while frequently neglecting the transient effects of exogenous factors such as road incidents and weather. To address these limitations, we propose SpecLST, a frequency-enhanced long-short-term spatio-temporal multimodal framework. SpecLST leverages a fast Fourier transform-based frequency-domain representation module to efficiently encode multi-week historical dependencies, bypassing the memory bottlenecks of standard attention mechanisms over raw long sequences. Heterogeneous context is integrated through attention-based fusion, followed by a sparse Mixture-of-Experts backbone with graph augmentation for spatio-temporal representation learning. Additionally, a frequency-enhanced residual head isolates high-frequency transients, improving sensitivity to abrupt traffic anomalies. At the 60-minute horizon, SpecLST achieves mean relative error reductions of 14.10% in MAE, 10.35% in RMSE, and 15.78% in MAPE across eight neural forecasting baselines and four datasets, with the dataset- and metric-specific average reductions ranging from 5.63% to 22.21%.",
-      "tags": [
-        "cs.LG"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "SpecLST: Spectral-Enhanced Long-Short Term Spatio-Temporal Multimodal Modeling for Traffic Forecasting",
-      "url": "https://arxiv.org/abs/2610.36393v1"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "8048a35fd99e1efd363f73d3",
-      "context_id": "551a17b62923656bb4e19f78",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::FORWARD",
-      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "representation",
-        "representation learning"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.5833,
-      "source": "zenodo",
-      "source_context_sha256": "54b63638a4299f6d2393694860f35b8f0fd8b6bc1611dabd6557f31b4f9752e4",
-      "source_published": "2026-10-27",
-      "source_updated": "",
-      "summary": "What image information remains recoverable from a probabilistic model pretrained through non-contrastive self-supervision without pixel reconstruction? Our experiments show that decoding its frozen representations recovers visual information, although pixel fidelity remains below that of conventional variational autoencoders (VAEs). We subsequently compare fine-tuning a VAE encoder initialized from this self-supervised model with training a separate VAE whose prior is the same model's frozen image-conditioned distribution over latent codes (posterior distillation). Fine-tuning improves pixel fidelity over frozen decoding and conventional VAEs but reduces class separability relative to the frozen self-supervised model. Across CIFAR-10, CIFAR-100, and Tiny ImageNet, posterior distillation improves perceptual similarity, raises peak signal-to-noise ratio by 0.31&ndash;0.66 dB, and increases linear classification accuracy over conventional VAEs. Cross-dataset experiments show that the reconstruction benefit extends beyond the pretraining dataset.",
-      "tags": [
-        "self-supervised learning",
-        "variational autoencoders",
-        "image reconstruction",
-        "representation learning"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Can Self-Supervised Probabilistic Representations Improve Image Reconstruction?",
-      "url": "https://zenodo.org/records/23682065"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "27d4d175f2519ebdd1fcaa29",
-      "context_id": "b38a6318ae4ab874a6c11120",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::FORWARD",
-      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "world model"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.4583,
-      "source": "arxiv",
-      "source_context_sha256": "249700f4078d7c1c71b55eace10ed097212fdaaaad035062017c8b5332d4560d",
-      "source_published": "2026-10-24T09:33:52Z",
-      "source_updated": "2026-10-24T09:33:52Z",
-      "summary": "Robot policy evaluation informs deployment decisions and policy improvement, but physical testing and simulator preparation require substantial effort. World models offer a complementary route through closed-loop interaction in generated environments. Recent benchmarks have demonstrated their potential as policy evaluators through outcome-based evaluation (i.e., assessing task success or failure). However, such evaluation does not establish whether world models faithfully simulate how policies fail. Misrepresenting failures can lead to incorrect diagnoses of policy weaknesses and make policies appear ready for deployment even when small scene changes cause them to fail. We therefore ask: do world models faithfully simulate how and at which stages policies fail, and under what conditions they transition from success to failure? To answer this question, we introduce WorldFailBench with three evaluation tasks. Failure reason tests whether models reproduce the observable errors policies make. Failure stage assesses whether failures concentrate at the same stages of full-task execution. Failure boundary examines whether models reproduce the conditions under which policies transition from success to failure under controlled scene changes in simulation. The benchmark covers manipulation tasks in the LIBERO and RoboTwin simulation environments and real-world manipulation tasks performed by the G1 humanoid robot. Experiments across seven world models reveal substantial gaps in their understanding of policy failures, providing guidance for developing more reliable world models for policy evaluation.",
-      "tags": [
-        "cs.RO",
-        "cs.AI"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "WorldFailBench: Do World Models Understand Policy Failures?",
-      "url": "https://arxiv.org/abs/2610.33565v1"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "36f9c6b23b455c1fb9cc82b7",
-      "context_id": "056784754130c249a7b66aee",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::FORWARD",
-      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "world model"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.4583,
-      "source": "arxiv",
-      "source_context_sha256": "d31fd68d9bfbb77b8fb09a23eda20e6f8cf17d62207326958447b3ce98902d5f",
-      "source_published": "2026-10-26T15:46:17Z",
-      "source_updated": "2026-10-26T15:46:17Z",
-      "summary": "Latent world models are typically pre-trained offline and kept frozen at test time, so planning with them can degrade under distribution shift. Test-time adaptation (TTA) can mitigate this degradation by updating the model during deployment. Unlike pre-training on fixed data, TTA for planning is closed-loop: the planner uses model rollouts to select actions, and the resulting transitions drive the next update. This raises the question: which objective should guide TTA for planning? Under a prediction-only objective, the model is fit only to the outcomes of its own actions, so it can remain wrong about the actions that would reach the goal, and low prediction error need not translate into better planning. Inspired by reward-biased maximum likelihood from adaptive control, we introduce Optimistic Test-Time Adaptation (OpTTA). Its objective has two terms, the prediction loss on observed transitions and the planner's goal-reaching cost on its candidate rollouts, both minimized over the model parameters. The planning term biases adaptation toward models that are optimistic about reaching the goal, without any additional environment interaction. Across visual and environment shifts on manipulation, reaching and navigation tasks, OpTTA raises final planning success over the frozen model by 13.5 percentage points on average, compared with 6.9 for the prediction-only objective (AdaJEPA), when only the predictor is adapted. When the encoder is adapted as well, the gains are 13.5 and 7.5 points. These experiments span three JEPA world models with different encoders and training objectives and, for temporal straightening, both CEM and gradient-based planners. Our results suggest that test-time adaptation of world models for planning benefits from an optimistic, task-aware term in addition to the prediction loss.",
-      "tags": [
-        "cs.LG",
-        "cs.AI",
-        "cs.RO"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Adapt for Planning, Not just Prediction: Optimistic Test-Time World Model Adaptation",
-      "url": "https://arxiv.org/abs/2610.35636v1"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "523e33b8ee0ff3f6575e1fc3",
-      "context_id": "10d35ef00f48bd299552983d",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::FORWARD",
-      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "memory",
-        "representation",
-        "retrieval"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.2083,
-      "source": "arxiv",
-      "source_context_sha256": "14879c95cff76799472b6efb4f4ee4a5bb5e36452f08e6f5bfec068a24d24c43",
-      "source_published": "2026-10-27T06:27:24Z",
-      "source_updated": "2026-10-27T06:27:24Z",
-      "summary": "Personalized spoken agents must identify speakers before accessing user-specific memory, yet memory benchmarks typically assume correctly attributed histories. We argue that voiceprints are observations of identity, not identities themselves, and formulate online speaker-memory construction to maintain persistent user entities as acoustic evidence evolves. We introduce EvoSpeakerMem, a training-free layer for causal speaker routing, selective acoustic-state updates, and identity-partitioned memory writes and retrieval through a replaceable text-memory backend. We also construct LoCoMo-ID, a spoken-memory benchmark with hidden speaker identities, speaker-sensitive queries, simulated recording-condition shifts, and four-speaker identity-confusion tests. On longitudinal SMIIP-TV, genuine-probe rejection under a frozen near-enrollment threshold rises from 29.8% to 55.6% over approximately one year. On LoCoMo-ID speaker-sensitive queries, gated updating improves identity-gated QA over fixed representations by 3.86 and 11.62 percentage points under clean and shifted conditions, respectively, with no wrong-user authorizations. The advantage persists in the four-speaker test. Yet reducing fragmentation and improving QA can coexist with incorrect cross-user links, revealing a fragmentation--contamination trade-off that QA alone cannot capture.",
-      "tags": [
-        "cs.SD",
-        "cs.AI",
-        "eess.AS"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "From Voiceprints to User Entities: Online Speaker-Memory Construction for Multi-User Spoken Agents",
-      "url": "https://arxiv.org/abs/2610.36713v1"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "ce6edefda18c90888a45a5c8",
-      "context_id": "22b3a3eee5755c3e54c7bc2a",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::FORWARD",
-      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "representation",
-        "retrieval"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 2.9583,
-      "source": "arxiv",
-      "source_context_sha256": "3ed25149ffd435432a4c1f4a9c7b675d990586b32b6b0f77e3a51b3725d66dce",
-      "source_published": "2026-10-26T15:29:24Z",
-      "source_updated": "2026-10-26T15:29:24Z",
-      "summary": "Historical maps contain dense morphological and semantic information about past urban environments, but many digitization workflows focus primarily on extracting geometry, and do not capture cartographic semantics such as building use and construction materials. This study introduces ArchiveLens, a generative spatial knowledge framework that operationalizes historical maps as entity-centric, machine-queryable geospatial databases. The pipeline decouples morphological and semantic reconstruction through three stages: tiled YOLOv11-seg instance segmentation for building footprint extraction; deterministic material classification via hue, saturation, and value (HSV)-based color thresholds; and localized attribute parsing using a quantized vision-language model constrained by domain-specific prompts. Extracted entities are integrated into a hybrid Spatial-Temporal Retrieval-Augmented Generation (ST-RAG) architecture that combines dense semantic retrieval with symbolic spatio-temporal filtering and mandatory provenance grounding. Applied to 445 georeferenced Sanborn map sheets of Chicago (1918-1950), the framework achieves high geometric and semantic accuracy. Beyond performance, ArchiveLens advances GIScience by formalizing historical cartography as structured spatial knowledge representation, allowing researchers to query building attributes and compare spatial patterns across map sheets and years.",
-      "tags": [
-        "cs.AI",
-        "cs.CY",
-        "cs.LG",
-        "cs.SI"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "ArchiveLens: A Generative Spatial Knowledge Framework for Semantic Reconstruction of Historical Maps",
-      "url": "https://arxiv.org/abs/2610.35606v1"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "ef31c9bd663ee091ebedce25",
-      "context_id": "8e7e6d389fd2aff25b191037",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::FORWARD",
-      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "memory",
-        "representation"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 2.8333,
-      "source": "arxiv",
-      "source_context_sha256": "a3f0ba680ab6cb43d0b55bd86113046a3274f0049a9c2aaaf154e9d8ccf2c2d2",
-      "source_published": "2026-10-27T10:01:08Z",
-      "source_updated": "2026-10-27T10:01:08Z",
-      "summary": "Masked diffusion language models repeatedly compute representations for unresolved tokens, but conventional denoisers do not explicitly retain these representations for reuse across steps. We introduce Temporal Self-Conditioning Diffusion Language Model (TDLM), which lets each unresolved position attend to its own history of hidden representations within a frozen denoiser. This gives later predictions access to computation already performed. Training uses self-generated trajectories and a simple cross-entropy objective for tokens revealed between consecutively sampled decoding steps, while causal temporal attention permits parallel evaluation during training. On LLaDA, the temporal modules add only approximately 0.84% trainable parameters. Across LLaDA and Dream, the main comparison shows up to 7.15$\\times$ faster generation than the corresponding original diffusion language model, with competitive answer quality on the evaluated tasks. These results motivate temporal memory as a practical way to make more effective use of repeated denoising computation.",
-      "tags": [
-        "cs.LG"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "TDLM: Adaptive Temporal Integration for Diffusion Language Models",
-      "url": "https://arxiv.org/abs/2610.36940v1"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "11098d08c5da13a4877368a2",
-      "context_id": "8a230e00b12a97b6082cf5b4",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::FORWARD",
-      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "memory",
-        "representation"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 2.8333,
-      "source": "zenodo",
-      "source_context_sha256": "a135a4a81b3022110a7e4eb477eb304a1584f2c55e4a8b65c8ef191315433898",
-      "source_published": "2026-10-27",
-      "source_updated": "",
-      "summary": "This repository provides the source code, simulation datasets, computational benchmarks, numerical results, and reproducibility materials supporting Paper I of the Principle of Representation Integration for Stable Models (PRISM-M), prepared for the Journal of Computational Neuroscience . PRISM-M V4 is a minimal recurrent computational framework organized around five functional operations: Extraction, Compression, Integration, Stabilization, and Prediction/Action (ECISP). The implementation uses a single independently evolving recurrent state, with finite-precision quantization and explicitly defined information-processing transformations. The framework is intended to examine the functional organization of information processing, contextual integration, and memory stabilization within established recurrent and state-space dynamics. The repository includes the frozen V4 implementation, mathematical definitions, parameter configurations, experimental protocols, random seeds, simulation trajectories, statistical analyses, and comparative benchmarks involving autoregressive models (ARX), Kalman filtering, and recurrent neural networks. The deposited materials document the original parameter-landscape and stability analyses, targeted perturbation experiments, memory-retention studies (M1&ndash;M5), and additional computational experiments (V1&ndash;V5) evaluating noise robustness, adaptability, recovery, interference resistance, and information recoverability. Additional validation materials include information-matched representation controls, intrinsic-noise sensitivity analyses, and mathematical verification of contraction and perturbation equivalence. These retrospective analyses are distinguished from the original experimental protocols. The repository also contains the numerical datasets, figure files, supplementary materials, execution instructions, software dependencies, provenance records, and SHA-256 integrity checks associated with Figures 1&ndash;6 and Supplementary Figures S1&ndash;S4. Computational reproduction and numerical verification have been performed for the principal analyses. Complete automated regeneration of all final publication artwork and independent cross-platform verification remain outside the scope of the completed checks. The purpose of this deposit is to facilitate independent evaluation, computational reproduction, and further investigation of the PRISM-M V4 framework. The model is a theoretical computational implementation and does not constitute direct biological validation or demonstrate a new class of recurrent dynamics.",
-      "tags": [
-        "PRISM-M",
-        "Computational neuroscience",
-        "Recurrent neural networks;",
-        "Information processing",
-        "Memory stabilization",
-        "State-space models",
-        "Dynamical systems",
-        "Computational modeling",
-        "neuroscience"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "PRISM-M V4: Source Code, Simulation Data, Computational Benchmarks, and Reproducibility Materials for Paper I",
-      "url": "https://zenodo.org/records/23713014"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "4acb7a72fa986e3f42dc4709",
-      "context_id": "6f2c65c720d0140f276b60cb",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::FORWARD",
-      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "memory",
-        "representation"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 2.8333,
-      "source": "arxiv",
-      "source_context_sha256": "3a9d351199e9ace980412fec3788113540f5554f2b98486b87db9af7ff5a103e",
-      "source_published": "2026-10-26T16:45:23Z",
-      "source_updated": "2026-10-26T16:45:23Z",
-      "summary": "Web-connected sensing applications continuously generate multivariate time series with evolving behavioral categories, making Time Series Class-Incremental Learning (TSCIL) essential for adapting to new classes without forgetting previously acquired knowledge. However, preserving diverse and evolving class distributions under strict privacy and memory constraints remains a fundamental challenge. Existing approaches often face a trade-off between retaining sufficient historical knowledge for accurate recognition and minimizing the memory required for continual adaptation. To address these limitations, we propose TRACE, a memory-efficient, replay-free framework that preserves class-specific knowledge through generative modeling rather than sample rehearsal. TRACE employs a compact, frozen temporal-spectral representation and lightweight class-specific autoencoders to capture complex intra-class variations. By independently preserving each class model, TRACE avoids recursive generation and catastrophic forgetting, while enabling direct classification through reconstruction-based scoring without retaining historical samples or large statistical matrices. Extensive experiments across five TSCIL benchmarks demonstrate that TRACE achieves competitive classification accuracy while reducing mean retained memory by approximately 98.26% compared with TS-ACL, the strongest evaluated analytical baseline, and achieving an approximately 33.43% relative improvement in accuracy on GrabMyo.",
-      "tags": [
-        "cs.LG"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "TRACE: Memory-Efficient Time Series Class-Incremental Learning via Temporal-Spectral Reconstruction",
-      "url": "https://arxiv.org/abs/2610.35727v1"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "6de51972c68daa3d600d1916",
-      "context_id": "5b603b9ae620ccc7954cf055",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::FORWARD",
-      "direction_title": "Cognition / memory / reverse models / representation [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "memory",
-        "representation"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 2.8333,
-      "source": "arxiv",
-      "source_context_sha256": "0758766c9541b25c448a985db2b8a67f713df7415fc217d2a50cf87396c46b2e",
-      "source_published": "2026-10-26T12:41:39Z",
-      "source_updated": "2026-10-26T12:41:39Z",
-      "summary": "Recent studies have applied large language model (LLM) agent systems to computational simulation workflows. Such workflows are long-horizon, so the information generated can exceed what an LLM can reason over at once, its context window. Context management is therefore essential, yet existing systems have either neglected it or treated it as a supporting mechanism rather than a subject of study. This paper presents MarkovSim, an LLM agent harness for long-horizon computational simulation, whose core is a context management scheme built into the workflow. The workflow record is written to a memory system with a predefined schema, and at workflow-defined boundaries, namely the state transitions of a finite-state machine a compact representation of the solution progress is constructed from it as the agent's context. Instantiated on finite element analysis and evaluated on six benchmark problems, MarkovSim passed 16 of 18 runs and corrected its own faults in both the solver operations and the model physics. The engineer was consulted only where engineering judgement was needed. The context remained bounded throughout every run, regardless of its length.",
-      "tags": [
-        "cs.CE",
-        "cs.AI"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "MarkovSim: an LLM Agent Harness with Bounded Context for Long-Horizon Computational Simulation",
-      "url": "https://arxiv.org/abs/2610.35349v1"
+      "title": "The Structure Gap: When More Data Cannot Replace Structured Reasoning",
+      "url": "https://arxiv.org/abs/2610.37523v1"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
@@ -488,8 +84,8 @@
     },
     {
       "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "f7bd885e1abb9452d766b96b",
-      "context_id": "431000e3ae2e4548740fd4dc",
+      "candidate_id": "08e7af85b700485380503a30",
+      "context_id": "161286f70491e5f08e8348f9",
       "delivery_preview_only": true,
       "delivery_preview_truncated": false,
       "direction_id": "cognition_memory_reverse::REVERSE",
@@ -503,28 +99,26 @@
         "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
       ],
       "keyword_hits": [
-        "reconstruction",
-        "representation",
-        "representation learning",
-        "world model"
+        "identifiability",
+        "inverse",
+        "inversion",
+        "recovery"
       ],
       "mirror_lens": "REVERSE",
       "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 13.625,
+      "score": 11.625,
       "source": "arxiv",
-      "source_context_sha256": "45667d8b3a484257c2d1ff697432c6cfd4903bd5213a4bf2224b08e887ff6c0c",
-      "source_published": "2026-10-26T00:50:03Z",
-      "source_updated": "2026-10-26T00:50:03Z",
-      "summary": "Video world models trained on large-scale robot data promise a safe and scalable approach for learning and evaluating policies that act in the physical world. However, they still struggle with long-horizon rollouts and out-of-distribution generalization, and they remain computationally demanding at inference time. Typically, video world models make predictions in the latent space of a reconstruction-trained autoencoder, which however is not directly optimized for dynamics modeling. On the other hand, world models designed for latent planning usually optimize latents to be predictable, but they forgo accurate prediction of observations in pixel space. In this paper, we show that it is possible to achieve the best of both worlds: a latent geometry optimized to make future prediction as simple as possible without sacrificing accurate prediction of future observations. More precisely, we find that temporal objectives for representation learning, paired with a past-conditioned decoder architecture, lead to consistent improvements in generative video world models at the same training budget. The gains include up to 5x cheaper inference, over 7x faster training, and 15-24% lower pixel and perceptual errors out of distribution and over long horizons. Our world models also agree more closely with real-world policy evaluation when using a vision-language model to judge task success from their pixel-space predictions. Overall, our study indicates that temporal predictability is an important design criterion for the latent space of video world models, and provides concrete guidance on how to incorporate it into the training of autoencoders.",
+      "source_context_sha256": "7ac6b68caa496a3d092f057d34c09d928269f16780f664c9ea9f8ebcdf22422f",
+      "source_published": "2026-10-27T16:45:22Z",
+      "source_updated": "2026-10-27T16:45:22Z",
+      "summary": "A persistent belief in modern AI is that sufficiently large learners trained on sufficiently much data can make explicit domain knowledge optional. This paper examines a limitation of that belief. We define structure-encoded problems: tasks whose input-output map is determined, or sharply constrained, by known structure such as a solver, symmetry group, graph, physical law, measurement operator, grammar, combinatorial search space, or optimization objective. For such tasks, the central question is not expressivity--a dense neural network may contain the desired map--but finite-data identification, extrapolation, and certification. We introduce the structure gap: the finite-resource gap between a method that receives the governing structure and a learner that receives only examples. The strongest useful form of the claim is asymptotic rather than absolute: structure-agnostic learning may approach a structured solver as coverage grows, but every finite dataset can leave residual uncertainty that the structure resolves by construction. We prove this exactly for a Gaussian inverse problem: the known-operator Wiener solver attains Bayes risk, while the dense empirical learner in the correct linear class has persistent expected excess risk. We also prove a cell-coverage lower bound and an unobserved-orbit non-identifiability result. Controlled experiments in known-operator inversion, sparse recovery, and graph reachability with size extrapolation instantiate the mechanisms. When validated structure is available, it can constrain the hypothesis space before learning begins, leaving learning to address components the structure does not specify.",
       "tags": [
         "cs.LG",
-        "cs.AI",
-        "cs.CV",
-        "cs.RO"
+        "cs.AI"
       ],
       "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Video World Models Need Predictable Latents",
-      "url": "https://arxiv.org/abs/2610.34663v1"
+      "title": "The Structure Gap: When More Data Cannot Replace Structured Reasoning",
+      "url": "https://arxiv.org/abs/2610.37523v1"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
@@ -602,6 +196,42 @@
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "bbb3272911635e8177ed747c",
+      "context_id": "b69233d7998e0bbf79631f21",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::REVERSE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "bidirectional",
+        "mirror",
+        "reverse"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.0833,
+      "source": "arxiv",
+      "source_context_sha256": "bbaa26ef1ba4846ccc8d9f461b353ed34583c9119b8b7f54d5840a432a91fdcf",
+      "source_published": "2026-10-27T17:59:30Z",
+      "source_updated": "2026-10-27T17:59:30Z",
+      "summary": "Transferring semantically typed tokens between heterogeneous blockchains (e.g. EVM and Cosmos ecosystems) raises two problems: semantic mixing, the loss of a token's domainspecific meaning in transit (e.g., CO2 removals issued under different methodologies), and atomicity despite divergent consensus and timing assumptions. We propose a bridge that addresses both. A deterministic indicator identity derived from cryptographic commitments, mirrored in class registries on both chains and checked at mint time, preventing semantic mixing by construction. For atomicity, we extend hash time-locked contracts (HTLCs) from two-party exchange to single-owner transfer with an automatic callback that burns the source escrow after a destination claim, and a protocol-minimum bounty that makes the fallback burn incentive-compatible even against adversarial senders. We machine-check the protocol's invariants with TLC (supply conservation fails without the rational-monitor assumption and holds with it) and validate a bidirectional prototype on Polygon and Neutron mainnets over Axelar GMP: fully automatic transfers with a median end-to-end latency of 97 s over 50 Polygon to Neutron transfers across 7 days (all completed by the on-chain automatic callback) and 93 s in the reverse direction, and semantic-validation overhead below 0.4% of messaging cost. We also document the integration failure modes of Cosmos originated messaging, whose dominant operational risk proves to be relay eligibility rather than latency.",
+      "tags": [
+        "cs.SE"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "An EVM-Cosmos Bridge for Atomic, Semantic-Preserving Transfer of Environmental Tokens",
+      "url": "https://arxiv.org/abs/2610.37663v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
       "candidate_id": "1e81cad7bcce782dcc91c7a7",
       "context_id": "e6dafb94b4d89dceb42c6c95",
       "delivery_preview_only": true,
@@ -636,45 +266,6 @@
       "target_repository": "Hawkar-usls/iNaiHR",
       "title": "Deep Bayesian Approaches for Interpretable Nonlinear Structural System Identification",
       "url": "https://arxiv.org/abs/2610.36633v1"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "8048a35fd99e1efd363f73d3",
-      "context_id": "db3f2fdab0c37b4d1a1dc4c1",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::REVERSE",
-      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "reconstruction",
-        "representation",
-        "representation learning"
-      ],
-      "mirror_lens": "REVERSE",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 9.1667,
-      "source": "zenodo",
-      "source_context_sha256": "60ba31334e0328bff40c97fb085751b0bdec60ae30ecdceb943af402875cb0bd",
-      "source_published": "2026-10-27",
-      "source_updated": "",
-      "summary": "What image information remains recoverable from a probabilistic model pretrained through non-contrastive self-supervision without pixel reconstruction? Our experiments show that decoding its frozen representations recovers visual information, although pixel fidelity remains below that of conventional variational autoencoders (VAEs). We subsequently compare fine-tuning a VAE encoder initialized from this self-supervised model with training a separate VAE whose prior is the same model's frozen image-conditioned distribution over latent codes (posterior distillation). Fine-tuning improves pixel fidelity over frozen decoding and conventional VAEs but reduces class separability relative to the frozen self-supervised model. Across CIFAR-10, CIFAR-100, and Tiny ImageNet, posterior distillation improves perceptual similarity, raises peak signal-to-noise ratio by 0.31&ndash;0.66 dB, and increases linear classification accuracy over conventional VAEs. Cross-dataset experiments show that the reconstruction benefit extends beyond the pretraining dataset.",
-      "tags": [
-        "self-supervised learning",
-        "variational autoencoders",
-        "image reconstruction",
-        "representation learning"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Can Self-Supervised Probabilistic Representations Improve Image Reconstruction?",
-      "url": "https://zenodo.org/records/23682065"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
@@ -712,9 +303,45 @@
       "url": "https://arxiv.org/abs/2610.36750v1"
     },
     {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "c6d4e9e2e68b44949e256a9b",
+      "context_id": "66b98d2dedb5d22256bd81a4",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::REVERSE",
+      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "reconstruction",
+        "world model"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 9.0417,
+      "source": "arxiv",
+      "source_context_sha256": "9752a8a49bcd87023918b1863f2142c375ca165c697ebb4fabdaf136ee704420",
+      "source_published": "2026-10-27T15:14:41Z",
+      "source_updated": "2026-10-27T15:14:41Z",
+      "summary": "Accurate acquisition of full channel state information (CSI) is essential for multiple-input multiple-output orthogonal frequency-division multiplexing (MIMO-OFDM) wireless systems, while dense pilot-based estimation incurs substantial overhead. Directly minimizing the prediction error over raw CSI coefficients is fragile in realistic propagation environments, since small-scale fading, mobility, local scattering, and small spatial perturbations can induce large phase-sensitive variations. Nevertheless, wireless channels contain strong spatial, temporal, and frequency-domain correlations that can be more predictably represented in a latent propagation-field domain. Motivated by this observation, we propose a joint-embedding predictive architecture (JEPA)-inspired field world model, defined as a latent predictive model of the wireless propagation field, for sparse-pilot channel reconstruction. The model maps CSI observations into latent time-frequency tokens, predicts masked or future latent field states from historical multi-band context, and fuses the predicted latent prior with sparse noisy current pilots to reconstruct the full MIMO-OFDM channel. Ray-tracing experiments show that the proposed method improves normalized mean square error (NMSE) over pilot-only and direct reconstruction baselines, supporting latent field prediction as an effective prior for sparse-pilot channel acquisition.",
+      "tags": [
+        "eess.SP",
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "JEPA-Inspired Latent Field Prediction for Sparse-Pilot MIMO-OFDM Channel Reconstruction",
+      "url": "https://arxiv.org/abs/2610.37391v1"
+    },
+    {
       "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "ce6edefda18c90888a45a5c8",
-      "context_id": "8116f24bebbeec321c59f53a",
+      "candidate_id": "732180d50bbf6c31ad7bf4a9",
+      "context_id": "6f62a9713111a1783ae29e8f",
       "delivery_preview_only": true,
       "delivery_preview_truncated": false,
       "direction_id": "mirror_bidirectional_provenance::REVERSE",
@@ -734,25 +361,59 @@
       "mirror_lens": "REVERSE",
       "schema": "janus.beetle.repo_memory_item.v2",
       "score": 9.0,
-      "source": "arxiv",
-      "source_context_sha256": "c4c9a050efe0cd5ca30caaa5848aaa761517f855824257c5feec31e5c5e98507",
-      "source_published": "2026-10-26T15:29:24Z",
-      "source_updated": "2026-10-26T15:29:24Z",
-      "summary": "Historical maps contain dense morphological and semantic information about past urban environments, but many digitization workflows focus primarily on extracting geometry, and do not capture cartographic semantics such as building use and construction materials. This study introduces ArchiveLens, a generative spatial knowledge framework that operationalizes historical maps as entity-centric, machine-queryable geospatial databases. The pipeline decouples morphological and semantic reconstruction through three stages: tiled YOLOv11-seg instance segmentation for building footprint extraction; deterministic material classification via hue, saturation, and value (HSV)-based color thresholds; and localized attribute parsing using a quantized vision-language model constrained by domain-specific prompts. Extracted entities are integrated into a hybrid Spatial-Temporal Retrieval-Augmented Generation (ST-RAG) architecture that combines dense semantic retrieval with symbolic spatio-temporal filtering and mandatory provenance grounding. Applied to 445 georeferenced Sanborn map sheets of Chicago (1918-1950), the framework achieves high geometric and semantic accuracy. Beyond performance, ArchiveLens advances GIScience by formalizing historical cartography as structured spatial knowledge representation, allowing researchers to query building attributes and compare spatial patterns across map sheets and years.",
+      "source": "zenodo",
+      "source_context_sha256": "7803b44d186d15419f4f408fdfb17ec3a655cda5ef81660e76c34dbe26af3c14",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "Technical artifacts supporting the manuscript \"AnxietyVRET: Reproducible Technical Evaluation of an Ontology-Driven, Safety-Aware, and FHIR-Oriented Architecture for Traceable GAD-Oriented Virtual Reality Exposure Workflows\". The package contains the corrected and versioned AnxietyVRET OWL 2 DL ontology with embedded SWRL rules, the corrected example ABox, deterministic boundary-test scripts and outputs, ten executable SPARQL competency-question queries, computational-benchmark scripts and logs, eight representative HL7 FHIR R5 JSON resources with structural-validation output, the AnxietyVRET-to-FHIR mapping crosswalk, semantic-preservation materials, and provenance-reconstruction scripts and outputs. No independently collected clinical patient dataset is included. See README.md for reproduction instructions.",
       "tags": [
-        "cs.AI",
-        "cs.CY",
-        "cs.LG",
-        "cs.SI"
+        "generalized anxiety disorder",
+        "OWL 2 DL",
+        "HL7 FHIR",
+        "provenance",
+        "reproducibility"
       ],
       "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "ArchiveLens: A Generative Spatial Knowledge Framework for Semantic Reconstruction of Historical Maps",
-      "url": "https://arxiv.org/abs/2610.35606v1"
+      "title": "AnxietyVRET reproducibility package: corrected ontology, example ABox, validation scripts, benchmark logs, and representative FHIR R5 resources",
+      "url": "https://zenodo.org/records/23731283"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "69aa37e0bfb6e4f7bfe4a4eb",
-      "context_id": "ad0d0e5befc5d3ec082057e9",
+      "candidate_id": "32497e90573a7e7f64b3514e",
+      "context_id": "37ae12d98666b65c5b2eb5c6",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": true,
+      "direction_id": "mirror_bidirectional_provenance::REVERSE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "provenance",
+        "reconstruction"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 9.0,
+      "source": "zenodo",
+      "source_context_sha256": "c11d7b186a708f71a684f2c89de27f0663aaaa9e25b87d5551a6ea2077e04a10",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "QIGONG BREATHING AND INTELLIGENT ACUPUNCTURE NEUROFEEDBACK COUPLING AT THE LIMIT is a 777-page English Research Working Edition that constructs a falsifiable, explicitly nonclinical research program joining measured breathing tasks, cardiorespiratory and EEG feedback, and isolated microscale actuator surrogates. The central problem is not whether breathing changes heart-rate variability - that has established ordinary physiological explanations - but whether a proposed feedback architecture adds independently measurable predictive or benchtop-control value after breathing rate, phase, expectancy, ordinary cardiorespiratory dynamics, sensor calibration, stimulus timing and strong conventional controllers have been fairly matched. The primary hypothesis is deliberately narrow. A prospective factorial design separates a preregistered breathing condition from an isolated, non-human phantom-drive condition. Its interaction term, order effects, washout, hierarchical sampling units, pressure-related mechanisms and full-episode denominators are subjected to masked scheduling, matched sham sensory cues, covariance-aware uncertainty and independent laboratory reconstruction. Any apparent signal explained by paced breathing or cue entrainment is treated as a legitimate negative result. A bench interaction is not evidence of physiological effects from actual acupuncture in a person. Thirty mathematically differentiated research plates address factorial contrasts, hierarchical estimands, respiratory sinus arrhythmia, ECG event genealogy, pressure-respiration transfer, spectral coherence, lag and phase, multiple comparisons, uncertainty covariance, causal identification, feedback latency, safe-state projection, isolated charge and thermal constraints, abstention and provenance. Across 82 chapters and 410 separately paginated scientific investigations, the book examines operational breathing definitions, reference instruments, EEG and ECG artifacts, blinded feedback protocols, mechanical and electrical phantoms, strong ordinary competitors, statistics, safety vetoes and reproducible handoff. Two hundred full-page Research Gates place their complete falsifiable research question in large deep-navy type, followed by an independently measurable outcome, adverse experiment, conventional physical rival and stopping rule. Thirty-three Phoenix Answer Embryos propose distinct successor objects ranging from calibration bridges and sham credibility tests to independent hardware vetoes, covariance sentinels, multisite reference capsules and protected null-result archives. An accompanying Excel index links formulas, chapters, Gates, candidate objects, citations and explicit evidence limitations. This work reports no executed integrated experiments, in-human needling, electrical stimulation, clinical efficacy, diagnosis or regulatory authorization. Its three STARLI mother-volume DOIs establish author research-method ancestry. Thirteen separately identified external research and metrology DOIs support established measurement, breathing physiology, neurofeedback reporting, uncertainty and statistical methodology, not the novel combined hypothesis. The 777-page layout, formula-clearance checks and 200 Gate color checks were automated; recurring editorial phrasing remains and full independent scientific peer review has not taken place. Author: White Rainbow Epoch / Feng Cheng-en (33) x Starli Series: STARLI Research Institute XXXIII / Flagship 48 of 90 Edition: Research Working Edition v1.3 / October 2026 Join the STARLI Research Community Explore more than 100 interdisciplinary research themes and follow the evolving STARLI Research Gate community: https://zenodo.org/communities/starli-research-gate/",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "QIGONG BREATHING AND INTELLIGENT ACUPUNCTURE NEUROFEEDBACK COUPLING AT THE LIMIT is a 777-page English Research Working Edition that constructs a falsifiable, explicitly nonclinical research program joining measured breathing tasks, cardiorespiratory and EEG feedback, and isolated microscale actuato",
+      "url": "https://zenodo.org/records/23731193"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "b5223bb99b32b80f6da40394",
+      "context_id": "e2aa80541fb32c2f5e7fc16b",
       "delivery_preview_only": true,
       "delivery_preview_truncated": false,
       "direction_id": "mirror_bidirectional_provenance::REVERSE",
@@ -773,170 +434,21 @@
       "schema": "janus.beetle.repo_memory_item.v2",
       "score": 8.9167,
       "source": "arxiv",
-      "source_context_sha256": "3c1a64f8cd10bc56bf5f07e27d49e66abc25c6c2cf41e7d8228890ce2b6b6b9e",
-      "source_published": "2026-10-27T09:36:39Z",
-      "source_updated": "2026-10-27T09:36:39Z",
-      "summary": "This work investigates how site-specific digital twins (DTs) can support wireless localization using simplified distributed infrastructure. We propose PRISM (Probabilistic Refinement using Inverse learning and a Site-specific Model), a DT-guided probabilistic localization scheme with single-antenna access points (APs). Localization is formulated as a probabilistic inverse problem in which a conditional proposal distribution over UE locations is learned from multi-node channel impulse responses (CIRs). The proposal generates candidate locations, with its spread regularized during training and DT consistency used to reweight candidates and refine the estimate at inference. The DT serves as an approximate forward-consistency model, avoiding assumptions of exact channel fidelity or differentiability with respect to user position. Numerical experiments demonstrate gains over data-driven and classical fingerprinting benchmarks, while achieving a median error of approximately $0.7$ m using 10 single-antenna APs. Without retraining, PRISM remains effective under degraded inference-time DT features. PRISM also yields uncertainty estimates from its proposal covariance, with empirical $χ^2$ calibration approaching ideal behavior as APs increase.",
+      "source_context_sha256": "d2a340c11e9e31d1abccdbcdaa049d02af249c05ca45a4cfbb02381af3082943",
+      "source_published": "2026-10-27T14:56:16Z",
+      "source_updated": "2026-10-27T14:56:16Z",
+      "summary": "We develop a multifidelity black-box variational inference (MF-BBVI) approach for PDE-constrained Bayesian inverse problems in which forward solves are expensive and PDE gradients are unavailable. The method is built on score-function estimators for the evidence lower bound (ELBO), which avoid differentiation through the PDE model but are known to suffer from high variance. To address this high variance, we employ multifidelity approximate control-variate estimators that combine a small number of high-fidelity samples with a larger number of low-fidelity samples to reduce estimator variance and the number of high-fidelity evaluations required for optimization. We further develop a PDE-derivative-free second-order optimization strategy based on both gradient and Hessian score-function estimators. For low-fidelity model generation, we propose an on-the-fly strategy that builds and adaptively updates a reduced-order model (ROM) as the variational distribution evolves throughout the optimization. We investigate strategies for adapting the ROM and estimating the approximate control-variate gains, examining tradeoffs between estimator bias, variance reduction, and computational cost. The resulting approach facilitates derivative-free variational inference for large-scale inverse problems through a reduction in overall computational cost. We demonstrate the method on four numerical examples: a linear benchmark with an exact posterior and three PDE-constrained inverse problems.",
       "tags": [
-        "cs.IT",
-        "eess.SP"
+        "math.NA"
       ],
       "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Digital Twin-Guided Wireless Localization via Probabilistic Inverse Learning",
-      "url": "https://arxiv.org/abs/2610.36905v1"
+      "title": "Multifidelity variational inference for derivative-free PDE-constrained inverse problems",
+      "url": "https://arxiv.org/abs/2610.37359v1"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "171f5c53d0cd55d6432c3db1",
-      "context_id": "87218defeed01c15eee6ca6c",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::REVERSE",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "inverse",
-        "inverse problem"
-      ],
-      "mirror_lens": "REVERSE",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 8.9167,
-      "source": "arxiv",
-      "source_context_sha256": "e0b8a34600bd825a1f36b1991b817cd3bc6bad06dad9e98f306ee6a10cf767b7",
-      "source_published": "2026-10-27T07:43:40Z",
-      "source_updated": "2026-10-27T07:43:40Z",
-      "summary": "We have discovered an inverse relationship between the earthquake source deactivation coefficient and the magnitude of the main shock. Recently, this pattern was confirmed through an analysis of earthquakes in the Central Himalayas (Poudel et al., 2026). On the one hand, independent confirmation of a previously unknown pattern strengthens our confidence in the relevance of the phenomenological theory of aftershocks, upon which we have based our method for processing and analyzing aftershocks. On the other hand, Poudel et al. (2026) presented our method in a distorted manner. Poudel et al. mistakenly believe that our method is based on a modified Omori law. Both circumstances provide an occasion and a basis for a simple and clear explanation of the essence of our approach to the study of aftershocks. First and foremost, our approach to the problem is diametrically opposed to Omori approach. Omori law and its modification, proposed by Hirano and Utsu, describe the decay of aftershocks. In contrast, we formulated and solved the inverse problem. The essence of the inverse problem lies in the need to calculate the source deactivation coefficient based on aftershock observation data, without making any prior assumptions regarding the law governing the decay of aftershocks. A crucial concept in our theory is the rather complex notion of the proper time of a source. Proper time differs radically from astronomical time. The paper describes the continuous and discrete representations of proper time. This paper is methodological in nature and may prove useful to researchers studying the dynamics of an earthquake source following the formation of a main rupture within the rock mass. Keywords: earthquake source, main shock, relaxation, deactivation coefficient, proper time, inverse problem.",
-      "tags": [
-        "physics.geo-ph"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "On dependence of the source deactivation factor on the magnitude of main earthquake shock",
-      "url": "https://arxiv.org/abs/2610.36775v1"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "00a40945ff166fed7f550caf",
-      "context_id": "21ddf670981e19b057fafbab",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::REVERSE",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "inverse",
-        "inverse problem"
-      ],
-      "mirror_lens": "REVERSE",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 8.9167,
-      "source": "arxiv",
-      "source_context_sha256": "0befe3d7d956cb546a76a4dbf53a50589bac62c945c146481096674af63ef0bd",
-      "source_published": "2026-10-27T05:06:44Z",
-      "source_updated": "2026-10-27T05:06:44Z",
-      "summary": "This paper unifies six decades of image modeling, evolving from handcrafted mathematical tractable priors to solve inverse problems in imaging to data-driven deep foundation image models for both image generation and solving inverse problems, under a common Bayesian framework that formulates image modeling as an implicit or explicit probabilistic characterization of a data manifold. Every image restoration or generative task fundamentally seeks to answer the same question: What makes an image look like a real image? In the Bayesian framework, this question is encapsulated by the prior probability density p(x), or its more optimization-friendly counterpart, the log-prior log p(x). While early works in solving inverse problems, such as Tikhonov, Total Variation (TV), and Non-local priors relied on explicit handcrafted definitions of log prior to model local smoothness, modern techniques, such as Plug-and-Play (PnP) priors and Denoising Diffusion models, are rooted in algorithmic uncoupling and implicit manifold learning that apply to both inverse problems and conditional image generation. By grounding imaging inverse problems and conditional image generation under a single mathematical engine: the gradient of the log-prior, or the Stein Score Function, we bridge the gap between signal processing and machine learning communities, turning what seems like parallel developments into a single, evolution of image modeling from handcrafted analytical models to models learned from big data, demonstrating that the pursuit of the denoising score is the common thread connecting variational optimization (in MAP estimation) to posterior sampling (in modern foundation image models).",
-      "tags": [
-        "eess.IV",
-        "cs.CV"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Image Modeling: From Handcrafted Priors to Foundation Image Models",
-      "url": "https://arxiv.org/abs/2610.36646v1"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "1e81cad7bcce782dcc91c7a7",
-      "context_id": "cd729db26f0859ecd489e19a",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::REVERSE",
-      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "identifiability",
-        "reconstruction",
-        "representation"
-      ],
-      "mirror_lens": "REVERSE",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 7.7917,
-      "source": "arxiv",
-      "source_context_sha256": "9867b8dec9797495dbe452a29b0e1b0db2b0e5a071f0a227e3e2f717a830f95c",
-      "source_published": "2026-10-27T04:38:17Z",
-      "source_updated": "2026-10-27T04:38:17Z",
-      "summary": "System identification, namely the inference of mathematical representations of dynamical systems from measured data, is fundamental to engineering diagnostics, prognostics, and decision-making. Bayesian filtering offers a principled framework for probabilistic state estimation but traditionally relies on prescribed transition and observation models. Recent advances in deep Bayesian filtering address this limitation by embedding learnable representations within probabilistic state-space formulations, enabling data-driven identification of unknown dynamics while retaining physical structure and uncertainty-aware inference. This tutorial provides a systematic introduction to deep Bayesian filtering for nonlinear structural system identification, focusing on the interplay between learned dynamics, physical inductive biases, and posterior inference. The Deep Markov Model serves as a data-driven reference, while the Physics-guided Deep Markov Model (PgDMM) and Neural Extended Kalman Filter (Neural EKF) illustrate complementary approaches based on amortized variational inference and differentiable Kalman filtering, respectively. Their capabilities are examined through dynamic state estimation and joint dynamic state and parameter estimation on a three-dimensional shear-frame benchmark with hysteretic Bouc-Wen connections and sparse acceleration measurements. The results highlight important distinctions between measurement-conditioned reconstruction and open-loop forecasting, demonstrate how physical structure can improve latent-state interpretability without necessarily ensuring predictive fidelity, and reveal differences in the robustness of response and parameter estimation. Practical guidelines for model construction, training, evaluation, and deployment are provided, together with an outlook on remaining challenges in uncertainty calibration, identifiability, and real-world validation.",
-      "tags": [
-        "cs.LG",
-        "cs.CE",
-        "stat.ML"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Deep Bayesian Approaches for Interpretable Nonlinear Structural System Identification",
-      "url": "https://arxiv.org/abs/2610.36633v1"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "f7bd885e1abb9452d766b96b",
-      "context_id": "1b62f98f69f36a24fbfe6d75",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
-      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "representation",
-        "representation learning",
-        "world model"
-      ],
-      "mirror_lens": "COUNTEREVIDENCE",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 9.0417,
-      "source": "arxiv",
-      "source_context_sha256": "5a16d19a3c27e32dd76790140266c400a83f709dad16380d66badbf315a44655",
-      "source_published": "2026-10-26T00:50:03Z",
-      "source_updated": "2026-10-26T00:50:03Z",
-      "summary": "Video world models trained on large-scale robot data promise a safe and scalable approach for learning and evaluating policies that act in the physical world. However, they still struggle with long-horizon rollouts and out-of-distribution generalization, and they remain computationally demanding at inference time. Typically, video world models make predictions in the latent space of a reconstruction-trained autoencoder, which however is not directly optimized for dynamics modeling. On the other hand, world models designed for latent planning usually optimize latents to be predictable, but they forgo accurate prediction of observations in pixel space. In this paper, we show that it is possible to achieve the best of both worlds: a latent geometry optimized to make future prediction as simple as possible without sacrificing accurate prediction of future observations. More precisely, we find that temporal objectives for representation learning, paired with a past-conditioned decoder architecture, lead to consistent improvements in generative video world models at the same training budget. The gains include up to 5x cheaper inference, over 7x faster training, and 15-24% lower pixel and perceptual errors out of distribution and over long horizons. Our world models also agree more closely with real-world policy evaluation when using a vision-language model to judge task success from their pixel-space predictions. Overall, our study indicates that temporal predictability is an important design criterion for the latent space of video world models, and provides concrete guidance on how to incorporate it into the training of autoencoders.",
-      "tags": [
-        "cs.LG",
-        "cs.AI",
-        "cs.CV",
-        "cs.RO"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Video World Models Need Predictable Latents",
-      "url": "https://arxiv.org/abs/2610.34663v1"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "12adee5f6c5d2d4ffd4728a1",
-      "context_id": "916ecf498fc59dfdadd888ed",
+      "candidate_id": "08e7af85b700485380503a30",
+      "context_id": "e37a0a56c674329e0c9b1f3d",
       "delivery_preview_only": true,
       "delivery_preview_truncated": false,
       "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
@@ -950,30 +462,137 @@
         "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
       ],
       "keyword_hits": [
-        "counterexample",
+        "identifiability",
+        "inverse problem",
+        "limitation",
+        "non-identifiability",
+        "symmetry"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 13.7917,
+      "source": "arxiv",
+      "source_context_sha256": "1cb9d1781d331dcacd91f83c9b7b1f1b6a08c471b6aeba31141381f178c3417b",
+      "source_published": "2026-10-27T16:45:22Z",
+      "source_updated": "2026-10-27T16:45:22Z",
+      "summary": "A persistent belief in modern AI is that sufficiently large learners trained on sufficiently much data can make explicit domain knowledge optional. This paper examines a limitation of that belief. We define structure-encoded problems: tasks whose input-output map is determined, or sharply constrained, by known structure such as a solver, symmetry group, graph, physical law, measurement operator, grammar, combinatorial search space, or optimization objective. For such tasks, the central question is not expressivity--a dense neural network may contain the desired map--but finite-data identification, extrapolation, and certification. We introduce the structure gap: the finite-resource gap between a method that receives the governing structure and a learner that receives only examples. The strongest useful form of the claim is asymptotic rather than absolute: structure-agnostic learning may approach a structured solver as coverage grows, but every finite dataset can leave residual uncertainty that the structure resolves by construction. We prove this exactly for a Gaussian inverse problem: the known-operator Wiener solver attains Bayes risk, while the dense empirical learner in the correct linear class has persistent expected excess risk. We also prove a cell-coverage lower bound and an unobserved-orbit non-identifiability result. Controlled experiments in known-operator inversion, sparse recovery, and graph reachability with size extrapolation instantiate the mechanisms. When validated structure is available, it can constrain the hypothesis space before learning begins, leaving learning to address components the structure does not specify.",
+      "tags": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "The Structure Gap: When More Data Cannot Replace Structured Reasoning",
+      "url": "https://arxiv.org/abs/2610.37523v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "bbb3272911635e8177ed747c",
+      "context_id": "8094cdccbfc1d9699514be63",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "bidirectional",
+        "failure",
+        "failure mode",
+        "mirror",
+        "reverse"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 12.875,
+      "source": "arxiv",
+      "source_context_sha256": "22fd6af48334839213416a626947975b9af3fb976252ceb5fe6c96da71f070db",
+      "source_published": "2026-10-27T17:59:30Z",
+      "source_updated": "2026-10-27T17:59:30Z",
+      "summary": "Transferring semantically typed tokens between heterogeneous blockchains (e.g. EVM and Cosmos ecosystems) raises two problems: semantic mixing, the loss of a token's domainspecific meaning in transit (e.g., CO2 removals issued under different methodologies), and atomicity despite divergent consensus and timing assumptions. We propose a bridge that addresses both. A deterministic indicator identity derived from cryptographic commitments, mirrored in class registries on both chains and checked at mint time, preventing semantic mixing by construction. For atomicity, we extend hash time-locked contracts (HTLCs) from two-party exchange to single-owner transfer with an automatic callback that burns the source escrow after a destination claim, and a protocol-minimum bounty that makes the fallback burn incentive-compatible even against adversarial senders. We machine-check the protocol's invariants with TLC (supply conservation fails without the rational-monitor assumption and holds with it) and validate a bidirectional prototype on Polygon and Neutron mainnets over Axelar GMP: fully automatic transfers with a median end-to-end latency of 97 s over 50 Polygon to Neutron transfers across 7 days (all completed by the on-chain automatic callback) and 93 s in the reverse direction, and semantic-validation overhead below 0.4% of messaging cost. We also document the integration failure modes of Cosmos originated messaging, whose dominant operational risk proves to be relay eligibility rather than latency.",
+      "tags": [
+        "cs.SE"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "An EVM-Cosmos Bridge for Atomic, Semantic-Preserving Transfer of Environmental Tokens",
+      "url": "https://arxiv.org/abs/2610.37663v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "f8b79606619824853d6232d5",
+      "context_id": "d4340d320dff837801070a1a",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
+      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "failure",
+        "failure mode",
+        "representation",
+        "representation learning",
+        "retrieval"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 11.75,
+      "source": "arxiv",
+      "source_context_sha256": "e3a62fc3c2475a60606f870450f2a38cb5ae0da79a97addf7fab8783f7573d2c",
+      "source_published": "2026-10-27T10:13:34Z",
+      "source_updated": "2026-10-27T10:13:34Z",
+      "summary": "A user history can admit multiple plausible next interactions, yet conventional sequential recommenders produce a single deterministic ranking. While diffusion models offer a natural way to sample alternative continuations, we show that existing target-item diffusion recommenders often suffer from severe sampling collapse, producing nearly identical outputs across independent draws. We identify two ubiquitous design choices that promote this collapse: joint learning of the latent space and denoiser, and in-trajectory supervision via discrete losses. To address these failure modes, we introduce DARTS (Diverse and Accurate Recommendation Through Sampling), a three-stage latent diffusion framework that explicitly decouples representation learning, generative modeling, and discrete ranking by learning and freezing the latent space before diffusion training and postponing ranking supervision to the final decoding stage. We further characterize sampling diversity using complementary measures of variation before and after decoding, and use posterior-predictive aggregation to exploit this diversity at inference. Across three Amazon Reviews 2023 categories, DARTS preserves substantially greater sampling diversity while outperforming strong sequential, generative-retrieval, and diffusion baselines by 7-12% on standard ranking metrics. Aggregating multiple samples further improves ranking accuracy at a fixed slate size.",
+      "tags": [
+        "cs.IR"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "When Diffusion Recommenders Stop Sampling: Preserving Generative Diversity",
+      "url": "https://arxiv.org/abs/2610.36954v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "32497e90573a7e7f64b3514e",
+      "context_id": "25ddd0afa9e9f57dcc5b09b7",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": true,
+      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "limitation",
+        "negative result",
         "provenance"
       ],
       "mirror_lens": "COUNTEREVIDENCE",
       "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 9.0,
+      "score": 10.4583,
       "source": "zenodo",
-      "source_context_sha256": "7a7bee207e9d6909b668d5d2f0fad5b4fb5d157869b886de5807cc28106fee27",
-      "source_published": "2026-10-27",
+      "source_context_sha256": "9200ed671fbd586bb1586374496cecd6158a321b4aea0a061812b28e67178cb3",
+      "source_published": "2026-10-28",
       "source_updated": "",
-      "summary": "Research artifact for the journal article Fresh on Paper, Reused in Code: Static Detection of Hidden Key Reuse in Cancelable Biometric Systems (submitted to the Journal of Information Security and Applications). The archive contains a non-executing Python static analyzer that traces record-dependent key provenance to reviewed BioHash, IoM-GRP and PolyProtect protection calls and reports reuse , conditional_fresh or unknown ; the internally authored source-case benchmarks with expected labels and Bandit outputs; analyzer development and confirmation results (v1-v3, intraprocedural baseline, branch counterexample and regression); experiment protocols and configurations; and aggregate results of the matched key-policy remediation and utility studies. Unit tests and benchmark commands are documented in README.md . Not included: MOBIO, FEI or SCface images, face embeddings, identity-level scores, keys, protected templates or trained model weights. These datasets must be obtained from their custodians under their terms of use.",
-      "tags": [
-        "cancelable biometrics",
-        "biometric template protection",
-        "static analysis",
-        "key reuse",
-        "abstract interpretation",
-        "Python",
-        "JISA",
-        "artifact"
-      ],
+      "summary": "QIGONG BREATHING AND INTELLIGENT ACUPUNCTURE NEUROFEEDBACK COUPLING AT THE LIMIT is a 777-page English Research Working Edition that constructs a falsifiable, explicitly nonclinical research program joining measured breathing tasks, cardiorespiratory and EEG feedback, and isolated microscale actuator surrogates. The central problem is not whether breathing changes heart-rate variability - that has established ordinary physiological explanations - but whether a proposed feedback architecture adds independently measurable predictive or benchtop-control value after breathing rate, phase, expectancy, ordinary cardiorespiratory dynamics, sensor calibration, stimulus timing and strong conventional controllers have been fairly matched. The primary hypothesis is deliberately narrow. A prospective factorial design separates a preregistered breathing condition from an isolated, non-human phantom-drive condition. Its interaction term, order effects, washout, hierarchical sampling units, pressure-related mechanisms and full-episode denominators are subjected to masked scheduling, matched sham sensory cues, covariance-aware uncertainty and independent laboratory reconstruction. Any apparent signal explained by paced breathing or cue entrainment is treated as a legitimate negative result. A bench interaction is not evidence of physiological effects from actual acupuncture in a person. Thirty mathematically differentiated research plates address factorial contrasts, hierarchical estimands, respiratory sinus arrhythmia, ECG event genealogy, pressure-respiration transfer, spectral coherence, lag and phase, multiple comparisons, uncertainty covariance, causal identification, feedback latency, safe-state projection, isolated charge and thermal constraints, abstention and provenance. Across 82 chapters and 410 separately paginated scientific investigations, the book examines operational breathing definitions, reference instruments, EEG and ECG artifacts, blinded feedback protocols, mechanical and electrical phantoms, strong ordinary competitors, statistics, safety vetoes and reproducible handoff. Two hundred full-page Research Gates place their complete falsifiable research question in large deep-navy type, followed by an independently measurable outcome, adverse experiment, conventional physical rival and stopping rule. Thirty-three Phoenix Answer Embryos propose distinct successor objects ranging from calibration bridges and sham credibility tests to independent hardware vetoes, covariance sentinels, multisite reference capsules and protected null-result archives. An accompanying Excel index links formulas, chapters, Gates, candidate objects, citations and explicit evidence limitations. This work reports no executed integrated experiments, in-human needling, electrical stimulation, clinical efficacy, diagnosis or regulatory authorization. Its three STARLI mother-volume DOIs establish author research-method ancestry. Thirteen separately identified external research and metrology DOIs support established measurement, breathing physiology, neurofeedback reporting, uncertainty and statistical methodology, not the novel combined hypothesis. The 777-page layout, formula-clearance checks and 200 Gate color checks were automated; recurring editorial phrasing remains and full independent scientific peer review has not taken place. Author: White Rainbow Epoch / Feng Cheng-en (33) x Starli Series: STARLI Research Institute XXXIII / Flagship 48 of 90 Edition: Research Working Edition v1.3 / October 2026 Join the STARLI Research Community Explore more than 100 interdisciplinary research themes and follow the evolving STARLI Research Gate community: https://zenodo.org/communities/starli-research-gate/",
+      "tags": [],
       "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Fresh on Paper, Reused in Code: Static Detection of Hidden Key Reuse in Cancelable Biometric Systems (JISA Artifact)",
-      "url": "https://zenodo.org/records/23690022"
+      "title": "QIGONG BREATHING AND INTELLIGENT ACUPUNCTURE NEUROFEEDBACK COUPLING AT THE LIMIT is a 777-page English Research Working Edition that constructs a falsifiable, explicitly nonclinical research program joining measured breathing tasks, cardiorespiratory and EEG feedback, and isolated microscale actuato",
+      "url": "https://zenodo.org/records/23731193"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
@@ -1237,8 +856,8 @@
     },
     {
       "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "d3ddd2cd896642f5506812cb",
-      "context_id": "4b1ff38487cf6977176fee7b",
+      "candidate_id": "8774858f49eaf934105b2faf",
+      "context_id": "ecc30eed6cf71ed13747e3db",
       "delivery_preview_only": true,
       "delivery_preview_truncated": false,
       "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
@@ -1252,32 +871,113 @@
         "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
       ],
       "keyword_hits": [
+        "confound",
+        "failure",
+        "memory"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 6.875,
+      "source": "arxiv",
+      "source_context_sha256": "4cd2e3732f74babf716b855a0d9ffa763d70811886d76e37105d75297a6dbff4",
+      "source_published": "2026-10-27T17:49:39Z",
+      "source_updated": "2026-10-27T17:49:39Z",
+      "summary": "When an LLM group's discussion is compressed into a short memory for a final decision maker, what should the memory keep? Two natural heuristics keep the rarest claims or the claims relevant to the decision criteria. On hidden-profile tasks both look attractive, because how widely a fact is held is confounded with whether it helps. We introduce CrossProfile, a diagnostic benchmark of 60 templates with automatically verified answer keys, in which the ownership of supporting, decoy, and irrelevant facts is crossed while their text is held fixed (480 tasks). Across Qwen2.5-7B, Llama-3.1-8B, and two DeepSeek models, both heuristics fail in predictable places. Selecting by relevance readmits decoys, because decoys are on topic: even a perfect relevance filter loses 23 to 31 points to rarest-first selection in the classic hidden-profile configuration. Rarest-first selection is no better than random selection on average and wins only where the rare facts happen to be the useful ones. In both cases accuracy follows the balance of evidence the memory keeps, not the policy that kept it. The decision model adds a third failure, a form of social proof: it gives extra weight to facts attributed to many agents. Removing the attribution tags, or reassigning them at random with line order fixed, raises accuracy in the classic configuration by 13 to 24 points. In natural discussions the evidence is lost before any memory acts: the complete transcript yields lower accuracy than no notes at all.",
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.MA",
+        "cs.SI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Rare, Relevant, and Still Wrong: How Memory Fails LLM Group Decisions",
+      "url": "https://arxiv.org/abs/2610.37624v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "92c621c2924cfaa8c5feb7a1",
+      "context_id": "85b51d2dae909bd2eca5bb79",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": true,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "ablation",
+        "baseline",
+        "benchmark",
+        "calibration",
+        "provenance",
+        "replication"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 20.375,
+      "source": "zenodo",
+      "source_context_sha256": "542ec15b9b942132289a0e5d439fd6a2eaec0983f24e63106b30afd2e95ff629",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "DIGITAL TWINS OF VOLITION, BIOELECTRICITY AND NANOSENSING ACUPUNCTURE AT THE LIMIT is a 777-page English Research Working Edition developing a falsifiable engineering architecture for synchronizing prospective task labels, authorized noninvasive EEG/EMG records, and the physical state of an isolated needle-emulator on a nonliving phantom. The principal question is whether a frozen digital twin improves independently verified prediction of event time, signal and surrogate-device state under deliberately hidden cross-sensor clock delays. The central candidate relation is x[k+1]=A x[k]+B u[k]+w[k], z[k]=C x[k]+v[k]. This is an established mathematical modeling form, not an original biological law or evidence of private thought decoding. The framework treats timebase skew, cue leakage, repeated EEG-window contamination, model discrepancy, shared calibration covariance and hidden actuator latency as explicit challengers. A strong ordinary baseline includes prospective persistence, linear autoregression, calibrated Kalman models and time/cue-only prediction, evaluated on entirely held-out acquisition episodes and unseen days. Thirty differentiated physical and mathematical plates connect state observability, clock drift, covariance propagation, prediction intervals, source ablation, independent actuator safety and external validation to their respective experiments. Across 82 scientific chapters and 410 separately paginated studies, the book develops signal identity, calibration, synchronization, latent-state recovery, prospective prediction, blind falsification, hardware interlocks and second-site replication. Two hundred detailed Research Gates, printed with prominent deep-navy questions on individual pages, lead future investigators through unknown perturbations, strong countermodels, measurable disconfirmation, hard stops and successor evidence packages. Thirty-three Phoenix Answer Embryos propose scientifically distinguishable instruments and paths for revision. The three STARLI author mother volumes contribute method ancestry on sensing identity, functional requalification and sample-to-signal provenance. Eleven separately identified published method references support classical state estimation, EEG algorithm benchmarking, clock synchronization, leakage prevention, cross-subject validation and digital-twin qualification. Those sources do not constitute experimental evidence for the new architecture. All proposed experiments remain unperformed: the volume does not establish clinical acupuncture, autonomous microneedle treatment, volition-to-actuation efficacy or regulatory authorization. Safe early validation is restricted to consent-scoped archived or noninvasive data, inert bench devices and independently calibrated reference instruments. Author: White Rainbow Epoch &Acirc;&middot; 33 x Starli Original Series: STARLI Research Institute XXXIII / Flagship 49 of 90 Edition: Nonclinical Research Working Edition v1.0 / October 2026 Join the STARLI Research Community Explore more than 100 interdisciplinary research themes and follow the evolving STARLI Research Gate community: https://zenodo.org/communities/starli-research-gate/",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "DIGITAL TWINS OF VOLITION, BIOELECTRICITY AND NANOSENSING ACUPUNCTURE AT THE LIMIT is a 777-page English Research Working Edition developing a falsifiable engineering architecture for synchronizing prospective task labels, authorized noninvasive EEG/EMG records, and the physical state of an isolated",
+      "url": "https://zenodo.org/records/23731275"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "b9ddbe2f6533c62194f1699c",
+      "context_id": "879ef8c443156fab24b39df6",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "ablation",
+        "benchmark",
+        "control",
         "representation",
         "world model"
       ],
-      "mirror_lens": "COUNTEREVIDENCE",
+      "mirror_lens": "CONTROL",
       "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 6.0417,
+      "score": 16.0417,
       "source": "arxiv",
-      "source_context_sha256": "ab8e76f32101bfa6c1cd94a013a69e313e7267bbaf9ad8f3af9214975358f448",
-      "source_published": "2026-10-27T09:51:08Z",
-      "source_updated": "2026-10-27T09:51:08Z",
-      "summary": "Learning from experience is essential for building the next generation of agents that continually expand their capabilities. Pretrained vision-language models (VLMs) already internalize rich world knowledge, yet this knowledge is rarely leveraged to drive policy improvement through online interaction. Realizing this potential efficiently remains challenging, as policy updates shift the agent's interaction distribution, requiring the world model to adapt accordingly, while continually updating large pretrained models is computationally expensive. To address this challenge, we introduce Dwell, a model-based reinforcement learning (RL) framework that reframes a VLM as a recurrent latent transition operator, endowing it with the ability to predict, adjust, and act in latent space. Leveraging the VLM's own representations and its dual role as both world model and policy, the agent continually learns from real interactions to anticipate and evaluate action outcomes, and from latent imagination to improve its behavior. Across five interactive visual environments, Dwell achieves the strongest overall performance among trainable methods while substantially reducing the compute required for imagination, showing that effective world models for VLM agents need not reconstruct the future; they need to predict futures that are useful for action. Our code is publicly available at https://github.com/Tom111-lhx/Dwell",
+      "source_context_sha256": "e1bb02a082d41e1273eda2e8a6a4ba47d0dd45d56d3328ddc51467a532fd224a",
+      "source_published": "2026-10-27T15:09:10Z",
+      "source_updated": "2026-10-27T15:09:10Z",
+      "summary": "Vision--Language--Action (VLA) models generate robot actions from visual observations and language instructions, but their understanding of physical dynamics remains limited. Video world models can capture scene dynamics, yet generating future videos introduces high latency into the control loop. We introduce PDRVLA, whose lightweight Physical Dynamics Module extracts physical tokens from vision--language features to condition action generation without online video generation. The module learns through direct prediction of future RGB, depth, and optical-flow features, with auxiliary supervision through a frozen pretrained video world model. Training relies entirely on publicly available data, expanded through human-to-robot synthesis, subtask annotation, and embodied chain-of-thought (ECoT) annotation. Across four simulation benchmarks, PDRVLA achieves success rates of 99.3% on LIBERO, 89.9% on LIBERO-Plus, 93.6% on RoboTwin~2.0, and 81.5% on SimplerEnv. Ablations show improved future prediction with world-model supervision and evaluate how subtask conditioning, future object-pose supervision, and ECoT training affect action success.",
       "tags": [
-        "cs.AI"
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
       ],
       "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Vision-Language Agents Can Learn in Their Own Latent Worlds",
-      "url": "https://arxiv.org/abs/2610.36925v1"
+      "title": "PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations",
+      "url": "https://arxiv.org/abs/2610.37381v1"
     },
     {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "29f9485ae584dc0df1f163f1",
-      "context_id": "51a188ee4c78feef2cde88f0",
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "92c621c2924cfaa8c5feb7a1",
+      "context_id": "a9acd6430e91e1742e74aeb4",
       "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "delivery_preview_truncated": true,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
       "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
       "firewall": [
         "ROUTED_NE_VERIFIED",
@@ -1287,33 +987,71 @@
         "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
       ],
       "keyword_hits": [
+        "ablation",
+        "baseline",
+        "benchmark",
+        "calibration",
+        "replication"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 15.9583,
+      "source": "zenodo",
+      "source_context_sha256": "7e4d0ef9869c6a8f581ab3bc8645ab6c4194c514186dafb14335c1d95ee844d8",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "DIGITAL TWINS OF VOLITION, BIOELECTRICITY AND NANOSENSING ACUPUNCTURE AT THE LIMIT is a 777-page English Research Working Edition developing a falsifiable engineering architecture for synchronizing prospective task labels, authorized noninvasive EEG/EMG records, and the physical state of an isolated needle-emulator on a nonliving phantom. The principal question is whether a frozen digital twin improves independently verified prediction of event time, signal and surrogate-device state under deliberately hidden cross-sensor clock delays. The central candidate relation is x[k+1]=A x[k]+B u[k]+w[k], z[k]=C x[k]+v[k]. This is an established mathematical modeling form, not an original biological law or evidence of private thought decoding. The framework treats timebase skew, cue leakage, repeated EEG-window contamination, model discrepancy, shared calibration covariance and hidden actuator latency as explicit challengers. A strong ordinary baseline includes prospective persistence, linear autoregression, calibrated Kalman models and time/cue-only prediction, evaluated on entirely held-out acquisition episodes and unseen days. Thirty differentiated physical and mathematical plates connect state observability, clock drift, covariance propagation, prediction intervals, source ablation, independent actuator safety and external validation to their respective experiments. Across 82 scientific chapters and 410 separately paginated studies, the book develops signal identity, calibration, synchronization, latent-state recovery, prospective prediction, blind falsification, hardware interlocks and second-site replication. Two hundred detailed Research Gates, printed with prominent deep-navy questions on individual pages, lead future investigators through unknown perturbations, strong countermodels, measurable disconfirmation, hard stops and successor evidence packages. Thirty-three Phoenix Answer Embryos propose scientifically distinguishable instruments and paths for revision. The three STARLI author mother volumes contribute method ancestry on sensing identity, functional requalification and sample-to-signal provenance. Eleven separately identified published method references support classical state estimation, EEG algorithm benchmarking, clock synchronization, leakage prevention, cross-subject validation and digital-twin qualification. Those sources do not constitute experimental evidence for the new architecture. All proposed experiments remain unperformed: the volume does not establish clinical acupuncture, autonomous microneedle treatment, volition-to-actuation efficacy or regulatory authorization. Safe early validation is restricted to consent-scoped archived or noninvasive data, inert bench devices and independently calibrated reference instruments. Author: White Rainbow Epoch &Acirc;&middot; 33 x Starli Original Series: STARLI Research Institute XXXIII / Flagship 49 of 90 Edition: Nonclinical Research Working Edition v1.0 / October 2026 Join the STARLI Research Community Explore more than 100 interdisciplinary research themes and follow the evolving STARLI Research Gate community: https://zenodo.org/communities/starli-research-gate/",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "DIGITAL TWINS OF VOLITION, BIOELECTRICITY AND NANOSENSING ACUPUNCTURE AT THE LIMIT is a 777-page English Research Working Edition developing a falsifiable engineering architecture for synchronizing prospective task labels, authorized noninvasive EEG/EMG records, and the physical state of an isolated",
+      "url": "https://zenodo.org/records/23731275"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "08e7af85b700485380503a30",
+      "context_id": "9cdd7c4a63701707a489b741",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "control",
+        "identifiability",
         "inverse problem",
         "symmetry"
       ],
-      "mirror_lens": "COUNTEREVIDENCE",
+      "mirror_lens": "CONTROL",
       "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 5.9583,
+      "score": 14.875,
       "source": "arxiv",
-      "source_context_sha256": "2c6543ca99864dc9c3045a55a39486df385dcf3918d60e2866630e62640d846d",
-      "source_published": "2026-10-27T07:02:17Z",
-      "source_updated": "2026-10-27T07:02:17Z",
-      "summary": "Open Data Analysis Tool for Science and Engineering (ODAT-SE) is an open-source Python framework for inverse problems that are solved by repeated forward simulations. It succeeds 2DMAT, which was developed for surface-structure analysis with quantum-beam diffraction and has since been applied to other fields. In version 3, the search algorithms were separated from the application-specific solvers, which became independent packages, and the software was renamed; this paper describes the current version 4.0. The framework connects optimization and sampling algorithms to solvers through a common interface for parameter mapping, constraints, and objective evaluation, so that an existing simulation code can be used with any of the algorithms. Relative to the previously published 2DMAT, it provides two-level MPI parallelism, which distributes candidate evaluations over processes and each evaluation over a parallel solver, checkpoint and continuation facilities, random search, global optimizers from SciPy, tensor-train optimization, and a Bayesian workflow that estimates partition-function ratios, model evidence, effective noise levels, and marginal posterior distributions. We validate the Bayesian workflow against closed-form results for a linear regression, benchmark tensor-train optimization on continuous, binary, and mixed-integer problems, and verify the two-level parallelization by the same optimum for all process decompositions. Taking up the positron-diffraction example of the 2DMAT paper, the workflow identifies the correlated structural solutions and an effective noise scale close to the imposed perturbation, while exposing incomplete convergence of symmetry-related mode weights. Solver packages, templates, and a gallery of examples support the use of the framework as a general platform for inverse-problem analysis.",
+      "source_context_sha256": "00dbf5615884d96cbcc00458c6ae7d4f8db99c912c30069cdfafb09ce0da6ebc",
+      "source_published": "2026-10-27T16:45:22Z",
+      "source_updated": "2026-10-27T16:45:22Z",
+      "summary": "A persistent belief in modern AI is that sufficiently large learners trained on sufficiently much data can make explicit domain knowledge optional. This paper examines a limitation of that belief. We define structure-encoded problems: tasks whose input-output map is determined, or sharply constrained, by known structure such as a solver, symmetry group, graph, physical law, measurement operator, grammar, combinatorial search space, or optimization objective. For such tasks, the central question is not expressivity--a dense neural network may contain the desired map--but finite-data identification, extrapolation, and certification. We introduce the structure gap: the finite-resource gap between a method that receives the governing structure and a learner that receives only examples. The strongest useful form of the claim is asymptotic rather than absolute: structure-agnostic learning may approach a structured solver as coverage grows, but every finite dataset can leave residual uncertainty that the structure resolves by construction. We prove this exactly for a Gaussian inverse problem: the known-operator Wiener solver attains Bayes risk, while the dense empirical learner in the correct linear class has persistent expected excess risk. We also prove a cell-coverage lower bound and an unobserved-orbit non-identifiability result. Controlled experiments in known-operator inversion, sparse recovery, and graph reachability with size extrapolation instantiate the mechanisms. When validated structure is available, it can constrain the hypothesis space before learning begins, leaving learning to address components the structure does not specify.",
       "tags": [
-        "math.NA",
-        "cond-mat.mtrl-sci"
+        "cs.LG",
+        "cs.AI"
       ],
       "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "ODAT-SE: A modular and parallel framework for simulation-based inverse problems",
-      "url": "https://arxiv.org/abs/2610.36746v1"
+      "title": "The Structure Gap: When More Data Cannot Replace Structured Reasoning",
+      "url": "https://arxiv.org/abs/2610.37523v1"
     },
     {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "aadb7297140a788f247770d4",
-      "context_id": "44326f76f59e5b6cf6015225",
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "577288cb7e0341e36f7af2de",
+      "context_id": "3426b43c826510af7a784ca4",
       "delivery_preview_only": true,
       "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
       "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
       "firewall": [
         "ROUTED_NE_VERIFIED",
@@ -1323,23 +1061,27 @@
         "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
       ],
       "keyword_hits": [
-        "bidirectional",
-        "limitation"
+        "benchmark",
+        "control",
+        "representation",
+        "world model"
       ],
-      "mirror_lens": "COUNTEREVIDENCE",
+      "mirror_lens": "CONTROL",
       "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 5.9583,
+      "score": 14.7083,
       "source": "arxiv",
-      "source_context_sha256": "bc5724ea0daca85b502e2517de4dbc366ef18a9b09a21e9dc284125a404c6f9b",
-      "source_published": "2026-10-27T07:07:54Z",
-      "source_updated": "2026-10-27T07:07:54Z",
-      "summary": "Spectral-temporal unmixing of MODIS time series is essential for applications such as abundance mapping and spectral library construction, yet it remains challenging due to (i) spectral-temporal information coupling in MODIS data, (ii) intra-class endmember spectral variability and inter-class signature ambiguity, and (iii) the instability of naively fusing multiple expert representations. This paper presents the Multi- task Disentangling Fusion Mamba (MDF-Mamba) to address these limitations. To resolve spectral-temporal coupling, we design a disentangling architecture that pairs per-channel spectral experts with a dedicated bidirectional state-space (Mamba) temporal branch. Convolutional modules each process a single spectral channel, while the Mamba branch encodes the cross-channel seasonal trajectory, forming a multi-branch expert ensemble with soft inter-expert reweighting based on squeeze-and-excitation. For the integration of these spectral and temporal expert outputs, we introduce mHCFusion, adapting the manifold-constrained hyper-connection framework to merge the outputs in a stable and interpretable manner. Endmember variability is addressed by extending the linear mixing model with pixel-wise learnable spectral variability weights that capture intra-class endmember variation. Finally, we design a multi-task training objective that combines supervised abundance estimation with self-supervised spectral reconstruction and endmember regularization terms on the same training data, yielding a highly efficient framework for spectral-temporal unmixing. Experiments on MODIS time series covering the Alberta and Saskatchewan provinces show that MDF-Mamba achieves the best performance on 12 of 14 evaluation metrics across both datasets (7 of 7 on Alberta; 5 of 7 on Saskatchewan), ranking second on the remaining two.",
+      "source_context_sha256": "33ac1a724dc9b9c8fa22a3be9be93784bba424e895073de385cc6b82295a93d2",
+      "source_published": "2026-10-27T15:48:09Z",
+      "source_updated": "2026-10-27T15:48:09Z",
+      "summary": "Visual world models increasingly support spatial reasoning by generating RGB views of unobserved states. However, RGB has become the default interface largely because it is well suited for visual generation, rather than necessarily being the most effective representation for downstream reasoning. Different spatial questions may benefit from different representations of the same imagined state: top-down geometry can facilitate global distance comparisons, while panoramic views provide broader context for reasoning about open space. To isolate the role of representation in spatial imagination, we introduce ImagiRep, a simulator-grounded benchmark of 922 questions spanning seven question types across two settings, Viewpoint Imagination and Cross-view Integration, providing oracle RGB and six alternative representations (e.g., depth, panoramic views, and top-down geometry) of the same unobserved state. This controlled comparison reveals that even accurate imagined RGB does not guarantee accurate spatial reasoning, and different questions benefit from different representations. Similar trends hold for representations derived from world-model-estimated states. Notably, estimated RGB alone can mislead spatial reasoning, while alternative representations retain complementary benefits. Building on these findings, we introduce GEARS, a lightweight test-time strategy for adaptive representation selection, outperforming existing spatial imagination methods and showing that reasoning about unseen states requires more than generating RGB views.",
       "tags": [
-        "cs.CV"
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
       ],
       "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Multi-task Disentangling Fusion Mamba-CNN for MODIS Spectral-Temporal Unmixing with Endmember Variability Modeling",
-      "url": "https://arxiv.org/abs/2610.36750v1"
+      "title": "Representing the Unseen: Rethinking Visual Imagination for Spatial Reasoning",
+      "url": "https://arxiv.org/abs/2610.37437v1"
     },
     {
       "base_direction_id": "cognition_memory_reverse",
@@ -1467,8 +1209,8 @@
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "12adee5f6c5d2d4ffd4728a1",
-      "context_id": "565024bbd36972eccc2f4740",
+      "candidate_id": "b5223bb99b32b80f6da40394",
+      "context_id": "82d0a221aacf75636daac54e",
       "delivery_preview_only": true,
       "delivery_preview_truncated": false,
       "direction_id": "mirror_bidirectional_provenance::CONTROL",
@@ -1482,31 +1224,24 @@
         "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
       ],
       "keyword_hits": [
-        "baseline",
         "benchmark",
-        "provenance"
+        "control",
+        "inverse problem"
       ],
       "mirror_lens": "CONTROL",
       "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 13.125,
-      "source": "zenodo",
-      "source_context_sha256": "f2f72349b4842ceafa67f3bdfc4acf52a680be0095fb3838f8163b348444192b",
-      "source_published": "2026-10-27",
-      "source_updated": "",
-      "summary": "Research artifact for the journal article Fresh on Paper, Reused in Code: Static Detection of Hidden Key Reuse in Cancelable Biometric Systems (submitted to the Journal of Information Security and Applications). The archive contains a non-executing Python static analyzer that traces record-dependent key provenance to reviewed BioHash, IoM-GRP and PolyProtect protection calls and reports reuse , conditional_fresh or unknown ; the internally authored source-case benchmarks with expected labels and Bandit outputs; analyzer development and confirmation results (v1-v3, intraprocedural baseline, branch counterexample and regression); experiment protocols and configurations; and aggregate results of the matched key-policy remediation and utility studies. Unit tests and benchmark commands are documented in README.md . Not included: MOBIO, FEI or SCface images, face embeddings, identity-level scores, keys, protected templates or trained model weights. These datasets must be obtained from their custodians under their terms of use.",
+      "score": 13.2917,
+      "source": "arxiv",
+      "source_context_sha256": "3cc429bc7853ee39acb0a71d4e04d110e84c7d67d95226f852dc4e0e926db182",
+      "source_published": "2026-10-27T14:56:16Z",
+      "source_updated": "2026-10-27T14:56:16Z",
+      "summary": "We develop a multifidelity black-box variational inference (MF-BBVI) approach for PDE-constrained Bayesian inverse problems in which forward solves are expensive and PDE gradients are unavailable. The method is built on score-function estimators for the evidence lower bound (ELBO), which avoid differentiation through the PDE model but are known to suffer from high variance. To address this high variance, we employ multifidelity approximate control-variate estimators that combine a small number of high-fidelity samples with a larger number of low-fidelity samples to reduce estimator variance and the number of high-fidelity evaluations required for optimization. We further develop a PDE-derivative-free second-order optimization strategy based on both gradient and Hessian score-function estimators. For low-fidelity model generation, we propose an on-the-fly strategy that builds and adaptively updates a reduced-order model (ROM) as the variational distribution evolves throughout the optimization. We investigate strategies for adapting the ROM and estimating the approximate control-variate gains, examining tradeoffs between estimator bias, variance reduction, and computational cost. The resulting approach facilitates derivative-free variational inference for large-scale inverse problems through a reduction in overall computational cost. We demonstrate the method on four numerical examples: a linear benchmark with an exact posterior and three PDE-constrained inverse problems.",
       "tags": [
-        "cancelable biometrics",
-        "biometric template protection",
-        "static analysis",
-        "key reuse",
-        "abstract interpretation",
-        "Python",
-        "JISA",
-        "artifact"
+        "math.NA"
       ],
       "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Fresh on Paper, Reused in Code: Static Detection of Hidden Key Reuse in Cancelable Biometric Systems (JISA Artifact)",
-      "url": "https://zenodo.org/records/23690022"
+      "title": "Multifidelity variational inference for derivative-free PDE-constrained inverse problems",
+      "url": "https://arxiv.org/abs/2610.37359v1"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
@@ -1821,6 +1556,273 @@
       "target_repository": "Hawkar-usls/iNaiHR",
       "title": "Don't Pick a Winner: Knowledge Conflicts Need a Prior, Not a Rule",
       "url": "https://arxiv.org/abs/2610.36169v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "07f381f6b100f784c06fae98",
+      "context_id": "3bd5fc77619ac05c13aefe71",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "benchmark",
+        "memory",
+        "retrieval"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 11.3333,
+      "source": "arxiv",
+      "source_context_sha256": "0712a76465aee6b36b22bcfc52c4658e3f758ad593c8b65ef70ed68602dbddf7",
+      "source_published": "2026-10-27T10:23:50Z",
+      "source_updated": "2026-10-27T10:23:50Z",
+      "summary": "Proactive LLM agents anticipate service opportunities from ongoing observations and accumulated history. Existing approaches emphasize recent context or retrieval of related memories, providing limited support for validating recurring behavioral regularities and assessing their applicability to the current event. We propose Proactive Memory (ProactMem), which organizes history into recent events, temporal trajectories, and behavioral regularities. Trajectory facts are checked against source events, and regularities are assessed through historical replay before being matched to current conditions. We also construct ProactiveStream, a longitudinal benchmark covering three application scopes, where agents process isolated event streams chronologically under episode-aware opportunity labels. On ProactiveStream, ProactMem achieves an overall effectiveness (F1) of 52.6%, a 21.4% relative improvement over the strongest of five external baselines. Code is available at: https://anonymous.4open.science/r/ProactMem-5351/.",
+      "tags": [
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Proactive Memory for Event-Driven LLM Agents",
+      "url": "https://arxiv.org/abs/2610.36967v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "69aa37e0bfb6e4f7bfe4a4eb",
+      "context_id": "2c6ce0248f5622b3622c48c0",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "calibration",
+        "inverse problem"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.4583,
+      "source": "arxiv",
+      "source_context_sha256": "6c8291a42a3a6cf514505353790e6532968222c335e9fc3d427039a02e56061b",
+      "source_published": "2026-10-27T09:36:39Z",
+      "source_updated": "2026-10-27T09:36:39Z",
+      "summary": "This work investigates how site-specific digital twins (DTs) can support wireless localization using simplified distributed infrastructure. We propose PRISM (Probabilistic Refinement using Inverse learning and a Site-specific Model), a DT-guided probabilistic localization scheme with single-antenna access points (APs). Localization is formulated as a probabilistic inverse problem in which a conditional proposal distribution over UE locations is learned from multi-node channel impulse responses (CIRs). The proposal generates candidate locations, with its spread regularized during training and DT consistency used to reweight candidates and refine the estimate at inference. The DT serves as an approximate forward-consistency model, avoiding assumptions of exact channel fidelity or differentiability with respect to user position. Numerical experiments demonstrate gains over data-driven and classical fingerprinting benchmarks, while achieving a median error of approximately $0.7$ m using 10 single-antenna APs. Without retraining, PRISM remains effective under degraded inference-time DT features. PRISM also yields uncertainty estimates from its proposal covariance, with empirical $χ^2$ calibration approaching ideal behavior as APs increase.",
+      "tags": [
+        "cs.IT",
+        "eess.SP"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Digital Twin-Guided Wireless Localization via Probabilistic Inverse Learning",
+      "url": "https://arxiv.org/abs/2610.36905v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "1e81cad7bcce782dcc91c7a7",
+      "context_id": "1405bc181a9f00bc44d9ba89",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "calibration",
+        "identifiability"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.4583,
+      "source": "arxiv",
+      "source_context_sha256": "3dcbd74e5d9a34ca0de21d6ba01267ce831ba4ab253ad2355d19318882c2216c",
+      "source_published": "2026-10-27T04:38:17Z",
+      "source_updated": "2026-10-27T04:38:17Z",
+      "summary": "System identification, namely the inference of mathematical representations of dynamical systems from measured data, is fundamental to engineering diagnostics, prognostics, and decision-making. Bayesian filtering offers a principled framework for probabilistic state estimation but traditionally relies on prescribed transition and observation models. Recent advances in deep Bayesian filtering address this limitation by embedding learnable representations within probabilistic state-space formulations, enabling data-driven identification of unknown dynamics while retaining physical structure and uncertainty-aware inference. This tutorial provides a systematic introduction to deep Bayesian filtering for nonlinear structural system identification, focusing on the interplay between learned dynamics, physical inductive biases, and posterior inference. The Deep Markov Model serves as a data-driven reference, while the Physics-guided Deep Markov Model (PgDMM) and Neural Extended Kalman Filter (Neural EKF) illustrate complementary approaches based on amortized variational inference and differentiable Kalman filtering, respectively. Their capabilities are examined through dynamic state estimation and joint dynamic state and parameter estimation on a three-dimensional shear-frame benchmark with hysteretic Bouc-Wen connections and sparse acceleration measurements. The results highlight important distinctions between measurement-conditioned reconstruction and open-loop forecasting, demonstrate how physical structure can improve latent-state interpretability without necessarily ensuring predictive fidelity, and reveal differences in the robustness of response and parameter estimation. Practical guidelines for model construction, training, evaluation, and deployment are provided, together with an outlook on remaining challenges in uncertainty calibration, identifiability, and real-world validation.",
+      "tags": [
+        "cs.LG",
+        "cs.CE",
+        "stat.ML"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Deep Bayesian Approaches for Interpretable Nonlinear Structural System Identification",
+      "url": "https://arxiv.org/abs/2610.36633v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "29f9485ae584dc0df1f163f1",
+      "context_id": "94efdf9fb4b8fec81d341f70",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "inverse problem",
+        "symmetry"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.3333,
+      "source": "arxiv",
+      "source_context_sha256": "db34d4bbd3c6035f623bc2423ae9eae5130a6d62dc90cc46d528fb6863459bab",
+      "source_published": "2026-10-27T07:02:17Z",
+      "source_updated": "2026-10-27T07:02:17Z",
+      "summary": "Open Data Analysis Tool for Science and Engineering (ODAT-SE) is an open-source Python framework for inverse problems that are solved by repeated forward simulations. It succeeds 2DMAT, which was developed for surface-structure analysis with quantum-beam diffraction and has since been applied to other fields. In version 3, the search algorithms were separated from the application-specific solvers, which became independent packages, and the software was renamed; this paper describes the current version 4.0. The framework connects optimization and sampling algorithms to solvers through a common interface for parameter mapping, constraints, and objective evaluation, so that an existing simulation code can be used with any of the algorithms. Relative to the previously published 2DMAT, it provides two-level MPI parallelism, which distributes candidate evaluations over processes and each evaluation over a parallel solver, checkpoint and continuation facilities, random search, global optimizers from SciPy, tensor-train optimization, and a Bayesian workflow that estimates partition-function ratios, model evidence, effective noise levels, and marginal posterior distributions. We validate the Bayesian workflow against closed-form results for a linear regression, benchmark tensor-train optimization on continuous, binary, and mixed-integer problems, and verify the two-level parallelization by the same optimum for all process decompositions. Taking up the positron-diffraction example of the 2DMAT paper, the workflow identifies the correlated structural solutions and an effective noise scale close to the imposed perturbation, while exposing incomplete convergence of symmetry-related mode weights. Solver packages, templates, and a gallery of examples support the use of the framework as a general platform for inverse-problem analysis.",
+      "tags": [
+        "math.NA",
+        "cond-mat.mtrl-sci"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "ODAT-SE: A modular and parallel framework for simulation-based inverse problems",
+      "url": "https://arxiv.org/abs/2610.36746v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "1462e8c4c714406f0ea39772",
+      "context_id": "3e8178d87edfeefeaee15427",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "control",
+        "replication",
+        "representation"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.3333,
+      "source": "zenodo",
+      "source_context_sha256": "1f84cbb5009c01c37f9376dfd036ca2623572e7014cfca4ea082400e3438e9c7",
+      "source_published": "2026-10-27",
+      "source_updated": "",
+      "summary": "Supplementary material for the paper \"Business-Rule Admissibility in Process-Based Business Simulation\" (Yan Fang, University of Southern California). It holds what is needed to check and reproduce the paper's results without the simulation framework: the study firm's handbook and the model's prose; the rule sets R (104 rules) and R0 (82 rules), each rule with the passage it formalises and its SQL query; the specification of every re-injected defect; the protocols of the pre-registered replication, the control rule set, the further mutants and the robust indicator score, with the hashes they froze; the instructions given to each agent and path-level records of each agent's file access; the scripts that apply the rules and compute the indicators, event-log distances and tables; and the databases and change histories of all 430 simulation runs. The simulation framework (NAILU) and the model's intermediate representation are proprietary to Aurite AI and are not included. Files: README.md (contents, and how to reproduce the tables), SHA256SUMS (the hash of every file), materials.zip, and three archives of runs (exploratory seeds 1&ndash;10; confirmatory seeds 11&ndash;30; further mutants, seeds 11&ndash;30). Unzip all archives into one folder next to README.md and SHA256SUMS; sha256sum -c SHA256SUMS then verifies the package.",
+      "tags": [
+        "business-rule admissibility",
+        "synthetic data evaluation",
+        "business process simulation",
+        "business rules",
+        "simulation verification and validation",
+        "mutation analysis"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Supplementary material: Business-Rule Admissibility in Process-Based Business Simulation",
+      "url": "https://zenodo.org/records/23707024"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "f8b79606619824853d6232d5",
+      "context_id": "d49ce1690c57ec24a1ede63d",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "representation",
+        "representation learning",
+        "retrieval"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.2917,
+      "source": "arxiv",
+      "source_context_sha256": "fc1decb356e3c955229e1940121be11a207efadbb62160ddd4979c24db19a278",
+      "source_published": "2026-10-27T10:13:34Z",
+      "source_updated": "2026-10-27T10:13:34Z",
+      "summary": "A user history can admit multiple plausible next interactions, yet conventional sequential recommenders produce a single deterministic ranking. While diffusion models offer a natural way to sample alternative continuations, we show that existing target-item diffusion recommenders often suffer from severe sampling collapse, producing nearly identical outputs across independent draws. We identify two ubiquitous design choices that promote this collapse: joint learning of the latent space and denoiser, and in-trajectory supervision via discrete losses. To address these failure modes, we introduce DARTS (Diverse and Accurate Recommendation Through Sampling), a three-stage latent diffusion framework that explicitly decouples representation learning, generative modeling, and discrete ranking by learning and freezing the latent space before diffusion training and postponing ranking supervision to the final decoding stage. We further characterize sampling diversity using complementary measures of variation before and after decoding, and use posterior-predictive aggregation to exploit this diversity at inference. Across three Amazon Reviews 2023 categories, DARTS preserves substantially greater sampling diversity while outperforming strong sequential, generative-retrieval, and diffusion baselines by 7-12% on standard ranking metrics. Aggregating multiple samples further improves ranking accuracy at a fixed slate size.",
+      "tags": [
+        "cs.IR"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "When Diffusion Recommenders Stop Sampling: Preserving Generative Diversity",
+      "url": "https://arxiv.org/abs/2610.36954v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "5d1b9a619f0cd8a14bb6ddad",
+      "context_id": "f93e25aefc3b77fdf51b2199",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "calibration",
+        "provenance"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.25,
+      "source": "zenodo",
+      "source_context_sha256": "6f886f29f601a27bc5e9af3e1a8090e6bd1300b310f5fc9e99019aa777e0525f",
+      "source_published": "2026-10-28",
+      "source_updated": "",
+      "summary": "Reproducible finite-sample analysis of append-only copying in conformal calibration. The project contains five public regression benchmarks, three fixed model families, 30 random splits, six copying mechanisms, three coverage targets, independent score simulations, and exhaustive rank checks. It compares rowwise, source-ID, copy-budget, and effective-sample-size calibration, and quantifies coverage-width trade-offs under incomplete provenance.",
+      "tags": [
+        "conformal prediction",
+        "data duplication",
+        "prediction intervals",
+        "uncertainty quantification",
+        "reproducibility"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "How Copies Break Conformal Prediction",
+      "url": "https://zenodo.org/records/23717113"
     }
   ],
   "schema": "janus.beetle.repo_memory_batch.v1",
