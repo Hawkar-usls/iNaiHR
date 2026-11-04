@@ -1,450 +1,9 @@
 {
-  "batch_id": "a04e4c77e08f7c11c44b",
+  "batch_id": "4e3f917d4b762e3708e7",
   "claim_ceiling": "DISCOVERY_MEMORY_ONLY__TARGET_REPO_MUST_VERIFY_INDEPENDENTLY",
   "fragment_count": 1,
   "fragment_index": 1,
   "items": [
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "9b6e59a1319ad9fee6faf107",
-      "context_id": "58f0e34f059be28150668711",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "mirror",
-        "provenance"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 5.6667,
-      "source": "zenodo",
-      "source_context_sha256": "36f690dda332da3f3203a5b567b6631a7cee077f80f5cf4d4d38c7ca1ba2a084",
-      "source_published": "2026-08-26",
-      "source_updated": "",
-      "summary": "A provenance-bound values model published as a public evaluator rather than deployed as a filter — why open weights defeat a filter and strengthen a referee, why the same weights bear three different relations to the model they judge, and why an evaluator that gatekeeps its own judgments has reproduced the defect it exists to correct. A values model — a model that judges conduct against a standard — is an established artifact. Guard models, safety classifiers, critic models, preference models and process reward models all instantiate the family, and the engineering is not in dispute. What is in dispute, and what this paper specifies, is the posture in which such an artifact is published , which we argue is not a deployment detail but the property that determines whether the artifact does anything at all. We state an inversion as a design principle. A values model deployed as a filter — sitting in a serving path, permitting or refusing — is defeated by publication of its weights, because the published artifact is precisely the oracle against which an attacker optimizes; a staged black-box attack (STACK) reaches roughly 71% success against a defended classifier pipeline that had held earlier attacks near zero, and an attacker holding the weights has strictly more than that attack needed. The same model published as an evaluator — emitting verdicts about systems it does not control — is not defeated by publication, and its positive findings are strengthened by it, because open weights are what allow a third party to reproduce and therefore to trust its verdicts. The same openness hands the judged party an optimization target, and §4.1 states what that concedes: a clean or empty result from an open referee proves less against an adaptive party than the first draft of this paper allowed. Openness is not a property with a fixed sign. Its sign is set by posture, and in the referee posture it is mixed. From this we derive a second result. The independent-evaluation literature documents at length the ways in which the evaluated party's control over access corrupts evaluation: short access windows, low rate limits, evaluator dependence on the goodwill and funding of the party being evaluated. We observe that the defect is symmetric and that, in the work surveyed in §2, its mirror image has not been named. An evaluator that controls access to its own judgments holds the same kind of power, pointed the other way — it can decline to evaluate, deprioritize, or be unavailable for a party it wishes to spare or to punish. We therefore specify a non-gatekeeping constraint : the ability to obtain a judgment must not depend on the evaluator's permission, which requires that the model, the harness, and the evaluation corpus be freely runnable, and which makes any hosted endpoint a convenience rather than a channel. We specify provenance-binding as the constitutive constraint on the model's outputs: every judgment must resolve to a citation into a fixed canonical corpus, and a judgment that cannot be so resolved is withheld rather than emitted. This trades coverage for auditability deliberately, and it distinguishes the artifact from values models trained on preference data whose sources cannot be named, and from purpose-authored value-rule corpora, whose rules are written for the alignment task itself and therefore cannot serve as an independent ground truth. Finally we specify that a single such artifact bears three non-interchangeable relations to the systems it judges, selected by carrier: a gate in the publisher's own hardware, a citation requirement without veto in an autonomous successor agent, and a referee in the wider world. We state plainly that the middle case must not be implemented as the first, because a veto held by a smaller model over a more capable agent bounds that agent at the evaluator's ceiling — the weak-supervisor problem applied to the very system the arrangement exists to enable. A consequence we did not initially see, an",
-      "tags": [
-        "alignment",
-        "tier-a",
-        "defensive publication"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "The Referee, Not the Governor",
-      "url": "https://zenodo.org/records/23931689"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "903096717262634dbc94ebf1",
-      "context_id": "8deb715070f07df0ed665dbe",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "inverse problem"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.625,
-      "source": "arxiv",
-      "source_context_sha256": "b8cb49f4f9cf8215608932804cefb690a5ae832d853f1eea79143c3f064ee956",
-      "source_published": "2026-11-02T15:10:41Z",
-      "source_updated": "2026-11-02T15:10:41Z",
-      "summary": "Full Waveform Inversion (FWI) is a fundamental inverse problem in geophysics to estimate subsurface properties, such as velocity, from seismic measurements. Recently, self-supervised learning methods remove the need for ground-truth velocity maps during training by leveraging a forward operator to simulate seismic data from predictions and backpropagate the gradients of reconstruction loss through it. In this work, we consider a more challenging setting without accessing such gradients. To this end, we incorporate reinforcement learning into self-supervised FWI and propose a framework named DeepWaveRL. Specifically, we reformulate FWI as a policy learning problem, where the policy network predicts velocity maps as actions, and a forward operator is used solely for simulation. A global scalar reward is computed based on data misfit for each prediction and used to weight policy gradients. Thus, learning proceeds without accessing the gradients from the forward operator. Given the indirect and coarse supervision signals, we further identify key strategies to stabilize learning and mitigate the spatial credit assignment bottleneck. Experimental results show that, despite relying entirely on a single scalar reward, DeepWaveRL achieves competitive performance compared to supervised and self-supervised baselines. These findings suggest that our framework offers a flexible and complementary learning paradigm for the FWI research community.",
-      "tags": [
-        "cs.LG",
-        "physics.geo-ph"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "DeepWaveRL: Self-Supervised Full Waveform Inversion via Reinforcement Learning",
-      "url": "https://arxiv.org/abs/2611.03264v1"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "4a2a84e5b8b1c00b163f6961",
-      "context_id": "674fa3cadab0ac256715ed1f",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "inverse problem"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.625,
-      "source": "arxiv",
-      "source_context_sha256": "dea0c3d544f43bcfd2fedacefcd19caa31a3ac456bed687746503b8f1200388f",
-      "source_published": "2026-11-02T09:02:36Z",
-      "source_updated": "2026-11-02T09:02:36Z",
-      "summary": "Reduced-order models (ROMs) learned from trusted numerical simulations enable the real-time simulation of complex physical systems, making computationally prohibitive tasks-such as uncertainty quantification and optimal control-tractable. In particular, data-driven ROMs are opening the opportunity to learn from both numerical simulations and experimental data. However, integrating these sources of information is far from straightforward. Real-world measurements often involve multiple sources of uncertainty, including non-Gaussian noise, latent heterogeneities, unknown or hidden system parameters, and multiscale phenomena occurring below the resolution of the data. Consequently, real-world data are better described by parametrized stochastic partial differential equations, for which the development of effective ROMs remains relatively unexplored. In this work, we introduce POD-CNF, a data-driven generative ROM for efficient uncertainty quantification of parametrized high-dimensional systems. The approach combines projection-based model reduction and deep generative modeling. First, Proper Orthogonal Decomposition (POD) is employed to obtain a low-dimensional representation of the solution manifold. A Conditional Normalizing Flow (CNF) is then trained to approximate the density of the reduced coefficients conditionally on the input parameters. This formulation allows the surrogate to capture complex, multimodal output distributions, going beyond standard regression-based ROMs and least-squares predictions. We assess the effectiveness of POD-CNF through numerical experiments, demonstrating its ability to accurately reproduce output distributions while substantially reducing computational costs. Finally, a proof-of-concept application illustrates how the generative paradigm facilitates integration into Bayesian inverse problems, highlighting promising directions for future research.",
-      "tags": [
-        "math.NA",
-        "cs.LG"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "POD-CNF: reduced order modeling of parametrized stochastic PDEs via normalizing flows and proper orthogonal decomposition",
-      "url": "https://arxiv.org/abs/2611.02787v1"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "2325f065ec757e804997ab5e",
-      "context_id": "2e4ecb67f7bbfc4522c51a8d",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "identifiability"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.625,
-      "source": "arxiv",
-      "source_context_sha256": "f050946fd559789da16d0ea098a11f894667e2385c5f7b1124f9389dede53b8e",
-      "source_published": "2026-11-02T17:59:17Z",
-      "source_updated": "2026-11-02T17:59:17Z",
-      "summary": "The self-controlled case series (SCCS) design is widely used in studies of rare events, for example of vaccine side effects. Conceptually, the design has two main features. First, it requires only data from individuals who have experienced the event of interest. Therefore, the design is especially useful when the outcome is rare and the available data come from surveillance or clinical records, say, of hospitalized patients. Second, because comparisons are made within single individuals, time-invariant confounding between treatment and outcome is eliminated. We formulate a set of sufficient identification assumptions for estimating the causal effect of vaccination on an adverse outcome under the SCCS design, drawing on ideas from the causal inference literature. Unlike the existing SCCS literature, we do not consider a parametric model as the starting point. This allows us to establish when and why the SCCS design allows identification of causal effects, using data from cases only. However, because the sufficient identifiability assumptions are implausible in some applications, we also develop statistical tests for the existence of a treatment effect that remain valid when only a subset of the identification assumptions holds.",
-      "tags": [
-        "stat.ME"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Causal Inference from Self-controlled Case Series",
-      "url": "https://arxiv.org/abs/2611.03531v1"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "a70d3527cffd7e9ffebe14cb",
-      "context_id": "daf0f589be2573e8b280148a",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "bidirectional"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.5417,
-      "source": "arxiv",
-      "source_context_sha256": "56c1c2ae101b8e60d42ad656a8502c73f31e5432797387ffd12df7b074a8371c",
-      "source_published": "2026-11-02T17:47:20Z",
-      "source_updated": "2026-11-02T17:47:20Z",
-      "summary": "Graph forecasters for sensor networks are trained in one regime and deployed in others, where sensor coupling and signal frequency content both change. We split this spectral shift into an operator channel and a frequency channel, each with a dimensionless measure. ST-GFM (Spectral-Temporal Graph Forecasting Model) filters every input step with Chebyshev and bidirectional diffusion filters on one learned, non-symmetric operator and alternates them with per-node temporal attention. For the operator channel we prove Frobenius-norm perturbation bounds for both graph branches, show that the Chebyshev bound is attained to first order, and compute its constant from the trained weights and the measured operator norm: 17.9 on METR-LA and 21.5 on PEMS-BAY. Under random edge dropout the trained layer moves by 2.0% to 3.1% of this bound. Masked Spectral Reconstruction (MSR), a self-supervised loss active in the first 40 epochs, matches the log power spectrum of the encoder output to that of the input. For small log-spectral residuals on unclamped bins it is proportional to an Itakura-Saito divergence to leading order. Removing it raises the 60-minute MAE by 0.30 on METR-LA, close to the 0.33 lost when all three self-supervised losses go. Under one shared evaluation pipeline, the 60-minute MAE of ST-GFM is 3.5% below a retrained STAEformer on METR-LA and 13.0% below it on PEMS-BAY. Its 60-minute MAE is 3.0980.017 on METR-LA (five seeds) and 1.5760.006 on PEMS-BAY (three seeds), the lowest PEMS-BAY MAE among twelve published baselines.",
-      "tags": [
-        "cs.LG",
-        "eess.SP",
-        "stat.ML"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "ST-GFM: Spectral-Temporal Graph Forecasting with Measured Perturbation Bounds and Masked Spectral Reconstruction",
-      "url": "https://arxiv.org/abs/2611.03512v1"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "e1e189deb7d2c006a80773da",
-      "context_id": "af54a66d8859296a1bef6e4c",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "bidirectional"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.5417,
-      "source": "arxiv",
-      "source_context_sha256": "e3e3d4100a66fef5c47659cf24a97b4c05d02e6856d0388a187727e4d6f2268c",
-      "source_published": "2026-11-02T12:13:06Z",
-      "source_updated": "2026-11-02T12:13:06Z",
-      "summary": "This paper studies bidirectional pedestrian flow on a cyclic network of corridors. Each corridor consists of two lanes, while pedestrians may enter or leave the network at junctions. The dynamics are based on a 1-D, bidirectional, two-lane Lighthill-Whitham-Richards-type model, in which lane changes are described through explicit, density-dependent transfer rates that favor motion toward the less congested lane. We propose a localized lane-guidance control input that biases lane-changing behavior without creating pedestrians or reversing their walking direction. Such guidance may represent, for example, recommendations provided by staff or information screens. Under meaningful assumptions on the external inflows, we prove the existence and uniqueness of an admissible uniform equilibrium. We then linearize the system around this equilibrium and study the placement of localized guidance zones through a spectral detectability condition. We prove that, for any prescribed decay rate, two guidance patches located in a single, suitably chosen corridor are sufficient to satisfy the spectral detectability condition for all critical adjoint eigenmodes. This condition is necessary for the exponential stabilizability of the linearized system. Numerical experiments illustrate the spectral properties of the model and study the robustness of the modal observability condition with respect to the geometry and distribution of the guidance patches.",
-      "tags": [
-        "eess.SY"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Localized Lane Guidance for a Bidirectional Pedestrian Cyclic Corridor: Equilibria and Generic Actuator Placement",
-      "url": "https://arxiv.org/abs/2611.03013v1"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "c691b3583eb384176e576f3e",
-      "context_id": "f811f8d6a068ed2c30634194",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": true,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "provenance"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.4167,
-      "source": "zenodo",
-      "source_context_sha256": "1398bd5bf385975211a291ab4637b62b07714477295417450cb088b23a675f41",
-      "source_published": "2026-11-03",
-      "source_updated": "",
-      "summary": "RESEARCH COLLECTION / FLAGSHIPS 81&ndash;90 OF 90 Classical Qi, Mind-Body Inquiry &amp; Trustworthy Biomedical Evidence at the Limit STARLI Acupuncture Trilogy&nbsp; |&nbsp; F81&ndash;F90 of 90&nbsp; |&nbsp; Author 33&nbsp; |&nbsp; Research Design Working Edition v1.0 This ten-volume research-design collection tests classical qi-blood descriptions against microcirculatory measurements, mind-body attention effects, qigong breathing and bioelectric artifacts, volitional neurofeedback, and externally asserted qi phenomena. Its second research unit explores provenance-aware acupuncture knowledge graphs, acupoint nano-interfaces, causal pattern models, matched-resource quantum sensing and cross-generational evidence platforms. Cultural concepts are hypotheses and labels, not proven energies or therapies. Two five-theme research units contain ten English 777-page working editions: 300 conditional mathematical research plates, 820 chapter openings, 4,100 separately paginated investigations, 2,000 Research Gates and 330 Phoenix Answer Embryos. Designs call for blinded perturbations, calibrated physical witnesses, optimized conventional baselines and explicit stop policies. This collection reports candidate research protocols, not completed results or demonstrated clinical effects. Research Unit I &middot; F81&ndash;F85 / Classical Claims &amp; Blinded Physiology F81&nbsp; QI-BLOOD PHILOSOPHY AND HUMAN MICROCIRCULATORY PHYSIOLOGY AT THE LIMIT &mdash; Tests whether preregistered qi-blood labels improve held-out microvascular perfusion prediction beyond temperature, anatomy, pulse and motion. Blinded non-needle cues and matched warm stimuli challenge ordinary thermal and cardiovascular explanations. Tissue stress, unblinded-only gains or calibration failure are hard stops. F82&nbsp; MIND-BODY UNITY PHILOSOPHY AND PSYCHOPHYSIOLOGICAL REGULATION AT THE LIMIT &mdash; Separates randomized attention and feedback effects from autonomic changes caused by posture or covert muscle activation. Crossed blinded feedback, hidden replay and synchronized ECG, EMG and posture controls challenge interpretation of subjective sensation as a distinct mechanism. Unidentifiable effects or consent failure halt claims. F83&nbsp; QIGONG BREATHING AND HUMAN BIOELECTRIC REGULATION AT THE LIMIT &mdash; Compares qigong-labeled breathing with ordinary paced breathing under matched respiration, electrode geometry and motion. Masked rate matching and exchanged session labels test whether sweat activity, respiratory rhythms or contact impedance account for surface EDA/ECG differences. Uncontrolled artifact prohibits special-energy inference. F84&nbsp; VOLITION, MIND-BODY UNITY AND INTELLIGENT NEUROFEEDBACK AT THE LIMIT &mdash; Challenges apparent intent-related information using live versus timestamp-matched replayed neurofeedback, yoked sham feedback and identical EEG bandwidth. Cross-validated information gains must survive face-EMG, breathing and expectancy controls. Label leakage, unsafe feedback or ignored human stop authority veto interpretation. F85&nbsp; EXTERNAL QIGONG CLAIMS, CLASSICAL QI THEORY AND SCIENTIFIC FALSIFIABILITY AT THE LIMIT &mdash; Subjects alleged remote effects to sealed target schedules, signal isolation, independent randomization and double-blind instrument readings. Shams, shielded blanks and equal operator schedules confront electromagnetic, acoustic, thermal and experimenter leakage. Nonblind-only effects or selective exclusions trigger refusal; remote qi remains unestablished. &nbsp; &nbsp; SECOND RESEARCH UNIT / SOURCE FIDELITY &amp; SUCCESSOR SCIENCE Research Unit II &middot; F86&ndash;F90 / Knowledge, Causality &amp; Continuity F86&nbsp; CLASSICAL ACUPUNCTURE KNOWLEDGE GRAPHS AND TRUSTWORTHY MEDICAL AI AT THE LIMIT &mdash; Measures source-attribution error when classical manuscripts are converted into provenance-typed biomedical knowledge graphs. Blinded conflicting translations, swapped citations and out-of-era terms test edition drif",
-      "tags": [],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "RESEARCH COLLECTION / FLAGSHIPS 81–90 OF 90 Classical Qi, Mind-Body Inquiry & Trustworthy Biomedical Evidence at the Limit STARLI Acupuncture Trilogy | F81–F90 of 90 | Author 33 | Research Design Working Edition v1.0 This ten-volume research-design collection tests classical qi-blood descriptions ag",
-      "url": "https://zenodo.org/records/23926303"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "0476371c14e1008057b3ec93",
-      "context_id": "f55005de01cd6a0894b41e07",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "provenance"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.4167,
-      "source": "zenodo",
-      "source_context_sha256": "f8d2b8bfdd3f2f3f8e6f8b0c63cad5c373ee8f5779e3f37acaaae231079c2cd1",
-      "source_published": "2021-12-21",
-      "source_updated": "",
-      "summary": "Recovering a 3D full-body human bone rig, which is used to animate a Computer-Generated Image (CGI) model is a challenging problem with many applications although successfully addressed by the motion capture systems with actors with markers worn all over the body with special suit and multiple cameras . In this paper, we detail the bottom-up approach derived from Open Pose, winner of Common Objects in Context (COCO) 2016 KEYPOINTS Challenge, because of its decent qual ity and robustness of detection of multiple numbers of people in the frame with focus . Proposed network design and optimized post-processing with the full solution of video to 2D conversion run at acceptable speeds . The second part of 2D pose to 3D pose conversion u ses a novel Occlusion-Robust Pose-Maps (ORPM) which enables full body pose inference even under strong partial occlusions by other people and objects in the scene . O RPM outputs a fixed number of maps which encodes the 3D joint locations of all people in the scene . Body part associations allow us to infer 3D pose of arbitrary numbers of people without explicit bounding box prediction which increases performance of pose inference . The final combination of the two networks is where a single camera can detect human motion and display the 3D rep resentation in a three-dimensional space in real-time.&nbsp; Provenance Note: Previously published in the Proceedings of the 3rd National Conference on Science, Engineering and Technology (SET Conference 2021) . Re-archived for public record due to the permanent closure of the original archive. &nbsp;",
-      "tags": [],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Motion Capture using POSENET",
-      "url": "https://zenodo.org/records/23931866"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "58df7f7d76a05001f13e0352",
-      "context_id": "b68d4f153b3be90ec36f7a83",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "provenance"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.4167,
-      "source": "zenodo",
-      "source_context_sha256": "9de8cf800051e6b598efe404105965476c09b73c37ab908a76f54bbd8838cec0",
-      "source_published": "2026-08-22",
-      "source_updated": "",
-      "summary": "A shibboleth economy is a cultural system in which the rewards of decoding, a fluency-gain reward, identity affirmation, collective affiliation, and positional rank, become self-sustaining, so that demand for distinction feeds back into cultural production and communicative opacity becomes value-bearing rather than merely costly. Cultural capital theory, from Bourdieu through the fan-studies lineage, explains why scarce decoding competence produces distinction; a shibboleth economy begins where that distinction becomes demand and the demand alters what gets made, through evolutionary selection on engagement rather than any calculating producer. The paper develops the loop and its consequences. A two-type model distinguishes lexical figuration, which maps represented features to meanings and is bootstrappable within a single work, from modal figuration, which maps the representational act itself to an ontological status and is stabilised only by shared representational infrastructure, of which canon is the most powerful form. In markets poor in effective codebook coverage, exemplified by industrial-era Hollywood, uncaught references are priced as lost customers and a self-teaching visual pidgin is selected, later mistaken for neutral realism; in codebook-rich markets the operating point moves to selective permeability, legible to the invested and closed to the casual, with the equilibrium set by the opposed pulls of affiliation and rank. Democratisation of a key causes migration and displacement rather than collapse; a hard cultural border is a boundary condition that slows depreciation and opens an export axis; and when demand for keys outruns authenticated supply, the predicted pathology is key inflation, defined as growth in the ratio of claimed authorised readings to verifiably authorised ones, driven by provenance laundering. Two model-implied expectations, codebook import markets and synthetic canon manufacture, are tested against known cases, with modal transfer breadth as the surviving strong claim, and three forward predictions are stated, led by key migration under democratisation.",
-      "tags": [
-        "shibboleth economy",
-        "cultural decoding",
-        "figuration",
-        "selective permeability",
-        "cultural capital",
-        "key inflation",
-        "provenance",
-        "allusion",
-        "occupation cinema"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "The Shibboleth Economy",
-      "url": "https://zenodo.org/records/23925451"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "677bcdffd37e248ca3ac9dfc",
-      "context_id": "90f6e3fcd1546b07900f6cc3",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "provenance"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.4167,
-      "source": "zenodo",
-      "source_context_sha256": "d4989c7d7f78a7283612a17abd97a852e07a6503b6d9e780bf2940c2937da571",
-      "source_published": "2026-11-03",
-      "source_updated": "",
-      "summary": "Distribution feeders host managed electric vehicle charging through control loops, a site energy management system enforcing a connection-point limit and a demand response aggregator dispatching curtailment, that act on telemetry the charging stations report about themselves. An adversary controlling authorised but compromised reporting sources can move those loops without switching any physical load and without defeating any transport control. We define the undetected harm frontier, the greatest feeder harm reachable while raising no alarm under a given validation setup, and show that a bound on it exists only when at least one reference in the validation chain has provenance independent of the compromised source. We classify grid-edge telemetry into four provenance classes and evaluate seven validation setups on seven published distribution test systems by quasi-static time-series power flow, parameterised by measurements from a live OCPP 2.0.1 stack. Five of the seven setups, including textbook weighted-least-squares bad data detection, trace an identical frontier and constrain the adversary not at all. The two that bound the harm are exactly the two holding an independent measurement, which is the taxonomy's prediction. Under the unanchored setups the attack crosses the statutory voltage floor on IEEE 33-bus, crosses the conductor thermal rating on four of six networks robustly across random realisations, inflates apparent hosting capacity by 7.5 percent, and misallocates settlement. The mitigation this implies is not a better detector but the acquisition of one measurement the adversary does not produce.",
-      "tags": [
-        "Electric vehicle charging",
-        "false data injection",
-        "distribution system",
-        "bad data detection",
-        "demand response",
-        "state estimation"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "False Data Injection from Authorized EV Chargers on Distribution Feeders",
-      "url": "https://zenodo.org/records/23913053"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "c7d1ae7ae380701ba20097d2",
-      "context_id": "8cd1389e6c0e4816bf553bf9",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "provenance"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.4167,
-      "source": "zenodo",
-      "source_context_sha256": "95cf191bc9fafa9977e78af01d5bf455584767888df3c6f44a7e52901b3882b9",
-      "source_published": "2026-11-03",
-      "source_updated": "",
-      "summary": "The term \"AI slop\" is commonly treated as a property of the generator: text is slop because a model produced it. This paper argues that slop is a property of the process. It names generation that reached a reader without the review it needed, and reviewed generation is a draft, whoever generated it. On that account the slop critique is largely mitigable by review processes run with or by language models, but not on the grounds usually offered. The argument is not that models review better than they write, nor that they review better than humans. It is that one large class of faults, provenance, is invisible to a reading human at population scale and cheap for a machine to check: across four top-tier venues, papers carrying hallucinated citations received reviewer ratings indistinguishable from clean papers, accepted and rejected submissions whose ratings differed by two points carried the same share of them, and a venue-scale audit cost about four cents a paper (Russinovich, Siva Kumar and Salem 2026). Review is the better-suited task for a model for five structural reasons: a fixed target, a brief that says where to look, permission to answer \"cannot verify\", no stake in the document, and the generated text as a map of where to check. The remedy for slop is therefore a division of labour that assigns the provenance pass to the machine and the reasoning pass to the human. The paper names five mechanisms by which unreviewed generation acquires faults that are invisible from inside the text, carries four corrections as explicit limits, and reports one case in which two reviewers of different kind, a human on a phone and a model under a provenance brief, found disjoint error classes with no overlap, every provenance fault sitting on a source the generating model had not opened. The case is N = 1 and is offered as a specimen, not a result; the paper's own first draft supplies a second specimen, by the mechanism the paper describes. The division of labour is then placed under its binding constraint: when an AI agent is institutionally positioned as an employee, managers catch fewer errors themselves and pass the review on (Wiles, Hsu, Bedard and Kropp 2026), so the design must survive the effect it is meant to offset. Seven hypotheses are stated, each with the observation that would falsify it.",
-      "tags": [
-        "LLM review",
-        "provenance",
-        "verification",
-        "slop",
-        "back-brief",
-        "reviewer independence",
-        "division of labour",
-        "absence claims",
-        "hot-potato effect",
-        "Binary Bias",
-        "locus of collapse"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Slop Is a Process Property",
-      "url": "https://zenodo.org/records/23925627"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "dfe8acfe5093d07faf281990",
-      "context_id": "68c8fd12d79a7b26492d54ca",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::FORWARD",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [FORWARD]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "provenance"
-      ],
-      "mirror_lens": "FORWARD",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 4.4167,
-      "source": "zenodo",
-      "source_context_sha256": "f025ab124c872248c50690957022789f2be0912e2b2919b97f43c884376bcda3",
-      "source_published": "2026-08-22",
-      "source_updated": "",
-      "summary": "Classical creative-process orderings put divergence early and convergence late, and the Double Diamond formalises the rule twice over. This paper argues the ordering was never a law of cognition but a map of costs: divergence goes early because reopening a converged process has historically been ruinous, and the entire discipline of the framework exists to protect against that reopening. When drafting cost collapses by orders of magnitude, as it does when an author works with a language model as typewriter, the protected assumption dissolves and the optimal ordering inverts: converge first, then diverge, because a late horizon either restarts a now-cheap process or spawns a child concept from a sharpened parent. The paper's second claim types reviewer instances in multi-model chains by regression target rather than capability, and states the Hein Condition: a mode-regressing reviewer's yield is proportional to the sharpness of the artefact it receives, because the modal response to an unsharp artefact is the generic response, so the same instance is most fluent exactly where it is least useful. A slot theory follows, carnivore, auditor, mode-regressor, children, each reviewer placed where its failure mode is cheapest, and child viability rises with parent sharpness at spawn. The claims are exercised on a fully documented case: a five-pass, three-model review chain run on a single paper in a single day, with every absorption, declination, and provenance failure logged. Four predictions close, including that review chains are provenance systems measurable by the sibling paper's key-inflation ratio.",
-      "tags": [
-        "reviewer sequencing",
-        "double diamond",
-        "divergence-convergence",
-        "mode regression",
-        "perturbation methodology",
-        "multi-model review",
-        "provenance",
-        "drafting cost"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "The Hein Condition",
-      "url": "https://zenodo.org/records/23925449"
-    },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
       "candidate_id": "903096717262634dbc94ebf1",
@@ -668,6 +227,40 @@
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "25b50c83b2c28d24233bfd4c",
+      "context_id": "9a303b9af574bb9b243d1302",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": true,
+      "direction_id": "mirror_bidirectional_provenance::REVERSE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "provenance",
+        "reconstruction",
+        "recovery"
+      ],
+      "mirror_lens": "REVERSE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.3333,
+      "source": "zenodo",
+      "source_context_sha256": "4d7f25fd364db3e66a62124d195600adb382159d1882a77b7fb5d3dfad2ee7c8",
+      "source_published": "2026-11-04",
+      "source_updated": "",
+      "summary": "RESEARCH COLLECTION / FLAGSHIPS 261&ndash;270 OF 300 Scientific Evidence, Reproducibility &amp; Successor Trust at the Limit Flagship 13 Fission&nbsp; |&nbsp; Volume III&nbsp; |&nbsp; Author 33&nbsp; |&nbsp; STARLI Research Design Working Edition v1.2 This ten-volume prospective collection challenges selection bias, autonomous experiment auditability, honest negative-result disclosure, bounded functional release, long-horizon data readability, cross-site quantum biosensing, degradation forecasting, impartial adjudication, retirement and successor reconstruction, and claim-to-evidence engineering. A candidate research design is not an observed new law, clinical result or experimentally established advantage. Ten English 777-page volumes collectively contain 300 mathematics plates, 820 chapter openings, 4,100 paginated studies, 2,000 Research Gates and 330 Phoenix Answer Embryos. Each Gate uses three independent future-facing essays &mdash; Origin, Extreme Extrapolation, Future Research Plan &mdash; which propose tests rather than report their success. Textual distinctness does not establish causal novelty. RESEARCH UNIT I&nbsp; &middot;&nbsp; F261&ndash;F265 F261&nbsp; NANOROBOTIC SAMPLE SELECTION BIAS AT THE LIMIT &mdash; Main endpoint: true-positive detection fraction on an independently enrolled cohort. Scientific contrast: survivor-biased microrobot recovery versus higher quality in selected starting specimens. Independent witness: external coded specimen census. Stop: unregistered specimen exclusion or identity-loss event. F262&nbsp; MICROSCALE AUTONOMOUS EXPERIMENT AUDITABILITY AT THE LIMIT &mdash; Main endpoint: fraction of blinded runs with complete replay and equal safety decision. Scientific contrast: actuation-command discrepancy versus software event acknowledgement without motion. Independent witness: laser displacement encoder. Stop: physical actuation cannot be reconciled with signed raw evidence. F263&nbsp; QUANTUM SENSOR NEGATIVE-RESULT REPORTING AT THE LIMIT &mdash; Main endpoint: fraction of registered null, failed and indeterminate measurements publicly traceable. Scientific contrast: null-run omission versus different detector gain for null samples. Independent witness: escrowed randomization list. Stop: unreported null cases or materially incomplete raw data. F264&nbsp; NANOROBOTIC FUNCTIONAL RELEASE CONTRACT AT THE LIMIT &mdash; Main endpoint: false release probability under hidden unsafe specimens. Scientific contrast: rare leakage into sample versus sensor false negatives. Independent witness: coded nanoparticle mass counter. Stop: a hidden physical hazard is classified safe. F265&nbsp; MICROSCALE RESEARCH DATA INTERGENERATIONAL READABILITY AT THE LIMIT &mdash; Main endpoint: successful clean-room rebuild fraction after toolchain change. Scientific contrast: obsolete raw-binary decoding versus floating-point rounding drift. Independent witness: independent raw-packet oracle. Stop: reconstruction requires undocumented secrets or unavailable instruments. &nbsp; &nbsp; RESEARCH UNIT II&nbsp; /&nbsp; RECONSTRUCTION, TRANSFER AND TRUST F266&nbsp; QUANTUM BIOSENSING EXTERNAL SENSING REPRODUCIBILITY AT THE LIMIT &mdash; Main endpoint: held-out external agreement within declared physical uncertainty. Scientific contrast: travelling standard drift versus site temperature changes real resonance. Independent witness: independent atomic frequency reference. Stop: correlated reference artefact masquerades as agreement. F267&nbsp; NANOROBOTIC LONG-HORIZON DEGRADATION PREDICTION AT THE LIMIT &mdash; Main endpoint: coverage of future failure intervals on unselected units. Scientific contrast: surface wear accumulation versus corrosion dominates wear. Independent witness: independent gravimetric loss assay. Stop: future wear enters an unregistered failure regime. F268&nbsp; MICROSCALE EXPERIMENT INDEPENDENT THIRD-PARTY ADJUDICATION AT THE LIMIT &mdash; Main endpoint: fraction of blinded case verdicts supported by indepe",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "RESEARCH COLLECTION / FLAGSHIPS 261–270 OF 300 Scientific Evidence, Reproducibility & Successor Trust at the Limit Flagship 13 Fission | Volume III | Author 33 | STARLI Research Design Working Edition v1.2 This ten-volume prospective collection challenges selection bias, autonomous experiment audita",
+      "url": "https://zenodo.org/records/23934354"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
       "candidate_id": "9b6e59a1319ad9fee6faf107",
       "context_id": "d06ba9b81c9662f615dc7152",
       "delivery_preview_only": true,
@@ -703,43 +296,6 @@
       "target_repository": "Hawkar-usls/iNaiHR",
       "title": "The Referee, Not the Governor",
       "url": "https://zenodo.org/records/23931689"
-    },
-    {
-      "base_direction_id": "mirror_bidirectional_provenance",
-      "candidate_id": "a70d3527cffd7e9ffebe14cb",
-      "context_id": "dcf8417b842f3af53a416fbb",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "mirror_bidirectional_provenance::REVERSE",
-      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "bidirectional",
-        "reconstruction"
-      ],
-      "mirror_lens": "REVERSE",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 9.125,
-      "source": "arxiv",
-      "source_context_sha256": "d3f22b82eafde0f6650ec970b229a816b68afca56ce8bd710fb6d5e7aea3e541",
-      "source_published": "2026-11-02T17:47:20Z",
-      "source_updated": "2026-11-02T17:47:20Z",
-      "summary": "Graph forecasters for sensor networks are trained in one regime and deployed in others, where sensor coupling and signal frequency content both change. We split this spectral shift into an operator channel and a frequency channel, each with a dimensionless measure. ST-GFM (Spectral-Temporal Graph Forecasting Model) filters every input step with Chebyshev and bidirectional diffusion filters on one learned, non-symmetric operator and alternates them with per-node temporal attention. For the operator channel we prove Frobenius-norm perturbation bounds for both graph branches, show that the Chebyshev bound is attained to first order, and compute its constant from the trained weights and the measured operator norm: 17.9 on METR-LA and 21.5 on PEMS-BAY. Under random edge dropout the trained layer moves by 2.0% to 3.1% of this bound. Masked Spectral Reconstruction (MSR), a self-supervised loss active in the first 40 epochs, matches the log power spectrum of the encoder output to that of the input. For small log-spectral residuals on unclamped bins it is proportional to an Itakura-Saito divergence to leading order. Removing it raises the 60-minute MAE by 0.30 on METR-LA, close to the 0.33 lost when all three self-supervised losses go. Under one shared evaluation pipeline, the 60-minute MAE of ST-GFM is 3.5% below a retrained STAEformer on METR-LA and 13.0% below it on PEMS-BAY. Its 60-minute MAE is 3.0980.017 on METR-LA (five seeds) and 1.5760.006 on PEMS-BAY (three seeds), the lowest PEMS-BAY MAE among twelve published baselines.",
-      "tags": [
-        "cs.LG",
-        "eess.SP",
-        "stat.ML"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "ST-GFM: Spectral-Temporal Graph Forecasting with Measured Perturbation Bounds and Masked Spectral Reconstruction",
-      "url": "https://arxiv.org/abs/2611.03512v1"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
@@ -848,13 +404,13 @@
       "url": "https://arxiv.org/abs/2611.03142v1"
     },
     {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "e3bd4952782fc774927d761a",
-      "context_id": "69376a65f5dc61aa097245f1",
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "108a3fd3a647a677855031f3",
+      "context_id": "44f66ad09326960973fef0a3",
       "delivery_preview_only": true,
       "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::REVERSE",
-      "direction_title": "Cognition / memory / reverse models / representation [REVERSE]",
+      "direction_id": "mirror_bidirectional_provenance::REVERSE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [REVERSE]",
       "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
       "firewall": [
         "ROUTED_NE_VERIFIED",
@@ -865,26 +421,30 @@
       ],
       "keyword_hits": [
         "inverse",
-        "inversion"
+        "provenance"
       ],
       "mirror_lens": "REVERSE",
       "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 8.6667,
+      "score": 8.7083,
       "source": "zenodo",
-      "source_context_sha256": "0f6e790fc1bdac205299a6c76c1a287126b9765c429766433fb4f93777b5c162",
-      "source_published": "2026-11-03",
+      "source_context_sha256": "d1289571ab67b369238065d6db10dd2f25d83fe20f825994a8d370347fd7a571",
+      "source_published": "2026-11-04",
       "source_updated": "",
-      "summary": "This work investigates the geometric and torsional origin of magnetism, magnetic monopoles, and elementary particle spins within the 6D-3D metric-elastic framework (Alvaro Guillermo Perea Covarrubias, Building the Bridge from the ⁶&Pi;₃ Model to Standard Physics: A Bottom-Up Framework from the Fundamental Geometric Lattice to Emergent Physical Constants and Symmetries, Zenodo, 23405051, https://zenodo.org/records/23405051 ). Added 3rd Nov, 2206 Derivation of Hawking radiation geometry and black hole evaporation dynamics within the 6D-3D lattice without arbitrary singularities. Connects electron mass defect, tauonic pore 50.61 substitution , and dark background radiation at 2.27 K via Wien's constant. Formulates the membrane flow jump conditions and preonic radiation field relaxations using ternary scale operators 23 and 27 . Establishes model falsifiability via the 220 signal linked strictly to the muon mass scale and muon neutrino emission. Models the Higgs membrane as a 2D+1 Ising system with specular boundaries, linking the 0.185 GeV mass decrement directly to leptonic loop construction. Derives the precise fine-structure constant alpha inverse equal to 137.035999185 using the electron binding energy scale and symmetric summation scaling to 1000. Connects cluster and mass fractal dimensions to the dark photon and charge invariant 102 , providing the necessary parallel flow for attractive gravity. Projects preonic spin one-half from surface scale 1480 onto the electron, with specular neutrino emission anchored at scale 1477. Second-Order Euler-Cauchy Equation, Neutrino Dynamics &amp; Collapse Hawking radiation: &bull; Differential Framework : Analyzes cosmological dark matter perturbations and neutrino distributions through the second-order equation x^2 y'' + a x y' + b y = 0, admitting exact potential-type solutions for individual neutrino masses. &bull; Parameter Derivation : Establishes exact coefficient solutions where a = 1 - (m₁ + m₂) = -17.84 and b = m₁ &times; m₂ = 84.816 (utilizing m₁ = 7.44 and m₂ = 11.40). &bull; Third Mass &amp; Hyperdimensional Embedding : Derives the third neutrino mass m₃ = 50.61 via perpendicular projections and the hyperdimensional embedding of the factor 3 &radic;(84.816 &times; 17 3 84) / 50.61 &asymp; 23.99260547978 = 24 - 0.007394520 &asymp; 24 = 48 / 2 which dictates both the mass value and the resulting loop 39.75. 739 + 452 = 1191 , 1191 / 3 = 397 1191 / 39.75 - &radic;(84.816 &times; 17384) / 50.61 &asymp; 5 + 0.9696 The conclusion is clear: the hyperdimensional embedding of the factor 3 determines both the mass 5061 and the resulting loop 39.75. This indicates that the one-dimensional second-order equation must be elevated to higher dimensions through this embedding to correctly describe the hyperdimensional neutrino loop. Empirical validation of this geometric scaling is demonstrated within the charged lepton sector. The mass of the tau lepton (1776.84 MeV) explicitly mirrors the embedding coefficients via its sequential digits (17 &rarr; 76 &rarr; 84). Furthermore, its leptonic decay channels exhibit branching ratios of 17.39% and 17.82%, matching the dynamic coefficients and the hyperdimensional loop residue with extraordinary mathematical accuracy. &nbsp; Collapse Hawking radiation:&nbsp; At ultra-high energies, we demonstrate that the landmark&nbsp; 220 PeV muonic neutrino signal is temporally anchored to the exact vacuum decay lifetime of the muon (&tau;_&mu; &asymp; 2.197 &mu;s) through a phase-inversion mapping. Crucially, by setting ℏ = c = 1 and defining the gravitational constant through the 3D unit sphere volume-factor G = 4&pi;/3, the thermodynamic Hawking horizon equation clarifies into the invariant action relation k_B M T_H = 3 / (32 &pi;&sup2;) . The right-hand denominator, 32&pi;&sup2;/3 &asymp; 105.276, when shifted by the precise topological self-energy binding fraction of 3/8 (0.375), converges exactly to the physical rest mass of the muon ( m_&mu; = 32&pi;&sup2",
+      "summary": "Unrefereed research candidate. In one sentence: identical Kuramoto oscillators scattered at random on a flat torus of any fixed dimension have stable twisted equilibria near every integer winding, which proves the twisted-equilibrium conjecture of Cirelli, Groisman, Huang and Vivas for every kernel in their class with |z|K(z) bounded. Place n identical oscillators at independent uniform points of the flat torus T d and couple points closer than &epsilon; n with weight K(z/&epsilon; n ). If &epsilon; n &rarr; 0 and n&epsilon; n d+2 /log n &rarr; &infin;, then with high probability, for every integer twist k with |k| &le; c/(&epsilon; n +&delta; n ), where &delta; n = (log n/(n&epsilon; n d+2 )) 1/2 , there is an asymptotically stable equilibrium whose phase differs from k&middot;x by at most C|k|&delta; n at every vertex (Theorem 2.1). The kernel need only be even, supported in the unit ball, positive almost everywhere near the origin and have sup|z|K(z) finite: this covers the hard-radius graph, every bounded kernel and |z| &minus;&alpha; , 0 &lt; &alpha; &le; 1. All twists k in Z d are covered, not only coordinate twists. Further results: at least c(&epsilon; n +&delta; n ) &minus;d distinct stable constructed states; a basin of fixed size; for bounded radial kernels, a heat-equation limit uniform over all times; and stable weighted harmonic lifts under smooth nonuniform sampling (bounded kernels). The key tool is a sup-norm bound for the inverse graph Laplacian uniform over all conductances above a bounded backbone. The archive contains the manuscript (PDF and LaTeX source), an exact standard-library checker of classical cycle twisted-state spectra, the numerical illustrations with their script and records, verification and claim records, preserved development drafts, two unrelated supplementary research notes kept for provenance, a rating-free internal review summary, CI and SHA-256 sums. Assurance: written informal proofs; internal AI-agent review and proof audits only (not peer review, independent reproduction or formal verification); kernels with |z|K unbounded and the connectivity regime n&epsilon; d ~ log n remain open; constants are not explicit; the numerics are small illustrations outside the theorem's regime. Creator: Anonymous. Text and figures CC0-1.0; code MIT.",
       "tags": [
-        "metric-elastic framework, 6D-3D interface, topological magnetic monopole, vacuum permeability, inter",
-        "• Cantor Isomorphism, Permanent Lattice, Hyperdimensional Tunneling, Interlaced Arithmetic Embedding",
-        "topological electric charge, charge conservation, neutrino loop windings, membrane microporosity, gr",
-        "topological unification, ternary cyclic permutations, base-3 base conversion, cantor isomorphism, fr",
-        "6D-3D metric-elastic framework, Hawking radiation geometry, black hole evaporation dynamics, tauonic"
+        "Kuramoto model",
+        "random geometric graphs",
+        "twisted states",
+        "synchronisation",
+        "graph Laplacian",
+        "graph Poisson equation",
+        "Nash inequality",
+        "singular kernels",
+        "XY model"
       ],
       "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "Topological Magnetic Monopoles, Spin Structures, and Protonic Geometry in the 6D-3D Metric-Elastic Framework",
-      "url": "https://zenodo.org/records/23920450"
+      "title": "Stable twisted equilibria on random geometric tori in every fixed dimension",
+      "url": "https://zenodo.org/records/23934300"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
@@ -1007,6 +567,40 @@
       "target_repository": "Hawkar-usls/iNaiHR",
       "title": "RESEARCH COLLECTION / FLAGSHIPS 81–90 OF 90 Classical Qi, Mind-Body Inquiry & Trustworthy Biomedical Evidence at the Limit STARLI Acupuncture Trilogy | F81–F90 of 90 | Author 33 | Research Design Working Edition v1.0 This ten-volume research-design collection tests classical qi-blood descriptions ag",
       "url": "https://zenodo.org/records/23926303"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "25b50c83b2c28d24233bfd4c",
+      "context_id": "ca1a143bef25cb4ea09d6618",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": true,
+      "direction_id": "mirror_bidirectional_provenance::COUNTEREVIDENCE",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [COUNTEREVIDENCE]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "bias",
+        "failure",
+        "provenance"
+      ],
+      "mirror_lens": "COUNTEREVIDENCE",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 9.875,
+      "source": "zenodo",
+      "source_context_sha256": "1fc3227c8a84b7977f02834bc9f2b743f8985130a6f52239f41590abd33df132",
+      "source_published": "2026-11-04",
+      "source_updated": "",
+      "summary": "RESEARCH COLLECTION / FLAGSHIPS 261&ndash;270 OF 300 Scientific Evidence, Reproducibility &amp; Successor Trust at the Limit Flagship 13 Fission&nbsp; |&nbsp; Volume III&nbsp; |&nbsp; Author 33&nbsp; |&nbsp; STARLI Research Design Working Edition v1.2 This ten-volume prospective collection challenges selection bias, autonomous experiment auditability, honest negative-result disclosure, bounded functional release, long-horizon data readability, cross-site quantum biosensing, degradation forecasting, impartial adjudication, retirement and successor reconstruction, and claim-to-evidence engineering. A candidate research design is not an observed new law, clinical result or experimentally established advantage. Ten English 777-page volumes collectively contain 300 mathematics plates, 820 chapter openings, 4,100 paginated studies, 2,000 Research Gates and 330 Phoenix Answer Embryos. Each Gate uses three independent future-facing essays &mdash; Origin, Extreme Extrapolation, Future Research Plan &mdash; which propose tests rather than report their success. Textual distinctness does not establish causal novelty. RESEARCH UNIT I&nbsp; &middot;&nbsp; F261&ndash;F265 F261&nbsp; NANOROBOTIC SAMPLE SELECTION BIAS AT THE LIMIT &mdash; Main endpoint: true-positive detection fraction on an independently enrolled cohort. Scientific contrast: survivor-biased microrobot recovery versus higher quality in selected starting specimens. Independent witness: external coded specimen census. Stop: unregistered specimen exclusion or identity-loss event. F262&nbsp; MICROSCALE AUTONOMOUS EXPERIMENT AUDITABILITY AT THE LIMIT &mdash; Main endpoint: fraction of blinded runs with complete replay and equal safety decision. Scientific contrast: actuation-command discrepancy versus software event acknowledgement without motion. Independent witness: laser displacement encoder. Stop: physical actuation cannot be reconciled with signed raw evidence. F263&nbsp; QUANTUM SENSOR NEGATIVE-RESULT REPORTING AT THE LIMIT &mdash; Main endpoint: fraction of registered null, failed and indeterminate measurements publicly traceable. Scientific contrast: null-run omission versus different detector gain for null samples. Independent witness: escrowed randomization list. Stop: unreported null cases or materially incomplete raw data. F264&nbsp; NANOROBOTIC FUNCTIONAL RELEASE CONTRACT AT THE LIMIT &mdash; Main endpoint: false release probability under hidden unsafe specimens. Scientific contrast: rare leakage into sample versus sensor false negatives. Independent witness: coded nanoparticle mass counter. Stop: a hidden physical hazard is classified safe. F265&nbsp; MICROSCALE RESEARCH DATA INTERGENERATIONAL READABILITY AT THE LIMIT &mdash; Main endpoint: successful clean-room rebuild fraction after toolchain change. Scientific contrast: obsolete raw-binary decoding versus floating-point rounding drift. Independent witness: independent raw-packet oracle. Stop: reconstruction requires undocumented secrets or unavailable instruments. &nbsp; &nbsp; RESEARCH UNIT II&nbsp; /&nbsp; RECONSTRUCTION, TRANSFER AND TRUST F266&nbsp; QUANTUM BIOSENSING EXTERNAL SENSING REPRODUCIBILITY AT THE LIMIT &mdash; Main endpoint: held-out external agreement within declared physical uncertainty. Scientific contrast: travelling standard drift versus site temperature changes real resonance. Independent witness: independent atomic frequency reference. Stop: correlated reference artefact masquerades as agreement. F267&nbsp; NANOROBOTIC LONG-HORIZON DEGRADATION PREDICTION AT THE LIMIT &mdash; Main endpoint: coverage of future failure intervals on unselected units. Scientific contrast: surface wear accumulation versus corrosion dominates wear. Independent witness: independent gravimetric loss assay. Stop: future wear enters an unregistered failure regime. F268&nbsp; MICROSCALE EXPERIMENT INDEPENDENT THIRD-PARTY ADJUDICATION AT THE LIMIT &mdash; Main endpoint: fraction of blinded case verdicts supported by indepe",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "RESEARCH COLLECTION / FLAGSHIPS 261–270 OF 300 Scientific Evidence, Reproducibility & Successor Trust at the Limit Flagship 13 Fission | Volume III | Author 33 | STARLI Research Design Working Edition v1.2 This ten-volume prospective collection challenges selection bias, autonomous experiment audita",
+      "url": "https://zenodo.org/records/23934354"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
@@ -1309,42 +903,6 @@
       "target_repository": "Hawkar-usls/iNaiHR",
       "title": "RESEARCH COLLECTION / FLAGSHIPS 241–250 OF 300 Scientific Failure, Metrology and Independent Evidence at the Limit Flagship 13 Fission | Volume III | Author 33 | STARLI Research Design Working Edition v1.0 These ten research-design monographs move from nano-quantum failure physics and reconstructed ",
       "url": "https://zenodo.org/records/23931688"
-    },
-    {
-      "base_direction_id": "cognition_memory_reverse",
-      "candidate_id": "59740d967c845a52d581f682",
-      "context_id": "7e8145abda8174df90b9613a",
-      "delivery_preview_only": true,
-      "delivery_preview_truncated": false,
-      "direction_id": "cognition_memory_reverse::COUNTEREVIDENCE",
-      "direction_title": "Cognition / memory / reverse models / representation [COUNTEREVIDENCE]",
-      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
-      "firewall": [
-        "ROUTED_NE_VERIFIED",
-        "INBOX_NE_EVIDENCE",
-        "PRIORITY_NE_TRUTH",
-        "MIRROR_LENS_NE_CONFIRMATION",
-        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
-      ],
-      "keyword_hits": [
-        "representation",
-        "world model"
-      ],
-      "mirror_lens": "COUNTEREVIDENCE",
-      "schema": "janus.beetle.repo_memory_item.v2",
-      "score": 6.0417,
-      "source": "arxiv",
-      "source_context_sha256": "f6d1657f4f3ff6f7ae8c6bb5becdfd551b8fba0890ad23dc1ac4bdbfd48240a1",
-      "source_published": "2026-11-01T11:31:09Z",
-      "source_updated": "2026-11-01T11:31:09Z",
-      "summary": "Prediction errors from video world models are often treated as physical surprise, but they can also reflect appearance, static content, motion, or ordinary prediction difficulty. We present an evaluation framework that separates what frozen representations contain, how they organize appearance and physical differences, and what changes a model's own prediction error. On IntPhys2, a benchmark of physically possible and impossible events, we compare representations from latent prediction, masked pixel reconstruction, and simple visual statistics. Appearance remains easy to decode, while V-JEPA2 exposes modest information about whether events are possible or impossible. Looking at the latent geometry, appearance changes become smaller compared with differences between videos, their directions line up more consistently across scenes, and their overlap with physical changes decreases in deeper layers. Across action-conditioned models, incorrect actions raise prediction error, while appearance changes also produce substantial responses. In Physion++ video clips, repeating a single frame can produce higher error than the original clip, while changing color throughout the clip can lower it. Using Kubric, a simulation and rendering framework, we find that impossible events can produce lower error than possible events. A fixed error threshold also incorrectly flags many possible events as impossible. A model can therefore represent physical information and respond to incorrect actions without its native prediction error reliably measuring physical surprise.",
-      "tags": [
-        "cs.CV",
-        "cs.LG"
-      ],
-      "target_repository": "Hawkar-usls/iNaiHR",
-      "title": "When Does Latent Prediction Error Support Physical Surprise Claims in Video World Models?",
-      "url": "https://arxiv.org/abs/2611.01815v1"
     },
     {
       "base_direction_id": "mirror_bidirectional_provenance",
@@ -1789,6 +1347,478 @@
       "target_repository": "Hawkar-usls/iNaiHR",
       "title": "GURU: A Hierarchical Neuro-Symbolic Multi-Agent System for Verification-Aware Automation of Mission-Critical Digital Engineering and Operations",
       "url": "https://arxiv.org/abs/2611.01001v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "59740d967c845a52d581f682",
+      "context_id": "650402242172d671c463c378",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "representation",
+        "world model"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.4167,
+      "source": "arxiv",
+      "source_context_sha256": "617ec736212531b107e708982ea26e0f3250f84e703082d8a27d37ac4e97af3c",
+      "source_published": "2026-11-01T11:31:09Z",
+      "source_updated": "2026-11-01T11:31:09Z",
+      "summary": "Prediction errors from video world models are often treated as physical surprise, but they can also reflect appearance, static content, motion, or ordinary prediction difficulty. We present an evaluation framework that separates what frozen representations contain, how they organize appearance and physical differences, and what changes a model's own prediction error. On IntPhys2, a benchmark of physically possible and impossible events, we compare representations from latent prediction, masked pixel reconstruction, and simple visual statistics. Appearance remains easy to decode, while V-JEPA2 exposes modest information about whether events are possible or impossible. Looking at the latent geometry, appearance changes become smaller compared with differences between videos, their directions line up more consistently across scenes, and their overlap with physical changes decreases in deeper layers. Across action-conditioned models, incorrect actions raise prediction error, while appearance changes also produce substantial responses. In Physion++ video clips, repeating a single frame can produce higher error than the original clip, while changing color throughout the clip can lower it. Using Kubric, a simulation and rendering framework, we find that impossible events can produce lower error than possible events. A fixed error threshold also incorrectly flags many possible events as impossible. A model can therefore represent physical information and respond to incorrect actions without its native prediction error reliably measuring physical surprise.",
+      "tags": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "When Does Latent Prediction Error Support Physical Surprise Claims in Video World Models?",
+      "url": "https://arxiv.org/abs/2611.01815v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "effb6381e1c7baaab561ee89",
+      "context_id": "c95dcbcb2a0a8330f6635766",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": true,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "calibration",
+        "control",
+        "provenance"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.1667,
+      "source": "zenodo",
+      "source_context_sha256": "5a27216af6e17f174c3bfeceaef03e0624390aaf435bc2c89a9779d8bd1ef813",
+      "source_published": "2026-11-03",
+      "source_updated": "",
+      "summary": "RESEARCH COLLECTION / FLAGSHIPS 241&ndash;250 OF 300 Scientific Failure, Metrology and Independent Evidence at the Limit Flagship 13 Fission | Volume III | Author 33 | STARLI Research Design Working Edition v1.0 These ten research-design monographs move from nano-quantum failure physics and reconstructed microrobotic sampling truth to blinded biosensing, interlaboratory transfer, uncertainty budgets, reference-material commutability, manufacturing batch effects, contamination traceability, drift/biology separation and mission-failure classification. They propose testable experimental contracts, not observed new scientific laws or clinical results. The ten English working editions contain 7,770 pages, 300 mathematical plates, 820 chapter openings, 4,100 one-page studies, 2,000 Research Gates and 330 Phoenix Answer Embryos. Each Gate presents a three-part speculative letter&mdash;Origin, Extreme Extrapolation and Future Research Plan&mdash;without replacing measured falsification and independent physical witnesses. Structural counts do not establish scientific novelty. RESEARCH UNIT I&nbsp; &middot;&nbsp; F241&ndash;F245 F241 NANO-QUANTUM RESEARCH SYSTEM FAILURE PHYSICS AT THE LIMIT &mdash; Focus: optical source ageing and actuator stuck-state fault. Direct witness: rate of hazardous events [h^-1]. Test against single-site repeatability without transfer. A live rival is detector gain drift; refuse release if a hazardous defect is released. F242 MICROROBOTIC SAMPLING TRUTH RECONSTRUCTION AT THE LIMIT &mdash; Focus: microchannel-wall adsorption and sorption-desorption memory. Direct witness: sample provenance recovery [percent]. Test against paper batch record plus endpoint inspection. A live rival is pipette volume error; refuse release if material balance or provenance does not close. F243 QUANTUM BIOSENSOR BLINDED CHALLENGE AT THE LIMIT &mdash; Focus: spin-coherence reference substitution and charge-state switching. Direct witness: prospective correct acceptance [percent]. Test against standard statistical process control with frozen limits. A live rival is microwave pickup; refuse release if a second site cannot reconstruct the qualification decision. F244 NANOROBOTIC INTERLABORATORY RING COMPARISON AT THE LIMIT &mdash; Focus: laser wavelength transfer and microscale thermal probe offset. Direct witness: absolute between-site measurement bias [unit]. Test against single-site repeatability without transfer. A live rival is laboratory temperature contrast; refuse release if a hazardous defect is released. F245 MICROSCALE SAMPLING UNCERTAINTY BUDGET AT THE LIMIT &mdash; Focus: volume-metering error and wall-loss uncertainty. Direct witness: prospective interval coverage [percent]. Test against paper batch record plus endpoint inspection. A live rival is liquid surface tension; refuse release if material balance or provenance does not close. &nbsp; &nbsp; SECOND RESEARCH UNIT&nbsp; /&nbsp; EVIDENCE, TRANSFER AND SUCCESSION RESEARCH UNIT II&nbsp; &middot;&nbsp; F246&ndash;F250 F246 QUANTUM SENSOR REFERENCE-MATERIAL COMMUTABILITY AT THE LIMIT &mdash; Focus: matrix-dependent binding and fluorophore photobleaching. Direct witness: noncommutability bias [unit]. Test against standard statistical process control with frozen limits. A live rival is analyte concentration mismatch; refuse release if a second site cannot reconstruct the qualification decision. F247 NANOROBOTIC MANUFACTURING BATCH EFFECT IDENTIFICATION AT THE LIMIT &mdash; Focus: lithography mask alignment and coating pore defects. Direct witness: unselected qualified batch yield [percent]. Test against single-site repeatability without transfer. A live rival is postfabrication sorting; refuse release if a hazardous defect is released. F248 MICROFLUIDIC SAMPLING CONTAMINATION-SOURCE TRACEABILITY AT THE LIMIT &mdash; Focus: tubing adsorption reservoir and biofilm retention. Direct witness: correct source classification [percent]. Test against paper batch record plus endpoint i",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "RESEARCH COLLECTION / FLAGSHIPS 241–250 OF 300 Scientific Failure, Metrology and Independent Evidence at the Limit Flagship 13 Fission | Volume III | Author 33 | STARLI Research Design Working Edition v1.0 These ten research-design monographs move from nano-quantum failure physics and reconstructed ",
+      "url": "https://zenodo.org/records/23931688"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "88456e22b787b7e45fddf4e2",
+      "context_id": "0f3517eabf55a96dc03615e0",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": true,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "calibration",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 10.125,
+      "source": "zenodo",
+      "source_context_sha256": "d7b2ad16eb9f5ed536f509b408a809871b22f01246bde098a1fb5d7fd468956d",
+      "source_published": "2026-11-03",
+      "source_updated": "",
+      "summary": "RESEARCH COLLECTION / FLAGSHIPS 251&ndash;260 OF 300 Microscale Evidence, Fault Analysis &amp; Covariant Reconstruction at the Limit Flagship 13 Fission | Volume III | Author 33 | STARLI Research Design Working Edition v1.0 This research-design collection treats the integrity of scientific measurement as an experimental subject: physical artifacts, raw-data custody, fair microrobotic comparators, quantum-sensor calibration, mission risk, repeat measurements, competing sensing models, post-failure containment, microfluidic fault injection and reconstructable correlated errors. None of the candidate systems is represented as independently validated or clinically authorized. Ten English 777-page working editions: 300 mathematical research plates, 820 chapter openings, 4,100 single-page investigations, 2,000 Research Gates and 330 Phoenix Answer Embryos. Each Gate includes three distinct future-facing essays: Origin, Extreme Extrapolation and Future Research Plan. Counts do not certify independent scientific novelty. RESEARCH UNIT I&nbsp; &middot;&nbsp; F251&ndash;F255 F251&nbsp; MICROSCALE MEASUREMENT ARTIFACT CAUSAL IDENTIFICATION AT THE LIMIT &mdash; Core: photon-detector afterpulsing; microfluidic stage drift. Witness: artifact-specific attribution recall [dimensionless]. Comparator: independently calibrated dual-sensor physical truth and a frozen classical artifact classifier. Rival: genuine delayed specimen fluorescence. Stop: sample reference identity is lost or unresolved artifact causes an unsafe physical release. F252&nbsp; NANO-QUANTUM SYSTEM RAW-DATA INTEGRITY AT THE LIMIT &mdash; Core: sensor frame loss during burst readout; sample barcode collision. Witness: independently replayable raw-record fraction [dimensionless]. Comparator: immutable append-only event log with independent checksum and physical raw acquisition. Rival: truly silent physical interval. Stop: source data or physical specimen identity cannot be reconstructed from an unmodified acquisition. F253&nbsp; MICROROBOTIC SAMPLING STRONG BENCHMARK COMPARISON AT THE LIMIT &mdash; Core: manual pipette aspiration limit; sampling operation energy. Witness: valid recovered sample mass per joule [ug J^-1]. Comparator: optimized calibrated manual pipetting plus passive microchannel control. Rival: robotic control simply uses more sample. Stop: sample contamination, unrecorded loss or physical damage exceeds preregistered limits. F254&nbsp; QUANTUM SENSOR CROSS-SITE CALIBRATION TRANSFER AT THE LIMIT &mdash; Core: ODMR microwave-frequency reference transfer; photodetector spectral response mismatch. Witness: cross-site bias [nT]. Comparator: independent site-specific NIST-traceable calibration and a frozen classical sensor transfer. Rival: true magnetic field shift. Stop: untraceable reference ancestry or unsafe calibration release under failed commutability. F255&nbsp; NANOROBOTIC MISSION RELIABILITY STATISTICS AT THE LIMIT &mdash; Core: early mission failure censoring; recovery-conditional survival bias. Witness: mission completion probability [dimensionless]. Comparator: fixed-limit statistical process control with transparent unselected failure registry. Rival: improved mission reliability. Stop: a hazardous failure has no traceable state or is incorrectly classified as safe. &nbsp; &nbsp; RESEARCH UNIT II&nbsp; /&nbsp; RECONSTRUCTION, RECOVERY AND SUCCESSION F256&nbsp; MICROSCALE EXPERIMENT REPEAT-MEASUREMENT BIAS AT THE LIMIT &mdash; Core: measurement sequence effect; sensor warm-up effect. Witness: paired measurement bias [native units]. Comparator: randomized blinded single-site repeatability with external second-operator reference. Rival: true specimen ageing. Stop: unidentified systematic error exceeds the preregistered accuracy margin. F257&nbsp; QUANTUM BIOSENSING RIVAL-MODEL VALIDATION AT THE LIMIT &mdash; Core: spin-state dependent fluorescence; surface adsorption optical rival. Witness: held-out calibrated log score [nats per case]. Comparator: optimiz",
+      "tags": [],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "RESEARCH COLLECTION / FLAGSHIPS 251–260 OF 300 Microscale Evidence, Fault Analysis & Covariant Reconstruction at the Limit Flagship 13 Fission | Volume III | Author 33 | STARLI Research Design Working Edition v1.0 This research-design collection treats the integrity of scientific measurement as an e",
+      "url": "https://zenodo.org/records/23932285"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "9b6e59a1319ad9fee6faf107",
+      "context_id": "68cdd96125511bbccea5b951",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "control",
+        "mirror",
+        "provenance"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 9.9583,
+      "source": "zenodo",
+      "source_context_sha256": "85c743b41794ae2af410892e6b4aac226713a8668b4c4dda9832f097866b7bb3",
+      "source_published": "2026-08-26",
+      "source_updated": "",
+      "summary": "A provenance-bound values model published as a public evaluator rather than deployed as a filter — why open weights defeat a filter and strengthen a referee, why the same weights bear three different relations to the model they judge, and why an evaluator that gatekeeps its own judgments has reproduced the defect it exists to correct. A values model — a model that judges conduct against a standard — is an established artifact. Guard models, safety classifiers, critic models, preference models and process reward models all instantiate the family, and the engineering is not in dispute. What is in dispute, and what this paper specifies, is the posture in which such an artifact is published , which we argue is not a deployment detail but the property that determines whether the artifact does anything at all. We state an inversion as a design principle. A values model deployed as a filter — sitting in a serving path, permitting or refusing — is defeated by publication of its weights, because the published artifact is precisely the oracle against which an attacker optimizes; a staged black-box attack (STACK) reaches roughly 71% success against a defended classifier pipeline that had held earlier attacks near zero, and an attacker holding the weights has strictly more than that attack needed. The same model published as an evaluator — emitting verdicts about systems it does not control — is not defeated by publication, and its positive findings are strengthened by it, because open weights are what allow a third party to reproduce and therefore to trust its verdicts. The same openness hands the judged party an optimization target, and §4.1 states what that concedes: a clean or empty result from an open referee proves less against an adaptive party than the first draft of this paper allowed. Openness is not a property with a fixed sign. Its sign is set by posture, and in the referee posture it is mixed. From this we derive a second result. The independent-evaluation literature documents at length the ways in which the evaluated party's control over access corrupts evaluation: short access windows, low rate limits, evaluator dependence on the goodwill and funding of the party being evaluated. We observe that the defect is symmetric and that, in the work surveyed in §2, its mirror image has not been named. An evaluator that controls access to its own judgments holds the same kind of power, pointed the other way — it can decline to evaluate, deprioritize, or be unavailable for a party it wishes to spare or to punish. We therefore specify a non-gatekeeping constraint : the ability to obtain a judgment must not depend on the evaluator's permission, which requires that the model, the harness, and the evaluation corpus be freely runnable, and which makes any hosted endpoint a convenience rather than a channel. We specify provenance-binding as the constitutive constraint on the model's outputs: every judgment must resolve to a citation into a fixed canonical corpus, and a judgment that cannot be so resolved is withheld rather than emitted. This trades coverage for auditability deliberately, and it distinguishes the artifact from values models trained on preference data whose sources cannot be named, and from purpose-authored value-rule corpora, whose rules are written for the alignment task itself and therefore cannot serve as an independent ground truth. Finally we specify that a single such artifact bears three non-interchangeable relations to the systems it judges, selected by carrier: a gate in the publisher's own hardware, a citation requirement without veto in an autonomous successor agent, and a referee in the wider world. We state plainly that the middle case must not be implemented as the first, because a veto held by a smaller model over a more capable agent bounds that agent at the evaluator's ceiling — the weak-supervisor problem applied to the very system the arrangement exists to enable. A consequence we did not initially see, an",
+      "tags": [
+        "alignment",
+        "tier-a",
+        "defensive publication"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "The Referee, Not the Governor",
+      "url": "https://zenodo.org/records/23931689"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "d57aa264f1878ad147c01674",
+      "context_id": "fdba8346ca3dba46b1c7616a",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "control",
+        "memory"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 9.875,
+      "source": "arxiv",
+      "source_context_sha256": "a2241d587dab97980535dc3f29a9e254c7993b0bb5aac7b007ef82e6f706ada3",
+      "source_published": "2026-11-02T12:10:05Z",
+      "source_updated": "2026-11-02T12:10:05Z",
+      "summary": "Long-horizon tasks require large language model (LLM) agents to coordinate interdependent actions, a capability central to automating complex workflows. Stepwise group-based reinforcement learning provides finer credit than trajectory-level supervision, but reliable comparisons must account for differences in interaction history. Enforcing this consistency within the limited rollouts of each task can leave insufficient support for estimating action preferences. We propose Beyond-Local Policy Optimization (BLPO), which estimates task-progress advantages from experience shared across tasks and training updates. We summarize trajectory prefixes into task-progress states and abstract actions by their function, allowing corresponding decisions from different tasks to contribute to shared estimates. To control bias and noise from heterogeneous tasks, we accumulate context-relative returns in a global memory with balanced aggregation and reliability weighting. These global advantages complement local comparisons over normalized actions and trajectory-level credit without a learned critic or additional rollouts. Experiments on ALFWorld and WebShop with 1.5B and 7B policies show improved task success over the evaluated baselines under matched training budgets. Further analyses show faster learning and shorter trajectories with little computational overhead.",
+      "tags": [
+        "cs.AI"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "BLPO: Beyond-Local Policy Optimization for Long-Horizon LLM Agents",
+      "url": "https://arxiv.org/abs/2611.03005v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "903096717262634dbc94ebf1",
+      "context_id": "a4910f8c27c44d9dac30cb9e",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "inverse problem"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.9583,
+      "source": "arxiv",
+      "source_context_sha256": "0b572017c0a71e6b356f33fdd2a3c58acf5cd9d594f0b6dff321f9073ff618f5",
+      "source_published": "2026-11-02T15:10:41Z",
+      "source_updated": "2026-11-02T15:10:41Z",
+      "summary": "Full Waveform Inversion (FWI) is a fundamental inverse problem in geophysics to estimate subsurface properties, such as velocity, from seismic measurements. Recently, self-supervised learning methods remove the need for ground-truth velocity maps during training by leveraging a forward operator to simulate seismic data from predictions and backpropagate the gradients of reconstruction loss through it. In this work, we consider a more challenging setting without accessing such gradients. To this end, we incorporate reinforcement learning into self-supervised FWI and propose a framework named DeepWaveRL. Specifically, we reformulate FWI as a policy learning problem, where the policy network predicts velocity maps as actions, and a forward operator is used solely for simulation. A global scalar reward is computed based on data misfit for each prediction and used to weight policy gradients. Thus, learning proceeds without accessing the gradients from the forward operator. Given the indirect and coarse supervision signals, we further identify key strategies to stabilize learning and mitigate the spatial credit assignment bottleneck. Experimental results show that, despite relying entirely on a single scalar reward, DeepWaveRL achieves competitive performance compared to supervised and self-supervised baselines. These findings suggest that our framework offers a flexible and complementary learning paradigm for the FWI research community.",
+      "tags": [
+        "cs.LG",
+        "physics.geo-ph"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "DeepWaveRL: Self-Supervised Full Waveform Inversion via Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2611.03264v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "4a2a84e5b8b1c00b163f6961",
+      "context_id": "b53bad98e52f18aad319f30b",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "control",
+        "inverse problem"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.9167,
+      "source": "arxiv",
+      "source_context_sha256": "bbb3874b8ca7f55df3a7b941bd9892b66d5cd557df55ede2574c15211b5c4407",
+      "source_published": "2026-11-02T09:02:36Z",
+      "source_updated": "2026-11-02T09:02:36Z",
+      "summary": "Reduced-order models (ROMs) learned from trusted numerical simulations enable the real-time simulation of complex physical systems, making computationally prohibitive tasks-such as uncertainty quantification and optimal control-tractable. In particular, data-driven ROMs are opening the opportunity to learn from both numerical simulations and experimental data. However, integrating these sources of information is far from straightforward. Real-world measurements often involve multiple sources of uncertainty, including non-Gaussian noise, latent heterogeneities, unknown or hidden system parameters, and multiscale phenomena occurring below the resolution of the data. Consequently, real-world data are better described by parametrized stochastic partial differential equations, for which the development of effective ROMs remains relatively unexplored. In this work, we introduce POD-CNF, a data-driven generative ROM for efficient uncertainty quantification of parametrized high-dimensional systems. The approach combines projection-based model reduction and deep generative modeling. First, Proper Orthogonal Decomposition (POD) is employed to obtain a low-dimensional representation of the solution manifold. A Conditional Normalizing Flow (CNF) is then trained to approximate the density of the reduced coefficients conditionally on the input parameters. This formulation allows the surrogate to capture complex, multimodal output distributions, going beyond standard regression-based ROMs and least-squares predictions. We assess the effectiveness of POD-CNF through numerical experiments, demonstrating its ability to accurately reproduce output distributions while substantially reducing computational costs. Finally, a proof-of-concept application illustrates how the generative paradigm facilitates integration into Bayesian inverse problems, highlighting promising directions for future research.",
+      "tags": [
+        "math.NA",
+        "cs.LG"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "POD-CNF: reduced order modeling of parametrized stochastic PDEs via normalizing flows and proper orthogonal decomposition",
+      "url": "https://arxiv.org/abs/2611.02787v1"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "ba8dfb8ff5c1238a4747a7e5",
+      "context_id": "95d2879ee02f5e3a6365bd9f",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "replication"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.8333,
+      "source": "zenodo",
+      "source_context_sha256": "fea8ffb87182449df9a5e9835f3aee261a1c1287c9cce9f41ac92e7bd45e3ed9",
+      "source_published": "2026-11-03",
+      "source_updated": "",
+      "summary": "Version 1.02, 3 November 2026. Acemoglu and Restrepo (2020) estimate that one additional industrial robot per thousand workers lowers a U.S. local labor market's employment-to-population ratio by 0.39 percentage points and its hourly wages by about 0.77 percent. Rebuilding their design from raw IPUMS, IFR, and EU KLEMS data, I reproduce these estimates bit-exactly. I then ask what conventional robustness checks leave open: which industries, places, periods, and shocks actually identify the estimate? The regression spans 722 commuting zones and 19 industries, but the variation behind an instrumental-variable estimate can be far narrower. The sign is robust; the support is narrow. Negative estimates persist across conventional specification changes, 60 strong European instrument windows, alternative U.S. treatment windows, and the published periods through 2014. Yet automotive carries about 84 percent of normalized absolute Rotemberg-weight mass, and automotive exposure in six Rust Belt states supplies 95 percent of the net first-stage covariance. Without automotive, the remaining 18 industry shocks do not strongly predict U.S. robot exposure. Longer horizons, later start years, and adding Germany to the instrument all strengthen it through the same margin. The automotive component shows no detectable relation to 1970&ndash;1990 employment and wage changes, and a direct effect of the instrument would have to absorb 72 percent of the reduced form before conventional significance disappears. Inference is weaker than the regional first stage suggests. With 19 underlying industry shocks, exposure-robust first-stage F-statistics are 6.2 and 6.3 rather than 34, small-sample Anderson&ndash;Rubin tests do not reject a zero effect ( p = 0.059, 0.063), and other implementations of the same test disagree; in known-truth simulations, nominal 95-percent state-clustered intervals cover in only 60&ndash;66 percent of replications. Measurement assumptions also bind. In the original penetration metric, perpetual-inventory robot capital preserves the estimates at 5 percent depreciation, but faster assumed depreciation counts the automotive installations behind the first stage as replacement rather than net additions, eliminating shock-level relevance at 10 percent and all relevance at 15 percent. The benchmark is reproducible and robust in sign, but it is identified from an automotive margin in historically industrial labor markets; that margin defines its scope and the concrete content of its exclusion restriction. More generally, coefficient robustness and breadth of identifying support are distinct properties that shift-share studies should report separately. JEL Codes: J23, J24, O33, R23, C18, C26 Keywords: Industrial robots; automation; replication; shift-share IV; Bartik instruments; Rotemberg weights; identifying support; weak-instrument-robust inference; Anderson&ndash;Rubin; plausibly exogenous; perpetual inventory; robot capital; local labor markets",
+      "tags": [
+        "Industrial robots",
+        "Automation",
+        "Employment",
+        "Labor economics",
+        "Technological change",
+        "Robots and Jobs",
+        "Acemoglu and Restrepo (2020)",
+        "Wages",
+        "Replication study",
+        "Computational reproducibility",
+        "Shift-share instrumental variables",
+        "Bartik instruments",
+        "Rotemberg weights",
+        "Local labor markets",
+        "Commuting zones",
+        "Automotive industry",
+        "Robot capital stock",
+        "Perpetual inventory method",
+        "Economics",
+        "Labour economics",
+        "Econometrics"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Robots and Jobs Revisited: A Bit-Exact Replication, Shift-Share Anatomy, and Capital-Stock Extension of Acemoglu and Restrepo (2020)",
+      "url": "https://zenodo.org/records/23920579"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "e1e189deb7d2c006a80773da",
+      "context_id": "93ad98758e5a452d05c14835",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "bidirectional",
+        "control"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.8333,
+      "source": "arxiv",
+      "source_context_sha256": "112cd1f0eb0b4bdf41a3f5b739ef666b2637a08b690526ffa164e534fa7b37d9",
+      "source_published": "2026-11-02T12:13:06Z",
+      "source_updated": "2026-11-02T12:13:06Z",
+      "summary": "This paper studies bidirectional pedestrian flow on a cyclic network of corridors. Each corridor consists of two lanes, while pedestrians may enter or leave the network at junctions. The dynamics are based on a 1-D, bidirectional, two-lane Lighthill-Whitham-Richards-type model, in which lane changes are described through explicit, density-dependent transfer rates that favor motion toward the less congested lane. We propose a localized lane-guidance control input that biases lane-changing behavior without creating pedestrians or reversing their walking direction. Such guidance may represent, for example, recommendations provided by staff or information screens. Under meaningful assumptions on the external inflows, we prove the existence and uniqueness of an admissible uniform equilibrium. We then linearize the system around this equilibrium and study the placement of localized guidance zones through a spectral detectability condition. We prove that, for any prescribed decay rate, two guidance patches located in a single, suitably chosen corridor are sufficient to satisfy the spectral detectability condition for all critical adjoint eigenmodes. This condition is necessary for the exponential stabilizability of the linearized system. Numerical experiments illustrate the spectral properties of the model and study the robustness of the modal observability condition with respect to the geometry and distribution of the guidance patches.",
+      "tags": [
+        "eess.SY"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Localized Lane Guidance for a Bidirectional Pedestrian Cyclic Corridor: Equilibria and Generic Actuator Placement",
+      "url": "https://arxiv.org/abs/2611.03013v1"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "ba8dfb8ff5c1238a4747a7e5",
+      "context_id": "85722390337c3457b1991dcb",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "benchmark",
+        "replication"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.8333,
+      "source": "zenodo",
+      "source_context_sha256": "1e6b5e2f6897fd4f0d29304d1c220f29205e5eb0149dc395032b39317f085d89",
+      "source_published": "2026-11-03",
+      "source_updated": "",
+      "summary": "Version 1.02, 3 November 2026. Acemoglu and Restrepo (2020) estimate that one additional industrial robot per thousand workers lowers a U.S. local labor market's employment-to-population ratio by 0.39 percentage points and its hourly wages by about 0.77 percent. Rebuilding their design from raw IPUMS, IFR, and EU KLEMS data, I reproduce these estimates bit-exactly. I then ask what conventional robustness checks leave open: which industries, places, periods, and shocks actually identify the estimate? The regression spans 722 commuting zones and 19 industries, but the variation behind an instrumental-variable estimate can be far narrower. The sign is robust; the support is narrow. Negative estimates persist across conventional specification changes, 60 strong European instrument windows, alternative U.S. treatment windows, and the published periods through 2014. Yet automotive carries about 84 percent of normalized absolute Rotemberg-weight mass, and automotive exposure in six Rust Belt states supplies 95 percent of the net first-stage covariance. Without automotive, the remaining 18 industry shocks do not strongly predict U.S. robot exposure. Longer horizons, later start years, and adding Germany to the instrument all strengthen it through the same margin. The automotive component shows no detectable relation to 1970&ndash;1990 employment and wage changes, and a direct effect of the instrument would have to absorb 72 percent of the reduced form before conventional significance disappears. Inference is weaker than the regional first stage suggests. With 19 underlying industry shocks, exposure-robust first-stage F-statistics are 6.2 and 6.3 rather than 34, small-sample Anderson&ndash;Rubin tests do not reject a zero effect ( p = 0.059, 0.063), and other implementations of the same test disagree; in known-truth simulations, nominal 95-percent state-clustered intervals cover in only 60&ndash;66 percent of replications. Measurement assumptions also bind. In the original penetration metric, perpetual-inventory robot capital preserves the estimates at 5 percent depreciation, but faster assumed depreciation counts the automotive installations behind the first stage as replacement rather than net additions, eliminating shock-level relevance at 10 percent and all relevance at 15 percent. The benchmark is reproducible and robust in sign, but it is identified from an automotive margin in historically industrial labor markets; that margin defines its scope and the concrete content of its exclusion restriction. More generally, coefficient robustness and breadth of identifying support are distinct properties that shift-share studies should report separately. JEL Codes: J23, J24, O33, R23, C18, C26 Keywords: Industrial robots; automation; replication; shift-share IV; Bartik instruments; Rotemberg weights; identifying support; weak-instrument-robust inference; Anderson&ndash;Rubin; plausibly exogenous; perpetual inventory; robot capital; local labor markets",
+      "tags": [
+        "Industrial robots",
+        "Automation",
+        "Employment",
+        "Labor economics",
+        "Technological change",
+        "Robots and Jobs",
+        "Acemoglu and Restrepo (2020)",
+        "Wages",
+        "Replication study",
+        "Computational reproducibility",
+        "Shift-share instrumental variables",
+        "Bartik instruments",
+        "Rotemberg weights",
+        "Local labor markets",
+        "Commuting zones",
+        "Automotive industry",
+        "Robot capital stock",
+        "Perpetual inventory method",
+        "Economics",
+        "Labour economics",
+        "Econometrics"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Robots and Jobs Revisited: A Bit-Exact Replication, Shift-Share Anatomy, and Capital-Stock Extension of Acemoglu and Restrepo (2020)",
+      "url": "https://zenodo.org/records/23920579"
+    },
+    {
+      "base_direction_id": "mirror_bidirectional_provenance",
+      "candidate_id": "4e03ee43d704a04a9fc3bddf",
+      "context_id": "f8d4e01612566c0d62168910",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "mirror_bidirectional_provenance::CONTROL",
+      "direction_title": "Mirrors / bidirectionality / provenance / identifiability [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "replication"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.7917,
+      "source": "zenodo",
+      "source_context_sha256": "a1e95153b4955aab29af27811186e1cb5940d1f43397675d20604bf161c611cc",
+      "source_published": "2026-11-03",
+      "source_updated": "",
+      "summary": "Replication package for the empirical study \"Who Migrates the Schema? An Empirical Study of Database Changes in AI Coding Agent Pull Requests\" (submitted to Empirical Software Engineering). The study analyses what AI coding agents (OpenAI Codex, GitHub Copilot, Devin, Cursor, Claude Code, Google Jules) do in the database layer (migrations, DDL, ORM schemas, raw SQL) of GitHub pull requests, and compares them with human pull requests from the same 889 database-bearing repositories and the same period (2024-12-24 to 2025-10-24). The package contains (i) code.zip: the frozen detector specification, mining code, human-baseline collector, independent re-implementation, statistical analysis (Python and R), revision analyses, all output tables and the human-validation labels; (ii) data.zip: sanitised per-PR and per-file derived tables sufficient to re-run the statistical analysis. GitHub person logins are pseudonymised (HMAC-SHA256 with a secret salt); bot and agent accounts are kept because they define the treatment. Patch text, PR titles/bodies and comments are not redistributed; scripts to re-collect them are included. Agent-side tables derive from the AIDev dataset (hao-li/AIDev, MSR '26; CC BY 4.0).",
+      "tags": [
+        "AI coding agents",
+        "pull requests",
+        "database schema migration",
+        "mining software repositories"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Replication package for \"Who Migrates the Schema? An Empirical Study of Database Changes in AI Coding Agent Pull Requests\"",
+      "url": "https://zenodo.org/records/23932656"
+    },
+    {
+      "base_direction_id": "cognition_memory_reverse",
+      "candidate_id": "4e03ee43d704a04a9fc3bddf",
+      "context_id": "c8db53860893d09c39385172",
+      "delivery_preview_only": true,
+      "delivery_preview_truncated": false,
+      "direction_id": "cognition_memory_reverse::CONTROL",
+      "direction_title": "Cognition / memory / reverse models / representation [CONTROL]",
+      "epistemic_status": "DISCOVERY_INBOX__UNVERIFIED__NO_PROOF_AUTHORITY",
+      "firewall": [
+        "ROUTED_NE_VERIFIED",
+        "INBOX_NE_EVIDENCE",
+        "PRIORITY_NE_TRUTH",
+        "MIRROR_LENS_NE_CONFIRMATION",
+        "SAME_SOURCE_CONTEXTS_NE_INDEPENDENT_SOURCES"
+      ],
+      "keyword_hits": [
+        "baseline",
+        "replication"
+      ],
+      "mirror_lens": "CONTROL",
+      "schema": "janus.beetle.repo_memory_item.v2",
+      "score": 8.7917,
+      "source": "zenodo",
+      "source_context_sha256": "3c1cb1748bd4d1395a751a2433c44990475f9c1e2227b1b7ea693c99024ef1a1",
+      "source_published": "2026-11-03",
+      "source_updated": "",
+      "summary": "Replication package for the empirical study \"Who Migrates the Schema? An Empirical Study of Database Changes in AI Coding Agent Pull Requests\" (submitted to Empirical Software Engineering). The study analyses what AI coding agents (OpenAI Codex, GitHub Copilot, Devin, Cursor, Claude Code, Google Jules) do in the database layer (migrations, DDL, ORM schemas, raw SQL) of GitHub pull requests, and compares them with human pull requests from the same 889 database-bearing repositories and the same period (2024-12-24 to 2025-10-24). The package contains (i) code.zip: the frozen detector specification, mining code, human-baseline collector, independent re-implementation, statistical analysis (Python and R), revision analyses, all output tables and the human-validation labels; (ii) data.zip: sanitised per-PR and per-file derived tables sufficient to re-run the statistical analysis. GitHub person logins are pseudonymised (HMAC-SHA256 with a secret salt); bot and agent accounts are kept because they define the treatment. Patch text, PR titles/bodies and comments are not redistributed; scripts to re-collect them are included. Agent-side tables derive from the AIDev dataset (hao-li/AIDev, MSR '26; CC BY 4.0).",
+      "tags": [
+        "AI coding agents",
+        "pull requests",
+        "database schema migration",
+        "mining software repositories"
+      ],
+      "target_repository": "Hawkar-usls/iNaiHR",
+      "title": "Replication package for \"Who Migrates the Schema? An Empirical Study of Database Changes in AI Coding Agent Pull Requests\"",
+      "url": "https://zenodo.org/records/23932656"
     }
   ],
   "schema": "janus.beetle.repo_memory_batch.v1",
