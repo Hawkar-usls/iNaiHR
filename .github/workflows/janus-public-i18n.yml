@@ -1,0 +1,83 @@
+name: JANUS Public Translation - GitHub Only
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/janus-public-i18n.yml"
+      - "public-i18n/**"
+      - "scripts/janus_public_translate.py"
+      - "tests/test_public_i18n_pipeline.py"
+      - "assets/janus-public-content.js"
+      - "tests/janus-public-content.test.cjs"
+  workflow_dispatch:
+    inputs:
+      target_language:
+        description: "Translate only allowlisted public catalog; output UNREVIEWED artifact"
+        required: true
+        type: choice
+        options:
+          - uk
+          - ru
+
+permissions:
+  contents: read
+
+concurrency:
+  group: janus-public-translation
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: Validate public-only source without models
+    runs-on: ubuntu-24.04
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Validate explicit public source and fail-closed policy
+        run: |
+          python scripts/janus_public_translate.py --validate-only
+          python -m unittest discover -s tests -p 'test_public_i18n_pipeline.py' -v
+      - name: Test browser-side reviewed-content restrictions
+        run: node --test tests/janus-public-content.test.cjs tests/janus-locale-ui.test.cjs
+
+  translate:
+    name: Manual CPU translation - unreviewed artifact only
+    if: github.event_name == 'workflow_dispatch'
+    needs: validate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      HF_HUB_DISABLE_TELEMETRY: "1"
+      HF_HUB_DISABLE_IMPLICIT_TOKEN: "1"
+      DO_NOT_TRACK: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install bounded CPU-only translator dependencies
+        run: |
+          python -m pip install --no-input --disable-pip-version-check 'torch==2.6.0' --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-input --disable-pip-version-check 'transformers==4.49.0' 'sentencepiece==0.2.0' 'sacremoses==0.1.1'
+      - name: Generate UNREVIEWED public-only translations
+        env:
+          TARGET_LANG: ${{ inputs.target_language }}
+        run: |
+          python scripts/janus_public_translate.py --lang "$TARGET_LANG" --output-dir workflow-output
+      - name: Upload candidate for separate human editorial review
+        uses: actions/upload-artifact@v4
+        with:
+          name: janus-public-i18n-unreviewed
+          path: workflow-output/*.json
+          retention-days: 7
+          if-no-files-found: error
