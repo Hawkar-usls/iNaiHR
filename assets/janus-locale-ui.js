@@ -20,7 +20,10 @@
       confirmClear: "CLEAR THIS BROWSER'S LOCAL DESK?",
       registryUnchanged: 'JANUS Meta Registry and HRaiN Registry Mode are untouched.',
       clearLocal: 'CLEAR LOCAL',
-      interfaceLanguage: 'Interface language'
+      interfaceLanguage: 'Interface language',
+      publicInfo: 'PUBLIC INFO',
+      publicTitle: 'PUBLIC PROJECT INFORMATION',
+      publicClose: 'CLOSE'
     }),
     uk: Object.freeze({
       clearDesk: 'ОЧИСТИТИ ЛОКАЛЬНИЙ ПРОСТІР',
@@ -33,7 +36,10 @@
       confirmClear: 'ОЧИСТИТИ ЛОКАЛЬНИЙ ПРОСТІР ЦЬОГО БРАУЗЕРА?',
       registryUnchanged: 'JANUS Meta Registry та режим реєстру HRaiN залишаться без змін.',
       clearLocal: 'ОЧИСТИТИ ЛОКАЛЬНО',
-      interfaceLanguage: 'Мова інтерфейсу'
+      interfaceLanguage: 'Мова інтерфейсу',
+      publicInfo: 'ПУБЛІЧНА ІНФОРМАЦІЯ',
+      publicTitle: 'ІНФОРМАЦІЯ ПРО ПРОЄКТ',
+      publicClose: 'ЗАКРИТИ'
     }),
     ru: Object.freeze({
       clearDesk: 'ОЧИСТИТЬ ЛОКАЛЬНОЕ ПРОСТРАНСТВО',
@@ -46,7 +52,10 @@
       confirmClear: 'ОЧИСТИТЬ ЛОКАЛЬНОЕ ПРОСТРАНСТВО ЭТОГО БРАУЗЕРА?',
       registryUnchanged: 'JANUS Meta Registry и режим реестра HRaiN останутся без изменений.',
       clearLocal: 'ОЧИСТИТЬ ЛОКАЛЬНО',
-      interfaceLanguage: 'Язык интерфейса'
+      interfaceLanguage: 'Язык интерфейса',
+      publicInfo: 'О ПРОЕКТЕ',
+      publicTitle: 'ПУБЛИЧНАЯ ИНФОРМАЦИЯ',
+      publicClose: 'ЗАКРЫТЬ'
     })
   });
 
@@ -145,6 +154,11 @@
     locale = value;
     try { window.localStorage.setItem(STORAGE_KEY, locale); } catch (_) { /* remain usable without storage */ }
     refresh();
+    try {
+      if (typeof window.dispatchEvent === 'function' && typeof CustomEvent === 'function') {
+        window.dispatchEvent(new CustomEvent('janus:locale-change', { detail: { locale } }));
+      }
+    } catch (_) { /* localization remains usable */ }
     return true;
   }
 
