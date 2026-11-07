@@ -35,6 +35,18 @@ The runner must access PyPI/PyTorch package mirrors and Hugging Face **to downlo
 
 The workflow uses a `torch` CPU build and `transformers` v4 with `trust_remote_code=False` and `weights_only=True`. Verify this dependency combination and the remote weight-loading security boundary in a real Actions run before declaring model execution PASS.
 
+## Actual GitHub-only canary · 2026-11-07
+
+The first scoped canary ran on GitHub-hosted Actions, without using a NAS or owner's PC:
+
+- [Actions run #42366723825](https://github.com/Hawkar-usls/iNaiHR/actions/runs/42366723825) / source commit `89b0bb4a85c48978000094df4d4d457129bdd1fe` — **SUCCESS**.
+- Python policy tests: **10 passed**; Node UI/viewer tests: **13 passed**; model inference: **4 EN→UK public entries generated**.
+- Source SHA-256: `e3e85a945c84b79807af5bb1f8eb8cc8155186abcde27f9881a191d1341d1ca8`.
+- [UNREVIEWED candidate artifact #13572370575](https://github.com/Hawkar-usls/iNaiHR/actions/runs/42366723825/artifacts/13572370575), ZIP SHA-256 `0946365407eab5b14f782e455b7ce21a534d6a60d6f4428659d3514111b7682d`, expires 2026-11-14.
+- JSON receipt: [public-i18n/evidence/github-canary-20261107.json](../public-i18n/evidence/github-canary-20261107.json).
+
+This proves a bounded **GitHub-hosted CPU translation execution**, not accuracy, human approval, or deployment. The temporary title-edit canary trigger was removed afterward; the heavy translation job is once again restricted to `workflow_dispatch`.
+
 ## Explicitly not claimed
 
 - No live machine translation of any page, user input or graph; no server accepting arbitrary translations.
