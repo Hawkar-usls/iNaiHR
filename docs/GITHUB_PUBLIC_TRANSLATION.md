@@ -45,7 +45,15 @@ The first scoped canary ran on GitHub-hosted Actions, without using a NAS or own
 - [UNREVIEWED candidate artifact #13572370575](https://github.com/Hawkar-usls/iNaiHR/actions/runs/42366723825/artifacts/13572370575), ZIP SHA-256 `0946365407eab5b14f782e455b7ce21a534d6a60d6f4428659d3514111b7682d`, expires 2026-11-14.
 - JSON receipt: [public-i18n/evidence/github-canary-20261107.json](../public-i18n/evidence/github-canary-20261107.json).
 
-This proves a bounded **GitHub-hosted CPU translation execution**, not accuracy, human approval, or deployment. The temporary title-edit canary trigger was removed afterward; the heavy translation job is once again restricted to `workflow_dispatch`.
+A second controlled GitHub Actions canary tested EN→RU:
+
+- [Actions run #42367056858](https://github.com/Hawkar-usls/iNaiHR/actions/runs/42367056858) / source commit `946639e6e434e1b2f8317251d8733fbef42ef1de` — **SUCCESS**.
+- Python policy tests: **10 passed**; Node UI/viewer tests: **13 passed**; model inference: **4 EN→RU public entries generated**.
+- Exact same source SHA-256: `e3e85a945c84b79807af5bb1f8eb8cc8155186abcde27f9881a191d1341d1ca8`.
+- [UNREVIEWED Russian artifact #13571853099](https://github.com/Hawkar-usls/iNaiHR/actions/runs/42367056858/artifacts/13571853099), ZIP SHA-256 `54265de5b330410620e9a85f056cdcd733ff186ff6879065baa1cacd14b1e9ed`, expires 2026-11-14.
+- JSON receipt: [public-i18n/evidence/github-canary-20261107-ru.json](../public-i18n/evidence/github-canary-20261107-ru.json).
+
+**Both model directions have now executed successfully on GitHub-hosted CPU runners**, without proving translation accuracy, human approval, or site deployment. Both temporary title-edit canary triggers were removed afterward; the heavy translation job is once again restricted to `workflow_dispatch`.
 
 ## Explicitly not claimed
 
