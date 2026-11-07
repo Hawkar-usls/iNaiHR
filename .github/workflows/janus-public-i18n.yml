@@ -2,6 +2,7 @@ name: JANUS Public Translation - GitHub Only
 
 on:
   pull_request:
+    types: [opened, reopened, synchronize, edited]
     paths:
       - ".github/workflows/janus-public-i18n.yml"
       - "public-i18n/**"
@@ -50,7 +51,7 @@ jobs:
 
   translate:
     name: Manual CPU translation - unreviewed artifact only
-    if: github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.action == 'edited' && contains(github.event.pull_request.title, '[RUN RU MT CANARY]') && github.event.pull_request.head.repo.full_name == github.repository)
     needs: validate
     runs-on: ubuntu-24.04
     timeout-minutes: 35
@@ -71,7 +72,7 @@ jobs:
           python -m pip install --no-input --disable-pip-version-check 'transformers==4.49.0' 'sentencepiece==0.2.0' 'sacremoses==0.1.1'
       - name: Generate UNREVIEWED public-only translations
         env:
-          TARGET_LANG: ${{ inputs.target_language }}
+          TARGET_LANG: ${{ github.event_name == 'workflow_dispatch' && inputs.target_language || 'ru' }}
         run: |
           python scripts/janus_public_translate.py --lang "$TARGET_LANG" --output-dir workflow-output
       - name: Upload candidate for separate human editorial review
