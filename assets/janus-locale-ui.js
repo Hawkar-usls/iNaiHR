@@ -19,7 +19,8 @@
       cancel: 'CANCEL',
       confirmClear: "CLEAR THIS BROWSER'S LOCAL DESK?",
       registryUnchanged: 'JANUS Meta Registry and HRaiN Registry Mode are untouched.',
-      clearLocal: 'CLEAR LOCAL'
+      clearLocal: 'CLEAR LOCAL',
+      interfaceLanguage: 'Interface language'
     }),
     uk: Object.freeze({
       clearDesk: 'ОЧИСТИТИ ЛОКАЛЬНИЙ ПРОСТІР',
@@ -31,7 +32,8 @@
       cancel: 'СКАСУВАТИ',
       confirmClear: 'ОЧИСТИТИ ЛОКАЛЬНИЙ ПРОСТІР ЦЬОГО БРАУЗЕРА?',
       registryUnchanged: 'JANUS Meta Registry та режим реєстру HRaiN залишаться без змін.',
-      clearLocal: 'ОЧИСТИТИ ЛОКАЛЬНО'
+      clearLocal: 'ОЧИСТИТИ ЛОКАЛЬНО',
+      interfaceLanguage: 'Мова інтерфейсу'
     }),
     ru: Object.freeze({
       clearDesk: 'ОЧИСТИТЬ ЛОКАЛЬНОЕ ПРОСТРАНСТВО',
@@ -43,7 +45,8 @@
       cancel: 'ОТМЕНА',
       confirmClear: 'ОЧИСТИТЬ ЛОКАЛЬНОЕ ПРОСТРАНСТВО ЭТОГО БРАУЗЕРА?',
       registryUnchanged: 'JANUS Meta Registry и режим реестра HRaiN останутся без изменений.',
-      clearLocal: 'ОЧИСТИТЬ ЛОКАЛЬНО'
+      clearLocal: 'ОЧИСТИТЬ ЛОКАЛЬНО',
+      interfaceLanguage: 'Язык интерфейса'
     })
   });
 
@@ -54,7 +57,20 @@
     return Object.prototype.hasOwnProperty.call(MESSAGES, value);
   }
 
+  // A validated, explicitly selected URL locale takes precedence over the saved preference.
+  // This affects presentation only; it does not expose or transmit page content.
+  function urlLocale() {
+    try {
+      if (typeof URLSearchParams !== 'function') return null;
+      const params = new URLSearchParams(window.location && window.location.search || '');
+      const requested = params.get('janus_lang');
+      return supported(requested) ? requested : null;
+    } catch (_) { return null; }
+  }
+
   function initialLocale() {
+    const requested = urlLocale();
+    if (requested) return requested;
     let stored = null;
     try { stored = window.localStorage.getItem(STORAGE_KEY); } catch (_) { /* storage may be unavailable */ }
     if (supported(stored)) return stored;
@@ -64,23 +80,64 @@
     return supported(base) ? base : 'en';
   }
 
+  // Explicit per-control opt-in: dynamic graph data and arbitrary document text
+  // never enter the localization pipeline.
+  const BINDINGS = Object.freeze([
+    { selector: '[data-janus-i18n]', attribute: 'data-janus-i18n', property: 'textContent' },
+    { selector: '[data-janus-i18n-placeholder]', attribute: 'data-janus-i18n-placeholder', property: 'placeholder' },
+    { selector: '[data-janus-i18n-aria-label]', attribute: 'data-janus-i18n-aria-label', property: 'aria-label' },
+    { selector: '[data-janus-i18n-title]', attribute: 'data-janus-i18n-title', property: 'title' }
+  ]);
+
+  function excluded(element) {
+    let parent = element;
+    while (parent && parent.nodeType === 1) {
+      if (typeof parent.hasAttribute === 'function' && parent.hasAttribute('data-janus-i18n-ignore')) return true;
+      parent = parent.parentElement;
+    }
+    return false;
+  }
+
+  function applyTranslation(element, binding) {
+    if (!element || excluded(element)) return;
+    const key = element.getAttribute(binding.attribute);
+    const messages = MESSAGES[locale];
+    if (!Object.prototype.hasOwnProperty.call(messages, key)) return;
+    const value = messages[key];
+    if (binding.property === 'aria-label' || binding.property === 'title') {
+      if (element.getAttribute(binding.property) !== value) element.setAttribute(binding.property, value);
+    } else if (element[binding.property] !== value) {
+      element[binding.property] = value;
+    }
+  }
+
   function refresh() {
     document.documentElement.lang = locale;
-    const messages = MESSAGES[locale];
-    document.querySelectorAll('[data-janus-i18n]').forEach(element => {
-      const key = element.getAttribute('data-janus-i18n');
-      if (Object.prototype.hasOwnProperty.call(messages, key) && element.textContent !== messages[key]) {
-        element.textContent = messages[key];
-      }
-    });
-    document.querySelectorAll('[data-janus-i18n-placeholder]').forEach(element => {
-      const key = element.getAttribute('data-janus-i18n-placeholder');
-      if (Object.prototype.hasOwnProperty.call(messages, key) && element.placeholder !== messages[key]) {
-        element.placeholder = messages[key];
-      }
-    });
+    for (const binding of BINDINGS) {
+      document.querySelectorAll(binding.selector).forEach(element => applyTranslation(element, binding));
+    }
     const select = document.getElementById('janus-language');
     if (select && select.value !== locale) select.value = locale;
+  }
+
+  function refreshNewSubtree(root) {
+    if (!root || root.nodeType !== 1 || excluded(root)) return;
+    for (const binding of BINDINGS) {
+      if (root.hasAttribute(binding.attribute)) applyTranslation(root, binding);
+      root.querySelectorAll(binding.selector).forEach(element => applyTranslation(element, binding));
+    }
+  }
+
+  function observeNewControls() {
+    if (typeof MutationObserver !== 'function' || !document.body) return;
+    const watcher = new MutationObserver(records => {
+      for (const record of records) {
+        for (const node of record.addedNodes) refreshNewSubtree(node);
+      }
+    });
+    // Only newly inserted opt-in controls are processed; no attribute, network,
+    // text-node, or whole-page rescanning is used.
+    watcher.observe(document.body, { childList: true, subtree: true });
   }
 
   function setLocale(value) {
@@ -96,6 +153,7 @@
     const select = document.getElementById('janus-language');
     if (select) select.addEventListener('change', () => setLocale(select.value));
     refresh();
+    observeNewControls();
   }
 
   window.JanusLocale = Object.freeze({
