@@ -101,7 +101,7 @@ Potential BCI use is a research direction, not an established capability. Any fu
 
 ## Review
 
-**New opt-in galaxy lens:** [Galaxy view](galaxy.html) · read-only, deterministic projection inspired by the [Milky Way interactive](https://now.intellectronica.net/hydrogen-milky-way/). Original graphs and source data are unchanged; [design, provenance and boundaries](docs/JANUS_GALAXY_LENS.md).
+**Galaxy Lens v2:** [real perspective 3D volume](galaxy.html) · WebGL2, source-grounded hierarchy/source-pointer edges, camera orbit and density/provenance modes. See [v2 provenance and safety](docs/JANUS_VOLUME_OBSERVATORY_V2.md). The original 2D hash-based spiral was replaced.
 
 
 - Live demo: https://hawkar-usls.github.io/iNaiHR/
