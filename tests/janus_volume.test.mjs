@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {hash32,repositoryOverview,registryVolume,semanticVolume,viewOf,safeSource} from "../assets/janus-volume-model.mjs";
+import {hash32,repositoryOverview,publicGalaxy,registryVolume,semanticVolume,viewOf,safeSource} from "../assets/janus-volume-model.mjs";
 import {projectPoint} from "../assets/janus-volume-render.mjs";
 const repo="Hawkar-usls/Hrain",commit="a".repeat(40);
 const record={
@@ -84,4 +84,15 @@ test("read-only contract and GPU volume are implemented",()=>{
  assert.doesNotMatch(ui,/\blocalStorage\b|\bindexedDB\b|\bXMLHttpRequest\b/);
  assert.doesNotMatch(ui,/method\s*:\s*["'](?:POST|PUT|PATCH|DELETE)/i);
  assert.doesNotMatch(ui,/fetch\([^\n]+method\s*:/i);
+});
+
+test("nebula preview contains one visible glyph per ACTUAL loaded source, no synthetic stars",()=>{
+ const regs=[{repository:repo,jsonCount:100,commit,complete:true}];
+ const scene=publicGalaxy(regs,[record,{...record,id:"json:two",path:"data/other.json"}]);
+ assert.equal(scene.sampleRecords,2);
+ assert.equal(scene.nodes.length,3); // one real repository + two real JSON
+ assert.equal(scene.edges.length,2);
+ assert.ok(scene.edges.every(e=>e.kind==="REPOSITORY_CONTAINS_RECORD"));
+ assert.ok(scene.nodes.filter(n=>n.type==="file").every(n=>n.meta.kind==="ACTUAL_LOADED_PUBLIC_JSON"));
+ assert.deepEqual(scene,publicGalaxy(regs,[record,{...record,id:"json:two",path:"data/other.json"}]));
 });
