@@ -74,6 +74,12 @@ h1{font-size:22px;margin:5px 0 8px}
 #desk-toolbar #desk-original{display:block;padding:10px;border:1px solid var(--accent);color:var(--accent);border-radius:8px;text-decoration:none;text-align:center;margin:9px 0;font-weight:700}
 #desk-toolbar #desk-original:hover{background:rgba(65,167,142,.18)}
 
+
+#mindmap-overlay{position:fixed;inset:0;z-index:200;background:#02070c;display:flex;flex-direction:column}
+#mindmap-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 15px;background:#071a25;border-bottom:1px solid var(--accent);color:var(--accent);font-weight:750;font-size:12px}
+#mindmap-close{border:1px solid var(--accent);color:var(--accent);background:#102936;padding:10px 12px}
+#mindmap-frame{border:0;flex:1;width:100%;height:100%;background:#030508}
+
 </style></head>
 <body data-role="semantic">
 <canvas id="volume" aria-label="3D карта реальных записей JANUS; перетаскивание вращает камеру" tabindex="0"></canvas>
@@ -111,7 +117,7 @@ h1{font-size:22px;margin:5px 0 8px}
 <button id="desk-import-button" type="button">↑ LOAD</button>
 <input id="desk-import" type="file" accept="application/json,.json" hidden>
 </div>
-<a id="desk-original" href="./" title="Исходный редактор с SYNTH и AI CHAT">🧠 SYNTH / AI CHAT · КЛАССИЧЕСКИЙ MINDMAP</a>
+<a id="desk-original" href="./" title="Открыть исходный полнофункциональный редактор поверх 3D">🧠 SYNTH / AI CHAT · КЛАССИЧЕСКИЙ MINDMAP</a>
 <div class="hint">Нажми на узел для выбора. «Связать» → второй узел создаёт или снимает связь. В режиме «Двигать» перетаскивай узлы. Изменения автоматически сохраняются в ТУ ЖЕ локальную карту браузера, что и старый mindmap.</div>
 <div class="hint">Рабочая карта и научный реестр разделены. Удаление здесь не удаляет JSON JANUS. Перед загрузкой другого JSON будет запрос подтверждения и резервная копия.</div>
 </section>
@@ -146,6 +152,13 @@ h1{font-size:22px;margin:5px 0 8px}
 <div id="node-type"></div><h2 id="node-title"></h2><pre id="node-meta"></pre>
 <button id="dive" class="action" hidden>Погрузиться в репозиторий</button>
 <a id="source-link" hidden target="_blank" rel="noopener noreferrer">Открыть источник в GitHub</a></aside>
+<section id="mindmap-overlay" hidden aria-label="Исходный полностью интерактивный mindmap">
+  <div id="mindmap-bar"><span>JANUS · КЛАССИЧЕСКИЙ УПРАВЛЯЮЩИЙ MINDMAP · SYNTH · AI CHAT</span>
+    <button id="mindmap-close" type="button">← ВЕРНУТЬСЯ В 3D</button>
+  </div>
+  <iframe id="mindmap-frame" src="about:blank" title="Оригинальный mindmap JANUS"></iframe>
+</section>
+
 <div id="footer"><span id="renderer-name">Проверка WebGL2…</span><div>Переключатели — способы наблюдать данные JANUS, не измерения водорода.</div></div>
 <script type="module" src="./assets/janus-volume-ui.mjs"></script>
 </body></html>
