@@ -1,6 +1,8 @@
 """End-to-end JANUS volumetric 3D browser smoke; serves pinned repo contents locally."""
 from __future__ import annotations
 import os
+from io import BytesIO
+from PIL import Image
 import threading
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from playwright.sync_api import sync_playwright
@@ -31,6 +33,15 @@ def run():
             initial=page.evaluate("window.__JANUS_VOLUME_DIAG()")
             assert initial["renderer"]=="WebGL2",initial
             assert initial["hasSourceMutation"] is False
+            if initial["role"]=="registry":
+                # At least one real source shard has populated the 3D nebula.
+                page.wait_for_function("window.__JANUS_VOLUME_DIAG().nodes > 14",timeout=30000)
+            png=page.screenshot(path="janus-volume-preview.png")
+            picture=Image.open(BytesIO(png)).convert("RGB")
+            # Ignore controls, legend, text, and sidebars: actual GPU data must light the canvas.
+            crop=picture.crop((370,170,985,740))
+            luminous=sum(1 for r,g,b in crop.getdata() if max(r,g,b)>75 and (r+g+b)>125)
+            assert luminous>30,("3D volume invisible",luminous,initial)
             if initial["role"]=="registry":
                 assert initial["graphKind"]=="registry_overview",initial
                 assert initial["nodes"]>=10,initial
