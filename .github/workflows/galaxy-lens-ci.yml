@@ -1,0 +1,24 @@
+name: Galaxy lens · read-only CI
+on:
+  pull_request:
+    paths:
+      - "galaxy.html"
+      - "assets/janus-galaxy.mjs"
+      - "tests/galaxy_lens.test.mjs"
+      - ".github/workflows/galaxy-lens-ci.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify JavaScript syntax
+        run: node --check assets/janus-galaxy.mjs
+      - name: Deterministic layout and non-mutation contracts
+        run: node --test tests/galaxy_lens.test.mjs
