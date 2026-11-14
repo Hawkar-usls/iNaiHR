@@ -63,7 +63,7 @@ def run():
             page.locator("#desk-ascend").click()
             with page.expect_download() as dl: page.locator("#desk-export").click()
             assert dl.value.suggested_filename.endswith("_3d.json")
-            assert page.locator("#desk-original").get_attribute("href").startswith("./?focus=")
+            assert page.locator("#desk-original").get_attribute("href")=="./"
             # Dragging edits the SAME original D3 x/y coordinates; camera remains available when move is off.
             original_x=page.evaluate("(key)=>JSON.parse(localStorage.getItem(key)).nodes.find(n=>n.id===1).x",key)
             page.locator("#desk-move").click()
