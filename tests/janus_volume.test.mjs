@@ -96,3 +96,13 @@ test("nebula preview contains one visible glyph per ACTUAL loaded source, no syn
  assert.ok(scene.nodes.filter(n=>n.type==="file").every(n=>n.meta.kind==="ACTUAL_LOADED_PUBLIC_JSON"));
  assert.deepEqual(scene,publicGalaxy(regs,[record,{...record,id:"json:two",path:"data/other.json"}]));
 });
+
+test("density lens emits points but suppresses spiderweb edges",()=>{
+ const volume=publicGalaxy([{repository:repo,jsonCount:2}],[record]);
+ const density=viewOf(volume,"density");
+ assert.equal(density.nodes.length,2);
+ assert.equal(density.edges.length,0);
+ const structure=viewOf(volume,"structure");
+ assert.equal(structure.edges.length,1);
+ assert.equal(structure.edges[0].kind,"REPOSITORY_CONTAINS_RECORD");
+});
