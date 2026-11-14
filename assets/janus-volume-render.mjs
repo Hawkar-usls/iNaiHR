@@ -16,7 +16,7 @@ void main(){
  float depth=uDist-zz;
  if(depth<=8.0){gl_Position=vec4(2.,2.,2.,1.);gl_PointSize=0.;return;}
  gl_Position=vec4(x*1.8/uAspect,y*1.8,depth-8.,depth);
- gl_PointSize=clamp(aSize*(uHalo>.5?3.1:1.)*520./depth*uPixelRatio,1.,128.);
+ gl_PointSize=clamp(aSize*(uHalo>1.5?14.0:(uHalo>.5?5.2:1.0))*520./depth*uPixelRatio,1.,128.);
  vColor=aColor;vAlpha=aAlpha;
 }`;
 const POINT_FS=`#version 300 es
@@ -28,7 +28,7 @@ void main(){
  vec2 d=gl_PointCoord-vec2(.5);
  if(length(d)>.5)discard;
  float gaussian=exp(-20.*dot(d,d)),core=exp(-160.*dot(d,d));
- float alpha=uHalo>.5?gaussian*.12*vAlpha:(gaussian*.25+core*.72)*vAlpha;
+ float alpha=uHalo>1.5?exp(-13.*dot(d,d))*.042*vAlpha:(uHalo>.5?gaussian*.085*vAlpha:(gaussian*.25+core*.72)*vAlpha);
  o=vec4(vColor,alpha);
 }`;
 const LINE_VS=`#version 300 es
@@ -146,7 +146,10 @@ export class VolumeRenderer{
     gl.uniform1f(gl.getUniformLocation(this.pointProgram,"uPixelRatio"),this.dpr);
     gl.bindVertexArray(this.pointVao);
     const halo=gl.getUniformLocation(this.pointProgram,"uHalo");
-    if(this.quality!=="low"&&this.pointCount<=15000){gl.uniform1f(halo,1);gl.drawArrays(gl.POINTS,0,this.pointCount);}
+    if(this.quality!=="low"&&this.pointCount<=15000){
+     if(this.mode==="density"){gl.uniform1f(halo,2);gl.drawArrays(gl.POINTS,0,this.pointCount);} // broad Gaussian kernel from real data nodes
+     gl.uniform1f(halo,1);gl.drawArrays(gl.POINTS,0,this.pointCount);
+    }
     gl.uniform1f(halo,0);gl.drawArrays(gl.POINTS,0,this.pointCount);
    }
    gl.bindVertexArray(null);return;
