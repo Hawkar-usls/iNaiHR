@@ -80,9 +80,6 @@ function loadData(){
  return {nodes:[{id:1,label:'Origin',x:width/2,y:height/2}],links:[]};
 }
 ({nodes,links}=loadData());
-// Selected-node deep-link from the local 3D workspace; does not activate synthesis.
-const mindmapFocus=new URLSearchParams(location.search).get('focus');
-if(mindmapFocus)selectedNode=nodes.find(n=>String(n.id)===mindmapFocus)||null;
 
 const svg=d3.select('#chart').append('svg').attr('width','100%').attr('height','100%');
 const g=svg.append('g');
