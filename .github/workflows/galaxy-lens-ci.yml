@@ -5,6 +5,7 @@ on:
       - "galaxy.html"
       - "assets/janus-galaxy.mjs"
       - "tests/galaxy_lens.test.mjs"
+      - "tests/galaxy_lens_browser.py"
       - ".github/workflows/galaxy-lens-ci.yml"
   workflow_dispatch:
 permissions:
@@ -22,3 +23,9 @@ jobs:
         run: node --check assets/janus-galaxy.mjs
       - name: Deterministic layout and non-mutation contracts
         run: node --test tests/galaxy_lens.test.mjs
+      - name: Install browser smoke dependencies
+        run: |
+          python -m pip install --quiet playwright
+          python -m playwright install chromium
+      - name: Real Chromium page smoke test
+        run: python tests/galaxy_lens_browser.py
