@@ -27,10 +27,50 @@ def run():
             page.on("pageerror",lambda e:errors.append(str(e)))
             page.goto(f"http://127.0.0.1:{server.server_port}/galaxy.html",wait_until="domcontentloaded")
             page.wait_for_function(
-                "window.__JANUS_VOLUME_DIAG && window.__JANUS_VOLUME_DIAG().nodes > 0",
+                "window.__JANUS_VOLUME_DIAG && window.__JANUS_VOLUME_DIAG().graphKind === 'local_workspace'",
                 timeout=30000
             )
+            local=page.evaluate("window.__JANUS_VOLUME_DIAG()")
+            assert local["renderer"]=="WebGL2",local
+            assert local["localWorkspace"] is True,local
+            assert page.locator("#desk-toolbar").is_visible()
+            role=local["role"]
+            key="hrain_v10_4_restore" if role=="registry" else "inaihr_v2"
+            # The editable 3D graph writes the EXACT same old mindmap key, never a new isolated copy.
+            page.locator("#desk-add").click()
+            page.locator("#desk-name").fill("3D edited JANUS node")
+            page.locator("#desk-rename").click()
+            desk_saved=page.evaluate("(key)=>JSON.parse(localStorage.getItem(key))",key)
+            assert len(desk_saved["nodes"])==2,desk_saved
+            assert any(n["label"]=="3D edited JANUS node" for n in desk_saved["nodes"])
+            assert page.evaluate("(key)=>localStorage.getItem(key+'_3d_backup')!==null",key)
+            # Link button, then click an existing 3D node, exactly as in classic mindmap.
+            page.locator("#desk-link").click()
+            root=page.evaluate("""async (key)=>{
+              const m=await import("./assets/janus-volume-workspace.mjs");
+              const p=await import("./assets/janus-volume-render.mjs");
+              const d=JSON.parse(localStorage.getItem(key));
+              const n=m.deskGraph(d,document.body.dataset.role).nodes.find(n=>n.id==="desk:1");
+              const c=window.__JANUS_VOLUME_DIAG().camera;
+              return p.projectPoint(n.p,c,1280,850);
+            }""",key)
+            assert root and root["x"]>355,root
+            page.mouse.click(root["x"],root["y"])
+            linked=page.evaluate("(key)=>JSON.parse(localStorage.getItem(key)).links.length",key)
+            assert linked>=1,linked
+            page.locator("#desk-dive").click()
+            assert page.locator("#desk-ascend").is_enabled()
+            page.locator("#desk-ascend").click()
+            with page.expect_download() as dl: page.locator("#desk-export").click()
+            assert dl.value.suggested_filename.endswith("_3d.json")
+            assert page.locator("#desk-original").get_attribute("href")=="./"
+            # No loss of original editing data upon switching to atlas and back.
+            before=page.evaluate("(key)=>localStorage.getItem(key)",key)
+            page.locator("#desk-toggle").click()
+            page.wait_for_function("window.__JANUS_VOLUME_DIAG().graphKind !== 'local_workspace'")
             initial=page.evaluate("window.__JANUS_VOLUME_DIAG()")
+            assert not page.locator("#desk-toolbar").is_visible()
+            assert page.evaluate("(key)=>localStorage.getItem(key)",key)==before
             assert initial["renderer"]=="WebGL2",initial
             assert initial["hasSourceMutation"] is False
             if initial["role"]=="registry":
@@ -92,7 +132,7 @@ def run():
             page.locator("#tour").click()
             assert "Остановить" in page.locator("#tour").inner_text()
             page.locator("#tour").click()
-            # Read-only, no storage interaction and no uncaught script exceptions.
+            # Registry untouched; only the explicitly editable local desk may use localStorage.
             assert not errors,errors
             print("JANUS_3D_CHROMIUM_PASS",initial["role"],initial["renderer"])
             browser.close()
