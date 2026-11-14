@@ -101,6 +101,9 @@ Potential BCI use is a research direction, not an established capability. Any fu
 
 ## Review
 
+**New opt-in galaxy lens:** [Galaxy view](galaxy.html) · read-only, deterministic projection inspired by the [Milky Way interactive](https://now.intellectronica.net/hydrogen-milky-way/). Original graphs and source data are unchanged; [design, provenance and boundaries](docs/JANUS_GALAXY_LENS.md).
+
+
 - Live demo: https://hawkar-usls.github.io/iNaiHR/
 - DemiHead right-hemisphere sidecar: https://hawkar-usls.github.io/iNaiHR/demihead.html
 - Machine-readable project status: [`PROJECT_STATUS.json`](PROJECT_STATUS.json)
