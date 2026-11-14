@@ -160,6 +160,32 @@ export function createDeskController(role,{renderer,onGraph,onActivate,onDeactiv
     }
     return true;
   }
+
+  function reloadFromClassic(){
+    if(!active)return;
+    const latest=readDesk(storage,role,window.innerWidth,window.innerHeight);
+    desk=latest.desk;selectedId=null;linkFrom=null;focusId=null;
+    $("desk-name").value="";onHideDetails();render();
+    setStatus("Синхронизировано с оригинальным D3 mindmap · "+desk.nodes.length+
+      " узлов / "+desk.links.length+" связей · тот же "+primary);
+  }
+  function openClassic(event){
+    event.preventDefault();
+    if(!active)return;
+    $("mindmap-overlay").hidden=false;
+    $("mindmap-frame").setAttribute("src","./");
+  }
+  function closeClassic(){
+    $("mindmap-overlay").hidden=true;
+    $("mindmap-frame").setAttribute("src","about:blank");
+    reloadFromClassic();
+  }
+  $("desk-original").addEventListener("click",openClassic);
+  $("mindmap-close").addEventListener("click",closeClassic);
+  window.addEventListener("storage",e=>{
+    if(e.key===primary&&active&&$("mindmap-overlay").hidden)reloadFromClassic();
+  });
+
   const canvas=renderer.canvas;
   canvas.addEventListener("pointerdown",e=>{if(startMove(e)){e.preventDefault();e.stopImmediatePropagation();}},true);
   canvas.addEventListener("pointermove",e=>{if(movingPointer(e)){e.preventDefault();e.stopImmediatePropagation();}},true);
