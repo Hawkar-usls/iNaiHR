@@ -198,6 +198,15 @@ export function publicGalaxy(repositories=[],records=[]) {
 }
 
 export function viewOf(graph,mode="all",query="",cut=1) {
+  if(graph.kind==="local_workspace"){
+    const q=String(query||"").trim().toLocaleLowerCase();
+    const slice=Math.max(0,Math.min(1,Number(cut)||0));
+    const filtered=graph.nodes.filter(n=>(!q||[n.label,n.id].some(s=>String(s).toLocaleLowerCase().includes(q))) &&
+      (slice>=1||n.p[2]<=-30+slice*1200));
+    const ids=new Set(filtered.map(n=>n.id));
+    return {nodes:filtered,edges:graph.edges.filter(e=>ids.has(e.from)&&ids.has(e.to)),
+      displayed:filtered.length,total:graph.nodes.length};
+  }
   const q=String(query||"").trim().toLocaleLowerCase(),limit=Math.max(0,Math.min(1,Number(cut)||0));
   const all=graph.nodes||[];
   const filtered=all.filter(n=>{

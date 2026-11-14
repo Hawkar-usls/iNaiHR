@@ -1,5 +1,6 @@
 import {repositoryOverview,publicGalaxy,registryVolume,semanticVolume,viewOf} from "./janus-volume-model.mjs";
 import {VolumeRenderer} from "./janus-volume-render.mjs";
+import {createDeskController} from "./janus-volume-workspace-ui.mjs";
 /* JANUS Volumetric Observatory v2 · read-only browser UI. Does not send/modify source JSON. */
 const $=(id)=>document.getElementById(id);
 const role=document.body.dataset.role==="semantic"?"semantic":"registry";
@@ -21,7 +22,7 @@ async function json(url){
 function updateLabels(){
   const box=$("labels");box.replaceChildren();
   const nodes=renderer.scene.nodes;
-  const important=nodes.filter(n=>n.type==="repository"||n.type==="pivot"||n.type==="directory")
+  const important=nodes.filter(n=>n.type==="repository"||n.type==="pivot"||n.type==="directory"||n.type==="workspace")
     .sort((a,b)=>b.size-a.size).slice(0,15);
   if(renderer.selectedId){
     const selected=nodes.find(n=>n.id===renderer.selectedId);
@@ -43,6 +44,11 @@ function refreshCam(){
 }
 function stats(){
   const v=renderer.scene;
+  if(state.graph.kind==="local_workspace"){
+    $("scope").textContent="УПРАВЛЕНИЕ · та же локальная карта, что в классическом D3 mindmap · "+(role==="semantic"?"inaihr_v2":"hrain_v10_4_restore");
+    $("counter").textContent="РЕДАКТОР 3D · "+state.graph.totalLocalNodes+" узлов · "+state.graph.edges.length+" локальных связей";
+    return;
+  }
   const prefix=state.graph.kind==="registry_overview"?"Репозитории":
     state.graph.kind==="semantic"?"SYNTH / исходные записи":"JSON / папки / ссылки";
   $("counter").textContent=prefix+": "+countText(v.nodes.length)+" узлов · "+countText(v.edges.length)+" реальных/структурных рёбер";
@@ -69,6 +75,7 @@ function refresh(reset=false){
 }
 function showDetail(n){
   if(!n)return;
+  if(state.graph.kind==="local_workspace"&&desk)desk.select(n.meta.id);
   renderer.select(n.id);
   $("detail").hidden=false;
   $("node-type").textContent=n.type+(n.derived?" · derived folder grouping":" · actual index record");
@@ -144,7 +151,7 @@ async function loadGalaxyPreview(){
     if(result.status!=="fulfilled"||result.value.readOnly!==true||!Array.isArray(result.value.records))continue;
     for(const record of result.value.records)if(record?.id)state.overviewSamples.set(record.id,record);
   }
-  if(state.repo===null){state.graph=publicGalaxy(state.manifest.repositories,[...state.overviewSamples.values()]);refresh();}
+  if(state.repo===null && !desk.active){state.graph=publicGalaxy(state.manifest.repositories,[...state.overviewSamples.values()]);refresh();}
 }
 
 async function initialize(){
@@ -165,6 +172,28 @@ async function initialize(){
     refresh(true);
   }
 }
+let deskSavedBand="density";
+const desk=createDeskController(role,{
+  renderer,
+  onGraph:g=>{state.graph=g;refresh();},
+  onActivate:()=>{
+    deskSavedBand=$("band").value;
+    $("band").value="structure";$("band").disabled=true;
+    $("back").hidden=true;$("load-more").hidden=true;$("load-refs").hidden=true;
+    $("search").value="";$("slice").value="100";$("slice-value").textContent="100%";
+    renderer.reset(640);closeDetail();
+  },
+  onDeactivate:()=>{
+    $("band").disabled=false;$("band").value=deskSavedBand;
+    $("search").value="";$("slice").value="100";$("slice-value").textContent="100%";
+    if(role==="registry"){overview();}
+    else{state.graph=semanticVolume(state.source?.candidates||[],state.source?.registry||{});refresh(true);}
+  },
+  onStatus:message=>status(message),
+  onHideDetails:closeDetail,
+  onShowDetails:showDetail
+});
+
 const c=$("volume");
 const pointers=new Map();let drag=null;
 c.addEventListener("contextmenu",e=>e.preventDefault());
@@ -199,7 +228,7 @@ function pointerUp(e){
   pointers.delete(e.pointerId);
   if(drag&&!drag.moved&&pointers.size===0&&e.button!==2){
     const rect=c.getBoundingClientRect();const n=renderer.nearest(e.clientX-rect.left,e.clientY-rect.top);
-    if(n)showDetail(n);else closeDetail();
+    if(n)showDetail(n);else {if(desk.active)desk.select(null);closeDetail();}
   }
   if(pointers.size===0)drag=null;
 }
@@ -230,13 +259,15 @@ window.addEventListener("keydown",e=>{
   if(e.target.matches("input,select,button"))return;
   if(e.key==="Escape"){if(!$("detail").hidden)closeDetail();else if(role==="registry"&&state.repo)overview();}
   if(e.key.toLowerCase()==="r"){renderer.reset();refreshCam();}
+  if(desk.active && (e.key==="Delete"||e.key==="Backspace")){e.preventDefault();desk.remove();}
+  if(desk.active && e.key.toLowerCase()==="n"){e.preventDefault();desk.add();}
   if(e.code==="Space"){e.preventDefault();$("tour").click();}
 });
 window.__JANUS_VOLUME_DIAG=()=>({role,renderer:renderer.type,graphKind:state.graph.kind,
   recordCount:state.graph.actualRecords,nodes:renderer.scene.nodes.length,edges:renderer.scene.edges.length,
   loadedShards:state.nextIndex,totalShards:state.shards.length,
   references:state.graph.explicitReferences||state.graph.provenanceEdges||0,
-  camera:{...renderer.camera},hasSourceMutation:false});
+  camera:{...renderer.camera},hasSourceMutation:false,localWorkspace:desk.active,localNodes:desk.workspace?.nodes.length||0});
 let last=0;
 function animate(ts){
   if(state.orbit&&!document.hidden&&ts-last>40){
@@ -245,4 +276,4 @@ function animate(ts){
   requestAnimationFrame(animate);
 }
 requestAnimationFrame(animate);
-initialize().catch(e=>{status("Ошибка чтения данных: "+e.message,true);$("scope").textContent="Источник недоступен; никаких искусственных узлов не создано.";});
+initialize().then(()=>desk.activate()).catch(e=>{status("Ошибка чтения данных: "+e.message,true);$("scope").textContent="Источник недоступен; никаких искусственных узлов не создано.";});
