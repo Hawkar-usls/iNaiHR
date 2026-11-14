@@ -31,12 +31,13 @@ export function matchesBand(item, band, role = "registry") {
   if (band === "signal") return Number(item.sizeBytes || 0) >= 16384;
   return false;
 }
+if (typeof document !== "undefined") {
 const $ = (id) => document.getElementById(id);
 const html = (id, value) => { $(id).textContent = String(value); };
 const safeGithub = (url) => typeof url === "string" && /^https:\/\/github\.com\/Hawkar-usls\/[A-Za-z0-9_.-]+\/blob\/[A-Za-z0-9._\/%-]+$/.test(url);
 const INDEX_ROOT = "https://hawkar-usls.github.io/Hrain/";
 const formatCount = (n) => Number(n || 0).toLocaleString("ru-RU");
-const role = document?.body?.dataset.role === "semantic" ? "semantic" : "registry";
+const role = document.body.dataset.role === "semantic" ? "semantic" : "registry";
 const state = {
   manifest:null, synth:null, repo:null, shardIndex:0, shards:[], items:[], points:[],
   heading:"", detail:null, tilt:.85, zoom:1, panX:0, panY:0, spin:0,
@@ -79,10 +80,12 @@ function setItems(items, label, overview = false) {
 }
 function applyBand() {
   const band = $("band").value;
+  const query = $("search").value.trim().toLocaleLowerCase();
   let data = state.items;
   if (!state.overview) data = data.filter((item) => matchesBand(item, band, role));
+  if (query) data = data.filter((item) => JSON.stringify([item.id,item.path,item.repository,item.label]).toLocaleLowerCase().includes(query));
   state.points = spiralLayout(data, role, state.overview);
-  badge("visible", formatCount(data.length) + " показано");
+  badge("visible", formatCount(data.length) + (query ? " найдено в текущем сегменте" : " показано"));
   $("detail").hidden = true;
   draw();
 }
@@ -216,13 +219,7 @@ async function start() {
   }
 }
 $("band").addEventListener("change",applyBand);
-$("search").addEventListener("input",()=>{
-  const query=$("search").value.trim().toLocaleLowerCase();
-  applyBand();
-  if(query)state.points=state.points.filter(p=>JSON.stringify([p.id,p.item.path,p.item.repository,p.item.label]).toLocaleLowerCase().includes(query));
-  badge("visible",formatCount(state.points.length)+" найдено в текущем сегменте");
-  draw();
-});
+$("search").addEventListener("input",applyBand);
 $("back").addEventListener("click",()=>{if(state.manifest){$("search").value="";viewOverview();}});
 $("prev").addEventListener("click",()=>loadShard(state.shardIndex-1).catch(e=>message(e.message)));
 $("next").addEventListener("click",()=>loadShard(state.shardIndex+1).catch(e=>message(e.message)));
@@ -256,3 +253,5 @@ function animate(now){
 }
 requestAnimationFrame(animate);
 start().catch(e=>{message("Не удалось загрузить данные: "+e.message);$("scope").textContent="Ошибка данных — граф не синтезирован";});
+
+} // End browser-only runtime; pure layout/filter functions can be tested in Node.
