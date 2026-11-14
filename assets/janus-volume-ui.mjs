@@ -1,11 +1,11 @@
-import {repositoryOverview,registryVolume,semanticVolume,viewOf} from "./janus-volume-model.mjs";
+import {repositoryOverview,publicGalaxy,registryVolume,semanticVolume,viewOf} from "./janus-volume-model.mjs";
 import {VolumeRenderer} from "./janus-volume-render.mjs";
 /* JANUS Volumetric Observatory v2 · read-only browser UI. Does not send/modify source JSON. */
 const $=(id)=>document.getElementById(id);
 const role=document.body.dataset.role==="semantic"?"semantic":"registry";
 const renderer=new VolumeRenderer($("volume"));
 const state={manifest:null,relationsManifest:null,repo:null,shards:[],nextIndex:0,records:new Map(),relations:[],
-  source:null,graph:{nodes:[],edges:[],actualRecords:0},loading:false,orbit:false,lastLabelAt:0,showLabels:true};
+  source:null,overviewSamples:new Map(),graph:{nodes:[],edges:[],actualRecords:0},loading:false,orbit:false,lastLabelAt:0,showLabels:true};
 const reduced=window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 $("renderer-name").textContent=renderer.type+(renderer.initError?" · "+renderer.initError:"");
 function status(value,error=false){
@@ -48,7 +48,7 @@ function stats(){
   $("counter").textContent=prefix+": "+countText(v.nodes.length)+" узлов · "+countText(v.edges.length)+" реальных/структурных рёбер";
   if(state.graph.kind==="registry_overview"){
     $("scope").textContent="JANUS · "+countText(state.manifest.jsonCount)+" записей в опубликованном индексе · "+state.manifest.repositoryCount+" репозиториев";
-    status("Индекс: "+state.manifest.generatedAt+" · показаны только 14 реальных агрегатов, без выдуманных звёзд.");
+    status("Индекс: "+state.manifest.generatedAt+" · "+countText(state.graph.sampleRecords||0)+" настоящих JSON в загруженном пространственном облаке + репозитории. Вся база не загружена.");
   } else if(state.graph.kind==="registry"){
     const total=state.manifest.repositories.find(x=>x.repository===state.repo)?.jsonCount;
     $("scope").textContent=state.repo+" · "+countText(state.records.size)+" / "+countText(total)+" загруженных JSON";
@@ -86,7 +86,7 @@ function showDetail(n){
 function closeDetail(){renderer.select(null);$("detail").hidden=true;updateLabels();}
 function overview(){
   state.repo=null;state.shards=[];state.nextIndex=0;state.records.clear();state.relations=[];
-  state.graph=repositoryOverview(state.manifest.repositories);
+  state.graph=publicGalaxy(state.manifest.repositories,[...state.overviewSamples.values()]);
   $("back").hidden=true;$("load-more").hidden=true;$("load-refs").hidden=true;
   $("search").value="";closeDetail();refresh(true);
 }
@@ -136,6 +136,17 @@ async function loadRelations(){
       " видимых рёбер · индекс может быть частичным (held files: "+state.relationsManifest.heldFiles+").");
   }finally{state.loading=false;$("load-refs").disabled=false;}
 }
+async function loadGalaxyPreview(){
+  // One existing shard per published repository. Every dot is an actual, pinned metadata record.
+  const first=state.manifest.repositories.map(r=>state.manifest.shards.find(s=>s.repository===r.repository)).filter(Boolean);
+  const results=await Promise.allSettled(first.map(s=>json("./"+s.path)));
+  for(const result of results){
+    if(result.status!=="fulfilled"||result.value.readOnly!==true||!Array.isArray(result.value.records))continue;
+    for(const record of result.value.records)if(record?.id)state.overviewSamples.set(record.id,record);
+  }
+  if(state.repo===null){state.graph=publicGalaxy(state.manifest.repositories,[...state.overviewSamples.values()]);refresh();}
+}
+
 async function initialize(){
   if(role==="registry"){
     $("band").querySelector('[value="hypotheses"]').remove();
@@ -144,6 +155,7 @@ async function initialize(){
     if(manifest.schema!=="janus.hrain.github_json_constellation_manifest.v1"||manifest.authority?.readOnly!==true||
         !Array.isArray(manifest.shards)||!Array.isArray(manifest.repositories))throw Error("Unrecognized registry manifest");
     state.manifest=manifest;overview();
+    loadGalaxyPreview().catch(e=>status("Превью источников недоступно: "+e.message,true));
   }else{
     $("back").hidden=true;$("load-more").hidden=true;$("load-refs").hidden=true;
     const data=await json("./janus-synth/state/JANUS_SYNTH_LATEST.json");
