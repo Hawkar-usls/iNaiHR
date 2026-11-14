@@ -60,6 +60,20 @@ h1{font-size:22px;margin:5px 0 8px}
 #legend{top:auto;bottom:10px;right:10px;font-size:9px;padding:8px;max-width:155px}
 #footer{display:none}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+[hidden]{display:none!important}
+#desk-toggle{width:100%;padding:12px;margin:8px 0 10px;background:linear-gradient(100deg,rgba(35,138,122,.28),rgba(49,74,136,.2));border:1px solid var(--accent);color:var(--accent);letter-spacing:.08em;font-weight:850}
+#desk-toolbar{border:1px solid rgba(99,216,191,.35);border-radius:11px;background:rgba(6,37,35,.55);padding:12px 10px;margin:12px 0}
+#desk-toolbar .eyebrow{margin-bottom:9px}
+#desk-toolbar input[type="text"]{display:block;width:100%;margin:6px 0 10px;background:#0a2230;color:#efffff;border:1px solid #375e69;padding:9px;border-radius:7px}
+#desk-toolbar .controls button{flex:1 1 85px;min-width:80px}
+#desk-toolbar button{min-width:0}
+#desk-toolbar button.active{border-color:#ffc968;color:#ffcf81;background:rgba(91,62,17,.32)}
+#desk-toolbar .hint{font-size:11px;color:#9fe1d5;margin:8px 0;line-height:1.5}
+#desk-breadcrumb{font-size:11px;color:#c3e7d4;word-break:break-all}
+#desk-toolbar #desk-original{display:block;padding:10px;border:1px solid var(--accent);color:var(--accent);border-radius:8px;text-decoration:none;text-align:center;margin:9px 0;font-weight:700}
+#desk-toolbar #desk-original:hover{background:rgba(65,167,142,.18)}
+
 </style></head>
 <body data-role="semantic">
 <canvas id="volume" aria-label="3D карта реальных записей JANUS; перетаскивание вращает камеру" tabindex="0"></canvas>
@@ -73,6 +87,34 @@ h1{font-size:22px;margin:5px 0 8px}
 <h1>iNaiHR <span>3D</span></h1>
 <div id="scope">Чтение исходного реестра…</div>
 <div id="counter" aria-live="polite">Загрузка фактов</div>
+<button id="desk-toggle" type="button">✎ ОТКРЫТЬ 3D-МИНДМАП · УПРАВЛЕНИЕ</button>
+<section id="desk-toolbar" hidden aria-label="Локальный mindmap редактор в 3D">
+<div class="eyebrow">EDITABLE LOCAL WORKSPACE · NEVER REGISTRY</div>
+<div id="desk-breadcrumb">Локальная рабочая карта</div>
+<label for="desk-name">Имя / редактирование выбранного узла</label>
+<input id="desk-name" type="text" maxlength="220" autocomplete="off" placeholder="Название узла">
+<div class="controls">
+<button id="desk-add" class="action" type="button">＋ Узел</button>
+<button id="desk-rename" type="button">✎ Имя</button>
+<button id="desk-link" type="button">↔ Связать</button>
+<button id="desk-delete" class="warning" type="button">× Удалить</button>
+</div>
+<div class="controls">
+<button id="desk-dive" type="button">↓ DIVE</button>
+<button id="desk-ascend" type="button">↑ ASCEND</button>
+<button id="desk-move" type="button">✥ Двигать</button>
+<button id="desk-grid" type="button"># GRID</button>
+</div>
+<div class="controls">
+<button id="desk-save" type="button">СОХРАНИТЬ</button>
+<button id="desk-export" type="button">↓ JSON</button>
+<button id="desk-import-button" type="button">↑ LOAD</button>
+<input id="desk-import" type="file" accept="application/json,.json" hidden>
+</div>
+<a id="desk-original" href="./" title="Исходный редактор с SYNTH и AI CHAT">🧠 SYNTH / AI CHAT · КЛАССИЧЕСКИЙ MINDMAP</a>
+<div class="hint">Нажми на узел для выбора. «Связать» → второй узел создаёт или снимает связь. В режиме «Двигать» перетаскивай узлы. Изменения автоматически сохраняются в ТУ ЖЕ локальную карту браузера, что и старый mindmap.</div>
+<div class="hint">Рабочая карта и научный реестр разделены. Удаление здесь не удаляет JSON JANUS. Перед загрузкой другого JSON будет запрос подтверждения и резервная копия.</div>
+</section>
 <hr>
 <div class="controls"><button id="back" hidden>← Все репозитории</button><button id="reset">Сброс</button></div>
 <label for="band">Спектральный слой знаний</label>
@@ -93,7 +135,7 @@ h1{font-size:22px;margin:5px 0 8px}
 <div class="controls"><button id="tour">Автооблёт</button><button id="quality">Качество: авто</button></div>
 <button id="load-more" hidden class="action">Загрузить следующие JSON</button>
 <button id="load-refs" hidden>Загрузить реальные связи JSON</button>
-<div id="status" role="status" aria-live="polite">Данные не записываются обратно в источники.</div>
+<div id="status" role="status" aria-live="polite">Данные реестра не редактируются через 3D. Локальная карта доступна в режиме управления.</div>
 <hr>
 <div class="mini">Вращение: перетаскивание · масштаб: колесо/сведение · сдвиг: Shift + перетаскивание · выбор: клик · Esc: назад. 3D-координаты логические, не физические. Близость точек не доказывает связь.</div>
 </section>
