@@ -64,6 +64,13 @@ def run():
             with page.expect_download() as dl: page.locator("#desk-export").click()
             assert dl.value.suggested_filename.endswith("_3d.json")
             assert page.locator("#desk-original").get_attribute("href")=="./"
+            # Full unchanged classic 2D brain works as an in-page control deck.
+            page.locator("#desk-original").click()
+            assert page.locator("#mindmap-overlay").is_visible()
+            assert page.locator("#mindmap-frame").get_attribute("src")=="./"
+            page.locator("#mindmap-close").click()
+            assert not page.locator("#mindmap-overlay").is_visible()
+            assert page.evaluate("(key)=>JSON.parse(localStorage.getItem(key)).nodes.length",key)==2
             # Dragging edits the SAME original D3 x/y coordinates; camera remains available when move is off.
             original_x=page.evaluate("(key)=>JSON.parse(localStorage.getItem(key)).nodes.find(n=>n.id===1).x",key)
             page.locator("#desk-move").click()
