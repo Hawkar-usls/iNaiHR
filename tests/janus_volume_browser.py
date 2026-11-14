@@ -65,7 +65,7 @@ def run():
                 )
                 drilled=page.evaluate("window.__JANUS_VOLUME_DIAG()")
                 assert drilled["recordCount"]>0,drilled
-                assert drilled["edges"]>0,drilled
+                assert drilled["edges"]==0,drilled # density lens is pure volumetric emission
                 page.locator("#band").select_option("structure")
                 assert page.evaluate("window.__JANUS_VOLUME_DIAG().edges")>0
                 page.locator("#search").fill(".json")
@@ -75,7 +75,7 @@ def run():
                 assert initial["graphKind"]=="semantic",initial
                 assert initial["recordCount"]>=100,initial
                 assert initial["nodes"]>initial["recordCount"],initial
-                assert initial["edges"]>initial["recordCount"],initial
+                assert initial["edges"]==0,initial # do not show a provenance web in the density lens
                 assert initial["references"]>0,initial
                 page.locator("#band").select_option("provenance")
                 assert page.evaluate("window.__JANUS_VOLUME_DIAG().edges")>0
