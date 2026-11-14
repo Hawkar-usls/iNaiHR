@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
@@ -24,11 +24,11 @@ header a{pointer-events:auto;text-decoration:none;color:rgba(255,255,255,.42);fo
 #message{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:80;color:var(--accent);font-family:Orbitron;font-size:1rem;letter-spacing:.08em;text-align:center;pointer-events:none;opacity:0;transition:.25s;text-shadow:0 0 18px var(--accent);max-width:80%}
 .modal{position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.86);backdrop-filter:blur(10px)}.box{width:min(330px,86vw);padding:26px;background:#12001d;border:1px solid var(--border);box-shadow:0 0 50px rgba(211,0,255,.12)}.box h3{font-family:Orbitron;font-size:.86rem;letter-spacing:.08em;color:var(--accent);margin:0 0 18px}.box input{width:100%;background:transparent;border:0;border-bottom:2px solid var(--primary);color:#fff;font:600 1.2rem Orbitron;text-align:center;padding:10px;outline:0;margin-bottom:16px}.box .row{display:flex;gap:8px}.box button{flex:1}
 .note{position:fixed;left:26px;bottom:24px;z-index:20;color:#5c5270;font-size:.68rem;max-width:540px;line-height:1.4}.note b{color:#8e7cab}
-@media(max-width:720px){header{padding:15px 12px}.left,.right{font-size:.65rem}.brand{font-size:1.08rem}.controls{top:64px;right:12px}.state{top:66px;left:12px}.btn{padding:7px 9px;font-size:.62rem}.note{display:none}}
+@media(max-width:720px){header{padding:15px 12px}.left,.right{font-size:.65rem}.brand{font-size:1.08rem}.controls{top:64px;right:12px}#janus-language{position:fixed;top:112px;right:12px;max-width:76px}.state{top:66px;left:12px}.btn{padding:7px 9px;font-size:.62rem}.note{display:none}}
 </style>
 </head>
 <body>
-<div id="bg"></div><div id="particles"></div><div id="grid"></div><div id="chart"></div>
+<div id="bg"></div><div id="particles"></div><div id="grid"></div><div id="chart" data-janus-i18n-ignore></div>
 <header>
 <a class="left" href="https://hawkar-usls.github.io/janus-meta-registry/">JANUS</a>
 <a class="brand" href="./"><span class="i">i</span>N<span class="ai">ai</span>HR</a>
@@ -36,18 +36,19 @@ header a{pointer-events:auto;text-decoration:none;color:rgba(255,255,255,.42);fo
 </header>
 <div class="state"><b id="ai-state">UPLINK AUTO</b> · LOCAL-FIRST</div>
 <div class="controls">
+<select id="janus-language" class="btn" aria-label="Interface language" data-janus-i18n-aria-label="interfaceLanguage"><option value="en">EN</option><option value="uk">UA</option><option value="ru">RU</option></select>
 <a class="btn" href="./spore-original.html" title="Authentic green iNaiHR SPORE MIND D3, safe local editing">ORIGINAL SPORE</a>
 <a class="btn" href="./ai-nexus-original.html" title="Authentic purple iNaiHR AI Nexus D3, no exposed model keys">AI NEXUS v1</a>
 <button id="btn-synth" class="btn" type="button">SYNTH</button>
-<button id="btn-clear" class="btn" type="button">CLEAR LOCAL DESK</button>
+<button id="btn-clear" class="btn" type="button" data-janus-i18n="clearDesk">CLEAR LOCAL DESK</button>
 </div>
-<div id="delete-hint">DELETE LOCAL NODE</div>
+<div id="delete-hint" data-janus-i18n="deleteHint">DELETE LOCAL NODE</div>
 <button id="main-btn" type="button"></button>
-<div id="message"></div>
-<div class="note"><b>LOCAL WORKSPACE != JANUS REGISTRY.</b> Clearing or deleting here affects only this browser workspace. No iNaiHR control can delete Meta Registry source objects.</div>
+<div id="message" data-janus-i18n-ignore></div>
+<div class="note"><b>LOCAL WORKSPACE != JANUS REGISTRY.</b> <span data-janus-i18n="workspaceNote">Clearing or deleting here affects only this browser workspace. No iNaiHR control can delete Meta Registry source objects.</span></div>
 
-<div id="rename-modal" class="modal"><div class="box"><h3>NODE INPUT</h3><input id="rename-input" autocomplete="off" placeholder="INPUT DATA..."><div class="row"><button class="btn" id="rename-ok">INITIATE</button><button class="btn" id="rename-cancel">CANCEL</button></div></div></div>
-<div id="clear-modal" class="modal"><div class="box"><h3>CLEAR THIS BROWSER'S LOCAL DESK?</h3><p style="color:#9b88b0;font-size:.82rem">JANUS Meta Registry and HRaiN Registry Mode are untouched.</p><div class="row"><button class="btn" id="clear-yes">CLEAR LOCAL</button><button class="btn" id="clear-no">CANCEL</button></div></div></div>
+<div id="rename-modal" class="modal"><div class="box"><h3 data-janus-i18n="nodeInput">NODE INPUT</h3><input id="rename-input" autocomplete="off" placeholder="INPUT DATA..." data-janus-i18n-placeholder="inputData"><div class="row"><button class="btn" id="rename-ok" data-janus-i18n="initiate">INITIATE</button><button class="btn" id="rename-cancel" data-janus-i18n="cancel">CANCEL</button></div></div></div>
+<div id="clear-modal" class="modal"><div class="box"><h3 data-janus-i18n="confirmClear">CLEAR THIS BROWSER'S LOCAL DESK?</h3><p style="color:#9b88b0;font-size:.82rem" data-janus-i18n="registryUnchanged">JANUS Meta Registry and HRaiN Registry Mode are untouched.</p><div class="row"><button class="btn" id="clear-yes" data-janus-i18n="clearLocal">CLEAR LOCAL</button><button class="btn" id="clear-no" data-janus-i18n="cancel">CANCEL</button></div></div></div>
 
 <script>
 (() => {
@@ -233,6 +234,7 @@ updateControls();updateTopology();
 })();
 </script>
 <script src="./janus-synth-organ.js"></script>
+<script src="./assets/janus-locale-ui.js" defer></script>
 <script src="./assets/janus-explicit-links.js" defer></script>
 <script src="./assets/janus-native-atlas.js" defer></script>
 </body>
