@@ -175,13 +175,15 @@ export class VolumeRenderer{
   }
  }
  nearest(x,y){
-  let candidate=null,min=Infinity;
+  let candidate=null,min=Infinity,hub=null,hubDistance=Infinity;
   for(const n of this.scene.nodes){
    const p=projectPoint(n.p,this.camera,this.width,this.height);if(!p)continue;
-   const d=Math.hypot(x-p.x,y-p.y),tol=Math.max(9,Math.min(29,n.size*p.scale*.65));
+   const d=Math.hypot(x-p.x,y-p.y),tol=Math.max(9,Math.min(32,n.size*p.scale*.75));
    if(d<tol&&d<min){candidate=n;min=d;}
+   if((n.type==="repository"||n.type==="pivot")&&d<tol&&d<hubDistance){hub=n;hubDistance=d;}
   }
-  return candidate;
+  // The interactive cluster core remains selectable even inside a crowded real record cloud.
+  return hub||candidate;
  }
  preset(which){
   const c=this.camera;
