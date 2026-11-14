@@ -64,6 +64,31 @@ def run():
             with page.expect_download() as dl: page.locator("#desk-export").click()
             assert dl.value.suggested_filename.endswith("_3d.json")
             assert page.locator("#desk-original").get_attribute("href")=="./"
+            # Dragging edits the SAME original D3 x/y coordinates; camera remains available when move is off.
+            original_x=page.evaluate("(key)=>JSON.parse(localStorage.getItem(key)).nodes.find(n=>n.id===1).x",key)
+            page.locator("#desk-move").click()
+            root=page.evaluate("""async (key)=>{
+              const m=await import("./assets/janus-volume-workspace.mjs");
+              const p=await import("./assets/janus-volume-render.mjs");
+              const d=JSON.parse(localStorage.getItem(key));
+              const n=m.deskGraph(d,document.body.dataset.role).nodes.find(n=>n.id==="desk:1");
+              return p.projectPoint(n.p,window.__JANUS_VOLUME_DIAG().camera,1280,850);
+            }""",key)
+            page.mouse.move(root["x"],root["y"])
+            page.mouse.down()
+            page.mouse.move(root["x"]+72,root["y"]+28,steps=7)
+            page.mouse.up()
+            moved_x=page.evaluate("(key)=>JSON.parse(localStorage.getItem(key)).nodes.find(n=>n.id===1).x",key)
+            assert moved_x!=original_x,("3D drag did not persist classic mindmap coordinates",original_x,moved_x)
+            page.locator("#desk-move").click()
+            # Verify child deletion with an explicit browser approval.
+            page.locator("#desk-add").click()
+            before_delete=page.evaluate("(key)=>JSON.parse(localStorage.getItem(key)).nodes.length",key)
+            page.once("dialog",lambda dialog:dialog.accept())
+            page.locator("#desk-delete").click()
+            after_delete=page.evaluate("(key)=>JSON.parse(localStorage.getItem(key)).nodes.length",key)
+            assert after_delete<before_delete,(before_delete,after_delete)
+            page.screenshot(path="janus-volume-control-preview.png")
             # No loss of original editing data upon switching to atlas and back.
             before=page.evaluate("(key)=>localStorage.getItem(key)",key)
             page.locator("#desk-toggle").click()
