@@ -211,6 +211,7 @@ export function viewOf(graph,mode="all",query="",cut=1) {
   });
   const ids=new Set(filtered.map(n=>n.id));
   const edges=(graph.edges||[]).filter(e=>{
+    if(mode==="density")return false; // Hydrogen-style emissivity lens: render records as cloud, not a web.
     if(!ids.has(e.from)||!ids.has(e.to))return false;
     if(mode==="structure")return e.kind==="PATH_CONTAINMENT"||e.kind==="GROUPING_NOT_EVIDENCE"||e.kind==="REPOSITORY_CONTAINS_RECORD";
     if(mode==="provenance")return e.kind==="EXPLICIT_SOURCE_REFERENCE"||e.kind==="RECORDED_SOURCE_POINTER";
