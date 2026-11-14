@@ -1,3 +1,9 @@
+# Superseded v1 experiment (historical only)
+
+This document describes the **rejected flat hash-based spiral**. It is not the current HRain/iNaiHR Galaxy implementation. The active interface is the source-grounded, perspective **[JANUS Volume Observatory v2](JANUS_VOLUME_OBSERVATORY_V2.md)**. Do not use the v1 geometry, UI assumptions or tests as proof of 3D capability.
+
+---
+
 # JANUS Galaxy Lens · design and safety contract
 
 Reference interface: https://now.intellectronica.net/hydrogen-milky-way/
