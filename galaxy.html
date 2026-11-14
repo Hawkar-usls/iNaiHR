@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050713">
+<title>JANUS Galaxy Lens · read-only</title>
+<style>
+:root{color-scheme:dark;--accent:#61ebcf;--accent2:#ac89ff}
+body[data-role="semantic"]{--accent:#d2a1ff;--accent2:#6fe5ff}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:#050713;color:#e9f2ff;font:14px system-ui,sans-serif}
+#sky{position:fixed;inset:0;width:100%;height:100%;touch-action:none;cursor:grab}#sky:active{cursor:grabbing}
+header{position:fixed;left:16px;top:14px;right:16px;pointer-events:none}
+header a,header button{pointer-events:auto}h1{font-size:clamp(18px,2vw,27px);margin:4px 0;color:var(--accent);letter-spacing:.08em}
+small{color:#9db3c7}a{color:#b4f3ee}nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:12px}
+main{position:fixed;left:14px;top:122px;width:min(440px,calc(100vw - 28px));max-height:calc(100vh - 160px);overflow:auto;background:rgba(8,14,31,.87);border:1px solid #273e55;padding:14px;border-radius:13px;backdrop-filter:blur(12px)}
+main h2{font-size:15px;margin:0 0 9px;overflow-wrap:anywhere}
+.controls{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}
+button,select,input{font:inherit;color:#e9f2ff;background:#122235;border:1px solid #356077;border-radius:7px;padding:7px 9px;min-height:36px}
+button{cursor:pointer}button:hover:not(:disabled){border-color:var(--accent)}button:disabled{opacity:.36;cursor:default}
+input{width:100%;margin-bottom:10px}select{width:100%;margin-bottom:9px}
+label{display:block;color:#acc5dc;font-size:12px}label input{width:100%;margin:6px 0;accent-color:var(--accent)}
+#detail{position:fixed;right:14px;bottom:14px;width:min(410px,calc(100vw - 28px));max-height:50vh;overflow:auto;background:rgba(12,18,40,.96);border:1px solid var(--accent2);padding:17px;border-radius:12px;box-shadow:0 8px 55px #000b}
+#detail[hidden],#pagination[hidden]{display:none!important}#node-title{font-size:16px;overflow-wrap:anywhere;margin:8px 0}#node-origin{white-space:pre-wrap;overflow-wrap:anywhere;color:#b0bdd2;font:12px/1.7 ui-monospace,monospace}
+#state{margin-top:8px;font-size:11px;color:#9cacc0;overflow-wrap:anywhere}
+.foot{position:fixed;bottom:10px;left:14px;font-size:11px;max-width:50vw;color:#6e889e;pointer-events:none}
+@media(max-width:720px){main{top:100px;max-height:38vh;padding:10px}header{top:8px}#detail{max-height:34vh;bottom:6px}.foot{display:none}}
+</style>
+</head>
+<body data-role="semantic">
+<canvas id="sky" aria-label="Галактическая визуализация реальных метаданных JANUS"></canvas>
+<header><nav><a href="./">← Проект</a><a href="./janus.html">Граф JANUS</a><a href="https://hawkar-usls.github.io/Hrain/galaxy.html">HRain Galaxy</a><a href="https://hawkar-usls.github.io/iNaiHR/galaxy.html">iNaiHR Galaxy</a></nav>
+<h1>iNaiHR · GALAXY LENS</h1><small>Спирали — геометрическая метафора. Источники и гипотезы не смешиваются.</small></header>
+<main><h2 id="scope">Загрузка индекса…</h2>
+<div class="controls"><button id="back" disabled>Все области</button><button id="tour">Автооблёт</button><button id="reset">Сброс камеры</button><button id="labels">Подписи</button></div>
+<label for="band">Слой данных</label><select id="band">
+<option value="all">Всё</option><option value="source">С происхождением</option>
+<option value="contract">Контракты / глубокие кандидаты</option>
+<option value="signal">Крупные файлы (≥16 КБ) / attention ≥10</option>
+</select>
+<label for="search">Поиск в текущем сегменте</label><input id="search" type="search" placeholder="Название файла, ID, тема…">
+<label for="tilt">Наклон обзора (не физическая координата)</label><input id="tilt" type="range" min=".17" max="1" step=".03" value=".85">
+<div id="pagination" class="controls" hidden><button id="prev">← Сегмент</button><span id="page"></span><button id="next">Сегмент →</button></div>
+<div id="visible">Загрузка…</div><p id="state" role="status">Только чтение · без записи в исходные базы</p></main>
+<aside id="detail" hidden><button id="close" aria-label="Закрыть">×</button><h2 id="node-title"></h2><p id="node-summary"></p>
+<pre id="node-origin"></pre><p id="detail-hint"></p><button id="dive" hidden>Погрузиться в JSON</button>
+<a id="source-link" hidden target="_blank" rel="noopener noreferrer">Открыть JSON в GitHub</a></aside>
+<p class="foot">JANUS Galaxy Lens v1 · чтение опубликованных индексных срезов · без доступа к приватным данным и без автоматического допуска гипотез.</p>
+<script type="module" src="./assets/janus-galaxy.mjs"></script>
+</body></html>
