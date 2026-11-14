@@ -9,7 +9,7 @@ Reference supplied by project owner: https://now.intellectronica.net/hydrogen-mi
 The original Galaxy Lens was a flat Canvas 2D spiral of positions calculated from ID hashes. It was rejected as an inadequate implementation of the provided reference.
 
 Version 2 REPLACES the existing \`galaxy.html\` view (the original D3 \`index.html\` and \`janus.html\` are not replaced). It implements:
-- WebGL2 shaders in \`assets/janus-volume-render.mjs\`: actual depth, perspective, 3D camera yaw/pitch/distance, additive radial point sprites, volume slices, and source-edge lines.
+- WebGL2 shaders in \`assets/janus-volume-render.mjs\`: actual depth, perspective, 3D camera yaw/pitch/distance, additive radial point sprites, multi-scale Gaussian emission centered **only on real records**, volume slices, and source-edge lines. This smoothing is an explicitly derived visualization of record concentration, not measured physical gas density.
 - Canvas 2D fallback only when WebGL2 is unavailable; clearly labelled by the UI.
 - An evidence-first graph builder in \`assets/janus-volume-model.mjs\`, independent of DOM and browser code.
 - Navigable 3D scene with click-to-inspect, zoom, orbit, shift-drag pan, top/edge/perspective camera presets, optional auto-flight, mobile pointer/pinch handling, density and provenance lenses, source inspection, and read-only safety boundaries.
