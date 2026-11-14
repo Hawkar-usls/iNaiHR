@@ -162,6 +162,41 @@ export function semanticVolume(candidates=[],registry={}) {
   }
   return {nodes,edges,scope:"iNaiHR SYNTH",kind:"semantic",actualRecords:safeCandidates.length,sourcePointers:sourceTouches.size,provenanceEdges:edges.filter(e=>e.kind==="RECORDED_SOURCE_POINTER").length,lineage};
 }
+
+/* Actual public JSON point cloud: one glyph per loaded record, never fabricated stars. */
+export function publicGalaxy(repositories=[],records=[]) {
+  const scene=repositoryOverview(repositories);
+  const roots=new Map(scene.nodes.map(n=>[n.meta.repository,n]));
+  const groups=new Map();
+  for(const r of records){
+    if(!r || !r.id || !roots.has(r.repository) || !cleanPath(r.path))continue;
+    if(!groups.has(r.repository))groups.set(r.repository,[]);
+    groups.get(r.repository).push(r);
+  }
+  let loaded=0;
+  for(const [repo,items] of groups){
+    items.sort((a,b)=>String(a.id).localeCompare(String(b.id)));
+    const root=roots.get(repo);
+    for(let i=0;i<items.length;i++){
+      const r=items[i],dir=directions(r.id+":cluster"),theta=i*GOLDEN+unit(repo+":cloud")*PI2;
+      const radius=16+Math.sqrt((i+.4)/Math.max(items.length,1))*92;
+      const p=[root.p[0]+Math.cos(theta)*radius+dir[0]*12,
+        root.p[1]+dir[1]*radius*.62,root.p[2]+Math.sin(theta)*radius+dir[2]*14];
+      scene.nodes.push(node(r.id,r.path.split("/").at(-1),"file",p,{
+        size:Math.min(6,2.8+Math.log2(1+Math.max(0,r.sizeBytes||0))*.2),
+        meta:{repository:r.repository,path:r.path,sizeBytes:r.sizeBytes,sourceCommit:r.sourceCommit,
+          gitBlobSha:r.gitBlobSha,authority:r.authority,kind:"ACTUAL_LOADED_PUBLIC_JSON"},
+        source:safeSource(r.sourceUrl),weight:Number(r.sizeBytes)||0
+      }));
+      scene.edges.push(edge(root.id,r.id,"REPOSITORY_CONTAINS_RECORD"));
+      loaded++;
+    }
+  }
+  scene.actualRecords=loaded;scene.sampleRecords=loaded;
+  scene.kind="registry_overview";
+  return scene;
+}
+
 export function viewOf(graph,mode="all",query="",cut=1) {
   const q=String(query||"").trim().toLocaleLowerCase(),limit=Math.max(0,Math.min(1,Number(cut)||0));
   const all=graph.nodes||[];
@@ -177,7 +212,7 @@ export function viewOf(graph,mode="all",query="",cut=1) {
   const ids=new Set(filtered.map(n=>n.id));
   const edges=(graph.edges||[]).filter(e=>{
     if(!ids.has(e.from)||!ids.has(e.to))return false;
-    if(mode==="structure")return e.kind==="PATH_CONTAINMENT"||e.kind==="GROUPING_NOT_EVIDENCE";
+    if(mode==="structure")return e.kind==="PATH_CONTAINMENT"||e.kind==="GROUPING_NOT_EVIDENCE"||e.kind==="REPOSITORY_CONTAINS_RECORD";
     if(mode==="provenance")return e.kind==="EXPLICIT_SOURCE_REFERENCE"||e.kind==="RECORDED_SOURCE_POINTER";
     if(mode==="lineage")return e.kind==="RECORDED_LINEAGE";
     return true;
