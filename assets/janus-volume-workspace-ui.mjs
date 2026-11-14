@@ -19,7 +19,7 @@ export function createDeskController(role,{renderer,onGraph,onActivate,onDeactiv
     $("desk-grid").classList.toggle("active",grid);
     const n=desk?.nodes.find(x=>String(x.id)===String(selectedId));
     for(const id of ["desk-rename","desk-delete","desk-link","desk-dive"])$(id).disabled=!n;
-    $("desk-original").setAttribute("href",n?"./?focus="+encodeURIComponent(String(n.id)):"./");
+    $("desk-original").setAttribute("href","./");
     $("desk-ascend").disabled=focusId===null;
     $("desk-breadcrumb").textContent=focusId===null?
       "ORIGIN · "+(desk?.nodes.length||0)+" локальных узлов / "+(desk?.links.length||0)+" связей":
