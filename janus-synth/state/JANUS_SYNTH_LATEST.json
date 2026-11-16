@@ -2,272 +2,12 @@
   "attention": {
     "attention_weight_is_evidence_weight": false,
     "focus_age": 1,
-    "focus_key": "path:EYE/generated",
+    "focus_key": "lineage:43863719261-1",
     "no_fixed_hypothesis_center": true,
     "policy": "MIGRATING_FOCUS_WITH_REPLAY_FATIGUE_AND_LINEAGE_DIVERSITY"
   },
   "candidate_count": 128,
   "candidates": [
-    {
-      "attention_score": 27.0,
-      "authority": {
-        "automatic_promotion": false,
-        "causal": false,
-        "mutation": false,
-        "proof": false,
-        "truth": false
-      },
-      "created_at": "2026-11-05T20:05:52.755925+00:00",
-      "depth": 4,
-      "focus_key": "lineage:LATEST",
-      "id": "syn:ba296c826c78afdc77b8",
-      "kind": "SEMANTIC_CANDIDATE",
-      "label": "S4 · janus.autonomy.latest.v1 / LATEST ↔ janus.external_witness.latest.v1 / LATEST",
-      "meaning": {
-        "boundaries": [
-          "SYNTHESIS != TRUTH",
-          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
-          "GRAPH_DENSITY != EVIDENCE",
-          "CANDIDATE_EDGE != CAUSAL_EDGE",
-          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
-        ],
-        "evidence": {
-          "independent_replication_established": false,
-          "registry_source_commit": "fc7c9afaa4a1068cd2d07c9512b9f79bd59bcf09",
-          "source_records": [
-            {
-              "id": "obj:1a2834b9f56e4c1476ab",
-              "lineage_key": "LATEST",
-              "path": "data/autonomy_loop/LATEST.json",
-              "sha256": "f10e88226baa0f9b7630b9793ec3e1af7763728df62e4e762b0bb69e2776c7fd",
-              "status": null
-            },
-            {
-              "id": "obj:d7451b99b0fa82102c17",
-              "lineage_key": "LATEST",
-              "path": "data/witness_importer/LATEST.json",
-              "sha256": "862e80c3a7ac5953c10604ed4d9df2e116223158750ea5b8a3e013264206d8c7",
-              "status": "SCHEDULE_SILENCE"
-            }
-          ]
-        },
-        "lineage": {
-          "prior_candidate_id": "syn:ec31635ee5e4ab46b0f0",
-          "source_ids": [
-            "obj:1a2834b9f56e4c1476ab",
-            "obj:d7451b99b0fa82102c17"
-          ]
-        },
-        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
-        "next_steps": [
-          "Search for a counterexample to the proposed bridge.",
-          "Seek an independent source or target-local verifier before promotion.",
-          "If repeated without new evidence, fatigue this motif rather than increase confidence."
-        ],
-        "purpose": "Explore a candidate joint meaning that becomes visible only when janus.autonomy.latest.v1 / LATEST and janus.external_witness.latest.v1 / LATEST are considered together."
-      },
-      "pivot": {
-        "id": "surface:other",
-        "label": "Other / cross-project"
-      },
-      "signature": "8135950159afe0a8e9a1938b565fa0f9a7d11089082cca854bcfce8d4bf23768",
-      "status": "CANDIDATE_AWAITING_CORROBORATION"
-    },
-    {
-      "attention_score": 24.0,
-      "authority": {
-        "automatic_promotion": false,
-        "causal": false,
-        "mutation": false,
-        "proof": false,
-        "truth": false
-      },
-      "created_at": "2026-11-05T20:05:52.755993+00:00",
-      "depth": 4,
-      "focus_key": "path:data/integrations",
-      "id": "syn:dd67d21ccb74bdb86ef9",
-      "kind": "SEMANTIC_CANDIDATE",
-      "label": "S4 · janus.cross_organ.source_witness.v1 / CONTOUR ORGAN e44664de41c487710f49 ↔ janus.contour.cross_organ_late",
-      "meaning": {
-        "boundaries": [
-          "SYNTHESIS != TRUTH",
-          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
-          "GRAPH_DENSITY != EVIDENCE",
-          "CANDIDATE_EDGE != CAUSAL_EDGE",
-          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
-        ],
-        "evidence": {
-          "independent_replication_established": false,
-          "registry_source_commit": "fc7c9afaa4a1068cd2d07c9512b9f79bd59bcf09",
-          "source_records": [
-            {
-              "id": "obj:8f425109375443df22b0",
-              "lineage_key": "CONTOUR-ORGAN-E44664DE41C487710F49",
-              "path": "data/integrations/contour/receipts/CONTOUR-ORGAN-e44664de41c487710f49.json",
-              "sha256": "2ba80c643c4ed16a5f75f432245da6f1db829944667e9646f4a8e61541bfabb6",
-              "status": "PASS_PUBLIC_SOURCE_LINKS_ONLY"
-            },
-            {
-              "id": "obj:10b6a64801d73111774c",
-              "lineage_key": "LATEST",
-              "path": "data/integrations/contour/LATEST.json",
-              "sha256": "e9f721b9b107bf89fe99ff6d147bc30704483e8e8341c396e88c21b92fecb190",
-              "status": "PASS_PUBLIC_SOURCE_LINKS_ONLY"
-            }
-          ]
-        },
-        "lineage": {
-          "prior_candidate_id": "syn:6006d327159aa4eda67d",
-          "source_ids": [
-            "obj:8f425109375443df22b0",
-            "obj:10b6a64801d73111774c"
-          ]
-        },
-        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
-        "next_steps": [
-          "Search for a counterexample to the proposed bridge.",
-          "Seek an independent source or target-local verifier before promotion.",
-          "If repeated without new evidence, fatigue this motif rather than increase confidence."
-        ],
-        "purpose": "Explore a candidate joint meaning that becomes visible only when janus.cross_organ.source_witness.v1 / CONTOUR ORGAN e44664de41c487710f49 and janus.contour.cross_organ_latest.v1 / LATEST are considered together."
-      },
-      "pivot": {
-        "id": "surface:other",
-        "label": "Other / cross-project"
-      },
-      "signature": "d9938ed06bc23a70a15b3491ce47114f84ab448788eeb29e5e9bc3de994ed962",
-      "status": "CANDIDATE_AWAITING_CORROBORATION"
-    },
-    {
-      "attention_score": 23.0,
-      "authority": {
-        "automatic_promotion": false,
-        "causal": false,
-        "mutation": false,
-        "proof": false,
-        "truth": false
-      },
-      "created_at": "2026-11-05T20:05:52.756042+00:00",
-      "depth": 4,
-      "focus_key": "path:data/autonomy_loop",
-      "id": "syn:456cf009adb115690a63",
-      "kind": "SEMANTIC_CANDIDATE",
-      "label": "S4 · janus.autonomy.latest.v1 / LATEST ↔ janus.autonomy.snapshot.v1 / a1b7b58a890ea95fb7b88374",
-      "meaning": {
-        "boundaries": [
-          "SYNTHESIS != TRUTH",
-          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
-          "GRAPH_DENSITY != EVIDENCE",
-          "CANDIDATE_EDGE != CAUSAL_EDGE",
-          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
-        ],
-        "evidence": {
-          "independent_replication_established": false,
-          "registry_source_commit": "fc7c9afaa4a1068cd2d07c9512b9f79bd59bcf09",
-          "source_records": [
-            {
-              "id": "obj:1a2834b9f56e4c1476ab",
-              "lineage_key": "LATEST",
-              "path": "data/autonomy_loop/LATEST.json",
-              "sha256": "f10e88226baa0f9b7630b9793ec3e1af7763728df62e4e762b0bb69e2776c7fd",
-              "status": null
-            },
-            {
-              "id": "obj:d312f32d2ec9d7a5d7bb",
-              "lineage_key": "A1B7B58A890EA95FB7B88374",
-              "path": "data/autonomy_loop/receipts/a1b7b58a890ea95fb7b88374.json",
-              "sha256": "de1e263067bbebf6eac289d615f484720b3df462bac685900590a0cc6bd95b7d",
-              "status": "PASS_STATUS_CAPTURE_ONLY"
-            }
-          ]
-        },
-        "lineage": {
-          "prior_candidate_id": "syn:ec31635ee5e4ab46b0f0",
-          "source_ids": [
-            "obj:1a2834b9f56e4c1476ab",
-            "obj:d312f32d2ec9d7a5d7bb"
-          ]
-        },
-        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
-        "next_steps": [
-          "Search for a counterexample to the proposed bridge.",
-          "Seek an independent source or target-local verifier before promotion.",
-          "If repeated without new evidence, fatigue this motif rather than increase confidence."
-        ],
-        "purpose": "Explore a candidate joint meaning that becomes visible only when janus.autonomy.latest.v1 / LATEST and janus.autonomy.snapshot.v1 / a1b7b58a890ea95fb7b88374 are considered together."
-      },
-      "pivot": {
-        "id": "surface:other",
-        "label": "Other / cross-project"
-      },
-      "signature": "e8bda9a18ff2a862d614fed2ebc5ebff9a8bbca524a4afcfe199eddff726c902",
-      "status": "CANDIDATE_AWAITING_CORROBORATION"
-    },
-    {
-      "attention_score": 28.0,
-      "authority": {
-        "automatic_promotion": false,
-        "causal": false,
-        "mutation": false,
-        "proof": false,
-        "truth": false
-      },
-      "created_at": "2026-11-06T01:38:28.492809+00:00",
-      "depth": 1,
-      "focus_key": "lineage:42137890662-1",
-      "id": "syn:10c61c6bb887f2c3abe8",
-      "kind": "SEMANTIC_CANDIDATE",
-      "label": "S1 · janus.external_witness.transitions.v1 / 42137890662 1 ↔ janus.external_witness.import_receipt.v1 / 421378",
-      "meaning": {
-        "boundaries": [
-          "SYNTHESIS != TRUTH",
-          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
-          "GRAPH_DENSITY != EVIDENCE",
-          "CANDIDATE_EDGE != CAUSAL_EDGE",
-          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
-        ],
-        "evidence": {
-          "independent_replication_established": false,
-          "registry_source_commit": "fc639687707faef6264286f8189fc83102b4159a",
-          "source_records": [
-            {
-              "id": "obj:20f16f3ddb55e584826c",
-              "lineage_key": "42137890662-1",
-              "path": "data/witness_importer/transitions/2026-11-06/42137890662-1.json",
-              "sha256": "a0e49bbda55c759b4ea7900769ea5fef192370bf7bd62968162eef30dda29b93",
-              "status": "SCHEDULE_OK"
-            },
-            {
-              "id": "obj:1494c692f026eb6edd8d",
-              "lineage_key": "42137890662-1",
-              "path": "data/witness_importer/observations/2026-11-06/42137890662-1.json",
-              "sha256": "6aa81c547dda5ac25356314bd8e8853bbe469f9670cc3d19f05c3d3fb4add67e",
-              "status": "SCHEDULE_OK"
-            }
-          ]
-        },
-        "lineage": {
-          "prior_candidate_id": null,
-          "source_ids": [
-            "obj:20f16f3ddb55e584826c",
-            "obj:1494c692f026eb6edd8d"
-          ]
-        },
-        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
-        "next_steps": [
-          "Search for a counterexample to the proposed bridge.",
-          "Seek an independent source or target-local verifier before promotion.",
-          "If repeated without new evidence, fatigue this motif rather than increase confidence."
-        ],
-        "purpose": "Explore a candidate joint meaning that becomes visible only when janus.external_witness.transitions.v1 / 42137890662 1 and janus.external_witness.import_receipt.v1 / 42137890662 1 are considered together."
-      },
-      "pivot": {
-        "id": "surface:other",
-        "label": "Other / cross-project"
-      },
-      "signature": "803a46a3fa3851c4bc239f0ab543f965c9ea303fc7dd9fa70a7e08e3abdb477b",
-      "status": "CANDIDATE_AWAITING_CORROBORATION"
-    },
     {
       "attention_score": 27.0,
       "authority": {
@@ -8327,15 +8067,275 @@
       },
       "signature": "5442a81436e35cb9cb222443086e01fa0cc0b44a4890a7a1f0905cbc7e73a75c",
       "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 28.0,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-11-16T19:41:50.293906+00:00",
+      "depth": 1,
+      "focus_key": "lineage:43863719261-1",
+      "id": "syn:966d2fa9183cd5d5f04e",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S1 · janus.external_witness.transitions.v1 / 43863719261 1 ↔ janus.external_witness.import_receipt.v1 / 438637",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "88bf8a52f3a88566cb33ef752f51ed9f099e6733",
+          "source_records": [
+            {
+              "id": "obj:77f4e7bf2e9a1933a5bf",
+              "lineage_key": "43863719261-1",
+              "path": "data/witness_importer/transitions/2026-11-16/43863719261-1.json",
+              "sha256": "fd733d288b2396eb73b7a9ee33a77078f452c115651f2ce92105c20a0eb8c2a9",
+              "status": "SCHEDULE_SILENCE"
+            },
+            {
+              "id": "obj:440b0ce45ebf43874674",
+              "lineage_key": "43863719261-1",
+              "path": "data/witness_importer/observations/2026-11-16/43863719261-1.json",
+              "sha256": "39562f8fe5c7b1577b69f3945321ac707703dfa81ac3e24b7a81e3d435ea23ca",
+              "status": "SCHEDULE_SILENCE"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": null,
+          "source_ids": [
+            "obj:77f4e7bf2e9a1933a5bf",
+            "obj:440b0ce45ebf43874674"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when janus.external_witness.transitions.v1 / 43863719261 1 and janus.external_witness.import_receipt.v1 / 43863719261 1 are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "da979bff7f968fdd1f004e1af02dbcb671f5d9c3e8b2d588bf97980cd3c462a9",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 27.0,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-11-16T19:41:50.294011+00:00",
+      "depth": 4,
+      "focus_key": "lineage:LATEST",
+      "id": "syn:00ca061f55034fbb1956",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S4 · janus.autonomy.latest.v1 / LATEST ↔ janus.external_witness.latest.v1 / LATEST",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "88bf8a52f3a88566cb33ef752f51ed9f099e6733",
+          "source_records": [
+            {
+              "id": "obj:1a2834b9f56e4c1476ab",
+              "lineage_key": "LATEST",
+              "path": "data/autonomy_loop/LATEST.json",
+              "sha256": "83462a1b869152942e9847e7978a0985b3b532fd8f2b37af70e4bfed78ef4c4a",
+              "status": null
+            },
+            {
+              "id": "obj:d7451b99b0fa82102c17",
+              "lineage_key": "LATEST",
+              "path": "data/witness_importer/LATEST.json",
+              "sha256": "cbddf7486e0b1570a3f4eea84c3631d937382e117d303ef2503e1dd77c04122b",
+              "status": "SCHEDULE_SILENCE"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": "syn:c366e7540ca5afa4814a",
+          "source_ids": [
+            "obj:1a2834b9f56e4c1476ab",
+            "obj:d7451b99b0fa82102c17"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when janus.autonomy.latest.v1 / LATEST and janus.external_witness.latest.v1 / LATEST are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "861fcfcb66b1fea4bf84e5190364244647e3f08aae8649316b57a270f82dc985",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 24.5,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-11-16T19:41:50.294137+00:00",
+      "depth": 1,
+      "focus_key": "pivot:surface:other",
+      "id": "syn:d8c85c28aa9412e6a141",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S1 · janus.essence.functional_oracle_prospective_ev / JANUS ESSENCE V56 FUNCT ↔ janus.essence.neural_prospecti",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "88bf8a52f3a88566cb33ef752f51ed9f099e6733",
+          "source_records": [
+            {
+              "id": "obj:93af68e7889a83b3288b",
+              "lineage_key": "JANUS-ESSENCE-FUNCTIONAL-GAIN-FORGETTING-HOLD",
+              "path": "data/JANUS-ESSENCE-V56-FUNCTIONAL-GAIN-FORGETTING-HOLD-2026-11-16.json",
+              "sha256": "2d60ae84f5da861ce8f1b233bd207da5b538a929f5ad3c6001bbc97283dfd171",
+              "status": null
+            },
+            {
+              "id": "obj:51d763fe64d2a5724b91",
+              "lineage_key": "JANUS-ESSENCE-FIRST-PROSPECTIVE-NEURAL-HOLD",
+              "path": "data/JANUS-ESSENCE-V53-FIRST-PROSPECTIVE-NEURAL-HOLD-2026-11-16.json",
+              "sha256": "5762e8ea3f4ff93dce9c8027d797ef04eb4e7158f3bb61ea09ed7203f5d50d41",
+              "status": "HOLD_NOT_BETTER"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": null,
+          "source_ids": [
+            "obj:93af68e7889a83b3288b",
+            "obj:51d763fe64d2a5724b91"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when janus.essence.functional_oracle_prospective_ev / JANUS ESSENCE V56 FUNCT and janus.essence.neural_prospective_shadow_witnes / JANUS ESSENCE V53 FIRST are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "11720a09b5955d6803cf849174cb86906d9cd9560b1c607a75d3fa1a4c8a0977",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
+    },
+    {
+      "attention_score": 23.0,
+      "authority": {
+        "automatic_promotion": false,
+        "causal": false,
+        "mutation": false,
+        "proof": false,
+        "truth": false
+      },
+      "created_at": "2026-11-16T19:41:50.294278+00:00",
+      "depth": 1,
+      "focus_key": "path:EYE/r2",
+      "id": "syn:a0dabf2cfacce6deaca5",
+      "kind": "SEMANTIC_CANDIDATE",
+      "label": "S1 · JANUS-EYE-R2-RECEIPT / EYE R2 RECEIPT ↔ JANUS-EYE-R2-OPERATOR-BACKBONE / EYE R2 OPERATOR BACKBONE",
+      "meaning": {
+        "boundaries": [
+          "SYNTHESIS != TRUTH",
+          "ATTENTION_WEIGHT != EVIDENCE_WEIGHT",
+          "GRAPH_DENSITY != EVIDENCE",
+          "CANDIDATE_EDGE != CAUSAL_EDGE",
+          "NO TARGET-LOCAL VERIFY => NO VERIFIED FIX"
+        ],
+        "evidence": {
+          "independent_replication_established": false,
+          "registry_source_commit": "88bf8a52f3a88566cb33ef752f51ed9f099e6733",
+          "source_records": [
+            {
+              "id": "obj:cde224a67d187feeeb8b",
+              "lineage_key": "EYE-R2-RECEIPT",
+              "path": "EYE/r2/generated/EYE-R2-RECEIPT.json",
+              "sha256": "17e4bd1a8783eda03439301a4d43e20d43ea2627054ab40b90a28b443b3207f4",
+              "status": "PASS"
+            },
+            {
+              "id": "obj:a9a9bd0983db7e0e348d",
+              "lineage_key": "EYE-R2-OPERATOR-BACKBONE",
+              "path": "EYE/r2/generated/EYE-R2-OPERATOR-BACKBONE.json",
+              "sha256": "2fbe4a5436a962f9bca3eef8ef000ad7bd46c1b05d5dc6346c1c275c52a04750",
+              "status": "DESCRIPTIVE_OPERATOR_MAP__NOT_DISCOVERY"
+            }
+          ]
+        },
+        "lineage": {
+          "prior_candidate_id": null,
+          "source_ids": [
+            "obj:cde224a67d187feeeb8b",
+            "obj:a9a9bd0983db7e0e348d"
+          ]
+        },
+        "mechanism": "Existing relation-machine: SOURCE_A -> Other / cross-project -> SOURCE_B. The synthesis proposes a bridge over that already observed topology, not a new fact.",
+        "next_steps": [
+          "Search for a counterexample to the proposed bridge.",
+          "Seek an independent source or target-local verifier before promotion.",
+          "If repeated without new evidence, fatigue this motif rather than increase confidence."
+        ],
+        "purpose": "Explore a candidate joint meaning that becomes visible only when JANUS-EYE-R2-RECEIPT / EYE R2 RECEIPT and JANUS-EYE-R2-OPERATOR-BACKBONE / EYE R2 OPERATOR BACKBONE are considered together."
+      },
+      "pivot": {
+        "id": "surface:other",
+        "label": "Other / cross-project"
+      },
+      "signature": "c626b4cc532954db8e5bda6ffb73b681d08ea44d06a6d671071c6def80493218",
+      "status": "CANDIDATE_AWAITING_CORROBORATION"
     }
   ],
   "created_this_run": [
-    "syn:6548fdcdb344eeb1f6d0",
-    "syn:0ed9f064cf49aea1ac43",
-    "syn:5cb28027a0b4f8afa787",
-    "syn:b54d8217cdf9b000d788"
+    "syn:966d2fa9183cd5d5f04e",
+    "syn:00ca061f55034fbb1956",
+    "syn:d8c85c28aa9412e6a141",
+    "syn:a0dabf2cfacce6deaca5"
   ],
-  "generated_at": "2026-11-16T06:47:58.028405+00:00",
+  "generated_at": "2026-11-16T19:41:50.294283+00:00",
   "laws": [
     "EXISTING_LINKS -> FOCUS -> COMPOSE -> CANDIDATE -> CORROBORATE",
     "SYNTHESIS != TRUTH",
@@ -8357,46 +8357,6 @@
     "no_forced_fill": true
   },
   "receipts": [
-    {
-      "attention_is_evidence": false,
-      "candidate_id": "syn:d182f02394840194057c",
-      "created_at": "2026-10-26T04:58:39.066303+00:00",
-      "focus_key": "pivot:surface:other",
-      "schema": "janus.inaihr.semantic_synth_receipt.v2",
-      "signature": "08c1783ca3b8fc9f8e8cbfe5c48e6f87e518e33a8b13a05d24b1b68a7cb27d1c",
-      "source_commit": "6ebfd0bb18bdf57864f7747c665a4844f791b21b",
-      "verdict": "PRESERVED_CANDIDATE_ONLY"
-    },
-    {
-      "attention_is_evidence": false,
-      "candidate_id": "syn:c3d09de457595bfc12df",
-      "created_at": "2026-10-26T04:58:39.066445+00:00",
-      "focus_key": "path:modules/rowan_observer",
-      "schema": "janus.inaihr.semantic_synth_receipt.v2",
-      "signature": "e00fdebda32d5933370266787e295f50eb379387c9cd28cc618d4f9dd1f26a39",
-      "source_commit": "6ebfd0bb18bdf57864f7747c665a4844f791b21b",
-      "verdict": "PRESERVED_CANDIDATE_ONLY"
-    },
-    {
-      "attention_is_evidence": false,
-      "candidate_id": "syn:160c7e470a9007191ac7",
-      "created_at": "2026-10-26T04:58:39.066541+00:00",
-      "focus_key": "path:EYE/generated",
-      "schema": "janus.inaihr.semantic_synth_receipt.v2",
-      "signature": "68ceb6847140226578ceca461fa998e6acda45aec8d5d46b93cd4b4745253db9",
-      "source_commit": "6ebfd0bb18bdf57864f7747c665a4844f791b21b",
-      "verdict": "PRESERVED_CANDIDATE_ONLY"
-    },
-    {
-      "attention_is_evidence": false,
-      "candidate_id": "syn:2b4506ef57f5a55c64a0",
-      "created_at": "2026-10-26T13:18:16.592702+00:00",
-      "focus_key": "pivot:surface:scoby-skingpt",
-      "schema": "janus.inaihr.semantic_synth_receipt.v2",
-      "signature": "dcea0d4512b0d939dc2dc724b6c2ea76653908058581905553d647c5a56c3cfb",
-      "source_commit": "55439564850feb277391e20e2e4cd26e909f6c45",
-      "verdict": "PRESERVED_CANDIDATE_ONLY"
-    },
     {
       "attention_is_evidence": false,
       "candidate_id": "syn:4546a2d14da46b039291",
@@ -10916,15 +10876,55 @@
       "signature": "5442a81436e35cb9cb222443086e01fa0cc0b44a4890a7a1f0905cbc7e73a75c",
       "source_commit": "a94bc6df76dcda62a665b4b351dd56e63bf17fcb",
       "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:966d2fa9183cd5d5f04e",
+      "created_at": "2026-11-16T19:41:50.293906+00:00",
+      "focus_key": "lineage:43863719261-1",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "da979bff7f968fdd1f004e1af02dbcb671f5d9c3e8b2d588bf97980cd3c462a9",
+      "source_commit": "88bf8a52f3a88566cb33ef752f51ed9f099e6733",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:00ca061f55034fbb1956",
+      "created_at": "2026-11-16T19:41:50.294011+00:00",
+      "focus_key": "lineage:LATEST",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "861fcfcb66b1fea4bf84e5190364244647e3f08aae8649316b57a270f82dc985",
+      "source_commit": "88bf8a52f3a88566cb33ef752f51ed9f099e6733",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:d8c85c28aa9412e6a141",
+      "created_at": "2026-11-16T19:41:50.294137+00:00",
+      "focus_key": "pivot:surface:other",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "11720a09b5955d6803cf849174cb86906d9cd9560b1c607a75d3fa1a4c8a0977",
+      "source_commit": "88bf8a52f3a88566cb33ef752f51ed9f099e6733",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
+    },
+    {
+      "attention_is_evidence": false,
+      "candidate_id": "syn:a0dabf2cfacce6deaca5",
+      "created_at": "2026-11-16T19:41:50.294278+00:00",
+      "focus_key": "path:EYE/r2",
+      "schema": "janus.inaihr.semantic_synth_receipt.v2",
+      "signature": "c626b4cc532954db8e5bda6ffb73b681d08ea44d06a6d671071c6def80493218",
+      "source_commit": "88bf8a52f3a88566cb33ef752f51ed9f099e6733",
+      "verdict": "PRESERVED_CANDIDATE_ONLY"
     }
   ],
   "registry": {
-    "link_count": 204,
-    "node_count": 205,
+    "link_count": 231,
+    "node_count": 232,
     "repository": "Hawkar-usls/janus-meta-registry",
-    "source_commit": "a94bc6df76dcda62a665b4b351dd56e63bf17fcb"
+    "source_commit": "88bf8a52f3a88566cb33ef752f51ed9f099e6733"
   },
   "schema": "janus.inaihr.semantic_evolution.v2",
-  "state_sha256": "e7f3630bd509ea2bb65da74513ac3125601f7c12f2f12dce996f2ee4a8aeee31",
+  "state_sha256": "6d89b86ad2ceb26e30b28b699a9663fca00b7272ab21564b2a7c1c44d150c923",
   "status": "ACTIVE_AUTONOMOUS_CANDIDATE_EVOLUTION"
 }
